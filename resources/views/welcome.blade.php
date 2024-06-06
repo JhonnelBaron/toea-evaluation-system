@@ -51,7 +51,7 @@
             text-align: center;
         }
         .tabs {
-            margin-top: auto;
+            margin-top: center;
             width: 100%;
         }
         .tabs a {
