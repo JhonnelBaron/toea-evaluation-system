@@ -5,8 +5,8 @@
     <div class="user-name">username</div>
     <div class="user-type">usertype</div>
     <div class="tabs">
-        <a href="#tab1">Tab 1</a>
-        <a href="#tab2">Tab 2</a>
-        <a href="#tab3">Tab 3</a>
+        <a href="#tab1">BEST REGIONAL OFFICE</a>
+        <a href="#tab2">GALING PROBINSYA</a>
+        <a href="#tab3">BEST TRAINING INSTITUTIIONS</a>
     </div>
 </div>
