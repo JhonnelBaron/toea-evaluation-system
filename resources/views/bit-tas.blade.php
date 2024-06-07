@@ -123,7 +123,63 @@
             'userType' => 'User Type'
         ])
         <div class="header">
-            <h1>GALING PROBINSYA - Small Category - Submission List</h1>
+            <h1>BEST TRAINING INSTITURION: TAS, RTC & STC</h1>
+        </div>
+        <div class="content">
+            <div class="box-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Operation Unit</th>
+                            <th>Province</th>
+                            <th>Date Submitted</th>
+                            <th>Hard Copy</th>
+                            <th>Action</th>
+                            <th>Percentage</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CAR</td>
+                            <td>PO</td>
+                            <td>Nueva Ecija</td>
+                            <td>06/07/2024</td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td>Remarks Sample</td>
+                        </tr>
+                        <tr>
+                            <td>CAR</td>
+                            <td>PO</td>
+                            <td>Nueva Ecija</td>
+                            <td>06/07/2024</td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td>Remarks Sample</td>
+                        </tr>
+                        <tr>
+                            <td>CAR</td>
+                            <td>PO</td>
+                            <td>Nueva Ecija</td>
+                            <td>06/07/2024</td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td>Remarks Sample</td>
+                        </tr>
+                        <tr>
+                            <td>CAR</td>
+                            <td>PO</td>
+                            <td>Nueva Ecija</td>
+                            <td>06/07/2024</td>
+                            <td><input type="checkbox"></td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td>Remarks Sample</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script>

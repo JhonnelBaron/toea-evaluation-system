@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="profile-picture">
-        <img src="{{ asset('img/tesda-logo.png') }}" alt="description of my image">
+        <img href="https://sites.google.com/tesda.gov.ph/tesdacaraga/tesda-lingap-ay-maaasahan" src="{{ asset('img/tesda-logo.png') }}" alt="Tesda tesda-lingap-ay-maaasahan">
     </div>
 
     <div class="user-name">username</div>
@@ -27,8 +27,8 @@
         <div class="dropdown">
             <a href="#tab3" class="dropdown-btn"><b>BEST TRAINING INSTITUTIONS</b><i class="fa fa-caret-down"></i></a>
             <div class="dropdown-container">
-                <a href="#subtab3-1" class="sub-tab">TAS, RTC/STC</a>
-                <a href="#subtab3-2" class="sub-tab">PTC</a>
+                <a href="{{route('bit-tas')}}" class="sub-tab">TAS, RTC/STC</a>
+                <a href="{{route('bit-ptc')}}" class="sub-tab">PTC</a>
             </div>
         </div>
     </div>

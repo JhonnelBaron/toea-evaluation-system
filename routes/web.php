@@ -18,3 +18,11 @@ Route::get('/galing-probinsya/large', function () {
 Route::get('/galing-probinsya/medium', function () {
     return view('gp-medium');
 })->name('gp-medium');
+
+Route::get('/bit/ptc', function () {
+    return view('bit-ptc');
+})->name('bit-ptc');
+
+Route::get('/bit/tas', function () {
+    return view('bit-tas');
+})->name('bit-tas');
