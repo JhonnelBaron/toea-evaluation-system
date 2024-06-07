@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return view('welcome');
+})->name('dashboard');
+
 Route::get('/galing-probinsya/small', function () {
     return view('gp-small');
 })->name('gp-small');
