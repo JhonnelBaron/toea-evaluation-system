@@ -17,9 +17,9 @@
             <div class="dropdown">
                 <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA</b><i class="fa fa-caret-down"></i></d>
                 <div class="dropdown-container">
-                    <a href="#subtab2-1" class="sub-tab">Small Province</a>
-                    <a href="#subtab2-2" class="sub-tab">Medium Province</a>
-                    <a href="#subtab2-3" class="sub-tab">Large Province</a>
+                    <a href="{{route('gp-small')}}" class="sub-tab">Small Province</a>
+                    <a href="{{route('gp-medium')}}" class="sub-tab">Medium Province</a>
+                    <a href="{{route('gp-large')}}" class="sub-tab">Large Province</a>
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
 
     .dropdown-btn {
         font-size: 12px;
-        font-family: 'Palatino', 'URW Palladio L', serif;
+        font-family: "Times New Roman", Times, serif;
         background-color: #FFFFFF;
         color: black;
         padding: 10px;
