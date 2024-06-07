@@ -12,6 +12,8 @@
         .content {
             flex-grow: 1;
             padding-left: 20px;
+            margin-top: 50px;
+            background-color: hsl(0, 0%, 97%); /* Set background color to white */
         }
         .sidebar {
             width: 250px;
@@ -35,40 +37,28 @@
             height: 15px;
             z-index: 1000;
         }
-
+        .logo-picture, .profile-picture {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
         .logo-picture {
             width: 100px;
             height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
         }
-        .logo-picture img {
+        .logo-picture img, .profile-picture img {
             width: 100%;
             height: 100%;
-            position: bottom;
-            object-fit: fill; /* Ensure the image covers the whole area */
+            object-fit: cover;
         }
-
         .profile-picture {
             width: 200px;
             height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
         }
-
-        .profile-picture img {
-            max-width: 100%;
-            height: auto;
-            position: bottom;
-            object-fit: cover; /* Ensure the image covers the whole area */
-        }
-
         .user-name, .user-type {
             margin-bottom: 5px;
             text-align: center;
         }
         .tabs {
-            margin-top: center;
             width: 100%;
         }
         .tabs a {
@@ -85,16 +75,22 @@
             margin: 0;
             padding: 0;
             font-family: 'Palatino', 'URW Palladio L', serif;
-            background-image: url('path/to/your/image.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Prevent the background from repeating */
-            /* Additional styles for the body if needed */
+            background-image: url('img/Seclingap.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .box-content {
+            margin: 20px;
+            padding: 20px;
+            height: 500px;
+            background-color: white; /* Set background color to white */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <!-- <button class="btn btn-primary toggle-btn" id="toggleSidebar">Toggle Sidebar</button> -->
     <div class="d-flex">
         @include('components.sidebar', [
             'profile-picture' => asset('img/tesda-logo.png'),
@@ -102,8 +98,75 @@
             'userType' => 'User Type'
         ])
         <div class="content">
-            <!-- Main content goes here -->
-            <h1>Welcome to the main content area</h1>
+            <h1>TOEA Admin Portal</h1>
+            <div class="box-content">
+            <style>
+                table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                }
+
+                td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                background-color: #dddddd;
+                }
+                </style>
+                </head>
+                <body>
+
+                <h2>Best Regional Office</h2>
+
+                <table>
+                <tr>
+                    <th>Province</th>
+                    <th>Date Submitted</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                    <td>DONE</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                    <td>DONE</td>
+                </tr>
+                <tr>
+                    <td>Ernst Handel</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                    <td>DONE</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                    <td>DONE</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                    <td>DONE</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                    <td>DONE</td>
+                </tr>
+                </table>
+            </div>
         </div>
     </div>
     <script>
@@ -113,4 +176,3 @@
     </script>
 </body>
 </html>
-
