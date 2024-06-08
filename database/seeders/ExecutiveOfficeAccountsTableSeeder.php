@@ -35,6 +35,28 @@ class ExecutiveOfficeAccountsTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'executive_office' => 'ROMD',
+                'name' => 'admin',
+                'position' => 'Director',
+                'office' => 'Office 2',
+                'email' => 'admin@example.com',
+                'password' => Hash::make('password123'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'executive_office' => 'RO',
+                'name' => 'Region 1',
+                'position' => 'Director',
+                'office' => 'Office 2',
+                'email' => 'region@example.com',
+                'password' => Hash::make('password123'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
             // Add more entries as needed
         ]);
     }
