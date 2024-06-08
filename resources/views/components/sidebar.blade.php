@@ -3,8 +3,42 @@
         <img href="https://sites.google.com/tesda.gov.ph/tesdacaraga/tesda-lingap-ay-maaasahan" src="{{ asset('img/tesda-logo.png') }}" alt="Tesda tesda-lingap-ay-maaasahan">
     </div>
 
-    <div class="user-name">username</div>
-    <div class="user-type">usertype</div>
+    <div class="user-name">{{ Auth::user()->name }}</div>
+    <div class="user-type">
+        @php
+        switch (Auth::guard('web')->user()->executive_office) {
+            case 'AS':
+                echo 'Administrative Office';
+                break;
+            case 'LD':
+                echo 'Legal Division';
+                break;
+            case 'CO':
+                echo 'Certification Office';
+                break;
+            case 'FMS':
+                echo 'Financial and Management Service';
+                break;
+            case 'NITESD':
+                echo 'National Institute for Technical Education and Skills Development';
+                break;
+            case 'PIAD':
+                echo 'Public Information and Assistance Division';
+                break;
+            case 'PO':
+                echo 'Planning Office';
+                break;
+            case 'PLO':
+                echo 'Partnership and Linkages Office';
+                break;
+            case 'ROMO':
+                echo 'Regional Operations Management Office';
+                break;
+            default:
+                echo 'Unknown';
+        }
+    @endphp
+    </div>
     <div><hr></div>
 
       <!-- Dropdown for BEST REGIONAL OFFICE -->
@@ -31,6 +65,11 @@
                 <a href="{{route('bit-ptc')}}" class="sub-tab">PTC</a>
             </div>
         </div>
+
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
     </div>
 </div>
 

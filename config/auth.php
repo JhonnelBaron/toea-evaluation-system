@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'executive_office_accounts',
         ],
     ],
 
@@ -63,6 +63,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+        'executive_office_accounts' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ExecutiveOfficeAccount::class,
         ],
 
         // 'users' => [
