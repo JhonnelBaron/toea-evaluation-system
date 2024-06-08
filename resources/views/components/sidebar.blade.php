@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="profile-picture">
-        <img src="{{ asset('img/tesda-logo.png') }}" alt="Tesda tesda-lingap-ay-maaasahan">
+        <img src="{{ asset('img/sidebar.png') }}" class="h-64" alt="Tesda tesda-lingap-ay-maaasahan">
     </div>
 
     <div class="user-name">{{ Auth::user()->name }}</div>

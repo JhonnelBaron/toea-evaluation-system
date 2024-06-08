@@ -25,7 +25,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            /* padding: 20px; */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
@@ -53,10 +53,10 @@
             height: 100%;
             object-fit: cover;
         }
-        .profile-picture {
-            width: 200px;
-            height: 100px;
-        }
+        /* .profile-picture {
+            width: 400px;
+            height: 120px;
+        } */
         .user-name, .user-type {
             margin-bottom: 5px;
             text-align: center;
@@ -120,7 +120,7 @@
 <body>
     <div class="d-flex">
         @include('components.sidebar', [
-            'profile-picture' => asset('img/tesda-logo.png'),
+            // 'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
