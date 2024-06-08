@@ -70,3 +70,18 @@ Route::get('/bit/ptc', function () {
 Route::get('/bit/tas', function () {
     return view('bit-tas');
 })->name('bit-tas');
+<<<<<<< HEAD
+=======
+
+Route::get('/bit/sp-evaluation', function () {
+    return view('sp-evaluation');
+})->name('sp-evaluation');
+
+Route::get('/bit/sample', function () {
+    return view('sample');
+})->name('sample');
+
+Route::get('/annexba', function () {
+    return view('annexba');
+})->name('annexba');
+>>>>>>> f490fa89f725bd1459a83389065921b8887991a7

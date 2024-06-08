@@ -1,6 +1,6 @@
 <div class="sidebar">
     <div class="profile-picture">
-        <img href="https://sites.google.com/tesda.gov.ph/tesdacaraga/tesda-lingap-ay-maaasahan" src="{{ asset('img/tesda-logo.png') }}" alt="Tesda tesda-lingap-ay-maaasahan">
+        <img src="{{ asset('img/tesda-logo.png') }}" alt="Tesda tesda-lingap-ay-maaasahan">
     </div>
 
     <div class="user-name">{{ Auth::user()->name }}</div>
@@ -78,8 +78,14 @@
 
 <!-- Add some CSS for styling the dropdowns -->
 <style>
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Set sidebar height to 100% of viewport height */
+    }
     .sidebar .tabs {
         width: 100%;
+       
     }
 
     .dropdown {
@@ -134,7 +140,15 @@
         font-family: 'Palatino', 'URW Palladio L', serif;
         text-align: left;
     }
+
+    .sidebar-content {
+        flex: 1;
+        overflow-y: auto; /* Add scrollbar for long content */
+    }
+
+    /* Rest of your existing styles */
 </style>
+
 
 
 <!-- Add JavaScript to toggle the dropdowns -->
