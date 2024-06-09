@@ -13,7 +13,7 @@ class ExecutiveOfficeAccount extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'executive_office', 'name', 'position', 'office', 'email', 'password',
     ];
 
     protected $hidden = [
