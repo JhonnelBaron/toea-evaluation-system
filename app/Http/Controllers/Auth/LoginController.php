@@ -27,38 +27,68 @@ class LoginController extends Controller
         return response()->view('auth.login')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => ['required'],
+    //     ]);
+
+    //     if (Auth::attempt($credentials)) {
+    //         $request->session()->regenerate();
+
+    //         // Get the authenticated user
+    //         $user = Auth::user();
+
+    //         if (Auth::attempt($credentials)) {
+    //             $request->session()->regenerate();
+    
+    //             // Redirect based on executive_office column value
+    //             if ($user->executive_office === 'ROMD'){
+    //                 return redirect()->intended('/regional-operations-management-division');
+    //             } elseif ($user->executive_office === 'RO') {
+    //                 return redirect()->intended('/regional-office');
+    //             } else {
+    //                 return redirect()->intended('/executive-office-dashboard');
+    //             }
+    //         }
+    //     throw ValidationException::withMessages([
+    //    'email' => 'The provided email does not match our records.',
+    //     'password' => 'The provided password is incorrect.',
+    //     ]);
+    //  }
+    // }
     public function login(Request $request)
     {
+        // Validate the request data
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        // Attempt to authenticate the user
+        if (!Auth::attempt($credentials)) {
+            // If authentication fails, throw validation exception with error messages
+            throw ValidationException::withMessages([
+                'email' => 'The provided email does not match our records.',
+                'password' => 'The provided password is incorrect.',
+            ]);
+        }
 
-            // Get the authenticated user
-            $user = Auth::user();
+        // If authentication succeeds, regenerate the session
+        $request->session()->regenerate();
 
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-    
-                // Get the authenticated user
-                $user = Auth::guard('web')->user();
-    
-                // Redirect based on executive_office column value
-                if ($user->executive_office === 'ROMD'){
-                    return redirect()->intended('/regional-operations-management-division');
-                } elseif ($user->executive_office === 'RO') {
-                    return redirect()->intended('/regional-office');
-                } else {
-                    return redirect()->intended('/executive-office-dashboard');
-                }
-            }
-        throw ValidationException::withMessages([
-            'email' => __('auth.failed'),   
-        ]);
-     }
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Redirect based on executive_office column value
+        if ($user->executive_office === 'ROMD') {
+            return redirect()->intended('/regional-operations-management-division');
+        } elseif ($user->executive_office === 'RO') {
+            return redirect()->intended('/regional-office');
+        } else {
+            return redirect()->intended('/executive-office-dashboard');
+        }
     }
 
     public function logout(Request $request)
@@ -69,6 +99,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect('/');
     }
 }

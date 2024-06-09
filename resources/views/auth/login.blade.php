@@ -33,11 +33,17 @@
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email"
                                 class="p-1 border-2 border-black rounded-md w-full" required>
+                                @error('email')
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="w-64">
                             <label for="password">Password</label>
                             <input type="password" id="password" name="password"
                                 class="p-1 border-2 border-black rounded-md w-full" required>
+                                @error('password')
+                                <div>{{ $message }}</div>
+                            @enderror
                         </div>
                         <button type="submit" class="bg-blue-700 hover:bg-blue-600 px-6 py-2 text-white rounded-md mt-4">Login</button>
                     </div>
