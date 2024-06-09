@@ -21,7 +21,7 @@
                 <div class="card bg-white h-96 w-96 rounded-md shadow-md">
                     <div class="bg-gray-200 w-full h-20 p-4 flex justify-center items-center rounded-t-md">
                         <h3 class="text-blue-700 text-center font-bold text-sm">
-                            EXECUTIVE OFFICE EVALUTATION PORTAL
+                            EXECUTIVE OFFICE EVALUATION PORTAL
                         </h3>
 
 
