@@ -20,8 +20,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //LOGOUT
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login')->middleware(RedirectIfAuthenticated::class);
-Route::post('login', [LoginController::class, 'login'])->middleware(RedirectIfAuthenticated::class);
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middleware(RedirectIfAuthenticated::class);
+Route::post('/', [LoginController::class, 'login'])->middleware(RedirectIfAuthenticated::class);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Define routes based on executive_office column value
