@@ -34,6 +34,12 @@
             case 'ROMO':
                 echo 'Regional Operations Management Office';
                 break;
+            case 'RO':
+                echo 'Regional Office';
+                break;
+            case 'ROMD':
+                echo 'Regional Operations Management Division';
+                break;
             default:
                 echo 'Unknown';
         }
@@ -46,29 +52,11 @@
             <div class="dropdown">
                 <a href="#tab1" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
             </div>
-
-        <!-- Dropdown for GALING PROBINSYA -->
-            <div class="dropdown">
-                <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA</b><i class="fa fa-caret-down"></i></d>
-                <div class="dropdown-container">
-                    <a href="{{route('gp-small')}}" class="sub-tab">Small Province</a>
-                    <a href="{{route('gp-medium')}}" class="sub-tab">Medium Province</a>
-                    <a href="{{route('gp-large')}}" class="sub-tab">Large Province</a>
-                </div>
-            </div>
-
-        <!-- Dropdown for BEST TRAINING INSTITUTIONS -->
-        <div class="dropdown">
-            <a href="#tab3" class="dropdown-btn"><b>BEST TRAINING INSTITUTIONS</b><i class="fa fa-caret-down"></i></a>
-            <div class="dropdown-container">
-                <a href="{{route('bit-tas')}}" class="sub-tab">TAS, RTC/STC</a>
-                <a href="{{route('bit-ptc')}}" class="sub-tab">PTC</a>
-            </div>
-        </div>
-
+    </div>
+    <div style="margin-top: 370px;">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button class="logout" type="submit">Logout</button>
+            <button type="submit">Logout</button>
         </form>
     </div>
 </div>

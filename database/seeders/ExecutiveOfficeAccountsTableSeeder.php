@@ -48,7 +48,7 @@ class ExecutiveOfficeAccountsTableSeeder extends Seeder
             ],
             [
                 'executive_office' => 'RO',
-                'name' => 'Region 1',
+                'name' => 'Region I',
                 'position' => 'Director',
                 'office' => 'Office 2',
                 'email' => 'region@example.com',

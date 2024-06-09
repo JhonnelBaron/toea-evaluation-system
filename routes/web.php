@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\RoController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -17,21 +18,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/regional-office', function (){
         return view('ro.dashboard');
     });
+    
 });
 
 //LOGOUT
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middleware(RedirectIfAuthenticated::class);
 Route::post('/', [LoginController::class, 'login'])->middleware(RedirectIfAuthenticated::class);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-// Define routes based on executive_office column value
-// Route::get('/executive-office-dashboard', function () {
-//     return view('executive.dashboard');
-// })->middleware('auth');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware('auth');
 
 Route::get('/galing-probinsya/small', function () {
     return view('gp-small');
@@ -67,3 +60,4 @@ Route::get('/annexba', function () {
     return view('annexba');
 })->name('annexba');
 
+Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
