@@ -67,3 +67,11 @@ Route::get('/annexba', function () {
     return view('annexba');
 })->name('annexba');
 
+
+//ROUTE FOR EVALUATIONS
+//GALING PROBINSYA: SMALL
+Route::get('/gpsp-evaluation', function () {
+    return view('/gpsp-evaluation');
+})->name('/gpsp-evaluation');
+
+
