@@ -63,9 +63,14 @@ Route::get('/annexba', function () {
 
 //ROUTE FOR EVALUATIONS
 //GALING PROBINSYA: SMALL
-Route::get('/gpsp-evaluation', function () {
-    return view('/gpsp-evaluation');
-})->name('/gpsp-evaluation');
+Route::get('/gpsp-evaluation-a', function () {
+    return view('/gpsp-evaluation-a');
+})->name('/gpsp-evaluation-a');
+
+Route::get('/gpsp-evaluation-b', function () {
+    return view('/gpsp-evaluation-b');
+})->name('/gpsp-evaluation-b');
+
 
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
