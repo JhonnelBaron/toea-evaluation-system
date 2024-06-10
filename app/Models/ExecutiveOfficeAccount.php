@@ -19,4 +19,9 @@ class ExecutiveOfficeAccount extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function files()
+    {
+        return $this->belongsTo(RoFile::class, 'uploader_id');
+    }
 }

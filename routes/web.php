@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
@@ -74,3 +75,4 @@ Route::get('/gpsp-evaluation-b', function () {
 
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
+Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');
