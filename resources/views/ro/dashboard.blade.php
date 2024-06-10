@@ -143,105 +143,33 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <!-- 16 folders -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="{{ route('upload.file') }}">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region I</p>
+                    @php
+                        use Illuminate\Support\Facades\Auth;
+                        $regions = [
+                            'Region I', 'Region II', 'Region III', 'Region IV-A', 'Region IV-B', 'Region V', 'Region VI',
+                            'Region VII', 'Region VIII', 'Region IX', 'Region X', 'Region XI', 'Region XII', 'Region XIII', 
+                            'NCR', 'CAR'
+                        ];
+                        $currentUserName = Auth::user()->name; // Replace this with the actual current user's name
+                    @endphp
+
+                    @foreach ($regions as $region)
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            @if ($currentUserName === $region)
+                                <a href="{{ route('upload.file') }}">
+                                    <div class="folder">
+                                        <i class="fas fa-folder"></i>
+                                        <p>{{ $region }}</p>
+                                    </div>
+                                </a>
+                            @else
+                                <div class="folder">
+                                    <i class="fas fa-folder"></i>
+                                    <p>{{ $region }}</p>
+                                </div>
+                            @endif
                         </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region II</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region III</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region IV-A</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region IV-B</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region V</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region VI</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region VII</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region VIII</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region IX</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region X</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region XI</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region XII</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>Region XIII</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>NCR</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="folder">
-                            <i class="fas fa-folder"></i>
-                            <p>CAR</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -253,3 +181,5 @@
     </script>
 </body>
 </html>
+
+
