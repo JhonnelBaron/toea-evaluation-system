@@ -72,6 +72,88 @@ Route::get('/gpsp-evaluation-b', function () {
     return view('/gpsp-evaluation-b');
 })->name('/gpsp-evaluation-b');
 
+Route::get('/gpsp-evaluation-c', function () {
+    return view('/gpsp-evaluation-c');
+})->name('/gpsp-evaluation-c');
+
+Route::get('/gpsp-evaluation-d', function () {
+    return view('/gpsp-evaluation-d');
+})->name('/gpsp-evaluation-d');
+
+Route::get('/gpsp-evaluation-e', function () {
+    return view('/gpsp-evaluation-e');
+})->name('/gpsp-evaluation-e');
+
+
+
+//GALING PROBINSYA: MEDUIM
+
+Route::get('/gpmp-evaluation-a', function () {
+    return view('/gpmp-evaluation-a');
+})->name('/gpmp-evaluation-a');
+
+Route::get('/gpmp-evaluation-b', function () {
+    return view('/gpmp-evaluation-b');
+})->name('/gpmp-evaluation-b');
+
+Route::get('/gpmp-evaluation-c', function () {
+    return view('/gpmp-evaluation-c');
+})->name('/gpmp-evaluation-c');
+
+Route::get('/gpmp-evaluation-d', function () {
+    return view('/gpmp-evaluation-d');
+})->name('/gpmp-evaluation-d');
+
+Route::get('/gpmp-evaluation-e', function () {
+    return view('/gpmp-evaluation-e');
+})->name('/gpmp-evaluation-e');
+
+
+//GALING PROBINSYA: LARGE
+
+Route::get('/gplp-evaluation-a', function () {
+    return view('/gplp-evaluation-a');
+})->name('/gplp-evaluation-a');
+
+Route::get('/gplp-evaluation-b', function () {
+    return view('/gplp-evaluation-b');
+})->name('/gplp-evaluation-b');
+
+Route::get('/gplp-evaluation-c', function () {
+    return view('/gplp-evaluation-c');
+})->name('/gplp-evaluation-c');
+
+Route::get('/gplp-evaluation-d', function () {
+    return view('/gplp-evaluation-d');
+})->name('/gplp-evaluation-d');
+
+Route::get('/gplp-evaluation-e', function () {
+    return view('/gplp-evaluation-e');
+})->name('/gplp-evaluation-e');
+
+
+//BRO SUBMISSION LIST
+
+Route::get('/bro-evaluation-a', function () {
+    return view('/bro-evaluation-a');
+})->name('/bro-evaluation-a');
+
+Route::get('/bro-evaluation-b', function () {
+    return view('/bro-evaluation-b');
+})->name('/bro-evaluation-b');
+
+Route::get('/bro-evaluation-c', function () {
+    return view('/bro-evaluation-c');
+})->name('/bro-evaluation-c');
+
+Route::get('/bro-evaluation-d', function () {
+    return view('/bro-evaluation-d');
+})->name('/bro-evaluation-d');
+
+Route::get('/bro-evaluation-e', function () {
+    return view('/bro-evaluation-e');
+})->name('/bro-evaluation-e');
+
 
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');

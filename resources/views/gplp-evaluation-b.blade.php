@@ -765,10 +765,7 @@
                                 </h5>
                                 <br>
                                     <ul>
-                                        For Small Province: Partnership with more than one (1) 
-                                        industry / private company and with continuing tie-ups 
-                                        for the last two (2) years with the same industry/company 
-                                        = <i>15</i>
+                                    For Large Province: Partnerships with three (3) or more industries / private companies and with continuing tie-ups for the last two (2) years with the same industries/companies; = <i>15</i>
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
@@ -786,11 +783,7 @@
                                 </h5>
                                 <br>
                                     <ul>
-                                    For Small Province: Partnership with one (1)
-                                    industry / private company and with continuing
-                                    tie-ups for the last two (2) years with the 
-                                    same industry/company; 
-                                    = <i>10</i>
+                                    For Large Province: Partnerships with less than three (3) industries / private companies and with continuing tie-ups for the last two (2) years with the same industries/companies; = <i>10</i>
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
@@ -808,10 +801,7 @@
                                 </h5>
                                 <br>
                                     <ul>
-                                    For Small Province: Partnership with one
-                                    (1) industry / private company and with 
-                                    continuing tie-ups for less than two (2)
-                                    years with the same industries/companies; 
+                                    For Large Province: Partnerships with less than three (3) industries / private companies and with continuing tie-ups for less than two (2) years with the same industries/companies; 
                                     = <i>5</i>
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
@@ -1021,7 +1011,7 @@
                                     <ul>Not all TTIs in the Province have implemented their plans and projects related to Green Practices = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul>*Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</ul>
+                                <ul>*Manning of the Regional Provincial Office versus the actual number of personnel that have attended training</ul>
                             </td>
                             <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>

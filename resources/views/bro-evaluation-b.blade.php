@@ -146,7 +146,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-xl font-bold text-white">GALING PROBINSYA - Small Category - Submission List</h1>
+            <h1 class="text-xl font-bold text-white">Best Regional Office - Submission List</h1>
         </div>
         <div class="content">
             <div class="box-content">
@@ -318,8 +318,8 @@
                                 <h5>
                                     <b>B.2.A.2. Implementation of Recognized/aligned PQF level 4 or Level 5 programs </b>
                                 </h5>
-                                    <ul>All TAS in the Province have at least 1 recognized/aligned PQF level 4 or level 5 programs = <i>10</i></ul>
-                                    <ul>Not all TAS in the Province have at least 1 recognized/aligned PQF level 4 or level 5 programs = <i>0</i></ul>
+                                    <ul>All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs = <i>10</i></ul>
+                                    <ul>Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Certificate of Recognition for PQF Level 4 or Level 5; List of enrollees</ul>
@@ -335,9 +335,9 @@
                                     <b>B.2.A.3. Participation and Recognition from Skills Competition</b><br>
                                     <b>B.2.A.3.1. Participation</b>
                                 </h5>
-                                    <ul>The Province participated in ASC and/or World Skills Competition = <i>6</i></ul>
-                                    <ul>The Province participated in PNSC = <i>6</i></ul>
-                                    <ul>The Province did not participate in any of the competition = <i>0</i></ul>
+                                    <ul>The Region participated in ASC and/or World Skills Competition = <i>6</i></ul>
+                                    <ul>The Region participated in PNSC = <i>6</i></ul>
+                                    <ul>The Region did not participate in any of the competition = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*"Terminal Reports/After Activity reports / Official list of winners</ul>
@@ -352,8 +352,8 @@
                                 <h5>
                                     <b>B.2.A.3.2. Awards received at the national level</b><br>
                                 </h5>
-                                    <ul>The Province received award/recognition at the national level = <i>7</i></ul>
-                                    <ul>The Province did not receive award/recognition = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the national level = <i>7</i></ul>
+                                    <ul>The Region did not receive award/recognition = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received (plaque or medal)</ul>
@@ -368,8 +368,8 @@
                                 <h5>
                                     <b>B.2.A.3.3. Awards received at the international level</b><br>
                                 </h5>
-                                    <ul>The Province received award/recognition at the international level = <i>12</i></ul>
-                                    <ul>The Province did not receive award/recognition = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the international level = <i>12</i></ul>
+                                    <ul>The Region did not receive award/recognition = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received (plaque or medal)</ul>
@@ -434,11 +434,11 @@
                                 <h5>
                                     <b>B.2.B.4. Advocacy program to promote the importance of TVET in communities and the roles of CTECs in LGUs</b>
                                 </h5>
-                                    <ul>At least 10% of the municipalities in the Province have been given orientation on Devolution of TVET = <i>10</i></ul>
-                                    <ul>Less than 10% of the municipalities in the Province have been given orientation on Devolution of TVET = <i>0</i></ul>
+                                    <ul>At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET = <i>10</i></ul>
+                                    <ul>Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul>*Monitoring Reports</ul>
+                                <ul>*After Activity Reports on meetings conducted</ul>
                             </td>
                             <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
@@ -546,10 +546,12 @@
                         <tr>
                             <td>
                                 <h5>
-                                    <b>B.2.C.7. Establishment of Assessment Centers for NC Level IV Qualification </b>
+                                    <b>B.2.C.6. Establishment of Assessment Centers for NC Level IV Qualification </b><br>
                                 </h5>
-                                    <ul>At least 1 Assessment Center for NC Level IV Qualification was established in the Province = <i>10</i></ul>
-                                    <ul>No Assessment center for NC Level IV Qualification was established in the Province = <i>0</i></ul>
+                                    <ul>For Large Regions: At least 3 Assessment Centers for NC Level IV Qualifications<br>
+                                        For Medium Regions: At least 2 Assessment Centers for NC Level IV Qualifications<br>
+                                        For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications = <i>10</i></ul>
+                                    <ul>No Assessment center for NC Level IV Qualification was established in the Region = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*"Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</ul>
@@ -616,9 +618,10 @@
                                 </h5>
                                     <ul>The accomplishment rate based on set target is at 100% and above = <i>5</i></ul>
                                     <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                    <ul>NC holders hired on the spot during the conduct of WCO</ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul>*After Activity Report</ul>
+                                <ul>*After Activity Report Number of HOTS List of HOTS and their TVET qualifications</ul>
                             </td>
                             <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
@@ -628,12 +631,12 @@
                         <tr>
                             <td>
                                 <h5>
-                                    <b>B.2.D.4. Institutional Awards</b>
-                                    <b>B.2.D.4.1. TESDA Idol (Wage-employed)</b><br><hr>
-                                    <b>B.2.D.4.1.1. Participation</b>
+                                    <b>B.2.D.4. Institutional Awards</b> = <i>60</i>
+                                    <b>B.2.D.4.1. TESDA Idol (Wage-employed)</b> = <i>15</i><br><hr>
+                                    <b>B.2.D.4.1.1. Participation</b><i>5</i>
                                 </h5>
-                                    <ul>The Province participated in TESDA Idol (Wage-employed) = <i>5</i></ul>
-                                    <ul>The Province did not participate in TESDA Idol (Wage-employed) = <i>0</i></ul>
+                                    <ul>The Region participated in TESDA Idol (Wage-employed) = <i>5</i></ul>
+                                    <ul>The Region did not participate in TESDA Idol (Wage-employed) = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Memorandum on nominees endorsed</ul>
@@ -648,8 +651,8 @@
                                 <h5>
                                     <b>B.2.D.4.1.2. Awards received</b>
                                 </h5>
-                                    <ul>The Province received award/recognition at the national level = <i>10</i></ul>
-                                    <ul>The Province did not receive award/recognition at the national level = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the national level = <i>10</i></ul>
+                                    <ul>The Region did not receive award/recognition at the national level = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received</ul>
@@ -665,8 +668,8 @@
                                     <b>B.2.D.4.2. TESDA Idol (Self-employed)</b><br>
                                     <b>B.2.D.4.2.1. Participation</b>
                                 </h5>
-                                    <ul>The Province participated in TESDA Idol (self-employed) = <i>5</i></ul>
-                                    <ul>The Province did not participate in TESDA Idol (self-employed) = <i>0</i></ul>
+                                    <ul>The Region participated in TESDA Idol (self-employed) = <i>5</i></ul>
+                                    <ul>The Region did not participate in TESDA Idol (self-employed) = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Memorandum on nominees endorsed</ul>
@@ -681,8 +684,8 @@
                                 <h5>
                                     <b>B.2.D.4.2.2. Awards received</b>
                                 </h5>
-                                    <ul>The Province received award/recognition at the national level = <i>10</i></ul>
-                                    <ul>The Province did not receive award/recognition at the national level = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the national level = <i>10</i></ul>
+                                    <ul>The Region did not receive award/recognition at the national level = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received</ul>
@@ -698,8 +701,8 @@
                                     <b>B.2.D.4.3. Kabalikat Awards</b>
                                     <b>B.2.D.4.3.1. Participation</b>
                                 </h5>
-                                    <ul>The Province participated in Kabalikat Awards = <i>5</i></ul>
-                                    <ul>The Province did not participate in Kabalikat Awards = <i>0</i></ul>
+                                    <ul>The Region participated in Kabalikat Awards = <i>5</i></ul>
+                                    <ul>The Region did not participate in Kabalikat Awards = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Memorandum on nominees endorsed</ul>
@@ -714,8 +717,8 @@
                                 <h5>
                                     <b>B.2.D.4.3.2. Awards received</b>
                                 </h5>
-                                    <ul>The Province received award/recognition at the national level = <i>10</i></ul>
-                                    <ul>The Province did not receive award/recognition at the national level = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the national level = <i>10</i></ul>
+                                    <ul>The Region did not receive award/recognition at the national level = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Memorandum on nominees endorsed</ul>
@@ -731,8 +734,8 @@
                                     <b>B.2.D.4.4. Tagsanay</b>
                                     <b>B.2.D.4.4.1. Participation</b>
                                 </h5>
-                                    <ul>The Province participated in in the National Level Tagsanay Awards = <i>5</i></ul>
-                                    <ul>The Province did not participate in the National Level Tagsanay Awards = <i>0</i></ul>
+                                    <ul>The Region participated in in the National Level Tagsanay Awards = <i>5</i></ul>
+                                    <ul>The Region did not participate in the National Level Tagsanay Awards = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Endorsement Memo, TESDA Order</ul>
@@ -747,8 +750,8 @@
                                 <h5>
                                     <b>B.2.D.4.4.2. Awards received</b>
                                 </h5>
-                                    <ul>The Province received award/recognition at the national level = <i>10</i></ul>
-                                    <ul>The Province did not receive award/recognition at the national level = <i>0</i></ul>
+                                    <ul>The Region received award/recognition at the national level = <i>10</i></ul>
+                                    <ul>The Region did not receive award/recognition at the national level = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received</ul>
@@ -765,10 +768,17 @@
                                 </h5>
                                 <br>
                                     <ul>
-                                        For Small Province: Partnership with more than one (1) 
-                                        industry / private company and with continuing tie-ups 
-                                        for the last two (2) years with the same industry/company 
-                                        = <i>15</i>
+                                    For Large Region: Partnerships with three (3) or more industries 
+                                    / private companies and with continuing tie-ups for the last two 
+                                    (2) years with the same industries/companies; = <i>15</i> <br>
+
+                                    For Medium Region: Partnerships with two (2) or more industries 
+                                    / private companies and with continuing tie-ups for the last two 
+                                    (2) years with the same industries/companies; <br>
+
+                                    For Small Region: Partnership with more than one (1) industry 
+                                    / private company and with continuing tie-ups for the last two 
+                                    (2) years with the same industry/company
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
@@ -781,16 +791,19 @@
 
                         <tr>
                             <td>
-                                <h5>
-                                    <b>B.2.D.5. Partnerships forged and implemented <br>● To be measured in terms of resources and increase in program outputs<br>● CSR – partnership with private companies"</b>
-                                </h5>
                                 <br>
                                     <ul>
-                                    For Small Province: Partnership with one (1)
-                                    industry / private company and with continuing
-                                    tie-ups for the last two (2) years with the 
-                                    same industry/company; 
-                                    = <i>10</i>
+                                    For Large Region: Partnerships with two (2) industries 
+                                    / private companies and with continuing tie-ups for the 
+                                    last two (2) years with the same industries/companies; <br>
+
+                                    For Medium Region: Partnerships with one (1) industry / 
+                                    private company and with continuing tie-ups for the last 
+                                    two (2) years with the same industries/companies;<br>
+
+                                    For Small Region: Partnership with one (1) industry / 
+                                    private company and with continuing tie-ups for the last 
+                                    one (1) year with the same industry/company = <i>10</i><br>
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
@@ -803,20 +816,38 @@
 
                         <tr>
                             <td>
-                                <h5>
-                                    <b>B.2.D.5. Partnerships forged and implemented <br>● To be measured in terms of resources and increase in program outputs<br>● CSR – partnership with private companies"</b>
-                                </h5>
                                 <br>
                                     <ul>
-                                    For Small Province: Partnership with one
-                                    (1) industry / private company and with 
-                                    continuing tie-ups for less than two (2)
-                                    years with the same industries/companies; 
-                                    = <i>5</i>
+                                    For Large Region: Partnerships with two (2) industries / 
+                                    private companies and with continuing tie-ups for one (1) 
+                                    year with the same industries/companies;<br>
+
+                                    For Medium Region: Partnerships with one (1) industry / 
+                                    private company and with continuing tie-ups for one (1) 
+                                    year with the same industries/companies;<br>
+
+                                    For Small Region: Partnership with one new (1) industry / private company = <i>5</i> <br>
                                     </ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Copies of signed MOAs</ul>
+                            </td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                    <ul>
+                                    For Large Region: Partnerships with less than two (2) industries / private companies; <br>
+                                    For Medium Region: No Partnerships;<br>
+                                    For Small Region: No Partnership" = <i>0</i> <br>
+                                    </ul>
+                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td>
+
                             </td>
                             <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
@@ -829,9 +860,9 @@
                                     <b>B.2.D.6. Number of new EBT programs implemented in private TVIs (DTS, Apprenticeship, Learnership, In-company training, SIL, PAFSE)</b>
                                 </h5>
                                     <ul>
-                                        At least 7 new programs for Provinces that belong to the Large Category<br>
-                                        At least 5 new programs for Provinces that belong to the Medium Category<br>
-                                        At least 3 new programs for Provinces that belong to the Small Category = <i>10</i><br>
+                                    At least 30 new programs for Regions that belongs to the Large Category <br>
+                                    At least 20 new programs for Regions that belong to the Medium Category <br>
+                                    At least 10 new programs for Regions that belong to the Small Category<br> = <i>10</i><br>
                                     </ul>
                                     <ul>Below the minimum number of programs per category = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
@@ -846,13 +877,13 @@
                         <tr>
                             <td>
                                 <h5>
-                                    <b>B.2.E. Streamline and Intensify QMS in All Organizational Subsystems - SD 5</b><br><hr>
-                                    <b>B.2.E.1. Accreditation Awards (STAR Program, APACC)</b><br>
-                                    <b>B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)</b><br>
-                                    <b>B.2.E.1.1.a. Participation</b>
+                                    <b>B.2.E. Streamline and Intensify QMS in All Organizational Subsystems</b><br><hr>
+                                    B.2.E.1. Accreditation Awards (STAR Program, APACC)<br>
+                                    B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)</b><br>
+                                    B.2.E.1.1.a. Participation
                                 </h5>
-                                    <ul>The province nominated TVI/s for APACC accreditation = <i>6</i></ul>
-                                    <ul>The province did not nominate any TVI/s for APACC accreditation = <i>0</i></ul>
+                                    <ul>The Region nominated TVI/s for APACC accreditation = <i>6</i></ul>
+                                    <ul>The Region did not nominate any TVI/s for APACC accreditation = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Self Study Report submitted to APACC with letter and evidence</ul>
@@ -867,8 +898,8 @@
                                 <h5>
                                     <b>B.2.E.1.1.b. Awards received</b>
                                 </h5>
-                                    <ul>The nominated TVI/s of the province received APACC accreditation = <i>10</i></ul>
-                                    <ul>The nominated TVI/s of the province did not receive APACC accreditation = <i>0</i></ul>
+                                    <ul>The nominated TVI/s of the Region received APACC accreditation = <i>10</i></ul>
+                                    <ul>The nominated TVI/s of the Region did not receive APACC accreditation = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Certificate of Accreditation</ul>
@@ -884,8 +915,8 @@
                                     <b>B.2.E.1.2. System for TVET Accreditation and Recognition (STAR) Program</b>
                                     <b>B.2.E.1.2.a. Participation</b>
                                 </h5>
-                                    <ul>The Province participated in STAR Program = <i>6</i></ul>
-                                    <ul>The Province did not participate in STAR Program = <i>0</i></ul>
+                                    <ul>The Region participated in STAR Program = <i>6</i></ul>
+                                    <ul>The Region did not participate in STAR Program = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</ul>
@@ -900,10 +931,10 @@
                                 <h5>
                                     <b>B.2.E.1.2.b. Awards received</b>
                                 </h5>
-                                    <ul>The province received at least one THREE STAR Level Award = <i>20</i></ul>
-                                    <ul>The province received at least one TWO STAR Level Award = <i>10</i></ul>
-                                    <ul>The province received at least one ONE STAR Level Award = <i>5</i></ul>
-                                    <ul>The province did not receive a STAR Level Award = <i>0</i></ul>
+                                    <ul>The Region received at least one THREE STAR Level Award = <i>20</i></ul>
+                                    <ul>The Region received at least one TWO STAR Level Award = <i>10</i></ul>
+                                    <ul>The Region received at least one ONE STAR Level Award = <i>5</i></ul>
+                                    <ul>The Region did not receive a STAR Level Award = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received/ Letter of result signed by the Secretary</ul>
@@ -935,8 +966,8 @@
                                 <h5>
                                     <b>B.2.E.1.3.b. Awards received</b>
                                 </h5>
-                                    <ul>At least 80% of the TTIs of the province have been awarded with the TESDA Seal of Integrity = <i>8</i></ul>
-                                    <ul>Below 80% TTIs of the province have been awarded with TESDA the Seal of Integrity = <i>0</i></ul>
+                                    <ul>At least 80% of the TTIs of the Region have been awarded with the TESDA Seal of Integrity = <i>8</i></ul>
+                                    <ul>Below 80% TTIs of the Region have been awarded with TESDA the Seal of Integrity = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Awards received</ul>
@@ -965,9 +996,9 @@
                                 <h5>
                                     <b>B.2.E.2.1. Number of Active IQA Lead Auditor/s</b>
                                 </h5>
-                                    <ul>The province has at least four (4) active IQA Lead Auditors/Auditors = <i>8</i></ul>
-                                    <ul>The province has two (2) to three (3) active IQA Lead Auditors/ Auditors = <i>4</i></ul>
-                                    <ul>The province has less than two (2) active IQA Lead Auditors/ Auditors = <i>0</i></ul>
+                                    <ul>The Region has at least four (4) active IQA Lead Auditors/Auditors = <i>8</i></ul>
+                                    <ul>The Region has two (2) to three (3) active IQA Lead Auditors/ Auditors = <i>4</i></ul>
+                                    <ul>The Region has less than two (2) active IQA Lead Auditors/ Auditors = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Inventory of Lead Auditors/Auditors (TESDA QP 03-F09)</ul>
@@ -982,9 +1013,9 @@
                                 <h5>
                                     <b>B.2.E.2.2. Timely Submission of Reports/Documents (e.g. IQA reports, Action Catalog, NAP)</b>
                                 </h5>
-                                    <ul>The province submitted report/doc ahead of deadline = <i>8</i></ul>
-                                    <ul>The province submitted report/docs on set deadline = <i>4</i></ul>
-                                    <ul>The province submitted report/doc after set deadline = <i>0</i></ul>
+                                    <ul>The Region submitted report/doc ahead of deadline = <i>8</i></ul>
+                                    <ul>The Region submitted report/docs on set deadline = <i>4</i></ul>
+                                    <ul>The Region submitted report/doc after set deadline = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*RRRO - Monitoring of submission IQA Reports reflected on the QP-03-F12 Action Catalog - QP-03-F11</ul>
@@ -1015,13 +1046,31 @@
                         <tr>
                             <td>
                                 <h5>
-                                    <b>B.2.E.3.  Green Practices 100% implementation of programs/activities/projects related to Green Practices indicated in the submitted Institutional Development Plan (IDP)</b>
+                                    <b>B.2.E.3.  Green Practices </b>
+                                    <i>100% implementation of programs/activities/projects related to Green Practices indicated in the submitted Institutional Development Plan (IDP)</i>
                                 </h5>
-                                    <ul>>All TTIs in the Province have implemented their plans and projects related to Green Practices = <i>15</i></ul>
-                                    <ul>Not all TTIs in the Province have implemented their plans and projects related to Green Practices = <i>0</i></ul>
+                                    <ul>>All TTIs in the Region have implemented their plans and projects related to Green Practices = <i>15</i></ul>
+                                    <ul>Not all TTIs in the Region have implemented their plans and projects related to Green Practices = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
                             <td><input type="file" name="fileUpload" id="fileUpload"><br>
                                 <ul>*Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</ul>
+                            </td>
+                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <h5>
+                                    <b>B.2.E.4. Digitization<br>
+                                    
+                                </h5>
+                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul>*Report on the digitization initiative or 
+                                digital transformation of external services</ul>
                             </td>
                             <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
