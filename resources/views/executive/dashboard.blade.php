@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    @vite('resources/css/app.css')
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/TOEA Logo.png') }}" type="image/png">
     <style>
-        .d-flex {
+        .folder {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
         }
-        .content {
-            font-family: "Times New Roman", Times, serif;
-            flex-grow: 1;
-            padding-left: 20px;
-            margin-top: 100px; /* Adjust for the fixed header height */
-            background-color: hsl(0, 0%, 97%);
+
+        .folder i {
+            font-size: 48px;
+            margin-bottom: 10px;
         }
+
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -28,10 +34,13 @@
             /* padding: 20px; */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            position: fixed;
         }
+
         .sidebar.hidden {
             transform: translateX(-100%);
         }
+
         .toggle-btn {
             position: absolute;
             top: 200px;
@@ -40,93 +49,181 @@
             height: 15px;
             z-index: 1000;
         }
-        .logo-picture, .profile-picture {
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-        .logo-picture {
-            width: 100px;
-            height: 100px;
-        }
-        .logo-picture img, .profile-picture img {
+
+
+        .logo-picture img,
+        .profile-picture img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        /* .profile-picture {
-            width: 400px;
-            height: 120px;
-        } */
-        .user-name, .user-type {
+
+        .user-name,
+        .user-type {
             margin-bottom: 5px;
             text-align: center;
         }
-        .tabs {
-            width: 100%;
-        }
-        .tabs a {
-            display: block;
-            padding: 10px;
-            text-align: center;
-            color: black;
-            text-decoration: none;
-        }
-        .tabs a:hover {
-            background-color: #f0f0f0;
-        }
         body {
-            background-color: hsl(0, 0%, 97%);
+            height: 100vh;
+            background: linear-gradient(to bottom, white, #0033ff);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: calc(100% - 250px); /* Adjust for the sidebar width */
-            height: 100px; /* Adjust height as needed */
-            font-family: "Times New Roman", Times, serif;
-            color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            margin-left: 250px; /* To accommodate sidebar */
-        }
-        .box-content {
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            font-family: "Times New Roman", Times, serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+
+
     </style>
 </head>
+
 <body>
-    <div class="d-flex">
+    <div>
         @include('components.sidebar', [
             // 'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
-            'userType' => 'User Type'
+            'userType' => 'User Type',
         ])
-        <div class="header">
-            <h1>GALING PROBINSYA - Small Category - Submission List</h1>
+        <div class="ml-72 p-4">
+            <h1 class="font-bold text-2xl">BEST REGIONAL OFFICE</h1>
+
+            <div class="card mt-4">
+                <div class="container">
+                    <div class="row">
+                        <!-- 16 folders -->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <a href="#">
+                                <div class="folder hover:text-blue-600">
+                                    <i class="fas fa-folder "></i>
+                                    <p>Region I</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <a href="#">
+                                <div class="folder hover:text-blue-600">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region II</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region III</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region IV-A</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region IV-B</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region V</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region VI</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region VII</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region VIII</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region IX</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region X</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region XI</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region XII</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>Region XIII</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>NCR</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    <p>CAR</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+
     </div>
     <script>
         document.getElementById('toggleSidebar').addEventListener('click', function() {
@@ -134,4 +231,5 @@
         });
     </script>
 </body>
+
 </html>
