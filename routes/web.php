@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/executive-office-dashboard', function () {
@@ -21,6 +23,8 @@ Route::middleware(['auth'])->group(function () {
     });
     
 });
+
+Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');
 
 //LOGOUT
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middleware(RedirectIfAuthenticated::class);

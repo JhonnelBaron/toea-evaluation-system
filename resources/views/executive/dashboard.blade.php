@@ -90,7 +90,23 @@
                     <div class="row">
                         <!-- 16 folders -->
                         <div class="col-lg-3 col-md-4 col-sm-6">
-                            <a href="#">
+                            <div class="folder hover:text-blue-600">
+                                <a href="{{ route('region.files', ['uploaderId' => 4]) }}"> <!-- Assuming 4 is the ID for Region I -->
+                                    <i class="fas fa-folder"></i>
+                                    <p>NCR</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="folder hover:text-blue-600">
+                                <a href="{{ route('region.files', ['uploaderId' => 5]) }}"> <!-- Assuming 4 is the ID for Region I -->
+                                    <i class="fas fa-folder"></i>
+                                    <p>CAR</p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <a href="{{ route('region.files', ['uploaderId' => 6]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                 <div class="folder hover:text-blue-600">
                                     <i class="fas fa-folder "></i>
                                     <p>Region I</p>
@@ -98,7 +114,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
-                            <a href="#">
+                            <a href="{{ route('region.files', ['uploaderId' => 7]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                 <div class="folder hover:text-blue-600">
                                     <i class="fas fa-folder"></i>
                                     <p>Region II</p>
@@ -107,7 +123,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 8]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region III</p>
                             </div>
@@ -115,7 +131,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 9]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region IV-A</p>
                             </div>
@@ -123,7 +139,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 10]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region IV-B</p>
                             </div>
@@ -131,7 +147,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 11]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region V</p>
                             </div>
@@ -139,7 +155,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 12]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region VI</p>
                             </div>
@@ -147,7 +163,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 13]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region VII</p>
                             </div>
@@ -155,7 +171,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 14]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region VIII</p>
                             </div>
@@ -163,7 +179,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 15]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region IX</p>
                             </div>
@@ -171,7 +187,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 16]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region X</p>
                             </div>
@@ -179,7 +195,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 17]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region XI</p>
                             </div>
@@ -187,7 +203,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 18]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region XII</p>
                             </div>
@@ -195,25 +211,9 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="folder hover:text-blue-600">
-                                <a href="#">
+                                <a href="{{ route('region.files', ['uploaderId' => 19]) }}"> <!-- Assuming 4 is the ID for Region I -->
                                     <i class="fas fa-folder"></i>
                                     <p>Region XIII</p>
-                            </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="folder hover:text-blue-600">
-                                <a href="#">
-                                    <i class="fas fa-folder"></i>
-                                    <p>NCR</p>
-                            </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="folder hover:text-blue-600">
-                                <a href="#">
-                                    <i class="fas fa-folder"></i>
-                                    <p>CAR</p>
                             </div>
                             </a>
                         </div>
