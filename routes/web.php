@@ -158,9 +158,18 @@ Route::get('/bro-evaluation-e', function () {
     return view('/bro-evaluation-e');
 })->name('/bro-evaluation-e');
 
+//EXECUTIVE ECALUATIONS
 Route::get('/as-evaluation', function () {
     return view('executive.as-evaluate');
 })->name('/as-evaluation');
+
+Route::get('/ld-evaluation', function () {
+    return view('executive.ld-evaluate');
+})->name('/ld-evaluation');
+
+
+
+
 
 
 Route::get('/eo-evaluation', function () {
