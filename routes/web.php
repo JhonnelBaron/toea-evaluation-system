@@ -158,7 +158,14 @@ Route::get('/bro-evaluation-e', function () {
     return view('/bro-evaluation-e');
 })->name('/bro-evaluation-e');
 
+Route::get('/as-evaluation', function () {
+    return view('executive.as-evaluate');
+})->name('/as-evaluation');
 
+
+Route::get('/eo-evaluation', function () {
+    return view('executive.evaluate');
+})->name('eo.evaluate');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');

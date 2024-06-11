@@ -27,37 +27,6 @@ class LoginController extends Controller
         return response()->view('auth.login')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
-    // public function login(Request $request)
-    // {
-    //     $credentials = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => ['required'],
-    //     ]);
-
-    //     if (Auth::attempt($credentials)) {
-    //         $request->session()->regenerate();
-
-    //         // Get the authenticated user
-    //         $user = Auth::user();
-
-    //         if (Auth::attempt($credentials)) {
-    //             $request->session()->regenerate();
-    
-    //             // Redirect based on executive_office column value
-    //             if ($user->executive_office === 'ROMD'){
-    //                 return redirect()->intended('/regional-operations-management-division');
-    //             } elseif ($user->executive_office === 'RO') {
-    //                 return redirect()->intended('/regional-office');
-    //             } else {
-    //                 return redirect()->intended('/executive-office-dashboard');
-    //             }
-    //         }
-    //     throw ValidationException::withMessages([
-    //    'email' => 'The provided email does not match our records.',
-    //     'password' => 'The provided password is incorrect.',
-    //     ]);
-    //  }
-    // }
     public function login(Request $request)
     {
         // Validate the request data

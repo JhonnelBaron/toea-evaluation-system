@@ -77,7 +77,7 @@
 
 <body>
     <div>
-        @include('components.sidebar', [
+        @include('components.eo-sidebar', [
             // 'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type',
