@@ -22,6 +22,23 @@ class ExecutiveOfficeAccount extends Authenticatable
 
     public function files()
     {
-        return $this->belongsTo(RoFile::class, 'uploader_id');
+        return $this->hasMany(RoFile::class, 'uploader_id');
+    }
+
+    public function pillarA()
+    {
+        return $this->hasMany(BroAPillar::class, 'uploader_id');
+    }
+    public function pillarB()
+    {
+        return $this->hasMany(BroBPillar::class, 'uploader_id');
+    }
+    public function pillarC()
+    {
+        return $this->hasMany(BroCPillar::class, 'uploader_id');
+    }
+    public function pillarDe()
+    {
+        return $this->hasMany(BroDePillar::class, 'uploader_id');
     }
 }

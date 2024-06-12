@@ -18,10 +18,6 @@ Route::middleware(['auth'])->group(function () {
         return view('romd.dashboard');
     });
     
-    Route::get('/executive-office', function (){
-        return view('ro.dashboard');
-    });
-    
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');

@@ -54,7 +54,7 @@ class LoginController extends Controller
         if ($user->executive_office === 'ROMD') {
             return redirect()->intended('/regional-operations-management-division');
         } else {
-            return redirect()->intended('/executive-office');
+            return redirect()->intended('/executive-office-dashboard');
         } 
     // } elseif ($user->executive_office === 'RO') {
     //     return redirect()->intended('/regional-office');

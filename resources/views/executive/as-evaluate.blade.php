@@ -171,12 +171,15 @@
                         <tr>
 
                             <td><b>A. Good Governance Measures<hr></b></td>
-                            <td><b>40</b></td>
+                            <td><b>40</b><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
                         </tr>
                         
                         <tr>
                             <td>
-                                <h5>A.6. Compliance to PhilGEPS requirements<hr><br></h5>
+                                <h5>A.6. Compliance to PhilGEPS requirements<br></h5>
 
                                     <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
                                     <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
@@ -197,7 +200,7 @@
                         <tr>
                             <td>
                                 <h5>
-                                    A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)<hr>
+                                    A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)
                                 </h5>
                                     <ul>The Provincial Office is compliant to APCPI = <i>10</i></ul>
                                     <ul>The Provincial Office is not compliant to APCPI = <i>0</i></ul>
@@ -217,12 +220,13 @@
                         
                         <tr>
                             <td> <b>C. Administrative and Support Services <hr></b><i></i>
+                                
                     
                             </td>
-                            <td style="vertical-align: top"><b>69</b></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td style="vertical-align: top"><b>69</b><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
                         </tr>
 
                         <tr>
