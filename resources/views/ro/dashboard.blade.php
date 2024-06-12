@@ -145,27 +145,26 @@
                 <div class="row">
                     @php
                         use Illuminate\Support\Facades\Auth;
-                        $regions = [
-                            'Region I', 'Region II', 'Region III', 'Region IV-A', 'Region IV-B', 'Region V', 'Region VI',
-                            'Region VII', 'Region VIII', 'Region IX', 'Region X', 'Region XI', 'Region XII', 'Region XIII', 
-                            'NCR', 'CAR'
+                        $offices = [
+                            'AS', 'LD', 'CO', 'FMS', 'NITESD', 'PIAD', 'PO',
+                            'PLO', 'ROMO'
                         ];
-                        $currentUserName = Auth::user()->name; // Replace this with the actual current user's name
+                        $currentUserName = Auth::user()->executive_office; // Replace this with the actual current user's name
                     @endphp
 
-                    @foreach ($regions as $region)
+                    @foreach ($offices as $office)
                         <div class="col-lg-3 col-md-4 col-sm-6">
-                            @if ($currentUserName === $region)
+                            @if ($currentUserName === $office)
                                 <a href="{{ route('upload.file') }}">
                                     <div class="folder">
                                         <i class="fas fa-folder"></i>
-                                        <p>{{ $region }}</p>
+                                        <p>{{ $office }}</p>
                                     </div>
                                 </a>
                             @else
                                 <div class="folder">
                                     <i class="fas fa-folder"></i>
-                                    <p>{{ $region }}</p>
+                                    <p>{{ $office }}</p>
                                 </div>
                             @endif
                         </div>

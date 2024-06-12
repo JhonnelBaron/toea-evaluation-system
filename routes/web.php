@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/executive-office-dashboard', function () {
-        return view('executive.dashboard');
+        return view('executive.eodashboard');
     });
 
     Route::get('/regional-operations-management-division', function () {
         return view('romd.dashboard');
     });
-
-    Route::get('/regional-office', function (){
+    
+    Route::get('/executive-office', function (){
         return view('ro.dashboard');
     });
     

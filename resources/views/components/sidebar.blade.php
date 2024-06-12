@@ -49,7 +49,9 @@
 
         <!-- Dropdown for GALING PROBINSYA -->
             <div class="dropdown">
-                <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA</b><i class="fa fa-caret-down"></i></d>
+                <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA<            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                  </svg>/b><i class="fa fa-caret-down"></i></d>
                 <div class="dropdown-container">
                     <a href="{{route('gp-small')}}" class="sub-tab">Small Province</a>
                     <a href="{{route('gp-medium')}}" class="sub-tab">Medium Province</a>

@@ -50,7 +50,7 @@
       <!-- Dropdown for BEST REGIONAL OFFICE -->
        <div>
             <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
-            <a href="{{route('eo.evaluate')}}" class="dropdown-btn" ><b>EVALUATE</b></a>
+            <a href="{{route('eo.evaluate')}}" class="dropdown-btn"><b>EVALUATE</b></a>
     </div>
     <div style="margin-top: 370px;">
         <form method="POST" action="{{ route('logout') }}">

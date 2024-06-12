@@ -53,11 +53,15 @@ class LoginController extends Controller
         // Redirect based on executive_office column value
         if ($user->executive_office === 'ROMD') {
             return redirect()->intended('/regional-operations-management-division');
-        } elseif ($user->executive_office === 'RO') {
-            return redirect()->intended('/regional-office');
         } else {
-            return redirect()->intended('/executive-office-dashboard');
-        }
+            return redirect()->intended('/executive-office');
+        } 
+    // } elseif ($user->executive_office === 'RO') {
+    //     return redirect()->intended('/regional-office');
+    // } 
+        // else {
+        //     return redirect()->intended('/executive-office-dashboard');
+        // }
     }
 
     public function logout(Request $request)
