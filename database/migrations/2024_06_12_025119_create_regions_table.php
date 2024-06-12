@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->string('region_name')->nullable();
+            $table->enum('region_category', ['Small', 'Medium', 'Large'])->nullable();
             $table->timestamps();
         });
     }

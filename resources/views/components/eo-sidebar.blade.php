@@ -50,9 +50,15 @@
        <div class="font-sans">
             <br>
             <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
+<<<<<<< HEAD
             <a href="{{route('eo.evaluate')}}" class="dropdown-btn"><b>EVALUATE</b></a>
         </div>
     <div style="margin-top: 220px;">
+=======
+            <a href="{{route('evaluation-list')}}" class="dropdown-btn"><b>EVALUATE</b></a>
+    </div>
+    <div style="margin-top: 370px;">
+>>>>>>> 58af4fe9b9490767f8eb10810aec6eac4aac754c
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" data-bs-toggle="modal" data-bs-target="#uploadModal">

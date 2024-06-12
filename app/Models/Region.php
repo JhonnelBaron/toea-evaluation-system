@@ -10,7 +10,8 @@ class Region extends Model
     use HasFactory;
 
     protected $fillable = [
-        'region_name'
+        'region_name',
+        'region_category',
     ];
 
     public function pillarA()
