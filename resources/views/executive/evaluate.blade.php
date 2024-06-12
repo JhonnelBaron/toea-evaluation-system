@@ -115,71 +115,81 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="{{ url('/as-evaluation') }}">NCR</a></td>
-                                <td><button class="evaluate-btn" onclick="location.href='{{ url('/as-evaluation') }}'">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 5]) }}">CAR</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 6]) }}">Region I</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 7]) }}">Region II</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 8]) }}">Region III</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 9]) }}">Region IV-A</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 10]) }}">Region IV-B</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 11]) }}">Region V</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 12]) }}">Region VI</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 13]) }}">Region VII</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 14]) }}">Region VIII</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 15]) }}">Region IX</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 16]) }}">Region X</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 17]) }}">Region XI</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 18]) }}">Region XII</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="{{ route('region.files', ['uploaderId' => 19]) }}">Region XIII</a></td>
-                                <td><button class="evaluate-btn">Evaluate</button></td>
-                            </tr>
+                            @foreach ($regions as $region)
+                                <tr>
+                                    <td>{{ $region->region_name }}</td>
+                                    <td>
+                                        <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
+                        {{-- <tbody>
+                            <tr>
+                                <td>NCR</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>CAR</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region I</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region II</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region III</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region IV-A</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region IV-B</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>]Region V</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region VI</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region VII</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region VIII</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region IX</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region X</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region XI</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region XII</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>Region XIII</td>
+                                <td><button class="evaluate-btn" onclick="location.href='{{ route('evaluation') }}'">Evaluate</button></td>
+                            </tr>
+                        </tbody> --}}
                     </table>
                 </div>
             </div>

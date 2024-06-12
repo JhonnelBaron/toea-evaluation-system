@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
@@ -157,9 +158,9 @@ Route::get('/bro-evaluation-e', function () {
 
 
 //EXECUTIVE ECALUATIONS
-Route::get('/as-evaluation', function () {
-    return view('executive.as-evaluate');
-})->name('/as-evaluation');
+// Route::get('/as-evaluation', function () {
+//     return view('executive.as-evaluate');
+// })->name('/as-evaluation');
 
 Route::get('/ld-evaluation', function () {
     return view('executive.ld-evaluate');
@@ -193,9 +194,12 @@ Route::get('/plo-evaluation', function () {
 
 
 
-Route::get('/eo-evaluation', function () {
-    return view('executive.evaluate');
-})->name('eo.evaluate');
+// Route::get('/eo-evaluation', function () {
+//     return view('executive.evaluate');
+// })->name('eo.evaluate');
+
+Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
+Route::get('/secretariat-evaluation', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');
