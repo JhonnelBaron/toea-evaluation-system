@@ -154,6 +154,8 @@ Route::get('/bro-evaluation-e', function () {
     return view('/bro-evaluation-e');
 })->name('/bro-evaluation-e');
 
+
+
 //EXECUTIVE ECALUATIONS
 Route::get('/as-evaluation', function () {
     return view('executive.as-evaluate');
@@ -163,6 +165,29 @@ Route::get('/ld-evaluation', function () {
     return view('executive.ld-evaluate');
 })->name('/ld-evaluation');
 
+Route::get('/co-evaluation', function () {
+    return view('executive.co-evaluate');
+})->name('/co-evaluation');
+
+Route::get('/fms-evaluation', function () {
+    return view('executive.fms-evaluate');
+})->name('/fms-evaluation');
+
+Route::get('/nitesd-evaluation', function () {
+    return view('executive.nitesd-evaluate');
+})->name('/nitesd-evaluation');
+
+Route::get('/piad-evaluation', function () {
+    return view('executive.piad-evaluate');
+})->name('/piad-evaluation');
+
+Route::get('/po-evaluation', function () {
+    return view('executive.po-evaluate');
+})->name('/po-evaluation');
+
+Route::get('/plo-evaluation', function () {
+    return view('executive.plo-evaluate');
+})->name('/plo-evaluation');
 
 
 

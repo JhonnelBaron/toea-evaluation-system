@@ -150,7 +150,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Executive Evaluation</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - NITESD</h1>
         </div>
         <div class="content">
             <div class="box-content">
@@ -171,22 +171,28 @@
                         <tr>
 
                             <td><b>A. Good Governance Measures<hr></b></td>
-                            <td><b>70</b></td>
+                            <td><b>40</b><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
+                            <td><br><hr></td>
+
                         </tr>
+
                         
                         <tr>
                             <td>
-                                <b>A.1. - Compliance to Zero Measures</b><br>
-                                A.1 - Compliance to Zero Corruption Policy
-                            <ul>The Region has no personnel with pending administrative case = <i>40</i></ul>
-                            <ul>The Region has at least one pending administrative case  = <i> 0</i></ul>
+                            A.3. Resolutions of complaints emanating from the Contact Center
+                                <ul>No complaints received  = <i>10</i></ul>
+                                <ul>95% of all complaints emanating from the Contact Center have been resolved and closed within the year = <i>10</i></ul>
+                                <ul>Less than 95% of all complaints against the ROs, POs and TTIs emanating from the Contact Center have been resolve and closed within the year = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>40</i></td>
-                            <td><i><ul>*Certification of no pending case</ul></i></td>
+                            <td><i>10</i></td>
+                            <td><i><ul>*TESDA OP AS 03 F04 Monitoring of Complaints Received Certification of No Complaints Received - signed by the RD
+                            </i></ul></td>
                             <td>
                                 <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
-                                    <option>40</option>
+                                    <option>10-</option>
                                 </select>
                             </td>
                             <td>
@@ -195,33 +201,24 @@
                         </tr>
 
                         <tr>
-                            
-                            <td><h5><b>A.2. Compliance to the TESDA Code of Conduct and Ethical Standards</b></h5><hr>
-                                <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
-                                <ul>
-                                    <li style="text-indent: 20px">• Fidelity to Duty</li>
-                                    <li style="text-indent: 20px">• Conflict of Interest</li>
-                                    <li style="text-indent: 20px">• Solicitation and Acceptance of Gifts</li>
-                                    <li style="text-indent: 20px">• Outside Employment</li>
-                                    <li style="text-indent: 20px">• Cronyism</li>
-                                    <li style="text-indent: 20px">• Confidentiality</li>
-                                    <li style="text-indent: 20px">• Post-employment</li>
-                                    <li style="text-indent: 20px">• Procurement of Goods, Consulting Services, and Infrastructure Projects</li>
-                                    <li style="text-indent: 20px">• Encouraging Reporting of Malpractices, Corruption, and other Protected Disclosures Valid</li>
-                                    <li style="text-indent: 20px">• Complaints from Presidential Action Center (888) and CSC-Contact Center ng Bayan Adverse National ISP Findings</li>
-                                        </ul>
-                                        <ul>There are no valid complaints, findings against any Official and Employee =<i>30</i></ul>
-                                        <ul>There are 1-3 complaint/s, findings against any Official and Employee = <i>20</i></ul>
-                                        <ul>There are 4-6 complaints, findings against any Official and Employee = <i>10</i></ul>
-                                        <ul>There are 7-9 complaints, findings against any Official and Employee = <i>5</i></ul>
-                                        <ul>There are 10 or more complaints, findings against any Official and Employee = <i>0</i></ul>
-                            </td>
-                            
-                            <td style="vertical-align: top"><b>30</b></td>
-                            <td><i><ul>*Certification from the RACC</ul></i></td>
                             <td>
-                                <select class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110 style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                            A.4. Customer Satisfaction Results<br> Customer Net Satisfaction Rating with minimum of 95%
+                                <ul>Customer Net Satisfaction Rating is at 99% and above = <i></i></ul>
+                                <ul>Customer Net Satisfaction Rating is at 98% = <i></i></ul>
+                                <ul>Customer Net Satisfaction Rating is at 97% = <i></i></ul>
+                                <ul>Customer Net Satisfaction Rating is at 96% = <i></i></ul>
+                                <ul>Customer Net Satisfaction Rating is at 95% = <i></i></ul>
+                                <ul>Customer Net Satisfaction Rating is below 95% = <i></i></ul>
+                            </td>
+                            <td><i>30</i></td>
+                            <td><i><ul>*Customer Feedback Form Results <br>TESDA OP AS 03 F02</i></ul></td>
+                            <td>
+                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
+                                    <option>3</option>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>20</option>
                                     <option>30</option>
                                 </select>
                             </td>
@@ -229,8 +226,73 @@
                                 <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
+
+                        <tr>
+
+                            <td>D. Reporting Efficiency<hr></td>
+                            <td><b><br>60</b><hr></td>
+                            <td><br><br><hr></td>
+                            <td><br><br><hr></td>
+                            <td><br><br><hr></td>
+
                         </tr>
+
+                        <tr>
+                            <td>
+                            D.1. Timeliness, Consistency and Accuracy
+                                <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
+                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
+                                <ul>Reports are not accurate and are not submitted on time = <i></i></ul>
+                            </td>
+                            <td><i>5</i></td>
+                            <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
+                            <td>
+                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option>0</option>
+                                    <option>30</option>
+                                    <option>60</option>
+                                </select>
+                            </td>
+                            <td>
+                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td>E. Social Marketing and Advocacy<hr></td>
+                            <td><b><br>50</b><hr></td>
+                            <td><br><br><hr></td>
+                            <td><br><br><hr></td>
+                            <td><br><br><hr></td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                            E.1. Communication Program (OPCR)
+                                <ul>A Communication Plan was prepared and fully implemented. = <i>50</i></ul>
+                                <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
+                                <ul>No Communication Plan was prepared and not all communications activities were implemented = <i></i></ul>
+                            </td>
+                            <td><i>50</i></td>
+                            <td><i><ul>*Communication plan/OPCR</i></ul></td>
+                            <td>
+                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option>0</option>
+                                    <option>30</option>
+                                    <option>50</option>
+                                </select>
+                            </td>
+                            <td>
+                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                            </td>
+                        </tr>
+
                         
+
+
+                    </script>    
                     </tbody>
                 </table>
             </div>
