@@ -32,7 +32,7 @@
                         <div class="w-64">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email"
-                                class="p-1 border-2 border-black rounded-md w-full" required>
+                                class="p-1 border-2 border-black rounded-md w-full"  required>
                                 @error('email')
                                 <div>{{ $message }}</div>
                             @enderror
