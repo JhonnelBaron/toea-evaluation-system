@@ -45,19 +45,17 @@
         }
     @endphp
     </div>
+    <div><hr></div>
 
       <!-- Dropdown for BEST REGIONAL OFFICE -->
-       <div class="font-sans">
-            <br>
+       <div>
             <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
             <a href="{{route('eo.evaluate')}}" class="dropdown-btn"><b>EVALUATE</b></a>
-        </div>
-    <div style="margin-top: 220px;">
+    </div>
+    <div style="margin-top: 250px;">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" data-bs-toggle="modal" data-bs-target="#uploadModal">
-                        LOGOUT
-                    </button>
+            <button type="submit">Logout</button>
         </form>
     </div>
 </div>
@@ -72,7 +70,7 @@
         height: 100vh; /* Set sidebar height to 100% of viewport height */
     }
     .sidebar .tabs {
-        width: 100%;
+        width: flex;
        
     }
 
@@ -136,7 +134,6 @@
 
     /* Rest of your existing styles */
 </style>
-
 
 
 <!-- Add JavaScript to toggle the dropdowns -->

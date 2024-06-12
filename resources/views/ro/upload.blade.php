@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/TOEA Logo.png') }}" type="image/png">
-    <style>
+
+    @vite('resources/css/app.css')
+    
+    <!-- <style>
         .file-icon {
             width: 24px;
             height: 24px;
@@ -28,7 +31,9 @@
         .table th, .table td {
             vertical-align: middle;
         }
-    </style>
+
+        
+    </style> -->
         <script>
             function openPdf(pdfUrl) {
                 console.log(pdfUrl);
@@ -40,18 +45,15 @@
 </head>
 <body>
     <div class="d-flex">
-        @include('components.ro-sidebar', [
+        @include('components.upload-sidebar', [
             // 'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type'
-        ])
+        ]);
         <div class="content">
-            <div class="header">
-                <h1>Upload your Files Here</h1>
-            </div>
-            <div class="container">
+            <div class="ml-8">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="text-left">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
                             Upload File
                         </button>
@@ -59,7 +61,7 @@
                 </div>
                 <div class="row file-list">
                     <div class="col-lg-12">
-                        <table class="table table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">File Name</th>

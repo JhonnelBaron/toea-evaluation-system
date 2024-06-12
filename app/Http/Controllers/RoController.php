@@ -14,7 +14,7 @@ class RoController extends Controller
                $files = RoFile::where('uploader_id', Auth::id())->get();
 
                // Pass the files data to the view
-               return view('ro.upload', ['files' => $files]);
+               return view('ro.test-upload', ['files' => $files]);
     }
     
 }
