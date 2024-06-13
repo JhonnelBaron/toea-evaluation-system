@@ -190,43 +190,58 @@
                         
                         <tr>
                             <td>
-                                A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office
-                                <ul>0 unimplemented audit observation memorandum by the region = <i>15</i></ul>
-                                <ul>2-5 unimplemented audit observation memorandum by the region = <i>5</i></ul>
-                                <ul>6-10 unimplemented audit observation memorandum by the region = <i>0</i></ul>
-                                <ul>**Plus (1) point for RO with no AOM received = <i>1</i></ul>
+                                <h5>A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office</h5>
+                                <ul>
+                                    <li>0 unimplemented audit observation memorandum by the region = <i>15</i></li>
+                                    <li>2-5 unimplemented audit observation memorandum by the region = <i>5</i></li>
+                                    <li>6-10 unimplemented audit observation memorandum by the region = <i>0</i></li>
+                                    <li>**Plus (1) point for RO with no AOM received = <i>1</i></li>
+                                </ul>
                             </td>
                             <td><i>15</i></td>
-                            <td><i><ul>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI) CY 2022</i></ul></td>
                             <td>
-                                <select name="a5a" id="a5a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>5</option>
-                                    <option>15</option>
+                                <ul><i>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI) CY 2022</i></ul>
+                            </td>
+                            <td>
+                                <select name="a5a" id="a5a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5a == 0) selected @endif>0</option>
+                                    <option value="1" @if($previousEvaluation && $previousEvaluation->a5a == 1) selected @endif>1</option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == 5) selected @endif>5</option>
+                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5a == 15) selected @endif>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="a5a_remarks" id="a5a_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a5a_remarks" id="a5a_remarks" class="comments" placeholder="Comment" 
+                                @if($previousEvaluation && $previousEvaluation->a5a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5a_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
+
                         <tr>
                             <td>
-                                A.5.B. Notice of Suspension and Disallowance
-                                <ul>There no suspensions and disallowances = <i>15</i></ul>
-                                <ul>There are suspensions and disallowances = <i>0</i></ul>
+                                <h5>A.5.B. Notice of Suspension and Disallowance</h5>
+                                <ul>
+                                    <li>There are no suspensions and disallowances = <i>15</i></li>
+                                    <li>There are suspensions and disallowances = <i>0</i></li>
+                                </ul>
                             </td>
                             <td><i>15</i></td>
-                            <td><i><ul>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</i></ul></td>
                             <td>
-                                <select name="a5b" id="a5b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
+                                <ul><i>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</i></ul>
+                            </td>
+                            <td>
+                                <select name="a5b" id="a5b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" 
+                                @if($previousEvaluation && $previousEvaluation->a5b !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5b == 0) selected @endif>0</option>
+                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5b == 15) selected @endif>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="a5b_remarks" id="a5b_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a5b_remarks" id="a5b_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->a5b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5b_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -241,42 +256,60 @@
                         </tr>
 
                         <tr>
+                        <tr>
                             <td>
-                                A.7.A. Liquidation of Foreign Travel Expenses
-                                <ul>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></ul>
-                                <ul>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></ul>
+                                <h5>A.7.A. Liquidation of Foreign Travel Expenses</h5>
+                                <ul>
+                                    <li>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></li>
+                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></li>
+                                </ul>
                             </td>
                             <td><i>10</i></td>
-                            <td><i><ul>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</i></ul></td>
                             <td>
-                                <select name="a7a" id="a7a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10</option>
+                                <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
+                            </td>
+                            <td>
+                                <select name="a7a" id="a7a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" 
+                                @if($previousEvaluation && $previousEvaluation->a7a !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7a == 0) selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7a == 10) selected @endif>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="a7a_remarks" id="a7a_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a7a_remarks" id="a7a_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->a7a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a7a_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
+
+
                         <tr>
                             <td>
-                                A.7.B. Liquidation of Local Travel Expenses
-                                <ul>All Local Travel Expenses liquidated within 30 days = <i>10</i></ul>
-                                <ul>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></ul>
+                                <h5>A.7.B. Liquidation of Local Travel Expenses</h5>
+                                <ul>
+                                    <li>All Local Travel Expenses liquidated within 30 days = <i>10</i></li>
+                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></li>
+                                </ul>
                             </td>
                             <td><i>10</i></td>
-                            <td><i><ul>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</i></ul></td>
                             <td>
-                                <select name="a7b" id="a7b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10</option>
+                                <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
+                            </td>
+                            <td>
+                                <select name="a7b" id="a7b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->a7b !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7b == 0) selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7b == 10) selected @endif>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="a7b_remarks" id="a7b_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a7b_remarks" id="a7b_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->a7b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a7b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td>

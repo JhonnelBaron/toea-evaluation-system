@@ -137,16 +137,14 @@
 </head>
 <body>
     <div class="d-flex">
-        @include('components.sidebar', [
+        @include('components.eo-sidebar', [
             'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
-        <div class="ml-60">
-
-        </div>
+        <div class="ml-60"></div>
         <div class="header">
-            <h1 class="text-xl font-bold text-white">Best Regional Office - Submission List</h1>
+             <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Submission List</h1>
         </div>
         <div class="content">
             <div class="box-content">

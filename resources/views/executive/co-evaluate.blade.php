@@ -188,188 +188,201 @@
                         </tr>
 
                         <tr>
-                            <td>
-                                <h5>
-                                B.1.C. 100% of registered TVET programs audited
-                                </h5>
-                                <ul>The accomplishment rate based on set target is at 100% = <i>15</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <td>
+                                <h5>B.1.C. 100% of registered TVET programs audited</h5>
+                                    <ul>The accomplishment rate based on set target is at 100% = <i>15</i></ul>
+                                    <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                </td>
                                 <td style="vertical-align: top"><i><br>15</i></td>
-                            <td>
-                                <ul><i>*Summary/Report on the duly accomplished TESDA-OP-CO-02- F06-RO Form<br> Duly signed compliance audit reports <br>Summary of audited programs Closure reports Monthly monitoring of OPCRs<br>c/o of procurement unit</ul>
-                            </td>
-                            <td>
-                                <select name="b1c" id="b1c" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
-                                </select>
-                            </td>
-                            <td><textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
+                                <td>
+                                    <ul><i>*Summary/Report on the duly accomplished TESDA-OP-CO-02- F06-RO Form<br> Duly signed compliance audit reports <br>Summary of audited programs Closure reports Monthly monitoring of OPCRs<br>c/o of procurement unit</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b1c" id="b1c" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b1c !== null) disabled @endif>
+                                        <option value="" disabled selected> </option>
+                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 0) selected @endif>0</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 15) selected @endif>15</option>
+                                    </select>
+                                </td>
+                                <td>
+                                <textarea name="b1c_remarks" id="b1c_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b1c !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1c_remarks : '' }}
+                                </textarea>
+                                </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <h5>
-                                B.1.D. 90% of skilled workers issued with certification within 7 days of their application
-                                </h5>
+                                <h5>B.1.D. 90% of skilled workers issued with certification within 7 days of their application</h5>
                                 <ul>The accomplishment rate based on set target is at 100% and above</ul>
                                 <ul>The accomplishment rate based on set target is below 100%</ul>
+                            </td>
+                            <td style="vertical-align: top"><i>15</i></td>
+                            <td>
+                                <ul><i>*Tracking sheets (F41) - RO/PO c/o CO</i></ul>
+                            </td>
+                            <td>
+                                <select name="b1d" id="b1d" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                        @if($previousEvaluation && $previousEvaluation->b1d !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->b1d == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b1d == 15) selected @endif>15</option>
+                                </select>
+                            </td>
+                            <td>
+                            <textarea name="b1d_remarks" id="b1d_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b1d !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1d_remarks : '' }}</textarea>    
+                            </td>                       
+                        </tr>
+
+
+                            <tr>
+                                <td>
+                                    <h5>B.1.E. 85% compliance of TVET programs to TESDA, industry, and industry standards and requirements</h5>
+                                    <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
+                                    <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                </td>
                                 <td style="vertical-align: top"><i>15</i></td>
-                            <td>
-                                <ul><i>*Tracking sheets (F41) - RO/PO c/o CO</ul>
-                            </td>
-                            <td>
-                               <select name="b1d" id="b1d" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
-                                </select>
-                            </td>
-                            <td><textarea name="b1d_remarks" id="b1d_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
+                                <td>
+                                    <ul><i>*Summary/Report on the duly accomplished <br>TESDA-OP-CO-02-F06-RO Form</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b1e" id="b1e" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                            @if($previousEvaluation && $previousEvaluation->b1e !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 15) selected @endif>15</option>
+                                    </select>
+                                </td>
+                                <td></td>
+                                <textarea name="b1e_remarks" id="b1e_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b1e !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1e_remarks : '' }}</textarea></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <h5>B.1.F. 70% of TVET graduates that undergo assessment for certification</h5>
+                                    <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
+                                    <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                </td>
+                                <td style="vertical-align: top"><i>15</i></td>
+                                <td>
+                                    <ul><i>*List of mandatory assessment from T2MIS</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b1f" id="b1f" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                            @if($previousEvaluation && $previousEvaluation->b1f !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 15) selected @endif>15</option>
+                                    </select>
+                                </td>
+                                <td><textarea name="b1f_remarks" id="b1f_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b1f !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1f_remarks : '' }}</textarea></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <b>B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></b><br>
+                                    
+                                <td style="vertical-align: top"><i><b><br>157<hr></b></i></td>
+                                <td><br><hr></td>
+                                <td><br><hr></td>
+                                <td><hr></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br>
+                                    
+                                <td style="vertical-align: top"><i>25</i></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    B.2.A.3. Participation and Recognition from Skills Competition<br>
+                                    
+                                <td style="vertical-align: top"><i>25</i></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <h5>B.2.A.3.1. Participation</h5>
+                                    <ul>The Region participated in ASC and/or World Skills Competition = <i>6</i></ul>
+                                    <ul>The Region participated in PNSC = <i>3</i></ul>
+                                    <ul>The Region did not participate in any of the competition = <i>0</i></ul>
+                                </td>
+                                <td style="vertical-align: top"><i>6</i></td>
+                                <td>
+                                    <ul><i>*Terminal Reports/After Activity reports <br>Official list of winners</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b2a31" id="b2a31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                            @if($previousEvaluation && $previousEvaluation->b2a31 !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 3) selected @endif>3</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 6) selected @endif>6</option>
+                                    </select>
+                                </td>
+                                <td><textarea name="b2a31_remarks" id="b2a31_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a31_remarks : '' }}</textarea>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <h5>B.2.A.3.2. Awards received at the national level</h5>
+                                    <ul>The Region received award/recognition at the national level = <i>7</i></ul>
+                                    <ul>The Region did not receive award/recognition = <i>0</i></ul>
+                                </td>
+                                <td style="vertical-align: top"><i>7</i></td>
+                                <td>
+                                    <ul><i>*Awards received (plaque or medal)</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b2a32" id="b2a32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                            @if($previousEvaluation && $previousEvaluation->b2a32 !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 7) selected @endif>7</option>
+                                    </select>
+                                </td>
+                                <td><textarea name="b2a32_remarks" id="b2a32_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2a32 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a32_remarks : '' }}</textarea></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <h5>B.2.A.3.3. Awards received at the international level</h5>
+                                    <ul>The Region received award/recognition at the international level = <i>12</i></ul>
+                                    <ul>The Region did not receive award/recognition = <i>0</i></ul>
+                                </td>
+                                <td style="vertical-align: top"><i>12</i></td>
+                                <td>
+                                    <ul><i>*Awards received (plaque or medal)</i></ul>
+                                </td>
+                                <td>
+                                    <select name="b2a33" id="b2a33" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b2a33 !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 12) selected @endif>12</option>
+                                    </select>
+                                </td>
+                                <td><textarea name="b2a33_remarks" id="b2a33_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a33 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a33_remarks : '' }}</textarea>
+                                </td>
+                            </tr>
+
 
                         <tr>
-                            <td>
-                                <h5>
-                                B.1.E. 85% compliance of TVET programs to TESDA, industry, and industry standards and requirements
-                                </h5>
-                                <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
-                            <td style="vertical-align: top"><i>15</i></td>
-                            <td>
-                                <ul><i>*Summary/Report on the duly accomplished <br>TESDA-OP-CO-02-F06-RO Form</ul>
-                            </td>
-                            <td>
-                               <select name="b1e" id="b1e" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
-                                </select>
-                            </td>
-                            <td><textarea name="b1e_remarks" id="b1e_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <h5>
-                                B.1.F. 70% of TVET graduates that undergo assessment for certification                               
-                                <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>15</i></td>
-                            <td>
-                                <ul><i>*List of mandatory assessment from T2MIS</ul>
-                            </td>
-                            
-                            <td>
-                                <select name="b1f" id="b1f" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
-                                </select>
-                            </td>
-                            
-                            <td><textarea name="b1f_remarks" id="b1f_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <b>B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></b><br>
-                                
-                            <td style="vertical-align: top"><i><b><br>157<hr></b></i></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><hr></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br>
-                                
-                            <td style="vertical-align: top"><i>25</i></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                B.2.A.3. Participation and Recognition from Skills Competition<br>
-                                
-                            <td style="vertical-align: top"><i>25</i></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <h5>
-                                B.2.A.3.1. Participation
-                                <ul>The Region participated in ASC and/or World Skills Competition = <i>6</i></ul>
-                                <ul>The Region participated in PNSC = <i>3</i></ul>
-                                <ul>The Region did not participate in any of the competition = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>6</i></td>
-                            <td>
-                                <ul><i>*Terminal Reports/After Activity reports <br>Official list of winners</ul>
-                            </td>
-                            
-                            <td>
-                                <select name="b2a31" id="b2a31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>3</option>
-                                    <option>6</option>
-                                </select>
-                            </td>
-                            
-                            <td><textarea name="b2a31_remarks" id="b2a31_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <h5>
-                                B.2.A.3.2. Awards received at the national level                               
-                                <ul>The Region received award/recognition at the national level = <i>7</i></ul>
-                                <ul>The Region did not receive award/recognition = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>7</i></td>
-                            <td>
-                                <ul><i>*Awards received (plaque or medal)</ul>
-                            </td>
-                            
-                            <td>
-                                <select name="b2a32" id="b2a32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>7</option>
-                                </select>
-                            </td>
-                            
-                            <td><textarea name="b2a32_remarks" id="b2a32_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <h5>
-                                B.2.A.3.3. Awards received at the international level                                
-                                <ul>The Region received award/recognition at the international level = <i>12</i></ul>
-                                <ul>The Region did not receive award/recognition = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>12</i></td>
-                            <td>
-                                <ul><i>*Awards received (plaque or medal)</ul>
-                            </td>
-                            
-                            <td>
-                                <select name="b2a33" id="b2a33" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>12</option>
-                                </select>
-                            </td>
-                            
-                            <td><textarea name="b2a33_remarks" id="b2a33_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><b>
+                            <td><b><br>
                             B.2.C. Upscale Technical Education and Skills Development and Certification to Higher PQF Levels - SD3
                             <hr></b></td>
                             <td style="vertical-align: top"><i><br><br>78<hr></i></td>
@@ -380,128 +393,135 @@
 
                         <tr>
                             <td>
-                                <h5>
-                                B.2.C.1. Number of Programs Registered                        
+                                <h5>B.2.C.1. Number of Programs Registered</h5>
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>10</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>10</i></td>
                             <td>
-                                <ul><i>*MIS 02-04</ul>
+                                <ul><i>*MIS 02-04</i></ul>
                             </td>
-                            
                             <td>
-                                <select name="b2c1" id="b2c1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10</option>
+                                <select name="b2c1" id="b2c1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c1 !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 10) selected @endif>10</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2c1_remarks" id="b2c1_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td><textarea name="b2c1_remarks" id="b2c1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2c1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c1_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
+
                         <tr>
                             <td>
-                                <h5>
-                                B.2.C.2. Process Cycle Time for CTPR Issuance (3 days)                       
+                                <h5>B.2.C.2. Process Cycle Time for CTPR Issuance (3 days)</h5>
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>15</i></td>
                             <td>
-                                <ul><i>*Monthly Report on Program Registration</ul>
+                                <ul><i>*Monthly Report on Program Registration</i></ul>
                             </td>
-                            
                             <td>
-                                <select name="b2c2" id="b2c2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
+                                <select name="b2c2" id="b2c2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c2 !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 15) selected @endif>15</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2c2_remarks" id="b2c2_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td><textarea name="b2c2_remarks" id="b2c2_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2c2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c2_remarks : '' }}</textarea>
                             </td>
                         </tr>
-                        
+
+                                                    
                         <tr>
                             <td>
-                                <h5>
-                                B.2.C.3. Number of skilled workers assessed for certification                                
+                                <h5>B.2.C.3. Number of skilled workers assessed for certification</h5>
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>15</i></td>
                             <td>
-                                <ul><i>*Summary/Report RWAC Report from T2MIS;  Signed Validated OPCR</ul>
+                                <ul><i>*Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</i></ul>
                             </td>
-                            
                             <td>
-                                <select name="b2c3" id="b2c3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
+                                <select name="b2c3" id="b2c3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c3 !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 15) selected @endif>15</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2c3_remarks" id="b2c3_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td>
+                            <textarea name="b2c3_remarks" id="b2c3_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b2c3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c3_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
+
                         <tr>
                             <td>
-                                <h5>
-                                B.2.C.4. Number of Assessment Centers                                
+                                <h5>B.2.C.4. Number of Assessment Centers</h5>
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>15</i></td>
                             <td>
-                                <ul><i>*Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</ul>
+                                <ul><i>*Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</i></ul>
                             </td>
-                            
                             <td>
-                                <select name="b2c4" id="b2c4" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>15</option>
+                                <select name="b2c4" id="b2c4" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c4 !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 15) selected @endif>15</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2c4_remarks" id="b2c4_remarks" class="comments" placeholder="Comment"></textarea></td>
-                            </td>
+                            <textarea name="b2c4_remarks" id="b2c4_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b2c4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c4_remarks : '' }}</textarea>
                         </tr>
+
 
                         <tr>
                             <td>
                                 <h5>
-                                B.2.C.7. Establishment of Assessment Centers for NC Level IV Qualification                              
+                                    B.2.C.7. Establishment of Assessment Centers for NC Level IV Qualification
+                                </h5>
                                 <ul>
-                                    For Large Regions: At least 3 Assessment Centers for NC Level IV Qualifications<br>
-                                    For Medium Regions: At least 2 Assessment Centers for NC Level IV Qualifications<br>
-                                    For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications = <i>8</i>
+                                    <li>For Large Regions: At least 3 Assessment Centers for NC Level IV Qualifications</li>
+                                    <li>For Medium Regions: At least 2 Assessment Centers for NC Level IV Qualifications</li>
+                                    <li>For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications = <i>8</i></li>
                                 </ul>
                                 <br>
                                 <ul>
-                                    For Large Regions: Less than 3 Assessment Centers for NC Level IV Qualifications<br>
-                                    For Medium Regions: Less than 2 Assessment Centers for NC Level IV Qualifications<br>
-                                    For Small Regions: No Assessment Centers for NC Level IV Qualifications = <i>0</i>
+                                    <li>For Large Regions: Less than 3 Assessment Centers for NC Level IV Qualifications</li>
+                                    <li>For Medium Regions: Less than 2 Assessment Centers for NC Level IV Qualifications</li>
+                                    <li>For Small Regions: No Assessment Centers for NC Level IV Qualifications = <i>0</i></li>
                                 </ul>
                             </td>
                             <td style="vertical-align: top"><i>8</i></td>
                             <td style="vertical-align: top">
-                                <ul ><i>*Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</ul>
+                                <ul><i>*Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</i></ul>
                             </td>
-                            
                             <td style="vertical-align: top">
-                                <select name="b2c7" id="b2c7" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>8</option>
+                                <select name="b2c7" id="b2c7" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c7 !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 8) selected @endif>8</option>
                                 </select>
                             </td>
-                            
                             <td style="vertical-align: top">
-                                <textarea name="b2c7_remarks" id="b2c7_remarks" class="comment" placeholder="Comment"></textarea></td>
+                                <textarea name="b2c7_remarks" id="b2c7_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2c7 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c7_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td>
@@ -539,30 +559,39 @@
                         <tr>
                             <td>
                                 <h5>
-                                B.2.E.1.1.a. Participation                            
-                                <ul>The region nominated TVI/s for APACC accreditation = <i>5</i></ul>
-                                <ul>The region did not nominate any TVI/s for APACC accreditation = <i>0</i></ul>
+                                    B.2.E.1.1.a. Participation                            
+                                </h5>
+                                <ul>
+                                    <li>The region nominated TVI/s for APACC accreditation = <i>5</i></li>
+                                    <li>The region did not nominate any TVI/s for APACC accreditation = <i>0</i></li>
+                                </ul>
                             </td>
                             <td style="vertical-align: top"><i>5</i></td>
-                            <td>
-                                <ul><i>*Self Study Report submitted to APACC with letter and evidence</ul>
+                            <td style="vertical-align: top">
+                                <ul><i>*Self Study Report submitted to APACC with letter and evidence</i></ul>
                             </td>
                             
-                            <td>
-                                <select name="b2e11a" id="b2e11a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>5</option>
+                            <td style="vertical-align: top">
+                                <select name="b2e11a" id="b2e11a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e11a !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 5) selected @endif>5</option>
                                 </select>
                             </td>
                             
-                            <td><textarea name="b2e11a_remarks" id="b2e11a_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td style="vertical-align: top">
+                                <textarea name="b2e11a_remarks" id="b2e11a_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e11a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e11a_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td>
                                 <h5>
-                                B.2.E.1.1.b. Awards received                            
+                                    B.2.E.1.1.b. Awards received
+                                </h5>
                                 <ul>The nominated TVI/s of the region received APACC accreditation = <i>10</i></ul>
                                 <ul>The nominated TVI/s of the region did not receive APACC accreditation = <i>0</i></ul>
                             </td>
@@ -570,17 +599,19 @@
                             <td>
                                 <ul><i>*Certificate of Accreditation</ul>
                             </td>
-                            
                             <td>
-                                <select name="b2e11b" id="b2e11b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10</option>
+                                <select name="b2e11b" id="b2e11b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b2e11b !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 10) selected @endif>10</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2e11b_remarks" id="b2e11b_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td><textarea name="b2e11b_remarks" id="b2e11b_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b2e11b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e11b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td>
@@ -598,7 +629,8 @@
                         <tr>
                             <td>
                                 <h5>
-                                B.2.E.1.2.a. Participation                            
+                                    B.2.E.1.2.a. Participation
+                                </h5>
                                 <ul>The Region participated in STAR Program = <i>7</i></ul>
                                 <ul>The Region did not participate in STAR Program = <i>0</i></ul>
                             </td>
@@ -606,22 +638,26 @@
                             <td>
                                 <ul><i>*Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</ul>
                             </td>
-                            
                             <td>
-                                <select name="b2e12a" id="b2e12a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>7</option>
+                                <select name="b2e12a" id="b2e12a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e12a !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 7) selected @endif>7</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2e12a_remarks" id="b2e12a_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td>
+                                <textarea name="b2e12a_remarks" id="b2e12a_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e12a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e12a_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td>
                                 <h5>
-                                B.2.E.1.3.b. Awards received                            
+                                    B.2.E.1.3.b. Awards received
+                                </h5>
                                 <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>7</i></ul>
                                 <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>0</i></ul>
                             </td>
@@ -629,17 +665,20 @@
                             <td>
                                 <ul><i>*Awards received</ul>
                             </td>
-                            
                             <td>
-                                <select name="b2e13b" id="b2e13b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>7</option>
+                                <select name="b2e13b" id="b2e13b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e13b !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 7) selected @endif>7</option>
                                 </select>
                             </td>
-                            
-                            <td><textarea name="b2e13b_remarks" id="b2e13b_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td>
+                                <textarea name="b2e13b_remarks" id="b2e13b_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e13b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e13b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
                         
 
                         <tr>
@@ -658,7 +697,8 @@
                         <tr>
                             <td>
                                 <h5>
-                                D.1. Timeliness, Consistency and Accuracy                            
+                                    D.1. Timeliness, Consistency and Accuracy
+                                </h5>
                                 <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
                                 <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
                                 <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
@@ -669,25 +709,27 @@
                             </td>
                             
                             <td>
-                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>30</option>
-                                    <option>60</option>
+                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
+                                    <option value="" disabled selected> </option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif>0</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif>30</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif>60</option>
                                 </select>
                             </td>
                             
-                            <td><textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea></td>
+                            <td>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                         </tr>
-                        
-                    
-
-
-
 
                     </script>    
                     </tbody>
                 </table>
+                <td>
+                        <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                    </td>
             </div>
         </div>
     </div>
