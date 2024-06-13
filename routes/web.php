@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsEvaluationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
@@ -199,7 +200,8 @@ Route::get('/plo-evaluation', function () {
 // })->name('eo.evaluate');
 
 Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
-Route::get('/secretariat-evaluation', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
+Route::get('/secretariat-evaluation/{id}', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
+Route::post('/save-evaluation', [AsEvaluationController::class, 'store'])->name('save_evaluation');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');
