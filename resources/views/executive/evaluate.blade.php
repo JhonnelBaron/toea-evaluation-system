@@ -121,6 +121,9 @@
                                     <td>
                                         <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
                                     </td>
+                                       @foreach ($region->asEval as $evaluation)
+                                       <td>{{ $evaluation->progress_percentage }}</td>
+                                    @endforeach
                                 </tr>
                             @endforeach
                         </tbody>

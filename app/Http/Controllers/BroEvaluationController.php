@@ -18,7 +18,8 @@ class BroEvaluationController extends Controller
 {
     public function index()
     {
-        $regions = Region::all();
+        $regions = Region::with('asEval')->get();
+        
         return view('executive.evaluate', compact('regions'));
     }
     public function evaluationIndex($id)

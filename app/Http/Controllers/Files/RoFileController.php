@@ -25,7 +25,7 @@ class RoFileController extends Controller
         // Optional: You can store the path in a database here
         $roFile = new RoFile;
         $roFile->uploader_id = $user->id;
-        $roFile->file_name = $fileName;
+        $roFile->file_name = $request->input('title');
         $roFile->file_path = $fileUrl;
         $roFile->save(); 
 

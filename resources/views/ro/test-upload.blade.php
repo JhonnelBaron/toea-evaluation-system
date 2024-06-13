@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Include Bootstrap JS after jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,6 +108,14 @@
 
 
     </style>
+            <script>
+                function openPdf(pdfUrl) {
+                    console.log(pdfUrl);
+                    var iframe = '<iframe src="' + pdfUrl + '" style="width:100%; height:80vh;" frameborder="0"></iframe>';
+                    $('#pdfPreviewModal .modal-body').html(iframe);
+                    $('#pdfPreviewModal').modal('show');
+                }
+            </script>
 </head>
 
 <body>
@@ -161,6 +173,49 @@
         </div>
 
     </div>
+       <!-- Upload Modal -->
+       <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Upload File</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('upload.file') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Select File:</label>
+                            <input type="file" class="form-control" id="file" name="file" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal for PDF Preview -->
+      <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfPreviewModalLabel">PDF Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- PDF will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>
         document.getElementById('toggleSidebar').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('hidden');
@@ -169,54 +224,3 @@
 </body>
 
 </html>
-
-<!-- 
----------
-
-
-<div class="ml-72 p-4">
-    <div class="d-flex justify-content-between">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
-            Upload File
-        </button>
-        <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#uploadModal">
-            Upload File
-        </button>
-    </div>
-    
-    <div class="card mt-4">
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">File Name</th>
-                        <th scope="col">File Type</th>
-                        <th scope="col">Modified Date</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($files as $file)
-                    <tr>
-                        <td class="file-name">{{ $file->file_name }}</td>
-                        <td>{{ $file->file_type }}</td>
-                        <td>{{ $file->created_at->format('F d, Y') }}</td>
-                        <td>
-                            <!-- Open PDF in iframe -->
-                            {{-- <a href="{{ route('file.download', $file->id) }}" class="btn btn-sm btn-success"><i class="fas fa-download"></i> Download</a> --}}
-                            <!-- <button class="btn btn-sm btn-info" onclick="openPdf('{{ asset($file->file_path) }}')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="row">
-            
-            </div>
-        </div>
-        <div></div>
-    </div>
-</div> -->
- -->
