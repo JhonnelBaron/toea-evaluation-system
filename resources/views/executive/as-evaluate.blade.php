@@ -243,6 +243,7 @@
                                     @error('c31')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
+
                                 </td>
                                 <td>
                                     <textarea name="c31_remarks" id="c31_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c31_remarks : '' }}</textarea>

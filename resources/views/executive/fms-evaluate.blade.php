@@ -203,13 +203,13 @@
                                 <ul><i>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI) CY 2022</i></ul>
                             </td>
                             <td>
-                                <select name="a5a" id="a5a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                            <input type="number" name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;
                                 @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5a == 0) selected @endif>0</option>
-                                    <option value="1" @if($previousEvaluation && $previousEvaluation->a5a == 1) selected @endif>1</option>
-                                    <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == 5) selected @endif>5</option>
-                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5a == 15) selected @endif>15</option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5a == 0) selected @endif></option>
+                                    <option value="1" @if($previousEvaluation && $previousEvaluation->a5a == 1) selected @endif></option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == 5) selected @endif></option>
+                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5a == 15) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -232,11 +232,11 @@
                                 <ul><i>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</i></ul>
                             </td>
                             <td>
-                                <select name="a5b" id="a5b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" 
+                            <input type="number" name="a5b" id="a5b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;
                                 @if($previousEvaluation && $previousEvaluation->a5b !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5b == 0) selected @endif>0</option>
-                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5b == 15) selected @endif>15</option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a5b == 0) selected @endif></option>
+                                    <option value="15" @if($previousEvaluation && $previousEvaluation->a5b == 15) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -269,11 +269,11 @@
                                 <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
                             </td>
                             <td>
-                                <select name="a7a" id="a7a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" 
+                            <input type="number" name="a7a" id="a7a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;
                                 @if($previousEvaluation && $previousEvaluation->a7a !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7a == 0) selected @endif>0</option>
-                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7a == 10) selected @endif>10</option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7a == 0) selected @endif></option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7a == 10) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -297,11 +297,11 @@
                                 <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
                             </td>
                             <td>
-                                <select name="a7b" id="a7b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                            <input type="number" name="a7b" id="a7b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;
                                 @if($previousEvaluation && $previousEvaluation->a7b !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7b == 0) selected @endif>0</option>
-                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7b == 10) selected @endif>10</option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->a7b == 0) selected @endif></option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->a7b == 10) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -323,11 +323,7 @@
                                 <i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i>
                             </td>
                             <td>
-                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>30</option>
-                                    <option>60</option>
-                                </select>
+                            <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
                             </td>
                             <td>
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>

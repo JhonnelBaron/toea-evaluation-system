@@ -6,7 +6,7 @@
     <div class="user-name">{{ Auth::user()->name }}</div>
     <div class="user-type">
         @php
-        switch (Auth::guard('web')->user()->executive_office) {
+         switch (Auth::guard('web')->user()->executive_office) {
             case 'AS':
                 echo 'Administrative Office';
                 break;
@@ -49,9 +49,7 @@
 
         <!-- Dropdown for GALING PROBINSYA -->
             <div class="dropdown">
-                <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA<            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                  </svg>/b><i class="fa fa-caret-down"></i></d>
+                <a href="#tab2" class="dropdown-btn"><b>GALING PROBINSYA</b><i class="fa fa-caret-down"></i></d>
                 <div class="dropdown-container">
                     <a href="{{route('gp-small')}}" class="sub-tab">Small Province</a>
                     <a href="{{route('gp-medium')}}" class="sub-tab">Medium Province</a>
@@ -67,13 +65,12 @@
                 <a href="{{route('bit-ptc')}}" class="sub-tab">PTC</a>
             </div>
         </div>
-    </div>
-        <div style="margin-top: 350px;">
+
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button class="logout" type="submit">Logout</button>
+            <button type="submit">Logout</button>
         </form>
-        </div>
+    </div>
 </div>
 
 

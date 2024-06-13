@@ -184,9 +184,9 @@
                             <td style="vertical-align: top"><i>40</i></td>
                             <td><i><ul>*Certification of no pending case</ul></i></td>
                             <td>
-                                <select name="a1" id="a1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>40</option>
+                            <input type="number" name="a1" id="a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                    <option></option>
+                                    <option></option>
                                 </select>
                             </td>
                             <td>
@@ -220,9 +220,9 @@
                             <td style="vertical-align: top"><b>30</b></td>
                             <td><i><ul>*Certification from the RACC</ul></i></td>
                             <td>
-                                <select  name="a2" id="a2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>30</option>
+                            <input type="number" name="a2" id="a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                    <option></option>
+                                    <option></option> 
                                 </select>
                             </td>
                             <td>
