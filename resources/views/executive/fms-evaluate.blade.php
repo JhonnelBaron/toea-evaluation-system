@@ -150,7 +150,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - FMS</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - FMS</h1>
         </div>
         <div class="content">
             <div class="box-content">
@@ -199,7 +199,7 @@
                             <td><i>15</i></td>
                             <td><i><ul>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI) CY 2022</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a5a" id="a5a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>1</option>
                                     <option>5</option>
@@ -207,7 +207,7 @@
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a5a_remarks" id="a5a_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -220,13 +220,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a5b" id="a5b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a5b_remarks" id="a5b_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -249,13 +249,13 @@
                             <td><i>10</i></td>
                             <td><i><ul>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a7a" id="a7a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a7a_remarks" id="a7a_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -268,107 +268,15 @@
                             <td><i>10</i></td>
                             <td><i><ul>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a7b" id="a7b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a7b_remarks" id="a7b_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
-
-                        <tr>
-
-                            <td><b>C. Administrative and Support Services<hr></b></td>
-                            <td><b>56</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <b>C.1. Budget Utilization Rate (BUR)</b>
-                                <ul>100% of budget utilized = <i>25</i></ul>
-                                <ul>90% - 99% of budget utilized = <i>10</i></ul>
-                                <ul>89% and below of budget utilized = <i>0</i></ul>
-                            </td>
-                            <td><i>25</i></td>
-                            <td><i><ul>*Monitoring logbook/ registry</i></ul></td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10</option>
-                                    <option>25</option>
-                                </select>
-                            </td>
-                            <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <b>C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation</b> <br><i>80% acted upon (either partially or fully implemented)</i>
-                                <ul>100% acted upon (either partially or fully implemented) = <i>25</i></ul>
-                                <ul>90% - 99% acted upon (either partially or fully implemented) = <i>15</i></ul>
-                                <ul>80% - 89%acted upon (either partially or fully implemented) = <i>5</i></ul>
-                                <ul>79% and below acted upon (either partially or fully implemented) = <i>0</i></ul>
-                            </td>
-                            <td><i>25</i></td>
-                            <td><i><ul>*Agency Action Plan and Status of Implementation (AAPSI) CY 2021 and PYs</i></ul></td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>5</option>
-                                    <option>15</option>
-                                    <option>25</option>
-                                </select>
-                            </td>
-                            <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                C.3.3. Percentage of Personnel Attendance to Finance related training programs
-                                <ul>80% of regional finance and budget officers/personnel attended finance related training programs = <i>6</i></ul>
-                                <ul>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <i>3</i></ul>
-                                <ul>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <i>0</i></ul>
-                                <ul>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <i>1</i></ul>
-                            </td>
-                            <td><i>6</i></td>
-                            <td>
-                                <ul><i>*- List of plantilla positions per region<br>
-                                        <br>- Certificates of training attended
-                                        <br>list of training programs, certified correct by HRMO, RO plus PO (For BRO only)</i></ul></td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>3</option>
-                                    <option>6</option>
-                                </select>
-                            </td>
-                            <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-
-                            <td><b>D. Reporting Efficiency<hr></b></td>
-                            <td><b>60</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-
-                        </tr>
-
-
 
                         <tr>
                             <td>
@@ -377,19 +285,19 @@
                                 <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
                                 <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
                             </td>
-                            <td><i>60</i></td>
+                          <td><i>60</i></td>
                             <td>
                                 <i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>30</option>
                                     <option>60</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 

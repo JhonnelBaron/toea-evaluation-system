@@ -150,7 +150,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - LD</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Executive Evaluation</h1>
         </div>
         <div class="content">
             <div class="box-content">
@@ -184,13 +184,13 @@
                             <td style="vertical-align: top"><i>40</i></td>
                             <td><i><ul>*Certification of no pending case</ul></i></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a1" id="a1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>40</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a1_remarks" id="a1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -220,13 +220,13 @@
                             <td style="vertical-align: top"><b>30</b></td>
                             <td><i><ul>*Certification from the RACC</ul></i></td>
                             <td>
-                                <select class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110 style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select  name="a2" id="a2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>30</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a2_remarks" id="a2_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
                         </tr>

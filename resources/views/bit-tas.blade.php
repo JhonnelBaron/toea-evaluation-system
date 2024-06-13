@@ -123,7 +123,7 @@
             'userType' => 'User Type'
         ])
         <div class="header">
-            <h1>BEST TRAINING INSTITURION: TAS, RTC & STC</h1>
+            <h1>BEST TRAINING INSTITURION: TAS</h1>
         </div>
         <div class="content">
             <div class="box-content">

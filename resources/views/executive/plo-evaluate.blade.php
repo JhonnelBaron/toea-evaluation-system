@@ -199,13 +199,13 @@
                             <td><i><ul>*Summary/Report on duly accomplished <br>TESDA TVET Partnership Monitoring System (TTPMS)
                             </i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b1g" id="b1g" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>10-</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b1g_remarks" id="b1g_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -259,13 +259,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d411" id="b2d411" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d411_remarks" id="b2d411_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -278,13 +278,13 @@
                             <td><i>10</i></td>
                             <td><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d412" id="b2d412" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d412_remarks" id="b2d412_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
                         
@@ -296,13 +296,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d42" id="b2d42" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d42_remarks" id="b2d42_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -315,13 +315,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d421" id="b2d421" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d421_remarks" id="b2d421_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -334,13 +334,13 @@
                             <td><i>19</i></td>
                             <td><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d422" id="b2d422" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d422_remarks" id="b2d422_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -351,13 +351,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>*National Kabalikat Awards Committee Resolution</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d43" id="b2d43" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d43_remarks" id="b2d43_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -370,13 +370,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*National Kabalikat Awards Committee Resolution</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d431" id="b2d431" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d431_remarks" id="b2d431_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -390,13 +390,13 @@
                             <td><i>10</i></td>
                             <td><i><ul>*National Kabalikat Awards Committee Resolution</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d432" id="b2d432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d432_remarks" id="b2d432_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -420,13 +420,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>*Copies of signed MOAs</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d5" id="b2d5" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d5_remarks" id="b2d5_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -441,13 +441,13 @@
                             <td><i>8</i></td>
                             <td><i><ul>*Compendium of program registration, Registry of EBT programs; T2MIS</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d6" id="b2d6" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>>
                                     <option>8</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d6_remarks" id="b2d6_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -470,14 +470,14 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>30</option>
                                     <option>60</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 

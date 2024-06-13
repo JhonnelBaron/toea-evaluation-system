@@ -70,7 +70,7 @@
         height: 100vh; /* Set sidebar height to 100% of viewport height */
     }
     .sidebar .tabs {
-        width: flex;
+        width: 100%;
        
     }
 

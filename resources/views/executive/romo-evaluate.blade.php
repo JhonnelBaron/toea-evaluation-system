@@ -198,13 +198,13 @@
                             <td><i>35</i></td>
                             <td><i><ul>*Report generated from the SPMOR</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b1h" id="b1h" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>35-</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b1h_remarks" id="b1h_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -238,13 +238,13 @@
                             <td><i>10</i></td>
                             <td><i><ul>*Monitoring Reports</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2b2" id="b2b2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b2_remarks" id="b2b2_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -258,13 +258,13 @@
                             <td><i>35</i></td>
                             <td><i><ul>*Monitoring Reports</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2b3" id="b2b3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>35</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b3_remarks" id="b2b3_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -278,13 +278,13 @@
                             <td><i>7</i></td>
                             <td><i><ul>*After Activity Reports on meetings conducted</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2b4" id="b2b4" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>7</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b4_remarks" id="b2b4_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -298,14 +298,14 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>30</option>
                                     <option>60</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 

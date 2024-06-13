@@ -208,13 +208,13 @@
                             <td><i><ul>Researches submitted to the NITESD
                             </i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2a1" id="b2a1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>1-</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2a1_remarks" id="b2a1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -227,13 +227,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>*Certificate of Recognition for PQF Level 4 or Level 5; List of enrollees<br>Note: no new entrants for UAQTEA in 2022 since no fund was allotted</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2a2" id="b2a2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>8</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2a2_remarks" id="b2a2_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -257,13 +257,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*After Activity Report</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d31" id="b2d31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d31_remarks" id="b2d31_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -276,13 +276,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*After Activity Report</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d32" id="b2d32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d32_remarks" id="b2d32_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -301,13 +301,13 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Endorsement Memo, TESDA Order</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d441" id="b2d441" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>5</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d441_remarks" id="b2d441_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -320,13 +320,13 @@
                             <td><i>5</i></td>
                             <td><i><ul></i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2d442" id="b2d442" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>10</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d442_remarks" id="b2d442_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -347,13 +347,13 @@
                             <td><i>15</i></td>
                             <td><i><ul>Monitoring report, Research/ Project Proposals, Competency-based <br>Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="b2e3" id="b2e3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2e3_remarks" id="b2e3_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
@@ -368,13 +368,13 @@
                             <td><i>60</i></td>
                             <td><i><ul>MRating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
                                     <option>0</option>
                                     <option>15</option>
                                 </select>
                             </td>
                             <td>
-                                <textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
 
