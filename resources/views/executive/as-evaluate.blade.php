@@ -178,18 +178,17 @@
                                     <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
                                     <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>30</i></td>
+                                <td style="vertical-align: center"><i>30</i></td>
                                 <td>
                                     <ul><i>Government Procurement Policy Board (GPPB) report who are compliant</ul>
                                 </td>
                                 <td>
-
-                                    <select name="a6" id="a6" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <br>
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->a6 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-                                        <option @if($previousEvaluation && $previousEvaluation->a6 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->a6 == 30) selected @endif>30</option>
-                                    </select>
+                                        <option @if($previousEvaluation && $previousEvaluation->a6 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->a6 == 30) selected @endif></option>
                                 </td>
                                 <td>
                                     <textarea name="a6_remarks" id="a6_remarks" class="comments" placeholder="Comment"
@@ -208,10 +207,10 @@
                                 </td>
 
                                 <td>
-                                    <select name="a8" id="a8" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->a8 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-                                        <option @if($previousEvaluation && $previousEvaluation->a8 == 10) selected @endif>10</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->a8 == 10) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -246,13 +245,13 @@
                                 </td>
                                 <td>
 
-                                    <select name="c31" id="c31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c31 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 10) selected @endif>10</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 20) selected @endif>20</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 10) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c31 == 20) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -271,12 +270,12 @@
                                     <ul><i>*List of plantilla positions per region Region <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c32" id="c32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c32 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c32 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c32 == 15) selected @endif>15</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c32 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c32 == 15) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -309,12 +308,12 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c411" id="c411" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c411 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c411 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c411 == 4) selected @endif>4</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c411 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c411 == 4) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -333,12 +332,12 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c412" id="c412" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c412 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c412 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c412 == 4) selected @endif>4</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c412 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c412 == 4) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -364,12 +363,12 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c421" id="c421" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c421 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c421 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c421 == 4) selected @endif>4</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c421 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c421 == 4) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -388,12 +387,12 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c422" id="c422" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c422 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c422 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c422 == 5) selected @endif>5</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c422 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c422 == 5) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -419,11 +418,11 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c431" id="c431" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c431 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c431 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c431 == 4) selected @endif>4</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c431 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c431 == 4) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -442,12 +441,12 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c432" id="c432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c432 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c432 == 5) selected @endif>5</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c432 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c432 == 5) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -467,13 +466,13 @@
                                     <ul><i>Conferment/Certificate Awarded <br>Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</ul></i>
                                 </td>
                                 <td>
-                                    <select name="c5" id="c5" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c5 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 4) selected @endif>4</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 8) selected @endif>8</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 4) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->c5 == 8) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -493,13 +492,13 @@
                                     <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</ul></i>
                                 </td>
                                 <td>
-                                    <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
-                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif>30</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif>60</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif></option>
                                     </select>
                                 </td>
 
