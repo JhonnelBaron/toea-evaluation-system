@@ -441,6 +441,7 @@
                                 <td>
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
+                                <td>
                                     <select name="c432" id="c432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
