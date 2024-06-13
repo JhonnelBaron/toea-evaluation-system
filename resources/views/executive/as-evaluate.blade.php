@@ -183,14 +183,10 @@
                                     <ul><i>Government Procurement Policy Board (GPPB) report who are compliant</ul>
                                 </td>
                                 <td>
-<<<<<<< HEAD
+
                                     <select name="a6" id="a6" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->a6 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="a6" id="a6" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->a6 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
                                         <option @if($previousEvaluation && $previousEvaluation->a6 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->a6 == 30) selected @endif>30</option>
                                     </select>
@@ -210,16 +206,11 @@
                                 <td>
                                     <ul><i>*Agency Procurement Compliance Performance Indicator (APCPI) submitted within set deadlines by oversight agency/ies <br>c/o of procurement unit</ul>
                                 </td>
+
                                 <td>
-<<<<<<< HEAD
                                     <select name="a8" id="a8" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->a8 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="a8" id="a8" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->a8 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
-                                        <option @if($previousEvaluation && $previousEvaluation->a8 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->a8 == 10) selected @endif>10</option>
                                     </select>
                                 </td>
@@ -254,14 +245,11 @@
                                     <ul><i>*Regional Work Force Development Plan (WFDP) <br>Certificates of trainings attended</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
+
                                     <select name="c31" id="c31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c31 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c31" id="c31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c31 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c31 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c31 == 10) selected @endif>10</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c31 == 20) selected @endif>20</option>
@@ -283,14 +271,10 @@
                                     <ul><i>*List of plantilla positions per region Region <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c32" id="c32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c32 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c32" id="c32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c32 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c32 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c32 == 15) selected @endif>15</option>
                                     </select>
@@ -325,14 +309,10 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c411" id="c411" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c411 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c411" id="c411" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c411 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c411 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c411 == 4) selected @endif>4</option>
                                     </select>
@@ -353,14 +333,10 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c412" id="c412" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c412 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c412" id="c412" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c412 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c412 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c412 == 4) selected @endif>4</option>
                                     </select>
@@ -388,14 +364,10 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c421" id="c421" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c421 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c421" id="c421" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c421 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c421 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c421 == 4) selected @endif>4</option>
                                     </select>
@@ -416,14 +388,10 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c422" id="c422" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c422 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c422" id="c422" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c422 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c422 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c422 == 5) selected @endif>5</option>
                                     </select>
@@ -451,14 +419,9 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c431" id="c431" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c431 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c431" id="c431" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c431 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
                                         <option @if($previousEvaluation && $previousEvaluation->c431 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c431 == 4) selected @endif>4</option>
                                     </select>
@@ -478,15 +441,10 @@
                                 <td>
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
-                                <td>
-<<<<<<< HEAD
                                     <select name="c432" id="c432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c432" id="c432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c432 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c432 == 5) selected @endif>5</option>
                                     </select>
@@ -508,14 +466,10 @@
                                     <ul><i>Conferment/Certificate Awarded <br>Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="c5" id="c5" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->c5 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="c5" id="c5" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->c5 !== null) disabled @endif>
-                                        <option value="" selected> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->c5 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c5 == 4) selected @endif>4</option>
                                         <option @if($previousEvaluation && $previousEvaluation->c5 == 8) selected @endif>8</option>
@@ -538,14 +492,10 @@
                                     <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</ul></i>
                                 </td>
                                 <td>
-<<<<<<< HEAD
                                     <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-=======
-                                    <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
-                                        <option value="" @if($previousEvaluation && $previousEvaluation->d1 == null) selected @endif> </option>
->>>>>>> a79b7782fc8a51d30a3347ae8f68308eaad19476
+
                                         <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif>0</option>
                                         <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif>30</option>
                                         <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif>60</option>
