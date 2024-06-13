@@ -190,10 +190,7 @@
                             <td><i><ul>*TESDA OP AS 03 F04 Monitoring of Complaints Received Certification of No Complaints Received - signed by the RD
                             </i></ul></td>
                             <td>
-                                <select name="a3" id="a3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>10-</option>
-                                </select>
+                                <input type="number" name="a3" id="a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
                             </td>
                             <td>
                                 <textarea name="a3_remarks" id="a3_remarks" class="comments" placeholder="Comment"></textarea>
@@ -213,14 +210,7 @@
                             <td><i>30</i></td>
                             <td><i><ul>*Customer Feedback Form Results <br>TESDA OP AS 03 F02</i></ul></td>
                             <td>
-                                <select name="a4" id="a4" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>3</option>
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>20</option>
-                                    <option>30</option>
-                                </select>
+                                <input type="number" name="a4" id="a4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
                             </td>
                             <td>
                                 <textarea name="a4_remarks" id="a4_remarks" class="comments" placeholder="Comment"></textarea>
@@ -247,11 +237,7 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>30</option>
-                                    <option>60</option>
-                                </select>
+                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
                             </td>
                             <td>
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
@@ -278,11 +264,7 @@
                             <td><i>50</i></td>
                             <td><i><ul>*Communication plan/OPCR</i></ul></td>
                             <td>
-                                <select name="e1" id="e1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>30</option>
-                                    <option>50</option>
-                                </select>
+                                <input type="number" name="e1" id="e1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
                             </td>
                             <td>
                                 <textarea name="e1_remarks" id="e1_remarks" class="comments" placeholder="Comment"></textarea>

@@ -207,7 +207,7 @@
                                 </td>
 
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="a8" id="a8" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->a8 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
                                         <option @if($previousEvaluation && $previousEvaluation->a8 == 10) selected @endif></option>
@@ -245,7 +245,7 @@
                                 </td>
                                 <td>
 
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c31" id="c31" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c31 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -270,7 +270,7 @@
                                     <ul><i>*List of plantilla positions per region Region <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c32" id="c32" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c32 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -308,7 +308,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c411" id="c411" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c411 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -332,7 +332,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c412" id="c412" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c412 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -363,7 +363,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c421" id="c421" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c421 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -387,7 +387,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c422" id="c422" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c422 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -418,7 +418,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c431" id="c431" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c431 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
                                         <option @if($previousEvaluation && $previousEvaluation->c431 == 0) selected @endif></option>
@@ -441,7 +441,7 @@
                                     <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c432" id="c432" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -466,7 +466,7 @@
                                     <ul><i>Conferment/Certificate Awarded <br>Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="c5" id="c5" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->c5 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 
@@ -492,7 +492,7 @@
                                     <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</ul></i>
                                 </td>
                                 <td>
-                                    <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
+                                    <input type="number" name="d" id="d" class="px-3 py-2 border rounded-md w-20 vertical-align: center"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
 

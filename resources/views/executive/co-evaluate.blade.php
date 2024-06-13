@@ -181,7 +181,7 @@
                         <tr>
                             <td>
                                 <b>B.1. Performance based on the General Appropriations Act (GAA)<hr></b><br>
-                            <td style="vertical-align: top"><i><br>60<hr></i></td>
+                            <td style="vertical-align: top"><i>60<hr></i></td>
                             <td><br><hr></td>
                             <td><br><hr></td>
                             <td><br><hr></td>
@@ -193,16 +193,16 @@
                                     <ul>The accomplishment rate based on set target is at 100% = <i>15</i></ul>
                                     <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i><br>15</i></td>
+                                <td style="vertical-align: center"><i><br>15</i></td>
                                 <td>
                                     <ul><i>*Summary/Report on the duly accomplished TESDA-OP-CO-02- F06-RO Form<br> Duly signed compliance audit reports <br>Summary of audited programs Closure reports Monthly monitoring of OPCRs<br>c/o of procurement unit</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b1c" id="b1c" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b1c" id="b1c" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->b1c !== null) disabled @endif>
                                         <option value="" disabled selected> </option>
-                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 0) selected @endif>0</option>
-                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 15) selected @endif>15</option>
+                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 0) selected @endif></option>
+                                        <option @if($previousEvaluation && $previousEvaluation->b1c == 15) selected @endif></option>
                                     </select>
                                 </td>
                                 <td>
@@ -218,16 +218,16 @@
                                 <ul>The accomplishment rate based on set target is at 100% and above</ul>
                                 <ul>The accomplishment rate based on set target is below 100%</ul>
                             </td>
-                            <td style="vertical-align: top"><i>15</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td>
                                 <ul><i>*Tracking sheets (F41) - RO/PO c/o CO</i></ul>
                             </td>
                             <td>
-                                <select name="b1d" id="b1d" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b1d" id="b1d" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                         @if($previousEvaluation && $previousEvaluation->b1d !== null) disabled @endif>
                                 <option value="" disabled selected> </option>
-                                <option @if($previousEvaluation && $previousEvaluation->b1d == 0) selected @endif>0</option>
-                                <option @if($previousEvaluation && $previousEvaluation->b1d == 15) selected @endif>15</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b1d == 0) selected @endif></option>
+                                <option @if($previousEvaluation && $previousEvaluation->b1d == 15) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -243,21 +243,23 @@
                                     <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                     <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>15</i></td>
+                                <td style="vertical-align: center"><i>15</i></td>
                                 <td>
                                     <ul><i>*Summary/Report on the duly accomplished <br>TESDA-OP-CO-02-F06-RO Form</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b1e" id="b1e" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b1e" id="b1e" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                             @if($previousEvaluation && $previousEvaluation->b1e !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 15) selected @endif>15</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1e == 15) selected @endif></option>
                                     </select>
                                 </td>
-                                <td></td>
-                                <textarea name="b1e_remarks" id="b1e_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b1e !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1e_remarks : '' }}</textarea></td>
+                                <td>
+                                <textarea name="b1e_remarks" id="b1e_remarks" class="comments" placeholder="Comment">
+                                @if($previousEvaluation && $previousEvaluation->b1e !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1e_remarks : '' }}
+                                </textarea>
+                                </td>
                             </tr>
 
 
@@ -267,16 +269,16 @@
                                     <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                     <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>15</i></td>
+                                <td style="vertical-align: center"><i>15</i></td>
                                 <td>
                                     <ul><i>*List of mandatory assessment from T2MIS</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b1f" id="b1f" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b1f" id="b1f" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                             @if($previousEvaluation && $previousEvaluation->b1f !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 15) selected @endif>15</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b1f == 15) selected @endif></option>
                                     </select>
                                 </td>
                                 <td><textarea name="b1f_remarks" id="b1f_remarks" class="comments" placeholder="Comment"
@@ -288,7 +290,7 @@
                                 <td>
                                     <b>B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></b><br>
                                     
-                                <td style="vertical-align: top"><i><b><br>157<hr></b></i></td>
+                                <td style="vertical-align: top"><i><b>157<hr></b></i></td>
                                 <td><br><hr></td>
                                 <td><br><hr></td>
                                 <td><hr></td>
@@ -298,14 +300,14 @@
                                 <td>
                                     B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br>
                                     
-                                <td style="vertical-align: top"><i>25</i></td>
+                                <td style="vertical-align: center"><i>25</i></td>
                             </tr>
 
                             <tr>
                                 <td>
                                     B.2.A.3. Participation and Recognition from Skills Competition<br>
                                     
-                                <td style="vertical-align: top"><i>25</i></td>
+                                <td style="vertical-align: center"><i>25</i></td>
                             </tr>
 
                             <tr>
@@ -315,17 +317,17 @@
                                     <ul>The Region participated in PNSC = <i>3</i></ul>
                                     <ul>The Region did not participate in any of the competition = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>6</i></td>
+                                <td style="vertical-align: center"><i>6</i></td>
                                 <td>
                                     <ul><i>*Terminal Reports/After Activity reports <br>Official list of winners</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b2a31" id="b2a31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b2a31" id="b2a31" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                             @if($previousEvaluation && $previousEvaluation->b2a31 !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 3) selected @endif>3</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 6) selected @endif>6</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 3) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a31 == 6) selected @endif></option>
                                     </select>
                                 </td>
                                 <td><textarea name="b2a31_remarks" id="b2a31_remarks" class="comments" placeholder="Comment"
@@ -340,16 +342,16 @@
                                     <ul>The Region received award/recognition at the national level = <i>7</i></ul>
                                     <ul>The Region did not receive award/recognition = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>7</i></td>
+                                <td style="vertical-align: center"><i>7</i></td>
                                 <td>
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b2a32" id="b2a32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b2a32" id="b2a32" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                             @if($previousEvaluation && $previousEvaluation->b2a32 !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 7) selected @endif>7</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a32 == 7) selected @endif></option>
                                     </select>
                                 </td>
                                 <td><textarea name="b2a32_remarks" id="b2a32_remarks" class="comments" placeholder="Comment"
@@ -363,16 +365,16 @@
                                     <ul>The Region received award/recognition at the international level = <i>12</i></ul>
                                     <ul>The Region did not receive award/recognition = <i>0</i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>12</i></td>
+                                <td style="vertical-align: center"><i>12</i></td>
                                 <td>
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
                                 <td>
-                                    <select name="b2a33" id="b2a33" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                    <input type="number" name="b2a33" id="b2a33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->b2a33 !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 12) selected @endif>12</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2a33 == 12) selected @endif></option>
                                     </select>
                                 </td>
                                 <td><textarea name="b2a33_remarks" id="b2a33_remarks" class="comments" placeholder="Comment"
@@ -385,7 +387,7 @@
                             <td><b><br>
                             B.2.C. Upscale Technical Education and Skills Development and Certification to Higher PQF Levels - SD3
                             <hr></b></td>
-                            <td style="vertical-align: top"><i><br><br>78<hr></i></td>
+                            <td style="vertical-align: center"><i><br><br>78<hr></i></td>
                             <td><br><br><br><hr></td>
                             <td><br><br><br><hr></td>
                             <td><br><br><br><hr></td>
@@ -397,16 +399,16 @@
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>10</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>10</i></td>
+                            <td style="vertical-align: center"><i>10</i></td>
                             <td>
                                 <ul><i>*MIS 02-04</i></ul>
                             </td>
                             <td>
-                                <select name="b2c1" id="b2c1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2c1" id="b2c1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2c1 !== null) disabled @endif>
                                 <option value="" disabled selected> </option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 0) selected @endif>0</option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 10) selected @endif>10</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 0) selected @endif></option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c1 == 10) selected @endif></option>
                                 </select>
                             </td>
                             <td><textarea name="b2c1_remarks" id="b2c1_remarks" class="comments" placeholder="Comment"
@@ -421,16 +423,16 @@
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>15</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td>
                                 <ul><i>*Monthly Report on Program Registration</i></ul>
                             </td>
                             <td>
-                                <select name="b2c2" id="b2c2" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2c2" id="b2c2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2c2 !== null) disabled @endif>
                                 <option value="" disabled selected> </option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 0) selected @endif>0</option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 15) selected @endif>15</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 0) selected @endif></option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c2 == 15) selected @endif></option>
                                 </select>
                             </td>
                             <td><textarea name="b2c2_remarks" id="b2c2_remarks" class="comments" placeholder="Comment"
@@ -445,16 +447,16 @@
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>15</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td>
                                 <ul><i>*Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</i></ul>
                             </td>
                             <td>
-                                <select name="b2c3" id="b2c3" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2c3" id="b2c3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2c3 !== null) disabled @endif>
                                 <option value="" disabled selected> </option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 0) selected @endif>0</option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 15) selected @endif>15</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 0) selected @endif></option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c3 == 15) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -470,20 +472,22 @@
                                 <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>15</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td>
                                 <ul><i>*Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</i></ul>
                             </td>
                             <td>
-                                <select name="b2c4" id="b2c4" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2c4" id="b2c4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2c4 !== null) disabled @endif>
                                 <option value="" disabled selected> </option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 0) selected @endif>0</option>
-                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 15) selected @endif>15</option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 0) selected @endif></option>
+                                <option @if($previousEvaluation && $previousEvaluation->b2c4 == 15) selected @endif></option>
                                 </select>
                             </td>
+                            <td>
                             <textarea name="b2c4_remarks" id="b2c4_remarks" class="comments" placeholder="Comment"
                             @if($previousEvaluation && $previousEvaluation->b2c4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c4_remarks : '' }}</textarea>
+                            </td>
                         </tr>
 
 
@@ -504,19 +508,19 @@
                                     <li>For Small Regions: No Assessment Centers for NC Level IV Qualifications = <i>0</i></li>
                                 </ul>
                             </td>
-                            <td style="vertical-align: top"><i>8</i></td>
-                            <td style="vertical-align: top">
+                            <td style="vertical-align: center"><i>8</i></td>
+                            <td style="vertical-align: center">
                                 <ul><i>*Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</i></ul>
                             </td>
-                            <td style="vertical-align: top">
-                                <select name="b2c7" id="b2c7" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                            <td style="vertical-align: center">
+                                <input type="number" name="b2c7" id="b2c7" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2c7 !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 8) selected @endif>8</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2c7 == 8) selected @endif></option>
                                 </select>
                             </td>
-                            <td style="vertical-align: top">
+                            <td style="vertical-align: center">
                                 <textarea name="b2c7_remarks" id="b2c7_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->b2c7 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c7_remarks : '' }}</textarea>
                             </td>
@@ -528,7 +532,7 @@
                                 <h5>
                                 <b>B.2.E. Streamline and Intensify QMS in All Organizational Subsystems - SD 5</b>
                             </td>
-                            <td style="vertical-align: top"><i>54</i></td>
+                            <td style="vertical-align: center"><i>54</i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -538,7 +542,7 @@
                                 <h5>
                                 B.2.E.1. Accreditation Awards (STAR Program, APACC)
                             </td>
-                            <td style="vertical-align: top"><i>54</i></td>
+                            <td style="vertical-align: center"><i>54</i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -549,7 +553,7 @@
                                 <h5>
                                 B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)                               
                             </td>
-                            <td style="vertical-align: top"><i>15</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -566,21 +570,21 @@
                                     <li>The region did not nominate any TVI/s for APACC accreditation = <i>0</i></li>
                                 </ul>
                             </td>
-                            <td style="vertical-align: top"><i>5</i></td>
-                            <td style="vertical-align: top">
+                            <td style="vertical-align: center"><i>5</i></td>
+                            <td style="vertical-align: center">
                                 <ul><i>*Self Study Report submitted to APACC with letter and evidence</i></ul>
                             </td>
                             
-                            <td style="vertical-align: top">
-                                <select name="b2e11a" id="b2e11a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                            <td style="vertical-align: center">
+                                <input type="number" name="b2e11a" id="b2e11a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2e11a !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 5) selected @endif>5</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11a == 5) selected @endif></option>
                                 </select>
                             </td>
                             
-                            <td style="vertical-align: top">
+                            <td style="vertical-align: center">
                                 <textarea name="b2e11a_remarks" id="b2e11a_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->b2e11a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e11a_remarks : '' }}</textarea>
                             </td>
@@ -595,16 +599,16 @@
                                 <ul>The nominated TVI/s of the region received APACC accreditation = <i>10</i></ul>
                                 <ul>The nominated TVI/s of the region did not receive APACC accreditation = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>5</i></td>
+                            <td style="vertical-align: center"><i>5</i></td>
                             <td>
                                 <ul><i>*Certificate of Accreditation</ul>
                             </td>
                             <td>
-                                <select name="b2e11b" id="b2e11b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2e11b" id="b2e11b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->b2e11b !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 10) selected @endif>10</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e11b == 10) selected @endif></option>
                                 </select>
                             </td>
                             <td><textarea name="b2e11b_remarks" id="b2e11b_remarks" class="comments" placeholder="Comment"
@@ -618,7 +622,7 @@
                                 <h5>
                                 B.2.E.1.2. System for TVET Accreditation and Recognition (STAR) Program                              
                             </td>
-                            <td style="vertical-align: top"><i>25</i></td>
+                            <td style="vertical-align: center"><i>25</i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -634,16 +638,16 @@
                                 <ul>The Region participated in STAR Program = <i>7</i></ul>
                                 <ul>The Region did not participate in STAR Program = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>5</i></td>
+                            <td style="vertical-align: center"><i>5</i></td>
                             <td>
                                 <ul><i>*Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</ul>
                             </td>
                             <td>
-                                <select name="b2e12a" id="b2e12a" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2e12a" id="b2e12a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2e12a !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 7) selected @endif>7</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e12a == 7) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -658,19 +662,19 @@
                                 <h5>
                                     B.2.E.1.3.b. Awards received
                                 </h5>
-                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>7</i></ul>
-                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>0</i></ul>
+                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i></i></ul>
+                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i></i></ul>
                             </td>
-                            <td style="vertical-align: top"><i>5</i></td>
+                            <td style="vertical-align: center"><i>5</i></td>
                             <td>
                                 <ul><i>*Awards received</ul>
                             </td>
                             <td>
-                                <select name="b2e13b" id="b2e13b" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <input type="number" name="b2e13b" id="b2e13b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2e13b !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 7) selected @endif>7</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->b2e13b == 7) selected @endif></option>
                                 </select>
                             </td>
                             <td>
@@ -682,14 +686,14 @@
                         
 
                         <tr>
-                            <td style="vertical-align: top">
+                            <td style="vertical-align: center">
                                 <h5>
                                 <b>D. Reporting Efficiency<hr></b>                               
                             </td>
-                            <td style="vertical-align: top"><i>60<hr></i></td>
-                            <td style="vertical-align: top"><br><hr></td>
-                            <td style="vertical-align: top"><br><hr></td>
-                            <td style="vertical-align: top"><br><hr></td>
+                            <td style="vertical-align: center"><i>60<hr></i></td>
+                            <td style="vertical-align: center"><br><hr></td>
+                            <td style="vertical-align: center"><br><hr></td>
+                            <td style="vertical-align: center"><br><hr></td>
                             
                         </tr>
 
@@ -703,18 +707,19 @@
                                 <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
                                 <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: top"><i></i></td>
+                            <td style="vertical-align: center"><i></i></td>
                             <td>
                                 <ul><i>*Rating of each Executive Office based on the timely, consistent and accurate reporting</ul>
                             </td>
                             
                             <td>
-                                <select name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;"
+                                <br>
+                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
                                     <option value="" disabled selected> </option>
-                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif>0</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif>30</option>
-                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif>60</option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 0) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 30) selected @endif></option>
+                                    <option @if($previousEvaluation && $previousEvaluation->d1 == 60) selected @endif></option>
                                 </select>
                             </td>
                             

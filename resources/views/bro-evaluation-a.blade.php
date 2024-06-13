@@ -137,7 +137,7 @@
 </head>
 <body>
     <div class="d-flex">
-        @include('components.eo-sidebar', [
+        @include('components.sidebar', [
             'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type'

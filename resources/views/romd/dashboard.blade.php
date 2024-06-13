@@ -82,7 +82,7 @@
 </head>
 <body class="bg-blue-700">
     <div>
-        @include('components.ro-sidebar', [
+        @include('components.sidebar', [
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
