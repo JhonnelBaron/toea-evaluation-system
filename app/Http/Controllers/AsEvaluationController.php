@@ -5,39 +5,74 @@ namespace App\Http\Controllers;
 use App\Models\AsEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AsEvaluationController extends Controller
 {
      public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'uploader_id' => 'nullable|integer|exists:executive_office_accounts,id',
             'region_id' => 'nullable|integer|exists:regions,id',
-            'a6' => 'nullable|integer',
+            'a6' => 'nullable|integer|in:0,30',
             'a6_remarks' => 'nullable|string',
-            'a8' => 'nullable|integer',
+            'a8' => 'nullable|integer|in:0,10',
             'a8_remarks' => 'nullable|string',
-            'c31' => 'nullable|integer',
+            'c31' => 'nullable|integer|in:0,10,20',
             'c31_remarks' => 'nullable|string',
-            'c32' => 'nullable|integer',
+            'c32' => 'nullable|integer|in:0,15',
             'c32_remarks' => 'nullable|string',
-            'c411' => 'nullable|integer',
+            'c411' => 'nullable|integer|in:0,4',
             'c411_remarks' => 'nullable|string',
-            'c412' => 'nullable|integer',
+            'c412' => 'nullable|integer|in:0,4',
             'c412_remarks' => 'nullable|string',
-            'c421' => 'nullable|integer',
+            'c421' => 'nullable|integer|in:0,4',
             'c421_remarks' => 'nullable|string',
-            'c422' => 'nullable|integer',
+            'c422' => 'nullable|integer|in:0,5',
             'c422_remarks' => 'nullable|string',
-            'c431' => 'nullable|integer',
+            'c431' => 'nullable|integer|in:0,4',
             'c431_remarks' => 'nullable|string',
-            'c432' => 'nullable|integer',
+            'c432' => 'nullable|integer|in:0,5',
             'c432_remarks' => 'nullable|string',
-            'c5' => 'nullable|integer',
+            'c5' => 'nullable|integer|in:0,4,8',
             'c5_remarks' => 'nullable|string',
-            'd1' => 'nullable|integer',
+            'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
         ]);
+        
+        $validator->setCustomMessages([
+            'in' => 'You input an invalid number. Please ensure the number you enter meets the requirements listed in the column.',
+        ]);
+        
+        $validatedData = $validator->validate();
+        // $validatedData = $request->validate([
+        //     'uploader_id' => 'nullable|integer|exists:executive_office_accounts,id',
+        //     'region_id' => 'nullable|integer|exists:regions,id',
+        //     'a6' => 'nullable|integer|in:0,30',
+        //     'a6_remarks' => 'nullable|string',
+        //     'a8' => 'nullable|integer|in:0,10',
+        //     'a8_remarks' => 'nullable|string',
+        //     'c31' => 'nullable|integer|in:0,10,20',
+        //     'c31_remarks' => 'nullable|string',
+        //     'c32' => 'nullable|integer|in:0,15',
+        //     'c32_remarks' => 'nullable|string',
+        //     'c411' => 'nullable|integer|in:0,4',
+        //     'c411_remarks' => 'nullable|string',
+        //     'c412' => 'nullable|integer|in:0,4',
+        //     'c412_remarks' => 'nullable|string',
+        //     'c421' => 'nullable|integer|in:0,4',
+        //     'c421_remarks' => 'nullable|string',
+        //     'c422' => 'nullable|integer|in:0,5',
+        //     'c422_remarks' => 'nullable|string',
+        //     'c431' => 'nullable|integer|in:0,4',
+        //     'c431_remarks' => 'nullable|string',
+        //     'c432' => 'nullable|integer|in:0,5',
+        //     'c432_remarks' => 'nullable|string',
+        //     'c5' => 'nullable|integer|in:0,4,8',
+        //     'c5_remarks' => 'nullable|string',
+        //     'd1' => 'nullable|integer|in:0,30,60',
+        //     'd1_remarks' => 'nullable|string',
+        // ]);
 
         $user = Auth::user();
         $regionId = $validatedData['region_id'];
@@ -109,24 +144,6 @@ class AsEvaluationController extends Controller
 
     // Calculate progress percentage
     $progressPercentage = count($totalFields) > 0 ? ($filledFieldsCount / count($totalFields)) * 100 : 0;
-
-        //         $fields = [
-        //     'a6', 'a8', 'c31', 'c32', 'c411', 'c412', 'c421', 'c422', 'c431', 'c432', 'c5', 'd1'
-        // ];
-
-        // $filledFieldsCount = collect($fields)->filter(function ($field) use ($validatedData) {
-        //     return isset($validatedData[$field]);
-        // })->count();
-
-        // $totalFields = count($fields);
-
-        // // Calculate the total of filled integer fields
-        // $total = collect($fields)->sum(function ($field) use ($validatedData) {
-        //     return $validatedData[$field] ?? 0;
-        // });
-
-        // // Calculate progress percentage
-        // $progressPercentage = $totalFields > 0 ? ($filledFieldsCount / $totalFields) * 100 : 0;
 
         // Add progress percentage and total score to evaluation data
         $evaluationData['progress_percentage'] = $progressPercentage;

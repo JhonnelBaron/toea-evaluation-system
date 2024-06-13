@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Validator;
 class BroEvaluationController extends Controller
 {
     public function index()
-    {
+    {   $user = Auth::user();
         $regions = Region::with('asEval')->get();
         
         return view('executive.evaluate', compact('regions'));
