@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AsEvaluation;
+use App\Models\BroAPillar;
+use App\Models\BroBPillar;
+use App\Models\BroCPillar;
+use App\Models\BroDePillar;
+use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class BroEvaluationController extends Controller
 {
@@ -13,73 +21,183 @@ class BroEvaluationController extends Controller
         $regions = Region::all();
         return view('executive.evaluate', compact('regions'));
     }
-    public function evaluationIndex()
+    public function evaluationIndex($id)
     {
+        $region = Region::findOrFail($id);
+        $regionName = $region->region_name;
+
+        if (!$region) {
+            return response('id not found!');
+        }
         $user = Auth::user();
+
+        $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
+        ->where('region_id', $region->id)
+        ->first();
+        
 
         if($user->executive_office === 'AS')
         {
-            return view('executive.as-evaluate');
+            return view('executive.as-evaluate', ['regionId' => $id,
+        'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'CO')
         {
-            return view('executive.co-evaluate');
+            return view('executive.co-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'LD')
         {
-            return view('executive.ld-evaluate');
+            return view('executive.ld-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'FMS')
         {
-            return view('executive.fms-evaluate');
+            return view('executive.fms-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'NITESD')
         {
-            return view('executive.nitesd-evaluate');
+            return view('executive.nitesd-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'PIAD')
         {
-            return view('executive.piad-evaluate');
+            return view('executive.piad-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'PO')
         {
-            return view('executive.po-evaluate');
+            return view('executive.po-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'PLO')
         {
-            return view('executive.plo-evaluate');
+            return view('executive.plo-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }elseif($user->executive_office === 'ROMO')
         {
-            return view('executive.romo-evaluate');
+            return view('executive.romo-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }
     }
 
     public function storeAS(Request $request)
     {
-        $validatedData = $request->validate([
-            'region_id' => 'required|exists:regions,id',
-            'b1h_evaluation' => 'required|integer',
-            'b1h_remarks' => 'nullable|string',
-            'b2b2_evaluation' => 'required|integer',
-            'b2b2_remarks' => 'nullable|string',
-            'd1_evaluation' => 'required|integer',
+        
+        $rules = [
+            'a6' => 'nullable|integer',
+            'a6_remarks' => 'nullable|string',
+            'a8' => 'nullable|integer',
+            'a8_remarks' => 'nullable|string',
+            'c31' => 'nullable|integer',
+            'c31_remarks' => 'nullable|string',
+            'c32' => 'nullable|integer',
+            'c32_remarks' => 'nullable|string',
+            'c411' => 'nullable|integer',
+            'c411_remarks' => 'nullable|string',
+            'c412' => 'nullable|integer',
+            'c412_remarks' => 'nullable|string',
+            'c421' => 'nullable|integer',
+            'c421_remarks' => 'nullable|string',
+            'c422' => 'nullable|integer',
+            'c422_remarks' => 'nullable|string',
+            'c431' => 'nullable|integer',
+            'c431_remarks' => 'nullable|string',
+            'c432' => 'nullable|integer',
+            'c432_remarks' => 'nullable|string',
+            'c5' => 'nullable|integer',
+            'c5_remarks' => 'nullable|string',
+            'd1' => 'nullable|integer',
             'd1_remarks' => 'nullable|string',
-            // Add validation rules for other evaluation points
-        ]);
+        ];
 
-        $regionId = $validatedData['region_id'];
+        $validatedData = Validator::make($request->all(), $rules);
 
+        if ($validatedData->fails()) {
+            return response()->json(['error' => $validatedData->errors()], 422);
+        }
+
+        $user = Auth::user();
+        $regionId = $request->query('id');
+        $region = Region::findOrFail($regionId);
+
+       // Fields for each pillar
+    $fieldsA = ['a6', 'a8'];
+    $fieldsC = ['c31', 'c32', 'c411', 'c412', 'c421', 'c422', 'c431', 'c432', 'c5'];
+    $fieldsD = ['d1'];
+
+    // Calculate filled fields and totals for each pillar
+    $filledFieldsA = collect($fieldsA)->filter(fn($field) => !empty($validatedData[$field]))->count();
+    $totalA = collect($fieldsA)->sum(fn($field) => $validatedData[$field] ?? 0);
+
+    $filledFieldsC = collect($fieldsC)->filter(fn($field) => !empty($validatedData[$field]))->count();
+    $totalC = collect($fieldsC)->sum(fn($field) => $validatedData[$field] ?? 0);
+
+    $filledFieldsD = collect($fieldsD)->filter(fn($field) => !empty($validatedData[$field]))->count();
+    $totalD = collect($fieldsD)->sum(fn($field) => $validatedData[$field] ?? 0);
+
+    // Calculate total filled fields and overall total
+    $overallFilledFieldsCount = $filledFieldsA + $filledFieldsC + $filledFieldsD;
+    $overallTotal = $totalA + $totalC + $totalD;
+
+    // Calculate overall progress percentage
+    $fieldsCount = count($fieldsA) + count($fieldsC) + count($fieldsD);
+    $overallProgressPercentage = ($overallFilledFieldsCount / $fieldsCount) * 100;
+    try {
         // Store evaluation for BroBPillar
-        BroBPillar::create([
-            'region_id' => $regionId,
-            'b1h' => $validatedData['b1h_evaluation'],
-            'b1h_remarks' => $validatedData['b1h_remarks'],
-            'b2b2' => $validatedData['b2b2_evaluation'],
-            'b2b2_remarks' => $validatedData['b2b2_remarks'],
-            // Add other fields for BroBPillar
+        BroAPillar::updateOrCreate([
+            'uploader_id' => $user->id,
+            'secretariat_office' => $user->executive_office,
+            'region_id' => $region->id,
+            'region_name' => $region->region_name,
+            'a6' => $validatedData['a6'],
+            'a6_remarks' => $validatedData['a6_remarks'],
+            'a8' => $validatedData['a8'],
+            'a8_remarks' => $validatedData['a8_remarks'],
         ]);
 
-        // Store evaluation for BroDePillar
-        BroDePillar::create([
-            'region_id' => $regionId,
-            'd1' => $validatedData['d1_evaluation'],
+
+        BroCPillar::updateOrCreate([
+            'uploader_id' => $user->id,
+            'secretariat_office' => $user->executive_office,
+            'region_id' => $region->id,
+            'region_name' => $region->region_name,
+            'c31' => $validatedData['c31'],
+            'c31_remarks' => $validatedData['c31_remarks'],
+            'c32' => $validatedData['c32'],
+            'c32_remarks' => $validatedData['c32_remarks'],
+            'c411' => $validatedData['c411'],
+            'c411_remarks' => $validatedData['c411_remarks'],
+            'c412' => $validatedData['c412'],
+            'c412_remarks' => $validatedData['c412_remarks'],
+            'c421' => $validatedData['c421'],
+            'c421_remarks' => $validatedData['c421_remarks'],
+            'c422' => $validatedData['c422'],
+            'c422_remarks' => $validatedData['c422_remarks'],
+            'c431' => $validatedData['c431'],
+            'c431_remarks' => $validatedData['c431_remarks'],
+            'c432' => $validatedData['c432'],
+            'c432_remarks' => $validatedData['c432_remarks'],
+            'c5' => $validatedData['c5'],
+            'c5_remarks' => $validatedData['c5_remarks'],
+        ]);
+
+
+        BroDePillar::updateOrCreate([
+            'uploader_id' => $user->id,
+            'secretariat_office' => $user->executive_office,
+            'region_id' => $region->id,
+            'region_name' => $region->region_name,
+            'd1' => $validatedData['d1'],
             'd1_remarks' => $validatedData['d1_remarks'],
-            // Add other fields for BroDePillar
         ]);
 
-        return redirect()->route('evaluation.index')->with('success', 'Evaluation submitted successfully.');
+        ProgressSubmission::updateOrCreate([
+            'uploader_id' => $user->id,
+            'region_id' => $region->id,
+            'progress_percentage' => $overallProgressPercentage,
+            'overall_total_score' => $overallTotal,
+            'overall_total_filled' => $overallFilledFieldsCount,
+        ]);
+
+        dd($request->all());
+        return response()->json(['success' => 'Evaluation saved successfully'], 200);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Failed to save evaluation.'], 500);
+    }
     }
 }

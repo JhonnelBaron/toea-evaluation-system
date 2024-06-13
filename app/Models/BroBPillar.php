@@ -114,8 +114,8 @@ class BroBPillar extends Model
         'b2e3_remarks',
         'b2e4',
         'b2e4_remarks',
-        'progress_percentage',
-        'total',
+        'total_filled',
+        'total_score',
     ];
 
     /**

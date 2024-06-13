@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bro_de_pillars', function (Blueprint $table) {
+        Schema::create('progress_submissions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('uploder_id')->nullable();
-            $table->string('secretariat_office')->nullable();
             $table->unsignedBigInteger('region_id')->nullable();
-            $table->string('region')->nullable();
-            $table->integer('d1')->nullable();
-            $table->text('d1_remarks')->nullable();
-            $table->integer('e')->nullable();
-            $table->text('e_remarks')->nullable();
-            $table->integer('total_filled')->nullable();
-            $table->integer('total_score')->nullable();
+            $table->decimal('progress_percentage', 5, 2)->nullable();
+            $table->integer('overall_total_score')->nullable();
+            $table->integer('overall_total_filled')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bro_de_pillars');
+        Schema::dropIfExists('progress_submissions');
     }
 };

@@ -34,8 +34,8 @@ class BroAPillar extends Model
         'a7b_remarks',
         'a8',
         'a8_remarks',
-        'progress_percentage',
-        'total',
+        'total_filled',
+        'total_score',
     ];
 
     /**

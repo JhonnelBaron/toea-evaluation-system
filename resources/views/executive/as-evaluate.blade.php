@@ -150,12 +150,15 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - AS</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluation - AS</h1>
         </div>
+        <h1 type="hidden">{{ $regionName }} {{$regionId}}</h1>
         <div class="content">
             <div class="box-content">
-
-                <!-- THIS IS A -->
+                <form method="POST" action="{{ route('save_evaluation') }}" >
+                    @csrf
+                           <!-- Hidden input for region_id -->
+                <input type="hidden" name="region_id" value="{{ $regionId }}">
                 <table>
                     <thead>
                         <tr>
@@ -189,12 +192,13 @@
                                 <ul><i>Government Procurement Policy Board (GPPB) report who are compliant</ul>
                             </td>
                             <td>
-                            <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                <option>0</option>
-                                <option>30</option>
+                            <select name="a6" id="a6" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;" @if($previousEvaluation && $previousEvaluation->a6 !== null) disabled @endif>
+                                <option value="" disabled selected> </option>
+                                <option @if($previousEvaluation && $previousEvaluation->a6 == 0) selected @endif>0</option>
+                                <option @if($previousEvaluation && $previousEvaluation->a6 == 30) selected @endif>30</option>
                             </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td>
+                            <td><textarea name="a6_remarks" id="a6_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->a6 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a6_remarks : '' }}></textarea></td>
                             </td>
                         </tr>
                         
@@ -210,12 +214,13 @@
                                 <ul><i>*Agency Procurement Compliance Performance Indicator (APCPI) submitted within set deadlines by oversight agency/ies <br>c/o of procurement unit</ul>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="a8" id="a8" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>10</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td>
+                            <td><textarea name="a8_remarks" id="a8_remarks" class="comments" placeholder="Comment"></textarea></td>
                             </td>
                         </tr>
                         
@@ -252,13 +257,14 @@
                                 <br><i><ul>*Regional Work Force Development Plan (WFDP) <br>Certificates of trainings attended</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c31" id="c31" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>10</option>
                                     <option>20</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c31_remarks" id="c31_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
                         
 
@@ -273,12 +279,13 @@
                                 <br><i><ul>*"- List of plantilla positions per region Region <br> -Certificates of training attended</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c32" id="c32" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>15</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c32_remarks" id="c32_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -297,15 +304,11 @@
                             </td>
                             <td style="vertical-align: top;"><i>8</i></td>
                             <td>
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i>
+                                {{-- <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i> --}}
                             </td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>8</option>
-                                </select>
+                            {{-- <td>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td></td> --}}
                         </tr>
 
                         <tr>
@@ -319,33 +322,14 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>8</option>
-                                </select>
-                            </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                C.4.1.1. Participation<hr><i></i><br>
-                                <ul>The Region submitted nominees for Category I = <i>4</i></ul>
-                                <ul>The Region did not submit nominees for Category I = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>4</i></td>
-                            <td>
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i>
-                            </td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c411" id="c411" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>4</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c411_remarks" id="c411_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
-
                         <tr>
                             <td>
                                 C.4.1.2. Awards received<hr><br>
@@ -357,31 +341,13 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c412" id="c412" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>4</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                C.4.1.2. Awards received<hr><br>
-                                <ul>The Region has received recognition/award at national level = <i>4</i></ul>
-                                <ul>The Region did not receive award/recognition at national level = <i>0</i></ul>
-                            </td>
-                            <td style="vertical-align: top"><i>4</i></td>
-                            <td>
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS</ul></i>
-                            </td>
-                            <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-                                    <option>0</option>
-                                    <option>4</option>
-                                </select>
-                            </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c412_remarks" id="c412_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -405,12 +371,13 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS<br></ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c421" id="c421" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>4</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c421_remarks" id="c421_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -424,12 +391,13 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS<br></ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c422" id="c422" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>5</option>
                                 </select>
                             </td>                            
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c422_remarks" id="c422_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -453,12 +421,13 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select  name="c431" id="c431" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>4</option>
                                 </select>
                             </td>  
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c431_remarks" id="c431_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -473,12 +442,13 @@
                                 <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c432" id="c432" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>5</option>
                                 </select>
                             </td>                            
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c432_remarks" id="c432_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -493,13 +463,14 @@
                                 <br><i><ul>*Confernment/Certificate Awarded <br>Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select name="c5" id="c5" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>4</option>
                                     <option>8</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="c5_remarks" id="c5_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
 
                         <tr>
@@ -514,13 +485,14 @@
                                 <br><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</ul></i>
                             </td>
                             <td>
-                                <select style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                <select  name="d1" id="d1" style="font-size: 15px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+                                    <option value="" disabled selected> </option>
                                     <option>0</option>
                                     <option>30</option>
                                     <option>60</option>
                                 </select>
                             </td>
-                            <td><textarea name="comments" id="comments" class="comments" placeholder="Comment"></textarea></td></td>
+                            <td><textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea></td></td>
                         </tr>
                         
                         <tr>
@@ -528,11 +500,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button></td>
                         </tr>
-
+                    
                     </tbody>
                 </table>
+                <td><button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button></td>
+            </form>
             </div>
         </div>
     </div>
@@ -540,6 +513,8 @@
         document.getElementById('toggleSidebar').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('hidden');
         });
+
+        
     </script>
 </body>
 </html>

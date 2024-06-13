@@ -18,8 +18,8 @@ class BroDePillar extends Model
         'd1_remarks',
         'e',
         'e_remarks',
-        'progress_percentage',
-        'total',
+        'total_filled',
+        'total_score',
     ];
 
           /**

@@ -117,8 +117,8 @@ return new class extends Migration
             $table->text('b2e3_remarks')->nullable();
             $table->integer('b2e4')->nullable();
             $table->text('b2e4_remarks')->nullable();
-            $table->decimal('progress_percentage', 5, 2)->nullable();
-            $table->integer('total')->nullable();
+            $table->integer('total_filled')->nullable();
+            $table->integer('total_score')->nullable();
 
             $table->timestamps();
         });

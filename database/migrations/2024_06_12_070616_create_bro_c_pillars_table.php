@@ -41,8 +41,8 @@ return new class extends Migration
             $table->text('c432_remarks')->nullable();
             $table->integer('c5')->nullable();
             $table->text('c5_remarks')->nullable();
-            $table->decimal('progress_percentage', 5, 2)->nullable();
-            $table->integer('total')->nullable();
+            $table->integer('total_filled')->nullable();
+            $table->integer('total_score')->nullable();
             $table->timestamps();
         });
     }

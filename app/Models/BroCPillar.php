@@ -38,8 +38,8 @@ class BroCPillar extends Model
         'c432_remarks',
         'c5',
         'c5_remarks',
-        'progress_percentage',
-        'total',
+        'total_filled',
+        'total_score',
     ];
 
         /**

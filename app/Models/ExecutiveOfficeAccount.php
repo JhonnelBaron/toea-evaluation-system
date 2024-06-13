@@ -41,4 +41,14 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(BroDePillar::class, 'uploader_id');
     }
+
+    public function progress()
+    {
+         return $this->hasMany(ProgressSubmission::class, 'uploader_id');
+    }
+
+    public function asEval()
+    {
+        return $this->hasMany(AsEvaluation::class, 'uploader_id');
+    }
 }

@@ -33,4 +33,14 @@ class Region extends Model
         return $this->hasMany(BroDePillar::class,'region_id');
     }
 
+    public function progress()
+    {
+        return $this->hasMany(ProgressSubmission::class, 'region_id');
+    }
+
+    public function asEval()
+    {
+        return $this->hasMany(AsEvaluation::class, 'region_id');
+    }
+
 }

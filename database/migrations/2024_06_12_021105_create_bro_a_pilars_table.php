@@ -37,8 +37,8 @@ return new class extends Migration
             $table->longText('a7b_remarks')->nullable();
             $table->integer('a8')->nullable();
             $table->longText('a8_remarks')->nullable();
-            $table->decimal('progress_percentage', 5, 2)->nullable();
-            $table->integer('total')->nullable();
+            $table->integer('total_filled')->nullable();
+            $table->integer('total_score')->nullable();
             $table->timestamps();
         });
     }
