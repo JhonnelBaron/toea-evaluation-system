@@ -152,8 +152,13 @@
         <div class="header">
             <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - NITESD</h1>
         </div>
+        <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
+                <form method="POST" action="{{ route('nitesd_evaluation') }}">
+                    @csrf
+                    <!-- Hidden input for region_id -->
+                    <input type="hidden" name="region_id" value="{{ $regionId }}">
 
                 <!-- THIS IS A -->
                 <table>
@@ -208,13 +213,15 @@
                             <td><i><ul>Researches submitted to the NITESD
                             </i></ul></td>
                             <td>
-                            <input type="number" name="b2a1" id="b2a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                    <option></option>
-                                    <option></option>
-                                </select>
+                            <input type="number" name="b2a1" id="b2a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2a1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a1 : '' }}">
+                            @error('b2a1')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
                             </td>
                             <td>
-                                <textarea name="b2a1_remarks" id="b2a1_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2a1_remarks" id="b2a1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2a1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a1_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -227,13 +234,15 @@
                             <td><i>15</i></td>
                             <td><i><ul>*Certificate of Recognition for PQF Level 4 or Level 5; List of enrollees<br>Note: no new entrants for UAQTEA in 2022 since no fund was allotted</i></ul></td>
                             <td>
-                            <input type="number" name="b2a2" id="b2a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                    <option></option>
-                                    <option></option>
-                                </select>
+                            <input type="number" name="b2a2" id="b2a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2a2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a2 : '' }}">
+                            @error('b2a2')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
                             </td>
                             <td>
-                                <textarea name="b2a2_remarks" id="b2a2_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2a2_remarks" id="b2a2_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2a2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a2_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -257,13 +266,15 @@
                             <td><i>5</i></td>
                             <td><i><ul>*After Activity Report</i></ul></td>
                             <td>
-                            <input type="number" name="b2d31" id="b2d31" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                    <option></option>
-                                    <option></option>
-                                </select>
+                            <input type="number" name="b2d31" id="b2d31" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2d31 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d31 : '' }}">
+                            @error('b2d31')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
                             </td>
                             <td>
-                                <textarea name="b2d31_remarks" id="b2d31_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d31_remarks" id="b2d31_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2d31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2d31_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -276,10 +287,15 @@
                             <td><i>5</i></td>
                             <td><i><ul>*After Activity Report</i></ul></td>
                             <td>
-                                <input type="number" name="b2d32" id="b2d32" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b2d32" id="b2d32" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2d32 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d32 : '' }}">
+                                @error('b2d32')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b2d32_remarks" id="b2d32_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d32_remarks" id="b2d32_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2d32 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2d32_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -298,11 +314,15 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Endorsement Memo, TESDA Order</i></ul></td>
                             <td>
-                            <input type="number" name="b2d441" id="b2d441" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                </select>
+                            <input type="number" name="b2d441" id="b2d441" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2d441 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d441 : '' }}">
+                            @error('b2d441')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
                             </td>
                             <td>
-                                <textarea name="b2d441_remarks" id="b2d441_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d441_remarks" id="b2d441_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2d441 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2d441_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -315,14 +335,17 @@
                             <td><i>5</i></td>
                             <td><i><ul></i></ul></td>
                             <td>
-                                <input type="number" name="b2d442" id="b2d442" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b2d442" id="b2d442" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2d442 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d442 : '' }}">
+                                @error('b2d442')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b2d442_remarks" id="b2d442_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2d442_remarks" id="b2d442_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2d422 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2d422_remarks : '' }}</textarea>
                             </td>
                         </tr>
-
-
                         <tr>
                             <td>
                             <b>B.2.E. Streamline and Intensify QMS in All Organizational Subsystems - SD 5</b></td>
@@ -339,10 +362,15 @@
                             <td><i>15</i></td>
                             <td><i><ul>Monitoring report, Research/ Project Proposals, Competency-based <br>Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</i></ul></td>
                             <td>
-                                <input type="number" name="b2e3" id="b2e3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b2e3" id="b2e3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e3 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e3 : '' }}">
+                                @error('b2e3')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b2e3_remarks" id="b2e3_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2e3_remarks" id="b2e3_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e3_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -357,19 +385,24 @@
                             <td><i>60</i></td>
                             <td><i><ul>MRating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
+                                @error('d1')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                         </tr>
-
-                        
-
-
                     </script>    
                     </tbody>
                 </table>
+                <td>
+                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                </td>
+            </form>
             </div>
         </div>
     </div>

@@ -53,4 +53,14 @@ class Region extends Model
         return $this->hasMany(LdEvaluation::class, 'region_id');
     }
 
+    public function fmsEval()
+    {
+        return $this->hasMany(FmsEvaluation::class, 'region_id');
+    }
+
+    public function nitesdEval()
+    {
+        return $this->hasMany(NitesdEvaluation::class, 'region_id');
+    }
+
 }

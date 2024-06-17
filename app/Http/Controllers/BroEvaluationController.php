@@ -8,7 +8,9 @@ use App\Models\BroBPillar;
 use App\Models\BroCPillar;
 use App\Models\BroDePillar;
 use App\Models\CoEvaluation;
+use App\Models\FmsEvaluation;
 use App\Models\LdEvaluation;
+use App\Models\NitesdEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
@@ -40,6 +42,10 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->coEval;
             } elseif ($user->executive_office === 'LD') {
                 $region->evaluations = $region->ldEval;
+            } elseif ($user->executive_office === 'FMS') {
+                $region->evaluations = $region->fmsEval;
+            } elseif ($user->executive_office === 'NITESD') {
+                $region->evaluations = $region->nitesdEval;
             } else {
                 $region->evaluations = collect();
             }
@@ -72,6 +78,16 @@ class BroEvaluationController extends Controller
                 $previousEvaluation = LdEvaluation::where('uploader_id', $user->id)
                     ->where('region_id', $region->id)
                     ->first();
+                break;
+            case 'FMS':
+                $previousEvaluation = FmsEvaluation::where('uploader_id', $user->id)
+                    ->where('region_id', $region->id)
+                    ->first();
+                break;
+            case 'NITESD':
+                $previousEvaluation = NitesdEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
                 break;
             // Add other cases for different executive offices as needed
             default:
