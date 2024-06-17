@@ -45,34 +45,6 @@ class AsEvaluationController extends Controller
         ]);
         
         $validatedData = $validator->validate();
-        // $validatedData = $request->validate([
-        //     'uploader_id' => 'nullable|integer|exists:executive_office_accounts,id',
-        //     'region_id' => 'nullable|integer|exists:regions,id',
-        //     'a6' => 'nullable|integer|in:0,30',
-        //     'a6_remarks' => 'nullable|string',
-        //     'a8' => 'nullable|integer|in:0,10',
-        //     'a8_remarks' => 'nullable|string',
-        //     'c31' => 'nullable|integer|in:0,10,20',
-        //     'c31_remarks' => 'nullable|string',
-        //     'c32' => 'nullable|integer|in:0,15',
-        //     'c32_remarks' => 'nullable|string',
-        //     'c411' => 'nullable|integer|in:0,4',
-        //     'c411_remarks' => 'nullable|string',
-        //     'c412' => 'nullable|integer|in:0,4',
-        //     'c412_remarks' => 'nullable|string',
-        //     'c421' => 'nullable|integer|in:0,4',
-        //     'c421_remarks' => 'nullable|string',
-        //     'c422' => 'nullable|integer|in:0,5',
-        //     'c422_remarks' => 'nullable|string',
-        //     'c431' => 'nullable|integer|in:0,4',
-        //     'c431_remarks' => 'nullable|string',
-        //     'c432' => 'nullable|integer|in:0,5',
-        //     'c432_remarks' => 'nullable|string',
-        //     'c5' => 'nullable|integer|in:0,4,8',
-        //     'c5_remarks' => 'nullable|string',
-        //     'd1' => 'nullable|integer|in:0,30,60',
-        //     'd1_remarks' => 'nullable|string',
-        // ]);
 
         $user = Auth::user();
         $regionId = $validatedData['region_id'];
@@ -144,11 +116,13 @@ class AsEvaluationController extends Controller
 
     // Calculate progress percentage
     $progressPercentage = count($totalFields) > 0 ? ($filledFieldsCount / count($totalFields)) * 100 : 0;
+    $totalFieldsCount = count($totalFields);
 
         // Add progress percentage and total score to evaluation data
         $evaluationData['progress_percentage'] = $progressPercentage;
         $evaluationData['overall_total_filled'] = $filledFieldsCount;
         $evaluationData['overall_total_score'] = $total;
+        $evaluationData['total_fields'] = $totalFieldsCount;
 
         // If existing record found, update it; otherwise, create a new record
         if ($existingEvaluation) {

@@ -110,6 +110,8 @@
                                 <th>Region Name</th>
                                 <th>Action</th>
                                 <th>Percentage</th>
+                                <th>Evaluated</th>
+                                <th>Score</th>
                                 <th>Remarks</th>
 
                             </tr>
@@ -121,9 +123,32 @@
                                     <td>
                                         <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
                                     </td>
-                                       @foreach ($region->asEval as $evaluation)
+                                   @if ($region->evaluations->isNotEmpty())
+                                    <td>{{ $region->evaluations->first()->progress_percentage }}%</td>
+                                    {{-- <td>{{ $region->evaluations->first()->final_remarks }}</td> --}}
+                                @else
+                                    <td colspan="2">0%</td>
+                                @endif
+                                       {{-- @foreach ($region->asEval as $evaluation)
                                        <td>{{ $evaluation->progress_percentage }}%</td>
-                                    @endforeach
+                                    @endforeach --}}
+                                   
+                                   <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                        {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                        {{ $region->evaluations->first()->overall_total_score }}    
+                                    @endif
+                                </td>
+                                
+                                    <td colspan="6">
+                                        
+                                    </td>
+                                
+    
                                 </tr>
                             @endforeach
                         </tbody>

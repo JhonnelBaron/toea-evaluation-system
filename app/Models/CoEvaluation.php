@@ -5,24 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AsEvaluation extends Model
+class CoEvaluation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'uploader_id',
         'region_id',
-        'a6', 'a6_remarks',
-        'a8', 'a8_remarks',
-        'c31', 'c31_remarks',
-        'c32', 'c32_remarks',
-        'c411', 'c411_remarks',
-        'c412', 'c412_remarks',
-        'c421', 'c421_remarks',
-        'c422', 'c422_remarks',
-        'c431', 'c431_remarks',
-        'c432', 'c432_remarks',
-        'c5', 'c5_remarks',
+        'b1c', 'b1c_remarks',
+        'b1d', 'b1d_remarks',
+        'b1e', 'b1e_remarks',
+        'b1f', 'b1f_remarks',
+        'b2a31', 'b2a31_remarks',
+        'b2a32', 'b2a32_remarks',
+        'b2a33', 'b2a33_remarks',
+        'b2c1', 'b2c1_remarks',
+        'b2c2', 'b2c2_remarks',
+        'b2c3', 'b2c3_remarks',
+        'b2c4', 'b2c4_remarks',
+        'b2c7', 'b2c7_remarks',
+        'b2e11a', 'b2e11a_remarks',
+        'b2e11b', 'b2e11b_remarks',
+        'b2e12a', 'b2e12a_remarks',
+        'b2e13b', 'b2e13b_remarks',
         'd1', 'd1_remarks',
         'progress_percentage',
         'overall_total_score',
@@ -41,3 +46,4 @@ class AsEvaluation extends Model
         return $this->belongsTo(Region::class, 'region_id');
     }
 }
+

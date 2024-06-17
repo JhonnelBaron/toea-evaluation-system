@@ -7,6 +7,7 @@ use App\Models\BroAPillar;
 use App\Models\BroBPillar;
 use App\Models\BroCPillar;
 use App\Models\BroDePillar;
+use App\Models\CoEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
@@ -17,11 +18,33 @@ use Illuminate\Support\Facades\Validator;
 class BroEvaluationController extends Controller
 {
     public function index()
-    {   $user = Auth::user();
-        $regions = Region::with('asEval')->get();
-        
-        return view('executive.evaluate', compact('regions'));
+    {  
+        // $user = Auth::user();
+        // if($user->executive_office === 'AS')
+        // { 
+        //      $regions = Region::with('asEval')->get();
+        // }elseif($user->executive_office === 'CO')
+        // {
+        //     $regions = Region::with('coEval')->get();
+        // }
+        // return view('executive.evaluate', compact('regions'));
+
+        $user = Auth::user();
+        $regions = Region::all();
+    
+        foreach ($regions as $region) {
+            if ($user->executive_office === 'AS') {
+                $region->evaluations = $region->asEval;
+            } elseif ($user->executive_office === 'CO') {
+                $region->evaluations = $region->coEval;
+            } else {
+                $region->evaluations = collect();
+            }
+        }
+
+    return view('executive.evaluate', compact('regions'));
     }
+
     public function evaluationIndex($id)
     {
         $region = Region::findOrFail($id);
@@ -32,10 +55,30 @@ class BroEvaluationController extends Controller
         }
         $user = Auth::user();
 
-        $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
-        ->where('region_id', $region->id)
-        ->first();
-        
+        // $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
+        // ->where('region_id', $region->id)
+        // ->first();
+        switch ($user->executive_office) {
+            case 'AS':
+                $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
+                    ->where('region_id', $region->id)
+                    ->first();
+                break;
+            case 'CO':
+                $previousEvaluation = CoEvaluation::where('uploader_id', $user->id)
+                    ->where('region_id', $region->id)
+                    ->first();
+                break;
+            // case 'LD':
+            //     $previousEvaluation = LdEvaluation::where('uploader_id', $user->id)
+            //         ->where('region_id', $region->id)
+            //         ->first();
+            //     break;
+            // Add other cases for different executive offices as needed
+            default:
+                // Handle the case where executive_office does not match any of the above
+                return response('Invalid executive office');
+        }
 
         if($user->executive_office === 'AS')
         {

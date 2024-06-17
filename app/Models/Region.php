@@ -43,4 +43,9 @@ class Region extends Model
         return $this->hasMany(AsEvaluation::class, 'region_id');
     }
 
+    public function coEval()
+    {
+        return $this->hasMany(CoEvaluation::class, 'region_id');
+    }
+
 }
