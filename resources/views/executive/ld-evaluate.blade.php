@@ -152,8 +152,13 @@
         <div class="header">
             <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Executive Evaluation</h1>
         </div>
+        <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
+                <form method="POST" action="{{ route('ld_evaluation') }}">
+                    @csrf
+                    <!-- Hidden input for region_id -->
+                    <input type="hidden" name="region_id" value="{{ $regionId }}">
 
                 <!-- THIS IS A -->
                 <table>
@@ -184,16 +189,17 @@
                             <td style="vertical-align: top"><i>40</i></td>
                             <td><i><ul>*Certification of no pending case</ul></i></td>
                             <td>
-                            <input type="number" name="a1" id="a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                    <option></option>
-                                    <option></option>
-                                </select>
+                            <input type="number" name="a1" id="a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->a1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a1 : '' }}">
+                            @error('a1')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                        @enderror
                             </td>
                             <td>
-                                <textarea name="a1_remarks" id="a1_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a1_remarks" id="a1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->a1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a1_remarks : '' }}</textarea>
                             </td>
                         </tr>
-
                         <tr>
                             
                             <td><h5><b>A.2. Compliance to the TESDA Code of Conduct and Ethical Standards</b></h5><hr>
@@ -220,19 +226,24 @@
                             <td style="vertical-align: top"><b>30</b></td>
                             <td><i><ul>*Certification from the RACC</ul></i></td>
                             <td>
-                            <input type="number" name="a2" id="a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
-                                    <option></option>
-                                    <option></option> 
-                                </select>
+                            <input type="number" name="a2" id="a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->a2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a2 : '' }}">
+                            @error('a2')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                        @enderror
                             </td>
                             <td>
-                                <textarea name="a2_remarks" id="a2_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="a2_remarks" id="a2_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->a2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a2_remarks : '' }}</textarea>
                             </td>
                         </tr>
                         </tr>
-                        
                     </tbody>
                 </table>
+                <td>
+                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                </td>
+            </form>
             </div>
         </div>
     </div>

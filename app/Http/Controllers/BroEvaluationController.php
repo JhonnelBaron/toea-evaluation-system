@@ -8,6 +8,7 @@ use App\Models\BroBPillar;
 use App\Models\BroCPillar;
 use App\Models\BroDePillar;
 use App\Models\CoEvaluation;
+use App\Models\LdEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
@@ -37,6 +38,8 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->asEval;
             } elseif ($user->executive_office === 'CO') {
                 $region->evaluations = $region->coEval;
+            } elseif ($user->executive_office === 'LD') {
+                $region->evaluations = $region->ldEval;
             } else {
                 $region->evaluations = collect();
             }
@@ -54,10 +57,6 @@ class BroEvaluationController extends Controller
             return response('id not found!');
         }
         $user = Auth::user();
-
-        // $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
-        // ->where('region_id', $region->id)
-        // ->first();
         switch ($user->executive_office) {
             case 'AS':
                 $previousEvaluation = AsEvaluation::where('uploader_id', $user->id)
@@ -69,11 +68,11 @@ class BroEvaluationController extends Controller
                     ->where('region_id', $region->id)
                     ->first();
                 break;
-            // case 'LD':
-            //     $previousEvaluation = LdEvaluation::where('uploader_id', $user->id)
-            //         ->where('region_id', $region->id)
-            //         ->first();
-            //     break;
+            case 'LD':
+                $previousEvaluation = LdEvaluation::where('uploader_id', $user->id)
+                    ->where('region_id', $region->id)
+                    ->first();
+                break;
             // Add other cases for different executive offices as needed
             default:
                 // Handle the case where executive_office does not match any of the above

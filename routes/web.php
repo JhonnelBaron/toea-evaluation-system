@@ -7,6 +7,7 @@ use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
 use App\Http\Controllers\Secretariat\CoEvaluationController;
+use App\Http\Controllers\Secretariat\LdEvaluationController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -205,6 +206,7 @@ Route::get('/secretariat-evaluation/{id}', [BroEvaluationController::class, 'eva
 Route::post('/save-evaluation', [AsEvaluationController::class, 'store'])->name('save_evaluation');
 
 Route::post('/submit-evaluation-co', [CoEvaluationController::class, 'coSubmit'])->name('co_evaluation');
+Route::post('/submit-evaluation-ld', [LdEvaluationController::class, 'ldSubmit'])->name('ld_evaluation');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');

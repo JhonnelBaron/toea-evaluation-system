@@ -56,4 +56,9 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(CoEvaluation::class, 'uploader_id');
     }
+
+    public function ldEval()
+    {
+        return $this->hasMany(LdEvaluation::class, 'uploader_id');
+    }
 }
