@@ -11,6 +11,7 @@ use App\Models\CoEvaluation;
 use App\Models\FmsEvaluation;
 use App\Models\LdEvaluation;
 use App\Models\NitesdEvaluation;
+use App\Models\PiadEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
@@ -22,16 +23,6 @@ class BroEvaluationController extends Controller
 {
     public function index()
     {  
-        // $user = Auth::user();
-        // if($user->executive_office === 'AS')
-        // { 
-        //      $regions = Region::with('asEval')->get();
-        // }elseif($user->executive_office === 'CO')
-        // {
-        //     $regions = Region::with('coEval')->get();
-        // }
-        // return view('executive.evaluate', compact('regions'));
-
         $user = Auth::user();
         $regions = Region::all();
     
@@ -46,12 +37,14 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->fmsEval;
             } elseif ($user->executive_office === 'NITESD') {
                 $region->evaluations = $region->nitesdEval;
+            } elseif ($user->executive_office === 'PIAD') {
+                $region->evaluations = $region->piadEval;
             } else {
                 $region->evaluations = collect();
             }
         }
 
-    return view('executive.evaluate', compact('regions'));
+        return view('executive.evaluate', compact('regions'));
     }
 
     public function evaluationIndex($id)
@@ -89,9 +82,12 @@ class BroEvaluationController extends Controller
                 ->where('region_id', $region->id)
                 ->first();
                 break;
-            // Add other cases for different executive offices as needed
+            case 'PIAD':
+                $previousEvaluation = PiadEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
+                break;
             default:
-                // Handle the case where executive_office does not match any of the above
                 return response('Invalid executive office');
         }
 

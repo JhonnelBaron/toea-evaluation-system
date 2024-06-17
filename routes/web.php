@@ -10,8 +10,8 @@ use App\Http\Controllers\Secretariat\CoEvaluationController;
 use App\Http\Controllers\Secretariat\FmsEvaluationController;
 use App\Http\Controllers\Secretariat\LdEvaluationController;
 use App\Http\Controllers\Secretariat\NitesdEvaluationController;
+use App\Http\Controllers\Secretariat\PiadEvaluationController;
 use App\Http\Middleware\RedirectIfAuthenticated;
-use App\Models\NitesdEvaluation;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
@@ -212,6 +212,7 @@ Route::post('/submit-evaluation-co', [CoEvaluationController::class, 'coSubmit']
 Route::post('/submit-evaluation-ld', [LdEvaluationController::class, 'ldSubmit'])->name('ld_evaluation');
 Route::post('/submit-evaluation-fms', [FmsEvaluationController::class, 'fmsSubmit'])->name('fms_evaluation');
 Route::post('/submit-evaluation-nitesd', [NitesdEvaluationController::class, 'nitesdSubmit'])->name('nitesd_evaluation');
+Route::post('/submit-evaluation-piad', [PiadEvaluationController::class, 'piadSubmit'])->name('piad_evaluation');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');

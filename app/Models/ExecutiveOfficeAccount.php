@@ -71,4 +71,8 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(NitesdEvaluation::class, 'uploader_id');
     }
+    public function piadEval()
+    {
+        return $this->hasMany(PiadEvaluation::class, 'uploader_id');
+    }
 }

@@ -63,4 +63,9 @@ class Region extends Model
         return $this->hasMany(NitesdEvaluation::class, 'region_id');
     }
 
+    public function piadEval()
+    {
+        return $this->hasMany(PiadEvaluation::class, 'region_id');
+    }
+
 }
