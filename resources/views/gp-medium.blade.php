@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    @vite('resources/css/app.css')
     <style>
         .d-flex {
             display: flex;
@@ -23,9 +24,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            /* padding: 20px; */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            position: fixed;
         }
         .sidebar.hidden {
             transform: translateX(-100%);
@@ -51,10 +53,10 @@
             height: 100%;
             object-fit: cover;
         }
-        .profile-picture {
+        /* .profile-picture {
             width: 200px;
             height: 100px;
-        }
+        } */
         .user-name, .user-type {
             margin-bottom: 5px;
             text-align: center;
@@ -84,7 +86,6 @@
             left: 0;
             width: calc(100% - 250px); /* Adjust for the sidebar width */
             height: 100px; /* Adjust height as needed */
-            font-family: "Times New Roman", Times, serif;
             color: black;
             display: flex;
             align-items: center;
@@ -98,22 +99,46 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: "Times New Roman", Times, serif;
+            flex-grow: 1;
+            padding-left: 20px;
+            margin-top: 100px; /* Adjust for the fixed header height */
+            background-color: hsl(0, 0%, 97%);
         }
         table {
             font-family: "Times New Roman", Times, serif;
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
         }
         td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
             padding: 8px;
-            text-align: center;
+            text-align: left;
+            border: none;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: transparent;
+            font-weight: bold;
         }
+        
+        ul {
+            text-align: left;
+            font-size: 12px;
+            padding: 0px;
+        }
+        .textbox{
+            border-radius: 5px;
+            border: 0.5px solid #ccc;
+            width: 75px;"
+
+        }
+        .comments{
+            rows="2" 
+            columns: 3; 
+            border-radius: 10px;
+        }
+
     </style>
+
 </head>
 <body>
     <div class="d-flex">
@@ -122,10 +147,14 @@
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
+        <div class="ml-60">
+            
+        </div>
+
         <div class="header">
             <h1>GALING PROBINSYA - Medium Category - Submission List</h1>
         </div>
-        <div class="content">
+        <!-- <div class="content"> -->
             <div class="box-content">
                 <table>
                     <thead>
@@ -180,7 +209,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
     <script>
         document.getElementById('toggleSidebar').addEventListener('click', function() {
