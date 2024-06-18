@@ -8,6 +8,7 @@ use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
 use App\Http\Controllers\Secretariat\CoEvaluationController;
 use App\Http\Controllers\Secretariat\FmsEvaluationController;
+use App\Http\Controllers\Secretariat\IctoEvaluationController;
 use App\Http\Controllers\Secretariat\LdEvaluationController;
 use App\Http\Controllers\Secretariat\NitesdEvaluationController;
 use App\Http\Controllers\Secretariat\PiadEvaluationController;
@@ -219,6 +220,7 @@ Route::post('/submit-evaluation-piad', [PiadEvaluationController::class, 'piadSu
 Route::post('/submit-evaluation-po', [PoEvaluationController::class, 'poSubmit'])->name('po_evaluation');
 Route::post('/submit-evaluation-plo', [PloEvaluationController::class, 'ploSubmit'])->name('plo_evaluation');
 Route::post('/submit-evaluation-romo', [RomoEvaluationController::class, 'romoSubmit'])->name('romo_evaluation');
+Route::post('/submit-evaluation-icto', [IctoEvaluationController::class, 'ictoSubmit'])->name('icto_evaluation');
 
-Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
+Route::get('/upload-file', [RoController::class, 'index'])->name('fetch-upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');

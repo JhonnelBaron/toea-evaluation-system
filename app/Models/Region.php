@@ -83,4 +83,9 @@ class Region extends Model
         return $this->hasMany(RomoEvaluation::class, 'region_id');
     }
 
+    public function ictoEval()
+    {
+        return $this->hasMany(IctoEvaluation::class, 'region_id');
+    }
+
 }

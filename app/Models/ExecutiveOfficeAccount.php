@@ -90,4 +90,9 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(RomoEvaluation::class, 'uploader_id');
     }
+    
+    public function ictoEval()
+    {
+        return $this->hasMany(IctoEvaluation::class, 'uploader_id');
+    }
 }

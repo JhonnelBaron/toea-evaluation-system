@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('executive_office_accounts', function (Blueprint $table) {
             $table->id();
-            $table->enum('executive_office', ['AS', 'LD', 'CO', 'FMS', 'NITESD', 'PIAD', 'PO', 'PLO', 'ROMO','ROMD', 'RO'])->nullable();
+            $table->enum('executive_office', ['AS', 'LD', 'CO', 'FMS', 'NITESD', 'PIAD', 'PO', 'PLO', 'ROMO','ROMD', 'RO','ICTO'])->nullable();
             $table->string('name')->nullable();
             $table->string('position')->nullable();
             $table->string('office')->nullable();

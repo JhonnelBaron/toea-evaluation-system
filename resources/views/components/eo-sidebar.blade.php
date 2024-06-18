@@ -40,6 +40,9 @@
             case 'ROMD':
                 echo 'Regional Operations Management Division';
                 break;
+            case 'ICTO':
+                echo 'Information and Communication Technology Office';
+                break;
             default:
                 echo 'Unknown';
         }

@@ -113,6 +113,17 @@ class ExecutiveOfficeAccountsTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'executive_office' => 'ICTO',
+                'name' => 'jane',
+                'position' => 'Director',
+                'office' => 'Office 2',
+                'email' => 'icto@tesda.gov.ph',
+                'password' => Hash::make('password123'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'executive_office' => 'ROMD',
                 'name' => 'admin',
                 'position' => 'Director',

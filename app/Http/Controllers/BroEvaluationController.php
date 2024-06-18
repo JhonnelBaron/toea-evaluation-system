@@ -9,6 +9,7 @@ use App\Models\BroCPillar;
 use App\Models\BroDePillar;
 use App\Models\CoEvaluation;
 use App\Models\FmsEvaluation;
+use App\Models\IctoEvaluation;
 use App\Models\LdEvaluation;
 use App\Models\NitesdEvaluation;
 use App\Models\PiadEvaluation;
@@ -48,6 +49,8 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->ploEval;
             } elseif ($user->executive_office === 'ROMO') {
                 $region->evaluations = $region->romoEval;
+            } elseif ($user->executive_office === 'ICTO') {
+                $region->evaluations = $region->ictoEval;
             } else {
                 $region->evaluations = collect();
             }
@@ -111,6 +114,11 @@ class BroEvaluationController extends Controller
                 ->where('region_id', $region->id)
                 ->first();
                 break;
+            case 'ICTO':
+                $previousEvaluation = IctoEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
+                break;
             default:
                 return response('Invalid executive office');
         }
@@ -150,6 +158,10 @@ class BroEvaluationController extends Controller
         }elseif($user->executive_office === 'ROMO')
         {
             return view('executive.romo-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
+        }elseif($user->executive_office === 'ICTO')
+        {
+            return view('executive.icto-evaluate', ['regionId' => $id,
             'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }
     }
