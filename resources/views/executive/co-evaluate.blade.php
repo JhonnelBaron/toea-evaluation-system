@@ -174,20 +174,20 @@
                         <tr>
 
                             <td><b>B. Implementation of TESD Programs<hr></b></td>
-                            <td><b>217</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
+                            <td style="vertical-align: bottom"><b>189</b><hr></td>
+                            <td style="vertical-align: bottom"><hr></td>
+                            <td style="vertical-align: bottom"><hr></td>
+                            <td style="vertical-align: bottom"><hr></td>
 
                         </tr>
                         
                         <tr>
                             <td>
-                                <b>B.1. Performance based on the General Appropriations Act (GAA)<hr></b><br>
-                            <td style="vertical-align: top"><i>60<hr></i></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
+                                B.1. Performance based on the General Appropriations Act (GAA)
+                            <td style="vertical-align: bottom"><i></i></td>
+                            <td style="vertical-align: bottom"></td>
+                            <td style="vertical-align: bottom"></td>
+                            <td style="vertical-align: bottom"></td>
                         </tr>
 
                         <tr>
@@ -217,8 +217,8 @@
                         <tr>
                             <td>
                                 <h5>B.1.D. 90% of skilled workers issued with certification within 7 days of their application</h5>
-                                <ul>The accomplishment rate based on set target is at 100% and above</ul>
-                                <ul>The accomplishment rate based on set target is below 100%</ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
                             <td style="vertical-align: center"><i>15</i></td>
                             <td>
@@ -288,31 +288,50 @@
 
                             <tr>
                                 <td>
-                                    <b>B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></b><br>
-                                    
-                                <td style="vertical-align: top"><i><b>157<hr></b></i></td>
-                                <td><br><hr></td>
-                                <td><br><hr></td>
-                                <td><hr></td>
+                                    <b style="vertical-align: bottom">B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></b>
+                                    <td style="vertical-align: bottom"><i><hr></i></td>
+                                    <td style="vertical-align: bottom"><hr></td>
+                                    <td style="vertical-align: bottom"><hr></td>
+                                    <td style="vertical-align: bottom"><hr></td>
                             </tr>
 
                             <tr>
                                 <td>
                                     B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br>
-                                    
-                                <td style="vertical-align: center"><i>25</i></td>
+                                <td style="vertical-align: center"><i></i></td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    B.2.A.3. Participation and Recognition from Skills Competition<br>
-                                    
-                                <td style="vertical-align: center"><i>25</i></td>
+                                    <h5>B.2.A.3 Digitalization of TVET</h5>
+                                    <ul>The RO has institutionalized digitalization/use of electronic/online service delivery channel in the implementation of programs and/or utilize new technologies to reduce manual effort and increase productivity = <i>6</i></ul>
+                                    <ul>The RO has developed digitalization plan to enhance existing systems using/aided by new or emerging technologies to improve performance, efficiency, and capabilities = <i>3</i></ul>
+                                    <ul>The RO has no digitalization plan or initiatives undertaken = <i>0</i></ul>
+                                </td>
+                                <td style="vertical-align: center"><i>6</i></td>
+                                <td>
+                                    <ul><i>*Documentation Report after implementation <br>Submitted plans to ICTO </i></ul>
+                                </td>
+                                <td>
+                                    <input type="number" name="b1f" id="b1f" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b1f !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b1f : '' }}">
+                                    @error('b1f')
+                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
+                                </td>
+                                <td><textarea name="b1f_remarks" id="b1f_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b1f !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1f_remarks : '' }}</textarea></td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    <h5>B.2.A.3.1. Participation</h5>
+                                    B.2.A.4 Participation and Recognition from Skills Competition<br>
+                                <td style="vertical-align: center"><i></i></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <h5>B.2.A.4.1 Participation</h5>
                                     <ul>The Region participated in ASC and/or World Skills Competition = <i>6</i></ul>
                                     <ul>The Region participated in PNSC = <i>3</i></ul>
                                     <ul>The Region did not participate in any of the competition = <i>0</i></ul>
@@ -322,21 +341,21 @@
                                     <ul><i>*Terminal Reports/After Activity reports <br>Official list of winners</i></ul>
                                 </td>
                                 <td>
-                                    <input type="number" name="b2a31" id="b2a31" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                    @if($previousEvaluation && $previousEvaluation->b2a31 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a31 : '' }}">
-                                    @error('b2a31')
+                                    <input type="number" name="b2a41" id="b2a41" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b2a41 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a41 : '' }}">
+                                    @error('b2a41')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                                 </td>
-                                <td><textarea name="b2a31_remarks" id="b2a31_remarks" class="comments" placeholder="Comment"
-                                    @if($previousEvaluation && $previousEvaluation->b2a31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a31_remarks : '' }}</textarea>
+                                <td><textarea name="b2a41_remarks" id="b2a41_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a41 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a41_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
 
                             <tr>
                                 <td>
-                                    <h5>B.2.A.3.2. Awards received at the national level</h5>
+                                    <h5>B.2.A.4.2 Awards received at the national level</h5>
                                     <ul>The Region received award/recognition at the national level = <i>7</i></ul>
                                     <ul>The Region did not receive award/recognition = <i>0</i></ul>
                                 </td>
@@ -345,20 +364,20 @@
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
                                 <td>
-                                    <input type="number" name="b2a32" id="b2a32" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                    @if($previousEvaluation && $previousEvaluation->b2a32 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a32 : '' }}">
-                                    @error('b2a32')
+                                    <input type="number" name="b2a42" id="b2a42" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b2a42 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a42 : '' }}">
+                                    @error('b2a42')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                                 </td>
-                                <td><textarea name="b2a32_remarks" id="b2a32_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b2a32 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a32_remarks : '' }}</textarea></td>
+                                <td><textarea name="b2a42_remarks" id="b2a42_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2a42 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a42_remarks : '' }}</textarea></td>
                             </tr>
 
 
                             <tr>
                                 <td>
-                                    <h5>B.2.A.3.3. Awards received at the international level</h5>
+                                    <h5>B.2.A.4.3. Awards received at the international level</h5>
                                     <ul>The Region received award/recognition at the international level = <i>12</i></ul>
                                     <ul>The Region did not receive award/recognition = <i>0</i></ul>
                                 </td>
@@ -367,14 +386,14 @@
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
                                 <td>
-                                    <input type="number" name="b2a33" id="b2a33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                    @if($previousEvaluation && $previousEvaluation->b2a33 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a33 : '' }}">
-                                    @error('b2a33')
+                                    <input type="number" name="b2a43" id="b2a43" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                    @if($previousEvaluation && $previousEvaluation->b2a43 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a43 : '' }}">
+                                    @error('b2a43')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                                 </td>
-                                <td><textarea name="b2a33_remarks" id="b2a33_remarks" class="comments" placeholder="Comment"
-                                    @if($previousEvaluation && $previousEvaluation->b2a33 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a33_remarks : '' }}</textarea>
+                                <td><textarea name="b2a43_remarks" id="b2a43_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a43 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a43_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -383,7 +402,7 @@
                             <td><b><br>
                             B.2.C. Upscale Technical Education and Skills Development and Certification to Higher PQF Levels - SD3
                             <hr></b></td>
-                            <td style="vertical-align: center"><i><br><br>78<hr></i></td>
+                            <td style="vertical-align: bottom"><i><br><br><hr></i></td>
                             <td><br><br><br><hr></td>
                             <td><br><br><br><hr></td>
                             <td><br><br><br><hr></td>
@@ -392,10 +411,10 @@
                         <tr>
                             <td>
                                 <h5>B.2.C.1. Number of Programs Registered</h5>
-                                <ul>The accomplishment rate based on set target is at 100% and above = <i>10</i></ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                 <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: center"><i>10</i></td>
+                            <td style="vertical-align: center"><i>15</i></td>
                             <td>
                                 <ul><i>*MIS 02-04</i></ul>
                             </td>
@@ -486,12 +505,12 @@
                         <tr>
                             <td>
                                 <h5>
-                                    B.2.C.7. Establishment of Assessment Centers for NC Level IV Qualification
+                                    B.2.C.6 Establishment of Assessment Centers for NC Level IV Qualification
                                 </h5>
                                 <ul>
                                     <li>For Large Regions: At least 3 Assessment Centers for NC Level IV Qualifications</li>
                                     <li>For Medium Regions: At least 2 Assessment Centers for NC Level IV Qualifications</li>
-                                    <li>For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications = <i>8</i></li>
+                                    <li>For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications = <i>10</i></li>
                                 </ul>
                                 <br>
                                 <ul>
@@ -505,16 +524,16 @@
                                 <ul><i>*Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</i></ul>
                             </td>
                             <td style="vertical-align: center">
-                                <input type="number" name="b2c7" id="b2c7" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2c7 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2c7 : '' }}">
-                                @error('b2c7')
+                                <input type="number" name="b2c6" id="b2c6" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c6 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2c6 : '' }}">
+                                @error('b2c6')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                             @enderror
 
                             </td>
                             <td style="vertical-align: center">
-                                <textarea name="b2c7_remarks" id="b2c7_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b2c7 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c7_remarks : '' }}</textarea>
+                                <textarea name="b2c6_remarks" id="b2c6_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2c6 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c6_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -524,7 +543,7 @@
                                 <h5>
                                 <b>B.2.E. Streamline and Intensify QMS in All Organizational Subsystems - SD 5</b>
                             </td>
-                            <td style="vertical-align: center"><i>54</i></td>
+                            <td style="vertical-align: bottom"><i></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -534,7 +553,7 @@
                                 <h5>
                                 B.2.E.1. Accreditation Awards (STAR Program, APACC)
                             </td>
-                            <td style="vertical-align: center"><i>54</i></td>
+                            <td style="vertical-align: center"><i></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -545,7 +564,7 @@
                                 <h5>
                                 B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)                               
                             </td>
-                            <td style="vertical-align: center"><i>15</i></td>
+                            <td style="vertical-align: center"><i></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -558,11 +577,11 @@
                                     B.2.E.1.1.a. Participation                            
                                 </h5>
                                 <ul>
-                                    <li>The region nominated TVI/s for APACC accreditation = <i>5</i></li>
+                                    <li>The region nominated TVI/s for APACC accreditation = <i>6</i></li>
                                     <li>The region did not nominate any TVI/s for APACC accreditation = <i>0</i></li>
                                 </ul>
                             </td>
-                            <td style="vertical-align: center"><i>5</i></td>
+                            <td style="vertical-align: center"><i>6</i></td>
                             <td style="vertical-align: center">
                                 <ul><i>*Self Study Report submitted to APACC with letter and evidence</i></ul>
                             </td>
@@ -590,7 +609,7 @@
                                 <ul>The nominated TVI/s of the region received APACC accreditation = <i>10</i></ul>
                                 <ul>The nominated TVI/s of the region did not receive APACC accreditation = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: center"><i>5</i></td>
+                            <td style="vertical-align: center"><i>10</i></td>
                             <td>
                                 <ul><i>*Certificate of Accreditation</ul>
                             </td>
@@ -612,7 +631,7 @@
                                 <h5>
                                 B.2.E.1.2. System for TVET Accreditation and Recognition (STAR) Program                              
                             </td>
-                            <td style="vertical-align: center"><i>25</i></td>
+                            <td style="vertical-align: center"><i></i></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -625,10 +644,10 @@
                                 <h5>
                                     B.2.E.1.2.a. Participation
                                 </h5>
-                                <ul>The Region participated in STAR Program = <i>7</i></ul>
+                                <ul>The Region participated in STAR Program = <i>6</i></ul>
                                 <ul>The Region did not participate in STAR Program = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: center"><i>5</i></td>
+                            <td style="vertical-align: center"><i>6</i></td>
                             <td>
                                 <ul><i>*Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</ul>
                             </td>
@@ -651,10 +670,10 @@
                                 <h5>
                                     B.2.E.1.3.b. Awards received
                                 </h5>
-                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i></i></ul>
-                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i></i></ul>
+                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>8</i></ul>
+                                <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>0</i></ul>
                             </td>
-                            <td style="vertical-align: center"><i>5</i></td>
+                            <td style="vertical-align: center"><i>8</i></td>
                             <td>
                                 <ul><i>*Awards received</ul>
                             </td>
