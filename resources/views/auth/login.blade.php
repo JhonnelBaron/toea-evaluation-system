@@ -19,11 +19,8 @@
         <div class="bglogin bg-[url('/public/img/figg-bg.png')] w-full min-h-screen bg-cover flex justify-center">
             <div class="p-4 ml-72 mt-32">
                 <div class="card bg-white h-96 w-96 rounded-md shadow-md">
-                    <div class="bg-gray-200 w-full h-20 p-4 flex justify-center items-center rounded-t-md">
-                        <h3 class="text-blue-700 text-center font-bold text-sm">
-                            EXECUTIVE OFFICE EVALUATION PORTAL
-                        </h3>
-
+                    <div class= "bg-[url('/public/img/tesd-eo-logo.png')] bg-gray-200 w-full bg-cover bg-center border-2 h-20 p-4 flex justify-center items-center rounded-t-md" style="padding-top: 50px">
+                       
 
                     </div>
 

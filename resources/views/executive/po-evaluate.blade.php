@@ -181,11 +181,11 @@
                         
                         <tr>
 
-                            <td><b>B.1. Performance based on the General Appropriations Act (GAA)<hr></b></td>
-                            <td><b>45</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
+                            <td class="vertical-align: bottom"><b>B.1. Performance based on the General Appropriations Act (GAA)<hr></b></td>
+                            <td class="vertical-align: bottom"><br><b>45</b><hr></td>
+                            <td class="vertical-align: bottom"><br><br><hr></td>
+                            <td class="vertical-align: bottom"><br><br><hr></td>
+                            <td class="vertical-align: bottom"><br><br><hr></td>
 
                         </tr>
 
@@ -256,11 +256,11 @@
 
                         <tr>
 
-                            <td><b>B.2. Implementation of the TESDA Corporate Plan</b><hr></td>
-                            <td><b><br>43</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td><b class="vertical-align: bottom">B.2. Implementation of the TESDA Corporate Plan</b><hr></td>
+                            <td class="vertical-align: bottom"><b>43</b><hr></td>
+                            <td class="vertical-align: bottom"><br><hr></td>
+                            <td class="vertical-align: bottom"><br><hr></td>
+                            <td class="vertical-align: bottom"><br><hr></td>
 
                         </tr>
 
@@ -297,11 +297,11 @@
 
                         <tr>
 
-                            <td>B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction<hr></td>
-                            <td><b><br>20</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td><b>B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
 
                         </tr>   
 
@@ -349,11 +349,11 @@
 
                         <tr>
 
-                                <td><b>B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD</b><hr></td>
-                                <td><b><br>15</b><hr></td>
-                                <td><br><br><hr></td>
-                                <td><br><br><hr></td>
-                                <td><br><br><hr></td>
+                                <td><b>B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
 
                         </tr>  
 
@@ -418,7 +418,7 @@
                                 <ul>Reports are accurate and submitted consistently but not on time = <span class="red-asterisk">*</span><i><b>30</b></i></ul>
                                 <ul>Reports are not accurate and are not submitted on time = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>60</i></td>
+                            <td class="vertical-align: center"><i>60</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
                                 <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

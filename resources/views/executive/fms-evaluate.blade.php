@@ -185,11 +185,12 @@
 
                         <tr>
 
-                            <td><b>A.5. Compliance to Commission on Audit Rules and Regulations<hr></b></td>
-                            <td><b><br>30</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td>A.5. Compliance to Commission on Audit Rules and Regulations</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            
 
                         </tr>
                         
@@ -197,10 +198,10 @@
                             <td>
                                 <h5>A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office</h5>
                                 <ul>
-                                    <li>0 unimplemented audit observation memorandum by the region = <i>15</i></li>
-                                    <li>2-5 unimplemented audit observation memorandum by the region = <i>5</i></li>
-                                    <li>6-10 unimplemented audit observation memorandum by the region = <i>0</i></li>
-                                    <li>**Plus (1) point for RO with no AOM received = <i>1</i></li>
+                                    <li>0 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>15</i></li>
+                                    <li>2-5 unimplemented audit observation memorandum by the region = <span class="red-asterisk">*</span><i>5</i></li>
+                                    <li>6-10 unimplemented audit observation memorandum by the region = <span class="red-asterisk">*</span><i>0</i></li>
+                                    <li>**Plus (1) point for RO with no AOM received = <span class="red-asterisk">*</span><i>1</i></li>
                                 </ul>
                             </td>
                             <td><i>15</i></td>
@@ -225,8 +226,8 @@
                             <td>
                                 <h5>A.5.B. Notice of Suspension and Disallowance</h5>
                                 <ul>
-                                    <li>There are no suspensions and disallowances = <i>15</i></li>
-                                    <li>There are suspensions and disallowances = <i>0</i></li>
+                                    <li>There are no suspensions and disallowances = <span class="red-asterisk">*</span><i>15</i></li>
+                                    <li>There are suspensions and disallowances = <span class="red-asterisk">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>15</i></td>
@@ -248,11 +249,7 @@
 
                         <tr>
 
-                            <td>A.7. Liquidation of Cash Advances (Foreign and Local Travel Expenses)<hr></td>
-                            <td><b><br>20</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td><b>A.7. Liquidation of Cash Advances (Foreign and Local Travel Expenses)</b></td>
 
                         </tr>
 
@@ -261,8 +258,8 @@
                             <td>
                                 <h5>A.7.A. Liquidation of Foreign Travel Expenses</h5>
                                 <ul>
-                                    <li>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></li>
-                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></li>
+                                    <li>All Foreign Travel Expenses liquidated within 60 days = <span class="red-asterisk">*</span><i>10</i></li>
+                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <span class="red-asterisk">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>10</i></td>
@@ -288,8 +285,8 @@
                             <td>
                                 <h5>A.7.B. Liquidation of Local Travel Expenses</h5>
                                 <ul>
-                                    <li>All Local Travel Expenses liquidated within 30 days = <i>10</i></li>
-                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></li>
+                                    <li>All Local Travel Expenses liquidated within 30 days = <span class="red-asterisk">*</span><i>10</i></li>
+                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <span class="red-asterisk">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>10</i></td>
@@ -312,14 +309,14 @@
 
                         <tr>
                             <td>
-                                D.1. Timeliness, Consistency and Accuracy
-                                <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
-                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
+                                <b>D.1. Timeliness, Consistency and Accuracy <hr></b>
+                                <ul>Reports are accurate and submitted consistently and on time = <span class="red-asterisk">*</span><i>60</i></ul>
+                                <ul>Reports are accurate and submitted consistently but not on time = <span class="red-asterisk">*</span><i>30</i></ul>
+                                <ul>Reports are not accurate and are not submitted on time = <span class="red-asterisk">*</span><i>0</i></ul>
                             </td>
-                          <td><i>60</i></td>
+                            <td style="vertical-align: top"><i>60<hr></i></td>
                             <td>
-                                <i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i>
+                                <hr><ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
                             </td>
                             <td>
                             <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -342,10 +339,10 @@
             </div>
         </div>
     </div>
-    <script>
+    {{-- <script>
         document.getElementById('toggleSidebar').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('hidden');
         });
-    </script>
+    </script> --}}
 </body>
 </html>
