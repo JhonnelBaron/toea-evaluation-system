@@ -12,6 +12,8 @@ use App\Models\FmsEvaluation;
 use App\Models\LdEvaluation;
 use App\Models\NitesdEvaluation;
 use App\Models\PiadEvaluation;
+use App\Models\PloEvaluation;
+use App\Models\PoEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use Illuminate\Http\Request;
@@ -39,6 +41,10 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->nitesdEval;
             } elseif ($user->executive_office === 'PIAD') {
                 $region->evaluations = $region->piadEval;
+            } elseif ($user->executive_office === 'PO') {
+                $region->evaluations = $region->poEval;
+            } elseif ($user->executive_office === 'PLO') {
+                $region->evaluations = $region->ploEval;
             } else {
                 $region->evaluations = collect();
             }
@@ -84,6 +90,16 @@ class BroEvaluationController extends Controller
                 break;
             case 'PIAD':
                 $previousEvaluation = PiadEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
+                break;
+            case 'PO':
+                $previousEvaluation = PoEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
+                break;
+            case 'PLO':
+                $previousEvaluation = PloEvaluation::where('uploader_id', $user->id)
                 ->where('region_id', $region->id)
                 ->first();
                 break;

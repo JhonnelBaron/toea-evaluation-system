@@ -75,4 +75,14 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(PiadEvaluation::class, 'uploader_id');
     }
+
+    public function poEval()
+    {
+        return $this->hasMany(PoEvaluation::class, 'uploader_id');
+    }
+
+    public function ploEval()
+    {
+        return $this->hasMany(PloEvaluation::class, 'uploader_id');
+    }
 }

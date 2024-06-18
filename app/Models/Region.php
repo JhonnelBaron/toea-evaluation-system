@@ -68,4 +68,14 @@ class Region extends Model
         return $this->hasMany(PiadEvaluation::class, 'region_id');
     }
 
+    public function poEval()
+    {
+        return $this->hasMany(PoEvaluation::class, 'region_id');
+    }
+
+    public function ploEval()
+    {
+        return $this->hasMany(PloEvaluation::class, 'region_id');
+    }
+
 }
