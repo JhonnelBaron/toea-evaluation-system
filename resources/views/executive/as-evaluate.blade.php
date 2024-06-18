@@ -134,6 +134,12 @@
             columns: 3; 
             border-radius: 10px;
         }
+
+        .red-asterisk {
+            color: red;
+            font-size: 1.2em; /* Adjust font size as needed */
+        }
+
     </style>
 </head>
 <body>
@@ -175,8 +181,8 @@
                             <tr>
                                 <td>
                                     <h5>A.6. Compliance to PhilGEPS requirements<br></h5>
-                                    <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
-                                    <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
+                                    <ul>100% compliance from Publication to Notice and Award and notice to proceed = <span class="red-asterisk">*</span><i><b>30</b></i></ul>
+                                    <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: center"><i>30</i></td>
                                 <td>
@@ -196,8 +202,8 @@
                             <tr>
                                 <td>
                                     <h5>A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</h5>
-                                    <ul>The Provincial Office is compliant to APCPI = <i>10</i></ul>
-                                    <ul>The Provincial Office is not compliant to APCPI = <i>0</i></ul>
+                                    <ul>The Provincial Office is compliant to APCPI = <span class="red-asterisk">*</span><i><b>10</b></i></ul>
+                                    <ul>The Provincial Office is not compliant to APCPI = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>10</i></td>
                                 <td>
@@ -220,21 +226,21 @@
                                 <td><br><hr></td>
                                 <td><br><hr></td>
                             </tr>
-                            <tr>
-                                <td>C.3. Staff Development Program<hr></td>
-                                <td style="vertical-align: top"><i>35</i></td>
+                            {{-- <tr>
+                                <td>C.3. Staff Development Program</td>
+                                <td style="vertical-align: top"><i></i></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>
                                     C.3.1. Employees who have attended SDP have implemented their RE-Entry Plans as scheduled<hr><br>
-                                    <ul>100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>20</i></ul>
-                                    <ul>70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>10</i></ul>
-                                    <ul>69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>0</i></ul>
+                                    <ul>100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <span class="red-asterisk">*</span><i><b>20</b></i></ul>
+                                    <ul>70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <span class="red-asterisk">*</span><i><b>10</b></i></ul>
+                                    <ul>69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
-                                <td style="vertical-align: top"><i>20</i></td>
+                                <td style="vertical-align: center"><i>20</i></td>
                                 <td>
                                     <ul><i>*Regional Work Force Development Plan (WFDP) <br>Certificates of trainings attended</ul></i>
                                 </td>
@@ -251,9 +257,10 @@
                             </tr>
                             <tr>
                                 <td>
-                                    C.3.2. Training Opportunities to staff provided for CY 2022<hr><br>
-                                    <ul>100% of Employees were provided with training opportunities = <i>15</i></ul>
-                                    <ul>74% and below of Employees were provided with training opportunities = <i>0</i></ul>
+                                    C.3.2. Training Opportunities to staff provided for CY 2022<hr>
+                                    <ul>100% of Employees were provided with training opportunities = <span class="red-asterisk">*</span><i><b>15</b></i></ul>
+                                    <ul>75%-99% of Employees were provided with training opportunities = <span class="red-asterisk">*</span><i><b>5</b></i></ul>
+                                    <ul>74% and below of Employees were provided with training opportunities = <i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>15</i></td>
                                 <td>
@@ -271,23 +278,23 @@
                             </tr>
                             <tr>
                                 <td><b>C.4. Model Employee Awards<hr></b></td>
-                                <td style="vertical-align: top"><b>26</b></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td style="vertical-align: bottom"><b><hr></b></td>
+                                <td><br><hr></td>
+                                <td><br><hr></td>
+                                <td><br><hr></td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>C.4.1. Model Employee for Category I Position<hr></td>
                                 <td style="vertical-align: top;"><i>8</i></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>
-                                    C.4.1.1. Participation<hr><br>
-                                    <ul>The Region submitted nominees for Category I = <i>4</i></ul>
-                                    <ul>The Region did not submit nominees for Category I = <i>0</i></ul>
+                                    C.4.1.1. Participation - Category I<hr>
+                                    <ul>The Region submitted nominees for Category I = <span class="red-asterisk">*</span><i><b>4</b></i></ul>
+                                    <ul>The Region did not submit nominees for Category I = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>4</i></td>
                                 <td>
@@ -305,9 +312,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    C.4.1.2. Awards received<hr><br>
-                                    <ul>The Region has received recognition/award at national level = <i>4</i></ul>
-                                    <ul>The Region did not receive award/recognition at national level = <i>0</i></ul>
+                                    C.4.1.2. Awards received - Category I<hr>
+                                    <ul>The Region has received recognition/award at national level = <span class="red-asterisk">*</span><i><b>4</b></i></ul>
+                                    <ul>The Region did not receive award/recognition at national level = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>4</i></td>
                                 <td>
@@ -323,18 +330,18 @@
                                     <textarea name="c412_remarks" id="c412_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c412 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c412_remarks : '' }}</textarea>
                                 </td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>C.4.2. Model Employee for Category II Position<hr></td>
                                 <td style="vertical-align: top"><b>9</b></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>
-                                    C.4.2.1. Participation<br><hr>
-                                    <ul>The Region submitted nominees for Category II = <i>4</i></ul>
-                                    <ul>The Region did not submit nominees for Category II = <i>0</i></ul>
+                                    C.4.2.1. Participation - Category II<br><hr>
+                                    <ul>The Region submitted nominees for Category II = <span class="red-asterisk">*</span><i><b>4</b></i></ul>
+                                    <ul>The Region did not submit nominees for Category II = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>4</i></td>
                                 <td>
@@ -352,9 +359,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    C.4.2.2. Awards received<hr><br>
-                                    <ul>The Region has received recognition/award at national level = <i>5</i></ul>
-                                    <ul>The Region did not receive award/recognition at national level = <i>0</i></ul>
+                                    C.4.2.2. Awards received - Category II<hr><br>
+                                    <ul>The Region has received recognition/award at national level = <span class="red-asterisk">*</span><i><b>5</b></i></ul>
+                                    <ul>The Region did not receive award/recognition at national level = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>5</i></td>
                                 <td>
@@ -372,16 +379,16 @@
                             </tr>
                             <tr>
                                 <td><b>C.4.3. Model Employee for Category III Position</b><hr></td>
-                                <td style="vertical-align: top"><b>9</b></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td style="vertical-align: bottom"><b><br><hr></b></td>
+                                <td style="vertical-align: bottom"><br><hr></td>
+                                <td style="vertical-align: bottom"><br><hr></td>
+                                <td style="vertical-align: bottom"><br><hr></td>
                             </tr>
                             <tr>
                                 <td>
-                                    C.4.3.1. Participation<hr>
-                                    <ul>The Region submitted nominees for Category III = <i>4</i></ul>
-                                    <ul>The Region did not submit nominees for Category III = <i>0</i></ul>
+                                    C.4.3.1. Participation - Category III<hr>
+                                    <ul>The Region submitted nominees for Category III = <span class="red-asterisk">*</span><i><b>4</b></i></ul>
+                                    <ul>The Region did not submit nominees for Category III = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>4</i></td>
                                 <td>
@@ -399,9 +406,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    C.4.3.2. Awards received<hr>
-                                    <ul>The Region has received recognition/award at national level = <i>5</i></ul>
-                                    <ul>The Region did not receive award/recognition at national level = <i>0</i></ul>
+                                    C.4.3.2. Awards received - Category III<hr>
+                                    <ul>The Region has received recognition/award at national level = <span class="red-asterisk">*</span><i><b>5</b></i></ul>
+                                    <ul>The Region did not receive award/recognition at national level = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><i>5</i></td>
                                 <td>
@@ -420,9 +427,9 @@
                             <tr>
                                 <td>
                                     <b>C.5. Application for PRIME-HR Level</b><hr>
-                                    <ul>The RO or PO/s in the region have applied and have been certified in higher PRIME HR Level = <i>8</i></ul>
-                                    <ul>The RO or PO/s have applied for higher PRIME-HR Level = <i>4</i></ul>
-                                    <ul>The RO or PO/s have not applied for higher PRIME-HR Level = <i>0</i></ul>
+                                    <ul>The RO or PO/s in the region have applied and have been certified in higher PRIME HR Level = <span class="red-asterisk">*</span><i><b>8</b></i></ul>
+                                    <ul>The RO or PO/s have applied for higher PRIME-HR Level = <span class="red-asterisk">*</span><i><b>4</b></i></ul>
+                                    <ul>The RO or PO/s have not applied for higher PRIME-HR Level = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
                                 <td style="vertical-align: top"><b>8</b></td>
                                 <td>
@@ -441,11 +448,11 @@
                             <tr>
                                 <td>
                                     <b>D. Reporting Efficiency</b><hr>
-                                    <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
-                                    <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                    <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
+                                    <ul>Reports are accurate and submitted consistently and on time = <span class="red-asterisk">*</span><i><b>60</b></i></ul>
+                                    <ul>Reports are accurate and submitted consistently but not on time = <span class="red-asterisk">*</span><i><b>30</b></i></ul>
+                                    <ul>Reports are not accurate and are not submitted on time = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                                 </td>
-                                <td style="vertical-align: top"><b>60</b></td>
+                                <td style="vertical-align: top"><b>60<hr></b></td>
                                 <td>
                                     <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</ul></i>
                                 </td>

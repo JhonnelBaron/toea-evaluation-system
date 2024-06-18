@@ -137,6 +137,12 @@
             border-radius: 10px;
         }
 
+        .red-asterisk {
+            color: red;
+            font-size: 1.5em; /* Adjust font size as needed */
+        }
+
+
     </style>
 </head>
 <body>
@@ -176,7 +182,7 @@
                         <tr>
 
                             <td><b>B.1. Performance based on the General Appropriations Act (GAA)<hr></b></td>
-                            <td><b>40</b><hr></td>
+                            <td><b>45</b><hr></td>
                             <td><br><hr></td>
                             <td><br><hr></td>
                             <td><br><hr></td>
@@ -187,10 +193,10 @@
                         <tr>
                             <td>
                             B.1.A. Number of Regional and Provincial TESD plans formulated/updated
-                                <ul>The accomplishment rate based on set target is at 100% and above  = <i>15</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <ul>*</span>The accomplishment rate based on set target is at 100% and above = <span class="red-asterisk">*</span><i><b>15</b></i></ul>
+                                <ul>*</span>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>10</i></td>
+                            <td><i>15</i></td>
                             <td><i><ul>*Submission of the Regional and Provincial TESD plans with cover memo
                             </i></ul></td>
                             <td>
@@ -205,14 +211,14 @@
                                 @if($previousEvaluation && $previousEvaluation->b1a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1a_remarks : '' }}</textarea>
                             </td>
                         </tr>
-
+                        
                         <tr>
                             <td>
                             B.1.B. 94% stakeholders who rated policies/plans as good or better
-                                <ul>The accomplishment rate based on set target is at 100% and above = <i>10</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above = <span class="red-asterisk">*</span><i><b>15</b></i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>30</i></td>
+                            <td><i>15</i></td>
                             <td><i><ul>*Report of the User’s Feedback Survey </i></ul></td>
                             <td>
                                  <input type="number" name="b1b" id="b1b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -229,9 +235,9 @@
 
                         <tr>
                             <td>
-                            B.1.I. 69.39% of graduates from technical education and skills development scholarship programs that were employed
-                                <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                            B.1.I. 76.30% of graduates from technical education and skills development scholarship programs that were employed
+                                <ul>The accomplishment rate based on set target is at 100% and above = <span class="red-asterisk">*</span><i><b>15</b></i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
                             <td><i>15</i></td>
                             <td><i><ul>*Summary/Report on Result on the Survey on Employability of TVET graduates under TWSP, PESFA and STEP (SETG)</i></ul></td>
@@ -250,8 +256,8 @@
 
                         <tr>
 
-                            <td>B.2. Implementation of the TESDA Corporate Plan 2018-2022<hr></td>
-                            <td><b><br>30</b><hr></td>
+                            <td><b>B.2. Implementation of the TESDA Corporate Plan</b><hr></td>
+                            <td><b><br>43</b><hr></td>
                             <td><br><br><hr></td>
                             <td><br><br><hr></td>
                             <td><br><br><hr></td>
@@ -260,21 +266,21 @@
 
                         <tr>
 
-                            <td>B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<hr></td>
-                            <td><b><br>10</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td>B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1</td>
+                            <td><b><br></b></td>
+                            <td><br><br></td>
+                            <td><br><br></td>
+                            <td><br><br></td>
 
                         </tr>
 
                         <tr>
                             <td>
                             B.2.A.1. Advancement through Innovations and Researches
-                                <ul>The Region has submitted policy or technology research/es  = <i>10</i></ul>
-                                <ul>The Region has not suibmitted policy or technology research/es = <i>0</i></ul>
+                                <ul>The Region has submitted policy or technology research/es  = <span class="red-asterisk">*</span><i><b>8</b></i></ul>
+                                <ul>The Region has not suibmitted policy or technology research/es = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>10</i></td>
+                            <td><i><b>8</b></i></td>
                             <td><i><ul>*Researches submitted to the NITESD</i></ul></td>
                             <td>
                                 <input type="number" name="b2a1" id="b2a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -291,8 +297,8 @@
 
                         <tr>
 
-                            <td>B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction - SD 2<hr></td>
-                            <td><b><br>10</b><hr></td>
+                            <td>B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction<hr></td>
+                            <td><b><br>20</b><hr></td>
                             <td><br><br><hr></td>
                             <td><br><br><hr></td>
                             <td><br><br><hr></td>
@@ -302,10 +308,10 @@
                         <tr>
                             <td>
                             B.2.B.1.  TVET enrolment and graduates by delivery mode- community-based
-                                <ul>The accomplishment rate based on set target is at 100% and above  = <i>5</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above  = <span class="red-asterisk">*</span><i><b>10</b></i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>5</i></td>
+                            <td><i>10</i></td>
                             <td><i><ul>*Monitoring Reports</i></ul></td>
                             <td>
                                 <input type="number" name="b2b1" id="b2b1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -323,10 +329,10 @@
                         <tr>
                             <td>
                             B.2.B.5. Communications/programs/advocacy on Gender and Development (GAD)
-                                <ul>All TTIs, POs and the Region have conducted programs/activities related to GAD  = <i>5</i></ul>
-                                <ul>Not all TTIs, POs and the Region have conducted programs/activities related to GAD = <i>0</i></ul>
+                                <ul>All TTIs, POs and the Region have conducted programs/activities related to GAD  = <span class="red-asterisk">*</span><i><b>10</b></i></ul>
+                                <ul>Not all TTIs, POs and the Region have conducted programs/activities related to GAD = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>5</i></td>
+                            <td><i>10</i></td>
                             <td><i><ul>*After activity report on GAD related programs conducted</i></ul></td>
                             <td>
                                 <input type="number" name="b2b5" id="b2b5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -343,8 +349,8 @@
 
                         <tr>
 
-                                <td> B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD - SD4<hr></td>
-                                <td><b><br>10</b><hr></td>
+                                <td><b>B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD</b><hr></td>
+                                <td><b><br>15</b><hr></td>
                                 <td><br><br><hr></td>
                                 <td><br><br><hr></td>
                                 <td><br><br><hr></td>
@@ -356,8 +362,8 @@
                         <tr>
                             <td>
                             B.2.D.1. TVET enrolment and graduates by delivery mode- institution-based
-                                <ul>The accomplishment rate based on set target is at 100% and above  = <i>5</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above  = <span class="red-asterisk">*</span><i><b>5</b></i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
                             <td><i>5</i></td>
                             <td><i><ul>*Report from T2MIS</i></ul></td>
@@ -377,10 +383,10 @@
                         <tr>
                             <td>
                             B.2.D.2. TVET enrolment and graduates by delivery mode- enterprise-based
-                                <ul>The accomplishment rate based on set target is at 100% and above  = <i>5</i></ul>
-                                <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                <ul>The accomplishment rate based on set target is at 100% and above  = <span class="red-asterisk">*</span><i><b>10</b></i></ul>
+                                <ul>The accomplishment rate based on set target is below 100% = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>5</i></td>
+                            <td><i>10</i></td>
                             <td><i><ul>*Report from T2MIS</i></ul></td>
                             <td>
                                 <input type="number" name="b2d2" id="b2d2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -398,7 +404,7 @@
 
                         <tr>
 
-                                <td> D. Reporting Efficiency<hr></td>
+                                <td><b>D. Reporting Efficiency</b><hr></td>
                                 <td><b><br>60</b><hr></td>
                                 <td><br><br><hr></td>
                                 <td><br><br><hr></td>
@@ -408,11 +414,11 @@
                         <tr>
                             <td>
                             D.1. Timeliness, Consistency and Accuracy
-                                <ul>Reports are accurate and submitted consistently and on time  = <i>60</i></ul>
-                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
+                                <ul>Reports are accurate and submitted consistently and on time  = <span class="red-asterisk">*</span><i><b>60</b></i></ul>
+                                <ul>Reports are accurate and submitted consistently but not on time = <span class="red-asterisk">*</span><i><b>30</b></i></ul>
+                                <ul>Reports are not accurate and are not submitted on time = <span class="red-asterisk">*</span><i><b>0</b></i></ul>
                             </td>
-                            <td><i>5</i></td>
+                            <td><i>60</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
                                 <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
