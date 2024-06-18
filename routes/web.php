@@ -13,6 +13,7 @@ use App\Http\Controllers\Secretariat\NitesdEvaluationController;
 use App\Http\Controllers\Secretariat\PiadEvaluationController;
 use App\Http\Controllers\Secretariat\PloEvaluationController;
 use App\Http\Controllers\Secretariat\PoEvaluationController;
+use App\Http\Controllers\Secretariat\RomoEvaluationController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -217,6 +218,7 @@ Route::post('/submit-evaluation-nitesd', [NitesdEvaluationController::class, 'ni
 Route::post('/submit-evaluation-piad', [PiadEvaluationController::class, 'piadSubmit'])->name('piad_evaluation');
 Route::post('/submit-evaluation-po', [PoEvaluationController::class, 'poSubmit'])->name('po_evaluation');
 Route::post('/submit-evaluation-plo', [PloEvaluationController::class, 'ploSubmit'])->name('plo_evaluation');
+Route::post('/submit-evaluation-romo', [RomoEvaluationController::class, 'romoSubmit'])->name('romo_evaluation');
 
 Route::get('/upload-file', [RoController::class, 'index'])->name('upload.file');
 Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');

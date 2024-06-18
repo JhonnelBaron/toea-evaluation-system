@@ -152,9 +152,13 @@
         <div class="header">
             <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - ROMO</h1>
         </div>
+        <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
-
+                <form method="POST" action="{{ route('romo_evaluation') }}">
+                    @csrf
+                    <!-- Hidden input for region_id -->
+                    <input type="hidden" name="region_id" value="{{ $regionId }}">
                 <!-- THIS IS A -->
                 <table>
                     <thead>
@@ -198,10 +202,15 @@
                             <td><i>35</i></td>
                             <td><i><ul>*Report generated from the SPMOR</i></ul></td>
                             <td>
-                                <input type="number" name="b1h" id="b1h" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b1h" id="b1h" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b1h !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b1h : '' }}">
+                                @error('b1h')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b1h_remarks" id="b1h_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b1h_remarks" id="b1h_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b1h !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1h_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -235,10 +244,15 @@
                             <td><i>10</i></td>
                             <td><i><ul>*Monitoring Reports</i></ul></td>
                             <td>
-                                <input type="number" name="b2b2" id="b2b2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b2b2" id="b2b2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2b2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2b2 : '' }}">
+                                @error('b2b2')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b2b2_remarks" id="b2b2_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b2_remarks" id="b2b2_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2b2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2b2_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -252,10 +266,15 @@
                             <td><i>35</i></td>
                             <td><i><ul>*Monitoring Reports</i></ul></td>
                             <td>
-                                 <input type="number" name="b2b3" id="b2b3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                 <input type="number" name="b2b3" id="b2b3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                 @if($previousEvaluation && $previousEvaluation->b2b3 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2b3 : '' }}">
+                                 @error('b2b3')
+                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                 @enderror
                             </td>
                             <td>
-                                <textarea name="b2b3_remarks" id="b2b3_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b3_remarks" id="b2b3_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2b3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2b3_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -269,10 +288,15 @@
                             <td><i>7</i></td>
                             <td><i><ul>*After Activity Reports on meetings conducted</i></ul></td>
                             <td>
-                                <input type="number" name="b2b4" id="b2b4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="b2b4" id="b2b4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2b4 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2b4 : '' }}">
+                                @error('b2b4')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="b2b4_remarks" id="b2b4_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="b2b4_remarks" id="b2b4_remarks" class="comments" placeholder="Comment"
+                                 @if($previousEvaluation && $previousEvaluation->b2b4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2b4_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -286,10 +310,15 @@
                             <td><i>5</i></td>
                             <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                             <td>
-                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;/>
+                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
+                                @error('d1')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td>
-                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -297,6 +326,10 @@
                     </script>    
                     </tbody>
                 </table>
+                <td>
+                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                </td>
+            </form>
             </div>
         </div>
     </div>

@@ -78,4 +78,9 @@ class Region extends Model
         return $this->hasMany(PloEvaluation::class, 'region_id');
     }
 
+    public function romoEval()
+    {
+        return $this->hasMany(RomoEvaluation::class, 'region_id');
+    }
+
 }

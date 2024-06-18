@@ -16,6 +16,7 @@ use App\Models\PloEvaluation;
 use App\Models\PoEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
+use App\Models\RomoEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -45,6 +46,8 @@ class BroEvaluationController extends Controller
                 $region->evaluations = $region->poEval;
             } elseif ($user->executive_office === 'PLO') {
                 $region->evaluations = $region->ploEval;
+            } elseif ($user->executive_office === 'ROMO') {
+                $region->evaluations = $region->romoEval;
             } else {
                 $region->evaluations = collect();
             }
@@ -100,6 +103,11 @@ class BroEvaluationController extends Controller
                 break;
             case 'PLO':
                 $previousEvaluation = PloEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
+                break;
+            case 'ROMO':
+                $previousEvaluation = RomoEvaluation::where('uploader_id', $user->id)
                 ->where('region_id', $region->id)
                 ->first();
                 break;
