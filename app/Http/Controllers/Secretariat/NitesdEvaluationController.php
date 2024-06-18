@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class NitesdEvaluationController extends Controller
 {
-    public function nitesdSubmit(Request $request)
+    public function  nitesdSubmit(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'uploader_id' => 'nullable|integer|exists:users,id',
@@ -71,7 +71,7 @@ class NitesdEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b2a1' => 0, 'b2a2' => 0, 'b2d31' => 0, 'b2d32' => 0, 'b2d441' => 0, 'b2d442' => 0, 'b2e3' => 0, 'd1' => 0,
+            'b2a1' => null, 'b2a2' => null, 'b2d31' => null, 'b2d32' => null, 'b2d441' => null, 'b2d442' => null, 'b2e3' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -92,7 +92,7 @@ class NitesdEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

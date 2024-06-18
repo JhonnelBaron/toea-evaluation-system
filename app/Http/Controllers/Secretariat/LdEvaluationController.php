@@ -47,7 +47,7 @@ class LdEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'a1' => 0, 'a2' => 0,
+            'a1' => null, 'a2' => null,
         ];
 
         // Update with existing data if available
@@ -68,7 +68,7 @@ class LdEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

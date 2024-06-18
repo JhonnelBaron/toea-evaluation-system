@@ -55,7 +55,7 @@ class PiadEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'a3' => 0, 'a4' => 0, 'd1' => 0, 'e1' => 0,
+            'a3' => null, 'a4' => null, 'd1' => null, 'e1' => null,
         ];
 
         // Update with existing data if available
@@ -76,7 +76,7 @@ class PiadEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

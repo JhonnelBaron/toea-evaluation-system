@@ -86,8 +86,8 @@ class AsEvaluationController extends Controller
 
          // Initialize variables for overall progress metrics
     $totalFields = [
-        'a6' => 0, 'a8' => 0, 'c31' => 0, 'c32' => 0, 'c411' => 0, 'c412' => 0,
-        'c421' => 0, 'c422' => 0, 'c431' => 0, 'c432' => 0, 'c5' => 0, 'd1' => 0,
+        'a6' => null, 'a8' => null, 'c31' => null, 'c32' => null, 'c411' => null, 'c412' => null,
+        'c421' => null, 'c422' => null, 'c431' => null, 'c432' => null, 'c5' => null, 'd1' => null,
     ];
 
     // Update with existing data if available
@@ -108,7 +108,7 @@ class AsEvaluationController extends Controller
 
     // Calculate filled fields count
     $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-        return $value > 0;
+        return $value !== null;
     }));
 
     // Calculate total score

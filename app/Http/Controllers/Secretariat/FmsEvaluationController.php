@@ -59,7 +59,7 @@ class FmsEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'a5a' => 0, 'a5b' => 0, 'a7a' => 0, 'a7b' => 0, 'd1' => 0,
+            'a5a' => null, 'a5b' => null, 'a7a' => null, 'a7b' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -80,7 +80,7 @@ class FmsEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

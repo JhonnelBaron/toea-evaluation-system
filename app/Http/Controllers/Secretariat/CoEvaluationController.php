@@ -107,9 +107,9 @@ class CoEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1c' => 0, 'b1d' => 0, 'b1e' => 0, 'b1f' => 0, 'b2a31' => 0, 'b2a32' => 0,
-            'b2a33' => 0, 'b2c1' => 0, 'b2c2' => 0, 'b2c3' => 0, 'b2c4' => 0, 'b2c7' => 0,
-            'b2e11a' => 0, 'b2e11b' => 0, 'b2e12a' => 0, 'b2e13b' => 0, 'd1' => 0,
+            'b1c' => null, 'b1d' => null, 'b1e' => null, 'b1f' => null, 'b2a31' => null, 'b2a32' => null,
+            'b2a33' => null, 'b2c1' => null, 'b2c2' => null, 'b2c3' => null, 'b2c4' => null, 'b2c7' => null,
+            'b2e11a' => null, 'b2e11b' => null, 'b2e12a' => null, 'b2e13b' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -130,7 +130,7 @@ class CoEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

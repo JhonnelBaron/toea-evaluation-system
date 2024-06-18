@@ -87,9 +87,9 @@ class PloEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1g' => 0, 'b2d411' => 0, 'b2d412' => 0, 'b2d42' => 0,
-            'b2d421' => 0, 'b2d422' => 0, 'b2d43' => 0, 'b2d431' => 0,
-            'b2d432' => 0, 'b2d5' => 0, 'b2d6' => 0, 'd1' => 0,
+            'b1g' => null, 'b2d411' => null, 'b2d412' => null, 'b2d42' => null,
+            'b2d421' => null, 'b2d422' => null, 'b2d43' => null, 'b2d431' => null,
+            'b2d432' => null, 'b2d5' => null, 'b2d6' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -110,7 +110,7 @@ class PloEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

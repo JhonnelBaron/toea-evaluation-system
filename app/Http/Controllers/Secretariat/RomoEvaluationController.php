@@ -60,7 +60,7 @@ class RomoEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1h' => 0, 'b2b2' => 0, 'b2b3' => 0, 'b2b4' => 0, 'd1' => 0,
+            'b1h' => null, 'b2b2' => null, 'b2b3' => null, 'b2b4' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -81,7 +81,7 @@ class RomoEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score

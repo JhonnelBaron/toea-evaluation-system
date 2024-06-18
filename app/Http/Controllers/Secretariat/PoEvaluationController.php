@@ -75,8 +75,8 @@ class PoEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1a' => 0, 'b1b' => 0, 'b1i' => 0, 'b2a1' => 0,
-            'b2b1' => 0, 'b2b5' => 0, 'b2d1' => 0, 'b2d2' => 0, 'd1' => 0,
+            'b1a' => null, 'b1b' => null, 'b1i' => null, 'b2a1' => null,
+            'b2b1' => null, 'b2b5' => null, 'b2d1' => null, 'b2d2' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -97,7 +97,7 @@ class PoEvaluationController extends Controller
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
-            return $value > 0;
+            return $value !== null;
         }));
 
         // Calculate total score
