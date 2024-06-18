@@ -53,7 +53,7 @@
                 <a href="#tab1" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
             </div>
     </div>
-    <div style="margin-top: 370px;">
+    <div style="margin-top: 250px;">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit">Logout</button>

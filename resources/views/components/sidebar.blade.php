@@ -6,7 +6,7 @@
     <div class="user-name">{{ Auth::user()->name }}</div>
     <div class="user-type">
         @php
-         switch (Auth::guard('web')->user()->executive_office) {
+        switch (Auth::guard('web')->user()->executive_office) {
             case 'AS':
                 echo 'Administrative Office';
                 break;
@@ -39,10 +39,10 @@
         }
     @endphp
     </div>
-    <div><hr></div>
 
       <!-- Dropdown for BEST REGIONAL OFFICE -->
        <div>
+        <hr>
             <div class="dropdown">
                 <a href="#tab1" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
             </div>
@@ -65,11 +65,14 @@
                 <a href="{{route('bit-ptc')}}" class="sub-tab">PTC</a>
             </div>
         </div>
-
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit">Logout</button>
-        </form>
+        <div style="margin-top: 250px;" class="flex justify-center">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="text-xs btn btn-primary rounded-full transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                            LOGOUT
+                        </button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -80,6 +83,7 @@
 <style>
     .sidebar {
         display: flex;
+        flex-direction: column;
         height: 100vh; /* Set sidebar height to 100% of viewport height */
     }
     .sidebar .tabs {

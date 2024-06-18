@@ -16,7 +16,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <div class="bglogin bg-[url('/public/img/login-bg.png')] w-full min-h-screen bg-cover flex justify-center">
+        <div class="bglogin bg-[url('/public/img/background-cae.png')] w-full min-h-screen bg-cover flex justify-center">
             <div class="p-4 ml-72 mt-32">
                 <div class="card bg-white h-96 w-96 rounded-md shadow-md">
                     <div class="bg-gray-200 w-full h-20 p-4 flex justify-center items-center rounded-t-md">

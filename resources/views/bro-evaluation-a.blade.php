@@ -156,7 +156,7 @@
                             <th>Requirement</th>
                             <th>Initial Score</th>
                             <th>Means of Verification</th>
-                            <th>Evaluation</th>
+                            <th>Secretariat Score</th>
                             <th>Remarks</th>
                         </tr>
                     </thead>
@@ -168,8 +168,8 @@
                             <ul>The Region has no personnel with pending administrative case = <i>40</i></ul>
                             <ul>The Region has at least one pending administrative case  = <i> 0</i></ul></td>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification of no pending case</ul></i></td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br><i><ul>*Certification of no pending case</ul></i></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
@@ -196,8 +196,8 @@
                             </td>
                             
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification from the RACC</ul></i></td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br><i><ul>*Certification from the RACC</ul></i></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
@@ -208,13 +208,13 @@
                                 <ul>Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year = <i>0</i></ul>
                             </td>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button>
                             <br>
                             <ul><i>*TESDA OP AS 03 F04 Monitoring of Complaints Received</i></ul>
                             <ul><i>*Certification of No Complaints Received - signed by the RD</i></ul>
 
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
@@ -229,10 +229,10 @@
                                 <ul>Customer Net Satisfaction Rating is below 95% = <i>0</i></ul>
                             </td>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                             <ul><i>*Customer Feedback Form Results TESDA OP AS 03 F02</i></ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
@@ -245,12 +245,12 @@
                                     <ul>6-10 unimplemented audit observation memorandum by the province = <i>0</i></ul>
                                     <ul>**Plus (1) point for PO with no AOM received = <i>1</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                             <ul><i>*Annual Audit Report (AAR)</i></ul>
                             <ul><i>*Agency Action Plan and Status of Implementation (AAPSI)</i></ul>
 
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
@@ -261,10 +261,10 @@
                                     <ul>There no suspensions and disallowances = <i>15</i></ul>
                                     <ul>There are suspensions and disallowances = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                                 <ul><i>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
@@ -275,10 +275,10 @@
                                     <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
                                     <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                                 <ul><i>Government Procurement Policy Board (GPPB) report who are compliant</ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
@@ -291,10 +291,10 @@
                                     <ul>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></ul>
                                     <ul>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                                 <ul><i>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances </ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
@@ -305,10 +305,10 @@
                                     <ul>All Local Travel Expenses liquidated within 30 days = <i>10</i></ul>
                                     <ul>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                                 <ul><i>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accuntant, outstanding cash advances </ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
@@ -320,10 +320,10 @@
                                     <ul>The Provincial Office is compliant to APCPI = <i>10</i></ul>
                                     <ul>The Provincial Office is not compliant to APCPI = <i>0</i></ul>
                             <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <td><button class="bg-blue-500 hover:bg-blue-700 text-white py-1.5 px-1.5 rounded text-sm">View File</button><br>
                                 <ul><i>*Agency Procurement Compliance Performance Indicator (APCPI) submitted within set deadlines by oversight agency/ies <br>c/o of procurement unit</ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td><input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20"></td>
                             <td><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
