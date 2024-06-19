@@ -187,8 +187,7 @@
                             <ul>The RO has no digitalization plan or initiatives undertaken  = <i> 0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>6</i></td>
-                            <td><i><ul>*Documentation Report after implementation</ul></i></td>
-                            <td><i><ul>*Submitted plans to ICTO</ul></i></td>
+                            <td><i><ul>*Documentation Report after implementation</ul></i><br><i><ul>*Submitted plans to ICTO</ul></i></td>
                             <td>
                             <input type="number" name="b2a3" id="b2a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->b2a3 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a3 : '' }}">
@@ -203,12 +202,13 @@
                         </tr>
                         <tr>
                             <td>
-                                D.1. Timeliness, Consistency and Accuracy
+                                
+                            <b>D.1. Timeliness, Consistency and Accuracy<hr></b>
                                     <ul>Reports are accurate and submitted consistently and on time  = <i>60</i></ul>
                                     <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
                                     <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
                                 </td>
-                                <td><i>5</i></td>
+                                <td><i>60</i></td>
                                 <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
                                 <td>
                                     <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

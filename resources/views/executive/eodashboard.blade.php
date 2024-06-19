@@ -131,7 +131,8 @@
                             'PIAD' => 'Public Information and Assistance Division',
                             'PO' => 'Planning Office',
                             'PLO' => 'Partnership and Linkages Office',
-                            'ROMO' => 'Regional Operations Management Office'
+                            'ROMO' => 'Regional Operations Management Office',
+                            'ICTO' => 'Information and Communication Technology Office'
                         ];
                             $currentUserName = Auth::user()->executive_office; // Replace this with the actual current user's name
                         @endphp
