@@ -136,7 +136,7 @@
                         <tbody>
                             @foreach ($smallRegions as $region)
                             <tr class="category-small">
-                                <td>{{ $region->region_name }}</td>
+                                <td class="!border-b-2 border-green-600">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
@@ -179,8 +179,8 @@
                             @endforeach
 
                             @foreach ($mediumRegions as $region)
-                            <tr class="category-medium">
-                                <td>{{ $region->region_name }}</td>
+                            <tr>
+                                <td class="!border-b-2 border-blue-600">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
@@ -224,7 +224,7 @@
 
                             @foreach ($largeRegions as $region)
                             <tr class="category-large">
-                                <td>{{ $region->region_name }}</td>
+                                <td class="!border-b-2 border-red-600">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
