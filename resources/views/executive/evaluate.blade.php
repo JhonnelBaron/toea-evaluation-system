@@ -64,11 +64,12 @@
             text-align: center;
         }
         body {
-            height: 100vh;
+            height: 100%;
             background: linear-gradient(to bottom, white, #0033ff);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         .evaluate-btn {
         background-color: #007bff;
