@@ -20,6 +20,7 @@ class IctoEvaluation extends Model
         'overall_total_score',
         'overall_total_filled',
         'total_fields',
+        'final_remarks',
     ];
 
     public function uploader()

@@ -209,6 +209,7 @@ Route::get('/plo-evaluation', function () {
 // })->name('eo.evaluate');
 
 Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
+Route::post('/saveRemarks', [BroEvaluationController::class, 'saveRemarks'])->name('save.remarks');
 Route::get('/secretariat-evaluation/{id}', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
 Route::post('/save-evaluation', [AsEvaluationController::class, 'store'])->name('save_evaluation');
 

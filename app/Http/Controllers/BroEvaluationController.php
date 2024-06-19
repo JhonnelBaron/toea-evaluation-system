@@ -26,38 +26,103 @@ use Illuminate\Support\Facades\Validator;
 class BroEvaluationController extends Controller
 {
     public function index()
-    {  
-        $user = Auth::user();
-        $regions = Region::all();
+{  
+    $user = Auth::user();
+    $regions = Region::all();
     
-        foreach ($regions as $region) {
-            if ($user->executive_office === 'AS') {
+    $smallRegions = [];
+    $mediumRegions = [];
+    $largeRegions = [];
+
+    foreach ($regions as $region) {
+        switch ($user->executive_office) {
+            case 'AS':
                 $region->evaluations = $region->asEval;
-            } elseif ($user->executive_office === 'CO') {
+                break;
+            case 'CO':
                 $region->evaluations = $region->coEval;
-            } elseif ($user->executive_office === 'LD') {
+                break;
+            case 'LD':
                 $region->evaluations = $region->ldEval;
-            } elseif ($user->executive_office === 'FMS') {
+                break;
+            case 'FMS':
                 $region->evaluations = $region->fmsEval;
-            } elseif ($user->executive_office === 'NITESD') {
+                break;
+            case 'NITESD':
                 $region->evaluations = $region->nitesdEval;
-            } elseif ($user->executive_office === 'PIAD') {
+                break;
+            case 'PIAD':
                 $region->evaluations = $region->piadEval;
-            } elseif ($user->executive_office === 'PO') {
+                break;
+            case 'PO':
                 $region->evaluations = $region->poEval;
-            } elseif ($user->executive_office === 'PLO') {
+                break;
+            case 'PLO':
                 $region->evaluations = $region->ploEval;
-            } elseif ($user->executive_office === 'ROMO') {
+                break;
+            case 'ROMO':
                 $region->evaluations = $region->romoEval;
-            } elseif ($user->executive_office === 'ICTO') {
+                break;
+            case 'ICTO':
                 $region->evaluations = $region->ictoEval;
-            } else {
+                break;
+            default:
                 $region->evaluations = collect();
-            }
+                break;
         }
 
-        return view('executive.evaluate', compact('regions'));
+        // Categorize regions based on region_category
+        switch ($region->region_category) {
+            case 'Small':
+                $smallRegions[] = $region;
+                break;
+            case 'Medium':
+                $mediumRegions[] = $region;
+                break;
+            case 'Large':
+                $largeRegions[] = $region;
+                break;
+            default:
+                // Handle unknown categories if needed
+                break;
+        }
     }
+
+    return view('executive.evaluate', compact('smallRegions', 'mediumRegions', 'largeRegions'));
+}
+    // public function index()
+    // {  
+    //     $user = Auth::user();
+    //     $regions = Region::all();
+    
+    //     foreach ($regions as $region) {
+    //         if ($user->executive_office === 'AS') {
+    //             $region->evaluations = $region->asEval;
+    //         } elseif ($user->executive_office === 'CO') {
+    //             $region->evaluations = $region->coEval;
+    //         } elseif ($user->executive_office === 'LD') {
+    //             $region->evaluations = $region->ldEval;
+    //         } elseif ($user->executive_office === 'FMS') {
+    //             $region->evaluations = $region->fmsEval;
+    //         } elseif ($user->executive_office === 'NITESD') {
+    //             $region->evaluations = $region->nitesdEval;
+    //         } elseif ($user->executive_office === 'PIAD') {
+    //             $region->evaluations = $region->piadEval;
+    //         } elseif ($user->executive_office === 'PO') {
+    //             $region->evaluations = $region->poEval;
+    //         } elseif ($user->executive_office === 'PLO') {
+    //             $region->evaluations = $region->ploEval;
+    //         } elseif ($user->executive_office === 'ROMO') {
+    //             $region->evaluations = $region->romoEval;
+    //         } elseif ($user->executive_office === 'ICTO') {
+    //             $region->evaluations = $region->ictoEval;
+    //         } else {
+    //             $region->evaluations = collect();
+    //         }
+    //     }
+
+    //     return view('executive.evaluate', compact('regions'));
+    // }
 
     public function evaluationIndex($id)
     {
@@ -291,4 +356,80 @@ class BroEvaluationController extends Controller
         return response()->json(['error' => 'Failed to save evaluation.'], 500);
     }
     }
+
+    public function saveRemarks(Request $request)
+    {
+        $user = Auth::user();
+        $regionId = $request->input('region_id');
+        $finalRemarks = $request->input('final_remarks');
+    
+        switch ($user->executive_office) {
+            case 'AS':
+                AsEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'CO':
+                CoEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'LD':
+                LdEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'FMS':
+                FmsEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'NITESD':
+                NitesdEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'PIAD':
+                PiadEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'PO':
+                PoEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'PLO':
+                PloEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'ROMO':
+                RomoEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            case 'ICTO':
+                IctoEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+                break;
+            default:
+                return response('Invalid executive office');
+        }
+    
+        return response()->json(['message' => 'Remarks saved successfully']);
+    }
+    
+    
 }

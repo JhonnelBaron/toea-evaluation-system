@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('overall_total_score')->nullable();
             $table->integer('overall_total_filled')->nullable();
             $table->integer('total_fields')->nullable();
+            $table->text('final_remarks')->nullable();
             $table->timestamps();
         });
     }

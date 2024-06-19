@@ -88,7 +88,16 @@
         .evaluate-btn:hover {
             background-color: #0056b3;
         }
+        .remarks-input {
+            width: 120px; /* Set the desired width for the input fields */
+            transition: width 0.3s ease; /* Add a transition effect */
+        }
 
+        .remarks-textarea {
+            display: none;
+            width: 120px;
+            height: 120px;
+        }
 
     </style>
 </head>
@@ -109,48 +118,152 @@
                         <thead>
                             <tr>
                                 <th>Region Name</th>
+                                <th></th>
                                 <th>Action</th>
+                                <th></th>
                                 <th>Percentage</th>
+                                <th></th>
                                 <th>Evaluated</th>
+                                <th></th>
                                 <th>Score</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                                 <th>Remarks</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($regions as $region)
-                                <tr>
-                                    <td>{{ $region->region_name }}</td>
-                                    <td>
-                                        <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
-                                    </td>
-                                   @if ($region->evaluations->isNotEmpty())
-                                    <td>{{ $region->evaluations->first()->progress_percentage }}%</td>
-                                    {{-- <td>{{ $region->evaluations->first()->final_remarks }}</td> --}}
-                                @else
-                                    <td colspan="2">0%</td>
-                                @endif
-                                       {{-- @foreach ($region->asEval as $evaluation)
-                                       <td>{{ $evaluation->progress_percentage }}%</td>
-                                    @endforeach --}}
-                                   
-                                   <td>
-                                    @if ($region->evaluations->isNotEmpty())
-                                        {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
-                                    @endif
+                            @foreach ($smallRegions as $region)
+                            <tr class="category-small">
+                                <td>{{ $region->region_name }}</td>
+                                <td></td>
+                                <td>
+                                    <button class="evaluate-btn"
+                                        onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">
+                                        Evaluate
+                                    </button>
                                 </td>
+                                <td></td>
                                 <td>
                                     @if ($region->evaluations->isNotEmpty())
-                                        {{ $region->evaluations->first()->overall_total_score }}    
+                                    {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                    @else
+                                    0%
                                     @endif
                                 </td>
-                                
-                                    <td colspan="6">
-                                        
-                                    </td>
-                                
-    
-                                </tr>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                    {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                    {{ $region->evaluations->first()->overall_total_score }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="text" data-region-id="{{ $region->id }}"
+                                        class="form-control remarks-input" placeholder=""
+                                        value="{{ $region->evaluations->first()->final_remarks ?? '' }}">
+                                    <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}">
+                                        {{ $region->evaluations->first()->final_remarks ?? '' }}
+                                    </textarea>
+                                </td>
+                            </tr>
+                            @endforeach
+
+                            @foreach ($mediumRegions as $region)
+                            <tr class="category-medium">
+                                <td>{{ $region->region_name }}</td>
+                                <td></td>
+                                <td>
+                                    <button class="evaluate-btn"
+                                        onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">
+                                        Evaluate
+                                    </button>
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                    {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                    @else
+                                    0%
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                    {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                    {{ $region->evaluations->first()->overall_total_score }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="text" data-region-id="{{ $region->id }}"
+                                        class="form-control remarks-input" placeholder=""
+                                        value="{{ $region->evaluations->first()->final_remarks ?? '' }}">
+                                    <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}">
+                                        {{ $region->evaluations->first()->final_remarks ?? '' }}
+                                    </textarea>
+                                </td>
+                            </tr>
+                            @endforeach
+
+                            @foreach ($largeRegions as $region)
+                            <tr class="category-large">
+                                <td>{{ $region->region_name }}</td>
+                                <td></td>
+                                <td>
+                                    <button class="evaluate-btn"
+                                        onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">
+                                        Evaluate
+                                    </button>
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                    {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                    @else
+                                    0%
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                    {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                    {{ $region->evaluations->first()->overall_total_score }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="text" data-region-id="{{ $region->id }}"
+                                        class="form-control remarks-input" placeholder=""
+                                        value="{{ $region->evaluations->first()->final_remarks ?? '' }}">
+                                    <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}">
+                                        {{ $region->evaluations->first()->final_remarks ?? '' }}
+                                    </textarea>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
 
@@ -166,6 +279,106 @@
             document.querySelector('.sidebar').classList.toggle('hidden');
         });
     </script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script>
+          document.addEventListener('input', function(event) {
+              if (event.target && event.target.matches('.remarks-input')) {
+                  let regionId = event.target.dataset.regionId;
+                  let finalRemarks = event.target.value;
+  
+                  axios.post('{{ route('save.remarks') }}', {
+                      region_id: regionId,
+                      final_remarks: finalRemarks,
+                  })
+                  .then(function(response) {
+                      console.log(response.data);
+                  })
+                  .catch(function(error) {
+                      console.error('Error saving remarks:', error);
+                  });
+              }
+          });
+      </script>
+      <script>
+        document.addEventListener('focusin', function(event) {
+            if (event.target && event.target.matches('.remarks-input')) {
+                let inputField = event.target;
+                let regionId = inputField.dataset.regionId;
+                let textarea = inputField.nextElementSibling;
+
+                textarea.value = inputField.value;
+                textarea.style.display = 'block';
+                inputField.style.display = 'none';
+                textarea.focus();
+            }
+        });
+
+        document.addEventListener('focusout', function(event) {
+            if (event.target && event.target.matches('.remarks-textarea')) {
+                let textarea = event.target;
+                let regionId = textarea.dataset.regionId;
+                let inputField = textarea.previousElementSibling;
+
+                inputField.value = textarea.value;
+                textarea.style.display = 'none';
+                inputField.style.display = 'block';
+
+                axios.post('{{ route('save.remarks') }}', {
+                    region_id: regionId,
+                    final_remarks: textarea.value,
+                })
+                .then(function(response) {
+                    console.log(response.data);
+                })
+                .catch(function(error) {
+                    console.error('Error saving remarks:', error);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
+
+                            {{-- @foreach ($regions as $region)
+                                <tr>
+                                    <td>{{ $region->region_name }}</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
+                                    </td>
+                                    <td></td>
+                                   @if ($region->evaluations->isNotEmpty())
+                                    <td>{{ $region->evaluations->first()->progress_percentage ?? 0 }}%</td> --}}
+                                    {{-- <td>{{ $region->evaluations->first()->final_remarks }}</td> --}}
+                                {{-- @else
+                                    <td >0%</td>
+                                @endif
+                                    <td></td>
+                                   <td>
+                                    @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                        {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if ($region->evaluations->isNotEmpty())
+                                        {{ $region->evaluations->first()->overall_total_score }}    
+                                    @endif
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                    <td>
+
+                                        @if ($region->evaluations->isNotEmpty())
+                                        <input type="text" data-region-id="{{ $region->id }}" class="form-control remarks-input" placeholder="Enter remarks" value="{{ $region->evaluations->first()->final_remarks }}">
+                                        @else
+                                        <input type="text" data-region-id="{{ $region->id }}" class="form-control remarks-input" placeholder="Enter remarks">
+                                        @endif
+                                        <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}"></textarea>
+                                    </td>
+                                
+    
+                                </tr>
+                            @endforeach --}}
