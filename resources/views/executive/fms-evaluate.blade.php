@@ -199,9 +199,9 @@
                                 <h5>A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office</h5>
                                 <ul>
                                     <li>0 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>15</i></li>
-                                    <li>2-5 unimplemented audit observation memorandum by the region = <span class="red-asterisk">*</span><i>5</i></li>
-                                    <li>6-10 unimplemented audit observation memorandum by the region = <span class="red-asterisk">*</span><i>0</i></li>
-                                    <li>**Plus (1) point for RO with no AOM received = <span class="red-asterisk">*</span><i>1</i></li>
+                                    <li>2-5 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>5</i></li>
+                                    <li>6-10 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>0</i></li>
+                                    <li>**Plus (1) point for RO with no AOM received = <span class="text-red-600">*</span><i>1</i></li>
                                 </ul>
                             </td>
                             <td><i>15</i></td>
@@ -226,8 +226,8 @@
                             <td>
                                 <h5>A.5.B. Notice of Suspension and Disallowance</h5>
                                 <ul>
-                                    <li>There are no suspensions and disallowances = <span class="red-asterisk">*</span><i>15</i></li>
-                                    <li>There are suspensions and disallowances = <span class="red-asterisk">*</span><i>0</i></li>
+                                    <li>There are no suspensions and disallowances = <span class="text-red-600">*</span><i>15</i></li>
+                                    <li>There are suspensions and disallowances = <span class="text-red-600">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>15</i></td>
@@ -258,8 +258,8 @@
                             <td>
                                 <h5>A.7.A. Liquidation of Foreign Travel Expenses</h5>
                                 <ul>
-                                    <li>All Foreign Travel Expenses liquidated within 60 days = <span class="red-asterisk">*</span><i>10</i></li>
-                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <span class="red-asterisk">*</span><i>0</i></li>
+                                    <li>All Foreign Travel Expenses liquidated within 60 days = <span class="text-red-600">*</span><i>10</i></li>
+                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <span class="text-red-600">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>10</i></td>
@@ -285,8 +285,8 @@
                             <td>
                                 <h5>A.7.B. Liquidation of Local Travel Expenses</h5>
                                 <ul>
-                                    <li>All Local Travel Expenses liquidated within 30 days = <span class="red-asterisk">*</span><i>10</i></li>
-                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <span class="red-asterisk">*</span><i>0</i></li>
+                                    <li>All Local Travel Expenses liquidated within 30 days = <span class="text-red-600">*</span><i>10</i></li>
+                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <span class="text-red-600">*</span><i>0</i></li>
                                 </ul>
                             </td>
                             <td><i>10</i></td>
@@ -310,9 +310,9 @@
                         <tr>
                             <td>
                                 <b>D.1. Timeliness, Consistency and Accuracy <hr></b>
-                                <ul>Reports are accurate and submitted consistently and on time = <span class="red-asterisk">*</span><i>60</i></ul>
-                                <ul>Reports are accurate and submitted consistently but not on time = <span class="red-asterisk">*</span><i>30</i></ul>
-                                <ul>Reports are not accurate and are not submitted on time = <span class="red-asterisk">*</span><i>0</i></ul>
+                                <ul>Reports are accurate and submitted consistently and on time = <span class="text-red-600">*</span><i>60</i></ul>
+                                <ul>Reports are accurate and submitted consistently but not on time = <span class="text-red-600">*</span><i>30</i></ul>
+                                <ul>Reports are not accurate and are not submitted on time = <span class="text-red-600">*</span><i>0</i></ul>
                             </td>
                             <td style="vertical-align: top"><i>60<hr></i></td>
                             <td>

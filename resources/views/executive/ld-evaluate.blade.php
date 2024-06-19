@@ -137,6 +137,42 @@
             border-radius: 10px;
         }
 
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
@@ -150,7 +186,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Executive Evaluation</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Legal Division</h1>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
@@ -164,6 +200,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Point Value</th>
                             <th>Means of Verification</th>
@@ -171,68 +208,83 @@
                             <th>Remarks</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         
                         <tr>
-
-                            <td><b>A. Good Governance Measures<hr></b></td>
-                            <td><b>70</b></td>
+                            <td class="align-top"><b>A.</b><hr></td>
+                            <td class="align-top"><b>Good Governance Measures<hr></b></td>
+                            <td class="align-top"><b>70<hr></b></td>
+                            <td class="align-bottom"><hr></td>
+                            <td class="align-bottom"><hr></td>
+                            <td class="align-bottom"><hr></td>
                         </tr>
                         
                         <tr>
-                            <td>
-                                <b>A.1. - Compliance to Zero Measures</b><br>
-                                A.1 - Compliance to Zero Corruption Policy
-                            <ul>The Region has no personnel with pending administrative case = <i>40</i></ul>
-                            <ul>The Region has at least one pending administrative case  = <i> 0</i></ul>
+                            <td class="align-top">A.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Compliance to Zero Corruption Policy</span>
+                                    <span  id="tooltipText">
+                                            <ul>The Region has no personnel with pending administrative case = <i>40</i></ul>
+                                            <ul>The Region has at least one pending administrative case  = <i> 0</i></ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td style="vertical-align: top"><i>40</i></td>
-                            <td><i><ul>*Certification of no pending case</ul></i></td>
-                            <td>
+                            <td style="vertical-align: top"><b>40</b></td>
+                            <td class="align-top"><i><ul>*Certification of no pending case</ul></i></td>
+                            <td class="align-top">
                             <input type="number" name="a1" id="a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a1 : '' }}">
                             @error('a1')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                         @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a1_remarks" id="a1_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a1_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
+
                         <tr>
-                            
-                            <td><h5><b>A.2. Compliance to the TESDA Code of Conduct and Ethical Standards</b></h5><hr>
-                                <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
-                                <ul>
-                                    <li style="text-indent: 20px">• Fidelity to Duty</li>
-                                    <li style="text-indent: 20px">• Conflict of Interest</li>
-                                    <li style="text-indent: 20px">• Solicitation and Acceptance of Gifts</li>
-                                    <li style="text-indent: 20px">• Outside Employment</li>
-                                    <li style="text-indent: 20px">• Cronyism</li>
-                                    <li style="text-indent: 20px">• Confidentiality</li>
-                                    <li style="text-indent: 20px">• Post-employment</li>
-                                    <li style="text-indent: 20px">• Procurement of Goods, Consulting Services, and Infrastructure Projects</li>
-                                    <li style="text-indent: 20px">• Encouraging Reporting of Malpractices, Corruption, and other Protected Disclosures Valid</li>
-                                    <li style="text-indent: 20px">• Complaints from Presidential Action Center (888) and CSC-Contact Center ng Bayan Adverse National ISP Findings</li>
-                                        </ul>
-                                        <ul>There are no valid complaints, findings against any Official and Employee =<i>30</i></ul>
-                                        <ul>There are 1-3 complaint/s, findings against any Official and Employee = <i>20</i></ul>
-                                        <ul>There are 4-6 complaints, findings against any Official and Employee = <i>10</i></ul>
-                                        <ul>There are 7-9 complaints, findings against any Official and Employee = <i>5</i></ul>
-                                        <ul>There are 10 or more complaints, findings against any Official and Employee = <i>0</i></ul>
+                            <td class="align-top">A.2.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                            <span>Compliance to the TESDA Code of Conduct and Ethical Standards<hr></span>
+                                                <span  id="tooltipText">
+                                                <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
+                                                <ul>
+                                                    <li style="text-indent: 20px">• Fidelity to Duty</li>
+                                                    <li style="text-indent: 20px">• Conflict of Interest</li>
+                                                    <li style="text-indent: 20px">• Solicitation and Acceptance of Gifts</li>
+                                                    <li style="text-indent: 20px">• Outside Employment</li>
+                                                    <li style="text-indent: 20px">• Cronyism</li>
+                                                    <li style="text-indent: 20px">• Confidentiality</li>
+                                                    <li style="text-indent: 20px">• Post-employment</li>
+                                                    <li style="text-indent: 20px">• Procurement of Goods, Consulting Services, and Infrastructure Projects</li>
+                                                    <li style="text-indent: 20px">• Encouraging Reporting of Malpractices, Corruption, and other Protected Disclosures Valid</li>
+                                                    <li style="text-indent: 20px">• Complaints from Presidential Action Center (888) and CSC-Contact Center ng Bayan Adverse <br>National ISP Findings</li>
+                                                        </ul>
+                                                        <ul>There are no valid complaints, findings against any Official and Employee =<i>30</i></ul>
+                                                        <ul>There are 1-3 complaint/s, findings against any Official and Employee = <i>20</i></ul>
+                                                        <ul>There are 4-6 complaints, findings against any Official and Employee = <i>10</i></ul>
+                                                        <ul>There are 7-9 complaints, findings against any Official and Employee = <i>5</i></ul>
+                                                        <ul>There are 10 or more complaints, findings against any Official and Employee = <i>0</i></ul>
+                                            </span>
+                                </div>
                             </td>
                             
                             <td style="vertical-align: top"><b>30</b></td>
-                            <td><i><ul>*Certification from the RACC</ul></i></td>
-                            <td>
+                            <td class="align-top"><i><ul>*Certification from the RACC</ul></i></td>
+                            <td class="align-top">
                             <input type="number" name="a2" id="a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a2 : '' }}">
                             @error('a2')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                         @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a2_remarks" id="a2_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a2_remarks : '' }}</textarea>
                             </td>
@@ -240,8 +292,17 @@
                         </tr>
                     </tbody>
                 </table>
-                <td>
-                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                 <td class="align-top">
+                    <div class="flex justify-end space-x-4">
+                        <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                          Upload Files
+                          <input type="file" class="hidden" />
+                        </label>
+                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
+                          Save Changes
+                        </button>
+                      </div>
+                      
                 </td>
             </form>
             </div>

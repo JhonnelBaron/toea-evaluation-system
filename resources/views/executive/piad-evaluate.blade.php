@@ -96,7 +96,7 @@
 
         }
         .box-content {
-            margin: 20px;
+            margin: 20px 20px 20px 10px; /* Adjusted left margin to 10px */
             padding: 20px;
             background-color: white;
             border-radius: 10px;
@@ -136,6 +136,41 @@
             columns: 3; 
             border-radius: 10px;
         }
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
 
     </style>
 </head>
@@ -150,12 +185,12 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - PIAD</h1>
+            <h1 class="text-3xl font-bold text-white font-sans text-center">Best Regional Office Evaluator - Public Information and 
+                Assistance Division</h1>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
-                <div class="box-content">
                     <form method="POST" action="{{ route('piad_evaluation') }}">
                         @csrf
                         <!-- Hidden input for region_id -->
@@ -165,6 +200,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Point Value</th>
                             <th>Means of Verification</th>
@@ -175,59 +211,69 @@
                     <tbody>
                         
                         <tr>
-
-                            <td><b>A. Good Governance Measures<hr></b></td>
-                            <td><b>40</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
+                            <td class="align-top">A.</td>
+                            <td class="align-top"><b>Good Governance Measures<hr></b></td>
+                            <td class="align-top"><b>40</b><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
 
                         </tr>
 
                         
                         <tr>
-                            <td>
-                            A.3. Resolutions of complaints emanating from the Contact Center
-                                <ul>No complaints received  = <i>10</i></ul>
-                                <ul>95% of all complaints emanating from the Contact Center have been resolved and closed within the year = <i>10</i></ul>
-                                <ul>Less than 95% of all complaints against the ROs, POs and TTIs emanating from the Contact Center have been resolve and closed within the year = <i>0</i></ul>
+                            <td class="align-top">A.3. </td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Resolutions of complaints emanating from the Contact Center</span>
+                                    <span  id="tooltipText">
+                                        <ul>No complaints received  = <i>10</i></ul>
+                                        <ul>95% of all complaints emanating from the Contact Center have been resolved and closed within the year = <i>10</i></ul>
+                                        <ul>Less than 95% of all complaints against the ROs, POs and TTIs emanating from the<br> Contact Center have been resolve and closed within the year = <i>0</i></ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><i>10</i></td>
-                            <td><i><ul>*TESDA OP AS 03 F04 Monitoring of Complaints Received Certification of No Complaints Received - signed by the RD
+                            <td class="align-top"><i>10</i></td>
+                            <td class="align-top"><i><ul>*TESDA OP AS 03 F04 Monitoring of Complaints Received Certification of No Complaints Received - signed by the RD
                             </i></ul></td>
-                            <td>
+                            <td class="align-top">
                                 <input type="number" name="a3" id="a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->a3 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a3 : '' }}">
                                 @error('a3')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a3_remarks" id="a3_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a3_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>
-                            A.4. Customer Satisfaction Results<br> Customer Net Satisfaction Rating with minimum of 95%
-                                <ul>Customer Net Satisfaction Rating is at 99% and above = <i></i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 98% = <i></i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 97% = <i></i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 96% = <i></i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 95% = <i></i></ul>
-                                <ul>Customer Net Satisfaction Rating is below 95% = <i></i></ul>
+                            <td class="align-top">A.4. </td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Customer Satisfaction Results<br> Customer Net Satisfaction Rating with minimum of 95%</span>
+                                        <span  id="tooltipText">
+                                            <ul>Customer Net Satisfaction Rating is at 99% and above = <i>30</i></ul>
+                                            <ul>Customer Net Satisfaction Rating is at 98% = <i>20</i></ul>
+                                            <ul>Customer Net Satisfaction Rating is at 97% = <i>10</i></ul>
+                                            <ul>Customer Net Satisfaction Rating is at 96% = <i>5</i></ul>
+                                            <ul>Customer Net Satisfaction Rating is at 95% = <i>3</i></ul>
+                                            <ul>Customer Net Satisfaction Rating is below 95% = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><i>30</i></td>
-                            <td><i><ul>*Customer Feedback Form Results <br>TESDA OP AS 03 F02</i></ul></td>
-                            <td>
+                            <td class="align-top"><i>30</i></td>
+                            <td class="align-top"><i><ul>*Customer Feedback Form Results <br>TESDA OP AS 03 F02</i></ul></td>
+                            <td class="align-top">
                                 <input type="number" name="a4" id="a4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->a4 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a4 : '' }}">
                                 @error('a4')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a4_remarks" id="a4_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a4_remarks : '' }}</textarea>
                             </td>
@@ -235,24 +281,30 @@
 
                         <tr>
 
-                            <td>D. Reporting Efficiency<hr></td>
-                            <td><b><br>60</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td class="align-top">D.</td>
+                            <td class="align-top">Reporting Efficiency<hr></td>
+                            <td class="align-top"><b>60</b><hr></td>
+                            <td class="align-bottom"><hr></td>
+                            <td class="align-bottom"><hr></td>
+                            <td class="align-bottom"><hr></td>
 
                         </tr>
 
                         <tr>
-                            <td>
-                            D.1. Timeliness, Consistency and Accuracy
-                                <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
-                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                <ul>Reports are not accurate and are not submitted on time = <i></i></ul>
+                            <td class="align-top">D.1.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Timeliness, Consistency and Accuracy</span>
+                                        <span  id="tooltipText">
+                                            <ul>Reports are accurate and submitted consistently and on time = <i>60</i></ul>
+                                            <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
+                                            <ul>Reports are not accurate and are not submitted on time = <i></i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><i>5</i></td>
-                            <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
-                            <td>
+                            <td class="align-top"><i>60</i></td>
+                            <td class="align-top"><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
+                            <td class="align-top">
                                 <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
                                 @error('d1')
@@ -260,39 +312,44 @@
                                 @enderror
                             </td>
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
                         <tr>
-
-                            <td>E. Social Marketing and Advocacy<hr></td>
-                            <td><b><br>50</b><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
-                            <td><br><br><hr></td>
+                            <td class="align-top">E.</td>
+                            <td class="align-top">Social Marketing and Advocacy<hr></td>
+                            <td class="align-top"><b>50</b><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
 
                         </tr>
 
                         <tr>
-                            <td>
-                            E.1. Communication Program (OPCR)
-                                <ul>A Communication Plan was prepared and fully implemented. = <i>50</i></ul>
-                                <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
-                                <ul>No Communication Plan was prepared and not all communications activities were implemented = <i></i></ul>
+                            <td class="align-top">E.1.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Communication Program (OPCR)</span>
+                                    <span  id="tooltipText">
+                                        <ul>A Communication Plan was prepared and fully implemented. = <i>50</i></ul>
+                                        <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
+                                        <ul>No Communication Plan was prepared and not all communications activities were implemented = <i>0</i></ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><i>50</i></td>
-                            <td><i><ul>*Communication plan/OPCR</i></ul></td>
-                            <td>
+                            <td class="align-top"><i>50</i></td>
+                            <td class="align-top"><i><ul>*Communication plan/OPCR</i></ul></td>
+                            <td class="align-top">
                                 <input type="number" name="e1" id="e1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->e1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->e1 : '' }}">
                                 @error('e1')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="e1_remarks" id="e1_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->e1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->e1_remarks : '' }}</textarea>
                             </td>
@@ -304,8 +361,17 @@
                     </script>    
                     </tbody>
                 </table>
-                <td>
-                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                <td class="align-top">
+                    <div class="flex justify-end space-x-4">
+                        <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                          Upload Files
+                          <input type="file" class="hidden" />
+                        </label>
+                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
+                          Save Changes
+                        </button>
+                      </div>
+                      
                 </td>
             </form>
             </div>
