@@ -187,7 +187,7 @@
 
         </div>
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - CO</h1>
+            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluator - Certification Office</h1>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
