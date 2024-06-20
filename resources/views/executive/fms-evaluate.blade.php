@@ -137,6 +137,43 @@
             border-radius: 10px;
         }
 
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+
+
     </style>
 </head>
 <body>
@@ -164,6 +201,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Point Value</th>
                             <th>Means of Verification</th>
@@ -174,48 +212,53 @@
                     <tbody>
                         
                         <tr>
-
-                            <td><b>A. Good Governance Measures<hr></b></td>
-                            <td><b>50</b><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
-                            <td><br><hr></td>
+                            <td class="align-top">A.</td>
+                            <td class="align-top"><b>Good Governance Measures<hr></b></td>
+                            <td class="align-top"><b>50</b><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
+                            <td class="align-top"><br><hr></td>
 
                         </tr>
 
                         <tr>
-
-                            <td>A.5. Compliance to Commission on Audit Rules and Regulations</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td class="align-top">A.5.</td>
+                            <td class="align-top">Compliance to Commission on Audit Rules and Regulations</td>
+                            <td class="align-top"></td>
+                            <td class="align-top"></td>
+                            <td class="align-top"></td>
+                            <td class="align-top"></td>
                             
 
                         </tr>
                         
                         <tr>
-                            <td>
-                                <h5>A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office</h5>
-                                <ul>
-                                    <li>0 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>15</i></li>
-                                    <li>2-5 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>5</i></li>
-                                    <li>6-10 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>0</i></li>
-                                    <li>**Plus (1) point for RO with no AOM received = <span class="text-red-600">*</span><i>1</i></li>
-                                </ul>
+                            <td class="align-top">A.5.A.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Unimplemented Audit Observation Memorandum by the Regional Office</span>
+                                    <span  id="tooltipText">
+                                        <ul>
+                                            <li>0 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>15</i></li>
+                                            <li>2-5 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>5</i></li>
+                                            <li>6-10 unimplemented audit observation memorandum by the region = <span class="text-red-600">*</span><i>0</i></li>
+                                            <li>**Plus (1) point for RO with no AOM received = <span class="text-red-600">*</span><i>1</i></li>
+                                        </ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><i>15</i></td>
-                            <td>
+                            <td class="align-top"><i>15</i></td>
+                            <td class="align-top">
                                 <ul><i>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI) CY 2022</i></ul>
                             </td>
-                            <td>
+                            <td class="align-top">
                             <input type="number" name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a5a : '' }}">
                             @error('a5a')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                             @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a5a_remarks" id="a5a_remarks" class="comments" placeholder="Comment" 
                                 @if($previousEvaluation && $previousEvaluation->a5a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5a_remarks : '' }}</textarea>
                             </td>
@@ -223,57 +266,68 @@
 
 
                         <tr>
-                            <td>
-                                <h5>A.5.B. Notice of Suspension and Disallowance</h5>
-                                <ul>
-                                    <li>There are no suspensions and disallowances = <span class="text-red-600">*</span><i>15</i></li>
-                                    <li>There are suspensions and disallowances = <span class="text-red-600">*</span><i>0</i></li>
-                                </ul>
+                            <td class="align-top">A.5.B.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Notice of Suspension and Disallowance</span>
+                                        <span  id="tooltipText">
+                                            <ul>
+                                                <li>There are no suspensions and disallowances = <span class="text-red-600">*</span><i>15</i></li>
+                                                <li>There are suspensions and disallowances = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><i>15</i></td>
-                            <td>
+                            <td class="align-top"><i>15</i></td>
+                            <td class="align-top">
                                 <ul><i>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</i></ul>
                             </td>
-                            <td>
+                            <td class="align-top">
                             <input type="number" name="a5b" id="a5b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a5b !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a5b : '' }}">
                             @error('a5b')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                              @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a5b_remarks" id="a5b_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a5b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5b_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
                         <tr>
+                            <td class="align-top">A.7.</td>
 
-                            <td><b>A.7. Liquidation of Cash Advances (Foreign and Local Travel Expenses)</b></td>
+                            <td class="align-top"><b>Liquidation of Cash Advances (Foreign and Local Travel Expenses)</b></td>
 
                         </tr>
 
                         <tr>
                         <tr>
-                            <td>
-                                <h5>A.7.A. Liquidation of Foreign Travel Expenses</h5>
-                                <ul>
-                                    <li>All Foreign Travel Expenses liquidated within 60 days = <span class="text-red-600">*</span><i>10</i></li>
-                                    <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <span class="text-red-600">*</span><i>0</i></li>
-                                </ul>
+                            <td class="align-top">A.7.A.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Liquidation of Foreign Travel Expenses</span>
+                                    <span  id="tooltipText">
+                                        <ul>
+                                            <li>All Foreign Travel Expenses liquidated within 60 days = <span class="text-red-600">*</span><i>10</i></li>
+                                            <li>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <span class="text-red-600">*</span><i>0</i></li>
+                                        </ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><i>10</i></td>
-                            <td>
+                            <td class="align-top"><i>10</i></td>
+                            <td class="align-top">
                                 <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
                             </td>
-                            <td>
+                            <td class="align-top">
                             <input type="number" name="a7a" id="a7a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a7a !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a7a : '' }}">
                             @error('a7a')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                              @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a7a_remarks" id="a7a_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a7a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a7a_remarks : '' }}</textarea>
                             </td>
@@ -282,58 +336,87 @@
 
 
                         <tr>
-                            <td>
-                                <h5>A.7.B. Liquidation of Local Travel Expenses</h5>
-                                <ul>
-                                    <li>All Local Travel Expenses liquidated within 30 days = <span class="text-red-600">*</span><i>10</i></li>
-                                    <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <span class="text-red-600">*</span><i>0</i></li>
-                                </ul>
+                            <td class="align-top">A.7.B.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Liquidation of Local Travel Expenses</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>All Local Travel Expenses liquidated within 30 days = <span class="text-red-600">*</span><i>10</i></li>
+                                                <li>Partial number of Local Travel Expenses liquidated beyond 30 days = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><i>10</i></td>
-                            <td>
+                            <td class="align-top"><i>10</i></td>
+                            <td class="align-top">
                                 <ul><i>*Proof of postings submitted/received copy from COA<br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</i></ul>
                             </td>
-                            <td>
+                            <td class="align-top">
                             <input type="number" name="a7b" id="a7b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->a7b !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a7b : '' }}">
                             @error('a7b')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                             @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="a7b_remarks" id="a7b_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->a7b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a7b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+                        
+                        <tr>
+                            <td class="align-top"><b>D.</b><hr></td>
+
+                                <td class="align-top"><b>Reporting Efficiency</b><hr></td>
+                                <td class="align-top"><b>60</b><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
 
 
                         <tr>
-                            <td>
-                                <b>D.1. Timeliness, Consistency and Accuracy <hr></b>
-                                <ul>Reports are accurate and submitted consistently and on time = <span class="text-red-600">*</span><i>60</i></ul>
-                                <ul>Reports are accurate and submitted consistently but not on time = <span class="text-red-600">*</span><i>30</i></ul>
-                                <ul>Reports are not accurate and are not submitted on time = <span class="text-red-600">*</span><i>0</i></ul>
+                            <td class="align-top">D.1.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Timeliness, Consistency and Accuracy<span>
+                                        <span  id="tooltipText">
+                                            <ul>Reports are accurate and submitted consistently and on time = <span class="text-red-600">*</span><i>60</i></ul>
+                                            <ul>Reports are accurate and submitted consistently but not on time = <span class="text-red-600">*</span><i>30</i></ul>
+                                            <ul>Reports are not accurate and are not submitted on time = <span class="text-red-600">*</span><i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td style="vertical-align: top"><i>60<hr></i></td>
-                            <td>
-                                <hr><ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
+                            <td style="vertical-align: top"><i>60</i></td>
+                            <td class="align-top">
+                                <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
                             </td>
-                            <td>
+                            <td class="align-top">
                             <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
                             @error('d1')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                             @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
                     </script>    
                     </tbody>
                 </table>
-                <td>
-                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                <td class="align-top">
+                    <div class="flex justify-end space-x-4">
+                        <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                          Upload Files
+                          <input type="file" class="hidden" />
+                        </label>
+                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
+                          Save Changes
+                        </button>
+                      </div>
+                      
                 </td>
             </form>
             </div>

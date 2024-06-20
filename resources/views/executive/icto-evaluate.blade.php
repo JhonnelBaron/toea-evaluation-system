@@ -136,6 +136,41 @@
             columns: 3; 
             border-radius: 10px;
         }
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
 
     </style>
 </head>
@@ -164,6 +199,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Point Value</th>
                             <th>Means of Verification</th>
@@ -174,50 +210,56 @@
                     <tbody>
                         
                         <tr>
-
-                            <td><b>B.2.A.3 - Digitization of TVET<hr></b></td>
-                            <td><b>6</b></td>
-                        </tr>
-                        
-                        <tr>
-                            <td>
-                                {{-- <b>B.2.A.3 - Digitization of TVET</b><br> --}}
-                            <ul>The RO has institutionalized digitalization/use of electronic/online service delivery channel in the implementation of programs and/or utilize new technologies to reduce manual effort and increase productivity = <i>6</i></ul>
-                            <ul>The RO has developed digitalization plan to enhance existing systems using/aided by new or emerging technologies to improve performance, efficiency, and capabilities  = <i> 3</i></ul>
-                            <ul>The RO has no digitalization plan or initiatives undertaken  = <i> 0</i></ul>
+                            <td class="align-top"><b>B.2.A.3</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                        <span><b>Digitization of TVET</b></span>
+                                            <span  id="tooltipText">
+                                                <ul>The RO has institutionalized digitalization/use of electronic/online service <br>
+                                                    delivery channel in the implementation of programs and/or utilize new technologies <br>
+                                                    to reduce manual effort and increase productivity = <i>6</i></ul>
+                                                <ul>The RO has developed digitalization plan to enhance existing systems using/aided by <br>
+                                                    new or emerging technologies to improve performance, efficiency, and capabilities  = <i> 3</i></ul>
+                                                <ul>The RO has no digitalization plan or initiatives undertaken  = <i> 0</i></ul>
+                                            </span>
+                                </div>
                             </td>
                             <td style="vertical-align: top"><i>6</i></td>
-                            <td><i><ul>*Documentation Report after implementation</ul></i><br><i><ul>*Submitted plans to ICTO</ul></i></td>
-                            <td>
+                            <td class="align-top"><i><ul>*Documentation Report after implementation</ul></i><br><i><ul>*Submitted plans to ICTO</ul></i></td>
+                            <td class="align-top">
                             <input type="number" name="b2a3" id="b2a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->b2a3 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a3 : '' }}">
                             @error('b2a3')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                         @enderror
                             </td>
-                            <td>
+                            <td class="align-top">
                                 <textarea name="b2a3_remarks" id="b2a3_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->b2a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a3_remarks : '' }}</textarea>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                
-                            <b>D.1. Timeliness, Consistency and Accuracy<hr></b>
-                                    <ul>Reports are accurate and submitted consistently and on time  = <i>60</i></ul>
-                                    <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                    <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
+                            <td class="align-top"><b>D.1.</b></td>
+                            <td class="align-top">
+                                    <div id="tooltip"
+                                        <span><b>Timeliness, Consistency and Accuracy</b></span>
+                                            <span  id="tooltipText">
+                                                <ul>Reports are accurate and submitted consistently and on time  = <i>60</i></ul>
+                                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
+                                                <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
+                                            </span>
+                                    </div>
                                 </td>
-                                <td><i>60</i></td>
-                                <td><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
-                                <td>
+                                <td class="align-top"><i>60</i></td>
+                                <td class="align-top"><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
+                                <td class="align-top">
                                     <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
                                     @error('d1')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                     @enderror
                                 </td>
-                                <td>
+                                <td class="align-top">
                                     <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                                 </td>
@@ -225,8 +267,17 @@
                         </tr>
                     </tbody>
                 </table>
-                <td>
-                    <button type="submit" class="text-xs btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">Save Changes</button>
+                <td class="align-top">
+                    <div class="flex justify-end space-x-4">
+                        <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                          Upload Files
+                          <input type="file" class="hidden" />
+                        </label>
+                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
+                          Save Changes
+                        </button>
+                      </div>
+                      
                 </td>
             </form>
             </div>
