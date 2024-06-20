@@ -99,6 +99,38 @@
             height: 120px;
         }
 
+
+        .legend {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .legend-color {
+            width: 35px;
+            height: 3px;
+            margin-right: 8px;
+        }
+
+        .small-region {
+            background-color: #FFC700;
+        }
+
+        .medium-region {
+            background-color: #B1AFFF;
+        }
+
+        .large-region {
+            background-color: #FF0000;
+        }
+
     </style>
 </head>
 
@@ -111,6 +143,21 @@
         ])
         <div class="ml-72 p-4">
             <h1 class="font-bold text-2xl">BEST REGIONAL OFFICE</h1>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color small-region"></div>
+                    <span>Small Region</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium-region"></div>
+                    <span>Medium Region</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color large-region"></div>
+                    <span>Large Region</span>
+                </div>
+            </div>
 
             <div class="card mt-4">
                 <div class="container">
@@ -136,7 +183,7 @@
                         <tbody>
                             @foreach ($smallRegions as $region)
                             <tr class="category-small">
-                                <td class="!border-b-2 border-green-600">{{ $region->region_name }}</td>
+                                <td class="!border-b-2" style="border-color: #FFC700;">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
@@ -180,7 +227,7 @@
 
                             @foreach ($mediumRegions as $region)
                             <tr>
-                                <td class="!border-b-2 border-blue-600">{{ $region->region_name }}</td>
+                                <td class="!border-b-2" style="border-color: #B1AFFF;">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
@@ -224,7 +271,7 @@
 
                             @foreach ($largeRegions as $region)
                             <tr class="category-large">
-                                <td class="!border-b-2 border-red-600">{{ $region->region_name }}</td>
+                                <td class="!border-b-2" style="border-color: #FF0000">{{ $region->region_name }}</td>
                                 <td></td>
                                 <td>
                                     <button class="evaluate-btn"
@@ -339,46 +386,3 @@
 </body>
 
 </html>
-
-                            {{-- @foreach ($regions as $region)
-                                <tr>
-                                    <td>{{ $region->region_name }}</td>
-                                    <td></td>
-                                    <td>
-                                        <button class="evaluate-btn" onclick="location.href='{{ route('evaluation', ['id' => $region->id]) }}'">Evaluate</button>
-                                    </td>
-                                    <td></td>
-                                   @if ($region->evaluations->isNotEmpty())
-                                    <td>{{ $region->evaluations->first()->progress_percentage ?? 0 }}%</td> --}}
-                                    {{-- <td>{{ $region->evaluations->first()->final_remarks }}</td> --}}
-                                {{-- @else
-                                    <td >0%</td>
-                                @endif
-                                    <td></td>
-                                   <td>
-                                    @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
-                                        {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
-                                    @endif
-                                </td>
-                                <td></td>
-                                <td>
-                                    @if ($region->evaluations->isNotEmpty())
-                                        {{ $region->evaluations->first()->overall_total_score }}    
-                                    @endif
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                    <td>
-
-                                        @if ($region->evaluations->isNotEmpty())
-                                        <input type="text" data-region-id="{{ $region->id }}" class="form-control remarks-input" placeholder="Enter remarks" value="{{ $region->evaluations->first()->final_remarks }}">
-                                        @else
-                                        <input type="text" data-region-id="{{ $region->id }}" class="form-control remarks-input" placeholder="Enter remarks">
-                                        @endif
-                                        <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}"></textarea>
-                                    </td>
-                                
-    
-                                </tr>
-                            @endforeach --}}

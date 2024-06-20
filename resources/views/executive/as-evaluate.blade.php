@@ -237,7 +237,7 @@
                                     <br>
                                     <input type="number" name="a6" id="a6" class="px-3 py-2 border rounded-md w-20" @if($previousEvaluation && $previousEvaluation->a6 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a6 : '' }}">
                                     @error('a6')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                                 </td>
                                 <td class="align-top">
