@@ -16,15 +16,16 @@ class RoFileController extends Controller
     {
         $region = Region::findOrFail($regionId);
         $request->validate([
-            'file' => 'required|file|max:2048', // Adjust validation rules as needed
+            'file' => 'required|file|mimes:pdf|max:2048',
         ]);
         $user = Auth::user();
-        // $title = $request->input('title');
+        $uploadedFile = $request->file('file'); 
 
         $fileName = time().'.'.$request->file->getClientOriginalExtension();
-        $path = Storage::disk('public')->put('uploads', $request->file);
+        // $path = Storage::disk('public')->put('uploads', $request->file);
+        $path = Storage::disk('public')->putFileAs('uploads', $uploadedFile, $fileName);
         $fileUrl = Storage::url($path);
-        // Optional: You can store the path in a database here
+
         $roFile = new RoFile;
         $roFile->uploader_id = $user->id;
         $roFile->region_id = $region->id;

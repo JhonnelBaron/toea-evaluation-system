@@ -604,10 +604,10 @@
                     </table>
                     <td class="align-top">
                         <div class="flex justify-end space-x-4">
-                            <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
-                              Upload Files
-                              <input type="file" class="hidden" />
-                            </label>
+                            <a href="{{ route('upload.file', ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                                Upload Files
+                                <input type="file" class="hidden" />
+                              </a>
                             <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
                               Save Changes
                             </button>
