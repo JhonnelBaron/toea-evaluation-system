@@ -88,8 +88,8 @@
             height: 100px; /* Adjust height as needed */
             color: black;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex;
+            justify-content: flex;
             z-index: 999;
             margin-left: 250px; /* To accommodate sidebar */
             background-color: #2854C7;
@@ -185,10 +185,20 @@
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
-        <div class="ml-60"></div>
-        <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office Evaluation - Administrative Service</h1>
-        </div>
+       <div class="ml-60"> <!-- This is the side bar --> </div>
+        
+       <div class="header">
+           <div class="d-flex">
+               <button onclick="history.back()" class="flex items-center px-4 py-2 text-white text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
+                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                   </svg>
+                   Back
+               </button>
+               <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-40 mr-20">Best Regional Office Evaluator - Administrative Service</h1> 
+           </div>
+           
+       </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">

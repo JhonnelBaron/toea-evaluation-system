@@ -88,8 +88,8 @@
             height: 100px; /* Adjust height as needed */
             color: black;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex;
+            justify-content: flex;
             z-index: 999;
             margin-left: 250px; /* To accommodate sidebar */
             background-color: #2854C7;
@@ -181,11 +181,18 @@
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
-        <div class="ml-60">
-
-        </div>
+        <div class="ml-60"> <!-- This is the side bar --> </div>
+        
         <div class="header">
-            <h1 class="text-3xl font-bold text-white font-sans">Best Regional Office - Executive Evaluation</h1>
+            <div class="d-flex">
+                <button onclick="history.back()" class="flex items-center px-4 py-2 text-white text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back
+                </button>
+                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Information and Communication Technology Office</h1> 
+            </div>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
@@ -238,41 +245,54 @@
                                 @if($previousEvaluation && $previousEvaluation->b2a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a3_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
                         <tr>
-                            <td class="align-top"><b>D.1.</b></td>
+                            <td class="align-top"><b>D.</b><hr></td>
+
+                                <td class="align-top"><b>Reporting Efficiency</b><hr></td>
+                                <td class="align-top"><b>60</b><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="align-top">D.1.</td>
                             <td class="align-top">
-                                    <div id="tooltip"
-                                        <span><b>Timeliness, Consistency and Accuracy</b></span>
-                                            <span  id="tooltipText">
-                                                <ul>Reports are accurate and submitted consistently and on time  = <i>60</i></ul>
-                                                <ul>Reports are accurate and submitted consistently but not on time = <i>30</i></ul>
-                                                <ul>Reports are not accurate and are not submitted on time = <i>0</i></ul>
-                                            </span>
-                                    </div>
-                                </td>
-                                <td class="align-top"><i>60</i></td>
-                                <td class="align-top"><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
-                                <td class="align-top">
-                                    <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                    @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
-                                    @error('d1')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                    @enderror
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
-                                    @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
-                                </td>
+                                <div id="tooltip">
+                                    <span>Timeliness, Consistency and Accuracy<span>
+                                        <span  id="tooltipText">
+                                            <ul>Reports are accurate and submitted consistently and on time = <span class="text-red-600">*</span><i>60</i></ul>
+                                            <ul>Reports are accurate and submitted consistently but not on time = <span class="text-red-600">*</span><i>30</i></ul>
+                                            <ul>Reports are not accurate and are not submitted on time = <span class="text-red-600">*</span><i>0</i></ul>
+                                        </span>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top"><i>60</i></td>
+                            <td class="align-top">
+                                <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
+                            @error('d1')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
+                            </td>
                         </tr>
                         </tr>
                     </tbody>
                 </table>
                 <td class="align-top">
                     <div class="flex justify-end space-x-4">
-                        <a href="{{ route('upload.file', ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
-                            Upload Files
-                            <input type="file" class="hidden" />
-                          </a>
+                        <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                          Upload Files
+                          <input type="file" class="hidden" />
+                        </label>
                         <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
                           Save Changes
                         </button>
