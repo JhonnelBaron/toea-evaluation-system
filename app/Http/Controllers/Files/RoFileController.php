@@ -21,9 +21,12 @@ class RoFileController extends Controller
         $user = Auth::user();
         $uploadedFile = $request->file('file'); 
 
-        $fileName = time().'.'.$request->file->getClientOriginalExtension();
-        // $path = Storage::disk('public')->put('uploads', $request->file);
-        $path = Storage::disk('public')->putFileAs('uploads', $uploadedFile, $fileName);
+        $executiveOffice = $user->executive_office;
+        $regionName = $region->region_name;
+        $storageDirectory = "uploads/$executiveOffice/$regionName";
+
+        $fileName = $uploadedFile->getClientOriginalName();
+        $path = Storage::disk('public')->putFileAs($storageDirectory, $uploadedFile, $fileName);
         $fileUrl = Storage::url($path);
 
         $roFile = new RoFile;
