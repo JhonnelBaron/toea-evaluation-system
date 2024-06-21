@@ -88,4 +88,9 @@ class Region extends Model
         return $this->hasMany(IctoEvaluation::class, 'region_id');
     }
 
+    public function files()
+    {
+        return $this->hasMany(RoFile::class, 'region_id');
+    }
+
 }

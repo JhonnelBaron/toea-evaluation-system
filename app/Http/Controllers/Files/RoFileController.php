@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Files;
 
 use App\Http\Controllers\Controller;
+use App\Models\Region;
 use App\Models\RoFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,9 @@ use Illuminate\Support\Facades\URL;
 
 class RoFileController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request, $regionId)
     {
+        $region = Region::findOrFail($regionId);
         $request->validate([
             'file' => 'required|file|max:2048', // Adjust validation rules as needed
         ]);
@@ -25,6 +27,7 @@ class RoFileController extends Controller
         // Optional: You can store the path in a database here
         $roFile = new RoFile;
         $roFile->uploader_id = $user->id;
+        $roFile->region_id = $region->id;
         $roFile->file_name = $request->input('title');
         $roFile->file_path = $fileUrl;
         $roFile->save(); 

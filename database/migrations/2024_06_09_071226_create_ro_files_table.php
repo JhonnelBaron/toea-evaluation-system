@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('ro_files', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('uploader_id')->nullable();
+            $table->unsignedBigInteger('region_id')->nullable();
             $table->string('file_name')->nullable();
             $table->string('file_type')->nullable();
             $table->string('file_path')->nullable(); 

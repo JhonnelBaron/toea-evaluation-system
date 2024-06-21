@@ -43,6 +43,10 @@ Route::get('/galing-probinsya/small', function () {
 })->name('gp-small');
 
 
+
+
+
+
 Route::get('/galing-probinsya/large', function () {
     return view('gp-large');
 })->name('gp-large');
@@ -223,5 +227,6 @@ Route::post('/submit-evaluation-plo', [PloEvaluationController::class, 'ploSubmi
 Route::post('/submit-evaluation-romo', [RomoEvaluationController::class, 'romoSubmit'])->name('romo_evaluation');
 Route::post('/submit-evaluation-icto', [IctoEvaluationController::class, 'ictoSubmit'])->name('icto_evaluation');
 
-Route::get('/upload-file', [RoController::class, 'index'])->name('fetch-upload.file');
-Route::post('/upload-file', [RoFileController::class, 'store'])->name('upload.file');
+Route::get('/upload-file/{region}', [RoController::class, 'index'])->name('fetch-upload.file');
+Route::get('/region-folders', [RoController::class, 'showFolders'])->name('region.folders');
+Route::post('/upload-file/{region}', [RoFileController::class, 'store'])->name('upload.file');
