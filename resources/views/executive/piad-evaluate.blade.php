@@ -327,19 +327,9 @@
 
                         <tr>
                             <td class="align-top">E.</td>
-                            <td class="align-top">Social Marketing and Advocacy<hr></td>
-                            <td class="align-top"><b>50</b><hr></td>
-                            <td class="align-top"><br><hr></td>
-                            <td class="align-top"><br><hr></td>
-                            <td class="align-top"><br><hr></td>
-
-                        </tr>
-
-                        <tr>
-                            <td class="align-top">E.1.</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                    <span>Communication Program (OPCR)</span>
+                                    <span>E. Social Marketing and Advocacy</span>
                                     <span  id="tooltipText">
                                         <ul>A Communication Plan was prepared and fully implemented. = <i>50</i></ul>
                                         <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
@@ -348,7 +338,14 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>50</i></td>
-                            <td class="align-top"><i><ul>*Communication plan/OPCR</i></ul></td>
+                            <td class="align-top"><i><ul>*"Communication plan<br>
+                                Write-ups (best practices/activity reports)<br>
+                                Radio programs<br>
+                                Social media posts and shares<br>
+                                Local Media engagements (blasted PRs, Interviews)<br>
+                                Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)"
+                                
+                                </i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="e1" id="e1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->e1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->e1 : '' }}">

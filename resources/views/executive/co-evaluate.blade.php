@@ -220,7 +220,7 @@
                         <tr>
                             <td class="align-top">B.</td>
                             <td class="align-top"><b>Implementation of TESD Programs<hr></b></td>
-                            <td class="align-top"><b>189</b><hr></td>
+                            <td class="align-top"><b>226</b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -250,7 +250,14 @@
                                 </td>
                                 <td class="align-top"><i>15</i></td>
                                 <td class="align-top">
-                                    <ul><i>*Summary/Report on the duly accomplished TESDA-OP-CO-02- F06-RO Form<br> Duly signed compliance audit reports <br>Summary of audited programs Closure reports Monthly monitoring of OPCRs<br>c/o of procurement unit</i></ul>
+                                    <ul><i>*Summary/Report on the duly accomplished TESDA-OP-CO-02-
+                                        F06-RO Form<br>
+                                        
+                                        Duly signed compliance audit reports<br>
+                                        Summary of audited programs
+                                        Closure reports
+                                        Monthly monitoring of OPCRs"
+                                        </i></ul>
                                 </td>
                                 <td class="align-top">
                                     <input type="number" name="b1c" id="b1c" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -370,32 +377,6 @@
                                  <td class="align-top"><i></i></td>
                             </tr>
 
-                            <tr>
-                                <td class="align-top">B.2.A.3</td>
-                                <td class="align-top">
-                                    <div id="tooltip">
-                                        <span>Digitalization of TVET</span>
-                                            <span  id="tooltipText">
-                                                <ul>The RO has institutionalized digitalization/use of electronic/online <br>service delivery channel in the implementation of programs and/or utilize <br>new technologies to reduce manual effort and increase productivity = <i>6</i></ul>
-                                                <ul>The RO has developed digitalization plan to enhance existing systems <br>using/aided by new or emerging technologies to improve performance, <br>efficiency, and capabilities = <i>3</i></ul>
-                                                <ul>The RO has no digitalization plan or initiatives undertaken = <i>0</i></ul>
-                                            </span>
-                                    </div>
-                                </td>
-                                 <td class="align-top"><i>6</i></td>
-                                <td class="align-top">
-                                    <ul><i>*Documentation Report after implementation <br>Submitted plans to ICTO </i></ul>
-                                </td>
-                                <td class="align-top">
-                                    <input type="number" name="b1f" id="b1f" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                    @if($previousEvaluation && $previousEvaluation->b1f !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b1f : '' }}">
-                                    @error('b1f')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                @enderror
-                                </td>
-                                <td class="align-top"><textarea name="b1f_remarks" id="b1f_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b1f !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1f_remarks : '' }}</textarea></td>
-                            </tr>
 
                             <tr>
                                 <td class="align-top">B.2.A.4</td>
@@ -491,7 +472,7 @@
                         <tr>
                             <td class="align-top">B.2.C.</td>
                             <td class="align-top"><b>
-                                Upscale Technical Education and Skills Development and Certification to Higher PQF Levels - SD3
+                                Upscale Technical Education and Skills Development and Certification to Higher PQF Levels
                                 </td>
                             <td class="align-top"><i></i></td>
                             <td class="align-top"></td>
@@ -588,7 +569,7 @@
                             <td class="align-top">B.2.C.4.</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                    <span>Number of Assessment Centers</span>
+                                    <span>Number of New Assessment Centers</span>
                                         <span  id="tooltipText">
                                             <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
                                             <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
@@ -628,15 +609,15 @@
                                     <ul><i>*Registry of Accredited Assessors from T2MIS;  Signed Validated OPCR</i></ul>
                             </td>
                             <td class="align-top">
-                                <input type="number" name="b2c4" id="b2c4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2c4 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2c4 : '' }}">
-                                @error('b2c4')
+                                <input type="number" name="b2c5" id="b2c5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c5 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2c5 : '' }}">
+                                @error('b2c5')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                             @enderror
                             </td>
                             <td class="align-top">
-                            <textarea name="b2c4_remarks" id="b2c4_remarks" class="comments" placeholder="Comment"
-                            @if($previousEvaluation && $previousEvaluation->b2c4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c4_remarks : '' }}</textarea>
+                            <textarea name="b2c5_remarks" id="b2c5_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b2c5 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c5_remarks : '' }}</textarea>
                             </td>
                         </tr>
 
@@ -819,13 +800,83 @@
 
 
                         <tr>
-                            <td class="align-top">B.2.E.1.3.b.</td>
+                            <td class="align-top">B.2.E.1.2.b.</td>
                             <td class="align-top">
                                 <div id="tooltip">
                                     <span>Awards received</span>
                                         <span  id="tooltipText">
-                                            <ul>At least 80% of the qualified TTIs of the region have<br> been awarded with the TESDA Seal of Integrity = <i>8</i></ul>
-                                            <ul>At least 80% of the qualified TTIs of the region have<br> been awarded with the TESDA Seal of Integrity = <i>0</i></ul>
+                                            <ul>The region received at least one THREE STAR Level Award = <i>20</i></ul>
+                                            <ul>The region received at least one TWO STAR Level Award = <i>10</i></ul>
+                                            <ul>The region received at least one ONE STAR Level Award = <i>5</i></ul>
+                                            <ul> The region did not receive a STAR Level Award= <i>0</i></ul>
+                                        </span>
+                                </div>
+                            </td>
+                             <td class="align-top"><i>20</i></td>
+                            <td class="align-top">
+                                <ul><i>*Awards received/ Letter of result signed by the Secretary</ul>
+                            </td>
+                            <td class="align-top">
+                                <input type="number" name="b2e12b" id="b2e12b" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e12b !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e12b : '' }}">
+                                @error('b2e12b')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="b2e12b_remarks" id="b2e12b_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e12b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e12b_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.1.3</td>
+                             <td class="align-top">
+                                <b>TESDA Seal of Integrity</b>                               
+                            </td>
+                             <td class="align-top"><i></i></td>
+                             <td class="align-top"></td>
+                             <td class="align-top"></td>
+                             <td class="align-top"></td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td class="align-top">B.2.E.1.3.a</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Participation</span>
+                                        <span  id="tooltipText">
+                                            <ul>All qualified TTIs of the region applied for the TESDA Seal of Integrity = <i>8</i></ul>
+                                            <ul>Not all qualified TTIs of the region applied for TESDA Seal of Integrity = <i>0</i></ul>
+                                        </span>
+                                </div>
+                            </td>
+                             <td class="align-top"><i>8</i></td>
+                            <td class="align-top">
+                                <ul><i>*Letter of Intent, Certificate of Eligibility (attended the CBP), <br>Accomplished form (Evaluation Instrument), Memo to Certification Office</ul>
+                            </td>
+                            <td class="align-top">
+                                <input type="number" name="b2e13a" id="b2e13a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2e13a !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e13a : '' }}">
+                                @error('b2e13a')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="b2e13a_remarks" id="b2e13a_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e13a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e13a_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.1.3.b</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Awards received</span>
+                                        <span  id="tooltipText">
+                                            <ul>At least 80% of the qualified TTIs of the region have been awarded with the TESDA Seal of Integrity = <i>8</i></ul>
+                                            <ul>Below 80% of the qualified TTIs of the region have been awarded with TESDA the Seal of Integrity = <i>0</i></ul>
                                         </span>
                                 </div>
                             </td>
@@ -845,7 +896,6 @@
                                 @if($previousEvaluation && $previousEvaluation->b2e13b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e13b_remarks : '' }}</textarea>
                             </td>
                         </tr>
-
                         
 
                         <tr>

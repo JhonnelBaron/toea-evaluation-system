@@ -376,30 +376,30 @@
                             <td class="align-top"><b>B.</b><hr></td>
 
                                 <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                                <td class="align-top"><b>**</b><hr></td>
+                                <td class="align-top"><b>20</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                         </tr>
 
                         <tr>
-                            <td class="align-top">B.2.E<hr></td>
+                            <td class="align-top">B.2.E</td>
 
-                                <td class="align-top">Streamline and Intensify QMS in All Organizational Subsystems<hr></td>
-                                <td class="align-top">**<hr></td>
-                                <td class="align-bottom"><hr></td>
-                                <td class="align-bottom"><hr></td>
-                                <td class="align-bottom"><hr></td>
+                                <td class="align-top">Streamline and Intensify QMS in All Organizational Subsystems</td>
+                                <td class="align-top"></td>
+                                <td class="align-bottom"></td>
+                                <td class="align-bottom"></td>
+                                <td class="align-bottom"></td>
                         </tr>
 
                         <tr>
-                            <td class="align-top">B.2.E.2<hr></td>
+                            <td class="align-top">B.2.E.2</td>
 
-                                <td class="align-top">Quality Management System Implementation<hr></td>
-                                <td class="align-top">**<hr></td>
-                                <td class="align-bottom"><hr></td>
-                                <td class="align-bottom"><hr></td>
-                                <td class="align-bottom"><hr></td>
+                                <td class="align-top">Quality Management System Implementation</td>
+                                <td class="align-top"></td>
+                                <td class="align-bottom"></td>
+                                <td class="align-bottom"></td>
+                                <td class="align-bottom"></td>
                         </tr>
 
                         <tr>
@@ -504,7 +504,7 @@
                             <td class="align-top"><b>C.</b><hr></td>
 
                                 <td class="align-top"><b>Administrative and Support Services</b><hr></td>
-                                <td class="align-top"><b>--</b><hr></td>
+                                <td class="align-top"><b>75</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>

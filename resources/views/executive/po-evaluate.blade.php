@@ -315,7 +315,7 @@
                             <td class="align-top">B.2.<hr></td>
 
                             <td><b class="vertical-align: bottom">Implementation of the TESDA Corporate Plan<hr></td>
-                            <td class="align-top">43<hr></td>
+                            <td class="align-top"><b>48</b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -325,7 +325,7 @@
                         <tr>
                             <td class="align-top">B.2.A.</td>
 
-                            <td class="align-top">Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1</td>
+                            <td class="align-top">Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -441,12 +441,12 @@
                                 <div id="tooltip">
                                     <span>TVET enrolment and graduates by delivery mode- institution-based</span>
                                          <span  id="tooltipText">
-                                            <ul>The accomplishment rate based on set target is at 100% and above  = <i>5</i></ul>
+                                            <ul>The accomplishment rate based on set target is at 100% and above  = <i>10</i></ul>
                                             <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
                                          </span>
                                 </div>
                             </td>
-                            <td class="align-top"><i>5</i></td>
+                            <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Report from T2MIS</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d1" id="b2d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

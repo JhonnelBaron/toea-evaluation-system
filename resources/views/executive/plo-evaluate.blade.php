@@ -243,7 +243,7 @@
                             <td class="align-top">B.1.G. </td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                    <span>% of TVET programs with tie-ups to industry</span>
+                                    <span>60% of TVET programs with tie-ups to industry</span>
                                     <span  id="tooltipText">
                                     <ul>The accomplishment rate based on set target is at 100% and above  = <i>10</i></ul>
                                     <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
@@ -269,7 +269,7 @@
                         <tr>
                             <td class="align-top">B.2. </td>
 
-                            <td class="align-top">Implementation of the TESDA Corporate Plan 2018-2022</td>
+                            <td class="align-top">Implementation of the TESDA Corporate Plan</td>
                             <td class="align-top"></td>
                             <td class="align-top"><br></td>
                             <td class="align-top"><br></td>
@@ -280,7 +280,7 @@
                         <tr>
                             <td class="align-top">B.2.D. </td>
 
-                            <td class="align-top">Expand and Intensify Partnerships and Linkages with <br>Industries and Other Stakeholders in the Area of <br> TESD - SD4s Act (GAA)</td>
+                            <td class="align-top">Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD</td>
                             <td class="align-top"></td>
                             <td class="align-top"><br></td>
                             <td class="align-top"><br></td>
@@ -323,7 +323,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>5</i></td>
-                            <td class="align-top"><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
+                            <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d411" id="b2d411" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d411 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d411 : '' }}">
@@ -349,7 +349,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>10</i></td>
-                            <td class="align-top"><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
+                            <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d412" id="b2d412" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d412 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d412 : '' }}">
@@ -383,7 +383,7 @@
                                     </div>
                             </td>
                             <td class="align-top"><i>5</i></td>
-                            <td class="align-top"><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
+                            <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d421" id="b2d421" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d421 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d421 : '' }}">
@@ -409,7 +409,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>10</i></td>
-                            <td class="align-top"><i><ul>*Final Result of the 2022 Search for Idols ng TESDA</i></ul></td>
+                            <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d422" id="b2d422" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d422 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d422 : '' }}">
@@ -443,7 +443,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>5</i></td>
-                            <td class="align-top"><i><ul>*National Kabalikat Awards Committee Resolution</i></ul></td>
+                            <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
                                  <input type="number" name="b2d431" id="b2d431" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                  @if($previousEvaluation && $previousEvaluation->b2d431 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d431 : '' }}">
@@ -470,7 +470,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>10</i></td>
-                            <td class="align-top"><i><ul>*National Kabalikat Awards Committee Resolution</i></ul></td>
+                            <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2d432" id="b2d432" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d432 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d432 : '' }}">
@@ -497,18 +497,18 @@
                                     <span  id="tooltipText">
                                         <ul><i>*For Large Regions: Partnerships with three (3) or more industries / private companies and with <br>continuing tie-ups for the last two (2) years with the same industries/companies;<br>
                                                 For Medium Regions: Partnerships with two (2) or more industries / private companies and with <br>continuing tie - ups for the last two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with more than one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company" = 15</i></ul><br>
+                                                For Small Regions: Partnership with more than one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company = 15</i></ul><br>
                                         <ul><i>*For Large Regions: Partnerships with less than three (3) industries / private companies and with <br>continuing tie-ups for the last two (2) years with the same industries/companies;<br>
                                                 For Medium Regions: Partnerships with less than two (2) industries / private companies and with <br>continuing tie - ups for the last two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company;" = 10</i></ul><br>
+                                                For Small Regions: Partnership with one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company; = 10</i></ul><br>
                                         <ul><i>"For Large Regions: Partnerships with less than three (3) industries / private companies and with <br>continuing tie-ups for less than two (2) years with the same industries/companies;<br>
                                                 For Medium Regions: Partnerships with less than two (2) industries / private companies and with <br>continuing tie-ups for less than two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with one (1) industry / private company and with continuing <br>tie-ups for less than two (2) years with the same industries/companies; = 0"</i></ul><br>
+                                                For Small Regions: Partnership with one (1) industry / private company and with continuing <br>tie-ups for less than two (2) years with the same industries/companies; = 0</i></ul><br>
                                     </span>
                                 </div>
                             </td>
                             <td class="align-center"><i>15</i></td>
-                            <td class="align-center"><i><ul>*Copies of signed MOAs</i></ul></td>
+                            <td class="align-center"><i><ul>*Copies of signed MOAs/MOUs</i></ul></td>
                             <td class="align-center">
                                 <input type="number" name="b2d5" id="b2d5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                                 @if($previousEvaluation && $previousEvaluation->b2d5 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d5 : '' }}">
@@ -526,16 +526,16 @@
                             <td class="align-top">B.2.D.6.</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                    <span>Number of new EBT programs implemented in private TVIs (DTS, Apprenticeship, Learnership, In-company training, SIL, PAFSE)</span>
+                                    <span>B.2.D.6. Number of new EBT programs implemented in private TVIs (DTS, Apprenticeship, Learnership, In-company training, PAFSE</span>
                                         <span  id="tooltipText">
                                             <ul>At least 30 new programs for Regions that belongs to the Large Category<br>
                                                 At least 20 new programs for Regions that belong to the Medium Category<br>
-                                                At least 10 new programs for Regions that belong to the Small Category" = <i>8</i></ul>
+                                                At least 10 new programs for Regions that belong to the Small Category" = <i>10</i></ul>
                                             <ul>Below the minimum number of programs per category = <i>0</i></ul>
                                         </span>
                                 </div>
                             </td>
-                            <td class="align-top"><i>8</i></td>
+                            <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Compendium of program registration, Registry of EBT programs; T2MIS</i></ul></td>
                             <td class="align-top">
                                  <input type="number" name="b2d6" id="b2d6" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

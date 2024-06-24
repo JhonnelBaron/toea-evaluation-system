@@ -330,7 +330,7 @@
                                 <td class="align-top">C.3.2.</td>
                                 <td class="align-top">
                                     <div id="tooltip">
-                                        <span>Training Opportunities to staff provided for CY 2022</span>
+                                        <span>Training Opportunities to staff provided for CY 2023</span>
                                             <span  id="tooltipText">
                                                 <ul>100% of Employees were provided with training opportunities = <i><b>15</b></i></ul>
                                                 <ul>75%-99% of Employees were provided with training opportunities = <i><b>5</b></i></ul>

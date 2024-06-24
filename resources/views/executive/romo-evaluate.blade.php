@@ -195,7 +195,7 @@
                     </svg>
                     Back
                 </button>
-                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Planning Office</h1> 
+                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Regional Operations Management Office</h1> 
             </div>
         </div>
         <div class="content">
@@ -268,7 +268,7 @@
                         <tr>
                             <td class="align-top">B.2.</td>
 
-                            <td class="align-top">Implementation of the TESDA Corporate Plan 2018-2022</td>
+                            <td class="align-top">Implementation of the TESDA Corporate Plan</td>
                             <td class="align-top"><b></b></td>
                             <td class="align-top"><br></td>
                             <td class="align-top"><br></td>
@@ -279,7 +279,7 @@
                         <tr>
                             <td class="align-top">B.2.B.</td>
 
-                            <td class="align-top">Intensify Implementation of Quality Technical Education and Skills Development <br>and Certification For Social Equity and Poverty Reduction - SD 2</td>
+                            <td class="align-top">Intensify Implementation of Quality Technical Education and Skills Development <br>and Certification For Social Equity and Poverty Reduction</td>
                             <td class="align-bottom"><b></b></td>
                             <td class="align-bottom"></td>
                             <td class="align-bottom"></td>
@@ -345,15 +345,15 @@
                             <td class="align-top">B.2.B.4.</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                <span>Advocacy program to promote the importance of TVET in communities <br>and the roles of CTECs in LGUs</span>
+                                <span>Advocacy program to promote the importance of TVET in communities and the roles of CTECs in LGUs</span>
                                     <span  id="tooltipText">
-                                        <ul>At least 10% of the municipalities in each Province in the Region <br>have been given orientation on Devolution of TVET = <i>7</i></ul>
+                                        <ul>At least 10% of the municipalities in each Province in the Region <br>have been given orientation on Devolution of TVET = <i>10</i></ul>
                                         <ul>Less than 10% of the municipalities in each Province in the Region <br>have been given orientation on Devolution of TVET = <i>0</i></ul>
                                     </span>
                                 </div>
                             </td>
 
-                            <td class="align-top"><i>7</i></td>
+                            <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*After Activity Reports on meetings conducted</i></ul></td>
                             <td class="align-top">
                                 <input type="number" name="b2b4" id="b2b4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

@@ -228,12 +228,12 @@
                         
                         <tr>
                             <td class="align-top">B.2.</td>
-                            <td class="align-top">Implementation of the TESDA Corporate Plan 2018-2022<br>
+                            <td class="align-top">Implementation of the TESDA Corporate Plan<br>
                         </tr>
                         <tr>
                             
                             <td class="align-top">B.2.A.</td>
-                            <td class="align-top">Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1</td>
+                            <td class="align-top">Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness</td>
                             <td class="align-top"></td>
                             <td class="align-top"></td>
                             <td class="align-top"></td>
@@ -284,7 +284,7 @@
                                 </div>
                             </td>
                             <td class="align-top"><i>8</i></td>
-                            <td class="align-top"><i><ul>*"TAS' Certificates of Recognition for PQF Level 4 or Level 5; </i></ul></td>
+                            <td class="align-top"><i><ul>*TAS' Certificates of Recognition for PQF Level 4 or Level 5; </i></ul></td>
                             <td class="align-top">
                             <input type="number" name="b2a2" id="b2a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
                             @if($previousEvaluation && $previousEvaluation->b2a2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a2 : '' }}">
@@ -300,7 +300,7 @@
 
                         <tr>
                             <td class="align-top">B.2.D. </td>
-                            <td class="align-top"><b>Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD - SD4<b></td>
+                            <td class="align-top"><b>Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD<b></td>
                             <td class="align-top"></td>
                             <td class="align-top"></td>
                             <td class="align-top"></td>
@@ -428,7 +428,7 @@
                             <td class="align-top">
                             <b>B.2.E.</b>
                             </td>
-                          <td class="align-top">Streamline and Intensify QMS in All Organizational Subsystems - SD 5</td>
+                          <td class="align-top">Streamline and Intensify QMS in All Organizational Subsystems</td>
                         </tr>
 
                         <tr>
