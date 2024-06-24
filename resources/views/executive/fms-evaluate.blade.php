@@ -371,6 +371,243 @@
                                 @if($previousEvaluation && $previousEvaluation->a7b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a7b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
+                        <tr>
+                            <td class="align-top"><b>B.</b><hr></td>
+
+                                <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
+                                <td class="align-top"><b>**</b><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E<hr></td>
+
+                                <td class="align-top">Streamline and Intensify QMS in All Organizational Subsystems<hr></td>
+                                <td class="align-top">**<hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.2<hr></td>
+
+                                <td class="align-top">Quality Management System Implementation<hr></td>
+                                <td class="align-top">**<hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.2.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>B.2.E.2.1. Number of Active IQA Lead Auditor/s</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>The region has more than four (4) active IQA Lead Auditors/Auditors = <span class="text-red-600">*</span><i>8</i></li>
+                                                <li>The region has two (2) to three (3) active IQA Lead Auditors/ Auditors = <span class="text-red-600">*</span><i>4</i></li>
+                                                <li>The region has less than two (2) active IQA Lead Auditors/ Auditors = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>8</i></td>
+                            <td class="align-top">
+                                <ul><i>*Inventory of Lead Auditors/Auditors (TESDA QP 03-F09)</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="b2e21" id="b2e21" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2e21 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e21 : '' }}">
+                            @error('b2e21')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="b2e21_remarks" id="b2e21_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e21 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e21_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.2.2.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Timely Submission of Reports/Documents (e.g. IQA reports, Action Catalog, NAP)</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>The region submitted report/doc ahead of deadline = <span class="text-red-600">*</span><i>6</i></li>
+                                                <li>The region submitted report/docs on set deadline = <span class="text-red-600">*</span><i>2</i></li>
+                                                <li>The region submitted report/doc after set deadline = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>6</i></td>
+                            <td class="align-top">
+                                <ul><i>*RRRO - Monitoring of submission<br>
+                                    IQA Reports reflected on the QP-03-F12<br>
+                                    Action Catalog - QP-03-F11</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="b2e22" id="b2e22" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2e22 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e22 : '' }}">
+                            @error('b2e22')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="b2e22_remarks" id="b2e22_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e22 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e22_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">B.2.E.2.3</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Percentage of Personnel Attendance to Central Office initiated QMS-related training programs</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>>80% of regional personnel attended QMS related training programs = <span class="text-red-600">*</span><i>6</i></li>
+                                                <li>40% to 80% of regional personnel attended QMS related training programs = <span class="text-red-600">*</span><i>3</i></li>
+                                                <li><40% of regional personnel attended QMS related training programs = <span class="text-red-600">*</span><i>0</i></li>
+                                                <li>*Plus (1) Point for ROPO initiated QMS related training programs of personnel = <span class="text-red-600">*</span><i>1</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>6</i></td>
+                            <td class="align-top">
+                                <ul><i>*RRRO - Monitoring of submission<br>
+                                    IQA Reports reflected on the QP-03-F12<br>
+                                    Action Catalog - QP-03-F11</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2e23 : '' }}">
+                            @error('b2e23')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="b2e23_remarks" id="b2e23_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2e23 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e23_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top"><b>C.</b><hr></td>
+
+                                <td class="align-top"><b>Administrative and Support Services</b><hr></td>
+                                <td class="align-top"><b>--</b><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                                <td class="align-bottom"><hr></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">C.1.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Budget Utilization Rate (BUR)</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>100% of budget utilized = <span class="text-red-600">*</span><i>25</i></li>
+                                                <li> 90% - 99% of budget utilized = <span class="text-red-600">*</span><i>10</i></li>
+                                                <li>89% and below of budget utilized = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>25</i></td>
+                            <td class="align-top">
+                                <ul><i>*Monitoring logbook/ registry</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="c1" id="c1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->c1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->c1 : '' }}">
+                            @error('c1')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="c1_remarks" id="c1_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->c1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c1_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">C.2</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation<br>
+                                    <i>80% acted upon (either partially or fully implemented)<i></span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>100% acted upon (either partially or fully implemented) = <span class="text-red-600">*</span><i>25</i></li>
+                                                <li>90% - 99% acted upon (either partially or fully implemented) = <span class="text-red-600">*</span><i>15</i></li>
+                                                <li>80% - 89%acted upon (either partially or fully implemented) = <span class="text-red-600">*</span><i>5</i></li>
+                                                <li>79% and below acted upon (either partially or fully implemented) = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>25</i></td>
+                            <td class="align-top">
+                                <ul><i>*Agency Action Plan and Status of Implementation (AAPSI) CY 2021 and PYs</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="c2" id="c2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->c2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->c2 : '' }}">
+                            @error('c2')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="c2_remarks" id="c2_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->c2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c2_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">C.3.3.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Percentage of Personnel Attendance to Finance related training programs</span>
+                                    <span  id="tooltipText">
+                                            <ul>
+                                                <li>80% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>25</i></li>
+                                                <li>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>15</i></li>
+                                                <li>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>5</i></li>
+                                                <li>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <span class="text-red-600">*</span><i>0</i></li>
+                                            </ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><i>25</i></td>
+                            <td class="align-top">
+                                <ul><i>*List of plantilla positions per region<br>
+                                    - Certificates of training attended<br>
+                                    
+                                    list of training programs, certified correct by HRMO, RO plus PO (For BRO only)"</i></ul>
+                            </td>
+                            <td class="align-top">
+                            <input type="number" name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                            @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->c33 : '' }}">
+                            @error('c33')
+                            <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                                <textarea name="c33_remarks" id="c33_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->c33 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c33_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
                         
                         <tr>
                             <td class="align-top"><b>D.</b><hr></td>

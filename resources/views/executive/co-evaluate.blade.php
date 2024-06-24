@@ -356,7 +356,7 @@
                             <tr>
                                 <td class="align-top">B.2.</td>
                                 <td class="align-top">
-                                    <b style="vertical-align: bottom">Implementation of the TESDA Corporate Plan 2018-2022<hr></b>
+                                    <b style="vertical-align: bottom">Implementation of the TESDA Corporate Plan<hr></b>
                                     <td class="align-bottom"><i><hr></i></td>
                                     <td class="align-bottom"><hr></td>
                                     <td class="align-bottom"><hr></td>
@@ -366,7 +366,7 @@
                             <tr>
                                 <td class="align-top">B.2.A.</td>
                                 <td class="align-top">
-                                    Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br>
+                                    Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness<br>
                                  <td class="align-top"><i></i></td>
                             </tr>
 
@@ -466,12 +466,12 @@
                                     <div id="tooltip">
                                         <span>Awards received at the international level</span>
                                             <span  id="tooltipText">
-                                                <ul>The Region received award/recognition at the international level = <i>12</i></ul>
+                                                <ul>The Region received award/recognition at the international level = <i>10</i></ul>
                                                 <ul>The Region did not receive award/recognition = <i>0</i></ul>
                                             </span>
                                     </div>
                                 </td>
-                                 <td class="align-top"><i>12</i></td>
+                                 <td class="align-top"><i>10</i></td>
                                 <td class="align-top">
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
@@ -612,6 +612,34 @@
                             </td>
                         </tr>
 
+                        <tr>
+                            <td class="align-top">B.2.C.5.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Number of New Assessors </span>
+                                        <span  id="tooltipText">
+                                            <ul>The accomplishment rate based on set target is at 100% and above = <i>15</i></ul>
+                                            <ul>The accomplishment rate based on set target is below 100% = <i>0</i></ul>
+                                        </span>
+                                </div>
+                            </td>
+                             <td class="align-top"><i>15</i></td>
+                            <td class="align-top">
+                                    <ul><i>*Registry of Accredited Assessors from T2MIS;  Signed Validated OPCR</i></ul>
+                            </td>
+                            <td class="align-top">
+                                <input type="number" name="b2c4" id="b2c4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
+                                @if($previousEvaluation && $previousEvaluation->b2c4 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2c4 : '' }}">
+                                @error('b2c4')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                            @enderror
+                            </td>
+                            <td class="align-top">
+                            <textarea name="b2c4_remarks" id="b2c4_remarks" class="comments" placeholder="Comment"
+                            @if($previousEvaluation && $previousEvaluation->b2c4 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2c4_remarks : '' }}</textarea>
+                            </td>
+                        </tr>
+
 
                         <tr>
                             <td class="align-top">B.2.C.6</td>
@@ -633,7 +661,7 @@
                                         </span>
                                 </div>
                             </td>
-                             <td class="align-top"><i>8</i></td>
+                             <td class="align-top"><i>10</i></td>
                              <td class="align-top">
                                 <ul><i>*Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</i></ul>
                             </td>
@@ -655,7 +683,7 @@
                         <tr>
                             <td class="align-top">B.2.E.</td>
                             <td class="align-top">
-                                Streamline and Intensify QMS in All Organizational Subsystems - SD 5
+                                Streamline and Intensify QMS in All Organizational Subsystems
                             </td>
                             <td class="align-top"><i></i></td>
                             <td class="align-top"></td>
