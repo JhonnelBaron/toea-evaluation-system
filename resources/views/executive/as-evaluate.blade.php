@@ -294,7 +294,7 @@
                                     <select name="a8" id="a8" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a8 !== null) disabled @endif>
                                         <option value="" @if($previousEvaluation && $previousEvaluation->a8 === '') selected @endif></option>
                                         <option value="0" @if($previousEvaluation && $previousEvaluation->a8 == '0') selected @endif>0</option>
-                                        <option value="10" @if($previousEvaluation && $previousEvaluation->a8 == '5') selected @endif>5</option>
+                                        <option value="10" @if($previousEvaluation && $previousEvaluation->a8 == '10') selected @endif>10</option>
                                     </select>
                                     @error('a8')
                                     <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
