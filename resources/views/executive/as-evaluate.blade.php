@@ -264,9 +264,6 @@
                                     <textarea name="a6_remarks" id="a6_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->a6 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a6_remarks : '' }}</textarea>
                                 </td>
-                                <td class="align-top">
-                                    <textarea name="a6_remarks" id="a6_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->a6 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a6_remarks : '' }}</textarea>
-                                </td>
                             </tr>
 
                             <tr>
@@ -303,9 +300,6 @@
                                 <td class="align-top">
                                     <textarea name="a8_remarks" id="a8_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->a8 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a8_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="a8_remarks" id="a8_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->a8 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a8_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -365,9 +359,6 @@
                                     <textarea name="c31_remarks" id="c31_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c31_remarks : '' }}</textarea>
                                 </td>
-                                <td class="align-top">
-                                    <textarea name="c31_remarks" id="c31_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c31 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c31_remarks : '' }}</textarea>
-                                </td>
                             </tr>
                             <tr>
                                 <td class="align-top">C.3.2.</td>
@@ -405,9 +396,6 @@
                                 <td class="align-top">
                                     <textarea name="c32_remarks" id="c32_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c32 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c32_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="c32_remarks" id="c32_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c32 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c32_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -464,9 +452,6 @@
                                     <textarea name="c411_remarks" id="c411_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c411 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c411_remarks : '' }}</textarea>
                                 </td>
-                                <td class="align-top">
-                                    <textarea name="c411_remarks" id="c411_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c411 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c411_remarks : '' }}</textarea>
-                                </td>
                             </tr>
 
                             <tr>
@@ -503,9 +488,6 @@
                                 <td class="align-top">
                                     <textarea name="c412_remarks" id="c412_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c412 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c412_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="c412_remarks" id="c412_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c412 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c412_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -553,9 +535,6 @@
                                     <textarea name="c421_remarks" id="c421_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c421 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c421_remarks : '' }}</textarea>
                                 </td>
-                                <td class="align-top">
-                                    <textarea name="c421_remarks" id="c421_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c421 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c421_remarks : '' }}</textarea>
-                                </td>
                             </tr>
 
                             <tr>
@@ -592,9 +571,6 @@
                                 <td class="align-top">
                                     <textarea name="c422_remarks" id="c422_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c422 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c422_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="c422_remarks" id="c422_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c422 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c422_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -642,9 +618,6 @@
                                     <textarea name="c431_remarks" id="c431_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c431 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c431_remarks : '' }}</textarea>
                                 </td>
-                                <td class="align-top">
-                                    <textarea name="c431_remarks" id="c431_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c431 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c431_remarks : '' }}</textarea>
-                                </td>
                             </tr>
 
                             <tr>
@@ -681,9 +654,6 @@
                                 <td class="align-top">
                                     <textarea name="c432_remarks" id="c432_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c432 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c432_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="c432_remarks" id="c432_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c432 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c432_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -723,9 +693,6 @@
                                 <td class="align-top">
                                     <textarea name="c5_remarks" id="c5_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->c5 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c5_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="c5_remarks" id="c5_remarks" class="comments" placeholder="Comment" @if($previousEvaluation && $previousEvaluation->c5 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c5_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -777,9 +744,6 @@
                                 <td class="align-top">
                                     <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
-                                </td>
-                                <td class="align-top">
-                                    <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                                 </td>
                             </tr>
                         </tbody>
