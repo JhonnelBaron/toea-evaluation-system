@@ -254,8 +254,11 @@
                             <td class="align-top"><i><ul>*Summary/Report on duly accomplished <br>TESDA TVET Partnership Monitoring System (TTPMS)
                             </i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b1g" id="b1g" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b1g !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b1g : '' }}">
+                                <select name="b1g" id="b1g" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b1g !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b1g === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b1g == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b1g == '10') selected @endif>10</option>
+                                </select>
                                 @error('b1g')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -265,6 +268,7 @@
                                 @if($previousEvaluation && $previousEvaluation->b1g !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b1g_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td class="align-top">B.2. </td>
@@ -325,8 +329,11 @@
                             <td class="align-top"><i>5</i></td>
                             <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b2d411" id="b2d411" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d411 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d411 : '' }}">
+                                <select name="b2d411" id="b2d411" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d411 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d411 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d411 == '0') selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->b2d411 == '5') selected @endif>5</option>
+                                </select>
                                 @error('b2d411')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -351,8 +358,11 @@
                             <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b2d412" id="b2d412" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d412 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d412 : '' }}">
+                                <select name="b2d412" id="b2d412" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d412 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d412 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d412 == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b2d412 == '10') selected @endif>10</option>
+                                </select>
                                 @error('b2d412')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -385,8 +395,11 @@
                             <td class="align-top"><i>5</i></td>
                             <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b2d421" id="b2d421" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d421 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d421 : '' }}">
+                                <select name="b2d421" id="b2d421" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d421 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d421 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d421 == '0') selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->b2d421 == '5') selected @endif>5</option>
+                                </select>
                                 @error('b2d421')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -411,8 +424,11 @@
                             <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b2d422" id="b2d422" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d422 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d422 : '' }}">
+                                <select name="b2d422" id="b2d422" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d422 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d422 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d422 == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b2d422 == '10') selected @endif>10</option>
+                                </select>
                                 @error('b2d422')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -445,11 +461,14 @@
                             <td class="align-top"><i>5</i></td>
                             <td class="align-top"><i><ul>*Memorandum on nominees endorsed</i></ul></td>
                             <td class="align-top">
-                                 <input type="number" name="b2d431" id="b2d431" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                 @if($previousEvaluation && $previousEvaluation->b2d431 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d431 : '' }}">
-                                 @error('b2d431')
-                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                 @enderror
+                                <select name="b2d431" id="b2d431" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d431 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d431 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d431 == '0') selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->b2d431 == '5') selected @endif>5</option>
+                                </select>
+                                @error('b2d431')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td class="align-top">
                                 <textarea name="b2d431_remarks" id="b2d431_remarks" class="comments" placeholder="Comment"
@@ -472,8 +491,11 @@
                             <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Awards received</i></ul></td>
                             <td class="align-top">
-                                <input type="number" name="b2d432" id="b2d432" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d432 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d432 : '' }}">
+                                <select name="b2d432" id="b2d432" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d432 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d432 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d432 == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b2d432 == '10') selected @endif>10</option>
+                                </select>
                                 @error('b2d432')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -509,9 +531,13 @@
                             </td>
                             <td class="align-center"><i>15</i></td>
                             <td class="align-center"><i><ul>*Copies of signed MOAs/MOUs</i></ul></td>
-                            <td class="align-center">
-                                <input type="number" name="b2d5" id="b2d5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2d5 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d5 : '' }}">
+                            <td class="align-top">
+                                <select name="b2d5" id="b2d5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d5 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d5 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d5 == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b2d5 == '10') selected @endif>10</option>
+                                    <option value="15" @if($previousEvaluation && $previousEvaluation->b2d5 == '15') selected @endif>15</option>
+                                </select>
                                 @error('b2d5')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -538,11 +564,14 @@
                             <td class="align-top"><i>10</i></td>
                             <td class="align-top"><i><ul>*Compendium of program registration, Registry of EBT programs; T2MIS</i></ul></td>
                             <td class="align-top">
-                                 <input type="number" name="b2d6" id="b2d6" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                 @if($previousEvaluation && $previousEvaluation->b2d6 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2d6 : '' }}">
-                                 @error('b2d6')
-                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                 @enderror
+                                <select name="b2d6" id="b2d6" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d6 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2d6 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2d6 == '0') selected @endif>0</option>
+                                    <option value="10" @if($previousEvaluation && $previousEvaluation->b2d6 == '10') selected @endif>10</option>
+                                </select>
+                                @error('b2d6')
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
+                                @enderror
                             </td>
                             <td class="align-top">
                                 <textarea name="b2d6_remarks" id="b2d6_remarks" class="comments" placeholder="Comment"
@@ -574,9 +603,14 @@
                             </td>
                             <td class="align-top"><i>60</i></td>
                             <td class="align-top"><i><ul>*Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul></td>
-                            <td class="align-top">
-                                <input type="number" name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->d1 : '' }}">
+                            <<td class="align-top">
+                                <select name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->d1 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->d1 == '0') selected @endif>0</option>
+                                    <option value="30" @if($previousEvaluation && $previousEvaluation->d1 == '30') selected @endif>30</option>
+                                    <option value="60" @if($previousEvaluation && $previousEvaluation->d1 == '60') selected @endif>60</option>
+
+                                </select>
                                 @error('d1')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror

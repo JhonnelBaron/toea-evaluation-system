@@ -256,7 +256,6 @@
                                         Duly signed compliance audit reports<br>
                                         Summary of audited programs
                                         Closure reports
-                                        Monthly monitoring of OPCRs"
                                         </i></ul>
                                 </td>
                                 {{-- <td class="align-top">
@@ -682,7 +681,7 @@
                             </td>
                              <td class="align-top"><i>15</i></td>
                             <td class="align-top">
-                                <ul><i>*Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</i></ul>
+                                <ul><i>*Summary/Report RWAC Report from T2MIS</i></ul>
                             </td>
                             {{-- <td class="align-top">
                                 <input type="number" name="b2c3" id="b2c3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -725,7 +724,7 @@
                             </td>
                              <td class="align-top"><i>15</i></td>
                             <td class="align-top">
-                                <ul><i>*Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</i></ul>
+                                <ul><i>*Registry of Accredited Assessment Centers from T2MIS</i></ul>
                             </td>
                             {{-- <td class="align-top">
                                 <input type="number" name="b2c4" id="b2c4" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -767,7 +766,7 @@
                             </td>
                              <td class="align-top"><i>15</i></td>
                             <td class="align-top">
-                                    <ul><i>*Registry of Accredited Assessors from T2MIS;  Signed Validated OPCR</i></ul>
+                                    <ul><i>*Registry of Accredited Assessors from T2MIS</i></ul>
                             </td>
                             {{-- <td class="align-top">
                                 <input type="number" name="b2c5" id="b2c5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

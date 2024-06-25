@@ -192,7 +192,7 @@
                     </svg>
                     Back
                 </button>
-                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Information and Communication Technology Office   </h1> 
+                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Legal Division</h1> 
             </div>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
