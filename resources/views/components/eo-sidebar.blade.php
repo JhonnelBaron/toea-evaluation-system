@@ -51,10 +51,10 @@
 
       <!-- Dropdown for BEST REGIONAL OFFICE -->
       <div>
-       <div class="font-sans">
+       <div class="font-serif">
             <br>
-            <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn"><b>BEST REGIONAL OFFICE</b></a>
-            <a href="{{route('evaluation-list')}}" class="dropdown-btn"><b>EVALUATE</b></a>
+            <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn">BEST REGIONAL OFFICE</a>
+            <a href="{{route('evaluation-list')}}" class="dropdown-btn">EVALUATE</a>
         </div>
     </div>
     <div style="margin-top: 250px;">
@@ -71,6 +71,8 @@
 
 <!-- Add some CSS for styling the dropdowns -->
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
     .sidebar {
         display: flex;
         flex-direction: column;
@@ -87,8 +89,8 @@
     }
 
     .dropdown-btn {
-        font-size: 12px;
-        font-family: "Times New Roman", Times, serif;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
         background-color: #FFFFFF;
         color: black;
         padding: 10px;

@@ -238,7 +238,7 @@
                                     </span>
                                 </div>
                             </td>
-                            <td style="vertical-align: top"><b>40</b></td>
+                            <td style="vertical-align: top">40</td>
                             <td class="align-top"><i><ul>*Certification of no pending case</ul></i></td>
                             {{-- <td class="align-top">
                             <input type="number" name="a1" id="a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -296,7 +296,7 @@
                                 </div>
                             </td>
                             
-                            <td style="vertical-align: top"><b>30</b></td>
+                            <td style="vertical-align: top">30</td>
                             <td class="align-top"><i><ul>*Certification from the RACC</ul></i></td>
                             {{-- <td class="align-top">
                             <input type="number" name="a2" id="a2" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
