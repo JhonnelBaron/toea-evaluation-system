@@ -20,7 +20,7 @@ class AsEvaluationController extends Controller
             'a8_remarks' => 'nullable|string',
             'c31' => 'nullable|integer|in:0,10,20',
             'c31_remarks' => 'nullable|string',
-            'c32' => 'nullable|integer|in:0,15',
+            'c32' => 'nullable|integer|in:0,5,15',
             'c32_remarks' => 'nullable|string',
             'c411' => 'nullable|integer|in:0,4',
             'c411_remarks' => 'nullable|string',
