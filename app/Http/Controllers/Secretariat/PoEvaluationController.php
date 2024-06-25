@@ -27,7 +27,7 @@ class PoEvaluationController extends Controller
             'b2b1_remarks' => 'nullable|string',
             'b2b5' => 'nullable|integer|in:0,5',
             'b2b5_remarks' => 'nullable|string',
-            'b2d1' => 'nullable|integer|in:0,5',
+            'b2d1' => 'nullable|integer|in:0,10',
             'b2d1_remarks' => 'nullable|string',
             'b2d2' => 'nullable|integer|in:0,5',
             'b2d2_remarks' => 'nullable|string',

@@ -35,7 +35,7 @@ class PloEvaluationController extends Controller
             'b2d432_remarks' => 'nullable|string',
             'b2d5' => 'nullable|integer|in:0,10,15',
             'b2d5_remarks' => 'nullable|string',
-            'b2d6' => 'nullable|integer|in:0,8',
+            'b2d6' => 'nullable|integer|in:0,10',
             'b2d6_remarks' => 'nullable|string',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
