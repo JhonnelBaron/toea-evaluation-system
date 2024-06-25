@@ -23,6 +23,12 @@ return new class extends Migration
             $table->text('a7a_remarks')->nullable();
             $table->integer('a7b')->nullable();
             $table->text('a7b_remarks')->nullable();
+            $table->integer('c1')->nullable();
+            $table->text('c1_remarks')->nullable();
+            $table->integer('c2')->nullable();
+            $table->text('c2_remarks')->nullable();
+            $table->integer('c33')->nullable();
+            $table->text('c33_remarks')->nullable();
             $table->integer('d1')->nullable();
             $table->text('d1_remarks')->nullable();
             $table->decimal('progress_percentage', 5, 2)->nullable();

@@ -22,7 +22,7 @@ class RomoEvaluationController extends Controller
             'b2b2_remarks' => 'nullable|string',
             'b2b3' => 'nullable|integer|in:0,35',
             'b2b3_remarks' => 'nullable|string',
-            'b2b4' => 'nullable|integer|in:0,7',
+            'b2b4' => 'nullable|integer|in:0,10',
             'b2b4_remarks' => 'nullable|string',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',

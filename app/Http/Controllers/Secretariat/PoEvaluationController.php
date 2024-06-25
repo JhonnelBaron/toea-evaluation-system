@@ -27,10 +27,16 @@ class PoEvaluationController extends Controller
             'b2b1_remarks' => 'nullable|string',
             'b2b5' => 'nullable|integer|in:0,5',
             'b2b5_remarks' => 'nullable|string',
-            'b2d1' => 'nullable|integer|in:0,5',
+            'b2d1' => 'nullable|integer|in:0,10',
             'b2d1_remarks' => 'nullable|string',
             'b2d2' => 'nullable|integer|in:0,5',
             'b2d2_remarks' => 'nullable|string',
+            'b2e21' => 'nullable|integer|in:0,4,8',
+            'b2e21_remarks' => 'nullable|string',
+            'b2e22' => 'nullable|integer|in:0,2,6',
+            'b2e22_remarks' => 'nullable|string',
+            'b2e23' => 'nullable|integer|in:0,3,6,',
+            'b2e23_remarks' => 'nullable|string',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
         ]);
@@ -69,6 +75,12 @@ class PoEvaluationController extends Controller
             'b2d1_remarks' => $validatedData['b2d1_remarks'] ?? null,
             'b2d2' => $validatedData['b2d2'] ?? null,
             'b2d2_remarks' => $validatedData['b2d2_remarks'] ?? null,
+            'b2e21' => $validatedData['b2e21'] ?? null,
+            'b2e21_remarks' => $validatedData['b2e21_remarks'] ?? null,
+            'b2e22' => $validatedData['b2e22'] ?? null,
+            'b2e22_remarks' => $validatedData['b2e22_remarks'] ?? null,
+            'b2e23' => $validatedData['b2e23'] ?? null,
+            'b2e23_remarks' => $validatedData['b2e23_remarks'] ?? null,
             'd1' => $validatedData['d1'] ?? null,
             'd1_remarks' => $validatedData['d1_remarks'] ?? null,
         ];
@@ -76,7 +88,7 @@ class PoEvaluationController extends Controller
         // Initialize variables for overall progress metrics
         $totalFields = [
             'b1a' => null, 'b1b' => null, 'b1i' => null, 'b2a1' => null,
-            'b2b1' => null, 'b2b5' => null, 'b2d1' => null, 'b2d2' => null, 'd1' => null,
+            'b2b1' => null, 'b2b5' => null, 'b2d1' => null, 'b2d2' => null, 'b2e21' => null, 'b2e22' => null, 'b2e23' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -156,6 +168,21 @@ class PoEvaluationController extends Controller
                 $evaluationData['b2d2'] = $existingEvaluation->b2d2;
                 $evaluationData['b2d2_remarks'] = $existingEvaluation->b2d2_remarks;
                 $disabledFields[] = 'b2d2';
+            }
+            if ($existingEvaluation->b2e21 !== null) {
+                $evaluationData['b2e21'] = $existingEvaluation->b2e21;
+                $evaluationData['b2e21_remarks'] = $existingEvaluation->b2e21_remarks;
+                $disabledFields[] = 'b2e21';
+            }
+            if ($existingEvaluation->b2e22 !== null) {
+                $evaluationData['b2e22'] = $existingEvaluation->b2e22;
+                $evaluationData['b2e22_remarks'] = $existingEvaluation->b2e22_remarks;
+                $disabledFields[] = 'b2e22';
+            }
+            if ($existingEvaluation->b2e23 !== null) {
+                $evaluationData['b2e23'] = $existingEvaluation->b2e23;
+                $evaluationData['b2e23_remarks'] = $existingEvaluation->b2e23_remarks;
+                $disabledFields[] = 'b2e23';
             }
             if ($existingEvaluation->d1 !== null) {
                 $evaluationData['d1'] = $existingEvaluation->d1;
