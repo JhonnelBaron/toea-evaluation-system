@@ -27,7 +27,7 @@ class CoEvaluationController extends Controller
             'b2a41_remarks' => 'nullable|string',
             'b2a42' => 'nullable|integer|in:0,7',
             'b2a42_remarks' => 'nullable|string',
-            'b2a43' => 'nullable|integer|in:0,12',
+            'b2a43' => 'nullable|integer|in:0,10',
             'b2a43_remarks' => 'nullable|string',
             'b2c1' => 'nullable|integer|in:0,15',
             'b2c1_remarks' => 'nullable|string',
