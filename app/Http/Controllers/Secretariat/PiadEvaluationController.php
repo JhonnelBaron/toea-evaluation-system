@@ -17,7 +17,7 @@ class PiadEvaluationController extends Controller
             'region_id' => 'nullable|integer|exists:regions,id',
             'a3' => 'nullable|integer|in:0,10',
             'a3_remarks' => 'nullable|string',
-            'a4' => 'nullable|integer|in:0,30',
+            'a4' => 'nullable|integer|in:0,3,5,10,20,30',
             'a4_remarks' => 'nullable|string',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',

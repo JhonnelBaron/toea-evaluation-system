@@ -15,7 +15,7 @@ class NitesdEvaluationController extends Controller
         $validator = Validator::make($request->all(), [
             'uploader_id' => 'nullable|integer|exists:users,id',
             'region_id' => 'nullable|integer|exists:regions,id',
-            'b2a1' => 'nullable|integer|in:0,10',
+            'b2a1' => 'nullable|integer|in:0,8',
             'b2a1_remarks' => 'nullable|string',
             'b2a2' => 'nullable|integer|in:0,8',
             'b2a2_remarks' => 'nullable|string',
