@@ -762,11 +762,14 @@
                                     <option value="3" @if($previousEvaluation && $previousEvaluation->b2e23 == '3') selected @endif>3</option>
                                     <option value="6" @if($previousEvaluation && $previousEvaluation->b2e23 == '6') selected @endif>6</option>
                                 </select>
-                                <p>plus 1</p>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div>
                                 @error('b2e23')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
-                            </td>
+                            </td>                            
                             <td class="align-top">
                                 <textarea name="b2e23_remarks" id="b2e23_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->b2e23 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e23_remarks : '' }}</textarea>

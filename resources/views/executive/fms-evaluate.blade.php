@@ -276,6 +276,10 @@
                                     <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == '5') selected @endif>5</option>
                                     <option value="15" @if($previousEvaluation && $previousEvaluation->a5a == '15') selected @endif>15</option>
                                 </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div>
                                 @error('a5a')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
@@ -575,7 +579,10 @@
                                     <option value="15" @if($previousEvaluation && $previousEvaluation->c33 == '15') selected @endif>15</option>
                                     <option value="25" @if($previousEvaluation && $previousEvaluation->c33 == '25') selected @endif>25</option>
                                 </select>
-                                <p>plus 1</p>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div>
                                 @error('c33')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
