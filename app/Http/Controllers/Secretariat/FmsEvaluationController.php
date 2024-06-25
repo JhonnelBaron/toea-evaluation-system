@@ -23,12 +23,6 @@ class FmsEvaluationController extends Controller
             'a7a_remarks' => 'nullable|string',
             'a7b' => 'nullable|integer|in:0,10',
             'a7b_remarks' => 'nullable|string',
-            'b2e21' => 'nullable|integer|in:0,4,8',
-            'b2e21_remarks' => 'nullable|string',
-            'b2e22' => 'nullable|integer|in:0,2,6',
-            'b2e22_remarks' => 'nullable|string',
-            'b2e23' => 'nullable|integer|in:0,3,6,',
-            'b2e23_remarks' => 'nullable|string',
             'c1' => 'nullable|integer|in:0,10,25',
             'c1_remarks' => 'nullable|string',
             'c2' => 'nullable|integer|in:0,5,15,25',
@@ -65,12 +59,6 @@ class FmsEvaluationController extends Controller
             'a7a_remarks' => $validatedData['a7a_remarks'] ?? null,
             'a7b' => $validatedData['a7b'] ?? null,
             'a7b_remarks' => $validatedData['a7b_remarks'] ?? null,
-            'b2e21' => $validatedData['b2e21'] ?? null,
-            'b2e21_remarks' => $validatedData['b2e21_remarks'] ?? null,
-            'b2e22' => $validatedData['b2e22'] ?? null,
-            'b2e22_remarks' => $validatedData['b2e22_remarks'] ?? null,
-            'b2e23' => $validatedData['b2e23'] ?? null,
-            'b2e23_remarks' => $validatedData['b2e23_remarks'] ?? null,
             'c1' => $validatedData['c1'] ?? null,
             'c1_remarks' => $validatedData['c1_remarks'] ?? null,
             'c2' => $validatedData['c2'] ?? null,
@@ -83,7 +71,7 @@ class FmsEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'a5a' => null, 'a5b' => null, 'a7a' => null, 'a7b' => null, 'b2e21' => null, 'b2e22' => null, 'b2e23' => null, 'c1' => null,'c2' => null, 'c33' => null, 'd1' => null,
+            'a5a' => null, 'a5b' => null, 'a7a' => null, 'a7b' => null, 'c1' => null,'c2' => null, 'c33' => null, 'd1' => null,
         ];
 
         // Update with existing data if available
@@ -143,21 +131,6 @@ class FmsEvaluationController extends Controller
                 $evaluationData['a7b'] = $existingEvaluation->a7b;
                 $evaluationData['a7b_remarks'] = $existingEvaluation->a7b_remarks;
                 $disabledFields[] = 'a7b';
-            }
-            if ($existingEvaluation->b2e21 !== null) {
-                $evaluationData['b2e21'] = $existingEvaluation->b2e21;
-                $evaluationData['b2e21_remarks'] = $existingEvaluation->b2e21_remarks;
-                $disabledFields[] = 'b2e21';
-            }
-            if ($existingEvaluation->b2e22 !== null) {
-                $evaluationData['b2e22'] = $existingEvaluation->b2e22;
-                $evaluationData['b2e22_remarks'] = $existingEvaluation->b2e22_remarks;
-                $disabledFields[] = 'b2e22';
-            }
-            if ($existingEvaluation->b2e23 !== null) {
-                $evaluationData['b2e23'] = $existingEvaluation->b2e23;
-                $evaluationData['b2e23_remarks'] = $existingEvaluation->b2e23_remarks;
-                $disabledFields[] = 'b2e23';
             }
             if ($existingEvaluation->c1 !== null) {
                 $evaluationData['c1'] = $existingEvaluation->c1;

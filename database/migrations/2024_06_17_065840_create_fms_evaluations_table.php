@@ -23,12 +23,6 @@ return new class extends Migration
             $table->text('a7a_remarks')->nullable();
             $table->integer('a7b')->nullable();
             $table->text('a7b_remarks')->nullable();
-            $table->integer('b2e21')->nullable();
-            $table->text('b2e21_remarks')->nullable();
-            $table->integer('b2e22')->nullable();
-            $table->text('b2e22_remarks')->nullable();
-            $table->integer('b2e23')->nullable();
-            $table->text('b2e23_remarks')->nullable();
             $table->integer('c1')->nullable();
             $table->text('c1_remarks')->nullable();
             $table->integer('c2')->nullable();
