@@ -754,7 +754,7 @@
                                 @if($previousEvaluation && $previousEvaluation->b2e23 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e23_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
+                                {{-- <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->b2e23 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->b2e23 == '0') selected @endif>0</option>
                                     <option value="3" @if($previousEvaluation && $previousEvaluation->b2e23 == '3') selected @endif>3</option>
@@ -762,6 +762,16 @@
                                 </select>
                                 <div class="text-sm pt-4 text-center">
                                     <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div> --}}
+                                <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2e23 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->b2e23 == '0' || $previousEvaluation->b2e23 == '1')) selected @endif>0</option>
+                                    <option value="3" @if($previousEvaluation && ($previousEvaluation->b2e23 == '3' || $previousEvaluation->b2e23 == '4')) selected @endif>3</option>
+                                    <option value="6" @if($previousEvaluation && ($previousEvaluation->b2e23 == '6' || $previousEvaluation->b2e23 == '7')) selected @endif>6</option>
+                                </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox" name="b2e23_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->b2e23 == '1' || $previousEvaluation->b2e23 == '4' || $previousEvaluation->b2e23 == '7')) checked @endif @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('b2e23')
