@@ -10,7 +10,10 @@ export default {
     extend: {
       backgroundImage: {
         'login-bg': "url('/resources/css/img/login-bg.png')",
-      }
+      },
+      fontFamily: {
+        'times': ['Times New Roman', 'Times', 'serif'],
+      },
     },
   },
   plugins: [],

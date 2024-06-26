@@ -220,7 +220,7 @@
                         <tr>
                             <td class="align-top">B.<hr></td>
                             <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                            <td class="align-top"><b>108</b><hr></td>
+                            <td class="align-top"><b>80</b><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>

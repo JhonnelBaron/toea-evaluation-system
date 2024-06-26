@@ -226,19 +226,19 @@
                             <td class="align-top"><b>B.</b><hr></td>
 
                                 <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                                <td class="align-top"><b>20</b><hr></td>
+                                <td class="align-top"><b>115</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                         </tr>
                         
                         <tr>
-                            <td class="align-top">B.1.<hr></td>
-                            <td class="align-top">Performance based on the General Appropriations Act (GAA)<hr></td>
-                            <td class="align-top">45<hr></td>
-                            <td class="align-bottom"><hr></td>
-                            <td class="align-bottom"><hr></td>
-                            <td class="align-bottom"><hr></td>
+                            <td class="align-top">B.1.</td>
+                            <td class="align-top">Performance based on the General Appropriations Act (GAA)</td>
+                            <td class="align-top"></td>
+                            <td class="align-bottom"></td>
+                            <td class="align-bottom"></td>
+                            <td class="align-bottom"></td>
 
                         </tr>
 
@@ -367,7 +367,7 @@
                             <td class="align-top">B.2.<hr></td>
 
                             <td><b class="vertical-align: bottom">Implementation of the TESDA Corporate Plan<hr></td>
-                            <td class="align-top"><b>48</b><hr></td>
+                            <td class="align-top"><b></b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -682,14 +682,14 @@
                                 <span>Timely Submission of Reports/Documents (e.g. IQA reports, Action Catalog, NAP)</span>
                                     <span  id="tooltipText">
                                             <ul>
-                                                <li>The region submitted report/doc ahead of deadline = <span class="text-red-600">*</span><i>6</i></li>
-                                                <li>The region submitted report/docs on set deadline = <span class="text-red-600">*</span><i>2</i></li>
+                                                <li>The region submitted report/doc ahead of deadline = <span class="text-red-600">*</span><i>8</i></li>
+                                                <li>The region submitted report/docs on set deadline = <span class="text-red-600">*</span><i>4</i></li>
                                                 <li>The region submitted report/doc after set deadline = <span class="text-red-600">*</span><i>0</i></li>
                                             </ul>
                                     </span>
                                 </div>
                             </td>
-                            <td class="align-top"><i>6</i></td>
+                            <td class="align-top"><i>8</i></td>
                             <td class="align-top">
                                 <ul><i>*RRRO - Monitoring of submission<br>
                                     IQA Reports reflected on the QP-03-F12<br>
@@ -710,8 +710,8 @@
                                 <select name="b2e22" id="b2e22" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e22 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->b2e22 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->b2e22 == '0') selected @endif>0</option>
-                                    <option value="2" @if($previousEvaluation && $previousEvaluation->b2e22 == '2') selected @endif>2</option>
-                                    <option value="6" @if($previousEvaluation && $previousEvaluation->b2e22 == '6') selected @endif>6</option>
+                                    <option value="4" @if($previousEvaluation && $previousEvaluation->b2e22 == '4') selected @endif>4</option>
+                                    <option value="8" @if($previousEvaluation && $previousEvaluation->b2e22 == '8') selected @endif>8</option>
                                 </select>
                                 @error('b2e22')
                                 <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
@@ -740,9 +740,7 @@
                             </td>
                             <td class="align-top"><i>6</i></td>
                             <td class="align-top">
-                                <ul><i>*RRRO - Monitoring of submission<br>
-                                    IQA Reports reflected on the QP-03-F12<br>
-                                    Action Catalog - QP-03-F11</i></ul>
+                                <ul><i>Manning of the Regional Office versus the actual number of personnel that have attended training</i></ul>
                             </td>
                             {{-- <td class="align-top">
                             <input type="number" name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"

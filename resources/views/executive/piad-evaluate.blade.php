@@ -322,8 +322,8 @@
 
                         <tr>
 
-                            <td class="align-top">D.</td>
-                            <td class="align-top">Reporting Efficiency<hr></td>
+                            <td class="align-top"><b>D.</b><hr></td>
+                            <td class="align-top"><b>Reporting Efficiency</b><hr></td>
                             <td class="align-top"><b>60</b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -375,10 +375,10 @@
                         </tr>
 
                         <tr>
-                            <td class="align-top">E.</td>
+                            <td class="align-top"><b>E.</b><hr></td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                    <span>E. Social Marketing and Advocacy</span>
+                                    <span><b>Social Marketing and Advocacy<hr></b></span>
                                     <span  id="tooltipText">
                                         <ul>A Communication Plan was prepared and fully implemented. = <i>50</i></ul>
                                         <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
