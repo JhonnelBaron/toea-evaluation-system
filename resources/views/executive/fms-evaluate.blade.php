@@ -437,7 +437,7 @@
                             <td class="align-top"><b>C.</b><hr></td>
 
                                 <td class="align-top"><b>Administrative and Support Services</b><hr></td>
-                                <td class="align-top"><b>75</b><hr></td>
+                                <td class="align-top"><b>56</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
@@ -545,15 +545,15 @@
                                 <span>Percentage of Personnel Attendance to Finance related training programs</span>
                                     <span  id="tooltipText">
                                             <ul>
-                                                <li>80% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>25</i></li>
-                                                <li>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>15</i></li>
-                                                <li>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>5</i></li>
-                                                <li>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <span class="text-red-600">*</span><i>0</i></li>
+                                                <li>80% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>6</i></li>
+                                                <li>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>3</i></li>
+                                                <li>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>0</i></li>
+                                                <li>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <span class="text-red-600">*</span><i>+1</i></li>
                                             </ul>
                                     </span>
                                 </div>
                             </td>
-                            <td class="align-top"><i>25</i></td>
+                            <td class="align-top"><i>6</i></td>
                             <td class="align-top">
                                 <ul><i>*List of plantilla positions per region<br>
                                     - Certificates of training attended<br>
@@ -575,9 +575,8 @@
                                 <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->c33 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->c33 == '0') selected @endif>0</option>
-                                    <option value="5" @if($previousEvaluation && $previousEvaluation->c33 == '5') selected @endif>5</option>
-                                    <option value="15" @if($previousEvaluation && $previousEvaluation->c33 == '15') selected @endif>15</option>
-                                    <option value="25" @if($previousEvaluation && $previousEvaluation->c33 == '25') selected @endif>25</option>
+                                    <option value="3" @if($previousEvaluation && $previousEvaluation->c33 == '3') selected @endif>3</option>
+                                    <option value="6" @if($previousEvaluation && $previousEvaluation->c33 == '6') selected @endif>6</option>
                                 </select>
                                 <div class="text-sm pt-4 text-center">
                                     <input type="checkbox" id="myCheckbox">
