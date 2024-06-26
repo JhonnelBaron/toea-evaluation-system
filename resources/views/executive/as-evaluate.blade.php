@@ -596,7 +596,7 @@
                                 </td>
                                 <td class="align-top"><i>4</i></td>
                                 <td class="align-top">
-                                    <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
+                                    <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 {{-- <td class="align-top">
                                     <input type="number" name="c431" id="c431" class="px-3 py-2 border rounded-md w-20" @if($previousEvaluation && $previousEvaluation->c431 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->c431 : '' }}">
@@ -633,7 +633,7 @@
                                 </td>
                                 <td class="align-top"><i>5</i></td>
                                 <td class="align-top">
-                                    <ul><i>*List of nominees and awardees from HRMD/AS <br>Certificates of training attended</ul></i>
+                                    <ul><i>*List of nominees and awardees from HRMD/AS</ul></i>
                                 </td>
                                 {{-- <td class="align-top">
                                     <input type="number" name="c432" id="c432" class="px-3 py-2 border rounded-md w-20" @if($previousEvaluation && $previousEvaluation->c432 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->c432 : '' }}">

@@ -37,6 +37,7 @@ class PoEvaluationController extends Controller
             'b2e22_remarks' => 'nullable|string',
             'b2e23' => 'nullable|integer|in:0,3,6,',
             'b2e23_remarks' => 'nullable|string',
+            'b2e23_checkbox' => 'nullable|boolean',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
         ]);
@@ -106,6 +107,12 @@ class PoEvaluationController extends Controller
                 $totalFields[$key] += $validatedData[$key];
             }
         }
+
+                    // If the checkbox is checked, add +1 to the b2e23 value
+                    if (isset($validatedData['b2e23_checkbox']) && $validatedData['b2e23_checkbox']) {
+                        $evaluationData['b2e23'] = ($evaluationData['b2e23'] ?? 0) + 1;
+                        $totalFields['b2e23'] = ($totalFields['b2e23'] ?? 0) + 1;
+                    }
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {

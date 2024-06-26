@@ -17,6 +17,7 @@ class FmsEvaluationController extends Controller
             'region_id' => 'nullable|integer|exists:regions,id',
             'a5a' => 'nullable|integer|in:0,1,5,15',
             'a5a_remarks' => 'nullable|string',
+            'a5a_checkbox' => 'nullable|boolean',
             'a5b' => 'nullable|integer|in:0,15',
             'a5b_remarks' => 'nullable|string',
             'a7a' => 'nullable|integer|in:0,10',
@@ -27,8 +28,9 @@ class FmsEvaluationController extends Controller
             'c1_remarks' => 'nullable|string',
             'c2' => 'nullable|integer|in:0,5,15,25',
             'c2_remarks' => 'nullable|string',
-            'c33' => 'nullable|integer|in:0,5,15,25',
+            'c33' => 'nullable|integer|in:0,3,6',
             'c33_remarks' => 'nullable|string',
+            'c33_checkbox' => 'nullable|boolean',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
         ]);
@@ -89,6 +91,19 @@ class FmsEvaluationController extends Controller
                 $totalFields[$key] += $validatedData[$key];
             }
         }
+
+        
+            // If the checkbox is checked, add +1 to the c33 value
+            if (isset($validatedData['c33_checkbox']) && $validatedData['c33_checkbox']) {
+                $evaluationData['c33'] = ($evaluationData['c33'] ?? 0) + 1;
+                $totalFields['c33'] = ($totalFields['c33'] ?? 0) + 1;
+            }
+
+            // If the checkbox is checked, add +1 to the a5a value
+            if (isset($validatedData['a5a_checkbox']) && $validatedData['a5a_checkbox']) {
+                $evaluationData['a5a'] = ($evaluationData['a5a'] ?? 0) + 1;
+                $totalFields['a5a'] = ($totalFields['a5a'] ?? 0) + 1;
+            }
 
         // Calculate filled fields count
         $filledFieldsCount = count(array_filter($totalFields, function ($value) {
@@ -162,3 +177,4 @@ class FmsEvaluationController extends Controller
         return redirect()->back()->with('success', 'Evaluation saved successfully.');
     }
 }
+

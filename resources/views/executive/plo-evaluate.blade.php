@@ -517,24 +517,44 @@
                                     <i>● CSR – partnership with private companies</i></b></span>
 
                                     <span  id="tooltipText">
-                                        <ul><i>*For Large Regions: Partnerships with three (3) or more industries / private companies and with <br>continuing tie-ups for the last two (2) years with the same industries/companies;<br>
-                                                For Medium Regions: Partnerships with two (2) or more industries / private companies and with <br>continuing tie - ups for the last two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with more than one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company = 15</i></ul><br>
-                                        <ul><i>*For Large Regions: Partnerships with less than three (3) industries / private companies and with <br>continuing tie-ups for the last two (2) years with the same industries/companies;<br>
-                                                For Medium Regions: Partnerships with less than two (2) industries / private companies and with <br>continuing tie - ups for the last two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with one (1) industry / private company and with <br>continuing tie-ups for the last two (2) years with the same industry/company; = 10</i></ul><br>
-                                        <ul><i>"For Large Regions: Partnerships with less than three (3) industries / private companies and with <br>continuing tie-ups for less than two (2) years with the same industries/companies;<br>
-                                                For Medium Regions: Partnerships with less than two (2) industries / private companies and with <br>continuing tie-ups for less than two (2) years with the same industries/companies;<br>
-                                                For Small Regions: Partnership with one (1) industry / private company and with continuing <br>tie-ups for less than two (2) years with the same industries/companies; = 0</i></ul><br>
+                                        <ul><i>*For Large Region: Partnerships with three (3) or more industries <br>
+                                            / private companies and with continuing tie-ups for the last two (2) years <br>
+                                            with the same industries/companies;<br>
+                                            For Medium Region: Partnerships with two (2) or more industries <br>
+                                            / private companies and with continuing tie-ups for the last two <br>
+                                            (2) years with the same industries/companies;<br>
+                                            For Small Region: Partnership with more than one (1) industry <br>
+                                            / private company and with continuing tie-ups for the last two <br>
+                                            (2) years with the same industry/company = 15</i></ul><br>
+
+                                        <ul><i>*For Large Region: Partnerships with two (2) industries / private <br>
+                                            companies and with continuing tie-ups for the last two (2) years with the <br>
+                                            same industries/companies;<br>
+                                                For Medium Region: Partnerships with one (1) industry / private company <br>
+                                                and with continuing tie-ups for the last two (2) years with the same <br>
+                                                industries/companies;<br>
+                                                For Small Region: Partnership with one (1) industry / private company and with <br>
+                                                continuing tie-ups for the last one (1) year with the same industry/company = 10</i></ul><br>
+
+                                        <ul><i>"For Large Region: Partnerships with two (2) industries / private companies and <br>
+                                            with continuing tie-ups for one (1) year with the same industries/companies;<br>
+                                                For Medium Region: Partnerships with one (1) industry / private company and with <br>
+                                                continuing tie-ups for one (1) year with the same industries/companies;<br>
+                                                For Small Region: Partnership with one new (1) industry / private company = 5</i></ul><br>
+                                        <ul><i>*For Large Region: Partnerships with less than two (2) industries / private <br>
+                                            companies;<br>
+                                            For Medium Region: No Partnerships;<br>
+                                            For Small Region: No Partnership = 0</i></ul><br>
                                     </span>
                                 </div>
                             </td>
                             <td class="align-center"><i>15</i></td>
                             <td class="align-center"><i><ul>*Copies of signed MOAs/MOUs</i></ul></td>
-                            <td class="align-top">
+                            <td class="align-center">
                                 <select name="b2d5" id="b2d5" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2d5 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->b2d5 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->b2d5 == '0') selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && $previousEvaluation->b2d5 == '5') selected @endif>5</option>
                                     <option value="10" @if($previousEvaluation && $previousEvaluation->b2d5 == '10') selected @endif>10</option>
                                     <option value="15" @if($previousEvaluation && $previousEvaluation->b2d5 == '15') selected @endif>15</option>
                                 </select>

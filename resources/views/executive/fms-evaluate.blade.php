@@ -270,7 +270,7 @@
                                 @if($previousEvaluation && $previousEvaluation->a5a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5a_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
+                                {{-- <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->a5a === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->a5a == '0') selected @endif>0</option>
                                     <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == '5') selected @endif>5</option>
@@ -278,6 +278,16 @@
                                 </select>
                                 <div class="text-sm pt-4 text-center">
                                     <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div> --}}
+                                <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->a5a === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->a5a == '0' || $previousEvaluation->a5a == '1')) selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && ($previousEvaluation->a5a == '5' || $previousEvaluation->a5a == '6')) selected @endif>5</option>
+                                    <option value="15" @if($previousEvaluation && ($previousEvaluation->a5a == '15' || $previousEvaluation->a5a == '16')) selected @endif>15</option>
+                                </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox" name="a5a_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->a5a == '1' || $previousEvaluation->a5a == '6' || $previousEvaluation->a5a == '16')) checked @endif @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('a5a')
@@ -437,7 +447,7 @@
                             <td class="align-top"><b>C.</b><hr></td>
 
                                 <td class="align-top"><b>Administrative and Support Services</b><hr></td>
-                                <td class="align-top"><b>75</b><hr></td>
+                                <td class="align-top"><b>56</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
@@ -545,15 +555,15 @@
                                 <span>Percentage of Personnel Attendance to Finance related training programs</span>
                                     <span  id="tooltipText">
                                             <ul>
-                                                <li>80% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>25</i></li>
-                                                <li>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>15</i></li>
-                                                <li>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>5</i></li>
-                                                <li>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <span class="text-red-600">*</span><i>0</i></li>
+                                                <li>80% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>6</i></li>
+                                                <li>40% to 79% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>3</i></li>
+                                                <li>Less than 40% of regional finance and budget officers/personnel attended finance related training programs = <span class="text-red-600">*</span><i>0</i></li>
+                                                <li>*Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel  = <span class="text-red-600">*</span><i>+1</i></li>
                                             </ul>
                                     </span>
                                 </div>
                             </td>
-                            <td class="align-top"><i>25</i></td>
+                            <td class="align-top"><i>6</i></td>
                             <td class="align-top">
                                 <ul><i>*List of plantilla positions per region<br>
                                     - Certificates of training attended<br>
@@ -572,15 +582,24 @@
                                 @if($previousEvaluation && $previousEvaluation->c33 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c33_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                {{-- <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->c33 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->c33 == '0') selected @endif>0</option>
-                                    <option value="5" @if($previousEvaluation && $previousEvaluation->c33 == '5') selected @endif>5</option>
-                                    <option value="15" @if($previousEvaluation && $previousEvaluation->c33 == '15') selected @endif>15</option>
-                                    <option value="25" @if($previousEvaluation && $previousEvaluation->c33 == '25') selected @endif>25</option>
+                                    <option value="3" @if($previousEvaluation && $previousEvaluation->c33 == '3') selected @endif>3</option>
+                                    <option value="6" @if($previousEvaluation && $previousEvaluation->c33 == '6') selected @endif>6</option>
                                 </select>
                                 <div class="text-sm pt-4 text-center">
-                                    <input type="checkbox" id="myCheckbox">
+                                    <input type="checkbox" id="myCheckbox" name="c33_checkbox" value="1" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div> --}}
+                                <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->c33 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->c33 == '0' || $previousEvaluation->c33 == '1')) selected @endif>0</option>
+                                    <option value="3" @if($previousEvaluation && ($previousEvaluation->c33 == '3' || $previousEvaluation->c33 == '4')) selected @endif>3</option>
+                                    <option value="6" @if($previousEvaluation && ($previousEvaluation->c33 == '6' || $previousEvaluation->c33 == '7')) selected @endif>6</option>
+                                </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox" name="c33_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->c33 == '1' || $previousEvaluation->c33 == '4' || $previousEvaluation->c33 == '7')) checked @endif @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('c33')
