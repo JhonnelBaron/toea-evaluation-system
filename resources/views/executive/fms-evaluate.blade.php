@@ -270,7 +270,7 @@
                                 @if($previousEvaluation && $previousEvaluation->a5a !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a5a_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
+                                {{-- <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->a5a === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->a5a == '0') selected @endif>0</option>
                                     <option value="5" @if($previousEvaluation && $previousEvaluation->a5a == '5') selected @endif>5</option>
@@ -278,6 +278,16 @@
                                 </select>
                                 <div class="text-sm pt-4 text-center">
                                     <input type="checkbox" id="myCheckbox">
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div> --}}
+                                <select name="a5a" id="a5a" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->a5a === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->a5a == '0' || $previousEvaluation->a5a == '1')) selected @endif>0</option>
+                                    <option value="5" @if($previousEvaluation && ($previousEvaluation->a5a == '5' || $previousEvaluation->a5a == '6')) selected @endif>5</option>
+                                    <option value="15" @if($previousEvaluation && ($previousEvaluation->a5a == '15' || $previousEvaluation->a5a == '16')) selected @endif>15</option>
+                                </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox" name="a5a_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->a5a == '1' || $previousEvaluation->a5a == '6' || $previousEvaluation->a5a == '16')) checked @endif @if($previousEvaluation && $previousEvaluation->a5a !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('a5a')
@@ -572,14 +582,24 @@
                                 @if($previousEvaluation && $previousEvaluation->c33 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->c33_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                {{-- <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->c33 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->c33 == '0') selected @endif>0</option>
                                     <option value="3" @if($previousEvaluation && $previousEvaluation->c33 == '3') selected @endif>3</option>
                                     <option value="6" @if($previousEvaluation && $previousEvaluation->c33 == '6') selected @endif>6</option>
                                 </select>
                                 <div class="text-sm pt-4 text-center">
-                                    <input type="checkbox" id="myCheckbox">
+                                    <input type="checkbox" id="myCheckbox" name="c33_checkbox" value="1" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                    <label for="myCheckbox"><i>+1</i></label>
+                                </div> --}}
+                                <select name="c33" id="c33" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->c33 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->c33 == '0' || $previousEvaluation->c33 == '1')) selected @endif>0</option>
+                                    <option value="3" @if($previousEvaluation && ($previousEvaluation->c33 == '3' || $previousEvaluation->c33 == '4')) selected @endif>3</option>
+                                    <option value="6" @if($previousEvaluation && ($previousEvaluation->c33 == '6' || $previousEvaluation->c33 == '7')) selected @endif>6</option>
+                                </select>
+                                <div class="text-sm pt-4 text-center">
+                                    <input type="checkbox" id="myCheckbox" name="c33_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->c33 == '1' || $previousEvaluation->c33 == '4' || $previousEvaluation->c33 == '7')) checked @endif @if($previousEvaluation && $previousEvaluation->c33 !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('c33')
