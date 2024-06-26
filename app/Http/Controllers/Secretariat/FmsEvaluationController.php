@@ -27,7 +27,7 @@ class FmsEvaluationController extends Controller
             'c1_remarks' => 'nullable|string',
             'c2' => 'nullable|integer|in:0,5,15,25',
             'c2_remarks' => 'nullable|string',
-            'c33' => 'nullable|integer|in:0,5,15,25',
+            'c33' => 'nullable|integer|in:0,3,6',
             'c33_remarks' => 'nullable|string',
             'd1' => 'nullable|integer|in:0,30,60',
             'd1_remarks' => 'nullable|string',
