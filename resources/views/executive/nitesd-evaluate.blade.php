@@ -414,6 +414,13 @@
                         </tr>
 
                         <tr>
+                            <td class="align-top">
+                        <b>B.2.D.4.4</b>
+                            </td>
+                            <td class="align-top">Tagsanay</td>
+                        </tr>
+
+                        <tr>
                             <td class="align-top">B.2.D.4.4.1.</td>
                             <td class="align-top">
                                 <div id="tooltip">
