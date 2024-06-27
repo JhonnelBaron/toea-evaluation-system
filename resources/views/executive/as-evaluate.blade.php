@@ -6,6 +6,7 @@
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
         .d-flex {
             display: flex;
@@ -204,8 +205,13 @@
             <div class="box-content">
                 <form method="POST" action="{{ route('save_evaluation') }}">
                     @csrf
+
+                    
                     <!-- Hidden input for region_id -->
                     <input type="hidden" name="region_id" value="{{ $regionId }}">
+                    <div class=" pb-4 pt-4 text-center text-3xl text-black font-sans flex items-center justify-center border-b-2 border-solid border-black">
+                        <b>{{ $regionName }}</b>
+                    </div>
                     <table>
                         <thead>
                             <tr>
@@ -750,6 +756,7 @@
                     </table>
                     <td class="align-top">
                         <div class="flex justify-end space-x-4">
+                            <div class="mr-7"><b>TOTAL: <span class="text-lg">{{$previousEvaluation->overall_total_score ?? 0}}</span></b></div>
                             <a href="{{ route('upload.file', ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
                                 Upload Files
                                 <input type="file" class="hidden" />

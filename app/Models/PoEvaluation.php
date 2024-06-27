@@ -18,8 +18,6 @@ class PoEvaluation extends Model
         'b1b_remarks',
         'b1i',
         'b1i_remarks',
-        'b2a1',
-        'b2a1_remarks',
         'b2b1',
         'b2b1_remarks',
         'b2b5',

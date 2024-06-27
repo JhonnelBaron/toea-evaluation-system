@@ -6,6 +6,7 @@
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
         .d-flex {
             display: flex;
@@ -202,6 +203,9 @@
                         @csrf
                         <!-- Hidden input for region_id -->
                         <input type="hidden" name="region_id" value="{{ $regionId }}">
+                        <div class=" pb-4 pt-4 text-center text-3xl text-black font-sans flex items-center justify-center border-b-2 border-solid border-black">
+                            <b>{{ $regionName }}</b>
+                        </div>
 
                 <!-- THIS IS A -->
                 <table>

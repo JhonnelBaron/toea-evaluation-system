@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     @vite('resources/css/app.css')
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/TOEA Logo.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
         .folder {
             display: flex;
             flex-direction: column;
@@ -126,6 +129,9 @@
             'userType' => 'User Type',
         ])
         <div class="ml-72 p-3">
+            <div class="d-flex pl-7 mb-3 ">
+            <p class="text-3xl"><b  style="font-family: 'Poppins', sans-serif">{{$region->region_name}}</b></p>
+            </div>
                 <div class="d-flex">
                     <button onclick="history.back()" class="flex items-center px-4 py-2 text-black text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +139,7 @@
                         </svg>
                         Back
                     </button>
-                    <button type="button" class="mr-72 btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                    <button type="button" class="mr-5 btn btn-primary btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" data-bs-toggle="modal" data-bs-target="#uploadModal">
                         Upload File
                     </button>
                 </div>
