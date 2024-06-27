@@ -130,7 +130,7 @@
         ])
         <div class="ml-72 p-3">
             <div class="d-flex pl-7 mb-3 ">
-            <p class="text-3xl"><b  style="font-family: 'Poppins', sans-serif">REGION NAME</b></p>
+            <p class="text-3xl"><b  style="font-family: 'Poppins', sans-serif">{{$region->region_name}}</b></p>
             </div>
                 <div class="d-flex">
                     <button onclick="history.back()" class="flex items-center px-4 py-2 text-black text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
