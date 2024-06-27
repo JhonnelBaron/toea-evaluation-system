@@ -368,7 +368,7 @@
                             <td class="align-top">B.2.<hr></td>
 
                             <td><b class="vertical-align: bottom">Implementation of the TESDA Corporate Plan<hr></td>
-                            <td class="align-top"><b></b><hr></td>
+                            <td class="align-bottom"><b></b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
