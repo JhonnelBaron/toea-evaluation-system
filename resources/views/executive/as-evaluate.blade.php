@@ -205,15 +205,15 @@
             <div class="box-content">
                 <form method="POST" action="{{ route('save_evaluation') }}">
                     @csrf
+
+                    
                     <!-- Hidden input for region_id -->
                     <input type="hidden" name="region_id" value="{{ $regionId }}">
+                    <div class=" pb-4 pt-4 text-center text-3xl text-black font-sans flex items-center justify-center border-b-2 border-solid border-black">
+                        <b>{{ $regionName }}</b>
+                    </div>
                     <table>
                         <thead>
-                            <tr>
-                                
-                                <th></th>
-                                <th><h1>{{ $regionName }}</h1></th>
-                            </tr>
                             <tr>
                                 <th></th>
                                 <th>Requirement</th>

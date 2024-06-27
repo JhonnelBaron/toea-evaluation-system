@@ -6,6 +6,7 @@
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
         .d-flex {
             display: flex;
@@ -191,7 +192,7 @@
                     </svg>
                     Back
                 </button>
-                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Information and Communication Technology Office</h1> 
+                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-20 mr-20 text-center">Best Regional Office Evaluator - Information and Communication Technology Office   </h1> 
             </div>
         </div>
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
@@ -201,15 +202,13 @@
                     @csrf
                     <!-- Hidden input for region_id -->
                     <input type="hidden" name="region_id" value="{{ $regionId }}">
+                    <div class=" pb-4 pt-4 text-center text-3xl text-black font-sans flex items-center justify-center border-b-2 border-solid border-black">
+                        <b>{{ $regionName }}</b>
+                    </div>
 
                 <!-- THIS IS A -->
                 <table>
                     <thead>
-                        <tr>
-                                
-                            <th></th>
-                            <th><h1>{{ $regionName }}</h1></th>
-                        </tr>
                         <tr>
                             <th></th>
                             <th>Requirement</th>
@@ -236,7 +235,7 @@
                                             </span>
                                 </div>
                             </td>
-                            {{-- <td style="vertical-align: top"><i>6</i></td>
+                            <td style="vertical-align: top"><i>6</i></td>
                             <td class="align-top"><i><ul>*Documentation Report after implementation</ul></i><br><i><ul>*Submitted plans to ICTO</ul></i></td>
                             <td class="align-top">
                             <input type="number" name="b2a3" id="b2a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
@@ -248,30 +247,7 @@
                             <td class="align-top">
                                 <textarea name="b2a3_remarks" id="b2a3_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->b2a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a3_remarks : '' }}</textarea>
-                            </td> --}}
-                            <td style="vertical-align: top"><i>6</i></td>
-                            <td class="align-top">
-                                <i>
-                                    <ul>*Documentation Report after implementation</ul>
-                                    <ul>*Submitted plans to ICTO</ul>
-                                </i>
                             </td>
-                            <td class="align-top">
-                                <select name="b2a3" id="b2a3" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2a3 !== null) disabled @endif>
-                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2a3 === '') selected @endif></option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2a3 == '0') selected @endif>0</option>
-                                    <option value="3" @if($previousEvaluation && $previousEvaluation->b2a3 == '3') selected @endif>3</option>
-                                    <option value="6" @if($previousEvaluation && $previousEvaluation->b2a3 == '6') selected @endif>6</option>
-                                </select>
-                                @error('b2a3')
-                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                @enderror
-                            </td>
-                            <td class="align-top">
-                                <textarea name="b2a3_remarks" id="b2a3_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b2a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a3_remarks : '' }}</textarea>
-                            </td>
-
                         </tr>
 
                         <tr>
@@ -297,7 +273,7 @@
                                         </span>
                                 </div>
                             </td>
-                            {{-- <td style="vertical-align: top"><i>60</i></td>
+                            <td style="vertical-align: top"><i>60</i></td>
                             <td class="align-top">
                                 <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
                             </td>
@@ -310,34 +286,13 @@
                             </td>
                             <td class="align-top">
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
-                            </td> --}}
-                            <td style="vertical-align: top"><i>60</i></td>
-                            <td class="align-top">
-                                <ul><i>Rating of each Executive Office based on the timely, consistent and accurate reporting</i></ul>
                             </td>
-                            <td class="align-top">
-                                <select name="d1" id="d1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->d1 !== null) disabled @endif>
-                                    <option value="" @if($previousEvaluation && $previousEvaluation->d1 === '') selected @endif></option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->d1 == '0') selected @endif>0</option>
-                                    <option value="30" @if($previousEvaluation && $previousEvaluation->d1 == '30') selected @endif>30</option>
-                                    <option value="60" @if($previousEvaluation && $previousEvaluation->d1 == '60') selected @endif>60</option>
-                                </select>
-                                @error('d1')
-                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                @enderror
-                            </td>
-                            <td class="align-top">
-                                <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
-                            </td>
-
                         </tr>
                         </tr>
                     </tbody>
                 </table>
                 <td class="align-top">
                     <div class="flex justify-end space-x-4">
-                        <div class="mr-7"><b>TOTAL: <span class="text-lg">{{$previousEvaluation->overall_total_score ?? 0}}</span></b></div>
                         <label class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
                           Upload Files
                           <input type="file" class="hidden" />
