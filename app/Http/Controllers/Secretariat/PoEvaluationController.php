@@ -21,8 +21,6 @@ class PoEvaluationController extends Controller
             'b1b_remarks' => 'nullable|string',
             'b1i' => 'nullable|integer|in:0,15',
             'b1i_remarks' => 'nullable|string',
-            'b2a1' => 'nullable|integer|in:0,10',
-            'b2a1_remarks' => 'nullable|string',
             'b2b1' => 'nullable|integer|in:0,5',
             'b2b1_remarks' => 'nullable|string',
             'b2b5' => 'nullable|integer|in:0,5',
@@ -66,8 +64,6 @@ class PoEvaluationController extends Controller
             'b1b_remarks' => $validatedData['b1b_remarks'] ?? null,
             'b1i' => $validatedData['b1i'] ?? null,
             'b1i_remarks' => $validatedData['b1i_remarks'] ?? null,
-            'b2a1' => $validatedData['b2a1'] ?? null,
-            'b2a1_remarks' => $validatedData['b2a1_remarks'] ?? null,
             'b2b1' => $validatedData['b2b1'] ?? null,
             'b2b1_remarks' => $validatedData['b2b1_remarks'] ?? null,
             'b2b5' => $validatedData['b2b5'] ?? null,
@@ -88,7 +84,7 @@ class PoEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1a' => null, 'b1b' => null, 'b1i' => null, 'b2a1' => null,
+            'b1a' => null, 'b1b' => null, 'b1i' => null, 
             'b2b1' => null, 'b2b5' => null, 'b2d1' => null, 'b2d2' => null, 'b2e21' => null, 'b2e22' => null, 'b2e23' => null, 'd1' => null,
         ];
 
@@ -150,11 +146,6 @@ class PoEvaluationController extends Controller
                 $evaluationData['b1i'] = $existingEvaluation->b1i;
                 $evaluationData['b1i_remarks'] = $existingEvaluation->b1i_remarks;
                 $disabledFields[] = 'b1i';
-            }
-            if ($existingEvaluation->b2a1 !== null) {
-                $evaluationData['b2a1'] = $existingEvaluation->b2a1;
-                $evaluationData['b2a1_remarks'] = $existingEvaluation->b2a1_remarks;
-                $disabledFields[] = 'b2a1';
             }
             if ($existingEvaluation->b2b1 !== null) {
                 $evaluationData['b2b1'] = $existingEvaluation->b2b1;

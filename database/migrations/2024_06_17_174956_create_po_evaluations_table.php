@@ -21,8 +21,6 @@ return new class extends Migration
             $table->text('b1b_remarks')->nullable();
             $table->integer('b1i')->nullable();
             $table->text('b1i_remarks')->nullable();
-            $table->integer('b2a1')->nullable();
-            $table->text('b2a1_remarks')->nullable();
             $table->integer('b2b1')->nullable();
             $table->text('b2b1_remarks')->nullable();
             $table->integer('b2b5')->nullable();

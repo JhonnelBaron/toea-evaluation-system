@@ -6,6 +6,7 @@
     <title>TOEA Admin Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
         .d-flex {
             display: flex;
@@ -226,7 +227,7 @@
                             <td class="align-top"><b>B.</b><hr></td>
 
                                 <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                                <td class="align-top"><b>115</b><hr></td>
+                                <td class="align-top"><b>107</b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
@@ -372,57 +373,6 @@
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
 
-                        </tr>
-
-                        <tr>
-                            <td class="align-top">B.2.A.</td>
-
-                            <td class="align-top">Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-                            <td class="align-top">B.2.A.1.</td>
-                            <td class="align-top">
-                                <div id="tooltip">
-                                    <span>Advancement through Innovations and Researches</span>
-                                        <span  id="tooltipText">
-                                            <ul>The Region has submitted policy or technology research/es  = <i>8</i></ul>
-                                            <ul>The Region has not suibmitted policy or technology research/es = <i>0</i></ul>
-                                        </span>
-                                </div>
-                            </td>
-                            <td class="align-top"><i>8</i></td>
-                            <td class="align-top"><i><ul>*Researches submitted to the NITESD</i></ul></td>
-                            {{-- <td class="align-top">
-                                <input type="number" name="b2a1" id="b2a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                @if($previousEvaluation && $previousEvaluation->b2a1 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->b2a1 : '' }}">
-                                @error('b2a1')
-                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                @enderror
-                            </td>
-                            <td class="align-top">
-                                <textarea name="b2a1_remarks" id="b2a1_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b2a1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a1_remarks : '' }}</textarea>
-                            </td> --}}
-                            <td class="align-top">
-                                <select name="b2a1" id="b2a1" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2a1 !== null) disabled @endif>
-                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2a1 === '') selected @endif></option>
-                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2a1 == '0') selected @endif>0</option>
-                                    <option value="8" @if($previousEvaluation && $previousEvaluation->b2a1 == '8') selected @endif>8</option>
-                                </select>
-                                @error('b2a1')
-                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                                @enderror
-                            </td>
-                            <td class="align-top">
-                                <textarea name="b2a1_remarks" id="b2a1_remarks" class="comments" placeholder="Comment"
-                                @if($previousEvaluation && $previousEvaluation->b2a1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a1_remarks : '' }}</textarea>
-                            </td>
                         </tr>
 
                         <tr>
@@ -633,7 +583,7 @@
                             <td class="align-top">B.2.E.2.1</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                <span>B.2.E.2.1. Number of Active IQA Lead Auditor/s</span>
+                                <span>Number of Active IQA Lead Auditor/s</span>
                                     <span  id="tooltipText">
                                             <ul>
                                                 <li>The region has more than four (4) active IQA Lead Auditors/Auditors = <span class="text-red-600">*</span><i>8</i></li>
@@ -754,7 +704,7 @@
                                 @if($previousEvaluation && $previousEvaluation->b2e23 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e23_remarks : '' }}</textarea>
                             </td> --}}
                             <td class="align-top">
-                                {{-- <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
+                                <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
                                     <option value="" @if($previousEvaluation && $previousEvaluation->b2e23 === '') selected @endif></option>
                                     <option value="0" @if($previousEvaluation && $previousEvaluation->b2e23 == '0') selected @endif>0</option>
                                     <option value="3" @if($previousEvaluation && $previousEvaluation->b2e23 == '3') selected @endif>3</option>
@@ -762,16 +712,6 @@
                                 </select>
                                 <div class="text-sm pt-4 text-center">
                                     <input type="checkbox" id="myCheckbox">
-                                    <label for="myCheckbox"><i>+1</i></label>
-                                </div> --}}
-                                <select name="b2e23" id="b2e23" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
-                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2e23 === '') selected @endif></option>
-                                    <option value="0" @if($previousEvaluation && ($previousEvaluation->b2e23 == '0' || $previousEvaluation->b2e23 == '1')) selected @endif>0</option>
-                                    <option value="3" @if($previousEvaluation && ($previousEvaluation->b2e23 == '3' || $previousEvaluation->b2e23 == '4')) selected @endif>3</option>
-                                    <option value="6" @if($previousEvaluation && ($previousEvaluation->b2e23 == '6' || $previousEvaluation->b2e23 == '7')) selected @endif>6</option>
-                                </select>
-                                <div class="text-sm pt-4 text-center">
-                                    <input type="checkbox" id="myCheckbox" name="b2e23_checkbox" value="1" @if($previousEvaluation && ($previousEvaluation->b2e23 == '1' || $previousEvaluation->b2e23 == '4' || $previousEvaluation->b2e23 == '7')) checked @endif @if($previousEvaluation && $previousEvaluation->b2e23 !== null) disabled @endif>
                                     <label for="myCheckbox"><i>+1</i></label>
                                 </div>
                                 @error('b2e23')

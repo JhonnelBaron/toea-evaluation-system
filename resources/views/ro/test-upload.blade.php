@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     @vite('resources/css/app.css')
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/TOEA Logo.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
@@ -130,7 +130,7 @@
         ])
         <div class="ml-72 p-3">
             <div class="d-flex pl-7 mb-3 ">
-            <p class="text-3xl"><b  style="font-family: 'Poppins', sans-serif">NCR</b></p>
+            <p class="text-3xl"><b  style="font-family: 'Poppins', sans-serif">REGION NAME</b></p>
             </div>
                 <div class="d-flex">
                     <button onclick="history.back()" class="flex items-center px-4 py-2 text-black text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
