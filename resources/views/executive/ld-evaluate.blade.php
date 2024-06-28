@@ -225,7 +225,7 @@
                         <tr>
                             <td class="align-top"><b>A.</b><hr></td>
                             <td class="align-top"><b>Good Governance Measures<hr></b></td>
-                            <td class="align-top"><b>70<hr></b></td>
+                            <td class="align-bottom"><b><hr></b></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -276,7 +276,7 @@
                             <td class="align-top">A.2.</td>
                             <td class="align-top">
                                 <div id="tooltip">
-                                            <span>Compliance to the TESDA Code of Conduct and Ethical Standards<hr></span>
+                                            <span>Compliance to the TESDA Code of Conduct and Ethical Standards</span>
                                                 <span  id="tooltipText">
                                                 <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
                                                 <ul>
@@ -307,7 +307,7 @@
                             @if($previousEvaluation && $previousEvaluation->a2 !== null) disabled @endif value="{{ $previousEvaluation ? $previousEvaluation->a2 : '' }}">
                             @error('a2')
                             <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
-                        @enderror
+                            @enderror
                             </td>
                             <td class="align-top">
                                 <textarea name="a2_remarks" id="a2_remarks" class="comments" placeholder="Comment"
@@ -333,6 +333,27 @@
                                 @if($previousEvaluation && $previousEvaluation->a2 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->a2_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>70</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                         </tr>
                     </tbody>
                 </table>

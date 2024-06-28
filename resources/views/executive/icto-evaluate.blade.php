@@ -249,6 +249,25 @@
                                 @if($previousEvaluation && $previousEvaluation->b2a3 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a3_remarks : '' }}</textarea>
                             </td>
                         </tr>
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>6</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
 
                         <tr>
                             <td class="align-top"><b>D.</b><hr></td>
@@ -288,6 +307,26 @@
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"></textarea>
                             </td>
                         </tr>
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                         </tr>
                     </tbody>
                 </table>

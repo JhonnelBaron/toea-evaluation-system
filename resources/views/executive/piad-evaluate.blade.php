@@ -224,7 +224,7 @@
                         <tr>
                             <td class="align-top">A.</td>
                             <td class="align-top"><b>Good Governance Measures<hr></b></td>
-                            <td class="align-top"><b>40</b><hr></td>
+                            <td class="align-bottom"><b></b><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
@@ -324,6 +324,31 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>40</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                         <tr>
 
                             <td class="align-top"><b>D.</b><hr></td>
@@ -378,6 +403,26 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                         <tr>
                             <td class="align-top"><b>E.</b><hr></td>
                             <td class="align-top">
@@ -425,6 +470,26 @@
                                 <textarea name="e1_remarks" id="e1_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->e1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->e1_remarks : '' }}</textarea>
                             </td>
+                        </tr>
+
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>50</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                         

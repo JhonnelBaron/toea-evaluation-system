@@ -225,7 +225,7 @@
                         <tr>
                             <td class="align-top"><b>B.</b><hr></td>
                             <td class="align-top"><b>Implementation of TESD Programs<hr></b></td>
-                            <td class="align-top"><b>90</b><hr></td>
+                            <td class="align-bottom"><b></b><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
@@ -384,18 +384,57 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                                <td></td>
+                                <td class="text-right"><b><i>Total Scores: </i></b></td>
+                                <td><b>90</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                       
+
                         <tr>
-                            <td class="align-top"><b>D.<hr></td>
-                            <td class="align-top"><b>Reporting Efficiency<hr></b></td>
-                            <td><b>60<hr></b></td>
-                            <td class="align-bottom"><hr></td>
-                            <td class="align-bottom"><hr></td>
-                            <td class="align-bottom"><hr></td>
+                            <td></td>
+                            <td><b><i></i></b></td>
+                            <td><b></b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td><b><i></i></b></td>
+                            <td><b></b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b><i></i></b></td>
+                            <td><b></b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="align-top"><br><b>D.<hr></td>
+                            <td class="align-top"><b><br>Reporting Efficiency<hr></b></td>
+                            <td class="align-bottom"><b><hr></b></td>
+                            <td class="align-bottom"><br><hr></td>
+                            <td class="align-bottom"><br><hr></td>
+                            <td class="align-bottom"><br><hr></td>
                         </tr>
 
                         <tr>
                             <td class="align-top"><b>D.1.</b></td>
-                            <td class="align-top">
+                            <td class="align-">
                                 <div id="tooltip">
                                 <span><b>Timeliness, Consistency and Accuracy</b></span>
                                     <span  id="tooltipText">
@@ -424,12 +463,25 @@
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                         </tr>
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                    </tr>
 
 
                     </script>    
                     </tbody>
                 </table>
-                <td class="align-top">
+
+                <td class="align-bottom pt-4 mt-4">
                     <div class="flex justify-end space-x-4">
                         <div class="mr-7"><b>TOTAL: <span class="text-lg">{{$previousEvaluation->overall_total_score ?? 0}}</span></b></div>
                         <a href="{{ route('upload.file', ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">

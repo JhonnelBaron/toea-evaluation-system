@@ -224,7 +224,7 @@
                         <tr>
                             <td class="align-top">B.</td>
                             <td class="align-top"><b>Implementation of TESD Programs<hr></b></td>
-                            <td class="align-top"><b>226</b><hr></td>
+                            <td class="align-bottom"><b></b><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
                             <td class="align-bottom"><hr></td>
@@ -1175,6 +1175,26 @@
                                 @if($previousEvaluation && $previousEvaluation->b2e13b !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2e13b_remarks : '' }}</textarea>
                             </td>
                         </tr>
+
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>226</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                         
 
                         <tr>
@@ -1182,7 +1202,7 @@
                              <td class="align-top">
                                 <b>Reporting Efficiency<hr></b>                               
                             </td>
-                             <td class="align-top"><i>60<hr></i></td>
+                             <td class="align-bottom"><i><hr></i></td>
                              <td class="align-top"><br><hr></td>
                              <td class="align-top"><br><hr></td>
                              <td class="align-top"><br><hr></td>
@@ -1236,6 +1256,26 @@
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
                             
+                        </tr>
+
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                     </script>    

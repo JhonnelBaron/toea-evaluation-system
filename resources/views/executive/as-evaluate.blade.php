@@ -228,7 +228,7 @@
                             <tr>
                                 <td class="align-top">A.</td>
                                 <td class="align-top"><b>Good Governance Measures<hr></b></td>
-                                <td class="align-top"><b>40</b><hr></td>
+                                <td class="align-bottom"><b></b><hr></td>
                                 <td class="align-top"><br><hr></td>
                                 <td class="align-top"><br><hr></td>
                                 <td class="align-top"><br><hr></td>
@@ -309,10 +309,26 @@
                                 </td>
                             </tr>
 
+                            <tr class="border-b-2 border-black align top">
+                                <td></td>
+                                <td class="text-right"><b><i>Total Scores: </i></b></td>
+                                <td><b>40</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+
                             <tr>
                                 <td class="align-top">C.</td>
                                 <td class="align-top"><b>Administrative and Support Services <hr></b></td>
-                                <td class="align-top"><b>69</b><hr></td>
+                                <td class="align-bottom"><b></b><hr></td>
                                 <td class="align-top"><br><hr></td>
                                 <td class="align-top"><br><hr></td>
                                 <td class="align-top"><br><hr></td>
@@ -675,7 +691,7 @@
                                             </span>
                                     </div>
                                 </td>
-                                <td class="align-top"><b>8</b></td>
+                                <td class="align-top">8</td>
                                 <td class="align-top">
                                     <ul><i>Conferment/Certificate Awarded <br>Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</ul></i>
                                 </td>
@@ -702,11 +718,27 @@
                                 </td>
                             </tr>
 
+                            <tr class="border-b-2 border-black align top">
+                                <td></td>
+                                <td class="text-right"><b><i>Total Scores: </i></b></td>
+                                <td><b>69</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+
                             <tr>
                                 <td class="align-top"><b>D.</b><hr></td>
     
                                     <td class="align-top"><b>Reporting Efficiency</b><hr></td>
-                                    <td class="align-top"><b>60</b><hr></td>
+                                    <td class="align-bottom"><b></b><hr></td>
                                     <td class="align-bottom"><hr></td>
                                     <td class="align-bottom"><hr></td>
                                     <td class="align-bottom"><hr></td>
@@ -752,6 +784,23 @@
                                     @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                                 </td>
                             </tr>
+
+                            <tr class="border-b-2 border-black align top">
+                                <td></td>
+                                <td class="text-right"><b><i>Total Scores: </i></b></td>
+                                <td><b>60</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+
                         </tbody>
                     </table>
                     <td class="align-top">
