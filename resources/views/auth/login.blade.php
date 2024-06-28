@@ -22,7 +22,7 @@
             }
         </style>
         
-        <div class="bglogin bg-[url('/public/img/toeaofficialbg.png')] w-full min-h-screen bg-cover flex justify-start">
+        <div class="bglogin bg-[url('/public/img/finalbg.png')] w-full min-h-screen bg-cover flex justify-start">
             <div class="p-4 ml-14 mt-32">
                 <div class="card bg-white custom-height w-96 rounded-md shadow-md">
                     <div class="bg-[url('/public/img/tesd-eo-logo.png')] bg-gray-200 w-full bg-cover bg-center border-2 h-20 p-4 flex justify-center items-center rounded-t-md" style="padding-top: 50px">
