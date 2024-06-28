@@ -3,12 +3,12 @@
         <img src="{{ asset('img/sidebar.png') }}" class="h-64" alt="Tesda tesda-lingap-ay-maaasahan">
     </div>
 
-    <div class="user-name">{{ Auth::user()->name }}</div>
+    {{-- <div class="user-name">{{ Auth::user()->name }}</div> --}}
     <div class="user-type">
         @php
         switch (Auth::guard('web')->user()->executive_office) {
             case 'AS':
-                echo 'Administrative Office';
+                echo 'Administrative Service';
                 break;
             case 'LD':
                 echo 'Legal Division';
