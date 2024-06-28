@@ -53,8 +53,8 @@
       <div>
        <div class="font-serif">
             <br>
-            <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn">BEST REGIONAL OFFICE</a>
             <a href="{{route('evaluation-list')}}" class="dropdown-btn">EVALUATE</a>
+            <a href="{{ url('/executive-office-dashboard') }}" class="dropdown-btn">BEST REGIONAL OFFICE</a>
         </div>
     </div>
     <div style="margin-top: 250px;">
