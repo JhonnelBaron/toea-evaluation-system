@@ -103,7 +103,7 @@
             flex-grow: 1;
             padding-left: 20px;
             margin-top: 100px; /* Adjust for the fixed header height */
-            background-color: hsl(0, 0%, 97%);
+            /* background-color: hsl(0, 0%, 97%); */
         }
         table {
             font-family: "Times New Roman", Times, serif;
