@@ -21,7 +21,6 @@
                 height: 29rem; /* Adjust this value as needed */
             }
         </style>
-        
         <div class="bglogin bg-[url('/public/img/finalbg.png')] w-full min-h-screen bg-cover flex justify-start">
             <div class="p-4 ml-14 mt-32">
                 <div class="card bg-white custom-height w-96 rounded-md shadow-md">
