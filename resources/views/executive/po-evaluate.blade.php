@@ -231,7 +231,7 @@
                             <td class="align-top"><b>B.</b><hr></td>
 
                                 <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                                <td class="align-top"><b>107</b><hr></td>
+                                <td class="align-bottom"><b></b><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
                                 <td class="align-bottom"><hr></td>
@@ -728,6 +728,25 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>107</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
 
                         <tr>
                             <td class="align-top"><b>D.</b><hr></td>
@@ -781,6 +800,26 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                     </script>    
                     </tbody>
                 </table>
@@ -791,7 +830,7 @@
                             Upload Files
                             <input type="file" class="hidden" />
                           </a>
-                        <button type="submit" class="text-xs btnyy btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
+                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
                           Save Changes
                         </button>
                       </div>

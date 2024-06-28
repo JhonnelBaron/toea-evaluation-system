@@ -224,7 +224,7 @@
                         <tr>
                             <td class="align-top">B.<hr></td>
                             <td class="align-top"><b>Implementation of TESD Programs</b><hr></td>
-                            <td class="align-top"><b>80</b><hr></td>
+                            <td class="align-bottom"><b></b><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
                             <td class="align-top"><br><hr></td>
@@ -603,6 +603,26 @@
                             </td>
                         </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>80</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
                         <tr>
                             <td class="align-bottom"> D.</td>
 
@@ -643,6 +663,26 @@
                                 <textarea name="d1_remarks" id="d1_remarks" class="comments" placeholder="Comment"
                                 @if($previousEvaluation && $previousEvaluation->d1 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->d1_remarks : '' }}</textarea>
                             </td>
+                        </tr>
+
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>60</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </script>    
                     </tbody>
