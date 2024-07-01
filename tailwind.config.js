@@ -14,6 +14,9 @@ export default {
       fontFamily: {
         'times': ['Times New Roman', 'Times', 'serif'],
       },
+      colors: {
+        customGreen: '#BF9D49',
+      }
     },
   },
   plugins: [],

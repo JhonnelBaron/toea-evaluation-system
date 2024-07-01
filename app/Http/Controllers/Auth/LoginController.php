@@ -14,12 +14,14 @@ class LoginController extends Controller
         if (Auth::check()) {
             // If authenticated, redirect to the dashboard
             $user = Auth::user();
-            if ($user->executive_office === 'ROMD') {
-                return redirect('/regional-operations-management-division');
-            } elseif ($user->executive_office === 'RO') {
-                return redirect('/regional-office');
-            } else {
-                return redirect('/executive-office-dashboard');
+            if ($user && $user->executive_office) {
+                if ($user->executive_office === 'ROMD') {
+                    return redirect('/regional-operations-management-division');
+                } elseif ($user->executive_office === 'RO') {
+                    return redirect('/regional-office');
+                } else {
+                    return redirect('/executive-office-dashboard');
+                }
             }
         }
         
@@ -51,17 +53,17 @@ class LoginController extends Controller
         $user = Auth::user();
 
         // Redirect based on executive_office column value
+        if ($user && $user->executive_office) {
         if ($user->executive_office === 'ROMD') {
             return redirect()->intended('/regional-operations-management-division');
         } else {
             return redirect()->intended('/executive-office-dashboard');
         } 
-    // } elseif ($user->executive_office === 'RO') {
-    //     return redirect()->intended('/regional-office');
-    // } 
-        // else {
-        //     return redirect()->intended('/executive-office-dashboard');
-        // }
+        }else {
+                // Handle the case where executive_office is null
+                Auth::logout();
+                return redirect('/login')->withErrors(['executive_office' => 'Unable to determine executive office.']);
+            }
     }
 
     public function logout(Request $request)
