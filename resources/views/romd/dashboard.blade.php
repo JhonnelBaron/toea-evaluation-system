@@ -88,7 +88,7 @@
         ])
         <div class="ml-72 p-4">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-white font-bold text-3xl">BEST Institutions - RTC/STC</h1>
+                <h1 class="text-white font-bold text-3xl">BEST REGIONAL OFFICE</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tesda-logo-white.png') }}">
             </div>
 
