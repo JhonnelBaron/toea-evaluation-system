@@ -92,7 +92,7 @@
             justify-content: center;
             z-index: 999;
             margin-left: 250px; /* To accommodate sidebar */
-            background-color: #0066ff;
+            background-color: #2854C7;
         }
         .box-content {
             margin: 20px;
@@ -133,6 +133,42 @@
             border-radius: 10px;
         }
 
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        } 
+
     </style>
 </head>
 <body>
@@ -141,7 +177,7 @@
             'profile-picture' => asset('img/tesda-logo.png'),
             'userName' => 'User Name',
             'userType' => 'User Type'
-        ])
+        ]) 
         <div class="ml-60">
 
         </div>
@@ -155,6 +191,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Initial Score</th>
                             <th>Means of Verification</th>
@@ -164,168 +201,250 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <b>A.1. - Criteria for Galing Probinsya</b>
-                            <ul>The Province has no personnel with pending administrative case = <i>40</i></ul>
-                            <ul>The Province has at least one pending administrative case = <i> 0</i></ul></td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification of no pending case</ul></i></td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><b>A.1</b></td>
+                            
+                            <td class="align-top">
+                                <div id="tooltip">
+                                  <span><b>Criteria for Galing Probinsya</b></span>
+                                    <span  id="tooltipText">
+                                        <ul>The Province has no personnel with pending administrative case = <i>40</i></ul>
+                                        <ul>The Province has at least one pending administrative case = <i> 0</i></ul></td>
+                                    </span>
+                                <div id="tooltip">
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification of no pending case signed by the Regional <br>Administrative 
+                                Complaints Committee signed by the Chair <br>(Regional Director)</ul></i></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
+                            <td class="align-top"><b>A.2</b></td>
                             
-                            <td><h5><b>A.2. Compliance to the TESDA Code of Conduct and Ethical Standards</b></h5>
-                                <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
-                                <ul>
-                                    <li style="text-indent: 20px">• Fidelity to Duty</li>
-                                    <li style="text-indent: 20px">• Conflict of Interest</li>
-                                    <li style="text-indent: 20px">• Solicitation and Acceptance of Gifts</li>
-                                    <li style="text-indent: 20px">• Outside Employment</li>
-                                    <li style="text-indent: 20px">• Cronyism</li>
-                                    <li style="text-indent: 20px">• Confidentiality</li>
-                                    <li style="text-indent: 20px">• Post-employment</li>
-                                    <li style="text-indent: 20px">• Procurement of Goods, Consulting Services, and Infrastructure Projects</li>
-                                    <li style="text-indent: 20px">• Encouraging Reporting of Malpractices, Corruption, and other Protected Disclosures Valid</li>
-                                    <li style="text-indent: 20px">• Complaints from Presidential Action Center (888) and CSC-Contact Center ng Bayan Adverse National ISP Findings</li>
-                                        </ul>
-                                        <ul>There are no valid complaints, findings against any Official and Employee =<i>30</i></ul>
-                                        <ul>There are 1-3 complaint/s, findings against any Official and Employee = <i>20</i></ul>
-                                        <ul>There are 4-6 complaints, findings against any Official and Employee = <i>10</i></ul>
-                                        <ul>There are 7-9 complaints, findings against any Official and Employee = <i>5</i></ul>
-                                        <ul>There are 10 or more complaints, findings against any Official and Employee = <i>0</i></ul>
+                            <td class="align-top"><span><h5><b>Compliance to the TESDA Code of Conduct and Ethical Standards</b></h5></span>
+                                <div id="tooltip">
+                                    <span  id="tooltipText">
+                                    <ul>Valid Complaints against any Official or Employee on the following specific rules of conduct: <br></ul>
+                                    <ul>
+                                        
+                                        <li style="text-indent: 20px">• Fidelity to Duty</li>
+                                        <li style="text-indent: 20px">• Conflict of Interest</li>
+                                        <li style="text-indent: 20px">• Solicitation and Acceptance of Gifts</li>
+                                        <li style="text-indent: 20px">• Outside Employment</li>
+                                        <li style="text-indent: 20px">• Cronyism</li>
+                                        <li style="text-indent: 20px">• Confidentiality</li>
+                                        <li style="text-indent: 20px">• Post-employment</li>
+                                        <li style="text-indent: 20px">• Procurement of Goods, Consulting Services, and Infrastructure Projects</li>
+                                        <li style="text-indent: 20px">• Encouraging Reporting of Malpractices, Corruption, and other Protected <br>Disclosures Valid</li>
+                                        <li style="text-indent: 20px">• Complaints from Presidential Action Center (888) and CSC-Contact Center <br>ng Bayan Adverse National ISP Findings</li>
+                                            </ul>
+                                            <ul>There are no valid complaints, findings against any Official and Employee =<i>30</i></ul>
+                                            <ul>There are 1-3 complaint/s, findings against any Official and Employee = <i>20</i></ul>
+                                            <ul>There are 4-6 complaints, findings against any Official and Employee = <i>10</i></ul>
+                                            <ul>There are 7-9 complaints, findings against any Official and Employee = <i>5</i></ul>
+                                            <ul>There are 10 or more complaints, findings against any Official and Employee = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
                             
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification from the RACC</ul></i></td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br><i><ul>*Certification of no complaints/findings signed by the <br>Regional 
+                                Administrative Complaints Committee signed by <br>the Chair (Regional Director)
+                            </ul></i></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
+
                         <tr>
-                            <td>
-                                <b>A.3. Resolutions of complaints emanating from the Contact Center</b>  
-                                <ul>No complaints received = <i>10</i></ul>
-                                <ul>95% of all complaints emanating from the Contact Center have been resolved and closed within the year = <i>10</i></ul>
-                                <ul>Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year = <i>0</i></ul>
+                            <td class="align-top"><b>A.3</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Resolutions of complaints emanating from the Contact Center</b></span>
+                                    <span  id="tooltipText">
+                                        <ul>No complaints received = <i>10</i></ul>
+                                        <ul>95% of all complaints emanating from the Contact Center have been resolved <br>and closed within the year = <i>10</i></ul>
+                                        <ul>Less than 95% of all complaints against the POs and TTIs emanating from the <br>Contact Center have been <br>resolved and closed within the year = <i>0</i></ul>
+                                    </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
                             <br>
                             <ul><i>*TESDA OP AS 03 F04 Monitoring of Complaints Received</i></ul>
                             <ul><i>*Certification of No Complaints Received - signed by the RD</i></ul>
 
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
                         <tr>
-                            <td>
-                                <b>A.4. Customer Satisfaction Results <br>
-                                Customer Net Satisfaction Rating with minimum of 95%</b>  
-                                <ul>Customer Net Satisfaction Rating is at 99% and above = <i>30</i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 98% = <i>20</i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 97% = <i>10</i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 96% = <i>5</i></ul>
-                                <ul>Customer Net Satisfaction Rating is at 95% = <i>3</i></ul>
-                                <ul>Customer Net Satisfaction Rating is below 95% = <i>0</i></ul>
+                            <td class="align-top"><b>A.4</b></td>
+                            <td class="align-top">
+                                    <div id="tooltip">
+                                        <span><b>Customer Satisfaction Results</b><br></span>
+                                            <span  id="tooltipText">
+                                                Customer Net Satisfaction Rating with minimum of 95%
+                                                <ul>Customer Net Satisfaction Rating is at 99% and above = <i>30</i></ul>
+                                                <ul>Customer Net Satisfaction Rating is at 98% = <i>20</i></ul>
+                                                <ul>Customer Net Satisfaction Rating is at 97% = <i>10</i></ul>
+                                                <ul>Customer Net Satisfaction Rating is at 96% = <i>5</i></ul>
+                                                <ul>Customer Net Satisfaction Rating is at 95% = <i>3</i></ul>
+                                                <ul>Customer Net Satisfaction Rating is below 95% = <i>0</i></ul>
+                                            </span>
+                                    </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                            <ul><i>*Customer Feedback Form Results TESDA OP AS 03 F02</i></ul>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <ul><i>*Customer Feedback Form Results<br>
+                                TESDA OP AS 03 F02<br> 
+                                
+                                Monthly (January to December) Summary Report with Percentage<br>
+                                signed by the PD</i></ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
-                        <tr>
-                            <td>
-                                <h5><b>A.5. Compliance to Commission on Audit Rules and Regulations<br></h5>
-                                    A.5.A. Unimplemented Audit Observation Memorandum by the Provincial Office</b></ul>
 
-                                    <ul>0 unimplemented audit observation memorandum by the province = <i>15</i></ul>
-                                    <ul>2-5 unimplemented audit observation memorandum by the province = <i>5</i></ul>
-                                    <ul>6-10 unimplemented audit observation memorandum by the province = <i>0</i></ul>
-                                    <ul>**Plus (1) point for PO with no AOM received = <i>1</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                            <ul><i>*Annual Audit Report (AAR)</i></ul>
-                            <ul><i>*Agency Action Plan and Status of Implementation (AAPSI)</i></ul>
+                        <tr>
+                            <td class="align-top"><b>A.5.</b></td>
+                            <td class="align-top"><b>Compliance to Commission on Audit Rules and Regulations</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top"><b>A.5.A.</b></td>
+                            <td class="align-top">
+                                    <div id="tooltip">
+                                        <span><b>Unimplemented Audit Observation Memorandum by the Provincial Office</b></span>
+                                        <span  id="tooltipText">
+                                            <ul>0 unimplemented audit observation memorandum by the province = <i>15</i></ul>
+                                            <ul>2-5 unimplemented audit observation memorandum by the province = <i>5</i></ul>
+                                            <ul>6-10 unimplemented audit observation memorandum by the province = <i>0</i></ul>
+                                            <ul>**Plus (1) point for PO with no AOM received = <i>1</i></ul>
+                                    </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                            <ul><i>*Certification/Memorandum with NO AOM received or 
+                                number of<br> unimplemented audit observation
+                                issued by COA <br>
+                                Annual Audit Report (AAR) and Agency Action Plan and Status of <br>Implementation (AAPSI)"
+                                </i></ul>
 
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top"><b>A.5.B</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><h5><b>Notice of Suspension and Disallowance</b><br></h5></span>
+                                    <span  id="tooltipText">
+                                        <ul>There no suspensions and disallowances = <i>15</i></ul>
+                                        <ul>There are suspensions and disallowances = <i>0</i></ul>\
+                                    </span>
+                                </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul><i>Certification of no suspension nor disallowances signed by the FA<br>
+                                    Statement of Audit Suspensions, Disallowances and Charges (SASDC) <br>
+                                    with summary as of December
+                                    issued by the COA (RO and PO and TTIs)
+                                    </ul>
+                            </td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <h5><b>A.5.B. Notice of Suspension and Disallowance</b><br></h5>
-
-                                    <ul>There no suspensions and disallowances = <i>15</i></ul>
-                                    <ul>There are suspensions and disallowances = <i>0</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul><i>Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</ul>
+                            <td class="align-top"><b>A.6.</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Compliance to PhilGEPS requirements</b><br></span>
+                                    <span  id="tooltipText">
+                                            <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
+                                            <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul><i>Certification of Compliance
+                                    signed/issued by PhilGEPS; <br>Notice of Award/ Notice to Proceed
+                                    
+                                    Government Procurement<br> Policy Board (GPPB) report who are compliant</ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5><b>A.6. Compliance to PhilGEPS requirements</b><br></h5>
-
-                                    <ul>100% compliance from Publication to Notice and Award and notice to proceed = <i>30</i></ul>
-                                    <ul>Non-compliance from Publication to Notice and Award and notice to proceed = <i>0</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul><i>Government Procurement Policy Board (GPPB) report who are compliant</ul>
-                            </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
+
                         <tr>
-                            <td>
+                            <td class="align-top"><b>A.7. </b></td>
+                            <td class="align-top"><b>Liquidation of Cash Advances (Foreign and Local Travel Expenses)</b></td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="align-top"><b>A.7.A</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Liquidation of Foreign Travel Expenses</b></span>
                                 <!-- Need to upload multiple files here -->
-                                <h5><b>A.7. Liquidation of Cash Advances (Foreign and Local Travel Expenses)</b><br>
-                                    A.7.A. Liquidation of Foreign Travel Expenses
-                                </h5>
-                                    <ul>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></ul>
-                                    <ul>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul><i>Proof of postings submitted/received copy from COA</ul>
+                                        <span  id="tooltipText">
+                                            <ul>All Foreign Travel Expenses liquidated within 60 days = <i>10</i></ul>
+                                            <ul>Partial number of Foreign Travel Expenses liquidated beyond 60 days = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul><i>Monitoring report signed by the Financial Accountant and PD <br>
+                                    Proof of postings submitted/received copy from COA<br>
+                                    Schedule of cash advances, Certification from the Accountant, <br>outstanding cash advances
+                                    </ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>A.7.B. Liquidation of Local Travel Expenses<br>
-                                </h5>
-                                    <ul>All Local Travel Expenses liquidated within 30 days = <i>10</i></ul>
-                                    <ul>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul><i>Proof of postings submitted/received copy from COA</ul>
-                            </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <h5>
-                                    <b>A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</b>
-                                </h5>
-                                    <ul>The Provincial Office is compliant to APCPI = <i>10</i></ul>
-                                    <ul>The Provincial Office is not compliant to APCPI = <i>0</i></ul>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload"><br>
-                                <ul><i>*Agency Procurement Compliance Performance Indicator (APCPI) submitted within set deadlines by oversight agency/iesc/o of procurement unit</ul>
+                            <td class="align-top"><b>A.7.B</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <b>Liquidation of Local Travel Expenses</b></span>
+                                    <span  id="tooltipText">
+                                        <ul>All Local Travel Expenses liquidated within 30 days = <i>10</i></ul>
+                                        <ul>Partial number of Local Travel Expenses liquidated beyond 30 days = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul><i>Monitoring report signed by the Financial Accountant and PD <br>
+                                    Proof of postings submitted/received copy from COA<br>
+                                    Schedule of cash advances, Certification from the Accountant, <br>outstanding cash advances
+                                    </ul>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><b>A.8</b></td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</b></span>
+                                    <span  id="tooltipText">
+                                            <ul>The Provincial Office is compliant to APCPI = <i>10</i></ul>
+                                            <ul>The Provincial Office is not compliant to APCPI = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload"><br>
+                                <ul><i>*PO's FY 2023 Agency Procurement Compliance Performance <br>Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB)<br>
+                                    - Acknowledgment email from GPBB
+                                    </ul>
+                            </td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                             </td>
                         </tr>
                     </tbody>
