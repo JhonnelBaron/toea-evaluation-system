@@ -34,6 +34,9 @@
             case 'ROMO':
                 echo 'Regional Operations Management Office';
                 break;
+            case 'ROMD':
+                echo 'Regional Operations Management Division';
+                break;
             default:
                 echo 'Unknown';
         }

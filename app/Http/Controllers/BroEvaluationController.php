@@ -28,6 +28,11 @@ class BroEvaluationController extends Controller
     public function index()
 {  
     $user = Auth::user();
+        // Added null check for $user and $user->executive_office
+        if (!$user || !$user->executive_office) {
+            Auth::logout();
+            return redirect()->route('login')->withErrors(['session_expired' => 'Your session has expired. Please log in again.']);
+        }    
     $regions = Region::all();
     
     $smallRegions = [];
@@ -132,6 +137,14 @@ class BroEvaluationController extends Controller
         if (!$region) {
             return response('id not found!');
         }
+
+        $user = Auth::user();
+        // Added null check for $user and $user->executive_office
+        if (!$user || !$user->executive_office) {
+            Auth::logout();
+            return redirect()->route('login')->withErrors(['session_expired' => 'Your session has expired. Please log in again.']);
+        }
+
         $user = Auth::user();
         switch ($user->executive_office) {
             case 'AS':

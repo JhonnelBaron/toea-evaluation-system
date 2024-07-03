@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOEA Admin Portal</title>
+    <title>TOEA Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
@@ -186,7 +186,7 @@
         
         <div class="header">
             <div class="d-flex">
-                <button onclick="history.back()" class="flex items-center px-4 py-2 text-white text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
+                <button onclick="window.location.href='/evaluation-page'" class="flex items-center px-4 py-2 text-white text-sm font-medium rounded-md  focus:outline-none focus:ring-2  focus:ring-opacity-50">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
@@ -198,7 +198,7 @@
         <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
-                    <form method="POST" action="{{ route('nitesd_evaluation') }}">
+                    <form id="saveChangesForm" method="POST" action="{{ route('nitesd_evaluation') }}">
                         @csrf
                         <!-- Hidden input for region_id -->
                         <input type="hidden" name="region_id" value="{{ $regionId }}">
@@ -632,6 +632,23 @@
                     </script>    
                     </tbody>
                 </table>
+                @if(session('success'))
+                <div id="successMessage" class="fixed z-50 bottom-0 right-0 bg-customGreen text-white p-4 text-center rounded-md">
+                    {{ session('success') }}
+                </div>
+                <script>
+                    setTimeout(function() {
+                        var successMessage = document.getElementById('successMessage');
+                        successMessage.style.transition = 'opacity 1s ease';
+                        successMessage.style.opacity = '0';
+
+                        // Remove the success message from the DOM after fade out
+                        setTimeout(function() {
+                            successMessage.remove();
+                        }, 1000); // Wait for 1 second for fade out before removing
+                    }, 3000); // Show the message for 3 seconds
+                </script>
+            @endif
                 <td class="align-top">
                     <div class="flex justify-end space-x-4">
                         <div class="mr-7"><b>TOTAL: <span class="text-lg">{{$previousEvaluation->overall_total_score ?? 0}}</span></b></div>
@@ -639,13 +656,37 @@
                             Upload Files
                             <input type="file" class="hidden" />
                           </a>
-                        <button type="submit" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal">
-                          Save Changes
-                        </button>
+                          <button type="button" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 #uploadModal" onclick="toggleModal('saveChangesModal')">
+                            Save Changes
+                          </button>
                       </div>
                       
                 </td>
             </form>
+            </div>
+            <div id="saveChangesModal" class="fixed inset-0 hidden items-center justify-center bg-gray-600 bg-opacity-50">
+                <div class="bg-white rounded-lg shadow-lg w-1/3">
+                    <!-- Modal header -->
+                    <div class="flex justify-between items-center p-4 border-b">
+                        <h3 class="text-xl">Confirm Save</h3>
+                        <button class="text-gray-600" onclick="toggleModal('saveChangesModal')">
+                            &times;
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4">
+                        <span class="text-red-500">
+                            Note: Once you save your progress, all of your submitted scores and remarks cannot be edited anymore.
+                        </span>
+                        <br><br>
+                        Are you sure you want to save your changes?
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex justify-end p-4 border-t">
+                        <button class="px-4 py-2 bg-gray-500 text-white rounded mr-2" onclick="toggleModal('saveChangesModal')">No</button>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded"  onclick="submitSaveChangesForm()">Yes</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -653,6 +694,15 @@
         document.getElementById('toggleSidebar').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('hidden');
         });
+
+        function toggleModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('hidden');
+        modal.classList.toggle('flex');
+    }
+    function submitSaveChangesForm() {
+    document.getElementById('saveChangesForm').submit();
+    }
     </script>
 </body>
 </html>
