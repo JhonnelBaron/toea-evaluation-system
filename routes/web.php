@@ -6,6 +6,7 @@ use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\RoController;
+use App\Http\Controllers\RomdController;
 use App\Http\Controllers\Secretariat\CoEvaluationController;
 use App\Http\Controllers\Secretariat\FmsEvaluationController;
 use App\Http\Controllers\Secretariat\IctoEvaluationController;
@@ -25,9 +26,11 @@ Route::middleware(['auth'])->group(function () {
         return view('executive.eodashboard');
     });
 
-    Route::get('/regional-operations-management-division', function () {
-        return view('romd.dashboard');
-    });
+    // Route::get('/regional-operations-management-division', function () {
+    //     return view('romd.dashboard');
+    // });
+    Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission']);
+    Route::get('/ranking', [RomdController::class, 'ranking'])->name('romd.ranking');
     
 });
 
