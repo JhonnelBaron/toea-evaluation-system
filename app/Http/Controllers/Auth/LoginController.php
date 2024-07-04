@@ -20,7 +20,7 @@ class LoginController extends Controller
                 } elseif ($user->executive_office === 'RO') {
                     return redirect('/regional-office');
                 } else {
-                    return redirect('/executive-office-dashboard');
+                    return redirect('/evaluation-page');
                 }
             }
         }
@@ -57,7 +57,7 @@ class LoginController extends Controller
         if ($user->executive_office === 'ROMD') {
             return redirect()->intended('/regional-operations-management-division');
         } else {
-            return redirect()->intended('/executive-office-dashboard');
+            return redirect()->intended('/evaluation-page');
         } 
         }else {
                 // Handle the case where executive_office is null
