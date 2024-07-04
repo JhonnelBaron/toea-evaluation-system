@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/executive-office-dashboard', function () {
         return view('executive.eodashboard');
     });
+    Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
 
     // Route::get('/regional-operations-management-division', function () {
     //     return view('romd.dashboard');
@@ -215,7 +216,7 @@ Route::get('/plo-evaluation', function () {
 //     return view('executive.evaluate');
 // })->name('eo.evaluate');
 
-Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
+// Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
 Route::post('/saveRemarks', [BroEvaluationController::class, 'saveRemarks'])->name('save.remarks');
 Route::get('/secretariat-evaluation/{id}', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
 Route::post('/save-evaluation', [AsEvaluationController::class, 'store'])->name('save_evaluation');
