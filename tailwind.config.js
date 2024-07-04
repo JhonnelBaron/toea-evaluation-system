@@ -16,6 +16,10 @@ export default {
       },
       colors: {
         customGreen: '#BF9D49',
+        TiffanyBlue: '#A0E7E5',
+        HotPink: '#FFAEBC',
+        Mint: '#B4F8C8',
+        customYellow: '#FBE7C6'
       }
     },
   },

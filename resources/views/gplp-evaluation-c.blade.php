@@ -92,7 +92,7 @@
             justify-content: center;
             z-index: 999;
             margin-left: 250px; /* To accommodate sidebar */
-            background-color: #0066ff;
+            background-color: #2854C7;
         }
         .box-content {
             margin: 20px;
@@ -133,6 +133,42 @@
             border-radius: 10px;
         }
 
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        } 
+
     </style>
 </head>
 <body>
@@ -155,6 +191,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Initial Score</th>
                             <th>Means of Verification</th>
@@ -163,186 +200,252 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr>
-                            <td><b>C. Administrative and Support Services = </b><i>125</i><br>
-                            C.1. Budget Utilization Rate (BUR)
-                                <ul>100% of budget utilized = <i>25</i></ul>
-                                <ul>90% - 99% of budget utilized = <i>10</i></ul>
-                                <ul>89% and below of budget utilized = <i>0</i></ul>
+                            <td><b>C.</b></td>
+                            <td><b>Administrative and Support Services</b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="align-top">C.1</td>
+                            <td class="align-top"> 
+                                <div id="tooltip">
+                                    <span>Budget Utilization Rate (BUR)</span>
+                                        <span  id="tooltipText">
+                                            <ul>100% of budget utilized = <i>25</i></ul>
+                                            <ul>90% - 99% of budget utilized = <i>10</i></ul>
+                                            <ul>89% and below of budget utilized = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*Monitoring logbook/ registry</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*Monitoring logbook/ registry</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td><b>C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation = </b><i>125</i><br>
-                                <ul>80% acted upon (either partially or fully implemented)</ul>
-
-                                <ul>100% acted upon (either partially or fully implemented) = <i>25</i></ul>
-                                <ul>90% - 99% acted upon (either partially or fully implemented) = <i>15</i></ul>
-                                <ul>80% - 89%acted upon (either partially or fully implemented) = <i>5</i></ul>
-                                <ul>79% and below acted upon (either partially or fully implemented) = <i>0</i> </ul>
+                            <td class="align-top">C.2</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation</span>
+                                        <span  id="tooltipText">
+                                            <ul>80% acted upon (either partially or fully implemented)</ul>
+                                            <ul>100% acted upon (either partially or fully implemented) = <i>25</i></ul>
+                                            <ul>90% - 99% acted upon (either partially or fully implemented) = <i>15</i></ul>
+                                            <ul>80% - 89%acted upon (either partially or fully implemented) = <i>5</i></ul>
+                                            <ul>79% and below acted upon (either partially or fully implemented) = <i>0</i> </ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*Agency Action Plan and Status of Implementation (AAPSI)</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*Agency Action Plan and Status of Implementation (AAPSI)</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.3. Staff Development Program = </b><i>35</i><br>
-                                C.3.1. Employees who have attended SDP have implemented their RE-Entry Plans as scheduled
-                                <ul>100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>20</i></ul>
-                                <ul>70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>10</i></ul>
-                                <ul>69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>0</i></ul>
-                            </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*Regional/Provincial Work Force Development Plan (WFDP) Certificates of trainings attended Copies of REAPs</ul></i>
-                            </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td><b>C.3</b></td>
+                            <td><b>Staff Development Program</b></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.3.2. Training Opportunities to staff provided for CY 2022</b><br>
-                                <ul>100% of Employees were provided with training opportunities = <i>15</i></ul>
-                                <ul>74% and below of Employees were provided with training opportunities = <i>0</i></ul>
+                            <td class="align-top">C.3.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span>Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</span>
+                                        <span  id="tooltipText">
+                                            <ul>100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>20</i></ul>
+                                            <ul>70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>10</i></ul>
+                                            <ul>69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*"- List of plantilla positions per region province <br> -Certificates of training attended</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*Regional/Provincial Work Force Development Plan (WFDP) Certificates of trainings attended Copies of REAPs</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.4. Model Employee Awards = <i>32</i></b><br>
-                                C.4.1. Model Employee for Category I Position = <i>10</i><br>
-                                <b>C.4.1.1. Participation</b>
-                                
-                                <ul>The Province submitted nominees for Category I = <i>5</i></ul>
-                                <ul>The Province did not submit nominees for Category I = <i>0</i></ul>
+                            <td class="align-top">C.3.2</td>
+                            <td class="align-top">
+                                <span><b>Training Opportunities to staff provided for CY 2022</b></span>
+                                <div id="tooltip">
+                                <span  id="tooltipText">
+                                        <ul>100% of Employees were provided with training opportunities = <i>15</i></ul>
+                                        <ul>74% and below of Employees were provided with training opportunities = <i>0</i></ul>
+                                </span>
+                            </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of plantilla positions per region province  -Certificates of training attended</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>C.4</b></td>
+                            <td><b>Model Employee Awards</b></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.4.1.2. Awards received</b><br>
-                                <ul>The Province has received recognition/award at national level = <i>5</i></ul>
-                                <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
-                            </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
-                            </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td><b>C.4.1.</b></td>
+                            <td><b>Model Employee for Category I Position</b></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.4.2. Model Employee for Category II Position =<i> 11</i></b>
-                                <b>C.4.2.1. Participation</b><br>
-                                <ul>The Province submitted nominees for Category II = <i>5</i></ul>
-                                <ul>The Province did not submit nominees for Category II = <i>0</i></ul>
+                            <td class="align-top">C.4.1.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Participation</b></span>
+                                        <span  id="tooltipText">
+                                            <ul>The Province submitted nominees for Category I = <i>5</i></ul>
+                                            <ul>The Province did not submit nominees for Category I = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.4.2.2.  Awards received =<i> 6</i></b>
-                                <ul>The Province has received recognition/award at national level = <i>6</i></ul>
-                                <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
+                            <td class="align-top">C.4.1.2</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Awards received</b></span>
+                                        <span  id="tooltipText">
+                                            <ul>The Province has received recognition/award at national level = <i>5</i></ul>
+                                            <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <b>C.4.3. Model Employee for Category III Position</b><br>
-                                C.4.3.1. Participation =<i> 6</i>
-                                <ul>The Province submitted nominees for Category III = <i>5</i></ul>
-                                <ul>The Province did not submit nominees for Category III = <i>0</i></ul>
-                            </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
-                            </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td><b>C.4.2</b></td>
+                            <td><b>Model Employee for Category II Position</b></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                
-                            C.4.3.2. Awards received =<i> 6</i>
-                                <ul>The Province has received recognition/award at national level = <i>6</i></ul>
-                                <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
+                            <td class="align-top">C.4.2.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Participation</b></span>
+                                        <span  id="tooltipText">
+                                            <ul>The Province submitted nominees for Category II = <i>5</i></ul>
+                                            <ul>The Province did not submit nominees for Category II = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*List of nominees and awardees from HRMD/AS<br> -Certificates of training attended</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                
-                            C.5. Application for PRIME-HR Level
-                                <ul>The PO has applied and has been certified in higher PRIME HR Level = <i>8</i></ul>
+                            <td class="align-top">C.4.2.2</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                    <span><b>Awards received =<i> 6</i></b></span>
+                                        <span  id="tooltipText">
+                                            <ul>The Province has received recognition/award at national level = <i>6</i></ul>
+                                            <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
+                                        </span>
+                                </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i><ul>*Confernment/Certificate Awarded</ul></i>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                         <tr>
-                            <td>
-                                <ul>The PO has applied for higher PRIME-HR Level = <i>4</i></ul>
-                                <ul>The PO has not applied for higher PRIME-HR Level = <i>0</i></ul>
-                            </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
-                                <br><i>
-                                    <ul>*Letter to CSC and other communications with regard 
-                                    to the requirements submitted by the region to 
-                                    CSC (with CSC feedback/reply letter)</ul></i>
+                            <td><b>C.4.3</b></td>
+                            <td><b>Model Employee for Category III Position</b></td>
+                        </tr>
 
-                            <td><button class="btn btn-primary btn-sm">Evaluate</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                        <tr>
+                            <td class="align-top">C.4.3.1</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                 <span>Participation</span>
+                                    <span  id="tooltipText">
+                                        <ul>The Province submitted nominees for Category III = <i>5</i></ul>
+                                        <ul>The Province did not submit nominees for Category III = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
+                            </td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">C.4.3.2</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Awards received</span>
+                                    <span  id="tooltipText">
+                                        <ul>The Province has received recognition/award at national level = <i>6</i></ul>
+                                        <ul>The Province did not receive award/recognition at national level = <i>0</i></ul>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*List of nominees and awardees from HRMD/AS -Certificates of training attended</ul></i>
+                            </td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-top">C.5.</td>
+                            <td class="align-top">
+                                <div id="tooltip">
+                                <span>Application for PRIME-HR Level</span>
+                                <span  id="tooltipText">
+                                    <ul>The PO has applied and has been certified in higher PRIME HR Level = <i>8</i></ul>
+                                    <ul>The PO has applied for higher PRIME-HR Level = <i>4</i></ul>
+                                    <ul>The PO has not applied for higher PRIME-HR Level = <i>0</i></ul>
+                                </span>
+                                </div>
+                            </td>
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
+                                <i><ul>*Confernment/Certificate Awarded <br> 
+                                    Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)
+                                </ul></i>
+                            </td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
 

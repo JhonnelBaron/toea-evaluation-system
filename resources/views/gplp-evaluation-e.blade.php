@@ -92,7 +92,7 @@
             justify-content: center;
             z-index: 999;
             margin-left: 250px; /* To accommodate sidebar */
-            background-color: #0066ff;
+            background-color: #2854C7;
         }
         .box-content {
             margin: 20px;
@@ -133,6 +133,42 @@
             border-radius: 10px;
         }
 
+        #tooltip{
+            position: relative;
+            cursor: pointer;
+            padding: 0px;
+            font-size: 16px;
+            font-weight: ;
+        }
+        #tooltipText{
+            position: bottom;
+            left: 0%;
+            top: 0;
+            transform: translateX(-50%)
+            color: red;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            /* visibility: hidden; */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-weight: light;
+        }
+        #tooltipText::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%)
+            border: 15px solid;
+            border-color: red;
+        }
+        #tooltip:hover #tooltipText{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        } 
+
     </style>
 </head>
 <body>
@@ -155,6 +191,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Requirement</th>
                             <th>Initial Score</th>
                             <th>Means of Verification</th>
@@ -164,18 +201,27 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><b>E. Social Marketing and Advocacy = </b><i>50</i><br>
-                            E.1. Communication Program (OPCR)
-                                <ul>A Communication Plan was prepared and fully implemented.  = <i>50</i></ul>
-                                <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
-                                <ul>No Communication Plan was prepared and not all communications activities were implemented = <i>0</i></ul>
+                            <td class="align-top"><b>E.</b></td>
+                            <td class="align-top"><b>Social Marketing and Advocacy</b></td>
+                        </tr>
+                        <tr>
+                            <td class="align-top"><b>E.1</b></td>
+                            <td class="align-top">
+                            <div id="tooltip">
+                                <span>Communication Program (OPCR)</span>
+                                    <span  id="tooltipText">
+                                        <ul>A Communication Plan was prepared and fully implemented.  = <i>50</i></ul>
+                                        <ul>No Communication Plan was prepared but activities were fully implemented. = <i>30</i></ul>
+                                        <ul>No Communication Plan was prepared and not all communications activities were implemented = <i>0</i></ul>
+                                    </span>
+                            </div>
                             </td>
-                            <td><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
-                            <td><input type="file" name="fileUpload" id="fileUpload">
+                            <td class="align-top"><input type="text" name="textbox" id="textbox" class="textbox" placeholder="Score"></td>
+                            <td class="align-top"><input type="file" name="fileUpload" id="fileUpload">
                                 <br><i><ul>*Rating of RO</ul></i>
                             </td>
-                            <td><button class="btn btn-primary btn-sm">Communication plan/OPCR</button></td>
-                            <td><textarea name="comments" id="comments" class="comments"></textarea></td>
+                            <td class="align-top"><button class="btn btn-primary btn-sm">Evaluate</button></td>
+                            <td class="align-top"><textarea name="comments" id="comments" class="comments"></textarea></td>
                         </tr>
 
                     </tbody>
