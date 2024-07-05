@@ -8,6 +8,18 @@
     <title>TOEA Admin</title>
     <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <style>
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: fixed;
+        }
+
         .toggle-btn {
             position: absolute;
             top: 200px;
@@ -51,7 +63,6 @@
         }
 
         body {
-            background-color: hsl(0, 0%, 97%) !important;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -67,23 +78,23 @@
         .hidden {
             display: none;
         }
-        table.custom-table {
+        table {
         width: 100%;
         border-collapse: collapse; /* This removes the space between table cells */
     }
 
     /* Style for table header (th) */
-    th.custom-th {
-        border-bottom: 2px solid #000; 
-        text-align: center;
+    th {
+        border: 1px solid #000; /* Black border with 1px thickness */
+        padding: 1px;
+        text-align: left;
+        background-color: #f2f2f2; /* Light gray background for headers */
     }
-    td.custom-td {
-        text-align: center;
 
-    }
-        tfoot td.custom-td  {
-        border-top: 2px solid #000; 
-        text-align: center; 
+    /* Style for table data (td) */
+    td {
+        border: 1px solid #000; /* Light gray border with 1px thickness */
+        padding: 1px;
     }
 
     .legend {
@@ -107,18 +118,18 @@
 
     </style>
 </head>
-<body>
+<body class="bg-blue-700">
     <div>
-        @include('components.navbar', [
+        @include('components.sidebar', [
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
-        <div class="ml-4 p-2">
+        <div class="ml-72 p-4">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1>
+                <h1 class="text-white font-bold text-3xl">BEST REGIONAL OFFICE</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tesda-logo-white.png') }}">
             </div>
-            <div class="legend ml-7">
+            <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color small-region bg-red-300"></div>
                     <span>Small</span>
@@ -136,34 +147,33 @@
             <div class="mx-auto mb-4">
                 <ul class="flex flex-wrap justify-center items-center">
                     <li class="tab">
-                        <a href="#" data-tab="submission" class="tab-link p-4 text-gray-800">Progress</a>
+                        <a href="#" data-tab="submission" class="tab-link p-4 text-white">Progress</a>
                     </li>
                     <li class="tab">
-                        <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-gray-800">Ranking</a>
+                        <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-white">Ranking</a>
                     </li>
                     <li class="tab">
-                        <a href="#" data-tab="endorsed" class="tab-link p-4 text-gray-800">Endorsed</a>
+                        <a href="#" data-tab="endorsed" class="tab-link p-4 text-white">Endorsed</a>
                     </li>
                 </ul>
             </div>
-{{-- 
-            <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto"> --}}
-                <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
+
+            <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="submission" class="tab-content">
-                    <table class="custom-table mx-auto">
+                    <table class="mx-auto">
                         <thead class="bg-blue-300 text-sm">
                             <tr>
-                                <th class="custom-th py-3 px-0 bg-TiffanyBlue">Executive Office</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Executive Office</th>
                                 @foreach ($smallRegions as $region)
-                                    <th class="custom-th py-3 px-0 bg-red-200">{{  $region->region_name === 'Region XIII' ? 'CARAGA' : str_replace('Region ', '',$region->region_name) }}</th>
+                                    <th class="px-6 py-3 bg-red-200">{{  $region->region_name === 'Region XIII' ? 'CARAGA' : str_replace('Region ', '',$region->region_name) }}</th>
                                 @endforeach
                                 @foreach ($mediumRegions as $region)
-                                <th class="custom-th py-3 px-0 bg-purple-200">{{ str_replace('Region ', '',$region->region_name) }}</th>
+                                <th class="px-6 py-3 bg-purple-200">{{ str_replace('Region ', '',$region->region_name) }}</th>
                                 @endforeach
                                 @foreach ($largeRegions as $region)
-                                <th class="custom-th py-3 px-0 bg-Mint">{{ str_replace('Region ', '',$region->region_name) }}</th>
+                                <th class="px-6 py-3 bg-Mint">{{ str_replace('Region ', '',$region->region_name) }}</th>
                                 @endforeach
-                                <th class="custom-th py-3 px-0 bg-customYellow">Total Progress</th>
+                                <th class="px-6 py-3 bg-customYellow">Total Progress</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -180,9 +190,9 @@
                                 'icto' => 'ICTO'
                             ] as $officeVariable => $officeName)
                               <tr>
-                                <td class="custom-td py-3 bg-TiffanyBlue">{{ $officeName }}</td>
+                                <td class="px-6 py-3 bg-TiffanyBlue">{{ $officeName }}</td>
                                 {{-- @foreach ($regions as $region)
-                                    <td class=" py-3">
+                                    <td class="px-6 py-3">
                                         @php
                                             $eval = ${$officeVariable}->firstWhere('region_id', $region->id);
                                         @endphp
@@ -190,7 +200,7 @@
                                     </td>
                                 @endforeach --}}
                                 @foreach ($smallRegions as $smallRegion)
-                                <td class="custom-td py-3 bg-red-200">
+                                <td class="px-6 py-3 bg-red-200">
                                     @php
                                         $eval = ${$officeVariable}->firstWhere('region_id', $smallRegion->id);
                                     @endphp
@@ -198,7 +208,7 @@
                                 </td>
                             @endforeach
                             @foreach ($mediumRegions as $mediumRegion)
-                                <td class="custom-td py-3 bg-purple-200">
+                                <td class="px-6 py-3 bg-purple-200">
                                     @php
                                         $eval = ${$officeVariable}->firstWhere('region_id', $mediumRegion->id);
                                     @endphp
@@ -206,7 +216,7 @@
                                 </td>
                             @endforeach
                             @foreach ($largeRegions as $largeRegion)
-                                <td class="custom-td py-3 bg-Mint">
+                                <td class="px-6 py-3 bg-Mint">
                                     @php
                                         $eval = ${$officeVariable}->firstWhere('region_id', $largeRegion->id);
                                     @endphp
@@ -214,7 +224,7 @@
                                 </td>
                             @endforeach
 
-                                <td class="custom-td py-3 bg-customYellow">
+                                <td class="px-6 py-3 bg-customYellow">
                                     @php
                                     $totalProgress = ${$officeVariable}->sum('progress_percentage');
                                     $averageProgress = 100 / (count($smallRegions) + count($mediumRegions) + count($largeRegions));
@@ -227,9 +237,9 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td class="custom-td py-3 bg-TiffanyBlue"><b>Total</b></td>
+                                <td class="px-6 py-3 bg-TiffanyBlue"><b>Total</b></td>
                                 @foreach ($smallRegions as $smallRegion)
-                                    <td class="custom-td py-3 bg-red-200">
+                                    <td class="px-6 py-3 bg-red-200">
                                         @php
                                             $totalProgressSmall = collect([
                                                 'adminService' => $adminService,
@@ -251,7 +261,7 @@
                                     </td>
                                 @endforeach
                                 @foreach ($mediumRegions as $mediumRegion)
-                                    <td class="custom-td py-3 bg-purple-200">
+                                    <td class="px-6 py-3 bg-purple-200">
                                         @php
                                             $totalProgressMedium = collect([
                                                 'adminService' => $adminService,
@@ -273,7 +283,7 @@
                                     </td>
                                 @endforeach
                                 @foreach ($largeRegions as $largeRegion)
-                                    <td class="custom-td py-3 bg-Mint">
+                                    <td class="px-6 py-3 bg-Mint">
                                         @php
                                             $totalProgressLarge = collect([
                                                 'adminService' => $adminService,
@@ -294,7 +304,7 @@
                                         {{ round($averageProgressLarge, 2) }}%
                                     </td>
                                 @endforeach
-                                <td class="custom-td py-3 bg-customYellow">
+                                <td class="px-6 py-3 bg-customYellow">
                                     @php
                                         $overallTotalProgress = ($totalProgressSmall + $totalProgressMedium + $totalProgressLarge);
                                         $overallProgress = $overallTotalProgress / (count($smallRegions) + count($mediumRegions) + count($largeRegions));
@@ -318,6 +328,38 @@
     </div>
 
     <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const tabLinks = document.querySelectorAll('.tab-link');
+        //     const tabContents = document.querySelectorAll('.tab-content');
+
+        //     tabLinks.forEach(link => {
+        //         link.addEventListener('click', function(event) {
+        //             event.preventDefault();
+
+        //             // Remove the hidden class from all tab contents
+        //             tabContents.forEach(content => {
+        //                 content.classList.add('hidden');
+        //             });
+
+        //             // Add the hidden class to all tab links
+        //             tabLinks.forEach(link => {
+        //                 link.classList.remove('border-b-2', 'font-bold', 'border-white');
+        //             });
+
+        //             // Show the clicked tab content
+        //             const targetId = this.getAttribute('data-tab');
+        //             document.getElementById(targetId).classList.remove('hidden');
+
+        //             // Highlight the clicked tab
+        //             this.classList.add('border-b-2', 'font-bold', 'border-white');
+        //         });
+        //     });
+
+        //     // Trigger the first tab to be active by default
+        //     if (tabLinks.length > 0) {
+        //         tabLinks[0].click();
+        //     }
+        // });
         document.addEventListener('DOMContentLoaded', function() {
         const tabLinks = document.querySelectorAll('.tab-link');
 
@@ -330,10 +372,10 @@
                 }
 
                 tabLinks.forEach(link => {
-                    link.classList.remove('border-b-2', 'font-bold', 'border-gray-800');
+                    link.classList.remove('border-b-2', 'font-bold', 'border-white');
                 });
 
-                this.classList.add('border-b-2', 'font-bold', 'border-gray-800');
+                this.classList.add('border-b-2', 'font-bold', 'border-white');
             });
         });
 

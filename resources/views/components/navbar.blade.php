@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
     @vite('resources/css/app.css')
     <title>Document</title>
     <nav class="bg-white border-gray-200 dark:bg-gray-900 border-b border-gray-300">
@@ -22,15 +22,18 @@
           <!-- Dropdown menu -->
           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 transition-opacity duration-500 group-hover:opacity-100 group-hover:visible" id="user-dropdown">
             <div class="px-4 py-3">
-              <span class="block text-sm text-gray-900 dark:text-black">Office Name</span>
-              <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">office@tesda.gov.ph</span>
+              <span class="block text-sm text-gray-900 dark:text-black">{{ Auth::user()->name }}</span>
+              <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email}}</span>
             </div>
             <ul class="py-2" aria-labelledby="user-menu-button">
               <li>
                 <a href="#" class="block px-4 py-2 text-sm text-white-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white-200 dark:hover:text-black">Settings</a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-sm text-white-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white-200 dark:hover:text-black">Sign out</a>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  <button type="submit" class="block w-full px-4 py-2 text-sm text-white-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white-200 dark:hover:text-black text-left">Sign out</button>
+                </form>
               </li>
             </ul>
           </div>
@@ -47,7 +50,7 @@
               <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">BRO</a>
+            <a href="{{ route('romd.progress') }}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">BRO</a>
           </li>
           <div class="relative group ">
               <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">
