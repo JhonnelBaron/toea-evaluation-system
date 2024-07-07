@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     //     return view('romd.dashboard');
     // });
     Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission'])->name('romd.progress');
+    Route::get('/home', [RomdController::class, 'home'])->name('home');
     
 });
 
@@ -46,6 +47,11 @@ Route::get('/romd/ranking', [RomdController::class, 'ranking'])->name('romd.rank
 Route::get('/galing-probinsya/small', function () {
     return view('gp-small');
 })->name('gp-small');
+
+// Route::get('/home', function () {
+//     return view('romd.home');
+// })->name('home');
+
 
 
 
