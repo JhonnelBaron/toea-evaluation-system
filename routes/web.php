@@ -30,8 +30,8 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/regional-operations-management-division', function () {
     //     return view('romd.dashboard');
     // });
-    Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission']);
-    Route::get('/ranking', [RomdController::class, 'ranking'])->name('romd.ranking');
+    Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission'])->name('romd.progress');
+    Route::get('/home', [RomdController::class, 'home'])->name('home');
     
 });
 
@@ -42,9 +42,16 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middl
 Route::post('/', [LoginController::class, 'login'])->middleware(RedirectIfAuthenticated::class);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/romd/ranking', [RomdController::class, 'ranking'])->name('romd.ranking');
+
 Route::get('/galing-probinsya/small', function () {
     return view('gp-small');
 })->name('gp-small');
+
+// Route::get('/home', function () {
+//     return view('romd.home');
+// })->name('home');
+
 
 
 
