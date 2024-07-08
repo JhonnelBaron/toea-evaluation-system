@@ -32,7 +32,7 @@
         .highlight {
             font-size: 2.5rem; /* Larger font size */
             font-weight: bold; /* Bold text */
-            color: #4CAF50; /* Green color */
+            color: #1E3A8A; /* Green color */
         }
 
     </style>
@@ -57,6 +57,11 @@
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <!-- Example card -->
                 <div class="col-span-1">
+                    <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
+                        <p class="text-4xl text-blue-900 font-bold">
+                            LIST OF OFFICES
+                        </p>
+                    </div>
                     <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
                         <p class="text-2xl dark:text-gray-500">
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['adminService'] }}%</span>
@@ -134,7 +139,15 @@
                     </div>
                 </div>
 
-                <div class="col-span-2 grid grid-cols-4 gap-1">
+                
+                <div class="col-span-2 grid grid-cols-3 gap-1">
+                
+                    <div class="col-span-3">
+                        <div class="content bg-blue-100 shadow-md h-24 flex flex-col items-center justify-center text-4xl font-bold text-blue-900">
+                            <h1>SMALL CATEGORY</h1>
+                        </div>
+                    </div>
+
                     <!-- Small Regions -->
                     @foreach ($totalProgressPerRegion['Small'] as $regionName => $progress)
                         @php
@@ -158,14 +171,21 @@
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
-                                Score: {{ $totalScore }}
+                                Score: <b>{{ $totalScore }}</b>
                            </p>
-                            <p class="text-md dark:text-gray-500">
-                                {{ $displayName }}
+                            <p class="text-md dark:text-gray-500 text-align font-bold">
+                                <br>
+                                <span>{{ $displayName }}</span>
                             </p>
                         </div>
 
                     @endforeach
+                    <div class="col-span-3">
+                        <div class="content bg-blue-100 shadow-md h-24 flex flex-col items-center justify-center text-4xl font-bold text-blue-900">
+                            <h1>MEDIUM CATEGORY</h1>
+                        </div>
+                    </div>
+
  
                     <!-- Medium Regions -->
                     @foreach ($totalProgressPerRegion['Medium'] as $regionName => $progress)
@@ -190,15 +210,24 @@
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
-                                Score: {{ $totalScore }}
+                                Score: <b>{{ $totalScore }}</b>
                            </p>
-                            <p class="text-md dark:text-gray-500">
+                            <p class="text-md dark:text-gray-500 font-bold">
+                                <br>
                                 {{ $displayName }}
                             </p>
                         </div>
                     @endforeach
                 
                     <!-- Large Regions -->
+                        
+                    <div class="col-span-3">
+                        <div class="content bg-blue-100 shadow-md h-24 flex flex-col items-center justify-center text-4xl font-bold text-blue-900">
+                            <h1>LARGE CATEGORY</h1>
+                        </div>
+                    </div>
+                        
+                    
                     @foreach ($totalProgressPerRegion['Large'] as $regionName => $progress)
                         @php
                             $displayName = str_replace('Region ', '', $regionName);
@@ -221,73 +250,24 @@
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
-                                 Score: {{ $totalScore }}
+                                 Score: <b>{{ $totalScore }}</b>
                             </p>
-                            <p class="text-md dark:text-gray-500">
+                            <p class="text-md dark:text-gray-500 font-bold">
+                                <br>
                                 {{ $displayName }}
                             </p>
                         </div>
                     @endforeach
+                    </div>
                 </div>
-                
-            
-                {{-- <div class="col-span-2 grid grid-cols-4 gap-1">
-                    <!-- Example card -->
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500"> 85% <br>Region A:</p>
-                    </div>
-                    <!-- Repeat for other regions -->
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region B: 70%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region C: 65%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region D: 60%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region E: 75%</p>
-                    </div>
-                    <!-- Repeat for other regions -->
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region F: 80%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region G: 55%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region H: 90%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region B: 70%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region C: 65%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region D: 60%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region E: 75%</p>
-                    </div>
-                    <!-- Repeat for other regions -->
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region F: 80%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region G: 55%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region H: 90%</p>
-                    </div>
-                    <div class="region bg-white shadow-md h-48 flex items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl text-gray-400 dark:text-gray-500">Region H: 90%</p>
-                    </div>
-                </div> --}}
-    
             </div>
 
+        </div>
+    </div>
+
+    <div>
+        <div class="flex items-center justify-center">
+            © 2024 ROMD. All rights reserved.
         </div>
     </div>
 
