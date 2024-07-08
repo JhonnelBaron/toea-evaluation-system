@@ -145,7 +145,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto flex flex-wrap items-center justify-between">
+            <div class="mx-auto flex flex-wrap">
                 <div class="ml-8 flex items-center"> <!-- Adjust ml-8 if needed -->
                     <label for="categoryFilter" class="text-black mr-2">Category:</label>
                     <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
@@ -156,7 +156,7 @@
                     </select>
                 </div>
             
-                <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left -->
+                <div class="flex-grow flex items-center justify-center" style="margin-right: 12rem;"> <!-- Adjust this value to move the tabs to the left -->
                     <ul class="flex">
                         <li class="tab">
                             <a href="{{ route('romd.progress') }}" data-tab="submission" class="tab-link p-4 text-black">Progress</a>
@@ -170,6 +170,7 @@
                     </ul>
                 </div>
             </div>
+            
             
 
             
