@@ -16,7 +16,7 @@ class RoFileController extends Controller
     {
         $region = Region::findOrFail($regionId);
         $request->validate([
-            'file' => 'required|file|mimes:pdf|max:2048',
+            'file' => 'required|file|mimes:pdf|max:10240',
         ]);
         $user = Auth::user();
         $uploadedFile = $request->file('file'); 
