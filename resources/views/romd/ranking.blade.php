@@ -63,6 +63,7 @@
         }
 
         body {
+            background-color: hsl(0, 0%, 97%) !important;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -118,55 +119,61 @@
 
     </style>
 </head>
-<body class="bg-blue-700">
+<body>
     <div>
-        @include('components.sidebar', [
+        @include('components.navbar', [
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
-        <div class="ml-72 p-4">
+        <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-white font-bold text-3xl">BEST REGIONAL OFFICE</h1>
-                <img class="w-20 h-20" src="{{ asset('img/tesda-logo-white.png') }}">
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1>
+                <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
-            <div class="legend">
+            <div class="legend ml-7">
                 <div class="legend-item">
                     <div class="legend-color small-region bg-red-300"></div>
-                    <span class="text-white">Small</span>
+                    <span>Small</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color medium-region bg-purple-200"></div>
-                    <span class="text-white">Medium</span>
+                    <span>Medium</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color large-region bg-Mint"></div>
-                    <span class="text-white">Large</span>
+                    <span>Large</span>
                 </div>
             </div>
 
-            <div class="mx-auto mb-4">
-                <ul class="flex flex-wrap justify-center items-center">
-                    <li class="tab">
-                        <a href="{{ route('romd.progress') }}" data-tab="submission" class="tab-link p-4 text-white">Progress</a>
-                    </li>
-                    <li class="tab">
-                        <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-white border-b-2 font-bold border-white"><b>Ranking</b></a>
-                    </li>
-                    <li class="tab">
-                        <a href="#" data-tab="endorsed" class="tab-link p-4 text-white">Endorsed</a>
-                    </li>
-                </ul>
+            <div class="mx-auto flex flex-wrap items-center justify-between">
+                <div class="ml-8 flex items-center"> <!-- Adjust ml-8 if needed -->
+                    <label for="categoryFilter" class="text-black mr-2">Category:</label>
+                    <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
+                        <option value="all">All</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            
+                <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left -->
+                    <ul class="flex">
+                        <li class="tab">
+                            <a href="{{ route('romd.progress') }}" data-tab="submission" class="tab-link p-4 text-black">Progress</a>
+                        </li>
+                        <li class="tab">
+                            <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-black border-b-2 border-black"><b>Ranking</b></a>
+                        </li>
+                        <li class="tab">
+                            <a href="#" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            
 
-            <div class="mb-4">
-                <label for="categoryFilter" class="text-white mr-2">Category:</label>
-                <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
-                    <option value="all">All</option>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
-                </select>
-            </div>
+            
+            
 
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">

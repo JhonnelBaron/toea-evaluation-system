@@ -70,24 +70,24 @@
         table.custom-table {
         width: 100%;
         border-collapse: collapse; /* This removes the space between table cells */
-    }
+        }
 
-    /* Style for table header (th) */
-    th.custom-th {
-        border-bottom: 2px solid #000; 
-        text-align: center;
-    }
-    td.custom-td {
-        text-align: center;
+        /* Style for table header (th) */
+        th.custom-th {
+            border-bottom: 2px solid #000; 
+            text-align: center;
+        }
+        td.custom-td {
+            text-align: center;
 
-    }
-        tfoot td.custom-td  {
-        border-top: 2px solid #000; 
-        text-align: center; 
-    }
+        }
+            tfoot td.custom-td  {
+            border-top: 2px solid #000; 
+            text-align: center; 
+        }
 
-    .legend {
-            display: flex;
+        .legend {
+                display: flex;
             justify-content: flex-start;
             margin-top: 20px;
             margin-bottom: 1px;
@@ -116,7 +116,7 @@
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
                 <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1>
-                <img class="w-20 h-20" src="{{ asset('img/tesda-logo-white.png') }}">
+                <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             <div class="legend ml-7">
                 <div class="legend-item">
@@ -314,6 +314,7 @@
                     <!-- Rankings content goes here -->
                 </div>
             </div>
+            
         </div>
     </div>
 
