@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
+use App\Http\Controllers\GpContoller;
 use App\Http\Controllers\RoController;
 use App\Http\Controllers\RomdController;
 use App\Http\Controllers\Secretariat\CoEvaluationController;
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     // });
     Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission'])->name('romd.progress');
     Route::get('/home', [RomdController::class, 'home'])->name('home');
+    Route::get('/galing-probinsya', [GpContoller::class, 'getGalingProbinsyaUsers']);
     
 });
 
