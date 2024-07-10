@@ -230,11 +230,11 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>            
@@ -242,11 +242,11 @@
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -254,11 +254,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -279,11 +279,11 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>            
@@ -291,11 +291,11 @@
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -303,11 +303,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -329,11 +329,11 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>            
@@ -341,11 +341,11 @@
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -353,11 +353,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
-                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }}</p>
                                         </div>
                                     </div>
                                 </td>
