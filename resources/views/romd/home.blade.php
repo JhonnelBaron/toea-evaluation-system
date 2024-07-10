@@ -82,7 +82,7 @@
                         </p>
                     </div>
                     
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Administrative Service" data-office-id="asEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['adminService'] }}%</span>
                         </p>
@@ -92,7 +92,7 @@
                     </div>
 
                     <!-- Repeat for other cards -->
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Legal Division" data-office-id="ldEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['legalDivision'] }}% </span>
                         </p>
@@ -101,7 +101,7 @@
                         </p>
                     </div>
 
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Certification Office" data-office-id="coEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['certificationOffice'] }}%</span>
                         </p>
@@ -110,7 +110,7 @@
                         </p>
                     </div>
 
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="fms" data-office-id="fmsEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['fms'] }}%</span>
                         </p>
@@ -119,7 +119,7 @@
                         </p>
                     </div>
 
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="nitesd" data-office-id="nitesdEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['nitesd'] }}%</span>
                         </p>
@@ -129,7 +129,7 @@
                     </div>
 
                     <!-- Repeat for other cards -->
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="piad" data-office-id="piadEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['piad'] }}%</span>
                         </p>
@@ -137,7 +137,7 @@
                             <span class="text-sm dark:text-gray-500 text-center">Public Information and Assistance Division</span>
                         </p>
                     </div>
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="planningOffice" data-office-id="poEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['planningOffice'] }}%</span>
                         </p>
@@ -145,7 +145,7 @@
                             <span class="text-sm dark:text-gray-500 text-center">Planning Office</span>
                         </p>
                     </div>
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="plo" data-office-id="ploEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['plo'] }}%</span>
                         </p>
@@ -154,7 +154,7 @@
                         </p>
                     </div>
                     <!-- Repeat for other cards -->
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="romo" data-office-id="romoEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['romo'] }}%</span>
                         </p>
@@ -162,7 +162,7 @@
                             <span class="text-sm dark:text-gray-500 text-center">Regional Operations Management Office</span>
                         </p>
                     </div>
-                    <div class="clickableDiv content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="icto" data-office-id="ictoEval">
                         <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['icto'] }}%</span>
                         </p>
@@ -292,7 +292,109 @@
                         </div>
                     @endforeach
                     </div>
-                </div>
+
+                    <div id="office-details-container" class="fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-times">
+                        <div class="p-4">
+                            <button id="close-details" class="text-red-500">Close</button>
+                            <h2 class="text-xl font-bold"></h2>
+                            <hr>
+                            <div id="office-details-content">
+                                <table class="table-auto w-full">
+                                    <thead>
+                                        <tr>
+                                            <th>Region Name</th>
+                                            <th>Percentage</th>
+                                            <th>Evaluated</th>
+                                            <th>Score</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="details-table-body">
+                                        
+                                        {{-- @foreach ($smallRegions as $region)
+                                        <tr class="category-small">
+                                            <td class="!border-b-2" style="border-color: #FFC700;">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <input type="text" data-region-id="{{ $region->id }}"
+                                                    class="form-control remarks-input" placeholder=""
+                                                    value="{{ $region->evaluations->first()->final_remarks ?? '' }}">
+                                                <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}">
+                                                    {{ $region->evaluations->first()->final_remarks ?? '' }}
+                                                </textarea>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                
+                                        @foreach ($mediumRegions as $region)
+                                        <tr>
+                                            <td class="!border-b-2" style="border-color: #B1AFFF;">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                
+                                        @foreach ($largeRegions as $region)
+                                        <tr class="category-large">
+                                            <td class="!border-b-2" style="border-color: #FF0000">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        @endforeach --}}
+                                    </tbody>
+                                </table>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    
             </div>
 
         </div>
@@ -343,23 +445,98 @@
                 }
             }
         </script>
-        
 
-        {{-- <script>
-            const clickableDiv = document.getElementById('clickableDiv');
+        <script>
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     const detailsContainer = document.getElementById('office-details-container');
+            //     const closeDetailsButton = document.getElementById('close-details');
 
-            clickableDiv.addEventListener('click', function() {
-                // Toggle background color between original and new color
-                if (clickableDiv.classList.contains('bg-blue-100')) {
-                    clickableDiv.classList.remove('bg-blue-100');
-                    // Add your original background class here
-                } else {
-                    // Add your new background color class here
-                    clickableDiv.classList.add('bg-blue-100');
-                }
+            //     document.querySelectorAll('.office-box').forEach(box => {
+            //         box.addEventListener('click', function() {
+            //             const officeName = box.dataset.office;
+
+            //         // Update the h2 with the clicked office name
+            //         const officeDetailsTitle = detailsContainer.querySelector('h2');
+            //         officeDetailsTitle.textContent = `${officeName}`;
+            //             detailsContainer.classList.remove('hidden');
+            //         });
+            //     });
+
+            //     closeDetailsButton.addEventListener('click', function() {
+            //         detailsContainer.classList.add('hidden');
+            //     });
+            // });
+
+            document.addEventListener('DOMContentLoaded', function() {
+        const detailsContainer = document.getElementById('office-details-container');
+        const officeDetailsContent = document.getElementById('office-details-content');
+        const closeDetailsButton = document.getElementById('close-details');
+
+        // Add event listener to each office box
+        document.querySelectorAll('.office-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const officeId = box.dataset.officeId; // Fetch office ID from data attribute
+
+                // Fetch data from server using Fetch API or Axios
+                fetch(`/evaluation/${officeId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Update office details in the container
+                        let tableHTML = '';
+
+                        // Assuming data is an array of evaluations
+                        data.forEach(evaluation => {
+                            tableHTML += `
+                                <tr>
+                                    <td>${evaluation.region.region_name}</td>
+                                    <td>${evaluation.progress_percentage}%</td>
+                                    <td>${evaluation.overall_total_filled} / ${evaluation.total_fields}</td>
+                                    <td>${evaluation.overall_total_score}</td>
+                                    <td>${evaluation.final_remarks}</td>
+                                </tr>
+                            `;
+                        });
+
+                        // Render the table inside officeDetailsContent
+                        officeDetailsContent.innerHTML = `
+                            <table class="table-auto w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-2">Region Name</th>
+                                        <th class="px-4 py-2">Percentage</th>
+                                        <th class="px-4 py-2">Evaluated</th>
+                                        <th class="px-4 py-2">Score</th>
+                                        <th class="px-4 py-2">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableHTML}
+                                </tbody>
+                            </table>
+                        `;
+                    })
+                    .catch(error => console.error('Error fetching office details:', error));
+
+                // Update the h2 with the clicked office name
+                const officeName = box.dataset.office;
+                const officeDetailsTitle = detailsContainer.querySelector('h2');
+                officeDetailsTitle.textContent = officeName;
+
+                detailsContainer.classList.remove('hidden'); // Show details container
             });
-        </script> --}}
+        });
 
+        // Add event listener to close button
+        closeDetailsButton.addEventListener('click', function() {
+            detailsContainer.classList.add('hidden'); // Hide details container
+        });
+    });
+        </script>
 
 </body>
 </html>
