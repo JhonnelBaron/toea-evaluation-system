@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center ml-6">
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-a" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-a" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">A</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-b" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-b" class="block h-full w-full flex items-center justify-center">
                     <span class="text-gray-200 font-bold text-xs">B</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-c" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-c" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">C</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-d" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-d" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">D</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-e" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-e" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">E</span>
                   </a>
                 </div>
@@ -140,7 +140,7 @@
                                                     <tr>
                                                         <td>B.1.A Implementation of recognized/aligned PQF level 4 or Level 5 programs</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Certificates of Recognition for PQF Level 4 or Level 5 with list of enrollees) </p></td>
 														                            <td></td>
@@ -158,7 +158,7 @@
                                                     <tr>
                                                         <td>B.1.B. Development of CS and CBC on Diploma program, integrating STEM/21st Century Skills</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td></td>
 														                            <td></td>
@@ -178,7 +178,7 @@
                                                     <tr>
                                                         <td>B.1.C.1. Participation</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Terminal Reports/After Activity reports</p></td>
 														                            <td></td>
@@ -196,7 +196,7 @@
                                                     <tr>
                                                         <td>B.1.C.2. Awards received at the national level</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Awards received (plaque or medal)</p> </td>
 														                            <td></td>
@@ -213,7 +213,7 @@
                                                     <tr>
                                                         <td>B.1.C.3 Awards received at the international level</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Awards received (plaque or medal)</p></td>
 														                            <td></td>
@@ -233,7 +233,7 @@
                                                     <tr>
                                                         <td>B.1.D.1. Development of policy or technology research proposals</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Copy of memo/email submitting its Technology Research/es</p></td>
 														                            <td></td>
@@ -253,7 +253,7 @@
                                                     <tr>
                                                         <td>B.2.A. UAQTEA Scholarship Program</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td></td>
 														                            <td></td>
@@ -270,7 +270,7 @@
                                                     <tr>
                                                         <td>B.2.B. Skills Training for Drug Dependents</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports</p></td>
 														                            <td></td>
@@ -287,7 +287,7 @@
                                                     <tr>
                                                         <td>B.2.C. Skills Training for Inmates and their Families</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports</p></td>
 														                            <td></td>
@@ -304,7 +304,7 @@
                                                     <tr>
                                                         <td>B.2.D. Special Skills Programs for IPs</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td></td>
@@ -321,7 +321,7 @@
                                                     <tr>
                                                         <td>B.2.E. Expanded Training Program for Women and PWDs</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports</p></td>
 														                            <td></td>
@@ -338,7 +338,7 @@
                                                     <tr>
                                                         <td>B.2.F. Re-skilling/Upskilling of OFWs</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports</p></td>
 														                            <td></td>
@@ -355,7 +355,7 @@
                                                     <tr>
                                                         <td>B.2.G. Graduates of TTI - Institution-based</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td></td>
 														                            <td></td>
@@ -374,7 +374,7 @@
                                                     <tr>
                                                         <td>B.2.H. Graduates of TTI - Enterprise-based</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td></td>
 														<td></td>
@@ -393,7 +393,7 @@
                                                     <tr>
                                                         <td>B.2.I. Graduates of TTI - Community-based/MTP</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td></td>
 														<td></td>
@@ -412,7 +412,7 @@
                                                     <tr>
                                                         <td>B.2.J. Communications/programs/advocacy on Gender and Development</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: After activity report on GAD related programs</p></td>
 														<td></td>
@@ -432,7 +432,7 @@
                                                     <tr>
                                                         <td>B.3.A. TVET Trainers Development Programs - TM Level II</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: TM II Certification</p></td>
 														<td></td>
@@ -449,7 +449,7 @@
                                                     <tr>
                                                         <td>B.3.B. TVET Trainers Development Programs - Industry Immersion</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: IWER Certification</p></td>
 														<td></td>
@@ -467,7 +467,7 @@
                                                     <tr>
                                                         <td>B.3.C. Percentage of TTI Trainers are Accredited National Competency Assessors</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: List of Trainers<br></td>
 														<td></td>
@@ -485,7 +485,7 @@
                                                     <tr>
                                                         <td>B.3.D. Percentage of TTI's registered programs (WTR) with Accredited Assessment Center</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Copies of CTPRs <br>
                                                                         List of Registered Programs <br>
@@ -505,7 +505,7 @@
                                                     <tr>
                                                         <td>B.3.E. Percentage of TTI Graduates in WTR Programs assessed</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: RWAC</p></td>
 														<td></td>
@@ -525,7 +525,7 @@
                                                     <tr>
                                                         <td>B.3.F. Percentage of graduates in programs with training regulations assessed, certified</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: RWAC</p></td>
 														<td></td>
@@ -550,7 +550,7 @@
                                                     <tr>
                                                         <td>B.4.A.1. Implementation Profiling</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring/Summary of profiled learners</p></td>
 														<td></td>
@@ -569,7 +569,7 @@
                                                     <tr>
                                                         <td>B.4.A.2. Referred Graduates for Possible Employment</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td><td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Letter of recommendation for all TTI graduates</p></td>
 														<td></td>
                                                         <td></td>
@@ -587,7 +587,7 @@
                                                     <tr>
                                                         <td>B.4.B. Participation in WCOs</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: After Activity Report</p></td>
 														<td></td>
@@ -604,7 +604,7 @@
                                                     <tr>
                                                         <td>B.4.C. Preparation of Institutional Development Plan (IDP)</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Signed IDP</p></td>
 														<td></td>
@@ -621,7 +621,7 @@
                                                     <tr>
                                                         <td>B.4.D. Implementation of Institutional Development Plan (IDP)</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: FY 2023 Analysis of IDP Programs implemented and IDP Report</p></td>
 														<td></td>
@@ -639,7 +639,7 @@
                                                     <tr>
                                                         <td>B.4.E. Partnerships forged and implemented (The max. score conferred to the applicant must not exceed 30 points)</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Copies of signed MOAs</p></td>
 														<td></td>
@@ -664,7 +664,7 @@
                                                     <tr>
                                                         <td>B.5.A.1. Participation</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Endorsement Memo, TESDA Order</p></td>
 														<td></td>
@@ -681,7 +681,7 @@
                                                     <tr>
                                                         <td>B.5.A.2. Awards received</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Awards received</p></td>
 														<td></td>
@@ -705,7 +705,7 @@
                                                     <tr>
                                                         <td>B.5.B.1.1. Participation</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p></td>
 														<td></td>
@@ -722,7 +722,7 @@
                                                     <tr>
                                                         <td>B.5.B.1.2. Awards received</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Certificate of Accreditation</p></td>
 														<td></td>
@@ -744,7 +744,7 @@
                                                     <tr>
                                                         <td>B.5.B.2.1 Participation</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p></td>
                                                         <td></td>
@@ -761,7 +761,7 @@
                                                     <tr>
                                                         <td>B.5.B.2.2 Awards received</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p></td>
 														<td></td>
@@ -783,7 +783,7 @@
                                                     <tr>
                                                         <td>B.5.C.1. Participation</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office </p></td>
                                                         <td></td>
@@ -800,7 +800,7 @@
                                                     <tr>
                                                         <td>B.5.C.2. Awards received</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Awards received</p></td>
 														<td></td>
@@ -817,7 +817,7 @@
                                                     <tr>
                                                         <td>B.5.D. Development of Procedures Manual</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Procedures manual developed</p></td>
 														<td></td>
@@ -834,7 +834,7 @@
                                                     <tr>
                                                         <td>B.5.E. Green Practices (100% implementation of plans and projects related to Green Practices)</td>
                                                         <td></td>
-                                                        <td align="center">
+                                                        <td>
                                                         </td>
                                                         <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Monitoring Reports, Articles, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices
                                                                         </p></td>
@@ -852,10 +852,10 @@
 													
 													<tr>
 														<td style="padding: 15px;"><b>Total Initial Score</b></td>
-														<td align="center" style="padding: 15px;"></td>
+														<td style="padding: 15px;"></td>
 														<td style="padding: 15px;"></td>
 														<td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
-														<td align="center" style="padding: 15px;"></td>
+														<td style="padding: 15px;"></td>
 														<td style="padding: 15px;"></td>
 														<td style="padding: 15px;"><b>Final Score</b> : </td>
                                                         <td></td>

@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - RTC/STC, TAS</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center ml-6">
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-a" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-a" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">A</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-b" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-b" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">B</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-c" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-c" class="block h-full w-full flex items-center justify-center">
                     <span class="text-gray-200 font-bold text-xs">C</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-d" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-d" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">D</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-e" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-e" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">E</span>
                   </a>
                 </div>
@@ -140,7 +140,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: Monitoring logbook/ registry)</span></td>
-                               </td>
+                                <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc1_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="25">25 - 100% of budget utilized</option>
@@ -156,7 +157,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: Agency Action Plan and Status of Implementation (AAPSI))</span></td>
-                               </td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc2_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="25">25 - 100% acted upon (either partially or fully implemented)</option>
@@ -175,7 +177,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of Personnel in 2023, Certificates of trainings attended, REAPs)</span></td>
-                               </td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc31_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="20">20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
@@ -190,7 +193,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of plantilla positions of the TTI, Certificates of training attended)</span></td>
-                               </td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc32_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="15">15 - 100% of Employees were provided with training opportunities</option>
@@ -211,6 +215,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc411_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="4">4 - The TTI submitted nominees for Category I</option>
@@ -224,7 +230,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                               </td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc412_final_score" required>
                                                 <option value="">Select score</option>
                                                 <option value="4">4 - The TTI has received recognition/award at national level</option>
@@ -241,7 +248,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                               </td>
+                               <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc421_final_score" required>
                                                         <option value="">Select score</option>
                                                         <option value="4">4 - The TTI submitted nominees for Category II</option>
@@ -285,10 +293,7 @@
                              </tr>
                              <tr>
                                <td style="padding: 15px;"><b>Total Initial Score</b></td>
-                               <td style="padding: 15px;"></td>
-                               <td style="padding: 15px;"></td>
                                <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
-                               <td style="padding: 15px;"></td>
                                <td style="padding: 15px;"></td>
                                                            <td style="padding: 15px;"><b>Final Score: </b></td>
                                                            <td style="padding: 15px;"></td>

@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - RTC/STC, TAS</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center ml-6">
                 <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-a" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-a" class="block h-full w-full flex items-center justify-center">
                     <span class="text-gray-200 font-bold text-xs">A</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-b" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-b" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">B</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-c" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-c" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">C</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-d" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-d" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">D</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-e" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-rtcstctas-e" class="block h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">E</span>
                   </a>
                 </div>
@@ -136,11 +136,7 @@
                                 <td>A.1. Compliance for Corrupt Policy</td>
                                 
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -154,12 +150,8 @@
                             </tr>
                             <tr>
                                 <td>A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
-                                <td></td>
-                                <td align="center">
-                                </td>
+                                <td></td> 
                                 <td><p class="small mb-1" style="font-size: 10px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -177,16 +169,12 @@
                             <tr>
                                 <td>A.3. Resolutions of complaints emanating from the Contact Center</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD 
                                                     <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04
                                                     Monitoring of Complaints Received
                                                     </p>
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -202,13 +190,9 @@
                             <tr>
                                 <td>A.4. Customer Satisfaction Results Customer Net Satisfaction Rating with minimum of 95%</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)
                                                     <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
                                                     </p></td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -227,14 +211,10 @@
                             <tr>
                                 <td>A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA
                                                     <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -250,15 +230,11 @@
                             <tr>
                                 <td>A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA
                                                     <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
                                                     </p>
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -273,15 +249,11 @@
                             <tr>
                                 <td>A.6. Compliance to PhilGEPS requirements</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                                                                         <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed
                                                     <br>Government Procurement Policy Board (GPPB) report who are compliant
                                                     </p>
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -296,16 +268,12 @@
                             <tr>
                                 <td>A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
                                                     <br>Proof of postings submitted/received copy from COA
                                                     <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
                                                     </p> 
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -320,16 +288,12 @@
                             <tr>
                                 <td>A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
                                                     <br>Proof of postings submitted/received copy from COA
                                                     <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
                                                     </p>   
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -344,15 +308,11 @@
                             <tr>
                                 <td>A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
                                 <td></td>
-                                <td align="center">
-                                </td>
                                 <td>
                                     <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB)
                                                     <br>- Acknowledgment email from GPBB
                                                     </p>   
                                 </td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
