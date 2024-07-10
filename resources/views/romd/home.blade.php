@@ -293,9 +293,13 @@
                     @endforeach
                     </div>
 
-                    <div id="office-details-container" class="fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-times">
+                    <div id="office-details-container" class="text-gray-700 fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-poppins transition ease-in-out duration-300">
                         <div class="p-4">
-                            <button id="close-details" class="text-red-500">Close</button>
+                            <span class="fixed top-12 right-20">
+                                <button id="close-details" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    Close
+                                </button>
+                            </span>
                             <h2 class="text-xl font-bold"></h2>
                             <hr>
                             <div id="office-details-content">

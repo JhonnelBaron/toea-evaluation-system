@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pillar A</title>
+    <title>ROMD Admin</title>
     <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
@@ -118,13 +118,13 @@
                     <table id="regionTable" class="mx-auto">
                         <thead class="bg-blue-300 text-sm">
                             <tr>
-                                <th>Category</th>
-                                <th>View Attachment</th>
-                                <th>Means of Verification</th>
-                                <th>Final Score</th>
-                                <th>Remarks</th>
-                                <th>ROMD Evaluated Score</th>
-                                <th>Remarks</th>
+                                <th class="border border-gray-300 p-2 w-52">Category</th>
+                              <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                              <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
+                              <th class="border border-gray-300 p-2 w-10">Final Score</th>
+                              <th class="border border-gray-300 p-2 w-32">Remarks</th>
+                              <th class="border border-gray-300 p-2 w-32">ROMD Evaluated Score</th>
+                              <th class="border border-gray-300 p-2 w-32">Remarks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -263,6 +263,8 @@
                               <td>
                                 </td>
                                <td><span class="small" style="font-size: 10px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
+                               <td></td>
+                               <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc422_final_score" required>
                                                         <option value="">Select score</option>
                                                         <option value="4">4 - The TTI has received recognition/award at national level</option>
@@ -275,6 +277,10 @@
                             </tr>
                             <tr>
                                 <td>C.4.3.1. Participation</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                  <td><select class="form-control mb-1 score-dropdown" name="rc431_final_score" required>
                                                         <option value="">Select score</option>
                                                         <option value="4">4 - The TTI submitted nominees for Category III</option>
@@ -284,6 +290,10 @@
                             </tr>
                             <tr>
                                 <td>C.4.3.2. Awards Received</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                <td><select class="form-control mb-1 score-dropdown" name="rc432_final_score" required>
                                                         <option value="">Select score</option>
                                                         <option value="5">5 - The TTI has received recognition/award at national level</option>
@@ -292,14 +302,15 @@
                                <td><input class="form-control mb-1" name="rc432_remarks" type="text" placeholder="Remarks"></td>
                              </tr>
                              <tr>
-                               <td style="padding: 15px;"><b>Total Initial Score</b></td>
-                               <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
-                               <td style="padding: 15px;"></td>
-                                                           <td style="padding: 15px;"><b>Final Score: </b></td>
-                                                           <td style="padding: 15px;"></td>
-                               <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
-                               <td style="padding: 15px;"><button class="btn btn-primary" id="submitButton">Submit</button></td>
-                             </tr>
+                         
+                                <td style="padding: 15px;"><b>Total Initial Score</b></td>
+                                <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
+                                <td style="padding: 15px;"><b>Final Score: </b></td>
+                                <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
+                                <td style="padding: 15px;"></td>
+                            </tr>
                         </tbody>
                     </div>
 
