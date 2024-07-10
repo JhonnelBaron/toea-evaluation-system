@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     // });
     Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission'])->name('romd.progress');
     Route::get('/home', [RomdController::class, 'home'])->name('home');
+    Route::get('/evaluation/{officeId}', [RomdController::class, 'getEvaluationData']);
     Route::get('/galing-probinsya', [GpContoller::class, 'getGalingProbinsyaUsers']);
     
 });
