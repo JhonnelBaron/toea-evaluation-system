@@ -219,6 +219,28 @@ Route::get('/plo-evaluation', function () {
 })->name('/plo-evaluation');
 
 
+//Galing Probinsya Admin
+Route::get('/gpadmin-a', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-a');
+})->name('/gpadmin-a');
+
+Route::get('/gpadmin-b', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-b');
+})->name('/gpadmin-b');
+
+Route::get('/gpadmin-c', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-c');
+})->name('/gpadmin-c');
+
+Route::get('/gpadmin-d', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-d');
+})->name('/gpadmin-d');
+
+Route::get('/gpadmin-e', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-e');
+})->name('/gpadmin-e');
+
+
 
 
 
