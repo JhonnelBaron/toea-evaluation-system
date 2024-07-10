@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Dashboard Title</title>
+    <title>ROMD Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tailwind CSS -->
@@ -35,9 +35,21 @@
             color: #1E3A8A; /* Green color */
         }
 
+        .bg-transition {
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+        .bg-transition:hover {
+            background-color: #BFDBFE;
+        }
+        .bg-transition.clicked {
+            background-color: #90cdf4;
+        }
+
     </style>
 </head>
-<body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
+
+<body>
 
     <!-- Include your customized navbar -->
     @include('components.navbar', [
@@ -48,93 +60,114 @@
     <!-- Main content area -->
     <div class="p-4 sm:ml-0">
 
-        <!-- Your Flowbite layout here -->
         {{-- <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
         </div> --}}
 
-        <div class="p-4 border-2 border-blue-300 border-dashed rounded-lg dark:border-gray-700">
+        <div class="p-4 border-2 border-dashed rounded-lg dark:border-gray-700">
             <!-- Grid for the dashboard cards -->
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <!-- Example card -->
                 <div class="col-span-1">
+                    {{-- ANALYSIS CHART --}}
+                    <div class="content bg-white shadow-md h-30 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+                        <b>OVERALL ACCOMPLISHMENT SUMMARY</b>
+                        <div class="container mx-auto">
+                            <div id="chart"></div>
+                        </div>
+                    </div>
+                
                     <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
                         <p class="text-4xl text-blue-900 font-bold">
                             LIST OF OFFICES
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Administrative Service" data-office-id="asEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['adminService'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right">
-                            Administrative Service
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Administrative Service</span>
                         </p>
                     </div>
+
                     <!-- Repeat for other cards -->
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Legal Division" data-office-id="ldEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['legalDivision'] }}% </span>
                         </p>
-                             <p class="text-sm dark:text-gray-500 text-right">
-                            Legal Division
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Legal Division</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="Certification Office" data-office-id="coEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['certificationOffice'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right"> Certification Office
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Certification Office</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="fms" data-office-id="fmsEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['fms'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right">Financial and Management Service
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Financial and Management Service</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="nitesd" data-office-id="nitesdEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['nitesd'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right"> National Institute for Technical Education and Skills Development
+                        <p class="text-center"> 
+                            <span class="text-sm dark:text-gray-500 text-center">National Institute for Technical Education and Skills Development</span>
                         </p>
                     </div>
+
                     <!-- Repeat for other cards -->
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="piad" data-office-id="piadEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['piad'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right"> Public Information and Assistance Division 
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Public Information and Assistance Division</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="planningOffice" data-office-id="poEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['planningOffice'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right"> Planning Office
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Planning Office</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="plo" data-office-id="ploEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['plo'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right">Partnership and Linkages Office
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Partnership and Linkages Office</span>
                         </p>
                     </div>
                     <!-- Repeat for other cards -->
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="romo" data-office-id="romoEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['romo'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right">Regional Operations Management Office
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Regional Operations Management Office</span>
                         </p>
                     </div>
-                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
-                        <p class="text-2xl dark:text-gray-500">
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="icto" data-office-id="ictoEval">
+                        <p>
                             <span class="highlight">{{ $totalProgressPerExecutiveOffice['icto'] }}%</span>
                         </p>
-                        <p class="text-sm dark:text-gray-500 text-right">Information and Communication Office
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">Information and Communication Office</span>
                         </p>
                     </div>
                 </div>
@@ -167,7 +200,7 @@
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                            <p class="text-2xl dark:text-gray-500">
+                            <p>
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
@@ -206,7 +239,7 @@
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                            <p class="text-2xl dark:text-gray-500">
+                            <p>
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
@@ -246,7 +279,7 @@
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
-                            <p class="text-2xl dark:text-gray-500">
+                            <p>
                                 <span class="highlight">{{ $progress }}%</span>
                             </p>
                             <p class="text-lg dark:text-gray-500">
@@ -259,7 +292,109 @@
                         </div>
                     @endforeach
                     </div>
-                </div>
+
+                    <div id="office-details-container" class="fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-times">
+                        <div class="p-4">
+                            <button id="close-details" class="text-red-500">Close</button>
+                            <h2 class="text-xl font-bold"></h2>
+                            <hr>
+                            <div id="office-details-content">
+                                <table class="table-auto w-full">
+                                    <thead>
+                                        <tr>
+                                            <th>Region Name</th>
+                                            <th>Percentage</th>
+                                            <th>Evaluated</th>
+                                            <th>Score</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="details-table-body">
+                                        
+                                        {{-- @foreach ($smallRegions as $region)
+                                        <tr class="category-small">
+                                            <td class="!border-b-2" style="border-color: #FFC700;">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <input type="text" data-region-id="{{ $region->id }}"
+                                                    class="form-control remarks-input" placeholder=""
+                                                    value="{{ $region->evaluations->first()->final_remarks ?? '' }}">
+                                                <textarea class="form-control remarks-textarea" data-region-id="{{ $region->id }}">
+                                                    {{ $region->evaluations->first()->final_remarks ?? '' }}
+                                                </textarea>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                
+                                        @foreach ($mediumRegions as $region)
+                                        <tr>
+                                            <td class="!border-b-2" style="border-color: #B1AFFF;">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                
+                                        @foreach ($largeRegions as $region)
+                                        <tr class="category-large">
+                                            <td class="!border-b-2" style="border-color: #FF0000">{{ $region->region_name }}</td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->progress_percentage ?? 0 }}%
+                                                @else
+                                                0%
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty() && $region->evaluations->first()->overall_total_filled !== null && $region->evaluations->first()->total_fields !== null)
+                                                {{ $region->evaluations->first()->overall_total_filled }} / {{ $region->evaluations->first()->total_fields }}
+                                                @endif
+                                            </td>
+
+                                            <td>
+                                                @if ($region->evaluations->isNotEmpty())
+                                                {{ $region->evaluations->first()->overall_total_score }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        @endforeach --}}
+                                    </tbody>
+                                </table>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    
             </div>
 
         </div>
@@ -269,9 +404,139 @@
         <div class="flex items-center justify-center">
             © 2024 ROMD. All rights reserved.
         </div>
-    </div>
+    </div>    
 
     <!-- Scripts -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script>
+            var options = {
+                chart: {
+                type: 'pie',
+                },
+                // series: [44, 55, 13, 43, 22, 10, 20, 56, 76, 55, 5],
+                // labels: ['Administrative Service', 'Certification Office', 'FMS', 'ICTO', 'LEGAL', 'NITESD', 'PIAD', 'PLO', 'PO', 'ROMO', 'Not Rated'],
+                series: [44, 55,],
+                labels: ['Rated', 'Not Rated'],
+
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        </script>
+
+        <script>
+            const clickableDivs = document.querySelectorAll('.clickableDiv');
+        
+            clickableDivs.forEach(function(div) {
+                div.addEventListener('click', function() {
+                    toggleBackgroundColor(div);
+                });
+            });
+        
+            function toggleBackgroundColor(div) {
+                if (div.classList.contains('bg-blue-100')) {
+                    div.classList.remove('bg-blue-100');
+                    // Add your original background class here
+                } else {
+                    div.classList.add('bg-blue-100');
+                    // Add your new background color class here
+                }
+            }
+        </script>
+
+        <script>
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     const detailsContainer = document.getElementById('office-details-container');
+            //     const closeDetailsButton = document.getElementById('close-details');
+
+            //     document.querySelectorAll('.office-box').forEach(box => {
+            //         box.addEventListener('click', function() {
+            //             const officeName = box.dataset.office;
+
+            //         // Update the h2 with the clicked office name
+            //         const officeDetailsTitle = detailsContainer.querySelector('h2');
+            //         officeDetailsTitle.textContent = `${officeName}`;
+            //             detailsContainer.classList.remove('hidden');
+            //         });
+            //     });
+
+            //     closeDetailsButton.addEventListener('click', function() {
+            //         detailsContainer.classList.add('hidden');
+            //     });
+            // });
+
+            document.addEventListener('DOMContentLoaded', function() {
+        const detailsContainer = document.getElementById('office-details-container');
+        const officeDetailsContent = document.getElementById('office-details-content');
+        const closeDetailsButton = document.getElementById('close-details');
+
+        // Add event listener to each office box
+        document.querySelectorAll('.office-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const officeId = box.dataset.officeId; // Fetch office ID from data attribute
+
+                // Fetch data from server using Fetch API or Axios
+                fetch(`/evaluation/${officeId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Update office details in the container
+                        let tableHTML = '';
+
+                        // Assuming data is an array of evaluations
+                        data.forEach(evaluation => {
+                            tableHTML += `
+                                <tr>
+                                    <td>${evaluation.region.region_name}</td>
+                                    <td>${evaluation.progress_percentage}%</td>
+                                    <td>${evaluation.overall_total_filled} / ${evaluation.total_fields}</td>
+                                    <td>${evaluation.overall_total_score}</td>
+                                    <td>${evaluation.final_remarks}</td>
+                                </tr>
+                            `;
+                        });
+
+                        // Render the table inside officeDetailsContent
+                        officeDetailsContent.innerHTML = `
+                            <table class="table-auto w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-2">Region Name</th>
+                                        <th class="px-4 py-2">Percentage</th>
+                                        <th class="px-4 py-2">Evaluated</th>
+                                        <th class="px-4 py-2">Score</th>
+                                        <th class="px-4 py-2">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableHTML}
+                                </tbody>
+                            </table>
+                        `;
+                    })
+                    .catch(error => console.error('Error fetching office details:', error));
+
+                // Update the h2 with the clicked office name
+                const officeName = box.dataset.office;
+                const officeDetailsTitle = detailsContainer.querySelector('h2');
+                officeDetailsTitle.textContent = officeName;
+
+                detailsContainer.classList.remove('hidden'); // Show details container
+            });
+        });
+
+        // Add event listener to close button
+        closeDetailsButton.addEventListener('click', function() {
+            detailsContainer.classList.add('hidden'); // Hide details container
+        });
+    });
+        </script>
+
 </body>
 </html>

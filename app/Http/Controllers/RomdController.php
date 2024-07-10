@@ -299,6 +299,52 @@ class RomdController extends Controller
         return round($totalProgress * $averageProgress / 100, 2);
     }
     
+    public function getEvaluationData($officeId)
+    {
+        // Initialize variable for evaluations
+        $evaluations = [];
+
+        // Determine which evaluation model to use based on $officeId
+        switch ($officeId) {
+            case 'asEval':
+                $evaluations = AsEvaluation::with('region')->get();
+                break;
+            case 'coEval':
+                $evaluations = CoEvaluation::with('region')->get();
+                break;
+            case 'ldEval':
+                $evaluations = LdEvaluation::with('region')->get();
+                break;
+            case 'fmsEval':
+                $evaluations = FmsEvaluation::with('region')->get();
+                break;
+            case 'nitesdEval':
+                $evaluations = NitesdEvaluation::with('region')->get();
+                break;
+            case 'piadEval':
+                $evaluations = PiadEvaluation::with('region')->get();
+                break;
+            case 'poEval':
+                $evaluations = PoEvaluation::with('region')->get();
+                break;
+            case 'ploEval':
+                $evaluations = PloEvaluation::with('region')->get();
+                break;
+            case 'romoEval':
+                $evaluations = RomoEvaluation::with('region')->get();
+                break;
+            case 'ictoEval':
+                $evaluations = IctoEvaluation::with('region')->get();
+                break;
+            default:
+                // Handle invalid $officeId or other cases
+                return response()->json(['error' => 'Invalid office ID'], 404);
+        }
+
+        // Return JSON response with evaluations
+        return response()->json($evaluations);
+    }
+    
     
 }
 

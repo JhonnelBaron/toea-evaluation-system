@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
 use App\Http\Controllers\Files\RoFileController;
+use App\Http\Controllers\GpContoller;
 use App\Http\Controllers\RoController;
 use App\Http\Controllers\RomdController;
 use App\Http\Controllers\Secretariat\CoEvaluationController;
@@ -32,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     // });
     Route::get('/regional-operations-management-division', [RomdController::class, 'fetchBROSubmission'])->name('romd.progress');
     Route::get('/home', [RomdController::class, 'home'])->name('home');
+    Route::get('/evaluation/{officeId}', [RomdController::class, 'getEvaluationData']);
+    Route::get('/galing-probinsya', [GpContoller::class, 'getGalingProbinsyaUsers']);
     
 });
 
@@ -214,6 +217,28 @@ Route::get('/po-evaluation', function () {
 Route::get('/plo-evaluation', function () {
     return view('executive.plo-evaluate');
 })->name('/plo-evaluation');
+
+
+//Galing Probinsya Admin
+Route::get('/gpadmin-a', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-a');
+})->name('/gpadmin-a');
+
+Route::get('/gpadmin-b', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-b');
+})->name('/gpadmin-b');
+
+Route::get('/gpadmin-c', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-c');
+})->name('/gpadmin-c');
+
+Route::get('/gpadmin-d', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-d');
+})->name('/gpadmin-d');
+
+Route::get('/gpadmin-e', function () {
+    return view('romd.bestti-gp-pillars.gpadmin-e');
+})->name('/gpadmin-e');
 
 
 
