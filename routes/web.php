@@ -219,7 +219,14 @@ Route::get('/plo-evaluation', function () {
 })->name('/plo-evaluation');
 
 
-//Galing Probinsya Admin
+
+
+
+
+
+
+//Galing Probinsya Admin 
+
 Route::get('/gpadmin-a', function () {
     return view('romd.bestti-gp-pillars.gpadmin-a');
 })->name('/gpadmin-a');
@@ -239,6 +246,60 @@ Route::get('/gpadmin-d', function () {
 Route::get('/gpadmin-e', function () {
     return view('romd.bestti-gp-pillars.gpadmin-e');
 })->name('/gpadmin-e');
+
+
+
+
+
+
+
+
+
+
+//Best TRAINING INSTITUTION ADMIN STC/RTC TAS
+Route::get('/besttiadmin-rtcstctas-a', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-a');
+})->name('/besttiadmin-rtcstctas-a');
+
+Route::get('/besttiadmin-rtcstctas-b', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-b');
+})->name('/besttiadmin-rtcstctas-b');
+
+Route::get('/besttiadmin-rtcstctas-c', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-c');
+})->name('/besttiadmin-rtcstctas-c');
+
+Route::get('/besttiadmin-rtcstctas-d', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-d');
+})->name('/besttiadmin-rtcstctas-d');
+
+Route::get('/besttiadmin-rtcstctas-e', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-e');
+})->name('/besttiadmin-rtcstctas-e');
+
+
+
+//Best TRAINING INSTITUTION ADMIN PTC
+Route::get('/besttiadmin-ptc-a', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-ptc-a');
+})->name('/besttiadmin-ptc-a');
+
+Route::get('/besttiadmin-ptc-b', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-ptc-b');
+})->name('/besttiadmin-ptc-b');
+
+Route::get('/besttiadmin-ptc-c', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-ptc-c');
+})->name('/besttiadmin-ptc-c');
+
+Route::get('/besttiadmin-ptc-d', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-ptc-d');
+})->name('/besttiadmin-ptc-d');
+
+Route::get('/besttiadmin-ptc-e', function () {
+    return view('romd.bestti-gp-pillars.besttiadmin-ptc-e');
+})->name('/besttiadmin-ptc-e');
+
 
 
 

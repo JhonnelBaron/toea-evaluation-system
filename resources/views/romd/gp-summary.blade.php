@@ -117,6 +117,22 @@
             height: 15px;
             margin-right: 8px;
         }
+        .popover {
+            position: fixed;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1;
+        }
+
+        .hoverable:hover .popover {
+            display: block;
+        }
+
+
 
     </style>
 </head>
@@ -128,7 +144,7 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             {{-- <div class="legend ml-7">
@@ -192,8 +208,9 @@
                                 <th class="px-6 py-3 bg-TiffanyBlue"></th>
                                 <th class="px-6 py-2 bg-TiffanyBlue">Nominees</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Grouping</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Final Score</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Self Rating</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score ROMO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Remarks</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluator</th>
@@ -209,8 +226,42 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="eval px-3 py-3">{{ $user->evaluated_score }}</td>
-                                <td class="px-3 py-3"></td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreSelf }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>            
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreRO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreROMO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
@@ -224,8 +275,42 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="eval px-3 py-3">{{ $user->evaluated_score }}</td>
-                                <td class="px-3 py-3"></td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreSelf }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>            
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreRO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreROMO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
@@ -240,8 +325,42 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="eval px-3 py-3">{{ $user->evaluated_score }}</td>
-                                <td class="px-3 py-3"></td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreSelf }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>            
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreRO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScoreROMO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria B: {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria C: {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria D: {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score }}</p>
+                                            <p>Criteria E: {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score }}</p>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
@@ -276,7 +395,14 @@
                 });
                 
             });
+            var popovers = document.querySelectorAll('.hoverable');
+            popovers.forEach(function (popover) {
+                new Flowbite.Popover(popover);
+            });
         });
+
+
+
 
         
     </script>
