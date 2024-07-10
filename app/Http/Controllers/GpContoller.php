@@ -10,8 +10,11 @@ class GpContoller extends Controller
     public function getGalingProbinsyaUsers()
     {
         // Fetch data from the users table where awardings column has the value 'Galing_Probinsya'
-        $users = DB::table('users')->where('awardings', 'Galing_Probinsya')->get();
-
+        $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
+        ->whereNotNull('endorsement_status')
+        ->where('endorsement_status', '!=', '')
+        ->get();
+        
         // Function to get the evaluated score for a user
         $getEvaluatedScore = function($user_id) {
             $tables = [
@@ -22,18 +25,55 @@ class GpContoller extends Controller
                 'galing_probinsya_e_parts'
             ];
 
-            $totalScore = 0;
+            $totalScoreSelf = 0;
+            $totalScoreRO = 0;
+            $totalScoreROMO = 0;
+            $breakdown = [];
 
+            // foreach ($tables as $table) {
+            //     $totalScoreSelf += DB::table($table)->where('user_id', $user_id)->sum('total_initial_score');
+            //     $totalScoreRO += DB::table($table)->where('user_id', $user_id)->sum('total_final_score');
+            //     $totalScoreROMO += DB::table($table)->where('user_id', $user_id)->sum('total_rfinal_score');
+
+            //     $breakdown = DB::table($table)->select('total_initial_score', 'total_final_score', 'total_rfinal_score')
+            //     ->where('user_id', $user_id)
+            //     ->first();
+
+            //     $userBreakdown = [
+            //         'total_initial_score' => $breakdown->total_initial_score,
+            //         'total_final_score' => $breakdown->total_final_score,
+            //         'total_rfinal_score' => $breakdown->total_rfinal_score,
+            //     ];
+
+            //     $breakdown['breakdown'][$table] = $userBreakdown;
+            // }
             foreach ($tables as $table) {
-                $totalScore += DB::table($table)->where('user_id', $user_id)->sum('total_final_score');
+                $totalScoreSelf += DB::table($table)->where('user_id', $user_id)->sum('total_initial_score');
+                $totalScoreRO += DB::table($table)->where('user_id', $user_id)->sum('total_final_score');
+                $totalScoreROMO += DB::table($table)->where('user_id', $user_id)->sum('total_rfinal_score');
+
+                $scores = DB::table($table)->select('total_initial_score', 'total_final_score', 'total_rfinal_score')
+                    ->where('user_id', $user_id)
+                    ->first();
+
+                $breakdown[$table] = $scores;
             }
 
-            return $totalScore;
+            return [
+                'totalScoreSelf' => $totalScoreSelf,
+                'totalScoreRO' => $totalScoreRO,
+                'totalScoreROMO' => $totalScoreROMO,
+                'breakdown' => $breakdown
+            ];
         };
 
         // Add evaluated scores to users
         foreach ($users as $user) {
-            $user->evaluated_score = $getEvaluatedScore($user->id);
+            $scores = $getEvaluatedScore($user->id);
+            $user->scores = $scores;
+            $user->totalScoreSelf = $scores['totalScoreSelf'];
+            $user->totalScoreRO = $scores['totalScoreRO'];
+            $user->totalScoreROMO = $scores['totalScoreROMO'];
         }
 
         $smallProvinces = $users->filter(function ($user) {
