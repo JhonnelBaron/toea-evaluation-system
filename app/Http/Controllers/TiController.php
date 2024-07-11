@@ -88,9 +88,9 @@ class TiController extends Controller
         // Fetch data from the users table where awardings column has the value 'Best_TI'
         $users = DB::table('users')->where('awardings', 'Best_TI')
             ->whereNotNull('endorsement_status')
-            ->where('endorsement_status', '!=', '')
-            ->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
-            ->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
+            ->where('endorsement_status', 'Endorsed by Regional Office')
+            //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
+            //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
             ->get();
 
         if ($users->isEmpty()) {

@@ -12,9 +12,9 @@ class GpContoller extends Controller
         // Fetch data from the users table where awardings column has the value 'Galing_Probinsya'
         $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
         ->whereNotNull('endorsement_status')
-        ->where('endorsement_status', '!=', '')
-        ->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
-        ->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
+        ->where('endorsement_status', 'Endorsed by Regional Office')
+        //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
+        //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
         ->get();
         
         // Function to get the evaluated score for a user
