@@ -83,7 +83,7 @@ class TiController extends Controller
     //         'ptc' => $ptc,
     //     ]);
     // }
-    public function getTiUsers()
+    public function getTiUsers(Request $request)
     {
         // Fetch data from the users table where awardings column has the value 'Best_TI'
         $users = DB::table('users')->where('awardings', 'Best_TI')
@@ -156,6 +156,24 @@ class TiController extends Controller
             $user->totalScoreRO = $scores['totalScoreRO'];
             $user->totalScoreROMO = $scores['totalScoreROMO'];
         }
+        $filterBy = $request->input('filterBy', 'self-rating');
+
+        switch ($filterBy) {
+            case 'self-rating':
+                $users = $users->sortByDesc('totalScoreSelf');
+                break;
+            case 'po':
+                $users = $users->sortByDesc('totalScorePO');
+                break;
+            case 'ro':
+                $users = $users->sortByDesc('totalScoreRO');
+                break;
+            case 'romo':
+                $users = $users->sortByDesc('totalScoreROMO');
+                break;
+            default:
+                $users = $users->sortByDesc('totalScoreSelf');
+        }
 
         $rtcStc = $users->filter(function ($user) {
             return $user->category == 'RTC-STC';
@@ -174,6 +192,7 @@ class TiController extends Controller
             'rtcStc' => $rtcStc,
             'tas' => $tas,
             'ptc' => $ptc,
+            'filterBy' => $filterBy,
         ]);
     }
 }
