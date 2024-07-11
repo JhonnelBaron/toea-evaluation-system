@@ -17,6 +17,7 @@ use App\Http\Controllers\Secretariat\PiadEvaluationController;
 use App\Http\Controllers\Secretariat\PloEvaluationController;
 use App\Http\Controllers\Secretariat\PoEvaluationController;
 use App\Http\Controllers\Secretariat\RomoEvaluationController;
+use App\Http\Controllers\TiController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [RomdController::class, 'home'])->name('home');
     Route::get('/evaluation/{officeId}', [RomdController::class, 'getEvaluationData']);
     Route::get('/galing-probinsya', [GpContoller::class, 'getGalingProbinsyaUsers']);
+    Route::get('/best-ti', [TiController::class, 'getTiUsers']);
     
 });
 
