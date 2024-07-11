@@ -23,12 +23,6 @@ class CoEvaluationController extends Controller
             'b1e_remarks' => 'nullable|string',
             'b1f' => 'nullable|integer|in:0,15',
             'b1f_remarks' => 'nullable|string',
-            'b2a41' => 'nullable|integer|in:0,3,6',
-            'b2a41_remarks' => 'nullable|string',
-            'b2a42' => 'nullable|integer|in:0,7',
-            'b2a42_remarks' => 'nullable|string',
-            'b2a43' => 'nullable|integer|in:0,10',
-            'b2a43_remarks' => 'nullable|string',
             'b2c1' => 'nullable|integer|in:0,15',
             'b2c1_remarks' => 'nullable|string',
             'b2c2' => 'nullable|integer|in:0,15',
@@ -83,12 +77,6 @@ class CoEvaluationController extends Controller
             'b1e_remarks' => $validatedData['b1e_remarks'] ?? null,
             'b1f' => $validatedData['b1f'] ?? null,
             'b1f_remarks' => $validatedData['b1f_remarks'] ?? null,
-            'b2a41' => $validatedData['b2a41'] ?? null,
-            'b2a41_remarks' => $validatedData['b2a41_remarks'] ?? null,
-            'b2a42' => $validatedData['b2a42'] ?? null,
-            'b2a42_remarks' => $validatedData['b2a42_remarks'] ?? null,
-            'b2a43' => $validatedData['b2a43'] ?? null,
-            'b2a43_remarks' => $validatedData['b2a43_remarks'] ?? null,
             'b2c1' => $validatedData['b2c1'] ?? null,
             'b2c1_remarks' => $validatedData['b2c1_remarks'] ?? null,
             'b2c2' => $validatedData['b2c2'] ?? null,
@@ -119,8 +107,8 @@ class CoEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1c' => null, 'b1d' => null, 'b1e' => null, 'b1f' => null, 'b2a41' => null, 'b2a42' => null,
-            'b2a43' => null, 'b2c1' => null, 'b2c2' => null, 'b2c3' => null, 'b2c4' => null,'b2c5' => null, 'b2c6' => null,
+            'b1c' => null, 'b1d' => null, 'b1e' => null, 'b1f' => null,
+            'b2c1' => null, 'b2c2' => null, 'b2c3' => null, 'b2c4' => null,'b2c5' => null, 'b2c6' => null,
             'b2e11a' => null, 'b2e11b' => null, 'b2e12a' => null, 'b2e13b' => null, 'b2e12b' => null, 'b2e13a' => null, 'd1' => null,
         ];
 
@@ -182,21 +170,6 @@ class CoEvaluationController extends Controller
                 $evaluationData['b1f'] = $existingEvaluation->b1f;
                 $evaluationData['b1f_remarks'] = $existingEvaluation->b1f_remarks;
                 $disabledFields[] = 'b1f';
-            }
-            if ($existingEvaluation->b2a41 !== null) {
-                $evaluationData['b2a41'] = $existingEvaluation->b2a41;
-                $evaluationData['b2a41_remarks'] = $existingEvaluation->b2a41_remarks;
-                $disabledFields[] = 'b2a41';
-            }
-            if ($existingEvaluation->b2a42 !== null) {
-                $evaluationData['b2a42'] = $existingEvaluation->b2a42;
-                $evaluationData['b2a42_remarks'] = $existingEvaluation->b2a42_remarks;
-                $disabledFields[] = 'b2a42';
-            }
-            if ($existingEvaluation->b2a43 !== null) {
-                $evaluationData['b2a43'] = $existingEvaluation->b2a43;
-                $evaluationData['b2a43_remarks'] = $existingEvaluation->b2a43_remarks;
-                $disabledFields[] = 'b2a43';
             }
             if ($existingEvaluation->b2c1 !== null) {
                 $evaluationData['b2c1'] = $existingEvaluation->b2c1;

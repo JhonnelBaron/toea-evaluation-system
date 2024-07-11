@@ -95,4 +95,9 @@ class ExecutiveOfficeAccount extends Authenticatable
     {
         return $this->hasMany(IctoEvaluation::class, 'uploader_id');
     }
+
+    public function wsEval()
+    {
+        return $this->hasMany(WsEvaluation::class, 'uploader_id');
+    }
 }

@@ -18,6 +18,7 @@ use App\Models\PoEvaluation;
 use App\Models\ProgressSubmission;
 use App\Models\Region;
 use App\Models\RomoEvaluation;
+use App\Models\WsEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -70,6 +71,9 @@ class BroEvaluationController extends Controller
                 break;
             case 'ICTO':
                 $region->evaluations = $region->ictoEval;
+                break;
+            case 'WS':
+                $region->evaluations = $region->wsEval;
                 break;
             default:
                 $region->evaluations = collect();
@@ -196,6 +200,10 @@ class BroEvaluationController extends Controller
                 $previousEvaluation = IctoEvaluation::where('uploader_id', $user->id)
                 ->where('region_id', $region->id)
                 ->first();
+            case 'WS':
+                $previousEvaluation = WsEvaluation::where('uploader_id', $user->id)
+                ->where('region_id', $region->id)
+                ->first();
                 break;
             default:
                 return response('Invalid executive office');
@@ -240,6 +248,10 @@ class BroEvaluationController extends Controller
         }elseif($user->executive_office === 'ICTO')
         {
             return view('executive.icto-evaluate', ['regionId' => $id,
+            'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
+        }elseif($user->executive_office === 'WS')
+        {
+            return view('executive.ws-evaluate', ['regionId' => $id,
             'regionName' => $regionName, 'previousEvaluation' => $previousEvaluation]);
         }
     }
@@ -433,6 +445,11 @@ class BroEvaluationController extends Controller
                 break;
             case 'ICTO':
                 IctoEvaluation::updateOrCreate(
+                    ['region_id' => $regionId, 'uploader_id' => $user->id],
+                    ['final_remarks' => $finalRemarks]
+                );
+            case 'WS':
+                WsEvaluation::updateOrCreate(
                     ['region_id' => $regionId, 'uploader_id' => $user->id],
                     ['final_remarks' => $finalRemarks]
                 );

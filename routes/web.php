@@ -18,6 +18,7 @@ use App\Http\Controllers\Secretariat\PloEvaluationController;
 use App\Http\Controllers\Secretariat\PoEvaluationController;
 use App\Http\Controllers\Secretariat\RomoEvaluationController;
 use App\Http\Controllers\TiController;
+use App\Http\Controllers\WsEvaluationController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -220,9 +221,9 @@ Route::get('/plo-evaluation', function () {
     return view('executive.plo-evaluate');
 })->name('/plo-evaluation');
 
-Route::get('/worldSkillsEvaluate', function () {
-    return view('executive.worldSkillsEvaluate');
-})->name('/worldSkillsEvaluate');
+// Route::get('/worldSkillsEvaluate', function () {
+//     return view('executive.worldSkillsEvaluate');
+// })->name('/worldSkillsEvaluate');
 
 
 
@@ -327,6 +328,7 @@ Route::post('/submit-evaluation-po', [PoEvaluationController::class, 'poSubmit']
 Route::post('/submit-evaluation-plo', [PloEvaluationController::class, 'ploSubmit'])->name('plo_evaluation');
 Route::post('/submit-evaluation-romo', [RomoEvaluationController::class, 'romoSubmit'])->name('romo_evaluation');
 Route::post('/submit-evaluation-icto', [IctoEvaluationController::class, 'ictoSubmit'])->name('icto_evaluation');
+Route::post('/submit-evaluation-ws', [WsEvaluationController::class, 'wsSubmit'])->name('ws_evaluation');
 
 Route::get('/upload-file/{region}', [RoController::class, 'index'])->name('fetch-upload.file');
 Route::get('/region-folders', [RoController::class, 'showFolders'])->name('region.folders');

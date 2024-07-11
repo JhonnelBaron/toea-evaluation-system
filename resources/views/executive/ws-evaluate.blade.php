@@ -198,14 +198,14 @@
             </div>
             
         </div>
-        <h1 type="hidden"></h1>
+        <h1 type="hidden">{{ $regionName }} {{ $regionId }}</h1>
         <div class="content">
             <div class="box-content">
-                <form id="saveChangesForm" method="POST" action="{>
+                <form id="saveChangesForm" method="POST" action="{{ route('ws_evaluation') }}">
                     @csrf
-                    <input type="hidden" name="region_id" value=">
+                    <input type="hidden" name="region_id" value="{{ $regionId }}">
                     <div class=" pb-4 pt-4 text-center text-3xl text-black font-sans flex items-center justify-center border-b-2 border-solid border-black">
-                        <b></b>
+                        <b>{{ $regionName }}</b>
                     </div>
                 <!-- THIS IS A -->
                 <table>
@@ -230,26 +230,14 @@
                             <td class="align-bottom"><hr></td>
 
                         </tr>
-                        
-                        <tr>
-                            <td class="align-top">B.1.</td>
-                            <td class="align-top">
-                                Performance based on the General Appropriations Act (GAA)
-                            <td class="align-top"><i></i></td>
-                            <td class="align-top"></td>
-                            <td class="align-top"></td>
-                            <td class="align-top"></td>
-                        </tr>
-
-
                             <tr>
                                 <td class="align-top">B.2.</td>
                                 <td class="align-top">
-                                    <b style="vertical-align: bottom">Implementation of the TESDA Corporate Plan<hr></b>
-                                    <td class="align-bottom"><i><hr></i></td>
-                                    <td class="align-bottom"><hr></td>
-                                    <td class="align-bottom"><hr></td>
-                                    <td class="align-bottom"><hr></td>
+                                    <b style="vertical-align: bottom">Implementation of the TESDA Corporate Plan</b>
+                                    <td class="align-bottom"><i></i></td>
+                                    <td class="align-bottom"></td>
+                                    <td class="align-bottom"></td>
+                                    <td class="align-bottom"></td>
                             </tr>
 
                             <tr>
@@ -283,30 +271,20 @@
                                 <td class="align-top">
                                     <ul><i>*Terminal Reports/After Activity reports <br>Official list of winners</i></ul>
                                 </td>
-                                {{-- <td class="align-top">
-                                    <input type="number" name="b2a41" id="b2a41" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                     value="{{ $previousEvaluation ? $previousEvaluation->b2a41 : '' }}">
-                                    @error('b2a41')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
-                                @enderror
-                                </td>
-                                <td class="align-top"><textarea name="b2a41_remarks" id="b2a41_remarks" class="comments" placeholder="Comment"
-                                    </textarea>
-                                </td> --}}
                                 <td class="align-top">
-                                    <select name="b2a41" id="b2a41" class="px-3 py-2 border rounded-md w-20 vertical-align: center" >
-                                        <option value="" option>
-                                        <option value="0" >0</option>
-                                        <option value="3" >3</option>
-                                        <option value="6" >6</option>
+                                    <select name="b2a41" id="b2a41" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2a41 !== null) disabled @endif>
+                                        <option value="" @if($previousEvaluation && $previousEvaluation->b2a41 === '') selected @endif></option>
+                                        <option value="0" @if($previousEvaluation && $previousEvaluation->b2a41 == '0') selected @endif>0</option>
+                                        <option value="3" @if($previousEvaluation && $previousEvaluation->b2a41 == '3') selected @endif>3</option>
+                                        <option value="6" @if($previousEvaluation && $previousEvaluation->b2a41 == '6') selected @endif>6</option>
                                     </select>
                                     @error('b2a41')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
+                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                     @enderror
                                 </td>
                                 <td class="align-top">
-                                    <textarea name="b2a41_remarks" id="b2a41_remarks" class="comments" placeholder="Comment">
-                                    </textarea>
+                                    <textarea name="b2a41_remarks" id="b2a41_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a41 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a41_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
@@ -326,29 +304,19 @@
                                 <td class="align-top">
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
-                                {{-- <td class="align-top">
-                                    <input type="number" name="b2a42" id="b2a42" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                     value="{{ $previousEvaluation ? $previousEvaluation->b2a42 : '' }}">
-                                    @error('b2a42')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
-                                @enderror
-                                </td>
-                                <td class="align-top"><textarea name="b2a42_remarks" id="b2a42_remarks" class="comments" placeholder="Comment"
-                                </textarea>
-                            </td> --}}
                             <td class="align-top">
-                                <select name="b2a42" id="b2a42" class="px-3 py-2 border rounded-md w-20 vertical-align: center" >
-                                    <option value="" option>
-                                    <option value="0" >0</option>
-                                    <option value="7" >7</option>
+                                <select name="b2a42" id="b2a42" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2a42 !== null) disabled @endif>
+                                    <option value="" @if($previousEvaluation && $previousEvaluation->b2a42 === '') selected @endif></option>
+                                    <option value="0" @if($previousEvaluation && $previousEvaluation->b2a42 == '0') selected @endif>0</option>
+                                    <option value="7" @if($previousEvaluation && $previousEvaluation->b2a42 == '7') selected @endif>7</option>
                                 </select>
                                 @error('b2a42')
-                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
+                                <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                 @enderror
                             </td>
                             <td class="align-top">
-                                <textarea name="b2a42_remarks" id="b2a42_remarks" class="comments" placeholder="Comment">
-                                </textarea>
+                                <textarea name="b2a42_remarks" id="b2a42_remarks" class="comments" placeholder="Comment"
+                                @if($previousEvaluation && $previousEvaluation->b2a42 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a42_remarks : '' }}</textarea>
                             </td>
                             </tr>
 
@@ -368,35 +336,46 @@
                                 <td class="align-top">
                                     <ul><i>*Awards received (plaque or medal)</i></ul>
                                 </td>
-                                {{-- <td class="align-top">
-                                    <input type="number" name="b2a43" id="b2a43" class="px-3 py-2 border rounded-md w-20 vertical-align: center" #f9f9f9;"
-                                     value="{{ $previousEvaluation ? $previousEvaluation->b2a43 : '' }}">
-                                    @error('b2a43')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
-                                @enderror
-                                </td>
-                                <td class="align-top"><textarea name="b2a43_remarks" id="b2a43_remarks" class="comments" placeholder="Comment"
-                                    </textarea>
-                                </td> --}}
                                 <td class="align-top">
-                                    <select name="b2a43" id="b2a43" class="px-3 py-2 border rounded-md w-20 vertical-align: center" >
-                                        <option value="" option>
-                                        <option value="0" >0</option>
-                                        <option value="10" >10</option>
+                                    <select name="b2a43" id="b2a43" class="px-3 py-2 border rounded-md w-20 vertical-align: center" @if($previousEvaluation && $previousEvaluation->b2a43 !== null) disabled @endif>
+                                        <option value="" @if($previousEvaluation && $previousEvaluation->b2a43 === '') selected @endif></option>
+                                        <option value="0" @if($previousEvaluation && $previousEvaluation->b2a43 == '0') selected @endif>0</option>
+                                        <option value="10" @if($previousEvaluation && $previousEvaluation->b2a43 == '10') selected @endif>10</option>
                                     </select>
                                     @error('b2a43')
-                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small"></div>
+                                    <div class="alert alert-danger" style="max-width: 400px; font-size:x-small">{{ $message }}</div>
                                     @enderror
                                 </td>
                                 <td class="align-top">
-                                    <textarea name="b2a43_remarks" id="b2a43_remarks" class="comments" placeholder="Comment">
-                                    </textarea>
+                                    <textarea name="b2a43_remarks" id="b2a43_remarks" class="comments" placeholder="Comment"
+                                    @if($previousEvaluation && $previousEvaluation->b2a43 !== null) readonly @endif>{{ $previousEvaluation ? $previousEvaluation->b2a43_remarks : '' }}</textarea>
                                 </td>
                             </tr>
 
+                        <tr class="border-b-2 border-black">
+                            <td></td>
+                            <td class="text-right"><b><i>Total Scores: </i></b></td>
+                            <td><b>23</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </script>    
                     </tbody>
                 </table>
-                '))
+                @if(session('success'))
                 <div id="successMessage" class="fixed z-50 bottom-0 right-0 bg-customGreen text-white p-4 text-center rounded-md">
                     {{ session('success') }}
                 </div>
@@ -412,10 +391,11 @@
                         }, 1000); // Wait for 1 second for fade out before removing
                     }, 3000); // Show the message for 3 seconds
                 </script>
+            @endif
                 <td class="align-top">
                     <div class="flex justify-end space-x-4">
                         <div class="mr-7"><b>TOTAL: <span class="text-lg">{{$previousEvaluation->overall_total_score ?? 0}}</span></b></div>
-                        <a href="{, ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
+                        <a href="{{ route('upload.file', ['region' => $regionId]) }}" class="text-xs btn btn-primary transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer">
                             Upload Files
                             <input type="file" class="hidden" />
                           </a>

@@ -43,6 +43,9 @@
             case 'ICTO':
                 echo 'Information and Communication Technology Office';
                 break;
+            case 'WS':
+                echo 'World Skills';
+                break;
             default:
                 echo 'Unknown';
         }
