@@ -225,7 +225,7 @@
                             @foreach ($rtcStc as $user)
                             <tr class="region-row small ">
                                 <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
                                 <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreSelf }}
@@ -286,7 +286,7 @@
                             @foreach ($tas as $user)
                             <tr class="region-row medium ">
                                 <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
                                 <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreSelf }}
@@ -348,7 +348,7 @@
                             @foreach ($ptc as $user)
                             <tr class="region-row large">
                                 <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
                                 <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreSelf }}
