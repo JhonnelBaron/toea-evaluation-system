@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class GpContoller extends Controller
 {
-    public function getGalingProbinsyaUsers()
+    public function getGalingProbinsyaUsers(Request $request)
     {
         // Fetch data from the users table where awardings column has the value 'Galing_Probinsya'
         $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
@@ -61,6 +61,25 @@ class GpContoller extends Controller
             $user->totalScoreROMO = $scores['totalScoreROMO'];
         }
 
+        $filterBy = $request->input('filterBy', 'self-rating');
+
+        switch ($filterBy) {
+            case 'self-rating':
+                $users = $users->sortByDesc('totalScoreSelf');
+                break;
+            case 'po':
+                $users = $users->sortByDesc('totalScorePO');
+                break;
+            case 'ro':
+                $users = $users->sortByDesc('totalScoreRO');
+                break;
+            case 'romo':
+                $users = $users->sortByDesc('totalScoreROMO');
+                break;
+            default:
+                $users = $users->sortByDesc('totalScoreSelf');
+        }
+
         $smallProvinces = $users->filter(function ($user) {
             return $user->category == 'Small_Province';
         });
@@ -78,6 +97,7 @@ class GpContoller extends Controller
             'smallProvinces' => $smallProvinces,
             'mediumProvinces' => $mediumProvinces,
             'largeProvinces' => $largeProvinces,
+            'filterBy' => $filterBy
         ]);
     }
 }

@@ -46,6 +46,12 @@
             background-color: #90cdf4;
         }
 
+        /* Add this to your custom CSS file if needed */
+        .transition-transform {
+        transition: transform 0.3s ease-in-out;
+        }
+
+
     </style>
 </head>
 
@@ -69,14 +75,14 @@
                 <!-- Example card -->
                 <div class="col-span-1">
                     {{-- ANALYSIS CHART --}}
-                    <div class="content bg-white shadow-md h-30 flex flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+                    <div class="content bg-white shadow-md h-30 flex flex-col items-center justify-center rounded dark:bg-gray-800">
                         <b>OVERALL ACCOMPLISHMENT SUMMARY</b>
                         <div class="container mx-auto">
                             <div id="chart"></div>
                         </div>
                     </div>
                 
-                    <div class="content bg-white shadow-md h-24 bg-white shadow-md flex flex-col items-center justify-center rounded dark:bg-gray-800">
+                    <div class="content bg-white shadow-md h-24 flex flex-col items-center justify-center rounded dark:bg-gray-800">
                         <p class="text-4xl text-blue-900 font-bold">
                             LIST OF OFFICES
                         </p>
@@ -293,27 +299,27 @@
                     @endforeach
                     </div>
 
-                    <div id="office-details-container" class="text-gray-700 fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-poppins transition ease-in-out duration-300">
+                    <div id="office-details-container" class="text-gray-700 fixed top-10 right-14 w-3/5 h-5/6 bg-white shadow-lg overflow-y-auto z-50 hidden font-poppins transition-transform transform translate-y-full ease-in-out duration-300">
                         <div class="p-4">
-                            <span class="fixed top-12 right-20">
-                                <button id="close-details" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                    Close
-                                </button>
-                            </span>
-                            <h2 class="text-xl font-bold"></h2>
-                            <hr>
-                            <div id="office-details-content">
-                                <table class="table-auto w-full">
-                                    <thead>
-                                        <tr>
-                                            <th>Region Name</th>
-                                            <th>Percentage</th>
-                                            <th>Evaluated</th>
-                                            <th>Score</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="details-table-body">
+                          <span class="fixed top-2 right-5">
+                            <button id="close-details" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-8 py-2 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                              Close
+                            </button>
+                          </span>
+                          <h2 class="text-xl font-bold"></h2>
+                          <hr>
+                          <div id="office-details-content">
+                            <table class="table-auto w-full">
+                              <thead>
+                                <tr>
+                                  <th>Region Name</th>
+                                  <th>Percentage</th>
+                                  <th>Evaluated</th>
+                                  <th>Score</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody id="details-table-body">
                                         
                                         {{-- @foreach ($smallRegions as $region)
                                         <tr class="category-small">
@@ -450,8 +456,7 @@
             }
         </script>
 
-        <script>
-            // document.addEventListener('DOMContentLoaded', function() {
+        {{-- // document.addEventListener('DOMContentLoaded', function() {
             //     const detailsContainer = document.getElementById('office-details-container');
             //     const closeDetailsButton = document.getElementById('close-details');
 
@@ -469,77 +474,87 @@
             //     closeDetailsButton.addEventListener('click', function() {
             //         detailsContainer.classList.add('hidden');
             //     });
-            // });
+            // }); --}}
 
+        <script>
+            
             document.addEventListener('DOMContentLoaded', function() {
-        const detailsContainer = document.getElementById('office-details-container');
-        const officeDetailsContent = document.getElementById('office-details-content');
-        const closeDetailsButton = document.getElementById('close-details');
+    const detailsContainer = document.getElementById('office-details-container');
+    const officeDetailsContent = document.getElementById('office-details-content');
+    const closeDetailsButton = document.getElementById('close-details');
 
-        // Add event listener to each office box
-        document.querySelectorAll('.office-box').forEach(box => {
-            box.addEventListener('click', function() {
-                const officeId = box.dataset.officeId; // Fetch office ID from data attribute
+    // Add event listener to each office box
+    document.querySelectorAll('.office-box').forEach(box => {
+        box.addEventListener('click', function() {
+            const officeId = box.dataset.officeId; // Fetch office ID from data attribute
 
-                // Fetch data from server using Fetch API or Axios
-                fetch(`/evaluation/${officeId}`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Update office details in the container
-                        let tableHTML = '';
+            // Fetch data from server using Fetch API or Axios
+            fetch(`/evaluation/${officeId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update office details in the container
+                    let tableHTML = '';
 
-                        // Assuming data is an array of evaluations
-                        data.forEach(evaluation => {
-                            tableHTML += `
-                                <tr>
-                                    <td>${evaluation.region.region_name}</td>
-                                    <td>${evaluation.progress_percentage}%</td>
-                                    <td>${evaluation.overall_total_filled} / ${evaluation.total_fields}</td>
-                                    <td>${evaluation.overall_total_score}</td>
-                                    <td>${evaluation.final_remarks}</td>
-                                </tr>
-                            `;
-                        });
-
-                        // Render the table inside officeDetailsContent
-                        officeDetailsContent.innerHTML = `
-                            <table class="table-auto w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="px-4 py-2">Region Name</th>
-                                        <th class="px-4 py-2">Percentage</th>
-                                        <th class="px-4 py-2">Evaluated</th>
-                                        <th class="px-4 py-2">Score</th>
-                                        <th class="px-4 py-2">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${tableHTML}
-                                </tbody>
-                            </table>
+                    // Assuming data is an array of evaluations
+                    data.forEach(evaluation => {
+                        tableHTML += `
+                            <tr>
+                                <td>${evaluation.region.region_name}</td>
+                                <td>${evaluation.progress_percentage}%</td>
+                                <td>${evaluation.overall_total_filled} / ${evaluation.total_fields}</td>
+                                <td>${evaluation.overall_total_score}</td>
+                                <td>${evaluation.final_remarks}</td>
+                            </tr>
                         `;
-                    })
-                    .catch(error => console.error('Error fetching office details:', error));
+                    });
 
-                // Update the h2 with the clicked office name
-                const officeName = box.dataset.office;
-                const officeDetailsTitle = detailsContainer.querySelector('h2');
-                officeDetailsTitle.textContent = officeName;
+                    // Render the table inside officeDetailsContent
+                    officeDetailsContent.innerHTML = `
+                        <table class="table-auto w-full">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2">Region Name</th>
+                                    <th class="px-4 py-2">Percentage</th>
+                                    <th class="px-4 py-2">Evaluated</th>
+                                    <th class="px-4 py-2">Score</th>
+                                    <th class="px-4 py-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableHTML}
+                            </tbody>
+                        </table>
+                    `;
+                })
+                .catch(error => console.error('Error fetching office details:', error));
 
-                detailsContainer.classList.remove('hidden'); // Show details container
+            // Update the h2 with the clicked office name
+            const officeName = box.dataset.office;
+            const officeDetailsTitle = detailsContainer.querySelector('h2');
+            officeDetailsTitle.textContent = officeName;
+
+            // Show details container with transition
+            detailsContainer.classList.remove('hidden');
+            setTimeout(() => {
+                detailsContainer.classList.remove('translate-y-full');
+            }, 10); // Slight delay to allow the class to apply
             });
         });
 
-        // Add event listener to close button
-        closeDetailsButton.addEventListener('click', function() {
-            detailsContainer.classList.add('hidden'); // Hide details container
+            // Add event listener to close button
+            closeDetailsButton.addEventListener('click', function() {
+                detailsContainer.classList.add('translate-y-full');
+                detailsContainer.addEventListener('transitionend', () => {
+                    detailsContainer.classList.add('hidden');
+                }, { once: true });
+            });
         });
-    });
+
         </script>
 
 </body>

@@ -163,6 +163,14 @@
             </div> --}}
 
             <div class="mx-auto flex flex-wrap items-center justify-between">
+                <div class="ml-8 flex items-center">
+                    <label for="filterBy" class="text-black mr-2">Rank</label>
+                    <select id="filterBy" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
+                        <option value="self-rating" @if($filterBy === 'self-rating') selected @endif>Self Rating</option>
+                        <option value="ro" @if($filterBy === 'ro') selected @endif>RO Score</option>
+                        <option value="romo" @if($filterBy === 'romo') selected @endif>ROMO Score</option>
+                    </select>
+                </div>
                 <div class="ml-8 flex items-center"> <!-- Adjust ml-8 if needed -->
                     <label for="categoryFilter" class="text-black mr-2">Category:</label>
                     <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
@@ -172,13 +180,13 @@
                         <option value="large">Large</option>
                     </select>
                 </div>
-                <div class="ml-8 flex items-center">
+                {{--<div class="ml-8 flex items-center">
                     <label for="filterBy" class="text-black mr-2">Filter</label>
                     <select id="filterBy" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
                         <option value="normal">List</option>
                         <option value="rank">Rank</option>
                     </select>
-                </div>
+                </div> --}}
                 <div class="flex-grow flex items-center justify-center" style="margin-right: 20.5rem;"> <!-- Adjust this value to move the tabs to the left -->
                 {{-- <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left --> --}}
                     <ul class="flex">
@@ -394,6 +402,17 @@
                     }
                 });
                 
+            });
+
+            
+            //rank filter
+            const filterBySelect = document.getElementById('filterBy');
+
+            filterBySelect.addEventListener('change', function () {
+                const selectedRank = filterBySelect.value.toLowerCase();
+
+                // Redirect to the backend route with the selected filterBy parameter
+                window.location.href = `/galing-probinsya?filterBy=${selectedRank}`;
             });
             // var popovers = document.querySelectorAll('.hoverable');
             // popovers.forEach(function (popover) {
