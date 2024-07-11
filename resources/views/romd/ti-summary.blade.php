@@ -144,7 +144,7 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TI</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             {{-- <div class="legend ml-7">
@@ -167,9 +167,9 @@
                     <label for="categoryFilter" class="text-black mr-2">Category:</label>
                     <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
                         <option value="all">All</option>
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
+                        <option value="small">RTC/STC</option>
+                        <option value="medium">TAS</option>
+                        <option value="large">PTC</option>
                     </select>
                 </div>
                 <div class="ml-8 flex items-center">
@@ -209,6 +209,7 @@
                                 <th class="px-6 py-2 bg-TiffanyBlue">Nominees</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Grouping</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Self Rating</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score PO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score ROMO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
@@ -221,7 +222,7 @@
                         </thead>
                         <tbody class="">
                             @php $rank = 1; @endphp
-                            @foreach ($smallProvinces as $user)
+                            @foreach ($rtcStc as $user)
                             <tr class="region-row small ">
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
@@ -230,23 +231,35 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_initial_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
-                                </td>            
+                                </td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScorePO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                        </div>
+                                    </div>
+                                </td>              
                                 <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_final_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -254,11 +267,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_rfinal_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -270,7 +283,7 @@
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
                             </tr>
                             @endforeach
-                            @foreach ($mediumProvinces as $user)
+                            @foreach ($tas as $user)
                             <tr class="region-row medium ">
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
@@ -279,23 +292,35 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_initial_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
-                                </td>            
+                                </td>
+                                <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScorePO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                        </div>
+                                    </div>
+                                </td>              
                                 <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_final_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -303,11 +328,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_a_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_b_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_c_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_d_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_tas_rtcstc_e_parts']->total_rfinal_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -320,7 +345,7 @@
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
                             </tr>
                             @endforeach
-                            @foreach ($largeProvinces as $user)
+                            @foreach ($ptc as $user)
                             <tr class="region-row large">
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
@@ -329,23 +354,35 @@
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_a_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_b_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_c_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_d_parts']->total_initial_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_e_parts']->total_initial_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>            
                                 <td class="hoverable px-3 py-3 relative">
+                                    {{ $user->totalScorePO }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_a_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_b_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_c_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_d_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_e_parts']->total_evaluation_score ?? 0 }}</span></p>
+                                        </div>
+                                    </div>
+                                </td>      
+                                <td class="hoverable px-3 py-3 relative">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_a_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_b_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_c_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_d_parts']->total_final_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_e_parts']->total_final_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -353,11 +390,11 @@
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_a_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_b_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_c_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_d_parts']->total_rfinal_score ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $user->scores['breakdown']['best_ti_ptc_e_parts']->total_rfinal_score ?? 0 }}</span></p>
                                         </div>
                                     </div>
                                 </td>
@@ -399,8 +436,7 @@
             // popovers.forEach(function (popover) {
             //     new Flowbite.Popover(popover);
             // });
-
-            document.querySelectorAll('.hoverable').forEach(item => {
+                document.querySelectorAll('.hoverable').forEach(item => {
                 item.addEventListener('mouseenter', event => {
                     const popover = item.querySelector('.popover');
                     popover.style.display = 'block';

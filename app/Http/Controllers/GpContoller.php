@@ -13,6 +13,8 @@ class GpContoller extends Controller
         $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
         ->whereNotNull('endorsement_status')
         ->where('endorsement_status', '!=', '')
+        ->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
+        ->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
         ->get();
         
         // Function to get the evaluated score for a user
@@ -30,23 +32,6 @@ class GpContoller extends Controller
             $totalScoreROMO = 0;
             $breakdown = [];
 
-            // foreach ($tables as $table) {
-            //     $totalScoreSelf += DB::table($table)->where('user_id', $user_id)->sum('total_initial_score');
-            //     $totalScoreRO += DB::table($table)->where('user_id', $user_id)->sum('total_final_score');
-            //     $totalScoreROMO += DB::table($table)->where('user_id', $user_id)->sum('total_rfinal_score');
-
-            //     $breakdown = DB::table($table)->select('total_initial_score', 'total_final_score', 'total_rfinal_score')
-            //     ->where('user_id', $user_id)
-            //     ->first();
-
-            //     $userBreakdown = [
-            //         'total_initial_score' => $breakdown->total_initial_score,
-            //         'total_final_score' => $breakdown->total_final_score,
-            //         'total_rfinal_score' => $breakdown->total_rfinal_score,
-            //     ];
-
-            //     $breakdown['breakdown'][$table] = $userBreakdown;
-            // }
             foreach ($tables as $table) {
                 $totalScoreSelf += DB::table($table)->where('user_id', $user_id)->sum('total_initial_score');
                 $totalScoreRO += DB::table($table)->where('user_id', $user_id)->sum('total_final_score');

@@ -59,8 +59,8 @@
               <ul class="absolute hidden bg-white border border-gray-200 -mt-1 py-1 w-48 rounded-md shadow-lg z-10 transition-opacity duration-500 group-hover:opacity-100">
                 <!-- Dropdown items -->
                 <li><a href="/galing-probinsya" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Summary</a></li>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Evaluate</a></li>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Category</a></li>
+                {{-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Evaluate</a></li> --}}
+                {{-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Category</a></li> --}}
                 <!-- Add more items as needed -->
               </ul>
             </div>
@@ -70,9 +70,9 @@
               </a>
               <ul class="absolute hidden bg-white border border-gray-200 -mt-1 py-1 w-48 rounded-md shadow-lg z-10">
                 <!-- Dropdown items -->
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Summary</a></li>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Evaluate</a></li>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Category</a></li>
+                <li><a href="/best-ti" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Summary</a></li>
+                {{-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Evaluate</a></li> --}}
+                {{-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Category</a></li> --}}
                 <!-- Add more items as needed -->
               </ul>
             </div>
