@@ -132,7 +132,8 @@
                             'PO' => 'Planning Office',
                             'PLO' => 'Partnership and Linkages Office',
                             'ROMO' => 'Regional Operations Management Office',
-                            'ICTO' => 'Information and Communication Technology Office'
+                            'ICTO' => 'Information and Communication Technology Office',
+                            'WS' => 'World Skills'
                         ];
                             $currentUserName = Auth::user()->executive_office; // Replace this with the actual current user's name
                         @endphp

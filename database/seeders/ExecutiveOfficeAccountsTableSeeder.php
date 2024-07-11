@@ -124,6 +124,17 @@ class ExecutiveOfficeAccountsTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'executive_office' => 'WS',
+                'name' => 'jane',
+                'position' => 'Director',
+                'office' => 'Office 2',
+                'email' => 'ws@tesda.gov.ph',
+                'password' => Hash::make('toea2024'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'executive_office' => 'ROMD',
                 'name' => 'admin',
                 'position' => 'Director',
