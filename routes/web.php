@@ -220,7 +220,9 @@ Route::get('/plo-evaluation', function () {
     return view('executive.plo-evaluate');
 })->name('/plo-evaluation');
 
-
+Route::get('/worldSkillsEvaluate', function () {
+    return view('executive.worldSkillsEvaluate');
+})->name('/worldSkillsEvaluate');
 
 
 
