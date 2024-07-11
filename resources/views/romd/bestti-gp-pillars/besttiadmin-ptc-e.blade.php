@@ -82,31 +82,31 @@
             
             <div class="flex items-center ml-6">
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-a" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">A</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-b" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">B</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-c" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">C</span>
                   </a>
                 </div>
                 <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-d" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
                     <span class="text-white font-bold text-xs">D</span>
                   </a>
                 </div>
               <div class="h-0.5 w-24 bg-gray-500"></div>
                 <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-e" class="block h-full w-full flex items-center justify-center">
+                  <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
                     <span class="text-gray-200 font-bold text-xs">E</span>
                   </a>
                 </div>
