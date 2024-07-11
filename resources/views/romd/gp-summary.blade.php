@@ -234,19 +234,24 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="hoverable px-3 py-3 relative">
+
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreSelf }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                        <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                            <div class="popover-content p-4">
+                                                <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
+                                                <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
+                                                <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
+                                                <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
+                                                <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>            
-                                <td class="hoverable px-3 py-3 relative">
+
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -257,8 +262,10 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    </div>
                                 </td>
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -268,6 +275,7 @@
                                             <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
+                                    </div>
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
@@ -283,7 +291,8 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -294,8 +303,10 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    </div>
                                 </td>            
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -306,8 +317,10 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    </div>
                                 </td>
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -317,6 +330,7 @@
                                             <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
+                                    </div>
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
@@ -333,7 +347,8 @@
                                 <td>{{ $rank++ }}</td>
                                 <td class="px-3 py-3">{{  $user->province_name }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreSelf }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -344,8 +359,10 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    </div>
                                 </td>            
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreRO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -356,8 +373,10 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    </div>
                                 </td>
-                                <td class="hoverable px-3 py-3 relative">
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -367,6 +386,7 @@
                                             <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
+                                    </div>
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
@@ -419,7 +439,7 @@
             //     new Flowbite.Popover(popover);
             // });
 
-            document.querySelectorAll('.hoverable').forEach(item => {
+                document.querySelectorAll('.hoverable').forEach(item => {
                 item.addEventListener('mouseenter', event => {
                     const popover = item.querySelector('.popover');
                     popover.style.display = 'block';
