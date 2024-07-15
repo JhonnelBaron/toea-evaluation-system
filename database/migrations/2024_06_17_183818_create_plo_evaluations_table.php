@@ -21,14 +21,10 @@ return new class extends Migration
             $table->text('b2d411_remarks')->nullable();
             $table->integer('b2d412')->nullable();
             $table->text('b2d412_remarks')->nullable();
-            $table->integer('b2d42')->nullable();
-            $table->text('b2d42_remarks')->nullable();
             $table->integer('b2d421')->nullable();
             $table->text('b2d421_remarks')->nullable();
             $table->integer('b2d422')->nullable();
             $table->text('b2d422_remarks')->nullable();
-            $table->integer('b2d43')->nullable();
-            $table->text('b2d43_remarks')->nullable();
             $table->integer('b2d431')->nullable();
             $table->text('b2d431_remarks')->nullable();
             $table->integer('b2d432')->nullable();
