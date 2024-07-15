@@ -176,6 +176,14 @@
                             <span class="text-sm dark:text-gray-500 text-center">Information and Communication Office</span>
                         </p>
                     </div>
+                    <div class="office-box content bg-transition cursor-pointer p-4 rounded-md h-24 shadow-md items-center justify-center flex flex-col" data-office="ws" data-office-id="wsEval">
+                        <p>
+                            <span class="highlight">{{ $totalProgressPerExecutiveOffice['ws'] }}%</span>
+                        </p>
+                        <p>
+                            <span class="text-sm dark:text-gray-500 text-center">World Skills</span>
+                        </p>
+                    </div>
                 </div>
 
                 
@@ -202,7 +210,8 @@
                             $totalScorePerRegion[$regionId]['planningOffice'] +
                             $totalScorePerRegion[$regionId]['plo'] +
                             $totalScorePerRegion[$regionId]['romo'] +
-                            $totalScorePerRegion[$regionId]['icto']
+                            $totalScorePerRegion[$regionId]['icto'] +
+                            $totalScorePerRegion[$regionId]['ws']
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
@@ -241,7 +250,8 @@
                             $totalScorePerRegion[$regionId]['planningOffice'] +
                             $totalScorePerRegion[$regionId]['plo'] +
                             $totalScorePerRegion[$regionId]['romo'] +
-                            $totalScorePerRegion[$regionId]['icto']
+                            $totalScorePerRegion[$regionId]['icto'] +
+                            $totalScorePerRegion[$regionId]['ws']
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
@@ -281,7 +291,8 @@
                             $totalScorePerRegion[$regionId]['planningOffice'] +
                             $totalScorePerRegion[$regionId]['plo'] +
                             $totalScorePerRegion[$regionId]['romo'] +
-                            $totalScorePerRegion[$regionId]['icto']
+                            $totalScorePerRegion[$regionId]['icto'] +
+                            $totalScorePerRegion[$regionId]['ws']
                         ) : 0; // Default to 0 if the region ID is not found
                         @endphp
                         <div class="region bg-white shadow-md h-48 flex flex-col items-center justify-center rounded dark:bg-gray-800">
@@ -426,7 +437,7 @@
                 type: 'pie',
                 },
                 // series: [44, 55, 13, 43, 22, 10, 20, 56, 76, 55, 5],
-                // labels: ['Administrative Service', 'Certification Office', 'FMS', 'ICTO', 'LEGAL', 'NITESD', 'PIAD', 'PLO', 'PO', 'ROMO', 'Not Rated'],
+                // labels: ['Administrative Service', 'Certification Office', 'FMS', 'ICTO', 'LEGAL', 'NITESD', 'PIAD', 'PLO', 'PO', 'ROMO', WS, 'Not Rated'],
                 series: [44, 55,],
                 labels: ['Rated', 'Not Rated'],
 

@@ -21,8 +21,6 @@ class PloEvaluationController extends Controller
             'b2d411_remarks' => 'nullable|string',
             'b2d412' => 'nullable|integer|in:0,10',
             'b2d412_remarks' => 'nullable|string',
-            'b2d42' => 'nullable|integer|in:0,15',
-            'b2d42_remarks' => 'nullable|string',
             'b2d421' => 'nullable|integer|in:0,5',
             'b2d421_remarks' => 'nullable|string',
             'b2d422' => 'nullable|integer|in:0,10',
@@ -65,14 +63,10 @@ class PloEvaluationController extends Controller
             'b2d411_remarks' => $validatedData['b2d411_remarks'] ?? null,
             'b2d412' => $validatedData['b2d412'] ?? null,
             'b2d412_remarks' => $validatedData['b2d412_remarks'] ?? null,
-            'b2d42' => $validatedData['b2d42'] ?? null,
-            'b2d42_remarks' => $validatedData['b2d42_remarks'] ?? null,
             'b2d421' => $validatedData['b2d421'] ?? null,
             'b2d421_remarks' => $validatedData['b2d421_remarks'] ?? null,
             'b2d422' => $validatedData['b2d422'] ?? null,
             'b2d422_remarks' => $validatedData['b2d422_remarks'] ?? null,
-            'b2d43' => $validatedData['b2d43'] ?? null,
-            'b2d43_remarks' => $validatedData['b2d43_remarks'] ?? null,
             'b2d431' => $validatedData['b2d431'] ?? null,
             'b2d431_remarks' => $validatedData['b2d431_remarks'] ?? null,
             'b2d432' => $validatedData['b2d432'] ?? null,
@@ -87,8 +81,8 @@ class PloEvaluationController extends Controller
 
         // Initialize variables for overall progress metrics
         $totalFields = [
-            'b1g' => null, 'b2d411' => null, 'b2d412' => null, 'b2d42' => null,
-            'b2d421' => null, 'b2d422' => null, 'b2d43' => null, 'b2d431' => null,
+            'b1g' => null, 'b2d411' => null, 'b2d412' => null,
+            'b2d421' => null, 'b2d422' => null, 'b2d431' => null,
             'b2d432' => null, 'b2d5' => null, 'b2d6' => null, 'd1' => null,
         ];
 

@@ -14,6 +14,7 @@ use App\Models\PloEvaluation;
 use App\Models\PoEvaluation;
 use App\Models\Region;
 use App\Models\RomoEvaluation;
+use App\Models\WsEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,6 +37,7 @@ class RomdController extends Controller
         $plo = PloEvaluation::all();
         $romo = RomoEvaluation::all();
         $icto = IctoEvaluation::all();
+        $ws = WsEvaluation::all();
 
         // Fetch all regions (assuming you have a Region model with appropriate relationships)
         $regions = Region::all();
@@ -59,6 +61,7 @@ class RomdController extends Controller
                 'plo' => $plo->where('region_id', $region->id)->sum('progress_percentage'),
                 'romo' => $romo->where('region_id', $region->id)->sum('progress_percentage'),
                 'icto' => $icto->where('region_id', $region->id)->sum('progress_percentage'),
+                'ws' => $ws->where('region_id', $region->id)->sum('progress_percentage'),
             ];
         }
 
@@ -76,6 +79,7 @@ class RomdController extends Controller
             'plo',
             'romo',
             'icto',
+            'ws',
             'smallRegions',
             'mediumRegions',
             'largeRegions',
@@ -103,6 +107,7 @@ class RomdController extends Controller
         $plo = PloEvaluation::all();
         $romo = RomoEvaluation::all();
         $icto = IctoEvaluation::all();
+        $ws = WsEvaluation::all();
 
         $totalProgressPerRegion = [];
         foreach ($regions as $region) {
@@ -117,6 +122,7 @@ class RomdController extends Controller
                 'plo' => $plo->where('region_id', $region->id)->sum('progress_percentage'),
                 'romo' => $romo->where('region_id', $region->id)->sum('progress_percentage'),
                 'icto' => $icto->where('region_id', $region->id)->sum('progress_percentage'),
+                'ws' => $ws->where('region_id', $region->id)->sum('progress_percentage'),
             ];
         }
 
@@ -133,6 +139,7 @@ class RomdController extends Controller
                 'plo' => $plo->where('region_id', $region->id)->sum('overall_total_score'),
                 'romo' => $romo->where('region_id', $region->id)->sum('overall_total_score'),
                 'icto' => $icto->where('region_id', $region->id)->sum('overall_total_score'),
+                'ws' => $ws->where('region_id', $region->id)->sum('overall_total_score'),
             ];
         }
 
@@ -148,7 +155,8 @@ class RomdController extends Controller
                 $totalScorePerRegion[$region->id]['planningOffice'] +
                 $totalScorePerRegion[$region->id]['plo'] +
                 $totalScorePerRegion[$region->id]['romo'] +
-                $totalScorePerRegion[$region->id]['icto'];
+                $totalScorePerRegion[$region->id]['icto'] +
+                $totalScorePerRegion[$region->id]['ws'];
         });
 
         // Sort and rank medium regions by total score in descending order
@@ -162,7 +170,8 @@ class RomdController extends Controller
                 $totalScorePerRegion[$region->id]['planningOffice'] +
                 $totalScorePerRegion[$region->id]['plo'] +
                 $totalScorePerRegion[$region->id]['romo'] +
-                $totalScorePerRegion[$region->id]['icto'];
+                $totalScorePerRegion[$region->id]['icto'] +
+                $totalScorePerRegion[$region->id]['ws'];
         });
 
         // Sort and rank large regions by total score in descending order
@@ -176,7 +185,8 @@ class RomdController extends Controller
                 $totalScorePerRegion[$region->id]['planningOffice'] +
                 $totalScorePerRegion[$region->id]['plo'] +
                 $totalScorePerRegion[$region->id]['romo'] +
-                $totalScorePerRegion[$region->id]['icto'];
+                $totalScorePerRegion[$region->id]['icto'] +
+                $totalScorePerRegion[$region->id]['ws'];
         });
          // Initialize rank counters
          $smallRank = 1;
@@ -197,6 +207,7 @@ class RomdController extends Controller
             'plo',
             'romo',
             'icto',
+            'ws',
             'smallRegions',
             'mediumRegions',
             'largeRegions',
@@ -225,6 +236,7 @@ class RomdController extends Controller
         $plo = PloEvaluation::all();
         $romo = RomoEvaluation::all();
         $icto = IctoEvaluation::all();
+        $ws = WsEvaluation::all();
 
         $smallRegions = Region::where('region_category', 'Small')->get();
         $mediumRegions = Region::where('region_category', 'Medium')->get();
@@ -250,7 +262,8 @@ class RomdController extends Controller
                 'planningOffice' => $planningOffice,
                 'plo' => $plo,
                 'romo' => $romo,
-                'icto' => $icto
+                'icto' => $icto,
+                'ws' => $ws,
             ])->sum(function($office) use ($region) {
                 return $office->where('region_id', $region->id)->sum('progress_percentage');
             });
@@ -272,6 +285,7 @@ class RomdController extends Controller
             'plo' => $this->calculateProgress($plo, $averageProgress),
             'romo' => $this->calculateProgress($romo, $averageProgress),
             'icto' => $this->calculateProgress($icto, $averageProgress),
+            'ws' => $this->calculateProgress($ws, $averageProgress),
         ];
 
         $totalScorePerRegion = [];
@@ -287,6 +301,7 @@ class RomdController extends Controller
                 'plo' => $plo->where('region_id', $region->id)->sum('overall_total_score'),
                 'romo' => $romo->where('region_id', $region->id)->sum('overall_total_score'),
                 'icto' => $icto->where('region_id', $region->id)->sum('overall_total_score'),
+                'ws' => $ws->where('region_id', $region->id)->sum('overall_total_score'),
             ];
         }
 
@@ -298,7 +313,7 @@ class RomdController extends Controller
         $totalProgress = $evaluations->sum('progress_percentage');
         return round($totalProgress * $averageProgress / 100, 2);
     }
-    
+
     public function getEvaluationData($officeId)
     {
         // Initialize variable for evaluations
@@ -335,6 +350,9 @@ class RomdController extends Controller
                 break;
             case 'ictoEval':
                 $evaluations = IctoEvaluation::with('region')->get();
+                break;
+            case 'wsEval':
+                $evaluations = WsEvaluation::with('region')->get();
                 break;
             default:
                 // Handle invalid $officeId or other cases
