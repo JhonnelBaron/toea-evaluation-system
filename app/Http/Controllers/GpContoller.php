@@ -10,11 +10,18 @@ class GpContoller extends Controller
     public function getGalingProbinsyaUsers(Request $request)
     {
         // Fetch data from the users table where awardings column has the value 'Galing_Probinsya'
-        $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
-        ->whereNotNull('endorsement_status')
-        ->where('endorsement_status', 'Endorsed by Regional Office')
-        //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
-        //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
+        // $users = DB::table('users')->where('awardings', 'Galing_Probinsya')
+        // ->whereNotNull('endorsement_status')
+        // ->where('endorsement_status', 'Endorsed by Regional Office')
+        // //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
+        // //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
+        // ->get();
+        $users = DB::table('users')
+        ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
+        ->where('users.awardings', 'Galing_Probinsya')
+        ->whereNotNull('users.endorsement_status')
+        ->where('users.endorsement_status', 'Endorsed by Regional Office')
+        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname')
         ->get();
         
         // Function to get the evaluated score for a user
