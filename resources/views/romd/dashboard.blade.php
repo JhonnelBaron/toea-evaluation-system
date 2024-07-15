@@ -177,7 +177,8 @@
                                 'planningOffice' => 'PO',
                                 'plo' => 'PLO',
                                 'romo' => 'ROMO',
-                                'icto' => 'ICTO'
+                                'icto' => 'ICTO',
+                                'ws' => 'WS'
                             ] as $officeVariable => $officeName)
                               <tr>
                                 <td class="custom-td py-3 bg-TiffanyBlue">{{ $officeName }}</td>
@@ -241,7 +242,8 @@
                                                 'planningOffice' => $planningOffice,
                                                 'plo' => $plo,
                                                 'romo' => $romo,
-                                                'icto' => $icto
+                                                'icto' => $icto,
+                                                'ws' => $ws
                                             ])->sum(function($office) use ($smallRegion) {
                                                 return $office->firstWhere('region_id', $smallRegion->id)->progress_percentage ?? 0;
                                             });
@@ -263,7 +265,8 @@
                                                 'planningOffice' => $planningOffice,
                                                 'plo' => $plo,
                                                 'romo' => $romo,
-                                                'icto' => $icto
+                                                'icto' => $icto,
+                                                'ws' => $ws
                                             ])->sum(function($office) use ($mediumRegion) {
                                                 return $office->firstWhere('region_id', $mediumRegion->id)->progress_percentage ?? 0;
                                             });
@@ -285,7 +288,8 @@
                                                 'planningOffice' => $planningOffice,
                                                 'plo' => $plo,
                                                 'romo' => $romo,
-                                                'icto' => $icto
+                                                'icto' => $icto,
+                                                'ws' => $ws
                                             ])->sum(function($office) use ($largeRegion) {
                                                 return $office->firstWhere('region_id', $largeRegion->id)->progress_percentage ?? 0;
                                             });

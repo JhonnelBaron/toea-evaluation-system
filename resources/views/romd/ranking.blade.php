@@ -211,7 +211,8 @@
                                     $totalScorePerRegion[$region->id]['planningOffice'] + 
                                     $totalScorePerRegion[$region->id]['plo'] + 
                                     $totalScorePerRegion[$region->id]['romo'] + 
-                                    $totalScorePerRegion[$region->id]['icto'] }}
+                                    $totalScorePerRegion[$region->id]['icto'] +
+                                    $totalScorePerRegion[$region->id]['ws'] }}
                                  </td>
                                  <td class="px-6 py-3">
                                     @php
@@ -225,7 +226,8 @@
                                         'planningOffice' => $planningOffice,
                                         'plo' => $plo,
                                         'romo' => $romo,
-                                        'icto' => $icto
+                                        'icto' => $icto,
+                                        'ws' => $ws
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });
@@ -264,7 +266,8 @@
                                     $totalScorePerRegion[$region->id]['planningOffice'] + 
                                     $totalScorePerRegion[$region->id]['plo'] + 
                                     $totalScorePerRegion[$region->id]['romo'] + 
-                                    $totalScorePerRegion[$region->id]['icto'] }}
+                                    $totalScorePerRegion[$region->id]['icto'] +
+                                    $totalScorePerRegion[$region->id]['ws'] }}
                                  </td>
                                  <td class="px-6 py-3">
                                     @php
@@ -278,7 +281,8 @@
                                         'planningOffice' => $planningOffice,
                                         'plo' => $plo,
                                         'romo' => $romo,
-                                        'icto' => $icto
+                                        'icto' => $icto,
+                                        'ws' => $ws
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });
@@ -317,7 +321,8 @@
                                     $totalScorePerRegion[$region->id]['planningOffice'] + 
                                     $totalScorePerRegion[$region->id]['plo'] + 
                                     $totalScorePerRegion[$region->id]['romo'] + 
-                                    $totalScorePerRegion[$region->id]['icto'] }}
+                                    $totalScorePerRegion[$region->id]['icto'] +
+                                    $totalScorePerRegion[$region->id]['ws'] }}
                                  </td>
                                  <td class="px-6 py-3">
                                     @php
@@ -331,7 +336,8 @@
                                         'planningOffice' => $planningOffice,
                                         'plo' => $plo,
                                         'romo' => $romo,
-                                        'icto' => $icto
+                                        'icto' => $icto,
+                                        'ws' => $ws
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });

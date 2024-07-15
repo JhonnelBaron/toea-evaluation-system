@@ -280,7 +280,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
@@ -335,7 +335,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
 
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
@@ -391,7 +391,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
