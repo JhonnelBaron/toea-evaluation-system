@@ -16,13 +16,20 @@ class GpContoller extends Controller
         // //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
         // //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
         // ->get();
-        $users = DB::table('users')
+        $query = DB::table('users')
         ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
         ->where('users.awardings', 'Galing_Probinsya')
         ->whereNotNull('users.endorsement_status')
         ->where('users.endorsement_status', 'Endorsed by Regional Office')
-        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname')
-        ->get();
+        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname');
+
+        // Filter by Evaluator if specified in the request
+        if ($request->has('evaluator')) {
+            $evaluatorId = $request->input('evaluator');
+            $query->where('users.evaluator_id', $evaluatorId);
+        }
+
+        $users = $query->get();
         
         // Function to get the evaluated score for a user
         $getEvaluatedScore = function($user_id) {
@@ -99,12 +106,18 @@ class GpContoller extends Controller
             return $user->category == 'Large_Province';
         });
 
+        // Fetch all evaluators for the filter dropdown
+        $evaluators = DB::table('toea_admin')->select('id', 'firstname', 'lastname')->get();
+
+
         // Pass the data to the Blade view
         return view('romd.gp-summary', [
             'smallProvinces' => $smallProvinces,
             'mediumProvinces' => $mediumProvinces,
             'largeProvinces' => $largeProvinces,
-            'filterBy' => $filterBy
+            'filterBy' => $filterBy,
+            'evaluators' => $evaluators,
+            'selectedEvaluator' => $request->input('evaluator'),
         ]);
     }
 }
