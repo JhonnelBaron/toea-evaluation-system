@@ -182,7 +182,7 @@
                     </select>
                 </div>
 
-                <div class="flex-grow flex items-center justify-center" style="margin-right: 20.5rem;"> <!-- Adjust this value to move the tabs to the left -->
+                <div class="flex-grow flex items-center justify-center" style="margin-right: 1.5rem;"> <!-- Adjust this value to move the tabs to the left -->
                 {{-- <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left --> --}}
                     <ul class="flex">
                         <li class="tab">
@@ -195,6 +195,15 @@
                             <a href="#" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
                         </li>
                     </ul>
+                </div>
+                <div class="flex items-center mr-10"> <!-- New Evaluator Filter -->
+                    <label for="evaluatorFilter" class="text-black mr-2">Evaluator:</label>
+                    <select name="evaluator" id="evaluatorFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800" onchange="document.getElementById('filterForm').submit()">
+                        <option value="all">All</option>
+                        @foreach($evaluators as $evaluator)
+                            <option value="{{ $evaluator->id }}" @if(request('evaluator') == $evaluator->id) selected @endif>{{ $evaluator->firstname }} {{ $evaluator->lastname }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             
@@ -290,7 +299,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
@@ -359,7 +368,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
 
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
@@ -429,7 +438,7 @@
                                 </td>
                                 <td class="px-3 py-3"></td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
@@ -462,15 +471,68 @@
                 
             });
 
-            //rank filter
             const filterBySelect = document.getElementById('filterBy');
 
             filterBySelect.addEventListener('change', function () {
                 const selectedRank = filterBySelect.value.toLowerCase();
+                const currentUrl = window.location.href;
+                let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
+                let queryParams = new URLSearchParams(window.location.search);
 
-                // Redirect to the backend route with the selected filterBy parameter
-                window.location.href = `/best-ti?filterBy=${selectedRank}`;
+                // Update or add 'filterBy' parameter
+                queryParams.set('filterBy', selectedRank);
+
+                // Check if 'evaluator' parameter is already set
+                if (queryParams.has('evaluator')) {
+                    // Keep the current 'evaluator' parameter
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                } else {
+                    // No 'evaluator' parameter set, keep only 'filterBy'
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                }
+
+                // Redirect to the constructed URL
+                window.location.href = baseUrl;
             });
+
+            // Filter by Evaluator
+            const evaluatorFilterSelect = document.getElementById('evaluatorFilter');
+
+            evaluatorFilterSelect.addEventListener('change', function () {
+                const selectedEvaluator = evaluatorFilterSelect.value;
+                const currentUrl = window.location.href;
+                let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
+                let queryParams = new URLSearchParams(window.location.search);
+
+                // Update or add 'evaluator' parameter
+                if (selectedEvaluator === 'all') {
+                    queryParams.delete('evaluator'); // Remove 'evaluator' parameter if 'All' is selected
+                } else {
+                    queryParams.set('evaluator', selectedEvaluator); // Set 'evaluator' parameter to selected value
+                }
+
+                // Check if 'filterBy' parameter is already set
+                if (queryParams.has('filterBy')) {
+                    // Keep the current 'filterBy' parameter
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                } else {
+                    // No 'filterBy' parameter set, keep only 'evaluator'
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                }
+
+                // Redirect to the constructed URL
+                window.location.href = baseUrl;
+            });
+
+            // //rank filter
+            // const filterBySelect = document.getElementById('filterBy');
+
+            // filterBySelect.addEventListener('change', function () {
+            //     const selectedRank = filterBySelect.value.toLowerCase();
+
+            //     // Redirect to the backend route with the selected filterBy parameter
+            //     window.location.href = `/best-ti?filterBy=${selectedRank}`;
+            // });
             // var popovers = document.querySelectorAll('.hoverable');
             // popovers.forEach(function (popover) {
             //     new Flowbite.Popover(popover);

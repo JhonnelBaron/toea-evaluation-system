@@ -86,16 +86,36 @@ class TiController extends Controller
     public function getTiUsers(Request $request)
     {
         // Fetch data from the users table where awardings column has the value 'Best_TI'
-        $users = DB::table('users')->where('awardings', 'Best_TI')
-            ->whereNotNull('endorsement_status')
-            ->where('endorsement_status', 'Endorsed by Regional Office')
-            //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
-            //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
-            ->get();
+        // $users = DB::table('users')->where('awardings', 'Best_TI')
+        //     ->whereNotNull('endorsement_status')
+        //     ->where('endorsement_status', 'Endorsed by Regional Office')
+        //     //->where('endorsement_status', '!=', 'Not Endorsed by Provincial Office')
+        //     //->where('endorsement_status', '!=', 'Not Endorsed by Regional Office')
+        //     ->get();
 
-        if ($users->isEmpty()) {
-            return view('your_view', compact('users'));
+        // if ($users->isEmpty()) {
+        //     return view('your_view', compact('users'));
+        // }
+        $query = DB::table('users')
+        ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
+        ->where('users.awardings', 'Best_TI')
+        ->whereNotNull('users.endorsement_status')
+        ->where('users.endorsement_status', 'Endorsed by Regional Office')
+        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname');
+
+        // Filter by Evaluator if specified in the request
+        if ($request->has('evaluator')) {
+            $evaluatorId = $request->input('evaluator');
+            $query->where('users.evaluator_id', $evaluatorId);
         }
+
+        // Filter by Evaluator if specified in the request
+        if ($request->has('evaluator')) {
+            $evaluatorId = $request->input('evaluator');
+            $query->where('users.evaluator_id', $evaluatorId);
+        }
+
+        $users = $query->get();
         
         // Function to get the evaluated score for a user
         $getEvaluatedScore = function($user) {
@@ -187,12 +207,17 @@ class TiController extends Controller
             return $user->category == 'PTC';
         });
 
+        // Fetch all evaluators for the filter dropdown
+        $evaluators = DB::table('toea_admin')->select('id', 'firstname', 'lastname')->get();
+
         // Pass the data to the Blade view
         return view('romd.ti-summary', [
             'rtcStc' => $rtcStc,
             'tas' => $tas,
             'ptc' => $ptc,
             'filterBy' => $filterBy,
+            'evaluators' => $evaluators,
+            'selectedEvaluator' => $request->input('evaluator'),
         ]);
     }
 }
