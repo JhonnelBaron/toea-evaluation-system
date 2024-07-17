@@ -298,7 +298,7 @@
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
@@ -367,7 +367,7 @@
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
 
@@ -437,7 +437,7 @@
                                     </div>
                                 </td>
                                 <td class="px-3 py-3"></td>
-                                <td class="px-3 py-3"></td>
+                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-3 py-3"><input type="checkbox"></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
