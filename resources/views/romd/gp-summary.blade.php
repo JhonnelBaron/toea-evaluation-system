@@ -147,20 +147,6 @@
                 <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
-            {{-- <div class="legend ml-7">
-                <div class="legend-item">
-                    <div class="legend-color small-region bg-red-300"></div>
-                    <span>Small</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color medium-region bg-purple-200"></div>
-                    <span>Medium</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color large-region bg-Mint"></div>
-                    <span>Large</span>
-                </div>
-            </div> --}}
 
             <div class="mx-auto flex flex-wrap items-center justify-between">
                 <div class="ml-8 flex items-center">
@@ -229,7 +215,7 @@
                                 <th class="px-6 py-3 bg-TiffanyBlue">Self Rating</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score ROMO</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
+                                {{-- <th class="px-6 py-3 bg-TiffanyBlue">Progress</th> --}}
                                 <th class="px-6 py-3 bg-TiffanyBlue">Remarks</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluator</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Hard Copy</th>
@@ -288,12 +274,19 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                    <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                    <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
+
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                             @foreach ($mediumProvinces as $user)
@@ -343,13 +336,20 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
 
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                    <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
+
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                             @foreach ($largeProvinces as $user)
@@ -399,138 +399,208 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-12 py-3"> <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                        <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+                @if(session('success'))
+                <div id="successMessage" class="fixed z-50 bottom-0 right-0 bg-customGreen text-white p-4 text-center rounded-md">
+                    {{ session('success') }}
+                </div>
+                <script>
+                        setTimeout(function() {
+                            var successMessage = document.getElementById('successMessage');
+                            successMessage.style.transition = 'opacity 1s ease';
+                            successMessage.style.opacity = '0';
+
+                            // Remove the success message from the DOM after fade out
+                            setTimeout(function() {
+                                successMessage.remove();
+                            }, 1000); // Wait for 1 second for fade out before removing
+                        }, 3000); // Show the message for 3 seconds
+                    </script>
+                @endif
+                {{-- <div id="saveChangesModal" class="fixed inset-0 hidden items-center justify-center bg-gray-600 bg-opacity-50">
+                    <div class="bg-white rounded-lg shadow-lg w-1/3">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-center p-4 border-b">
+                            <h3 class="text-xl">Endorse Nominee</h3>
+                            <button class="text-gray-600" onclick="toggleModal('saveChangesModal')">
+                                &times;
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4">
+                            <br><br>
+                            Are you sure you want to endorse {{$user->province_name}} to external validator?
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex justify-end p-4 border-t">
+                            <button class="px-4 py-2 bg-gray-500 text-white rounded mr-2" onclick="toggleModal('saveChangesModal')">No</button>
+                            <form method="POST" action="{{ route('gp.endorse-nominee', ['id' => $user->id]) }}">
+                                @csrf
+                            <button class="px-4 py-2 bg-blue-500 text-white rounded"  onclick="submitSaveChangesForm()">Yes</button>
+                        </form>
+                        </div>
+                    </div>
+                </div> --}}
+                <div id="saveChangesModal" class="fixed inset-0 hidden items-center justify-center bg-gray-600 bg-opacity-50">
+                    <div class="bg-white rounded-lg shadow-lg w-1/3">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-center p-4 border-b">
+                            <h3 class="text-xl">Endorse Nominee</h3>
+                            <button class="text-gray-600" onclick="toggleModal('saveChangesModal')">
+                                &times;
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4">
+                            <br><br>
+                            Are you sure you want to endorse <span id="modalProvinceName"></span> to external validator?
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex justify-end p-4 border-t">
+                            <button class="px-4 py-2 bg-gray-500 text-white rounded mr-2" onclick="toggleModal('saveChangesModal')">No</button>
+                            <form id="saveChangesForm" method="POST" action="{{ route('gp.endorse-nominee', ['id' => 'user_id']) }}">
+                                @csrf
+                                <input type="hidden" name="user_id" value="">
+                                <button class="px-4 py-2 bg-blue-500 text-white rounded" type="submit">Yes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
 
     <script>
- document.addEventListener('DOMContentLoaded', function () {
-            const categoryFilter = document.getElementById('categoryFilter');
-            const rows = document.querySelectorAll('.region-row');
+    document.addEventListener('DOMContentLoaded', function () {
+                const categoryFilter = document.getElementById('categoryFilter');
+                const rows = document.querySelectorAll('.region-row');
 
-            categoryFilter.addEventListener('change', function () {
-                const selectedCategory = categoryFilter.value.toLowerCase();
+                categoryFilter.addEventListener('change', function () {
+                    const selectedCategory = categoryFilter.value.toLowerCase();
 
-                rows.forEach(row => {
-                    const rowCategory = row.classList.contains(selectedCategory);
+                    rows.forEach(row => {
+                        const rowCategory = row.classList.contains(selectedCategory);
 
-                    if (selectedCategory === 'all' || rowCategory) {
-                        row.style.display = ''; // Show the row
-                    } else {
-                        row.style.display = 'none'; // Hide the row
-                    }
+                        if (selectedCategory === 'all' || rowCategory) {
+                            row.style.display = ''; // Show the row
+                        } else {
+                            row.style.display = 'none'; // Hide the row
+                        }
+                    });
+                    
                 });
-                
+
+                // Filter by Rank
+                    const filterBySelect = document.getElementById('filterBy');
+
+            filterBySelect.addEventListener('change', function () {
+                const selectedRank = filterBySelect.value.toLowerCase();
+                const currentUrl = window.location.href;
+                let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
+                let queryParams = new URLSearchParams(window.location.search);
+
+                // Update or add 'filterBy' parameter
+                queryParams.set('filterBy', selectedRank);
+
+                // Check if 'evaluator' parameter is already set
+                if (queryParams.has('evaluator')) {
+                    // Keep the current 'evaluator' parameter
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                } else {
+                    // No 'evaluator' parameter set, keep only 'filterBy'
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                }
+
+                // Redirect to the constructed URL
+                window.location.href = baseUrl;
             });
 
-            
-            // //rank filter
-            // const filterBySelect = document.getElementById('filterBy');
+            // Filter by Evaluator
+            const evaluatorFilterSelect = document.getElementById('evaluatorFilter');
 
-            // filterBySelect.addEventListener('change', function () {
-            //     const selectedRank = filterBySelect.value.toLowerCase();
+            evaluatorFilterSelect.addEventListener('change', function () {
+                const selectedEvaluator = evaluatorFilterSelect.value;
+                const currentUrl = window.location.href;
+                let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
+                let queryParams = new URLSearchParams(window.location.search);
 
-            //     // Redirect to the backend route with the selected filterBy parameter
-            //     window.location.href = `/galing-probinsya?filterBy=${selectedRank}`;
-            // });
+                // Update or add 'evaluator' parameter
+                if (selectedEvaluator === 'all') {
+                    queryParams.delete('evaluator'); // Remove 'evaluator' parameter if 'All' is selected
+                } else {
+                    queryParams.set('evaluator', selectedEvaluator); // Set 'evaluator' parameter to selected value
+                }
 
-            //         // Evaluator filter
-            // const evaluatorFilterSelect = document.getElementById('evaluatorFilter');
+                // Check if 'filterBy' parameter is already set
+                if (queryParams.has('filterBy')) {
+                    // Keep the current 'filterBy' parameter
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                } else {
+                    // No 'filterBy' parameter set, keep only 'evaluator'
+                    baseUrl = `${baseUrl}?${queryParams.toString()}`;
+                }
 
-            // evaluatorFilterSelect.addEventListener('change', function () {
-            //     const selectedEvaluator = evaluatorFilterSelect.value;
+                // Redirect to the constructed URL
+                window.location.href = baseUrl;
+            });
 
-            //     // Redirect to the backend route with the selected evaluator parameter
-            //     window.location.href = `/galing-probinsya?evaluator=${selectedEvaluator}`;
-            //});
-            // Filter by Rank
-                const filterBySelect = document.getElementById('filterBy');
+                    document.querySelectorAll('.hoverable').forEach(item => {
+                    item.addEventListener('mouseenter', event => {
+                        const popover = item.querySelector('.popover');
+                        popover.style.display = 'block';
+                        popover.style.top = `${event.clientY - popover.offsetHeight}px`; // Adjusting to show above the cursor
+                        popover.style.left = `${event.clientX}px`;
+                    });
 
-        filterBySelect.addEventListener('change', function () {
-            const selectedRank = filterBySelect.value.toLowerCase();
-            const currentUrl = window.location.href;
-            let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
-            let queryParams = new URLSearchParams(window.location.search);
-
-            // Update or add 'filterBy' parameter
-            queryParams.set('filterBy', selectedRank);
-
-            // Check if 'evaluator' parameter is already set
-            if (queryParams.has('evaluator')) {
-                // Keep the current 'evaluator' parameter
-                baseUrl = `${baseUrl}?${queryParams.toString()}`;
-            } else {
-                // No 'evaluator' parameter set, keep only 'filterBy'
-                baseUrl = `${baseUrl}?${queryParams.toString()}`;
-            }
-
-            // Redirect to the constructed URL
-            window.location.href = baseUrl;
-        });
-
-        // Filter by Evaluator
-        const evaluatorFilterSelect = document.getElementById('evaluatorFilter');
-
-        evaluatorFilterSelect.addEventListener('change', function () {
-            const selectedEvaluator = evaluatorFilterSelect.value;
-            const currentUrl = window.location.href;
-            let baseUrl = currentUrl.split('?')[0]; // Get base URL without query params
-            let queryParams = new URLSearchParams(window.location.search);
-
-            // Update or add 'evaluator' parameter
-            if (selectedEvaluator === 'all') {
-                queryParams.delete('evaluator'); // Remove 'evaluator' parameter if 'All' is selected
-            } else {
-                queryParams.set('evaluator', selectedEvaluator); // Set 'evaluator' parameter to selected value
-            }
-
-            // Check if 'filterBy' parameter is already set
-            if (queryParams.has('filterBy')) {
-                // Keep the current 'filterBy' parameter
-                baseUrl = `${baseUrl}?${queryParams.toString()}`;
-            } else {
-                // No 'filterBy' parameter set, keep only 'evaluator'
-                baseUrl = `${baseUrl}?${queryParams.toString()}`;
-            }
-
-            // Redirect to the constructed URL
-            window.location.href = baseUrl;
-        });
-
-            // var popovers = document.querySelectorAll('.hoverable');
-            // popovers.forEach(function (popover) {
-            //     new Flowbite.Popover(popover);
-            // });
-
-                document.querySelectorAll('.hoverable').forEach(item => {
-                item.addEventListener('mouseenter', event => {
-                    const popover = item.querySelector('.popover');
-                    popover.style.display = 'block';
-                    popover.style.top = `${event.clientY - popover.offsetHeight}px`; // Adjusting to show above the cursor
-                    popover.style.left = `${event.clientX}px`;
-                });
-
-                item.addEventListener('mouseleave', () => {
-                    const popover = item.querySelector('.popover');
-                    popover.style.display = 'none';
+                    item.addEventListener('mouseleave', () => {
+                        const popover = item.querySelector('.popover');
+                        popover.style.display = 'none';
+                    });
                 });
             });
-        });
+            function toggleModal(modalId, userId, provinceName) {
+                const modal = document.getElementById(modalId);
+                modal.classList.toggle('hidden');
+                modal.classList.toggle('flex');
+                // Set the user ID in the hidden input field
+                const userIdInput = modal.querySelector('input[name="user_id"]');
+                if (userIdInput) {
+                    userIdInput.value = userId;
+                }
+                // Update the province name in the modal
+                const provinceNameSpan = modal.querySelector('#modalProvinceName');
+                if (provinceNameSpan) {
+                    provinceNameSpan.textContent = provinceName;
+                }
 
+                const form = modal.querySelector('form');
+                if (form) {
+                    // Construct the new URL with the userId
+                    const actionUrl = `/gp/endorse-nominee/${userId}`;
+                    form.setAttribute('action', actionUrl);
+                }
+            }
 
-
-
+            function submitSaveChangesForm() {
+                document.getElementById('saveChangesForm').submit();
+            }
         
     </script>
 </body>

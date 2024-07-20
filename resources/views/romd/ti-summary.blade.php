@@ -224,7 +224,7 @@
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score PO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score ROMO</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
+                                {{-- <th class="px-6 py-3 bg-TiffanyBlue">Progress</th> --}}
                                 <th class="px-6 py-3 bg-TiffanyBlue">Remarks</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluator</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Hard Copy</th>
@@ -297,10 +297,10 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
                             </tr>
@@ -366,10 +366,10 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
 
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
@@ -436,10 +436,10 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td class="px-3 py-3"></td>
+                                {{-- <td class="px-3 py-3"></td> --}}
                                 <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-3 py-3"><input type="checkbox"></td>
+                                <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
                                 <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
                             </tr>

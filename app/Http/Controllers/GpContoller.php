@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\External\EndorsedExternal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -109,6 +110,8 @@ class GpContoller extends Controller
         // Fetch all evaluators for the filter dropdown
         $evaluators = DB::table('toea_admin')->select('id', 'firstname', 'lastname')->get();
 
+        $checkEndorsed = EndorsedExternal::pluck('user_id')->toArray();
+
 
         // Pass the data to the Blade view
         return view('romd.gp-summary', [
@@ -118,6 +121,7 @@ class GpContoller extends Controller
             'filterBy' => $filterBy,
             'evaluators' => $evaluators,
             'selectedEvaluator' => $request->input('evaluator'),
+            'checkEndorsed' => $checkEndorsed,
         ]);
     }
 }

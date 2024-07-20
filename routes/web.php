@@ -38,7 +38,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/evaluation/{officeId}', [RomdController::class, 'getEvaluationData']);
     Route::get('/galing-probinsya', [GpContoller::class, 'getGalingProbinsyaUsers']);
     Route::get('/best-ti', [TiController::class, 'getTiUsers']);
-    
+
+    Route::post('gp/endorse-nominee/{id}', [RomdController::class, 'endorseGp'])->name('gp.endorse-nominee');
+    Route::post('ti/endorse-nominee', [RomdController::class, 'endorseTi']);
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');
