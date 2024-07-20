@@ -171,11 +171,6 @@
                 </div>
             </div>
             
-            
-
-            
-            
-
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
