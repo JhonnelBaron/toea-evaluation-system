@@ -219,7 +219,7 @@
                                 {{-- <th class="bg-TiffanyBlue">No.</th> --}}
                                 <th class="px-6 py-3 bg-TiffanyBlue"></th>
                                 <th class="px-6 py-2 bg-TiffanyBlue">Nominees</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Grouping</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Category</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Self Rating</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score PO</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
@@ -302,7 +302,13 @@
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                        <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province }}')">Endorse</button>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                             @foreach ($tas as $user)
@@ -372,7 +378,13 @@
                                 <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
 
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                        <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province }}')">Endorse</button>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                             @foreach ($ptc as $user)
@@ -441,12 +453,61 @@
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-8 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td><button class="btn btn-primary btn-sm bg-green-600">Endorse</button></td>
+                                <td>
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
+                                    @else
+                                        <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province }}')">Endorse</button>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+                @if(session('success'))
+                <div id="successMessage" class="fixed z-50 bottom-0 right-0 bg-customGreen text-white p-4 text-center rounded-md">
+                    {{ session('success') }}
+                </div>
+                <script>
+                        setTimeout(function() {
+                            var successMessage = document.getElementById('successMessage');
+                            successMessage.style.transition = 'opacity 1s ease';
+                            successMessage.style.opacity = '0';
+
+                            // Remove the success message from the DOM after fade out
+                            setTimeout(function() {
+                                successMessage.remove();
+                            }, 1000); // Wait for 1 second for fade out before removing
+                        }, 3000); // Show the message for 3 seconds
+                    </script>
+                @endif
+                <div id="saveChangesModal" class="fixed inset-0 hidden items-center justify-center bg-gray-600 bg-opacity-50">
+                    <div class="bg-white rounded-lg shadow-lg w-1/3">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-center p-4 border-b">
+                            <h3 class="text-xl">Endorse Nominee</h3>
+                            <button class="text-gray-600" onclick="toggleModal('saveChangesModal')">
+                                &times;
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4">
+                            <br><br>
+                            Are you sure you want to endorse <span id="modalProvinceName"></span> to external validator?
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex justify-end p-4 border-t">
+                            <button class="px-4 py-2 bg-gray-500 text-white rounded mr-2" onclick="toggleModal('saveChangesModal')">No</button>
+                            <form id="saveChangesForm" method="POST" action="{{ route('gp.endorse-nominee', ['id' => 'user_id']) }}">
+                                @csrf
+                                <input type="hidden" name="user_id" value="">
+                                <button class="px-4 py-2 bg-blue-500 text-white rounded" type="submit">Yes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -552,10 +613,32 @@
             });
         });
 
+        function toggleModal(modalId, userId, provinceName) {
+                const modal = document.getElementById(modalId);
+                modal.classList.toggle('hidden');
+                modal.classList.toggle('flex');
+                // Set the user ID in the hidden input field
+                const userIdInput = modal.querySelector('input[name="user_id"]');
+                if (userIdInput) {
+                    userIdInput.value = userId;
+                }
+                // Update the province name in the modal
+                const provinceNameSpan = modal.querySelector('#modalProvinceName');
+                if (provinceNameSpan) {
+                    provinceNameSpan.textContent = provinceName;
+                }
 
+                const form = modal.querySelector('form');
+                if (form) {
+                    // Construct the new URL with the userId
+                    const actionUrl = `/ti/endorse-nominee/${userId}`;
+                    form.setAttribute('action', actionUrl);
+                }
+            }
 
-
-        
+            function submitSaveChangesForm() {
+                document.getElementById('saveChangesForm').submit();
+            }
     </script>
 </body>
 </html>

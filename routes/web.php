@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/best-ti', [TiController::class, 'getTiUsers']);
 
     Route::post('gp/endorse-nominee/{id}', [RomdController::class, 'endorseGp'])->name('gp.endorse-nominee');
-    Route::post('ti/endorse-nominee', [RomdController::class, 'endorseTi']);
+    Route::post('ti/endorse-nominee/{id}', [RomdController::class, 'endorseTi']);
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');

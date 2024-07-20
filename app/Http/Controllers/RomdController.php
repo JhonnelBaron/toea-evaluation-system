@@ -409,7 +409,7 @@ class RomdController extends Controller
         if ($user->awardings === 'Best_TI' && ($user->category === 'RTC-STC' || $user->category === 'TAS'))
         {
             $store = EndorsedExternal::create([
-                'user_id' => $user->id,
+                'user_id' => $user->user_id,
                 'category' => $user->awardings,
                 'grouping' => $user->category,
                 'province' => $user->province_name,
@@ -457,7 +457,8 @@ class RomdController extends Controller
             return response()->json(['message' => 'Unable to Endorse this Nominee'], 404);
         }
 
-        return response()->json(['message' => 'Nominee endorsed successfully']);
+        // return response()->json(['message' => 'Nominee endorsed successfully']);
+        return redirect()->back()->with('success', 'Nominee endorsed successfully.');
     }
 
     public function endorseGp($id)
