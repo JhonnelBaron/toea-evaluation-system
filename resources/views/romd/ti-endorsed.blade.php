@@ -144,26 +144,26 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TI</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
 
             <div class="mx-auto flex flex-wrap items-center justify-between">
-                <div class="ml-8 flex items-center">
+                {{-- <div class="ml-8 flex items-center">
                     <label for="filterBy" class="text-black mr-2">Rank</label>
                     <select id="filterBy" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
                         <option value="self-rating" @if($filterBy === 'self-rating') selected @endif>Self Rating</option>
                         <option value="ro" @if($filterBy === 'ro') selected @endif>RO Score</option>
                         <option value="romo" @if($filterBy === 'romo') selected @endif>ROMO Score</option>
                     </select>
-                </div>
+                </div> --}}
                 <div class="ml-8 flex items-center"> <!-- Adjust ml-8 if needed -->
                     <label for="categoryFilter" class="text-black mr-2">Category:</label>
                     <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
                         <option value="all">All</option>
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
+                        <option value="small">RTC/STC</option>
+                        <option value="medium">TAS</option>
+                        <option value="large">PTC</option>
                     </select>
                 </div>
                 {{--<div class="ml-8 flex items-center">
@@ -173,35 +173,20 @@
                         <option value="rank">Rank</option>
                     </select>
                 </div> --}}
-                <div class="flex-grow flex items-center justify-center" style="margin-right: 2.5rem;"> <!-- Adjust this value to move the tabs to the left -->
-                {{-- <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left --> --}}
+                <div class="flex-grow flex items-center justify-center" style="margin-right: 8.5rem;">
                     <ul class="flex">
                         <li class="tab">
                             <a href="#" data-tab="submission" class="tab-link p-4 text-black">Summary</a>
                         </li>
                         <li class="tab">
-                            <a href="#" data-tab="evaluated" class="tab-link p-4 text-black border-b-2 border-black"><b>List</b></a>
+                            <a href="/best-ti" data-tab="evaluated" class="tab-link p-4 text-black">List</a>
                         </li>
                         <li class="tab">
-                            <a href="/gp/endorsed" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
+                            <a href="#" data-tab="endorsed" class="tab-link p-4 text-black  border-b-2 border-black"><b>Endorsed</b></a>
                         </li>
                     </ul>
                 </div>
-                <div class="flex items-center mr-10"> <!-- New Evaluator Filter -->
-                    <label for="evaluatorFilter" class="text-black mr-2">Evaluator:</label>
-                    <select name="evaluator" id="evaluatorFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800" onchange="document.getElementById('filterForm').submit()">
-                        <option value="all">All</option>
-                        @foreach($evaluators as $evaluator)
-                            <option value="{{ $evaluator->id }}" @if(request('evaluator') == $evaluator->id) selected @endif>{{ $evaluator->firstname }} {{ $evaluator->lastname }}</option>
-                        @endforeach
-                    </select>
-                </div>
             </div>
-
-            
-
-            
-            
 
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
@@ -212,98 +197,76 @@
                                 <th class="px-6 py-3 bg-TiffanyBlue"></th>
                                 <th class="px-6 py-2 bg-TiffanyBlue">Nominees</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Category</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Self Rating</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score RO</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluated Score ROMO</th>
-                                {{-- <th class="px-6 py-3 bg-TiffanyBlue">Progress</th> --}}
-                                <th class="px-6 py-3 bg-TiffanyBlue">Remarks</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Evaluator</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Hard Copy</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Action</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Action</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Secretariat Score</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 1</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 2</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 3</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Average Score</th>
                             </tr>
                         </thead>
                         <tbody class="">
-                            @php $rank = 1; @endphp
-                            @foreach ($smallProvinces as $user)
-                            <tr class="region-row small ">
-                                <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
-                                <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-
+                            {{-- @php $rank = 1; @endphp --}}
+                            @foreach ($small as $user)
+                            <tr class="region-row small" data-category="small">
+                                <td class="rank"></td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{   str_replace('_Province', '',$user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreSelf }}
+                                    {{  $user->romo_final_score }}
                                         <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                             <div class="popover-content p-4">
-                                                <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                                <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                                <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                                <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                                <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                                <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                                <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                                <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                                <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                                <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
                                             </div>
                                         </div>
                                     </div>
                                 </td>            
 
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreRO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreROMO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                                {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
-                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
-                                <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td>
-                                    @if(in_array($user->id, $checkEndorsed))
-                                    <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
-                                    @else
-                                    <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
-
-                                    @endif
-                                </td>
                             </tr>
                             @endforeach
-                            @foreach ($mediumProvinces as $user)
-                            <tr class="region-row medium ">
-                                <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
-                                <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
+                            @foreach ($medium as $user)
+                            <tr class="region-row medium" data-category="medium">
+                                <td class="rank"></td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreSelf }}
+                                    {{ $user->romo_final_score }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </td>            
+                            </tr>
+                            @endforeach
+                            @foreach ($large as $user)
+                            <tr class="region-row large" data-category="large">
+                                <td class="rank"></td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                    {{ $user->romo_final_score }}
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
                                         </div>
                                     </div>
                                     </div>
@@ -335,81 +298,6 @@
                                         </div>
                                     </div>
                                     </div>
-                                </td>
-                                {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
-                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
-
-                                <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td>
-                                    @if(in_array($user->id, $checkEndorsed))
-                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
-                                    @else
-                                    <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
-
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
-                            @foreach ($largeProvinces as $user)
-                            <tr class="region-row large">
-                                <td>{{ $rank++ }}</td>
-                                <td class="px-3 py-3">{{  $user->province_name }}</td>
-                                <td class="px-3 py-3">{{  str_replace('_Province', '', $user->category) }}</td>
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreSelf }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_initial_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_initial_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>            
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreRO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreROMO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                                {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
-                                <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td class="px-12 py-3"> <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
-                                <td><button class="btn btn-primary btn-sm">View</button></td>
-                                <td>
-                                    @if(in_array($user->id, $checkEndorsed))
-                                        <button type="button" class="btn btn-secondary btn-sm" disabled>Endorsed</button>
-                                    @else
-                                        <button type="button" class="btn btn-primary btn-sm bg-green-600" onclick="toggleModal('saveChangesModal', {{$user->id}}, '{{ $user->province_name }}')">Endorse</button>
-                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -461,23 +349,45 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-                const categoryFilter = document.getElementById('categoryFilter');
-                const rows = document.querySelectorAll('.region-row');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const rows = document.querySelectorAll('.region-row');
 
-                categoryFilter.addEventListener('change', function () {
-                    const selectedCategory = categoryFilter.value.toLowerCase();
+        categoryFilter.addEventListener('change', function () {
+            const selectedCategory = categoryFilter.value.toLowerCase();
+            let rank = 1; // Start ranking from 1 for each filter change
 
-                    rows.forEach(row => {
-                        const rowCategory = row.classList.contains(selectedCategory);
-
-                        if (selectedCategory === 'all' || rowCategory) {
-                            row.style.display = ''; // Show the row
-                        } else {
-                            row.style.display = 'none'; // Hide the row
-                        }
-                    });
-                    
+            if (selectedCategory === 'all') {
+                rows.forEach((row, index) => {
+                    row.style.display = ''; // Show all rows
+                    const rankCell = row.querySelector('.rank');
+                    if (rankCell) {
+                        rankCell.textContent = rank++; // Update the rank
+                    } else {
+                        console.warn(`Rank cell not found in row ${index}`);
+                    }
                 });
+            } else {
+                rows.forEach((row, index) => {
+                    const rowCategory = row.classList.contains(selectedCategory);
+
+                    if (rowCategory) {
+                        row.style.display = ''; // Show the row
+                        const rankCell = row.querySelector('.rank');
+                        if (rankCell) {
+                            rankCell.textContent = rank++; // Update the rank
+                        } else {
+                            console.warn(`Rank cell not found in row ${index}`);
+                        }
+                    } else {
+                        row.style.display = 'none'; // Hide the row
+                    }
+                });
+            }
+        });
+
+    // Trigger the change event to initialize the rank for the "all" category on page load
+    categoryFilter.dispatchEvent(new Event('change'));
+
 
                 // Filter by Rank
                     const filterBySelect = document.getElementById('filterBy');

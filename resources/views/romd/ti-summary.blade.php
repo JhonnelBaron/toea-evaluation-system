@@ -182,8 +182,7 @@
                     </select>
                 </div>
 
-                <div class="flex-grow flex items-center justify-center" style="margin-right: 1.5rem;"> <!-- Adjust this value to move the tabs to the left -->
-                {{-- <div class="flex items-center justify-center flex-grow ml-[-13rem]"> <!-- Adjust ml-[-1rem] to move tabs to the left --> --}}
+                <div class="flex-grow flex items-center justify-center" style="margin-right: 2.5rem;">
                     <ul class="flex">
                         <li class="tab">
                             <a href="#" data-tab="submission" class="tab-link p-4 text-black">Summary</a>
@@ -192,7 +191,7 @@
                             <a href="#" data-tab="evaluated" class="tab-link p-4 text-black border-b-2 border-black"><b>List</b></a>
                         </li>
                         <li class="tab">
-                            <a href="#" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
+                            <a href="/ti/endorsed" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
                         </li>
                     </ul>
                 </div>
@@ -487,14 +486,10 @@
                         <!-- Modal header -->
                         <div class="flex justify-between items-center p-4 border-b">
                             <h3 class="text-xl">Endorse Nominee</h3>
-                            <button class="text-gray-600" onclick="toggleModal('saveChangesModal')">
-                                &times;
-                            </button>
                         </div>
                         <!-- Modal body -->
                         <div class="p-4">
-                            <br><br>
-                            Are you sure you want to endorse <span id="modalProvinceName"></span> to external validator?
+                            Are you sure you want to endorse <u class="text-blue-500"><span id="modalProvinceName" class="text-blue-500"></span></u> to external validator?
                         </div>
                         <!-- Modal footer -->
                         <div class="flex justify-end p-4 border-t">

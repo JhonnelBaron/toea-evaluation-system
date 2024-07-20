@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('gp/endorse-nominee/{id}', [RomdController::class, 'endorseGp'])->name('gp.endorse-nominee');
     Route::post('ti/endorse-nominee/{id}', [RomdController::class, 'endorseTi']);
+
+    Route::get('gp/endorsed', [RomdController::class, 'rankGp']);
+    Route::get('ti/endorsed', [RomdController::class, 'rankTi']);
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');

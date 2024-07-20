@@ -523,4 +523,23 @@ class RomdController extends Controller
         // return response()->json(['message' => 'Nominee endorsed successfully']);
         return redirect()->back()->with('success', 'Nominee endorsed successfully.');
     }
+
+    public function rankGp()
+    {
+        $small = EndorsedExternal::where('grouping', 'Small_Province')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium_Province')->get();
+        $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
+
+        return view('romd.gp-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+    }
+
+    public function rankTi()
+    {
+        $small = EndorsedExternal::where('grouping', 'RTC-STC')->get();
+        $medium = EndorsedExternal::where('grouping', 'TAS')->get();
+        $large = EndorsedExternal::where('grouping', 'PTC')->get();
+
+        return view('romd.ti-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+    }
+
 }
