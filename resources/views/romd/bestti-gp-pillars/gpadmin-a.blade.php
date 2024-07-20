@@ -79,37 +79,38 @@
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
-            <div class="flex items-center ml-6">
-                <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/gpadmin-a" class="h-full w-full flex items-center justify-center">
-                    <span class="text-gray-200 font-bold text-xs">A</span>
-                  </a>
+            <div class="flex items-center justify-center ml-6">
+                <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+                    <a href="/gpadmin-a" class="h-full w-full flex items-center justify-center">
+                        <span class="text-gray-200 font-bold text-xs">Criteria A</span>
+                    </a>
                 </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/gpadmin-b" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">B</span>
-                  </a>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+                    <a href="/gpadmin-b" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria B</span>
+                    </a>
                 </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/gpadmin-c" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">C</span>
-                  </a>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+                    <a href="/gpadmin-c" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria C</span>
+                    </a>
                 </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/gpadmin-d" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">D</span>
-                  </a>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+                    <a href="/gpadmin-d" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria D</span>
+                    </a>
                 </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/gpadmin-e" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">E</span>
-                  </a>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+                    <a href="/gpadmin-e" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria E</span>
+                    </a>
                 </div>
-              </div>
+            </div>
+            
               
               
               
@@ -119,228 +120,228 @@
                     <table id="regionTable" class="mx-auto">
                         <thead class="bg-blue-300 text-sm">
                             <tr>
-                                <th>Category</th>
-                                <th>View Attachment</th>
-                                <th>Means of Verification</th>
-                                <th>Final Score</th>
-                                <th>Remarks</th>
-                                <th>ROMD Evaluated Score</th>
-                                <th>Remarks</th>
+                                <th class="border border-gray-300 p-2 w-52">Category</th>
+                                <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
+                                <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                                <th class="border border-gray-300 p-2 w-10">Secretariat Rating</th>
+                                <th class="border border-gray-300 p-2 w-32">Remarks</th>
+                                <th class="border border-gray-300 p-2 w-4">External Validator Rating</th>
+                                <th class="border border-gray-300 p-2 w-32">Remarks</th>
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <td><b>A. Good Governance Measures</b></td>
-                                </tr>
-
-                                <tr>
-                                    <td>A.1. Compliance for Corrupt Policy</td>
-                                    <td></td>
-                                    <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required >
-                                            <option value="">Select score</option>
-                                            <option value="40">40 - The Province has no personnel with pending administrative case</option>
-                                            <option value="0">0 - The Province has at least one pending administrative case</option>
-                                        </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-
-                                <tr>
-                                    <td>A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
-                                    <td></td>
-                                    <td><p class="small mb-1" style="font-size: 10px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="30">30 - There are no valid complaints, findings against any Official and Employee.</option>
-                                                        <option value="20">20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
-                                                        <option value="10">10 - There are 4-6 complaints, findings against any Official and Employee.</option>
-                                                        <option value="5">5 - There are 7-9 complaints, findings against any Official and Employee.</option>
-                                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
-                                        </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-
-                                <tr>
-                                    <td>A.3. Resolutions of complaints emanating from the Contact Center</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD 
-                                                        <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04
-                                                        Monitoring of Complaints Received
-                                                        </p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="10">10 - No complaints received</option>
-                                                        <option value="10">10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
-                                                        <option value="0">0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
-                                        </select>
-                                    </td>
-                                     <td><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.4. Customer Satisfaction Results Customer Net Satisfaction Rating with minimum of 95%</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)
-                                                                <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
-                                        </p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="30">30 - Customer Net Satisfaction Rating is at 99% and above</option>
-                                                        <option value="20">20 - Customer Net Satisfaction Rating is at 98%</option>
-                                                        <option value="10">10 - Customer Net Satisfaction Rating is at 97%</option>
-                                                        <option value="5">5 - Customer Net Satisfaction Rating is at 96%</option>
-                                                        <option value="3">3 - Customer Net Satisfaction Rating is at 95%</option>
-                                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
-                                        </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA
-                                                        <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra5a_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="15">15 - 0 unimplemented audit observation memorandum by the province</option>
-                                                        <option value="5">5 - 2-5 unimplemented audit observation memorandum by the province</option>
-                                                        <option value="0">0 - 6-10 unimplemented audit observation memorandum by the province</option>
-                                                    </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra5a_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA
-                                                        <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
-                                                        </p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra5b_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="15">15 - There no suspensions and disallowances</option>
-                                                        <option value="0">0 - There are suspensions and disallowances</option>
-                                        </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra5b_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.6. Compliance to PhilGEPS requirements</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed
-                                                        <br>Government Procurement Policy Board (GPPB) report who are compliant
-                                                        </p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="30">30 - 100% compliance from Publication to Notice and Award and notice to proceed</option>
-                                                        <option value="0">0 - Non-compliance from Publication to Notice and Award and notice to proceed</option>
-                                        </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra6_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
-                                                        <br>Proof of postings submitted/received copy from COA
-                                                        <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
-                                                        </p> 
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra7a_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="10">10 - All Foreign Travel Expenses liquidated within 60 days</option>
-                                                        <option value="0">0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
-                                                    </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra7a_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
-                                                        <br>Proof of postings submitted/received copy from COA
-                                                        <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
-                                                        </p>   
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="10">10 - All Local Travel Expenses liquidated within 30 days</option>
-                                                        <option value="0">0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
-                                                    </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td>A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
-                                    <td></td>
-                                    <td>
-                                        <p class="small mb-1" style="font-size: 10px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB)
-                                                        <br>- Acknowledgment email from GPBB
-                                                        </p>   
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
-                                                        <option value="">Select score</option>
-                                                        <option value="10">10 - The Provincial Office is compliant to APCPI</option>
-                                                        <option value="0">0 - No Communication Plan was prepared but activities were fully implemented</option>
-                                                    </select>
-                                    </td>
-                                    <td><input class="form-control mb-1" name="ra8_remarks" type="text" placeholder="Remarks"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total Score</b></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><b>Final Score:</b> <span id="totalScore">0</span></td>
-                                    <td><button class="btn btn-primary" id="submitButton">Submit</button></td>
-                                </tr>
+                            <tr>
+                                <td class="pb-4"><b>A. Good Governance Measures</b></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.1. Compliance for Corrupt Policy</td>
+                                <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required >
+                                        <option value="">Select score</option>
+                                        <option value="40">40 - The Province has no personnel with pending administrative case</option>
+                                        <option value="0">0 - The Province has at least one pending administrative case</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
+                                <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="30">30 - There are no valid complaints, findings against any Official and Employee.</option>
+                                        <option value="20">20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
+                                        <option value="10">10 - There are 4-6 complaints, findings against any Official and Employee.</option>
+                                        <option value="5">5 - There are 7-9 complaints, findings against any Official and Employee.</option>
+                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.3. Resolutions of complaints emanating from the Contact Center</td>
+                                <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD 
+                                    <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04
+                                    Monitoring of Complaints Received
+                                </p></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="10">10 - No complaints received</option>
+                                        <option value="10">10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
+                                        <option value="0">0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.4. Customer Satisfaction Results Customer Net Satisfaction Rating with minimum of 95%</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)
+                                        <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
+                                    </p>
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="30">30 - Customer Net Satisfaction Rating is at 99% and above</option>
+                                        <option value="20">20 - Customer Net Satisfaction Rating is at 98%</option>
+                                        <option value="10">10 - Customer Net Satisfaction Rating is at 97%</option>
+                                        <option value="5">5 - Customer Net Satisfaction Rating is at 96%</option>
+                                        <option value="3">3 - Customer Net Satisfaction Rating is at 95%</option>
+                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA
+                                        <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
+                                    </p>
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra5a_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="15">15 - 0 unimplemented audit observation memorandum by the province</option>
+                                        <option value="5">5 - 2-5 unimplemented audit observation memorandum by the province</option>
+                                        <option value="0">0 - 6-10 unimplemented audit observation memorandum by the province</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra5a_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA
+                                        <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
+                                    </p>
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra5b_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="15">15 - There no suspensions and disallowances</option>
+                                        <option value="0">0 - There are suspensions and disallowances</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra5b_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.6. Compliance to PhilGEPS requirements</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed
+                                        <br>Government Procurement Policy Board (GPPB) report who are compliant
+                                    </p>
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="30">30 - 100% compliance from Publication to Notice and Award and notice to proceed</option>
+                                        <option value="0">0 - Non-compliance from Publication to Notice and Award and notice to proceed</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra6_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
+                                        <br>Proof of postings submitted/received copy from COA
+                                        <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
+                                    </p> 
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra7a_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="10">10 - All Foreign Travel Expenses liquidated within 60 days</option>
+                                        <option value="0">0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra7a_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD
+                                        <br>Proof of postings submitted/received copy from COA
+                                        <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
+                                    </p>   
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="10">10 - All Local Travel Expenses liquidated within 30 days</option>
+                                        <option value="0">0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4">A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
+                                <td class="pb-4">
+                                    <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB)
+                                        <br>- Acknowledgment email from GPBB
+                                    </p>   
+                                </td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4">
+                                    <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
+                                        <option value="">Select score</option>
+                                        <option value="10">10 - The Provincial Office is compliant to APCPI</option>
+                                        <option value="0">0 - No Communication Plan was prepared but activities were fully implemented</option>
+                                    </select>
+                                </td>
+                                <td class="pb-4"><input class="form-control mb-1" name="ra8_remarks" type="text" placeholder="Remarks"></td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4"><b>Total Score</b></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"></td>
+                                <td class="pb-4"><b>Final Score:</b> <span id="totalScore">0</span></td>
+                                <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
+                            </tr>
                         </tbody>
-
-                       
+                    </table>
                 </div>
             </div>
         </div>

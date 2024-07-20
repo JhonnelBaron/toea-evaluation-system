@@ -75,89 +75,88 @@
             'userType' => 'User Type'
         ])
         <div class="ml-4 p-2">
-            <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1> 
-                <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
-            </div>
-            
-            <div class="flex items-center ml-6">
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">A</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">B</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">C</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">D</span>
-                  </a>
-                </div>
-              <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
-                    <span class="text-gray-200 font-bold text-xs">E</span>
-                  </a>
-                </div>
-            </div>
+          <div class="flex justify-between items-center w-full p-2">
+            <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1>
+            <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
+        </div>
+        
+        <div class="flex items-center justify-center">
+          <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+              <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
+                  <span class="text-white font-bold text-xs">Criteria A</span>
+              </a>
+          </div>
+          <div class="h-0.5 w-48 bg-gray-500"></div>
+          <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+              <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
+                  <span class="text-white font-bold text-xs">Criteria B</span>
+              </a>
+          </div>
+          <div class="h-0.5 w-48 bg-gray-500"></div>
+          <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+              <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
+                  <span class="text-white font-bold text-xs">Criteria C</span>
+              </a>
+          </div>
+          <div class="h-0.5 w-48 bg-gray-500"></div>
+          <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+              <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
+                  <span class="text-white font-bold text-xs">Criteria D</span>
+              </a>
+          </div>
+          <div class="h-0.5 w-48 bg-gray-500"></div>
+          <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
+              <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
+                  <span class="text-gray-200 font-bold text-xs">Criteria E</span>
+              </a>
+          </div>
+        </div>
+        
               
               
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
-                    <table id="regionTable" class="mx-auto">
-                        <thead class="bg-blue-300 text-sm">
-                          <tr>
+                  <table id="regionTable" class="mx-auto">
+                    <thead class="bg-blue-300 text-sm">
+                        <tr>
                             <th class="border border-gray-300 p-2 w-52">Category</th>
-                            <th class="border border-gray-300 p-2 w-24">View Attachment</th>
-                            <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
-                            <th class="border border-gray-300 p-2 w-10">Final Score</th>
-                            <th class="border border-gray-300 p-2 w-32">Remarks</th>
-                            <th class="border border-gray-300 p-2 w-32">ROMD Evaluated Score</th>
-                            <th class="border border-gray-300 p-2 w-32">Remarks</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-
-                           <!-- GALING PROBINSYA / BEST TI CRITERIA E -->
-                           {{-- 'RTC-STC', 'TAS', 'PTC' --}}
-
-                           <tr>
-                               <td><b>Social Marketing and Advocacy</b></td>
-                           </tr>
-                           <tr>
-                               <td>E.1. Communication Program (OPCR)</td>
-                               <td></td>
-                               <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan <br>
-                                               Write-ups (best practices/activity reports) <br>
-                                               Radio/TV program<br>
-                                               Social media posts and shares<br>
-                                               Local Media engagements (blasted PRs, Interviews)<br>
-                                               Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>    </td>
-                                <td></td>
-                                <td></td>
-
-                                <td><select class="form-control mb-1 score-dropdown" name="re1_final_score" required>
-                                               <option value="">Select score</option>
-                                               <option value="50">50 - A Communication Plan was prepared and fully implemented</option>
-                                               <option value="30">30 - No Communication Plan was prepared but activities were fully implemented</option>
-                                               <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
-                                           </select></td>
-                                <td><input class="form-control mb-1" name="re1_remarks" type="text" placeholder="Remarks"></td>
-                           </tr>
-
-                           <tr>
-                         
+                                <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
+                                <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                                <th class="border border-gray-300 p-2 w-10">Secretariat Rating</th>
+                                <th class="border border-gray-300 p-2 w-32">Remarks</th>
+                                <th class="border border-gray-300 p-2 w-4">External Validator Rating</th>
+                                <th class="border border-gray-300 p-2 w-32">Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- GALING PROBINSYA / BEST TI CRITERIA E -->
+                        {{-- 'RTC-STC', 'TAS', 'PTC' --}}
+                
+                        <tr>
+                            <td><b>Social Marketing and Advocacy</b></td>
+                        </tr>
+                        <tr>
+                            <td>E.1. Communication Program (OPCR)</td>
+                            <td><p class="small mb-1" style="font-size: 12px;">Means of Verification: Communication plan <br>
+                                Write-ups (best practices/activity reports) <br>
+                                Radio/TV program<br>
+                                Social media posts and shares<br>
+                                Local Media engagements (blasted PRs, Interviews)<br>
+                                Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><select class="form-control mb-1 score-dropdown" name="re1_final_score" required>
+                                <option value="">Select score</option>
+                                <option value="50">50 - A Communication Plan was prepared and fully implemented</option>
+                                <option value="30">30 - No Communication Plan was prepared but activities were fully implemented</option>
+                                <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                            </select></td>
+                            <td><input class="form-control mb-1" name="re1_remarks" type="text" placeholder="Remarks"></td>
+                        </tr>
+                
+                        <tr>
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;"></td>
@@ -166,7 +165,9 @@
                             <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
                             <td style="padding: 15px;"></td>
                         </tr>
-                        </tbody>
+                    </tbody>
+                </table>
+                
 
                     </div>
 
