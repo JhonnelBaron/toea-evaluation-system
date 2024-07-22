@@ -80,37 +80,38 @@
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
-            <div class="flex items-center ml-6">
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
+            <div class="flex items-center justify-center ml-6">
+              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
                   <a href="/besttiadmin-rtcstctas-a" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">A</span>
+                      <span class="text-white font-bold text-xs">Criteria A</span>
                   </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-rtcstctas-b" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">B</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-rtcstctas-c" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">C</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-rtcstctas-d" class="h-full w-full flex items-center justify-center">
-                    <span class="text-gray-200 font-bold text-xs">D</span>
-                  </a>
-                </div>
-                <div class="h-0.5 w-24 bg-gray-500"></div>
-                <div class="relative h-8 w-8 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer">
-                  <a href="/besttiadmin-rtcstctas-e" class="h-full w-full flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">E</span>
-                  </a>
-                </div>
               </div>
+              <div class="h-0.5 w-48 bg-gray-500"></div>
+              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                  <a href="/besttiadmin-rtcstctas-b" class="h-full w-full flex items-center justify-center">
+                      <span class="text-white font-bold text-xs">Criteria B</span>
+                  </a>
+              </div>
+              <div class="h-0.5 w-48 bg-gray-500"></div>
+              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                  <a href="/besttiadmin-rtcstctas-c" class="h-full w-full flex items-center justify-center">
+                      <span class="text-white font-bold text-xs">Criteria C</span>
+                  </a>
+              </div>
+              <div class="h-0.5 w-48 bg-gray-500"></div>
+              <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
+                  <a href="/besttiadmin-rtcstctas-d" class="h-full w-full flex items-center justify-center">
+                      <span class="text-gray-200 font-bold text-xs">Criteria D</span>
+                  </a>
+              </div>
+              <div class="h-0.5 w-48 bg-gray-500"></div>
+              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                  <a href="/besttiadmin-rtcstctas-e" class="h-full w-full flex items-center justify-center">
+                      <span class="text-white font-bold text-xs">Criteria E</span>
+                  </a>
+              </div>
+          </div>
+          
               
               
             <div class="content bg-white shadow-md min-h-50 p-4 mt-4 overflow-x-auto">
@@ -118,12 +119,12 @@
                     <table id="regionTable" class="mx-auto">
                         <thead class="bg-blue-300 text-sm">
                             <tr>
-                                <th class="border border-gray-300 p-2 w-52">Category</th>
-                              <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                              <th class="border border-gray-300 p-2 w-52">Category</th>
                               <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
-                              <th class="border border-gray-300 p-2 w-10">Final Score</th>
+                              <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                              <th class="border border-gray-300 p-2 w-10">Secretariat Rating</th>
                               <th class="border border-gray-300 p-2 w-32">Remarks</th>
-                              <th class="border border-gray-300 p-2 w-32">ROMD Evaluated Score</th>
+                              <th class="border border-gray-300 p-2 w-4">External Validator Rating</th>
                               <th class="border border-gray-300 p-2 w-32">Remarks</th>
                             </tr>
                         </thead>
