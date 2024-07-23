@@ -7,6 +7,11 @@ use App\Models\External\GpBExternal;
 use App\Models\External\GpCExternal;
 use App\Models\External\GpDExternal;
 use App\Models\External\GpEExternal;
+use App\Models\External\PtcAExternal;
+use App\Models\External\PtcBExternal;
+use App\Models\External\PtcCExternal;
+use App\Models\External\PtcDExternal;
+use App\Models\External\PtcEExternal;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -127,5 +132,28 @@ class ExecutiveOfficeAccount extends Authenticatable
     public function gpE()
     {
         return $this->hasMany(GpEExternal::class, 'validator_id');
+    }
+
+    public function ptcA()
+    {
+        return $this->hasMany(PtcAExternal::class, 'validator_id');
+    }
+
+    public function ptcB()
+    {
+        return $this->hasMany(PtcBExternal::class, 'validator_id');
+    }
+
+    public function ptcC()
+    {
+        return $this->hasMany(PtcCExternal::class, 'validator_id');
+    }
+    public function ptcD()
+    {
+        return $this->hasMany(PtcDExternal::class, 'validator_id');
+    }
+    public function ptcE()
+    {
+        return $this->hasMany(PtcEExternal::class, 'validator_id');
     }
 }

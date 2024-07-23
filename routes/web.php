@@ -387,3 +387,9 @@ Route::post('/store-gpb', [ExternalValidatorController::class, 'storeGpB'])->nam
 Route::post('/store-gpc', [ExternalValidatorController::class, 'storeGpC'])->name('storeGpC');
 Route::post('/store-gpd', [ExternalValidatorController::class, 'storeGpD'])->name('storeGpD');
 Route::post('/store-gpe', [ExternalValidatorController::class, 'storeGpE'])->name('storeGpE');
+
+Route::post('/store-ptca', [ExternalValidatorController::class, 'storePtcA'])->name('storePtcA');
+Route::post('/store-ptcb', [ExternalValidatorController::class, 'storePtcB'])->name('storePtcB');
+Route::post('/store-ptcc', [ExternalValidatorController::class, 'storePtcC'])->name('storePtcC');
+Route::post('/store-ptcd', [ExternalValidatorController::class, 'storePtcD'])->name('storePtcD');
+Route::post('/store-ptce', [ExternalValidatorController::class, 'storePtcE'])->name('storePtcE');

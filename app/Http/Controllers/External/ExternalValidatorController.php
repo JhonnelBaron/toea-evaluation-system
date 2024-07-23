@@ -9,6 +9,11 @@ use App\Models\External\GpBExternal;
 use App\Models\External\GpCExternal;
 use App\Models\External\GpDExternal;
 use App\Models\External\GpEExternal;
+use App\Models\External\PtcAExternal;
+use App\Models\External\PtcBExternal;
+use App\Models\External\PtcCExternal;
+use App\Models\External\PtcDExternal;
+use App\Models\External\PtcEExternal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,8 +26,37 @@ class ExternalValidatorController extends Controller
         $medium = EndorsedExternal::where('grouping', 'Medium_Province')->get();
         $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
 
-        return view('external.gp', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+            // Fetching and summing up scores and percentages
+        $tables = [
+            GpAExternal::class,
+            GpBExternal::class,
+            GpCExternal::class,
+            GpDExternal::class,
+            GpEExternal::class,
+            ];
+
+        $totalScore = 0;
+        $totalPercentage = 0;
+        $count = 0;
+
+        foreach ($tables as $table) {
+            $results = $table::all();
+            foreach ($results as $result) {
+                $totalScore += $result->overall_total_score;
+                $totalPercentage += $result->progress_percentage;
+                $count++;
+            }
+        }
+
+        $averagePercentage = $count ? $totalPercentage / $count : 0;
+
+
+        
+        return view('external.gp', ['small' => $small, 'medium' => $medium, 'large' => $large,
+        'totalScore' => $totalScore,
+        'averagePercentage' => $averagePercentage,]);
     }
+
     public function externalGpA($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
@@ -579,6 +613,355 @@ class ExternalValidatorController extends Controller
         $validated['user_id'] = $user_id;
 
         $data = GpEExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->e1
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->e1
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 1; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
+    }
+
+    //PTC
+    public function storePtcA(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'a1' => 'nullable|integer',
+            'a1_remarks' => 'nullable|string',
+            'a2' => 'nullable|integer',
+            'a2_remarks' => 'nullable|string',
+            'a3' => 'nullable|integer',
+            'a3_remarks' => 'nullable|string',
+            'a4' => 'nullable|integer',
+            'a4_remarks' => 'nullable|string',
+            'a5a' => 'nullable|integer',
+            'a5a_remarks' => 'nullable|string',
+            'a5b' => 'nullable|integer',
+            'a5b_remarks' => 'nullable|string',
+            'a6' => 'nullable|integer',
+            'a6_remarks' => 'nullable|string',
+            'a7a' => 'nullable|integer',
+            'a7a_remarks' => 'nullable|string',
+            'a7b' => 'nullable|integer',
+            'a7b_remarks' => 'nullable|string',
+            'a8' => 'nullable|integer',
+            'a8_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = PtcAExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->a1, $data->a2, $data->a3, $data->a4,
+            $data->a5a, $data->a5b, $data->a6, $data->a7a, $data->a7b, $data->a8
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->a1, $data->a2, $data->a3, $data->a4,
+            $data->a5a, $data->a5b, $data->a6, $data->a7a, $data->a7b, $data->a8
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 10; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
+    }
+
+
+
+    public function storePtcB(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'b1a' => 'nullable|integer',
+            'b1a_remarks' => 'nullable|string',
+            'b1b' => 'nullable|integer',
+            'b1b_remarks' => 'nullable|string',
+            'b1c1' => 'nullable|integer',
+            'b1c1_remarks' => 'nullable|string',
+            'b1c2' => 'nullable|integer',
+            'b1c2_remarks' => 'nullable|string',
+            'b1c3' => 'nullable|integer',
+            'b1c3_remarks' => 'nullable|string',
+            'b1d1' => 'nullable|integer',
+            'b1d1_remarks' => 'nullable|string',
+            'b2a' => 'nullable|integer',
+            'b2a_remarks' => 'nullable|string',
+            'b2b' => 'nullable|integer',
+            'b2b_remarks' => 'nullable|string',
+            'b2c' => 'nullable|integer',
+            'b2c_remarks' => 'nullable|string',
+            'b2d' => 'nullable|integer',
+            'b2d_remarks' => 'nullable|string',
+            'b2e' => 'nullable|integer',
+            'b2e_remarks' => 'nullable|string',
+            'b2f' => 'nullable|integer',
+            'b2f_remarks' => 'nullable|string',
+            'b2g' => 'nullable|integer',
+            'b2g_remarks' => 'nullable|string',
+            'b2h' => 'nullable|integer',
+            'b2h_remarks' => 'nullable|string',
+            'b2i' => 'nullable|integer',
+            'b2i_remarks' => 'nullable|string',
+            'b2j' => 'nullable|integer',
+            'b2j_remarks' => 'nullable|string',
+            'b3a' => 'nullable|integer',
+            'b3a_remarks' => 'nullable|string',
+            'b3b' => 'nullable|integer',
+            'b3b_remarks' => 'nullable|string',
+            'b3c' => 'nullable|integer',
+            'b3c_remarks' => 'nullable|string',
+            'b3d' => 'nullable|integer',
+            'b3d_remarks' => 'nullable|string',
+            'b3e' => 'nullable|integer',
+            'b3e_remarks' => 'nullable|string',
+            'b3f' => 'nullable|integer',
+            'b3f_remarks' => 'nullable|string',
+            'b4a1' => 'nullable|integer',
+            'b4a1_remarks' => 'nullable|string',
+            'b4a2' => 'nullable|integer',
+            'b4a2_remarks' => 'nullable|string',
+            'b4b' => 'nullable|integer',
+            'b4b_remarks' => 'nullable|string',
+            'b4c' => 'nullable|integer',
+            'b4c_remarks' => 'nullable|string',
+            'b4d' => 'nullable|integer',
+            'b4d_remarks' => 'nullable|string',
+            'b4e' => 'nullable|integer',
+            'b4e_remarks' => 'nullable|string',
+            'b5a1' => 'nullable|integer',
+            'b5a1_remarks' => 'nullable|string',
+            'b5a2' => 'nullable|integer',
+            'b5a2_remarks' => 'nullable|string',
+            'b5b11' => 'nullable|integer',
+            'b5b11_remarks' => 'nullable|string',
+            'b5b12' => 'nullable|integer',
+            'b5b12_remarks' => 'nullable|string',
+            'b5b21' => 'nullable|integer',
+            'b5b21_remarks' => 'nullable|string',
+            'b5b22' => 'nullable|integer',
+            'b5b22_remarks' => 'nullable|string',
+            'b5c1' => 'nullable|integer',
+            'b5c1_remarks' => 'nullable|string',
+            'b5c2' => 'nullable|integer',
+            'b5c2_remarks' => 'nullable|string',
+            'b5d' => 'nullable|integer',
+            'b5d_remarks' => 'nullable|string',
+            'b5e' => 'nullable|integer',
+            'b5e_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = PtcBExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->b1a, $data->b1b, $data->b1c1, $data->b1c2, $data->b1c3, $data->b1d1,
+            $data->b2a, $data->b2b, $data->b2c, $data->b2d, $data->b2e, $data->b2f,
+            $data->b2g, $data->b2h, $data->b2i, $data->b2j, $data->b3a, $data->b3b,
+            $data->b3c, $data->b3d, $data->b3e, $data->b3f, $data->b4a1, $data->b4a2,
+            $data->b4b, $data->b4c, $data->b4d, $data->b4e, $data->b5a1, $data->b5a2,
+            $data->b5b11, $data->b5b12, $data->b5b21, $data->b5b22, $data->b5c1, $data->b5c2,
+            $data->b5d, $data->b5e
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->b1a, $data->b1b, $data->b1c1, $data->b1c2, $data->b1c3, $data->b1d1,
+            $data->b2a, $data->b2b, $data->b2c, $data->b2d, $data->b2e, $data->b2f,
+            $data->b2g, $data->b2h, $data->b2i, $data->b2j, $data->b3a, $data->b3b,
+            $data->b3c, $data->b3d, $data->b3e, $data->b3f, $data->b4a1, $data->b4a2,
+            $data->b4b, $data->b4c, $data->b4d, $data->b4e, $data->b5a1, $data->b5a2,
+            $data->b5b11, $data->b5b12, $data->b5b21, $data->b5b22, $data->b5c1, $data->b5c2,
+            $data->b5d, $data->b5e
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 38; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
+    }
+
+    public function storePtcC(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        // Validate the incoming request data
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'c1' => 'nullable|integer',
+            'c1_remarks' => 'nullable|string',
+            'c2' => 'nullable|integer',
+            'c2_remarks' => 'nullable|string',
+            'c31' => 'nullable|integer',
+            'c31_remarks' => 'nullable|string',
+            'c32' => 'nullable|integer',
+            'c32_remarks' => 'nullable|string',
+            'c411' => 'nullable|integer',
+            'c411_remarks' => 'nullable|string',
+            'c412' => 'nullable|integer',
+            'c412_remarks' => 'nullable|string',
+            'c421' => 'nullable|integer',
+            'c421_remarks' => 'nullable|string',
+            'c422' => 'nullable|integer',
+            'c422_remarks' => 'nullable|string',
+            'c431' => 'nullable|integer',
+            'c431_remarks' => 'nullable|string',
+            'c432' => 'nullable|integer',
+            'c432_remarks' => 'nullable|string',
+        ]);
+
+        // Add the validator_id and user_id to the validated data
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        // Create or update the record
+        $data = PtcCExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->c1, $data->c2, $data->c31, $data->c32,
+            $data->c411, $data->c412, $data->c421, $data->c422,
+            $data->c431, $data->c432
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->c1, $data->c2, $data->c31, $data->c32,
+            $data->c411, $data->c412, $data->c421, $data->c422,
+            $data->c431, $data->c432
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 10; // Count of integer fields
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with('success', 'Data saved successfully');
+    }
+
+    public function storePtcD(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'd1' => 'nullable|integer',
+            'd1_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = PtcDExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->d1
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->d1
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 1; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
+    }
+
+    public function storePtcE(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'e1' => 'nullable|integer',
+            'e1_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = PtcEExternal::updateOrCreate(
             ['user_id' => $user_id, 'validator_id' => $validator_id],
             $validated
         );
