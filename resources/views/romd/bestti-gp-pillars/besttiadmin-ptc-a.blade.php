@@ -75,10 +75,21 @@
             'userType' => 'User Type'
         ])
         <div class="ml-4 p-2">
+            
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
+                <div class="flex items-center space-x-2">
+                    <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <a class="text-xl" href="/external/ti"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        <a class="text-xl" href="/external/ti">Back</a>
+                    </button>
+                    <h1 class="text-gray-800 font-bold text-3xl">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
+                </div>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
+            
+            
             
             <div class="flex items-center justify-center">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
