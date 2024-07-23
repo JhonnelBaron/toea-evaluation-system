@@ -268,7 +268,7 @@ Route::get('/gpadmin-e', function () {
 
 
 
-
+// THIS LINE IS FOR EXTERNAL VALIDATORS
 
 //Best TRAINING INSTITUTION ADMIN STC/RTC TAS
 Route::get('/besttiadmin-rtcstctas-a', function () {
@@ -291,8 +291,6 @@ Route::get('/besttiadmin-rtcstctas-e', function () {
     return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-e');
 })->name('/besttiadmin-rtcstctas-e');
 
-
-
 //Best TRAINING INSTITUTION ADMIN PTC
 Route::get('/besttiadmin-ptc-a', function () {
     return view('romd.bestti-gp-pillars.besttiadmin-ptc-a');
@@ -313,6 +311,28 @@ Route::get('/besttiadmin-ptc-d', function () {
 Route::get('/besttiadmin-ptc-e', function () {
     return view('romd.bestti-gp-pillars.besttiadmin-ptc-e');
 })->name('/besttiadmin-ptc-e');
+
+// BEST REGIONAL OFFICE
+
+Route::get('/ev-bro-evaluation-a', function () {
+    return view('romd.bestti-gp-pillars.ev-bro-evaluation-a');
+})->name('/ev-bro-evaluation-a');
+
+Route::get('/ev-bro-evaluation-b', function () {
+    return view('romd.bestti-gp-pillars.ev-bro-evaluation-b');
+})->name('/ev-bro-evaluation-b');
+
+Route::get('/ev-bro-evaluation-c', function () {
+    return view('romd.bestti-gp-pillars.ev-bro-evaluation-c');
+})->name('/ev-bro-evaluation-c');
+
+Route::get('/ev-bro-evaluation-d', function () {
+    return view('romd.bestti-gp-pillars.ev-bro-evaluation-d');
+})->name('/ev-bro-evaluation-d');
+
+Route::get('/ev-bro-evaluation-e', function () {
+    return view('romd.bestti-gp-pillars.ev-bro-evaluation-e');
+})->name('/ev-bro-evaluation-e');
 
 
 
