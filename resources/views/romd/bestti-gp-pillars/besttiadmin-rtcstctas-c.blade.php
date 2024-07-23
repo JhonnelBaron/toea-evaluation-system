@@ -76,42 +76,41 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - RTC/STC, TAS</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-RTC/STC - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
-            <div class="flex  ml-6 justify-center items-center">
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-rtcstctas-a" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria A</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-rtcstctas-b" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria B</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-rtcstctas-c" class="h-full w-full flex items-center justify-center">
-                      <span class="text-gray-200 font-bold text-xs">Criteria C</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-rtcstctas-d" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria D</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-rtcstctas-e" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria E</span>
-                  </a>
-              </div>
-          </div>
-          
+            <div class="flex items-center justify-center ml-6">
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria A</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria B</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-gray-200 font-bold text-xs">Criteria C</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria D</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria E</span>
+                    </a>
+                </div>
+            </div>
               
               
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
@@ -142,8 +141,8 @@
                             <td class="pb-4">C.1. Budget Utilization Rate (BUR)</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: Monitoring logbook/ registry)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc1_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc1_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc1_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="25">25 - 100% of budget utilized</option>
@@ -157,8 +156,8 @@
                             <td class="pb-4">C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation 80% acted upon (either partially or fully implemented)</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: Agency Action Plan and Status of Implementation (AAPSI))</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc2_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc2_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc2_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="25">25 - 100% acted upon (either partially or fully implemented)</option>
@@ -181,8 +180,8 @@
                             <td class="pb-4">C.3.1 Staff Development Program: Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of Personnel in 2023, Certificates of trainings attended, REAPs)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc31_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc31_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc31_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="20">20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
@@ -195,8 +194,8 @@
                             <td class="pb-4">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of plantilla positions of the TTI, Certificates of training attended)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc32_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc32_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc32_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="15">15 - 100% of Employees were provided with training opportunities</option>
@@ -227,8 +226,8 @@
                             <td class="pb-4">C.4.1.1. Participation</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc411_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc411_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc411_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="4">4 - The TTI submitted nominees for Category I</option>
@@ -240,8 +239,8 @@
                             <td class="pb-4">C.4.1.2. Awards received</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc412_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc412_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc412_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="4">4 - The TTI has received recognition/award at national level</option>
@@ -262,8 +261,8 @@
                             <td class="pb-4">C.4.2.1. Participation</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc421_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc421_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc421_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="4">4 - The TTI submitted nominees for Category II</option>
@@ -275,8 +274,8 @@
                             <td class="pb-4">C.4.2.2. Awards Received</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc422_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc422_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc422_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="4">4 - The TTI has received recognition/award at national level</option>
@@ -297,8 +296,8 @@
                             <td class="pb-4">C.4.3.1. Participation</td>
                             <td class="pb-4"></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc431_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc431_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc431_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="4">4 - The TTI submitted nominees for Category III</option>
@@ -310,8 +309,8 @@
                             <td class="pb-4">C.4.3.2. Awards Received</td>
                             <td class="pb-4"></td>
                             <td class="pb-4"></td>
-                            <td class="pb-4"></td>
-                            <td class="pb-4"></td>
+                            <td class="pb-4 text-center">{{$data->rc432_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rc432_remarks}}</td>
                             <td class="pb-4"><select class="form-control mb-1 score-dropdown" name="rc432_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="5">5 - The TTI has received recognition/award at national level</option>
@@ -323,9 +322,9 @@
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;"></td>
-                            <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
+                            <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
+                            <td style="padding: 15px;"> <span id="totalScore">0</span></td>
                             <td style="padding: 15px;"></td>
                         </tr>
                     </tbody>

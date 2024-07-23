@@ -4,6 +4,7 @@ use App\Http\Controllers\AsEvaluationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BroEvaluationController;
 use App\Http\Controllers\EoController;
+use App\Http\Controllers\External\ExternalValidatorController;
 use App\Http\Controllers\Files\RoFileController;
 use App\Http\Controllers\GpContoller;
 use App\Http\Controllers\RoController;
@@ -44,6 +45,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('gp/endorsed', [RomdController::class, 'rankGp']);
     Route::get('ti/endorsed', [RomdController::class, 'rankTi']);
+
+    Route::get('/external/gp', [ExternalValidatorController::class, 'externalGp']);
+    Route::get('/external/ti', [ExternalValidatorController::class, 'externalTi']);
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');
@@ -338,3 +342,28 @@ Route::post('/submit-evaluation-ws', [WsEvaluationController::class, 'wsSubmit']
 Route::get('/upload-file/{region}', [RoController::class, 'index'])->name('fetch-upload.file');
 Route::get('/region-folders', [RoController::class, 'showFolders'])->name('region.folders');
 Route::post('/upload-file/{region}', [RoFileController::class, 'store'])->name('upload.file');
+
+
+Route::get('/external/gp-a/{id}', [ExternalValidatorController::class, 'externalGpA'])->name('external.gp-a');
+Route::get('/external/gp-b/{id}', [ExternalValidatorController::class, 'externalGpB'])->name('external.gp-b');
+Route::get('/external/gp-c/{id}', [ExternalValidatorController::class, 'externalGpC'])->name('external.gp-c');
+Route::get('/external/gp-d/{id}', [ExternalValidatorController::class, 'externalGpD'])->name('external.gp-d');
+Route::get('/external/gp-e/{id}', [ExternalValidatorController::class, 'externalGpE'])->name('external.gp-e');
+
+Route::get('/external/ti-a/rtc-stc-tas/{id}', [ExternalValidatorController::class, 'externalStcRtcTasA'])->name('external.ti-a');
+Route::get('/external/ti-b/rtc-stc-tas/{id}', [ExternalValidatorController::class, 'externalStcRtcTasB'])->name('external.ti-b');
+Route::get('/external/ti-c/rtc-stc-tas/{id}', [ExternalValidatorController::class, 'externalStcRtcTasC'])->name('external.ti-c');
+Route::get('/external/ti-d/rtc-stc-tas/{id}', [ExternalValidatorController::class, 'externalStcRtcTasD'])->name('external.ti-d');
+Route::get('/external/ti-e/rtc-stc-tas/{id}', [ExternalValidatorController::class, 'externalStcRtcTasE'])->name('external.ti-e');
+
+Route::get('/external/ti-a/ptc/{id}', [ExternalValidatorController::class, 'externalPtcA'])->name('external.ti-ptc-a');
+Route::get('/external/ti-b/ptc/{id}', [ExternalValidatorController::class, 'externalPtcB'])->name('external.ti-ptc-b');
+Route::get('/external/ti-c/ptc/{id}', [ExternalValidatorController::class, 'externalPtcC'])->name('external.ti-ptc-c');
+Route::get('/external/ti-d/ptc/{id}', [ExternalValidatorController::class, 'externalPtcD'])->name('external.ti-ptc-d');
+Route::get('/external/ti-e/ptc/{id}', [ExternalValidatorController::class, 'externalPtcE'])->name('external.ti-ptc-e');
+
+Route::post('/store-gpa', [ExternalValidatorController::class, 'storeGpA'])->name('storeGpA');
+Route::post('/store-gpb', [ExternalValidatorController::class, 'storeGpB'])->name('storeGpB');
+Route::post('/store-gpc', [ExternalValidatorController::class, 'storeGpC'])->name('storeGpC');
+Route::post('/store-gpd', [ExternalValidatorController::class, 'storeGpD'])->name('storeGpD');
+Route::post('/store-gpe', [ExternalValidatorController::class, 'storeGpE'])->name('storeGpE');

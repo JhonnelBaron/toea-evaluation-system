@@ -75,37 +75,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA  - Region Name</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA  - {{$province}}</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center ml-6">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-a" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria A</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-b" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria B</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-c" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-gray-200 font-bold text-xs">Criteria C</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-d" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria D</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-e" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria E</span>
                     </a>
                 </div>
@@ -113,7 +113,9 @@
             
               
               
-
+            <form id="saveChangesForm" method="POST" action="{{ route('storeGpC') }}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
@@ -143,34 +145,34 @@
                                 <td class="pb-4">C.1. Budget Utilization Rate (BUR)</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring logbook/ registry</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc1_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc1_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc1_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="25">25 - 100% of budget utilized</option>
-                                        <option value="10">10 - 90% - 99% of budget utilized</option>
-                                        <option value="0">0 - 89% and below of budget utilized</option>
+                                        <option value="25" {{ (isset($previousData->c1) && $previousData->c1 == 25) ? 'selected' : '' }}>25 - 100% of budget utilized</option>
+                                        <option value="10" {{ (isset($previousData->c1) && $previousData->c1 == 10) ? 'selected' : '' }}>10 - 90% - 99% of budget utilized</option>
+                                        <option value="0" {{ (isset($previousData->c1) && $previousData->c1 == 0) ? 'selected' : '' }}>0 - 89% and below of budget utilized</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc1_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c1_remarks) ? $previousData->c1_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc2_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc2_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc2_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="25">25 - 100% acted upon (either partially or fully implemented)</option>
-                                        <option value="15">15 - 90% - 99% acted upon (either partially or fully implemented)</option>
-                                        <option value="5">5 - 80% - 89% acted upon (either partially or fully implemented)</option>
-                                        <option value="0">0 - 79% and below acted upon (either partially or fully implemented)</option>
+                                        <option value="25" {{ (isset($previousData->c2) && $previousData->c2 == 25) ? 'selected' : '' }}>25 - 100% acted upon (either partially or fully implemented)</option>
+                                        <option value="15" {{ (isset($previousData->c2) && $previousData->c2 == 15) ? 'selected' : '' }}>15 - 90% - 99% acted upon (either partially or fully implemented)</option>
+                                        <option value="5" {{ (isset($previousData->c2) && $previousData->c2 == 5) ? 'selected' : '' }}>5 - 80% - 89% acted upon (either partially or fully implemented)</option>
+                                        <option value="0" {{ (isset($previousData->c2) && $previousData->c2 == 0) ? 'selected' : '' }}>0 - 79% and below acted upon (either partially or fully implemented)</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc2_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c2_remarks) ? $previousData->c2_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>C.3. Staff Development Program</b></td>
@@ -185,33 +187,33 @@
                                 <td class="pb-4">C.3.1 Staff Development Program: Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Provincial Work Force Development Plan (WFDP)<br> List of PO personnel in 2023<br> Certificates of trainings attended<br> Copies of REAPs</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc31_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc31_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc31_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="20">20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
-                                        <option value="10">10 - 70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
-                                        <option value="0">0 - 69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                        <option value="20" {{ (isset($previousData->c31) && $previousData->c31 == 20) ? 'selected' : '' }}>20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                        <option value="10" {{ (isset($previousData->c31) && $previousData->c31 == 10) ? 'selected' : '' }}>10 - 70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                        <option value="0" {{ (isset($previousData->c31) && $previousData->c31 == 0) ? 'selected' : '' }}>0 - 69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc31_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c31_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c31_remarks) ? $previousData->c31_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of PO personnel in 2023<br> Certificates of training programs attended<br></p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc32_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc32_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc32_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="15">15 - 100% of Employees were provided with training opportunities</option>
-                                        <option value="5">5 - 75%-99% of Employees were provided with training opportunities</option>
-                                        <option value="0">0 - 74% and below of Employees were provided with training opportunities</option>
+                                        <option value="15" {{ (isset($previousData->c32) && $previousData->c32 == 15) ? 'selected' : '' }}>15 - 100% of Employees were provided with training opportunities</option>
+                                        <option value="5" {{ (isset($previousData->c32) && $previousData->c32 == 5) ? 'selected' : '' }}>5 - 75%-99% of Employees were provided with training opportunities</option>
+                                        <option value="0" {{ (isset($previousData->c32) && $previousData->c32 == 0) ? 'selected' : '' }}>0 - 74% and below of Employees were provided with training opportunities</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc32_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c32_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c32_remarks) ? $previousData->c32_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>C.4. Model Employee Awards</b></td>
@@ -235,31 +237,31 @@
                                 <td class="pb-4">C.4.1.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc411_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc411_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc411_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="5">5 - The Province submitted nominees for Category I</option>
-                                        <option value="0">0 - The Province did not submit nominees for Category I</option>
+                                        <option value="5" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>5 - The Province submitted nominees for Category I</option>
+                                        <option value="0" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category I</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc411_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c411_remarks" type="text" placeholder="Remarks"  value="{{ isset($previousData->c411_remarks) ? $previousData->c411_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.4.1.2. Awards received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc412_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc412_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc412_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="5">5 - The Province has received recognition/award at national level</option>
-                                        <option value="0">0 - The Province did not receive award/recognition at national level</option>
+                                        <option value="5" {{ (isset($previousData->c412) && $previousData->c412 == 5) ? 'selected' : '' }}>5 - The Province has received recognition/award at national level</option>
+                                        <option value="0" {{ (isset($previousData->c412) && $previousData->c412 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc412_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c412_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c412_remarks) ? $previousData->c412_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>C.4.2. Model Employee for Category II Position</b></td>
@@ -274,31 +276,31 @@
                                 <td class="pb-4">C.4.2.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc421_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc421_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc421_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="5">5 - The Province submitted nominees for Category II</option>
-                                        <option value="0">0 - The Province did not submit nominees for Category II</option>
+                                        <option value="5" {{ (isset($previousData->c421) && $previousData->c421 == 5) ? 'selected' : '' }}>5 - The Province submitted nominees for Category II</option>
+                                        <option value="0" {{ (isset($previousData->c421) && $previousData->c421 == 0) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category II</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc421_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c421_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c421_remarks) ? $previousData->c421_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.4.2.2. Awards Received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc422_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc422_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc422_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="6">6 - The Province has received recognition/award at national level</option>
-                                        <option value="0">0 - The Province did not receive award/recognition at national level</option>
+                                        <option value="6" {{ (isset($previousData->c422) && $previousData->c422 == 6) ? 'selected' : '' }}>6 - The Province has received recognition/award at national level</option>
+                                        <option value="0" {{ (isset($previousData->c422) && $previousData->c422 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc422_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c422_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c422_remarks) ? $previousData->c422_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>C.4.3. Model Employee for Category III Position</b></td>
@@ -313,55 +315,55 @@
                                 <td class="pb-4">C.4.3.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc431_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc431_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc431_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="5">5 - The Province submitted nominees for Category III</option>
-                                        <option value="0">0 - The Province did not submit nominees for Category III</option>
+                                        <option value="5"  {{ (isset($previousData->c431) && $previousData->c431 == 5) ? 'selected' : '' }}>5 - The Province submitted nominees for Category III</option>
+                                        <option value="0"  {{ (isset($previousData->c431) && $previousData->c431 == 0) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category III</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc431_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c431_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c431_remarks) ? $previousData->c431_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.4.3.2. Awards Received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc432_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc432_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc432_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="6">6 - The Province has received recognition/award at national level</option>
-                                        <option value="0">0 - The Province did not receive award/recognition at national level</option>
+                                        <option value="6" {{ (isset($previousData->c432) && $previousData->c432 == 6) ? 'selected' : '' }}>6 - The Province has received recognition/award at national level</option>
+                                        <option value="0" {{ (isset($previousData->c432) && $previousData->c432 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc432_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="c432_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c432_remarks) ? $previousData->c432_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">C.5. Application for PRIME-HR Level</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Confernment/Certificate Awarded (if The PO has applied and has been certified in higher PRIME HR Level)<br> Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->rc5_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->rc5_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="rc5_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
-                                        <option value="8">8 - The PO has applied and has been certified in higher PRIME HR Level</option>
-                                        <option value="4">4 - The PO has applied for higher PRIME-HR Level</option>
-                                        <option value="0">0 - The PO has not applied for higher PRIME-HR Level</option>
+                                        <option value="8" {{ (isset($previousData->c5) && $previousData->c5 == 8) ? 'selected' : '' }}>8 - The PO has applied and has been certified in higher PRIME HR Level</option>
+                                        <option value="4" {{ (isset($previousData->c5) && $previousData->c5 == 4) ? 'selected' : '' }}>4 - The PO has applied for higher PRIME-HR Level</option>
+                                        <option value="0" {{ (isset($previousData->c5) && $previousData->c5 == 0) ? 'selected' : '' }}>0 - The PO has not applied for higher PRIME-HR Level</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="rc5_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="rc5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c5_remarks) ? $previousData->c5_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>Total Score</b></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                  <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                                 <td class="pb-4"><b>Final Score</b></td>
-                                <td class="pb-4"><span id="totalScore">0</span></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                                 <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                             </tr>
                         </tbody>
@@ -369,6 +371,7 @@
                     
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
                     

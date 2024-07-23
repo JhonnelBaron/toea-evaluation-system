@@ -71,41 +71,43 @@
     <div>
         @include('components.navbar', [
             'userName' => 'User Name',
-            'userType' => 'User Type'
+            'userType' => 'User Type',
+            'validatorId' => Auth::user()->id
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA - Region Name</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA - {{$province}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center ml-6">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/gpadmin-a" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-gray-200 font-bold text-xs">Criteria A</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/gpadmin-b" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria B</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/gpadmin-c" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria C</span>
+                        
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/gpadmin-d" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria D</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/gpadmin-e" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria E</span>
                     </a>
                 </div>
@@ -113,8 +115,9 @@
             
               
               
-              
-
+            <form id="saveChangesForm" method="POST" action="{{ route('storeGpA') }}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
@@ -142,35 +145,35 @@
                             <tr>
                                 <td class="pb-4">A.1. Compliance for Corrupt Policy</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4">  <button class="btn btn-sm btn-info" onclick="openPdf('{{ asset($data->a1_file_verification) }}')"><i class="fas fa-eye"></i> Preview</button></td>
+                                <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required >
+                                    <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1" placeholder="Input your initial score" >
                                         <option value="">Select score</option>
-                                        <option value="40">40 - The Province has no personnel with pending administrative case</option>
-                                        <option value="0">0 - The Province has at least one pending administrative case</option>
+                                        <option value="40"  {{ (isset($previousData->a1) && $previousData->a1 == 40) ? 'selected' : '' }}>40 - The Province has no personnel with pending administrative case</option>
+                                        <option value="0" {{ (isset($previousData->a1) && $previousData->a1 == 0) ? 'selected' : '' }}>0 - The Province has at least one pending administrative case</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a1_remarks" type="text" placeholder="Remarks"  value="{{ isset($previousData->a1_remarks) ? $previousData->a1_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra2_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="30">30 - There are no valid complaints, findings against any Official and Employee.</option>
-                                        <option value="20">20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
-                                        <option value="10">10 - There are 4-6 complaints, findings against any Official and Employee.</option>
-                                        <option value="5">5 - There are 7-9 complaints, findings against any Official and Employee.</option>
-                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                        <option value="30" {{ (isset($previousData->a2) && $previousData->a2 == 30) ? 'selected' : '' }}>30 - There are no valid complaints, findings against any Official and Employee.</option>
+                                        <option value="20" {{ (isset($previousData->a2) && $previousData->a2 == 20) ? 'selected' : '' }}>20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
+                                        <option value="10" {{ (isset($previousData->a2) && $previousData->a2 == 10) ? 'selected' : '' }}>10 - There are 4-6 complaints, findings against any Official and Employee.</option>
+                                        <option value="5" {{ (isset($previousData->a2) && $previousData->a2 == 5) ? 'selected' : '' }}>5 - There are 7-9 complaints, findings against any Official and Employee.</option>
+                                        <option value="0" {{ (isset($previousData->a2) && $previousData->a2 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a2_remarks) ? $previousData->a2_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.3. Resolutions of complaints emanating from the Contact Center</td>
@@ -179,17 +182,17 @@
                                     Monitoring of Complaints Received
                                 </p></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="10">10 - No complaints received</option>
-                                        <option value="10">10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
-                                        <option value="0">0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
+                                        <option value="10" {{ (isset($previousData->a3) && $previousData->a3 == 10) ? 'selected' : '' }}>10 - No complaints received</option>
+                                        <option value="10" {{ (isset($previousData->a3) && $previousData->a3 == 10) ? 'selected' : '' }}>10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
+                                        <option value="0" {{ (isset($previousData->a3) && $previousData->a3 == 0) ? 'selected' : '' }}>0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a3_remarks) ? $previousData->a3_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.4. Customer Satisfaction Results Customer Net Satisfaction Rating with minimum of 95%</td>
@@ -199,20 +202,20 @@
                                     </p>
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a4" data-field="a4" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="30">30 - Customer Net Satisfaction Rating is at 99% and above</option>
-                                        <option value="20">20 - Customer Net Satisfaction Rating is at 98%</option>
-                                        <option value="10">10 - Customer Net Satisfaction Rating is at 97%</option>
-                                        <option value="5">5 - Customer Net Satisfaction Rating is at 96%</option>
-                                        <option value="3">3 - Customer Net Satisfaction Rating is at 95%</option>
-                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                        <option value="30" {{ (isset($previousData->a4) && $previousData->a4 == 30) ? 'selected' : '' }}>30 - Customer Net Satisfaction Rating is at 99% and above</option>
+                                        <option value="20" {{ (isset($previousData->a4) && $previousData->a4 == 20) ? 'selected' : '' }}>20 - Customer Net Satisfaction Rating is at 98%</option>
+                                        <option value="10" {{ (isset($previousData->a4) && $previousData->a4 == 10) ? 'selected' : '' }}>10 - Customer Net Satisfaction Rating is at 97%</option>
+                                        <option value="5" {{ (isset($previousData->a4) && $previousData->a4 == 5) ? 'selected' : '' }}>5 - Customer Net Satisfaction Rating is at 96%</option>
+                                        <option value="3" {{ (isset($previousData->a4) && $previousData->a4 == 3) ? 'selected' : '' }}>3 - Customer Net Satisfaction Rating is at 95%</option>
+                                        <option value="0" {{ (isset($previousData->a4) && $previousData->a4 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a4_remarks) ? $previousData->a4_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
@@ -222,17 +225,17 @@
                                     </p>
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra5a_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a5a" data-field="a5a" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="15">15 - 0 unimplemented audit observation memorandum by the province</option>
-                                        <option value="5">5 - 2-5 unimplemented audit observation memorandum by the province</option>
-                                        <option value="0">0 - 6-10 unimplemented audit observation memorandum by the province</option>
+                                        <option value="15" {{ (isset($previousData->a5a) && $previousData->a5a == 15) ? 'selected' : '' }}>15 - 0 unimplemented audit observation memorandum by the province</option>
+                                        <option value="5" {{ (isset($previousData->a5a) && $previousData->a5a == 5) ? 'selected' : '' }}>5 - 2-5 unimplemented audit observation memorandum by the province</option>
+                                        <option value="0" {{ (isset($previousData->a5a) && $previousData->a5a == 10) ? 'selected' : '' }}>0 - 6-10 unimplemented audit observation memorandum by the province</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra5a_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a5a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5a_remarks) ? $previousData->a5a_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
@@ -242,16 +245,16 @@
                                     </p>
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra5b_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a5b" data-field="a5b" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="15">15 - There no suspensions and disallowances</option>
-                                        <option value="0">0 - There are suspensions and disallowances</option>
+                                        <option value="15" {{ (isset($previousData->a5b) && $previousData->a5b == 15) ? 'selected' : '' }}>15 - There no suspensions and disallowances</option>
+                                        <option value="0" {{ (isset($previousData->a5b) && $previousData->a5b == 0) ? 'selected' : '' }}>0 - There are suspensions and disallowances</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra5b_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a5b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5b_remarks) ? $previousData->a5b_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.6. Compliance to PhilGEPS requirements</td>
@@ -261,16 +264,16 @@
                                     </p>
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a6" data-field="a6" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="30">30 - 100% compliance from Publication to Notice and Award and notice to proceed</option>
-                                        <option value="0">0 - Non-compliance from Publication to Notice and Award and notice to proceed</option>
+                                        <option value="30" {{ (isset($previousData->a6) && $previousData->a6 == 30) ? 'selected' : '' }}>30 - 100% compliance from Publication to Notice and Award and notice to proceed</option>
+                                        <option value="0" {{ (isset($previousData->a6) && $previousData->a6 == 0) ? 'selected' : '' }}>0 - Non-compliance from Publication to Notice and Award and notice to proceed</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra6_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a6_remarks) ? $previousData->a6_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
@@ -281,16 +284,16 @@
                                     </p> 
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra7a_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a7a" data-field="a7a" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="10">10 - All Foreign Travel Expenses liquidated within 60 days</option>
-                                        <option value="0">0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
+                                        <option value="10"  {{ (isset($previousData->a7a) && $previousData->a7a == 10) ? 'selected' : '' }}>10 - All Foreign Travel Expenses liquidated within 60 days</option>
+                                        <option value="0"  {{ (isset($previousData->a7a) && $previousData->a7a == 0) ? 'selected' : '' }}>0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra7a_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a7a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7a_remarks) ? $previousData->a7a_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
@@ -301,16 +304,16 @@
                                     </p>   
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a7b" data-field="a7b" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="10">10 - All Local Travel Expenses liquidated within 30 days</option>
-                                        <option value="0">0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
+                                        <option value="10"  {{ (isset($previousData->a7b) && $previousData->a7b == 10) ? 'selected' : '' }}>10 - All Local Travel Expenses liquidated within 30 days</option>
+                                        <option value="0"  {{ (isset($previousData->a7b) && $previousData->a7b == 0) ? 'selected' : '' }}>0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a7b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7b_remarks) ? $previousData->a7b_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4">A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
@@ -320,73 +323,64 @@
                                     </p>   
                                 </td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
+                                <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="a8" data-field="a8" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="10">10 - The Provincial Office is compliant to APCPI</option>
-                                        <option value="0">0 - No Communication Plan was prepared but activities were fully implemented</option>
+                                        <option value="10" {{ (isset($previousData->a8) && $previousData->a8 == 10) ? 'selected' : '' }}>10 - The Provincial Office is compliant to APCPI</option>
+                                        <option value="0" {{ (isset($previousData->a8) && $previousData->a8 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared but activities were fully implemented</option>
                                     </select>
                                 </td>
-                                <td class="pb-4"><input class="form-control mb-1" name="ra8_remarks" type="text" placeholder="Remarks"></td>
+                                <td class="pb-4"><input class="form-control mb-1" name="a8_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a8_remarks) ? $previousData->a8_remarks : '' }}"></td>
                             </tr>
                             <tr>
                                 <td class="pb-4"><b>Total Score</b></td>
                                 <td class="pb-4"></td>
                                 <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"></td>
-                                <td class="pb-4"><b>Final Score:</b> <span id="totalScore">0</span></td>
+                                <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
+                                <td class="pb-4"><b>Final Score</b></td>
+                                <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                                 <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                             </tr>
                         </tbody>
                     </table>
+                
+                </div>
+            </div>
+        </form>
+        @if(session('success'))
+        <div id="successMessage" class="fixed z-50 bottom-0 right-0 bg-customGreen text-white p-4 text-center rounded-md">
+            {{ session('success') }}
+        </div>
+        <script>
+            setTimeout(function() {
+                var successMessage = document.getElementById('successMessage');
+                successMessage.style.transition = 'opacity 1s ease';
+                successMessage.style.opacity = '0';
+
+                // Remove the success message from the DOM after fade out
+                setTimeout(function() {
+                    successMessage.remove();
+                }, 1000); // Wait for 1 second for fade out before removing
+            }, 3000); // Show the message for 3 seconds
+        </script>
+    @endif
+        </div>
+    </div>
+    <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfPreviewModalLabel">PDF Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- PDF will be displayed here -->
                 </div>
             </div>
         </div>
     </div>
-                    
-
-                    
-                <!-- Create group modal-->
-                <!-- View PDF modal -->
-            <main>
-                <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
-                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- View Details modal -->
-                <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
-                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- Submission details will be loaded here via JavaScript -->
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -394,7 +388,7 @@
     <script src="js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script>
+    {{-- <script>
         function highlightStep(step) {
         // Remove previous active classes
         const steps = document.querySelectorAll('.flex > div');
@@ -404,7 +398,7 @@
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
         }
-    </script>
+    </script> --}}
     
 </body>
 </html>

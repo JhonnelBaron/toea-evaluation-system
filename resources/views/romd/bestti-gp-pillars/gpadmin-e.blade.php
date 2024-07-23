@@ -75,37 +75,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA  - Region Name</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">GALING PROBINSYA  - {{$province}}</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center ml-6">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-a" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria A</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-b" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria B</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-c" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria C</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-d" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria D</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
-                    <a href="/gpadmin-e" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.gp-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-gray-200 font-bold text-xs">Criteria E</span>
                     </a>
                 </div>
@@ -151,8 +151,8 @@
                                 <td>E.1. Communication Program (OPCR)</td>
                                 <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan <br> Write-ups (best practices/activity reports) <br> Radio/TV program<br> Social media posts and shares<br> Local Media engagements (blasted PRs, Interviews)<br> Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="pb-4 text-center">{{$data->re1_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->re1_remarks}}</td>
                                 <td>
                                     <select class="form-control mb-1 score-dropdown" name="re1_final_score" required>
                                         <option value="">Select score</option>
@@ -167,7 +167,7 @@
                                 <td></td>
                                 <td></td>
                                 <td><b>Total Score</b></td>
-                                <td></td>
+                                <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                                 <td><b>Final Score</b></td>
                                 <td><span id="totalScore">0</span></td>
                                 <td><button class="btn btn-primary" id="submitButton">Submit</button></td>
@@ -179,8 +179,6 @@
                     </div>
                 </div>
             </div>
-                    
-
                     
                 <!-- Create group modal-->
                 <!-- View PDF modal -->

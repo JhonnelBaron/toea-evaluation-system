@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center ml-6">
               <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
+                  <a href="{{ route('external.ti-ptc-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                       <span class="text-white font-bold text-xs">Criteria A</span>
                   </a>
               </div>
               <div class="h-0.5 w-48 bg-gray-500"></div>
               <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
+                  <a href="{{ route('external.ti-ptc-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                       <span class="text-white font-bold text-xs">Criteria B</span>
                   </a>
               </div>
               <div class="h-0.5 w-48 bg-gray-500"></div>
               <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
+                  <a href="{{ route('external.ti-ptc-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                       <span class="text-white font-bold text-xs">Criteria C</span>
                   </a>
               </div>
               <div class="h-0.5 w-48 bg-gray-500"></div>
               <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
+                  <a href="{{ route('external.ti-ptc-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                       <span class="text-gray-200 font-bold text-xs">Criteria D</span>
                   </a>
               </div>
               <div class="h-0.5 w-48 bg-gray-500"></div>
               <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                  <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
+                  <a href="{{ route('external.ti-ptc-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                       <span class="text-white font-bold text-xs">Criteria E</span>
                   </a>
               </div>
@@ -137,8 +137,8 @@
                             <td>D.1. Reporting Efficiency</td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
+                            <td class="pb-4 text-center">{{$data->rd1_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->rd1_remarks}}</td>
                             <td><select class="form-control mb-1 score-dropdown" name="rd1_final_score" required>
                                 <option value="">Select score</option>
                                 <option value="50">50 - Reports are accurate and submitted consistently and on time</option>
@@ -152,9 +152,9 @@
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;"></td>
-                            <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
+                            <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
+                            <td style="padding: 15px;"> <span id="totalScore">0</span></td>
                             <td style="padding: 15px;"></td>
                         </tr>
                     </tbody>

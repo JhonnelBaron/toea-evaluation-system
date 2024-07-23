@@ -19,12 +19,13 @@ class LoginController extends Controller
                     return redirect('/regional-operations-management-division');
                 } elseif ($user->executive_office === 'RO') {
                     return redirect('/regional-office');
+                } elseif ($user->executive_office === 'EV') {
+                    return redirect('/external/gp');
                 } else {
                     return redirect('/evaluation-page');
                 }
             }
         }
-        
         // If not authenticated, return the login form
         return response()->view('auth.login')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
@@ -57,7 +58,10 @@ class LoginController extends Controller
         if ($user->executive_office === 'ROMD') {
             // return redirect()->intended('/regional-operations-management-division');
             return redirect()->intended('/home');
-        } else {
+        } elseif ($user->executive_office === 'EV') {
+            return redirect()->intended('/external/gp');
+        }
+        else {
             return redirect()->intended('/evaluation-page');
         } 
         }else {

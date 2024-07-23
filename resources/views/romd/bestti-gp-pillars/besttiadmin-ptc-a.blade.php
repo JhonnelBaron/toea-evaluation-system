@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-gray-200 font-bold text-xs">Criteria A</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria B</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria C</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria D</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria E</span>
                     </a>
                 </div>
@@ -136,8 +136,8 @@
                                 <td class="pb-8">A.1. Compliance for Corrupt Policy</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td>
-                                <td class="pb-8"></td>   
+                                <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>  
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -151,8 +151,8 @@
                                 <td class="pb-8">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td>
-                                <td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra2_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -171,8 +171,9 @@
                                     <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04
                                     Monitoring of Complaints Received
                                 </p></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
                                 <td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -189,7 +190,8 @@
                                     <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
                                 </p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -209,7 +211,8 @@
                                     <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
                                 </td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra5a_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -226,7 +229,8 @@
                                     <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
                                 </p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra5b_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -242,7 +246,8 @@
                                     <br>Government Procurement Policy Board (GPPB) report who are compliant
                                 </p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -258,8 +263,9 @@
                                     <br>Proof of postings submitted/received copy from COA
                                     <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
                                 </p></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
                                 <td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra7a_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -275,8 +281,9 @@
                                     <br>Proof of postings submitted/received copy from COA
                                     <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
                                 </p></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
                                 <td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -292,7 +299,8 @@
                                     <br>- Acknowledgment email from GPBB
                                 </p></td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8"></td><td class="pb-8"></td>
+                                <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
                                 <td class="pb-8">
                                     <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
                                         <option value="">Select score</option>
@@ -307,9 +315,9 @@
                                 <td style="padding: 15px;"><b>Total Initial Score</b></td>
                                 <td style="padding: 15px;"></td>
                                 <td style="padding: 15px;"></td>
-                                <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
+                                <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                                 <td style="padding: 15px;"><b>Final Score: </b></td>
-                                <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
+                                <td style="padding: 15px;"> <span id="totalScore">0</span></td>
                                 <td style="padding: 15px;"></td>
                             </tr>
                         </tbody>

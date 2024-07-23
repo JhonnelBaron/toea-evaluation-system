@@ -76,37 +76,37 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center">
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria A</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-gray-200 font-bold text-xs">Criteria B</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria C</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria D</span>
                     </a>
                 </div>
                 <div class="h-0.5 w-48 bg-gray-500"></div>
                 <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-                    <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
+                    <a href="{{ route('external.ti-ptc-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                         <span class="text-white font-bold text-xs">Criteria E</span>
                     </a>
                 </div>
@@ -139,8 +139,8 @@
                                                         <td class="pb-8">B.1.A Implementation of recognized/aligned PQF level 4 or Level 5 programs</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificates of Recognition for PQF Level 4 or Level 5 with list of enrollees) </p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1a_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1a_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1a_final_score" type="text" placeholder="Input your initial score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="18">18 - The TTI has implemented at least 2 recognized/aligned with PQF level 4 or level 5 programs</option>
@@ -153,8 +153,8 @@
                                                         <td class="pb-8">B.1.B. Development of CS and CBC on Diploma program, integrating STEM/21st Century Skills</td>
                                                         <td class="pb-8"></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1b_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1b_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1b_final_score" type="text" placeholder="Input your initial score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="7">7 - The TTI has developed at least 1 CS or CBC on Diploma Program with integrated STEM/21st Century Skills</option>
@@ -169,8 +169,8 @@
                                                         <td class="pb-8">B.1.C.1. Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1c1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="6">6 - The TTI participated in all competitions (PNSC, and ASC or World Skills Competition)</option>
@@ -183,8 +183,8 @@
                                                         <td class="pb-8">B.1.C.2. Awards received at the national level</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p> </td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1c2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - The TTI received award/recognition at the national level</option>
@@ -196,8 +196,8 @@
                                                         <td class="pb-8">B.1.C.3 Awards received at the international level</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c3_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1c3_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1c3_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - The TTI received award/recognition at the international level</option>
@@ -212,8 +212,8 @@
                                                         <td class="pb-8">B.1.D.1. Development of policy or technology research proposals</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Copy of memo/email submitting its Technology Research/es</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb1d1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb1d1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb1d1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - The TTI has submitted a technology research</option>
@@ -228,8 +228,8 @@
                                                         <td class="pb-8">B.2.A. UAQTEA Scholarship Program</td>
                                                         <td class="pb-8"></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2a_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2a_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2a_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - TTI fully implemented UAQTEA Program (Qualification Maps)</option>
@@ -241,8 +241,8 @@
                                                         <td class="pb-8">B.2.B. Skills Training for Drug Dependents</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2b_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2b_remarks}}</td>
                                                         <td class="pb-8"> <select class="form-control mb-1 score-dropdown" name="rb2b_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="6">6 - The TTI has at least 5 programs conducted</option>
@@ -254,8 +254,8 @@
                                                         <td class="pb-8">B.2.C. Skills Training for Inmates and their Families</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2c_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2c_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2c_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="6">6 - The TTI has at least 2 programs conducted</option>
@@ -267,8 +267,8 @@
                                                         <td class="pb-8">B.2.D. Special Skills Programs for IPs</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2d_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2d_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2d_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="6">6 - The TTI has at least 2 programs conducted</option>
@@ -280,8 +280,8 @@
                                                         <td class="pb-8">B.2.E. Expanded Training Program for Women and PWDs</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2e_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2e_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2e_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="6">6 - The TTI has at least 2 programs conducted</option>
@@ -293,8 +293,8 @@
                                                         <td class="pb-8">B.2.F. Re-skilling/Upskilling of OFWs</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2f_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2f_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2f_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - The TTI has at least two (2) programs conducted</option>
@@ -306,8 +306,8 @@
                                                         <td class="pb-8">B.2.G. Graduates of TTI - Institution-based</td>
                                                         <td class="pb-8"></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2g_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2g_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2g_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="40">40 - The accomplishment rate based on set target is at 100% and above</option>
@@ -321,8 +321,8 @@
                                                         <td class="pb-8">B.2.H. Graduates of TTI - Enterprise-based</td>
                                                         <td class="pb-8"></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2h_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2h_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2h_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
@@ -336,8 +336,8 @@
                                                         <td class="pb-8">B.2.I. Graduates of TTI - Community-based/MTP</td>
                                                         <td class="pb-8"></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2i_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2i_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2i_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="30">30 - The accomplishment rate based on set target is at 100% and above</option>
@@ -351,8 +351,8 @@
                                                         <td class="pb-8">B.2.J. Communications/programs/advocacy on Gender and Development</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: After activity report on GAD related programs</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb2j_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb2j_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb2j_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="7">7 - The TTI has conducted programs/activities related to GAD</option>
@@ -367,8 +367,8 @@
                                                         <td class="pb-8">B.3.A. TVET Trainers Development Programs - TM Level II</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: TM II Certification</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3a_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3a_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb3a_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - The TTI had at least one (1) certified trainer in TM Level II (any CoCs)</option>
@@ -380,8 +380,8 @@
                                                         <td class="pb-8">B.3.B. TVET Trainers Development Programs - Industry Immersion</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: IWER Certification</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3b_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3b_remarks}}</td>
                                                         <td class="pb-8"> <select class="form-control mb-1 score-dropdown" name="rb3b_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - The TTI had sent at least 2 trainers for industry immersion</option>
@@ -394,8 +394,8 @@
                                                         <td class="pb-8">B.3.C. Percentage of TTI Trainers are Accredited National Competency Assessors</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of Trainers<br></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3c_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3c_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb3c_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - 70% of the TTI trainers are accredited National Competency Assessors</option>
@@ -410,8 +410,8 @@
                                                                         List of Registered Programs <br>
                                                                         List of Accredited ACs <br></td></p>  
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3d_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3d_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb3d_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - 50% of the TTI's registered programs with Accredited Assessment Center</option>
@@ -424,8 +424,8 @@
                                                         <td class="pb-8">B.3.E. Percentage of TTI Graduates in WTR Programs assessed</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: RWAC</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3e_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3e_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb3e_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="30">30 - 100% of the TTI graduates assessed</option>
@@ -440,8 +440,8 @@
                                                         <td class="pb-8">B.3.F. Percentage of graduates in programs with training regulations assessed, certified</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: RWAC</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb3f_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb3f_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb3f_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - 85% and above of the TTI graduates assessed, certified</option>
@@ -461,8 +461,8 @@
                                                         <td class="pb-8">B.4.A.1. Implementation Profiling</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring/Summary of profiled learners</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4a1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4a1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4a1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - 100% of TTI enrollees profiled</option>
@@ -476,8 +476,8 @@
                                                         <td class="pb-8">B.4.A.2. Referred Graduates for Possible Employment</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of recommendation for all TTI graduates</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4a2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4a2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4a2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - 100% of TTI graduates referred</option>
@@ -491,8 +491,8 @@
                                                         <td class="pb-8">B.4.B. Participation in WCOs</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4b_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4b_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4b_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - The TTI participated in the Provincial or Regional WCOs</option>
@@ -504,8 +504,8 @@
                                                         <td class="pb-8">B.4.C. Preparation of Institutional Development Plan (IDP)</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Signed IDP</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4c_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4c_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4c_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - The TTI prepared and submitted its IDP to CO through the RO/PO</option>
@@ -517,8 +517,8 @@
                                                         <td class="pb-8">B.4.D. Implementation of Institutional Development Plan (IDP)</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: FY 2023 Analysis of IDP Programs implemented and IDP Report</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4d_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4d_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4d_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="15">15 - 100% of the target activities has been implemented</option>
@@ -531,8 +531,8 @@
                                                         <td class="pb-8">B.4.E. Partnerships forged and implemented (The max. score conferred to the applicant must not exceed 30 points)</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb4e_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb4e_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb4e_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="25">25 - The Dual Training System (DTS) or Dual Training Program (DTP) is implemented</option>
@@ -552,8 +552,8 @@
                                                         <td class="pb-8">B.5.A.1. Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5a1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5a1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5a1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - The TTI participated in the National Level Tagsanay Awards</option>
@@ -565,8 +565,8 @@
                                                         <td class="pb-8">B.5.A.2. Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5a2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5a2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5a2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="40">40 - The TTI received major award (top 3) at the national level</option>
@@ -585,8 +585,8 @@
                                                         <td class="pb-8">B.5.B.1.1. Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b1_1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b1_1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5b1_1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="5">5 - The TTI applied for APACC accreditation</option>
@@ -598,8 +598,8 @@
                                                         <td class="pb-8">B.5.B.1.2. Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b1_2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b1_2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5b1_2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - The TTI received APACC-Gold accreditation</option>
@@ -616,8 +616,8 @@
                                                         <td class="pb-8">B.5.B.2.1 Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b2_1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b2_1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5b2_1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="10">10 - TThe TTI participated in STAR Program</option>
@@ -629,8 +629,8 @@
                                                         <td class="pb-8">B.5.B.2.2 Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b2_2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5b2_2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5b2_2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - The TTI received at least one THREE STAR Level Award</option>
@@ -647,8 +647,8 @@
                                                         <td class="pb-8">B.5.C.1. Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office </p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5c1_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5c1_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5c1_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="8">8 - The TTI applied for the TESDA Seal of Integrity</option>
@@ -660,8 +660,8 @@
                                                         <td class="pb-8">B.5.C.2. Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5c2_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5c2_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5c2_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="12">12 - The TTI was awarded with the TESDA Seal of Integrity</option>
@@ -673,8 +673,8 @@
                                                         <td class="pb-8">B.5.D. Development of Procedures Manual</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Procedures manual developed</p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5d_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5d_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5d_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="18">18 - The TTI has developed its Procedures Manual and has been approved by the NQM</option>
@@ -687,8 +687,8 @@
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports, Articles, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices
                                                                         </p></td>
                                                         <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
-                                                        <td class="pb-8"></td>
+                                                        <td class="pb-4 text-center">{{$data->rb5e_final_score}}</td>
+                                                        <td class="pb-4 text-center">{{$data->rb5e_remarks}}</td>
                                                         <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="rb5e_final_score" required>
                                                                         <option value="">Select score</option>
                                                                         <option value="20">20 - 100% implementation of plans and projects related to Green Practices</option>
@@ -698,13 +698,13 @@
                                                     </tr>													
                                                     
                                                     <tr>
-                                  <td style="padding: 15px;"><b>Total Initial Score</b></td>
-                                  <td style="padding: 15px;"></td>
-                                  <td style="padding: 15px;"></td>
-                                  <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
-                                  <td style="padding: 15px;"><b>Final Score: </b></td>
-                                  <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
-                                  <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"><b>Total Initial Score</b></td>
+                                <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
+                                <td style="padding: 15px;"><b>Final Score: </b></td>
+                                <td style="padding: 15px;"> <span id="totalScore">0</span></td>
+                                <td style="padding: 15px;"></td>
                               </tr>
                         </tbody>
                     </table>
