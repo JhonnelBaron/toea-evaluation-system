@@ -22,6 +22,7 @@
           <!-- Dropdown menu -->
           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 transition-opacity duration-500 group-hover:opacity-100 group-hover:visible" id="user-dropdown">
             <div class="px-4 py-3">
+              <p class="validator_id hidden" >{{ Auth::user()->id }}</p>
               <span class="block text-sm text-gray-900 dark:text-black">{{ Auth::user()->name }}</span>
               <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email}}</span>
             </div>

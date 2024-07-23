@@ -194,7 +194,7 @@
                     </svg>
                     Back
                 </button>
-                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-40 mr-20">Best Regional Office Evaluator - Certification Office</h1> 
+                <h1 class="text-3xl font-bold text-white font-sans place-content-center ml-40 mr-20">Best Regional Office Evaluator - World Skills</h1> 
             </div>
             
         </div>

@@ -76,41 +76,41 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - RTC/STC, TAS</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-RTC/STC - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
             <div class="flex items-center justify-center ml-6">
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                  <a href="/besttiadmin-rtcstctas-a" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria A</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                  <a href="/besttiadmin-rtcstctas-b" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria B</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                  <a href="/besttiadmin-rtcstctas-c" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria C</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
-                  <a href="/besttiadmin-rtcstctas-d" class="h-full w-full flex items-center justify-center">
-                      <span class="text-white font-bold text-xs">Criteria D</span>
-                  </a>
-              </div>
-              <div class="h-0.5 w-48 bg-gray-500"></div>
-              <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
-                  <a href="/besttiadmin-rtcstctas-e" class="h-full w-full flex items-center justify-center">
-                      <span class="text-gray-200 font-bold text-xs">Criteria E</span>
-                  </a>
-              </div>
-          </div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria A</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300"">
+                    <a href="{{ route('external.ti-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria B</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria C</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">Criteria D</span>
+                    </a>
+                </div>
+                <div class="h-0.5 w-48 bg-gray-500"></div>
+                <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer transition hover:bg-blue-300">
+                    <a href="{{ route('external.ti-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
+                        <span class="text-gray-200 font-bold text-xs">Criteria E</span>
+                    </a>
+                </div>
+            </div>
           
               
               
@@ -136,15 +136,16 @@
                              </tr>
                              <tr>
                                  <td>E.1. Communication Program (OPCR)</td>
-                                 <td></td>
+                             
                                  <td><p class="small mb-1" style="font-size: 12px;">Means of Verification: Communication plan <br>
                                                  Write-ups (best practices/activity reports) <br>
                                                  Radio/TV program<br>
                                                  Social media posts and shares<br>
                                                  Local Media engagements (blasted PRs, Interviews)<br>
                                                  Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>    </td>
-                                 <td></td>
-                                 <td></td>
+                                <td></td>
+                                <td class="pb-4 text-center">{{$data->re1_final_score}}</td>
+                                <td class="pb-4 text-center">{{$data->re1_remarks}}</td>
                                  
                                  <td><select class="form-control mb-1 score-dropdown" name="re1_final_score" required>
                                                  <option value="">Select score</option>
@@ -156,13 +157,13 @@
                              </tr>
                              <tr>
                          
-                                 <td style="padding: 15px;"><b>Total Initial Score</b></td>
-                                 <td style="padding: 15px;"></td>
-                                 <td style="padding: 15px;"></td>
-                                 <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
-                                 <td style="padding: 15px;"><b>Final Score: </b></td>
-                                 <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
-                                 <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"><b>Total Initial Score</b></td>
+                                <td style="padding: 15px;"></td>
+                                <td style="padding: 15px;"></td>
+                                <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
+                                <td style="padding: 15px;"><b>Final Score: </b></td>
+                                <td style="padding: 15px;"> <span id="totalScore">0</span></td>
+                                <td style="padding: 15px;"></td>
                              </tr>
                         </tbody>
 

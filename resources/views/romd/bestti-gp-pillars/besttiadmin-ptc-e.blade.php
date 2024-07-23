@@ -76,43 +76,45 @@
         ])
         <div class="ml-4 p-2">
           <div class="flex justify-between items-center w-full p-2">
-            <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION - REGION NAME - PTC</h1>
+            <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1>
             <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
         </div>
         
         <div class="flex items-center justify-center">
           <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-              <a href="/besttiadmin-ptc-a" class="h-full w-full flex items-center justify-center">
+              <a href="{{ route('external.ti-ptc-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                   <span class="text-white font-bold text-xs">Criteria A</span>
               </a>
           </div>
           <div class="h-0.5 w-48 bg-gray-500"></div>
           <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-              <a href="/besttiadmin-ptc-b" class="h-full w-full flex items-center justify-center">
+              <a href="{{ route('external.ti-ptc-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                   <span class="text-white font-bold text-xs">Criteria B</span>
               </a>
           </div>
           <div class="h-0.5 w-48 bg-gray-500"></div>
           <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-              <a href="/besttiadmin-ptc-c" class="h-full w-full flex items-center justify-center">
+              <a href="{{ route('external.ti-ptc-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                   <span class="text-white font-bold text-xs">Criteria C</span>
               </a>
           </div>
           <div class="h-0.5 w-48 bg-gray-500"></div>
           <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-              <a href="/besttiadmin-ptc-d" class="h-full w-full flex items-center justify-center">
+              <a href="{{ route('external.ti-ptc-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                   <span class="text-white font-bold text-xs">Criteria D</span>
               </a>
           </div>
           <div class="h-0.5 w-48 bg-gray-500"></div>
           <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-              <a href="/besttiadmin-ptc-e" class="h-full w-full flex items-center justify-center">
+              <a href="{{ route('external.ti-ptc-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                   <span class="text-gray-200 font-bold text-xs">Criteria E</span>
               </a>
           </div>
         </div>
         
-              
+        <form id="saveChangesForm" method="POST" action="{{ route('storePtcE') }}">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $user_id }}">
               
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
@@ -144,33 +146,57 @@
                                 Local Media engagements (blasted PRs, Interviews)<br>
                                 Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><select class="form-control mb-1 score-dropdown" name="re1_final_score" required>
+                            <td>
+                                @if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif
+                            </td>
+                            
+                            <td class="pb-4 text-center">{{$data->re1_final_score}}</td>
+                            <td class="pb-4 text-center">{{$data->re1_remarks}}</td>
+                            <td><select class="form-control mb-1 score-dropdown" name="e1" data-field="e1">
                                 <option value="">Select score</option>
-                                <option value="50">50 - A Communication Plan was prepared and fully implemented</option>
-                                <option value="30">30 - No Communication Plan was prepared but activities were fully implemented</option>
-                                <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                <option value="50" {{ (isset($previousData->e1) && $previousData->e1 == 50) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented</option>
+                                <option value="30" {{ (isset($previousData->e1) && $previousData->e1 == 30) ? 'selected' : '' }}>30 - No Communication Plan was prepared but activities were fully implemented</option>
+                                <option value="0" {{ (isset($previousData->e1) && $previousData->e1 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                             </select></td>
-                            <td><input class="form-control mb-1" name="re1_remarks" type="text" placeholder="Remarks"></td>
+                            <td><input class="form-control mb-1" name="e1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->e1_remarks) ? $previousData->e1_remarks : '' }}"></td>
                         </tr>
                 
                         <tr>
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;"></td>
-                            <td style="padding: 15px;"><b>Total Re-Evaluated Score</b></td>
+                            <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"><b>ROMD Evaluated Score</b> : <span id="totalScore">0</span></td>
-                            <td style="padding: 15px;"></td>
+                            <td style="padding: 15px;"> <span id="totalScore">0</span></td>
+                            <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                         </tr>
                     </tbody>
                 </table>
                 
 
                     </div>
-
+            </div>
+        </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>

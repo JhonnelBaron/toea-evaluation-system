@@ -14,6 +14,7 @@ class EndorsedExternal extends Model
         'user_id',
         'category',
         'grouping',
+        'region',
         'province',
         'nominee',
         'criteria_a',
