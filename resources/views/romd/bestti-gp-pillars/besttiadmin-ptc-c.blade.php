@@ -112,6 +112,9 @@
               </div>
           </div>
               
+          <form id="saveChangesForm" method="POST" action="{{ route('storePtcC') }}">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $user_id }}">
               
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
@@ -136,7 +139,27 @@
                         <tr>
                             <td class="pb-8">C.1. Budget Utilization Rate (BUR)</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: Monitoring logbook/ registry)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc1_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc1_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c1" data-field="c1">
@@ -151,7 +174,27 @@
                         <tr>
                             <td class="pb-8">C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation 80% acted upon (either partially or fully implemented)</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: Agency Action Plan and Status of Implementation (AAPSI))</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc2_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc2_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c2" data-field="c2">
@@ -169,7 +212,27 @@
                         <tr>
                             <td class="pb-8">C.3.1 Staff Development Program: Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of Personnel in 2023, Certificates of trainings attended, REAPs)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc31_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc31_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c31" data-field="c31">
@@ -183,7 +246,27 @@
                         <tr>
                             <td class="pb-8">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of plantilla positions of the TTI, Certificates of training attended)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc32_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc32_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c32" data-field="c32">
@@ -203,7 +286,27 @@
                         <tr>
                             <td class="pb-8">C.4.1.1. Participation</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc411_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc411_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c411" data-field="c411">
@@ -216,7 +319,27 @@
                         <tr>
                             <td class="pb-8">C.4.1.2. Awards received</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc412_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc412_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c412" data-field="c412">
@@ -232,7 +355,27 @@
                         <tr>
                             <td class="pb-8">C.4.2.1. Participation</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc421_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc421_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c421" data-field="c421">
@@ -245,7 +388,27 @@
                         <tr>
                             <td class="pb-8">C.4.2.2. Awards Received</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc422_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc422_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c422" data-field="c422">
@@ -261,7 +424,27 @@
                         <tr>
                             <td class="pb-8">C.4.3.1. Participation</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc431_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc431_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c431" data-field="c431">
@@ -274,7 +457,27 @@
                         <tr>
                             <td class="pb-8">C.4.3.2. Awards Received</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-8"></td>
+                            <td class="pb-8">@if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif</td>
                             <td class="pb-4 text-center">{{$data->rc432_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->rc432_remarks}}</td>
                             <td class="pb-8"><select class="form-control mb-1 score-dropdown" name="c432" data-field="c432">
@@ -292,12 +495,14 @@
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
                             <td style="padding: 15px;"> <span name="a1" data-field="a1">0</span></td>
-                            <td style="padding: 15px;"></td>
+                            <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                         </tr>
                     </tbody>
                 </table>
                 
                     </div>
+            </div>
+          </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>

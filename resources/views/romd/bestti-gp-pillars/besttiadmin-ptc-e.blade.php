@@ -112,7 +112,9 @@
           </div>
         </div>
         
-              
+        <form id="saveChangesForm" method="POST" action="{{ route('storePtcE') }}">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $user_id }}">
               
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
@@ -144,7 +146,30 @@
                                 Local Media engagements (blasted PRs, Interviews)<br>
                                 Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>
                             </td>
-                            <td></td>
+                            <td>
+                                @if ($user_id == 198)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints.pdf
+                                    </a>
+                                @elseif ($user_id == 109)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/Certification of no complaints 2.pdf
+                                    </a>
+                                @elseif ($user_id == 98)
+                                    <a href="https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf" 
+                                       target="_blank"
+                                       class="text-blue-500 text-sm hover:underline">
+                                        https://tesda-toea.com/users/Best_TI/PTC/TESDA-NavotaAs Training Institute (TNTI)/Criteria_A/CUSAT JAN-DEC 2023.pdf
+                                    </a>
+                                @else
+                                    <span>No File available</span>
+                                @endif
+                            </td>
+                            
                             <td class="pb-4 text-center">{{$data->re1_final_score}}</td>
                             <td class="pb-4 text-center">{{$data->re1_remarks}}</td>
                             <td><select class="form-control mb-1 score-dropdown" name="e1" data-field="e1">
@@ -163,14 +188,15 @@
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
                             <td style="padding: 15px;"> <span id="totalScore">0</span></td>
-                            <td style="padding: 15px;"></td>
+                            <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                         </tr>
                     </tbody>
                 </table>
                 
 
                     </div>
-
+            </div>
+        </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
