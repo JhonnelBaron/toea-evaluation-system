@@ -207,11 +207,13 @@ class ExternalValidatorController extends Controller
         $nominee = EndorsedExternal::where('user_id', $id)->first();
 
         $data = DB::table('best_ti_ptc_a_parts')->where('user_id', $id)->first();
+        $previousData = PtcAExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-a', [
             'user_id' => $id,
             'nominee' => $nominee->nominee,
             'data' => $data,
+            'previousData' => $previousData,
         ]);
     }
    
@@ -220,11 +222,13 @@ class ExternalValidatorController extends Controller
         $nominee = EndorsedExternal::where('user_id', $id)->first();
 
         $data = DB::table('best_ti_ptc_b_parts')->where('user_id', $id)->first();
+        $previousData = PtcBExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-b', [
             'user_id' => $id,
             'nominee' => $nominee->nominee,
             'data' => $data,
+            'previousData' => $previousData,
         ]);
     }
     public function externalPtcC($id)
@@ -232,11 +236,13 @@ class ExternalValidatorController extends Controller
         $nominee = EndorsedExternal::where('user_id', $id)->first();
 
         $data = DB::table('best_ti_ptc_c_parts')->where('user_id', $id)->first();
+        $previousData = PtcCExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-c', [
             'user_id' => $id,
             'nominee' => $nominee->nominee,
             'data' => $data,
+            'previousData' => $previousData,
         ]);
     }
     public function externalPtcD($id)
@@ -244,11 +250,13 @@ class ExternalValidatorController extends Controller
         $nominee = EndorsedExternal::where('user_id', $id)->first();
 
         $data = DB::table('best_ti_ptc_d_parts')->where('user_id', $id)->first();
+        $previousData = PtcDExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-d', [
             'user_id' => $id,
             'nominee' => $nominee->nominee,
             'data' => $data,
+            'previousData' => $previousData,
         ]);
     }
     public function externalPtcE($id)
@@ -256,11 +264,13 @@ class ExternalValidatorController extends Controller
         $nominee = EndorsedExternal::where('user_id', $id)->first();
 
         $data = DB::table('best_ti_ptc_e_parts')->where('user_id', $id)->first();
+        $previousData = PtcEExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-e', [
             'user_id' => $id,
             'nominee' => $nominee->nominee,
             'data' => $data,
+            'previousData' => $previousData,
         ]);
     }
 

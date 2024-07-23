@@ -13,10 +13,10 @@
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pr-4 pl-4 font-family: sans-serif;">
       <a class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src='/img/toea-logo.png' class="h-10" alt="Flowbite Logo" />
-          <span class="self-center text-xs max-w-xs font-semibold whitespace-nowrap dark:text-gray-600"><b>Tesda Organizational<br>Excellence Award</b></span>
+          <span class="self-center text-xs max-w-xs font-semibold whitespace-nowrap dark:text-gray-600"><b>TESDA Organizational<br>Excellence Award</b></span>
       </a>
       <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <span class="mr-4 text-center text-sm">George Nunez<br><hr>External Evaluator</span>
+        <span class="mr-4 text-center text-sm">{{ Auth::user()->name }}<br><hr>External Evaluator</span>
           <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
             <span class="sr-only">Open user menu</span>
             <img class="w-8 h-8 rounded-full" src="/img/user.png" alt="user photo">

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ptc_e_external', function (Blueprint $table) {
+        Schema::create('ptc_e_externals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('validator_id')->nullable();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ptc_e_external');
+        Schema::dropIfExists('ptc_e_externals');
     }
 };
