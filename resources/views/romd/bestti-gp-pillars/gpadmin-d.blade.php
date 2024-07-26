@@ -137,10 +137,15 @@
                                                  <tr>
                                                      <td>D.1. Reporting Efficiency</td>
                                                      <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Rating of RO</p></td>
-                                                     <td></td>
-                                                     <td class="pb-4 text-center">{{$data->rd1_final_score}}</td>
+                                                     <td style="text-align: center;">
+                                                        @if($data->d1_file_verification)
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->d1_file_verification }}')">Preview</button>
+                                                        @else
+                                                            No file submitted
+                                                        @endif
+                                                    </td>                                                     <td class="pb-4 text-center">{{$data->rd1_final_score}}</td>
                                                      <td class="pb-4 text-center">{{$data->rd1_remarks}}</td>
-                                                     <td><select class="form-control mb-1 score-dropdown" name="rd1_final_score" type="text" placeholder="Input your initial score" required>
+                                                     <td><select class="form-control mb-1 score-dropdown" name="d1" type="text" placeholder="Input your initial score" required>
                                                                      <option value="">Select score</option>
                                                                      <option value="60">60 - Reports are accurate and submitted consistently and on time</option>
                                                                      <option value="30">30 - Reports are accurate and submitted consistently but not on time</option>
@@ -225,6 +230,13 @@
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
         }
+        function openPdf(pdfUrl) {
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
+        }
+
     </script>
     
 </body>

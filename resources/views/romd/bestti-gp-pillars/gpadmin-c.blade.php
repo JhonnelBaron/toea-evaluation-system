@@ -144,11 +144,17 @@
                             <tr>
                                 <td class="pb-4">C.1. Budget Utilization Rate (BUR)</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring logbook/ registry</p></td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->c1_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c1_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>               
                                 <td class="pb-4 text-center">{{$data->rc1_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc1_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="25" {{ (isset($previousData->c1) && $previousData->c1 == 25) ? 'selected' : '' }}>25 - 100% of budget utilized</option>
                                         <option value="10" {{ (isset($previousData->c1) && $previousData->c1 == 10) ? 'selected' : '' }}>10 - 90% - 99% of budget utilized</option>
@@ -160,11 +166,17 @@
                             <tr>
                                 <td class="pb-4">C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p></td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->c2_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c2_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>               
                                 <td class="pb-4 text-center">{{$data->rc2_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc2_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="25" {{ (isset($previousData->c2) && $previousData->c2 == 25) ? 'selected' : '' }}>25 - 100% acted upon (either partially or fully implemented)</option>
                                         <option value="15" {{ (isset($previousData->c2) && $previousData->c2 == 15) ? 'selected' : '' }}>15 - 90% - 99% acted upon (either partially or fully implemented)</option>
@@ -186,11 +198,17 @@
                             <tr>
                                 <td class="pb-4">C.3.1 Staff Development Program: Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Provincial Work Force Development Plan (WFDP)<br> List of PO personnel in 2023<br> Certificates of trainings attended<br> Copies of REAPs</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c31_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c31_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc31_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc31_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="20" {{ (isset($previousData->c31) && $previousData->c31 == 20) ? 'selected' : '' }}>20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
                                         <option value="10" {{ (isset($previousData->c31) && $previousData->c31 == 10) ? 'selected' : '' }}>10 - 70%- 99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
@@ -202,11 +220,17 @@
                             <tr>
                                 <td class="pb-4">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of PO personnel in 2023<br> Certificates of training programs attended<br></p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c32_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c32_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc32_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc32_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="15" {{ (isset($previousData->c32) && $previousData->c32 == 15) ? 'selected' : '' }}>15 - 100% of Employees were provided with training opportunities</option>
                                         <option value="5" {{ (isset($previousData->c32) && $previousData->c32 == 5) ? 'selected' : '' }}>5 - 75%-99% of Employees were provided with training opportunities</option>
@@ -236,11 +260,17 @@
                             <tr>
                                 <td class="pb-4">C.4.1.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c411_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c411_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc411_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc411_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="5" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>5 - The Province submitted nominees for Category I</option>
                                         <option value="0" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category I</option>
@@ -251,11 +281,17 @@
                             <tr>
                                 <td class="pb-4">C.4.1.2. Awards received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c412_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c412_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc412_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc412_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="5" {{ (isset($previousData->c412) && $previousData->c412 == 5) ? 'selected' : '' }}>5 - The Province has received recognition/award at national level</option>
                                         <option value="0" {{ (isset($previousData->c412) && $previousData->c412 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
@@ -275,11 +311,17 @@
                             <tr>
                                 <td class="pb-4">C.4.2.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c421_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c421_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc421_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc421_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="5" {{ (isset($previousData->c421) && $previousData->c421 == 5) ? 'selected' : '' }}>5 - The Province submitted nominees for Category II</option>
                                         <option value="0" {{ (isset($previousData->c421) && $previousData->c421 == 0) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category II</option>
@@ -290,11 +332,17 @@
                             <tr>
                                 <td class="pb-4">C.4.2.2. Awards Received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c422_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c422_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc422_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc422_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="6" {{ (isset($previousData->c422) && $previousData->c422 == 6) ? 'selected' : '' }}>6 - The Province has received recognition/award at national level</option>
                                         <option value="0" {{ (isset($previousData->c422) && $previousData->c422 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
@@ -314,11 +362,17 @@
                             <tr>
                                 <td class="pb-4">C.4.3.1. Participation</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c431_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c431_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc431_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc431_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="5"  {{ (isset($previousData->c431) && $previousData->c431 == 5) ? 'selected' : '' }}>5 - The Province submitted nominees for Category III</option>
                                         <option value="0"  {{ (isset($previousData->c431) && $previousData->c431 == 0) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category III</option>
@@ -329,11 +383,17 @@
                             <tr>
                                 <td class="pb-4">C.4.3.2. Awards Received</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c432_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c432_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc432_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc432_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="6" {{ (isset($previousData->c432) && $previousData->c432 == 6) ? 'selected' : '' }}>6 - The Province has received recognition/award at national level</option>
                                         <option value="0" {{ (isset($previousData->c432) && $previousData->c432 == 0) ? 'selected' : '' }}>0 - The Province did not receive award/recognition at national level</option>
@@ -344,11 +404,17 @@
                             <tr>
                                 <td class="pb-4">C.5. Application for PRIME-HR Level</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Confernment/Certificate Awarded (if The PO has applied and has been certified in higher PRIME HR Level)<br> Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</p></td>
-                                <td class="pb-4"></td>
+                                                                <td style="text-align: center;">
+                                    @if($data->c5_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c5_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rc5_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rc5_remarks}}</td>
                                 <td class="pb-4">
-                                    <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5" placeholder="Input your initial score" required>
+                                    <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="8" {{ (isset($previousData->c5) && $previousData->c5 == 8) ? 'selected' : '' }}>8 - The PO has applied and has been certified in higher PRIME HR Level</option>
                                         <option value="4" {{ (isset($previousData->c5) && $previousData->c5 == 4) ? 'selected' : '' }}>4 - The PO has applied for higher PRIME-HR Level</option>
@@ -432,6 +498,14 @@
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
         }
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
+        }
+
     </script>
     
 </body>
