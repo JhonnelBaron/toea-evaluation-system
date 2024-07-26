@@ -145,7 +145,14 @@
                             <tr>
                                 <td class="pb-4">A.1. Compliance for Corrupt Policy</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td class="pb-4">  <button class="btn btn-sm btn-info" onclick="openPdf('{{ asset($data->a1_file_verification) }}')"><i class="fas fa-eye"></i> Preview</button></td>
+                                {{-- <td class="pb-4">  <button class="btn btn-sm btn-info" onclick="openPdf('{{ asset($data->a1_file_verification) }}')"><i class="fas fa-eye"></i> Preview</button></td> --}}
+                                <td style="text-align: center;">
+                                    @if($data->a1_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a1_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>                
                                 <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
                                 <td class="pb-4">
@@ -160,7 +167,13 @@
                             <tr>
                                 <td class="pb-4">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a2_file_verification)
+                                        <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a2_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra2_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
                                 <td class="pb-4">
@@ -181,7 +194,13 @@
                                     <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04
                                     Monitoring of Complaints Received
                                 </p></td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a3_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a3_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
                                 <td class="pb-4">
@@ -201,7 +220,13 @@
                                         <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
                                     </p>
                                 </td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a4_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a4_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
                                 <td class="pb-4">
@@ -224,7 +249,13 @@
                                         <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
                                     </p>
                                 </td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a5a_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a5a_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
                                 <td class="pb-4">
@@ -244,7 +275,13 @@
                                         <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
                                     </p>
                                 </td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a5b_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a5b_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
                                 <td class="pb-4">
@@ -263,7 +300,13 @@
                                         <br>Government Procurement Policy Board (GPPB) report who are compliant
                                     </p>
                                 </td>
-                                <td class="pb-4"></td>
+                                <td style="text-align: center;">
+                                    @if($data->a6_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a6_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
                                 <td class="pb-4">
@@ -283,7 +326,13 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
                                     </p> 
                                 </td>
-                                <td class="pb-4"></td>
+                                                               <td style="text-align: center;">
+                                    @if($data->a7a_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a7a_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
                                 <td class="pb-4">
@@ -303,7 +352,13 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
                                     </p>   
                                 </td>
-                                <td class="pb-4"></td>
+                                                               <td style="text-align: center;">
+                                    @if($data->a7b_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a7b_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
                                 <td class="pb-4">
@@ -322,7 +377,13 @@
                                         <br>- Acknowledgment email from GPBB
                                     </p>   
                                 </td>
-                                <td class="pb-4"></td>
+                                                               <td style="text-align: center;">
+                                    @if($data->a8_file_verification)
+                                        <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a8_file_verification }}', event)">Preview</button>
+                                    @else
+                                        No file submitted
+                                    @endif
+                                </td>  
                                 <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
                                 <td class="pb-4">
@@ -368,27 +429,51 @@
     @endif
         </div>
     </div>
-    <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="pdfPreviewModalLabel">PDF Preview</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- PDF will be displayed here -->
+    <main>
+        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- View Details modal -->
+        <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Submission details will be loaded here via JavaScript -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
-    {{-- <script>
+    <script>
         function highlightStep(step) {
         // Remove previous active classes
         const steps = document.querySelectorAll('.flex > div');
@@ -398,7 +483,15 @@
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
         }
-    </script> --}}
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
+        }
+
+    </script>
     
 </body>
 </html>
