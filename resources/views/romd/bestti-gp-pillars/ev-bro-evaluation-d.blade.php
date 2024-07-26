@@ -134,19 +134,19 @@
                         <td class="pb-8 pt-5">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Rating of each Executive Office based on the timely, consistent, and accurate reporting</p>
                         </td>
-                        <td class="pb-8 pt-5"></td>
-                        <td class="pb-8 pt-5"></td>
+                        <td class="pb-4 text-center">{{$data->d1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->d1_remarks}}</td>
                         <td class="pb-8 pt-5"></td>
                         <td class="pb-8 pt-5">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="d1" data-field="d1">
                                 <option value="">Select score</option>
-                                <option value="25">60 - Reports are accurate and submitted consistently and on time</option>
-                                <option value="10">30 - Reports are accurate and submitted consistently but not on time</option>
-                                <option value="0">0 - Reports are not accurate and are not submitted on time</option>
+                                <option value="60" {{ (isset($previousData->d1) && $previousData->d1 == 60) ? 'selected' : '' }}>60 - Reports are accurate and submitted consistently and on time</option>
+                                <option value="30" {{ (isset($previousData->d1) && $previousData->d1 == 30) ? 'selected' : '' }}>30 - Reports are accurate and submitted consistently but not on time</option>
+                                <option value="0" {{ (isset($previousData->d1) && $previousData->d1 == 0) ? 'selected' : '' }}>0 - Reports are not accurate and are not submitted on time</option>
                             </select>
                         </td>
                         <td class="pb-8 pt-5">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="d1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->d1_remarks) ? $previousData->d1_remarks : '' }}">
                         </td>
                         
                     </tr>

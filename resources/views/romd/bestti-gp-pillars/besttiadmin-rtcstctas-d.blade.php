@@ -136,13 +136,19 @@
                             <tr>
                                 <td>D.1. Reporting Efficiency</td>
 								<td></td>
-                                <td></td>
+                                <td>
+                                    @if($data->d1_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->d1_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+                                </td>
                                 <td class="pb-4 text-center">{{$data->rd1_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->rd1_remarks}}</td>
                                 <td><select class="form-control mb-1 score-dropdown" name="d1" data-field="d1">
                                                 <option value="">Select score</option>
-                                                <option value="50" {{ (isset($previousData->d1) && $previousData->d1 == 0) ? 'selected' : '' }}>50 - Reports are accurate and submitted consistently and on time</option>
-                                                <option value="25" {{ (isset($previousData->d1) && $previousData->d1 == 0) ? 'selected' : '' }}>25 - Reports are accurate and submitted consistently but not on time</option>
+                                                <option value="50" {{ (isset($previousData->d1) && $previousData->d1 == 50) ? 'selected' : '' }}>50 - Reports are accurate and submitted consistently and on time</option>
+                                                <option value="25" {{ (isset($previousData->d1) && $previousData->d1 == 25) ? 'selected' : '' }}>25 - Reports are accurate and submitted consistently but not on time</option>
                                                 <option value="0" {{ (isset($previousData->d1) && $previousData->d1 == 0) ? 'selected' : '' }}>0 - Reports are not accurate and are not submitted on time</option>
                                 </select></td>
                                 <td><input class="form-control mb-1" name="d1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->d1_remarks) ? $previousData->d1_remarks : '' }}"></td>

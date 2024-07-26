@@ -144,7 +144,15 @@
                             <tr>
                                 <td class="pb-8">A.1. Compliance for Corrupt Policy</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 14px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a1_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a1_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
                                 <td class="pb-8">
@@ -159,7 +167,14 @@
                             <tr>
                                 <td class="pb-8">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 14px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
-                                <td class="pb-8"></td> 
+                                <td class="pb-8">
+                                    
+                                    @if($data->a2_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a2_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+                                </td> 
                                 <td class="pb-4 text-center">{{$data->ra2_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
                                 <td class="pb-8">
@@ -182,7 +197,15 @@
                                         Monitoring of Complaints Received
                                     </p>
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a3_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a3_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
                                 <td class="pb-8">
@@ -200,7 +223,15 @@
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 14px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)
                                     <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
                                 </p></td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a4_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a4_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
                                 <td class="pb-8">
@@ -216,6 +247,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a4_remarks) ? $previousData->a4_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
                                 <td class="pb-8">
@@ -223,7 +255,15 @@
                                         <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
                                     </p>
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a5a_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a5a_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
                                 <td class="pb-8">
@@ -236,6 +276,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a5a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5a_remarks) ? $previousData->a5a_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
                                 <td class="pb-8">
@@ -243,7 +284,15 @@
                                         <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
                                     </p>
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a5b_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a5b_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
                                 <td class="pb-8">
@@ -255,6 +304,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a5b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5b_remarks) ? $previousData->a5b_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.6. Compliance to PhilGEPS requirements</td>
                                 <td class="pb-8">
@@ -262,7 +312,15 @@
                                         <br>Government Procurement Policy Board (GPPB) report who are compliant
                                     </p>
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a6_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a6_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
                                 <td class="pb-8">
@@ -274,6 +332,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a6_remarks) ? $previousData->a6_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
                                 <td class="pb-8">
@@ -282,7 +341,15 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
                                     </p> 
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a7a_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a7a_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
                                 <td class="pb-8">
@@ -294,6 +361,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a7a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7a_remarks) ? $previousData->a7a_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
                                 <td class="pb-8">
@@ -302,7 +370,15 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
                                     </p>   
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a7b_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a7b_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
                                 <td class="pb-8">
@@ -314,6 +390,7 @@
                                 </td>
                                 <td class="pb-8"><input class="form-control mb-1" name="a7b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7b_remarks) ? $previousData->a7b_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-8">A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
                                 <td class="pb-8">
@@ -321,7 +398,15 @@
                                         <br>- Acknowledgment email from GPBB
                                     </p>   
                                 </td>
-                                <td class="pb-8"></td>
+                                <td class="pb-8">
+
+                                    @if($data->a8_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a8_file_verification }}', event)">Preview</button>
+                                @else
+                                    No file submitted
+                                @endif
+
+                                </td>
                                 <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
                                 <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
                                 <td class="pb-8">

@@ -135,17 +135,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1">
                                 <option value="">Select score</option>
-                                <option value="40">40 - The Province has no personnel with pending administrative case</option>
-                                <option value="0">0 - The Province has at least one pending administrative case</option>
+                                <option value="40" {{ (isset($previousData->a1) && $previousData->a1 == 40) ? 'selected' : '' }}>40 - The Province has no personnel with pending administrative case</option>
+                                <option value="0" {{ (isset($previousData->a1) && $previousData->a1 == 0) ? 'selected' : '' }}>0 - The Province has at least one pending administrative case</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a1_remarks) ? $previousData->a1_remarks : '' }}"></td>
                     </tr>
                     <!-- A.2 -->
                     <tr>
@@ -153,20 +153,20 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center" >{{$data->ra2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2">
                                 <option value="">Select score</option>
-                                <option value="30">30 - There are no valid complaints, findings against any Official and Employee.</option>
-                                <option value="20">20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
-                                <option value="10">10 - There are 4-6 complaints, findings against any Official and Employee.</option>
-                                <option value="5">5 - There are 7-9 complaints, findings against any Official and Employee.</option>
-                                <option value="0">0 - There are 10 or more complaints, findings against any Official and Employee.</option>
+                                <option value="30" {{ (isset($previousData->a2) && $previousData->a2 == 30) ? 'selected' : '' }}>30 - There are no valid complaints, findings against any Official and Employee.</option>
+                                <option value="20" {{ (isset($previousData->a2) && $previousData->a2 == 20) ? 'selected' : '' }}>20 - There are 1-3 complaint/s, findings against any Official and Employee.</option>
+                                <option value="10" {{ (isset($previousData->a2) && $previousData->a2 == 10) ? 'selected' : '' }}>10 - There are 4-6 complaints, findings against any Official and Employee.</option>
+                                <option value="5" {{ (isset($previousData->a2) && $previousData->a2 == 5) ? 'selected' : '' }}>5 - There are 7-9 complaints, findings against any Official and Employee.</option>
+                                <option value="0" {{ (isset($previousData->a2) && $previousData->a2 == 0) ? 'selected' : '' }}>0 - There are 10 or more complaints, findings against any Official and Employee.</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a2_remarks) ? $previousData->a2_remarks : '' }}"></td>
                     </tr>
                     <!-- A.3 -->
                     <tr>
@@ -174,18 +174,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04 Monitoring of Complaints Received</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3">
                                 <option value="">Select score</option>
-                                <option value="10">10 - No complaints received</option>
-                                <option value="10">10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
-                                <option value="0">0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
+                                <option value="10" {{ (isset($previousData->a3) && $previousData->a3 == 10) ? 'selected' : '' }}>10 - No complaints received</option>
+                                <option value="10" {{ (isset($previousData->a3) && $previousData->a3 == 10) ? 'selected' : '' }}>10 - 95% of all complaints emanating from the Contact Center have been resolved and closed within the year</option>
+                                <option value="0" {{ (isset($previousData->a3) && $previousData->a3 == 0) ? 'selected' : '' }}>0 - Less than 95% of all complaints against the POs and TTIs emanating from the Contact Center have been resolved and closed within the year</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a3_remarks) ? $previousData->a3_remarks : '' }}"></td>
                     </tr>
                     <!-- A.4 -->
                     <tr>
@@ -193,21 +193,21 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02) <br>- Monthly (January to December) Summary Report with Percentage signed by the PD</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a4" data-field="a4">
                                 <option value="">Select score</option>
-                                <option value="30">30 - Customer Net Satisfaction Rating is at 99% and above</option>
-                                <option value="20">20 - Customer Net Satisfaction Rating is at 98%</option>
-                                <option value="10">10 - Customer Net Satisfaction Rating is at 97%</option>
-                                <option value="5">5 - Customer Net Satisfaction Rating is at 96%</option>
-                                <option value="3">3 - Customer Net Satisfaction Rating is at 95%</option>
-                                <option value="0">0 - No Customer Feedback Forms or Summary Reports</option>
+                                <option value="30" {{ (isset($previousData->a4) && $previousData->a4 == 30) ? 'selected' : '' }}>30 - Customer Net Satisfaction Rating is at 99% and above</option>
+                                <option value="20" {{ (isset($previousData->a4) && $previousData->a4 == 20) ? 'selected' : '' }}>20 - Customer Net Satisfaction Rating is at 98%</option>
+                                <option value="10" {{ (isset($previousData->a4) && $previousData->a4 == 10) ? 'selected' : '' }}>10 - Customer Net Satisfaction Rating is at 97%</option>
+                                <option value="5" {{ (isset($previousData->a4) && $previousData->a4 == 5) ? 'selected' : '' }}>5 - Customer Net Satisfaction Rating is at 96%</option>
+                                <option value="3" {{ (isset($previousData->a4) && $previousData->a4 == 3) ? 'selected' : '' }}>3 - Customer Net Satisfaction Rating is at 95%</option>
+                                <option value="0" {{ (isset($previousData->a4) && $previousData->a4 == 0) ? 'selected' : '' }}>0 - No Customer Feedback Forms or Summary Reports</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a4_remarks) ? $previousData->a4_remarks : '' }}"></td>
                     </tr>
                     <!-- A.5.A -->
                     <tr>
@@ -215,18 +215,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra5a_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a5a" data-field="a5a">
                                 <option value="">Select score</option>
-                                <option value="15">15 - 0 unimplemented audit observation memorandum by the province</option>
-                                <option value="5">5 - 2-5 unimplemented audit observation memorandum by the province</option>
-                                <option value="0">0 - 6-10 unimplemented audit observation memorandum by the province</option>
+                                <option value="15" {{ (isset($previousData->a5a) && $previousData->a5a == 15) ? 'selected' : '' }}>15 - 0 unimplemented audit observation memorandum by the province</option>
+                                <option value="5" {{ (isset($previousData->a5a) && $previousData->a5a == 5) ? 'selected' : '' }}>5 - 2-5 unimplemented audit observation memorandum by the province</option>
+                                <option value="0" {{ (isset($previousData->a5a) && $previousData->a5a == 0) ? 'selected' : '' }}>0 - 6-10 unimplemented audit observation memorandum by the province</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra5a_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a5a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5a_remarks) ? $previousData->a5a_remarks : '' }}"></td>
                     </tr>
                     <!-- A.5.B -->
                     <tr>
@@ -234,17 +234,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra5b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a5b" data-field="a5b">
                                 <option value="">Select score</option>
-                                <option value="15">15 - There are no suspensions and disallowances</option>
-                                <option value="0">0 - There are suspensions and disallowances</option>
+                                <option value="15" {{ (isset($previousData->a5b) && $previousData->a5b == 15) ? 'selected' : '' }}>15 - There are no suspensions and disallowances</option>
+                                <option value="0" {{ (isset($previousData->a5b) && $previousData->a5b == 0) ? 'selected' : '' }}>0 - There are suspensions and disallowances</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra5b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a5b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a5b_remarks) ? $previousData->a5b_remarks : '' }}"></td>
                     </tr>
                     <!-- A.6 -->
                     <tr>
@@ -252,17 +252,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed <br>Government Procurement Policy Board (GPPB) report who are compliant</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a6" data-field="a6">
                                 <option value="">Select score</option>
-                                <option value="30">30 - 100% compliance from Publication to Notice and Award and Notice to Proceed</option>
-                                <option value="0">0 - Non-compliance from Publication to Notice and Award and Notice to Proceed</option>
+                                <option value="30" {{ (isset($previousData->a6) && $previousData->a6 == 30) ? 'selected' : '' }}>30 - 100% compliance from Publication to Notice and Award and Notice to Proceed</option>
+                                <option value="0" {{ (isset($previousData->a6) && $previousData->a6 == 0) ? 'selected' : '' }}>0 - Non-compliance from Publication to Notice and Award and Notice to Proceed</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra6_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a6_remarks) ? $previousData->a6_remarks : '' }}"></td>
                     </tr>
                     <!-- A.7.A -->
                     <tr>
@@ -270,17 +270,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7a_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a7a" data-field="a7a">
                                 <option value="">Select score</option>
-                                <option value="10">10 - All Foreign Travel Expenses liquidated within 60 days</option>
-                                <option value="0">0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
+                                <option value="10" {{ (isset($previousData->a7a) && $previousData->a7a == 10) ? 'selected' : '' }}>10 - All Foreign Travel Expenses liquidated within 60 days</option>
+                                <option value="0" {{ (isset($previousData->a7a) && $previousData->a7a == 0) ? 'selected' : '' }}>0 - Partial number of Foreign Travel Expenses liquidated beyond 60 days</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7a_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a7a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7a_remarks) ? $previousData->a7a_remarks : '' }}"></td>
                     </tr>
                     <!-- A.7.B -->
                     <tr>
@@ -288,17 +288,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a7b" data-field="a7b">
                                 <option value="">Select score</option>
-                                <option value="10">10 - All Local Travel Expenses liquidated within 30 days</option>
-                                <option value="0">0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
+                                <option value="10" {{ (isset($previousData->a7b) && $previousData->a7b == 10) ? 'selected' : '' }}>10 - All Local Travel Expenses liquidated within 30 days</option>
+                                <option value="0" {{ (isset($previousData->a7b) && $previousData->a7b == 0) ? 'selected' : '' }}>0 - Partial number of Local Travel Expenses liquidated beyond 30 days</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a7b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a7b_remarks) ? $previousData->a7b_remarks : '' }}"></td>
                     </tr>
                     <!-- A.8 -->
                     <tr>
@@ -306,17 +306,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB) <br>- Acknowledgment email from GPBB</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown" name="a8" data-field="a8">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The Provincial Office is compliant to APCPI</option>
-                                <option value="0">0 - No Compliance to APCPI</option>
+                                <option value="10" {{ (isset($previousData->a8) && $previousData->a8 == 10) ? 'selected' : '' }}>10 - The Provincial Office is compliant to APCPI</option>
+                                <option value="0" {{ (isset($previousData->a8) && $previousData->a8 == 0) ? 'selected' : '' }}>0 - No Compliance to APCPI</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra8_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="a8_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a8_remarks) ? $previousData->a8_remarks : '' }}"></td>
                     </tr>
                     <!-- Totals -->
                     <tr>

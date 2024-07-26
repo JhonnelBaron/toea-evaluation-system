@@ -135,17 +135,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b1a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b1a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b1a" data-field="b1a">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1a) && $previousData->b1a == 14) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1a) && $previousData->b1a == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1a_remarks) ? $previousData->b1a_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -155,17 +155,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report of the User’s Feedback Survey</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center" >{{$data->b1b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b1b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b1b" data-field="b1b">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1b) && $previousData->b1b == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1b) && $previousData->b1b == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1b_remarks) ? $previousData->b1b_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -175,17 +175,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b1c_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b1c_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b1c" data-field="b1c">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100%</option>
-                                <option value="20">20 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1c) && $previousData->b1c == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100%</option>
+                                <option value="20"  {{ (isset($previousData->b1c) && $previousData->b1c == 40) ? 'selected' : '' }}>20 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1c_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1c_remarks) ? $previousData->b1c_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -195,17 +195,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Tracking sheets (F41) - RO/PO c/o CO</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b1d_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b1d_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b1d" data-field="b1d">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1d) && $previousData->b1d == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1d) && $previousData->b1d == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1d_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1d_remarks) ? $previousData->b1d_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -215,103 +215,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b1e_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b1e_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra5_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b1e" data-field="b1e">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1e) && $previousData->b1e == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1e) && $previousData->b1e == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra5_remarks" type="text" placeholder="Remarks"></td>
-                    </tr>
-
-                    <tr>
-                        <td class="pb-8">
-                            B. Implementation of TESD Programs<br>
-                            B.1. Performance based on the General Appropriations Act (GAA)<br>
-                            B.1.A. Number of Provincial TESD plans formulated/updated
-                        </td>
-                        <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
-                        </td>
-                        <!-- Added one more <td class="pb-8"> element -->
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra1_final_score" type="text" placeholder="Input your initial score" required>
-                                <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra1_remarks" type="text" placeholder="Remarks"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="pb-8">
-                            B.1.B. 94% stakeholders who rated policies/plans as good or better
-                        </td>
-                        <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report of the User’s Feedback Survey</p>
-                        </td>
-                        <!-- Added one more <td class="pb-8"> element -->
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra2_final_score" type="text" placeholder="Input your initial score" required>
-                                <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra2_remarks" type="text" placeholder="Remarks"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="pb-8">
-                            B.1.C. 100% of registered TVET programs audited<br>Customer Net Satisfaction Rating with minimum of 95%
-                        </td>
-                        <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
-                        </td>
-                        <!-- Added one more <td class="pb-8"> element -->
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra3_final_score" type="text" placeholder="Input your initial score" required>
-                                <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100%</option>
-                                <option value="20">20 - The accomplishment rate based on set target is below 100%</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra3_remarks" type="text" placeholder="Remarks"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="pb-8">
-                            B.1.D. 90% of skilled workers issued with certification within 7 days of their application
-                        </td>
-                        <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Tracking sheets (F41) - RO/PO c/o CO</p>
-                        </td>
-                        <!-- Added one more <td class="pb-8"> element -->
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra4_final_score" type="text" placeholder="Input your initial score" required>
-                                <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra4_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1e_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1e_remarks) ? $previousData->b1e_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -326,16 +240,16 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2a1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a1_remarks}}</td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra5_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2a1" data-field="b2a1">
                                 <option value="">Select Score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra5_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a1_remarks) ? $previousData->b2a1_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -347,81 +261,106 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2a2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a2_remarks}}</td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra6_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2a2" data-field="b2a2">
                                 <option value="">Select Score</option>
-                                <option value="10">10 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
-                                <option value="0">0 - Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
+                                <option value="10"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 40) ? 'selected' : '' }}>10 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
+                                <option value="0"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 40) ? 'selected' : '' }}>0 - Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra6_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a2_remarks) ? $previousData->b2a2_remarks : '' }}"></td>
                     </tr>
                     
+
                     <tr>
                         <td class="pb-8">
-                            B.2.A.3. Participation and Recognition from Skills Competition<br>
-                            B.2.A.3.1. Participation
+                            <h5>
+                                B.2.A.3. Digitization
+                            </h5>
+                        </td>
+                        <td class="pb-8">
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report on the digitization initiative or digital transformation of external services</p>
+                        </td>
+                        <td class="pb-4 text-center">{{$data->b2a3_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a3_remarks}}</td>
+                        <td class="pb-8"></td>
+                        <td class="pb-8">
+                            <select class="form-control mb-1 score-dropdown"  name="b2a3" data-field="b2a3">
+                                <option value="">Select Score</option>
+                                <option value="6" {{ (isset($previousData->b2a3) && $previousData->b2a3 == 6) ? 'selected' : '' }}>6 - The RO has institutionalized digitalization/use of electronic/online service delivery channel in the implementation of programs and/or utilize new technologies to reduce manual effort and increase productivity</option>
+                                <option value="3" {{ (isset($previousData->b2a3) && $previousData->b2a3 == 3) ? 'selected' : '' }}>3 - The RO has developed digitalization plan to enhance existing systems using/aided by new or emerging technologies to improve performance, efficiency, and capabilities</option>
+                                <option value="0" {{ (isset($previousData->b2a3) && $previousData->b2a3 == 0) ? 'selected' : '' }}>0 - The RO has no digitalization plan or initiatives undertaken</option>
+                            </select>
+                        </td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a3_remarks) ? $previousData->b2a3_remarks : '' }}"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="pb-8">
+                            B.2.A.4 Participation and Recognition from Skills Competition<br>
+                            B.2.A.4.1 Participation
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports / Official list of winners</p>
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2a41_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a41_remarks}}</td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2a41" data-field="b2a41">
                                 <option value="">Select Score</option>
-                                <option value="6">6 - The Region participated in ASC and/or World Skills Competition</option>
-                                <option value="6">6 - The Region participated in PNSC</option>
-                                <option value="0">0 - The Region did not participate in any of the competition</option>
+                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>6 - The Region participated in ASC and/or World Skills Competition</option>
+                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>6 - The Region participated in PNSC</option>
+                                <option value="0"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>0 - The Region did not participate in any of the competition</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a41_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a41_remarks) ? $previousData->b2a41_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            B.2.A.3.2. Awards received at the national level
+                            B.2.A.4.2 Awards received at the national level
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2a42_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a42_remarks}}</td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra8_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2a42" data-field="b2a42">
                                 <option value="">Select Score</option>
-                                <option value="7">7 - The Region received award/recognition at the national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition</option>
+                                <option value="7"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 40) ? 'selected' : '' }}>7 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra8_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a42_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a42_remarks) ? $previousData->b2a42_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            B.2.A.3.3. Awards received at the international level
+                            B.2.A.4.3 Awards received at the international level
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2a43_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2a43_remarks}}</td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra9_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2a43" data-field="b2a43">
                                 <option value="">Select Score</option>
-                                <option value="12">12 - The Region received award/recognition at the international level</option>
-                                <option value="0">0 - The Region did not receive award/recognition</option>
+                                <option value="12"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 40) ? 'selected' : '' }}>12 - The Region received award/recognition at the international level</option>
+                                <option value="0"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra9_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2a43_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a43_remarks) ? $previousData->b2a43_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -433,18 +372,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2b1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2b1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2b1" data-field="b2b1">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2b1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b1_remarks) ? $previousData->b2b1_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -455,18 +394,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2b2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2b2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2b2" data-field="b2b2">
                                 <option value="">Select score</option>
-                                <option value="10">10 - At least 7 programs provided to special clients</option>
-                                <option value="0">0 - Less than 7 programs provided to special clients</option>
+                                <option value="10"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 40) ? 'selected' : '' }}>10 - At least 7 programs provided to special clients</option>
+                                <option value="0"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 40) ? 'selected' : '' }}>0 - Less than 7 programs provided to special clients</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2b2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b2_remarks) ? $previousData->b2b2_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -477,18 +416,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2b3_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2b3_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2b3" data-field="b2b3">
                                 <option value="">Select score</option>
-                                <option value="35">35 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="35"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 40) ? 'selected' : '' }}>35 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2b3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b3_remarks) ? $previousData->b2b3_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -499,18 +438,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Reports on meetings conducted</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2b4_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2b4_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2b4" data-field="b2b4">
                                 <option value="">Select score</option>
-                                <option value="10">10 - At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
-                                <option value="0">0 - Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="10"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 40) ? 'selected' : '' }}>10 - At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="0"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 40) ? 'selected' : '' }}>0 - Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2b4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b4_remarks) ? $previousData->b2b4_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -521,18 +460,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2b5_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2b5_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2b5" data-field="b2b5">
                                 <option value="">Select score</option>
-                                <option value="10">10 - All TTIs and the PO have conducted programs/activities related to GAD</option>
-                                <option value="0">0 - Not all TTIs and the PO have conducted programs/activities related to GAD</option>
+                                <option value="10"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 40) ? 'selected' : '' }}>10 - All TTIs and the PO have conducted programs/activities related to GAD</option>
+                                <option value="0"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 40) ? 'selected' : '' }}>0 - Not all TTIs and the PO have conducted programs/activities related to GAD</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2b5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b5_remarks) ? $previousData->b2b5_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -545,18 +484,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: MIS 02-04</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c1" data-field="b2c1">
                                 <option value="">Select score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c1_remarks) ? $previousData->b2c1_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -567,18 +506,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monthly Report on Program Registration</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c2" data-field="b2c2">
                                 <option value="">Select score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c2_remarks) ? $previousData->b2c2_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -589,18 +528,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c3_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c3_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c3" data-field="b2c3">
                                 <option value="">Select score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c3_remarks) ? $previousData->b2c3_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -611,18 +550,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c4_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c4_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c4" data-field="b2c4">
                                 <option value="">Select score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c4_remarks) ? $previousData->b2c4_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -633,18 +572,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessors from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c5_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c5_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c5" data-field="b2c5">
                                 <option value="">Select score</option>
-                                <option value="15">15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c5_remarks) ? $previousData->b2c5_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -655,18 +594,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2c6_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2c6_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2c6" data-field="b2c6">
                                 <option value="">Select score</option>
-                                <option value="10">10 - At least 3 Assessment Centers for NC Level IV Qualifications (Large Regions)</option>
-                                <option value="0">0 - Less than 3 Assessment Centers for NC Level IV Qualifications</option>
+                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 40) ? 'selected' : '' }}>10 - At least 3 Assessment Centers for NC Level IV Qualifications (Large Regions)</option>
+                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 40) ? 'selected' : '' }}>0 - Less than 3 Assessment Centers for NC Level IV Qualifications</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2c6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c6_remarks) ? $previousData->b2c6_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -679,18 +618,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d1" data-field="b2d1">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d1_remarks) ? $previousData->b2d1_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -701,18 +640,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d2" data-field="b2d2">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d2_remarks) ? $previousData->b2d2_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -725,18 +664,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d31_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d31_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d31" data-field="b2d31">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="5"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 40) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d31_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d31_remarks) ? $previousData->b2d31_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -747,45 +686,42 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report, Number of HOTS List of HOTS and their TVET qualifications</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d32_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d32_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d32" data-field="b2d32">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0">0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="5"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 40) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d32_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d32_remarks) ? $previousData->b2d32_remarks : '' }}">
                         </td>
                     </tr>
                     
                     <tr>
                         <td class="pb-8">
                             <h5>B.2.D.4. Institutional Awards</h5>
-                            <span>60</span>
                             <h5>B.2.D.4.1. TESDA Idol (Wage-employed)</h5>
-                            <span>15</span>
                             <h5>B.2.D.4.1.1. Participation</h5>
-                            <span>5</span>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d411_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d411_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d411" data-field="b2d411">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region participated in TESDA Idol (Wage-employed)</option>
-                                <option value="0">0 - The Region did not participate in TESDA Idol (Wage-employed)</option>
+                                <option value="5"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 40) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (Wage-employed)</option>
+                                <option value="0"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 40) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (Wage-employed)</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d411_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d411_remarks) ? $previousData->b2d411_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -796,18 +732,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d412_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d412_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d412" data-field="b2d412">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The Region received award/recognition at the national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d412_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d412_remarks) ? $previousData->b2d412_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -820,18 +756,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d421_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d421_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d421" data-field="b2d421">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region participated in TESDA Idol (self-employed)</option>
-                                <option value="0">0 - The Region did not participate in TESDA Idol (self-employed)</option>
+                                <option value="5"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 40) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (self-employed)</option>
+                                <option value="0"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 40) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (self-employed)</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d421_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d421_remarks) ? $previousData->b2d421_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -842,18 +778,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d422_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d422_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d422" data-field="b2d422">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The Region received award/recognition at the national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d422_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d422_remarks) ? $previousData->b2d422_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -865,18 +801,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d431_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d431_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d431" data-field="b2d431" type="text">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region participated in Kabalikat Awards</option>
-                                <option value="0">0 - The Region did not participate in Kabalikat Awards</option>
+                                <option value="5"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 40) ? 'selected' : '' }}>5 - The Region participated in Kabalikat Awards</option>
+                                <option value="0"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 40) ? 'selected' : '' }}>0 - The Region did not participate in Kabalikat Awards</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d431_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d431_remarks) ? $previousData->b2d431_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -887,18 +823,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d432_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d432_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d432" data-field="b2d432" type="text">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The Region received award/recognition at the national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d432_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d432_remarks) ? $previousData->b2d432_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -910,18 +846,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d441_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d441_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d441" data-field="b2d441" type="text">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region participated in the National Level Tagsanay Awards</option>
-                                <option value="0">0 - The Region did not participate in the National Level Tagsanay Awards</option>
+                                <option value="5"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 40) ? 'selected' : '' }}>5 - The Region participated in the National Level Tagsanay Awards</option>
+                                <option value="0"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 40) ? 'selected' : '' }}>0 - The Region did not participate in the National Level Tagsanay Awards</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d441_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d441_remarks) ? $previousData->b2d441_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -932,18 +868,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d442_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d442_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d442" data-field="b2d442" type="text">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The Region received award/recognition at the national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d442_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d442_remarks) ? $previousData->b2d442_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -956,18 +892,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d5_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d5_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d5" data-field="b2d5" type="text">
                                 <option value="">Select score</option>
-                                <option value="15">15 - For Large Region: Partnerships with three (3) or more industries/private companies and with continuing tie-ups for the last two (2) years with the same industries/companies</option>
-                                <option value="0">0 - For Small Region: Partnership with more than one (1) industry/private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
+                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 40) ? 'selected' : '' }}>15 - For Large Region: Partnerships with three (3) or more industries/private companies and with continuing tie-ups for the last two (2) years with the same industries/companies</option>
+                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 40) ? 'selected' : '' }}>0 - For Small Region: Partnership with more than one (1) industry/private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d5_remarks) ? $previousData->b2d5_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -979,18 +915,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Compendium of program registration, Registry of EBT programs; T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2d6_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2d6_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" type="text" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2d6" data-field="b2d6" type="text">
                                 <option value="">Select score</option>
-                                <option value="10">10 - At least 30 new programs for Large Category</option>
-                                <option value="0">0 - Below the minimum number of programs per category</option>
+                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 40) ? 'selected' : '' }}>10 - At least 30 new programs for Large Category</option>
+                                <option value="0"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 40) ? 'selected' : '' }}>0 - Below the minimum number of programs per category</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="b2d6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d6_remarks) ? $previousData->b2d6_remarks : '' }}">
                         </td>
                     </tr>
                     
@@ -1006,17 +942,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e11a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e11a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e11a" data-field="b2e11a">
                                 <option value="">Select score</option>
-                                <option value="6">6 - The Region nominated TVI/s for APACC accreditation</option>
-                                <option value="0">0 - The Region did not nominate any TVI/s for APACC accreditation</option>
+                                <option value="6"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 40) ? 'selected' : '' }}>6 - The Region nominated TVI/s for APACC accreditation</option>
+                                <option value="0"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 40) ? 'selected' : '' }}>0 - The Region did not nominate any TVI/s for APACC accreditation</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e11a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e11a_remarks) ? $previousData->b2e11a_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1028,17 +964,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e11b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e11b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e11b" data-field="b2e11b">
                                 <option value="">Select score</option>
-                                <option value="10">10 - The nominated TVI/s of the Region received APACC accreditation</option>
-                                <option value="0">0 - The nominated TVI/s of the Region did not receive APACC accreditation</option>
+                                <option value="10"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 40) ? 'selected' : '' }}>10 - The nominated TVI/s of the Region received APACC accreditation</option>
+                                <option value="0"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 40) ? 'selected' : '' }}>0 - The nominated TVI/s of the Region did not receive APACC accreditation</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e11b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e11b_remarks) ? $previousData->b2e11b_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1051,17 +987,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e12a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e12a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e12a" data-field="b2e12a">
                                 <option value="">Select score</option>
-                                <option value="6">6 - The Region participated in STAR Program</option>
-                                <option value="0">0 - The Region did not participate in STAR Program</option>
+                                <option value="6"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 40) ? 'selected' : '' }}>6 - The Region participated in STAR Program</option>
+                                <option value="0"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 40) ? 'selected' : '' }}>0 - The Region did not participate in STAR Program</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e12a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e12a_remarks) ? $previousData->b2e12a_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1073,19 +1009,19 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e12b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e12b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e12b" data-field="b2e12b">
                                 <option value="">Select score</option>
-                                <option value="20">20 - The Region received at least one THREE STAR Level Award</option>
-                                <option value="10">10 - The Region received at least one TWO STAR Level Award</option>
-                                <option value="5">5 - The Region received at least one ONE STAR Level Award</option>
-                                <option value="0">0 - The Region did not receive a STAR Level Award</option>
+                                <option value="20"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>20 - The Region received at least one THREE STAR Level Award</option>
+                                <option value="10"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>10 - The Region received at least one TWO STAR Level Award</option>
+                                <option value="5"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>5 - The Region received at least one ONE STAR Level Award</option>
+                                <option value="0"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>0 - The Region did not receive a STAR Level Award</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e12b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e12b_remarks) ? $previousData->b2e12b_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1098,17 +1034,17 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e13a_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e13a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e13a" data-field="b2e13a">
                                 <option value="">Select score</option>
-                                <option value="8">8 - All qualified TTIs of the region applied for the TESDA Seal of Integrity</option>
-                                <option value="0">0 - Not all qualified TTIs of the region applied for TESDA Seal of Integrity</option>
+                                <option value="8"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 40) ? 'selected' : '' }}>8 - All qualified TTIs of the region applied for the TESDA Seal of Integrity</option>
+                                <option value="0"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 40) ? 'selected' : '' }}>0 - Not all qualified TTIs of the region applied for TESDA Seal of Integrity</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e13a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e13a_remarks) ? $previousData->b2e13a_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1120,38 +1056,33 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e13b_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e13b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" placeholder="Input your initial score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e13b" data-field="b2e13b">
                                 <option value="">Select score</option>
-                                <option value="8">8 - At least 80% of the TTIs of the Region have been awarded with the TESDA Seal of Integrity</option>
-                                <option value="0">0 - Below 80% TTIs of the Region have been awarded with TESDA Seal of Integrity</option>
+                                <option value="8" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 40) ? 'selected' : '' }}>8 - At least 80% of the TTIs of the Region have been awarded with the TESDA Seal of Integrity</option>
+                                <option value="0" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 40) ? 'selected' : '' }}>0 - Below 80% TTIs of the Region have been awarded with TESDA Seal of Integrity</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e13b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e13b_remarks) ? $previousData->b2e13b_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
                         <td class="pb-8">
                             <h5>
-                                B.2.E.2. Quality Management System Implementation = 22
+                                B.2.E.2. Quality Management System Implementation
                             </h5>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: IQA reports (TESDA Action Catalogue)</p>
                         </td>
+                        <td class="pb-4 text-center">
+                        <td class="pb-4 text-center">
                         <td class="pb-8"></td>
                         <td class="pb-8"></td>
                         <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
-                                <option value="">Select score</option>
-                                <option value="22">22 - Quality Management System Implementation</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
                     </tr>
                     
                     <tr>
@@ -1163,18 +1094,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Inventory of Lead Auditors/Auditors (TESDA QP 03-F09)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e21_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e21_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e21" data-field="b2e21">
                                 <option value="">Select score</option>
-                                <option value="8">8 - The Region has at least four (4) active IQA Lead Auditors/Auditors</option>
-                                <option value="4">4 - The Region has two (2) to three (3) active IQA Lead Auditors/ Auditors</option>
-                                <option value="0">0 - The Region has less than two (2) active IQA Lead Auditors/ Auditors</option>
+                                <option value="8" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>8 - The Region has at least four (4) active IQA Lead Auditors/Auditors</option>
+                                <option value="4" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>4 - The Region has two (2) to three (3) active IQA Lead Auditors/ Auditors</option>
+                                <option value="0" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>0 - The Region has less than two (2) active IQA Lead Auditors/ Auditors</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e21_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e21_remarks) ? $previousData->b2e21_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1186,18 +1117,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: RRRO - Monitoring of submission IQA Reports reflected on the QP-03-F12 Action Catalog - QP-03-F11</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e22_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e22_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e22" data-field="b2e22">
                                 <option value="">Select score</option>
-                                <option value="8">8 - The Region submitted report/doc ahead of deadline</option>
-                                <option value="4">4 - The Region submitted report/docs on set deadline</option>
-                                <option value="0">0 - The Region submitted report/doc after set deadline</option>
+                                <option value="8" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>8 - The Region submitted report/doc ahead of deadline</option>
+                                <option value="4" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>4 - The Region submitted report/docs on set deadline</option>
+                                <option value="0" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>0 - The Region submitted report/doc after set deadline</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e22_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e22_remarks) ? $previousData->b2e22_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1209,19 +1140,19 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Manning of the Regional Provincial Office versus the actual number of personnel that have attended training</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e23_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e23_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e23" data-field="b2e23">
                                 <option value="">Select score</option>
-                                <option value="6">6 - >80% of provincial personnel attended QMS related training programs</option>
-                                <option value="3">3 - 40% to 80% of provincial personnel attended QMS related training programs</option>
-                                <option value="0">0 - <40% of provincial personnel attended QMS related training programs</option>
-                                <option value="1">1 - Plus (1) Point for PO initiated QMS related training programs of personnel</option>
+                                <option value="6" {{ (isset($previousData->b2e23) && $previousData->b2e23 == 6) ? 'selected' : '' }}>6 - >80% of provincial personnel attended QMS related training programs</option>
+                                <option value="3" {{ (isset($previousData->b2e23) && $previousData->b2e23 == 3) ? 'selected' : '' }}>3 - 40% to 80% of provincial personnel attended QMS related training programs</option>
+                                <option value="0" {{ (isset($previousData->b2e23) && $previousData->b2e23 == 0) ? 'selected' : '' }}>0 - < 40% of provincial personnel attended QMS related training programs </option>
+                                <option value="1" {{ (isset($previousData->b2e23) && $previousData->b2e23 == 1) ? 'selected' : '' }}>1 - Plus (1) Point for PO initiated QMS related training programs of personnel</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e23_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e23_remarks) ? $previousData->b2e23_remarks : '' }}"></td>
                     </tr>
                     
                     <tr>
@@ -1234,39 +1165,20 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->b2e3_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->b2e3_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown"  name="b2e3" data-field="b2e3">
                                 <option value="">Select score</option>
-                                <option value="15">15 - All TTIs in the Region have implemented their plans and projects related to Green Practices</option>
-                                <option value="0">0 - Not all TTIs in the Region have implemented their plans and projects related to Green Practices</option>
+                                <option value="15" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 40) ? 'selected' : '' }}>15 - All TTIs in the Region have implemented their plans and projects related to Green Practices</option>
+                                <option value="0" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 40) ? 'selected' : '' }}>0 - Not all TTIs in the Region have implemented their plans and projects related to Green Practices</option>
                             </select>
                         </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b2e3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e3_remarks) ? $previousData->b2e3_remarks : '' }}"></td>
                     </tr>
                     
-                    <tr>
-                        <td class="pb-8">
-                            <h5>
-                                B.2.E.4. Digitization
-                            </h5>
-                        </td>
-                        <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report on the digitization initiative or digital transformation of external services</p>
-                        </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
-                                <option value="">Select score</option>
-                                <option value="0">0 - Not provided</option>
-                            </select>
-                        </td>
-                        <td class="pb-8"><input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks"></td>
-                    </tr>
+                   
 
                     <tr>
                         <td class="p-4"><b>Total Initial Score</b></td>
