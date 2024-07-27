@@ -12,6 +12,11 @@ use App\Models\External\PtcBExternal;
 use App\Models\External\PtcCExternal;
 use App\Models\External\PtcDExternal;
 use App\Models\External\PtcEExternal;
+use App\Models\External\RstAExternal;
+use App\Models\External\RstBExternal;
+use App\Models\External\RstCExternal;
+use App\Models\External\RstDExternal;
+use App\Models\External\RstEExternal;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -155,5 +160,27 @@ class ExecutiveOfficeAccount extends Authenticatable
     public function ptcE()
     {
         return $this->hasMany(PtcEExternal::class, 'validator_id');
+    }
+    public function rstA()
+    {
+        return $this->hasMany(RstAExternal::class, 'validator_id');
+    }
+
+    public function rstB()
+    {
+        return $this->hasMany(RstBExternal::class, 'validator_id');
+    }
+
+    public function rstC()
+    {
+        return $this->hasMany(RstCExternal::class, 'validator_id');
+    }
+    public function rstD()
+    {
+        return $this->hasMany(RstDExternal::class, 'validator_id');
+    }
+    public function rstE()
+    {
+        return $this->hasMany(RstEExternal::class, 'validator_id');
     }
 }

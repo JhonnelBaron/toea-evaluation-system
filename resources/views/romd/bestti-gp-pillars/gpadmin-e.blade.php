@@ -175,7 +175,7 @@
                                 <td><b>Total Score</b></td>
                                 <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                                 <td><b>Final Score</b></td>
-                                <td><span id="totalScore">0</span></td>
+                                <td><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                                 <td><button class="btn btn-primary" id="submitButton">Submit</button></td>
                             </tr>
                         </tbody>
