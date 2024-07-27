@@ -128,8 +128,8 @@
                     <tr>
                         <td class="pb-4 text-center">E. Social Marketing and Advocacy</td>
                         <td class="pb-4 text-center"><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan Write-ups (best practices/activity reports)<br>Radio programsSocial media posts and shares<br>Local Media engagements (blasted PRs, Interviews)<br> Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p></td>
-                        <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
+                        <td class="pb-4 text-center">ra1_final_score}}</td>
+                        <td class="pb-4 text-center">ra1_remarks}}</td>
                         <td class="pb-4 text-center"></td>
                         <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e" data-field="e">
                                         <option value="">Select score</option>

@@ -135,8 +135,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
+                        <td class="pb-4 text-center">ra1</td>
+                        <td class="pb-4 text-center">ra1_remarks</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1">
@@ -153,8 +153,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
-                        <td class="pb-4 text-center" >{{$data->ra2_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
+                        <td class="pb-4 text-center" >ra2</td>
+                        <td class="pb-4 text-center">ra2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2">
@@ -174,8 +174,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04 Monitoring of Complaints Received</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
+                        <td class="pb-4 text-center">ra3</td>
+                        <td class="pb-4 text-center">ra3_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3">
@@ -193,8 +193,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02) <br>- Monthly (January to December) Summary Report with Percentage signed by the PD</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra4_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra4_remarks}}</td>
+                        <td class="pb-4 text-center">ra4</td>
+                        <td class="pb-4 text-center">ra4_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a4" data-field="a4">
@@ -215,8 +215,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra5a_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra5a_remarks}}</td>
+                        <td class="pb-4 text-center">ra5a</td>
+                        <td class="pb-4 text-center">ra5a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5a" data-field="a5a">
@@ -234,8 +234,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra5b_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra5b_remarks}}</td>
+                        <td class="pb-4 text-center">ra5b</td>
+                        <td class="pb-4 text-center">ra5b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5b" data-field="a5b">
@@ -252,8 +252,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed <br>Government Procurement Policy Board (GPPB) report who are compliant</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra6_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra6_remarks}}</td>
+                        <td class="pb-4 text-center">ra6</td>
+                        <td class="pb-4 text-center">ra6_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a6" data-field="a6">
@@ -270,8 +270,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra7a_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra7a_remarks}}</td>
+                        <td class="pb-4 text-center">ra7a</td>
+                        <td class="pb-4 text-center">ra7a_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7a" data-field="a7a">
@@ -288,8 +288,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra7b_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra7b_remarks}}</td>
+                        <td class="pb-4 text-center">ra7b</td>
+                        <td class="pb-4 text-center">ra7b_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7b" data-field="a7b">
@@ -306,8 +306,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB) <br>- Acknowledgment email from GPBB</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->ra8_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->ra8_remarks}}</td>
+                        <td class="pb-4 text-center">ra8</td>
+                        <td class="pb-4 text-center">ra8_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a8" data-field="a8">

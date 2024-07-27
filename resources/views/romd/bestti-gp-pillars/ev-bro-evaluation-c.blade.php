@@ -135,8 +135,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring logbook/registry</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c1_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c1_remarks}}</td>
+                        <td class="pb-4 text-center">c1_final_score}}</td>
+                        <td class="pb-4 text-center">c1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1">
@@ -160,8 +160,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c2_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c2_remarks}}</td>
+                        <td class="pb-4 text-center">c2_final_score}}</td>
+                        <td class="pb-4 text-center">c2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2">
@@ -187,8 +187,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Regional/Provincial Work Force Development Plan (WFDP), Certificates of trainings attended, Copies of REAPs</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c31_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c31_remarks}}</td>
+                        <td class="pb-4 text-center">c31_final_score}}</td>
+                        <td class="pb-4 text-center">c31_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31">
@@ -212,8 +212,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c32_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c32_remarks}}</td>
+                        <td class="pb-4 text-center">c32_final_score}}</td>
+                        <td class="pb-4 text-center">c32_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32">
@@ -236,8 +236,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c33_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c33_remarks}}</td>
+                        <td class="pb-4 text-center">c33_final_score}}</td>
+                        <td class="pb-4 text-center">c33_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c33" data-field="c33">
@@ -264,8 +264,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c411_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c411_remarks}}</td>
+                        <td class="pb-4 text-center">c411_final_score}}</td>
+                        <td class="pb-4 text-center">c411_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411">
@@ -288,8 +288,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c412_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c412_remarks}}</td>
+                        <td class="pb-4 text-center">c412_final_score}}</td>
+                        <td class="pb-4 text-center">c412_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412">
@@ -313,8 +313,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c421_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c421_remarks}}</td>
+                        <td class="pb-4 text-center">c421_final_score}}</td>
+                        <td class="pb-4 text-center">c421_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421">
@@ -337,8 +337,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c422_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c422_remarks}}</td>
+                        <td class="pb-4 text-center">c422_final_score}}</td>
+                        <td class="pb-4 text-center">c422_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422">
@@ -362,8 +362,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c431_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c431_remarks}}</td>
+                        <td class="pb-4 text-center">c431_final_score}}</td>
+                        <td class="pb-4 text-center">c431_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431">
@@ -386,8 +386,8 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c432_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c432_remarks}}</td>
+                        <td class="pb-4 text-center">c432_final_score}}</td>
+                        <td class="pb-4 text-center">c432_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432">
@@ -411,8 +411,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Conferment/Certificate Awarded <br></p>
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->c5_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->c5_remarks}}</td>
+                        <td class="pb-4 text-center">c5_final_score}}</td>
+                        <td class="pb-4 text-center">c5_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5">
