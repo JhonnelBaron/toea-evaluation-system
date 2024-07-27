@@ -67,7 +67,7 @@
         }
 
 </style>
-<body>
+<body>y
 
     <div>
         @include('components.navbar', [

@@ -1348,8 +1348,8 @@
                                     <select class="form-control mb-1 score-dropdown" name="b2e22" data-field="b2e22" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="8" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 8) ? 'selected' : '' }}>8 - The province submitted report/doc ahead of deadline</option>
-                                        <option value="4" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 8) ? 'selected' : '' }}>4 - The province submitted report/docs on set deadline</option>
-                                        <option value="0" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 8) ? 'selected' : '' }}>0 - The province submitted report/doc after set deadline</option>
+                                        <option value="4" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 4) ? 'selected' : '' }}>4 - The province submitted report/docs on set deadline</option>
+                                        <option value="0" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 0) ? 'selected' : '' }}>0 - The province submitted report/doc after set deadline</option>
                                     </select>
                                 </td>
                                 <td class="pb-4"><input class="form-control mb-1" name="b2e22_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e22_remarks) ? $previousData->b2e22_remarks : '' }}"></td>
