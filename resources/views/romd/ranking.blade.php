@@ -197,7 +197,35 @@
                                  <td class="px-6 py-3">{{  $region->region_name === 'Region XIII' ? 'CARAGA' : str_replace('Region ', '',$region->region_name) }}</td>
                                  <td class="px-6 py-3">Small</td>
                                  <td class="px-6 py-3">
-                                    {{ $totalScorePerRegion[$region->id]['adminService'] + 
+                                    @php
+                                    $totalScore = $totalScorePerRegion[$region->id]['adminService'] + 
+                                                  $totalScorePerRegion[$region->id]['legalDivision'] + 
+                                                  $totalScorePerRegion[$region->id]['certificationOffice'] + 
+                                                  $totalScorePerRegion[$region->id]['fms'] + 
+                                                  $totalScorePerRegion[$region->id]['nitesd'] + 
+                                                  $totalScorePerRegion[$region->id]['piad'] + 
+                                                  $totalScorePerRegion[$region->id]['planningOffice'] + 
+                                                  $totalScorePerRegion[$region->id]['plo'] + 
+                                                  $totalScorePerRegion[$region->id]['romo'] + 
+                                                  $totalScorePerRegion[$region->id]['icto'] +
+                                                  $totalScorePerRegion[$region->id]['ws'];
+                                    
+                                    if ($region->region_name === 'CAR') {
+                                        $totalScore = ($totalScore - 450) + 60;
+                                    } elseif ($region->region_name === 'Region II') {
+                                        $totalScore = ($totalScore - 450) + 60;
+                                    } elseif ($region->region_name === 'Region IV-B') {
+                                        $totalScore = ($totalScore - 360) + 30;
+                                    } elseif ($region->region_name === 'Region VIII') {
+                                        $totalScore = ($totalScore - 450) + 60;
+                                    } elseif ($region->region_name === 'Region IX') {
+                                        $totalScore = ($totalScore - 420) + 30;
+                                    } elseif ($region->region_name === 'Region XIII') {
+                                        $totalScore = ($totalScore - 450) + 60;
+                                    }
+                                @endphp
+                                {{ $totalScore }}
+                                    {{-- {{ $totalScorePerRegion[$region->id]['adminService'] + 
                                     $totalScorePerRegion[$region->id]['legalDivision'] + 
                                     $totalScorePerRegion[$region->id]['certificationOffice'] + 
                                     $totalScorePerRegion[$region->id]['fms'] + 
@@ -207,7 +235,7 @@
                                     $totalScorePerRegion[$region->id]['plo'] + 
                                     $totalScorePerRegion[$region->id]['romo'] + 
                                     $totalScorePerRegion[$region->id]['icto'] +
-                                    $totalScorePerRegion[$region->id]['ws'] }}
+                                    $totalScorePerRegion[$region->id]['ws'] }} --}}
                                  </td>
                                  <td class="px-6 py-3">
                                     @php
@@ -226,7 +254,7 @@
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });
-                                    $averageProgressSmall = $totalProgressSmall / 10; // Number of offices
+                                    $averageProgressSmall = $totalProgressSmall / 11; // Number of offices
                                 @endphp
                                 {{ round($averageProgressSmall, 2) }}%
                                 </td>
@@ -281,7 +309,7 @@
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });
-                                    $averageProgressMeidum = $totalProgressMeidum / 10; // Number of offices
+                                    $averageProgressMeidum = $totalProgressMeidum / 11; // Number of offices
                                 @endphp
                                 {{ round($averageProgressMeidum, 2) }}%
                                  </td>
@@ -336,7 +364,7 @@
                                     ])->sum(function($office) use ($region) {
                                         return $office->firstWhere('region_id', $region->id)->progress_percentage ?? 0;
                                     });
-                                    $averageProgressLarge = $totalProgressLarge / 10; // Number of offices
+                                    $averageProgressLarge = $totalProgressLarge / 11; // Number of offices
                                 @endphp
                                 {{ round($averageProgressLarge, 2) }}%
                                  </td>

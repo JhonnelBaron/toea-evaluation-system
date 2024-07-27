@@ -72,13 +72,22 @@
 <body>
 
     <div>
-        @include('components.navbar', [
+        @include('components.externalEvaluatorSB', [
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
         <div class="ml-4 p-2">
+
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-{{$grouping}} - {{$nominee}}</h1> 
+                <div class="flex items-center space-x-2">
+                    <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        <span class="text-xl">Back</span>
+                    </button>
+                    <h1 class="text-gray-800 font-bold text-3xl">BEST TRAINING INSTITUTION-{{$grouping}} - {{$nominee}}</h1>
+                </div>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
@@ -427,7 +436,7 @@
                                 <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                                 <td style="padding: 15px;"><b>Final Score: </b></td>
                                 <td style="padding: 15px;"> <span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
-                                <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
+                                <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -468,6 +477,18 @@
                         </div>
                     </div>
                 </div>
+                {{-- BACK BUTTON MODAL --}}
+        <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+            <div class="bg-white p-5 rounded shadow-md transition-transform duration-300 ease-in-out transform scale-95">
+                <h2 class="text-xl font-bold mb-4">Warning</h2>
+                <p class="mb-4">Have you graded anything yet? Your work might not be saved. Do you still want to continue?</p>
+                <div class="flex justify-end space-x-2">
+                    <button id="cancelButton" class="bg-gray-500 text-white px-4 py-2 rounded">No</button>
+                    <button id="confirmButton" class="bg-blue-500 text-white px-4 py-2 rounded">Yes</button>
+                </div>
+            </div>
+        </div>
+    </main>
             </main>
         </div></div>          
             </div>
@@ -497,6 +518,28 @@
             const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
             viewModal.show();
         }
+</script>
+
+<script>
+    document.getElementById('backButton').addEventListener('click', function (event) {
+        event.preventDefault();
+        const modal = document.getElementById('confirmationModal');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function () {
+        const modal = document.getElementById('confirmationModal');
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('pointer-events-none');
+            modal.classList.remove('opacity-100');
+        }, 50); // Duration of the transition
+    });
+
+    document.getElementById('confirmButton').addEventListener('click', function () {
+        window.location.href = "/external/ti"; // Adjust the URL as needed
+    });
 </script>
 
 </body>

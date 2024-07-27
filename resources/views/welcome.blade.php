@@ -117,6 +117,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="d-flex">
         @include('components.sidebar', [
@@ -134,4 +135,5 @@
         });
     </script>
 </body>
+
 </html>

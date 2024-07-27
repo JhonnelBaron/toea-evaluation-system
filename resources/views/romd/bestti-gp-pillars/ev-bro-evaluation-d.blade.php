@@ -134,8 +134,8 @@
                         <td class="pb-8 pt-5">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Rating of each Executive Office based on the timely, consistent, and accurate reporting</p>
                         </td>
-                        <td class="pb-4 text-center">{{$data->d1_final_score}}</td>
-                        <td class="pb-4 text-center">{{$data->d1_remarks}}</td>
+                        <td class="pb-4 text-center">d1_final_score}}</td>
+                        <td class="pb-4 text-center">d1_remarks}}</td>
                         <td class="pb-8 pt-5"></td>
                         <td class="pb-8 pt-5">
                             <select class="form-control mb-1 score-dropdown" name="d1" data-field="d1">
