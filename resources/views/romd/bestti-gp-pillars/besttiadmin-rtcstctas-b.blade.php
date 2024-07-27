@@ -76,7 +76,7 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-RTC/STC - {{$nominee}}</h1> 
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TRAINING INSTITUTION-{{$grouping}} - {{$nominee}}</h1> 
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
             
@@ -113,7 +113,9 @@
             </div>
             
               
-              
+            <form id="saveChangesForm" method="POST" action="{{ route('storeRstB') }}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
@@ -887,8 +889,8 @@
                                 <td class="pb-8">B.5.B.1.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p></td>
                                 <td class="pb-8">
-                                    @if($data->b5b11_file_verification)
-                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b11_file_verification }}', event)">Preview</button>
+                                    @if($data->b5b1_1_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_1_file_verification }}', event)">Preview</button>
                                 @else
                                     No file submitted
                                 @endif
@@ -906,8 +908,8 @@
                                 <td class="pb-8">B.5.B.1.2. Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p></td>
                                 <td class="pb-8">
-                                    @if($data->b5b12_file_verification)
-                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b12_file_verification }}', event)">Preview</button>
+                                    @if($data->b5b1_2_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_2_file_verification }}', event)">Preview</button>
                                 @else
                                     No file submitted
                                 @endif
@@ -936,8 +938,8 @@
                                 <td class="pb-8">B.5.B.2.1 Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p></td>
                                 <td class="pb-8">
-                                    @if($data->b5b21_file_verification)
-                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b21_file_verification }}', event)">Preview</button>
+                                    @if($data->b5b2_1_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_1_file_verification }}', event)">Preview</button>
                                 @else
                                     No file submitted
                                 @endif
@@ -955,8 +957,8 @@
                                 <td class="pb-8">B.5.B.2.2 Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p></td>
                                 <td class="pb-8">
-                                    @if($data->b5b22_file_verification)
-                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b22_file_verification }}', event)">Preview</button>
+                                    @if($data->b5b2_2_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_2_file_verification }}', event)">Preview</button>
                                 @else
                                     No file submitted
                                 @endif
@@ -985,8 +987,8 @@
                                 <td class="pb-8">B.5.C.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office </p> </td>
                                 <td class="pb-8">
-                                    @if($data->b5bc1_file_verification)
-                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5bc1_file_verification }}', event)">Preview</button>
+                                    @if($data->b5c1_file_verification)
+                                    <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5c1_file_verification }}', event)">Preview</button>
                                 @else
                                     No file submitted
                                 @endif
@@ -1063,14 +1065,54 @@
                                 <td class="pb-8" style="padding: 15px;"></td>
                                 <td class="pb-4 text-center">{{$data->total_rfinal_score}}</td>
                                 <td class="pb-8" style="padding: 15px;"><b>Final Score: </b></td>
-                                <td class="pb-8" style="padding: 15px;"><span id="totalScore">0</span></td>
-                                <td class="pb-8" style="padding: 15px;"></td>
+                                <td style="padding: 15px;"> <span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
+                                <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                             </tr>
                         </tbody>
                     </table>
-                    
-
+                </div>
+            </div>
+        </form>
+        <main>
+            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!-- View Details modal -->
+            <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Submission details will be loaded here via JavaScript -->
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+    </div>
+                   
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -1087,6 +1129,13 @@
         // Add active class to the clicked step
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
+        }
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
         }
     </script>
     

@@ -179,7 +179,7 @@
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"> <span id="totalScore">0</span></td>
+                            <td style="padding: 15px;"> <span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                             <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                         </tr>
                     </tbody>

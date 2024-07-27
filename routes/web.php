@@ -393,3 +393,9 @@ Route::post('/store-ptcb', [ExternalValidatorController::class, 'storePtcB'])->n
 Route::post('/store-ptcc', [ExternalValidatorController::class, 'storePtcC'])->name('storePtcC');
 Route::post('/store-ptcd', [ExternalValidatorController::class, 'storePtcD'])->name('storePtcD');
 Route::post('/store-ptce', [ExternalValidatorController::class, 'storePtcE'])->name('storePtcE');
+
+Route::post('/store-rsta', [ExternalValidatorController::class, 'storeRstA'])->name('storeRstA');
+Route::post('/store-rstb', [ExternalValidatorController::class, 'storeRstB'])->name('storeRstB');
+Route::post('/store-rstc', [ExternalValidatorController::class, 'storeRstC'])->name('storeRstC');
+Route::post('/store-rstd', [ExternalValidatorController::class, 'storeRstD'])->name('storeRstD');
+Route::post('/store-rste', [ExternalValidatorController::class, 'storeRstE'])->name('storeRstE');

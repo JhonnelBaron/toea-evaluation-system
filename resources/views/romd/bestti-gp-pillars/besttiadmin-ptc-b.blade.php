@@ -776,8 +776,8 @@
                                                         <td class="pb-8">B.5.B.1.1. Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p></td>
                                                         <td class="pb-8">
-                                                            @if($data->b5b11_file_verification)
-                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b11_file_verification }}', event)">Preview</button>
+                                                            @if($data->b5b1_1_file_verification)
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_1_file_verification }}', event)">Preview</button>
                                                             @else
                                                                 No file submitted
                                                             @endif
@@ -795,8 +795,8 @@
                                                         <td class="pb-8">B.5.B.1.2. Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p></td>
                                                         <td class="pb-8">
-                                                            @if($data->b5b12_file_verification)
-                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b12_file_verification }}', event)">Preview</button>
+                                                            @if($data->b5b1_2_file_verification)
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_2_file_verification }}', event)">Preview</button>
                                                             @else
                                                                 No file submitted
                                                             @endif
@@ -819,8 +819,8 @@
                                                         <td class="pb-8">B.5.B.2.1 Participation</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p></td>
                                                         <td class="pb-8">
-                                                            @if($data->b5b21_file_verification)
-                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b21_file_verification }}', event)">Preview</button>
+                                                            @if($data->b5b2_1_file_verification)
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_1_file_verification }}', event)">Preview</button>
                                                             @else
                                                                 No file submitted
                                                             @endif
@@ -838,8 +838,8 @@
                                                         <td class="pb-8">B.5.B.2.2 Awards received</td>
                                                         <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p></td>
                                                         <td class="pb-8">
-                                                            @if($data->b5b22_file_verification)
-                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b22_file_verification }}', event)">Preview</button>
+                                                            @if($data->b5b2_2_file_verification)
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_2_file_verification }}', event)">Preview</button>
                                                             @else
                                                                 No file submitted
                                                             @endif
@@ -942,7 +942,7 @@
                                 <td style="padding: 15px;"></td>
                                 <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                                 <td style="padding: 15px;"><b>Final Score: </b></td>
-                                <td style="padding: 15px;"> <span id="totalScore">0</span></td>
+                                <td style="padding: 15px;"> <span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                                 <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                               </tr>
                         </tbody>
