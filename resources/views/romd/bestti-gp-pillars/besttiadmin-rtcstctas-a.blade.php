@@ -72,7 +72,7 @@
 <body>
 
     <div>
-        @include('components.navbar', [
+        @include('components.externalEvaluatorSB', [
             'userName' => 'User Name',
             'userType' => 'User Type'
         ])
