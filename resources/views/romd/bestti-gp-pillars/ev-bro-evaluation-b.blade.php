@@ -70,7 +70,15 @@
 
 <div class="ml-4 p-2">
     <div class="flex justify-between items-center w-full p-2">
-        <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1> 
+        <div class="flex items-center space-x-2">
+            <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="text-xl">Back</span>
+            </button>
+            <h1 class="text-gray-800 font-bold text-3xl">BEST REGIONAL OFFICE</h1>
+        </div>
         <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
     </div>
     
@@ -135,9 +143,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
                         </td>
-                        <td class="pb-4 text-center">b1a_final_score}}</td>
-                        <td class="pb-4 text-center">b1a_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b1a}}</td>
+                        <td class="pb-4 text-center">b1a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1a" data-field="b1a">
                                 <option value="">Select Score</option>
@@ -155,9 +163,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report of the User’s Feedback Survey</p>
                         </td>
-                        <td class="pb-4 text-center" >b1b_final_score}}</td>
-                        <td class="pb-4 text-center">b1b_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center" >b1b}}</td>
+                        <td class="pb-4 text-center">b1b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1b" data-field="b1b">
                                 <option value="">Select Score</option>
@@ -175,9 +183,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
                         </td>
-                        <td class="pb-4 text-center">b1c_final_score}}</td>
-                        <td class="pb-4 text-center">b1c_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b1c}}</td>
+                        <td class="pb-4 text-center">b1c_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1c" data-field="b1c">
                                 <option value="">Select Score</option>
@@ -195,9 +203,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Tracking sheets (F41) - RO/PO c/o CO</p>
                         </td>
-                        <td class="pb-4 text-center">b1d_final_score}}</td>
-                        <td class="pb-4 text-center">b1d_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b1d}}</td>
+                        <td class="pb-4 text-center">b1d_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1d" data-field="b1d">
                                 <option value="">Select Score</option>
@@ -215,9 +223,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form</p>
                         </td>
-                        <td class="pb-4 text-center">b1e_final_score}}</td>
-                        <td class="pb-4 text-center">b1e_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b1d}}</td>
+                        <td class="pb-4 text-center">b1d_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1e" data-field="b1e">
                                 <option value="">Select Score</option>
@@ -240,7 +248,7 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a1_final_score}}</td>
+                        <td class="pb-4 text-center">b2a1}}</td>
                         <td class="pb-4 text-center">b2a1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a1" data-field="b2a1">
@@ -261,7 +269,7 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a2_final_score}}</td>
+                        <td class="pb-4 text-center">b2a2}}</td>
                         <td class="pb-4 text-center">b2a2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a2" data-field="b2a2">
@@ -283,9 +291,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report on the digitization initiative or digital transformation of external services</p>
                         </td>
-                        <td class="pb-4 text-center">b2a3_final_score}}</td>
-                        <td class="pb-4 text-center">b2a3_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2a3}}</td>
+                        <td class="pb-4 text-center">b2a3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a3" data-field="b2a3">
                                 <option value="">Select Score</option>
@@ -308,7 +316,7 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a41_final_score}}</td>
+                        <td class="pb-4 text-center">b2a41}}</td>
                         <td class="pb-4 text-center">b2a41_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a41" data-field="b2a41">
@@ -330,7 +338,7 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a42_final_score}}</td>
+                        <td class="pb-4 text-center">b2a42}}</td>
                         <td class="pb-4 text-center">b2a42_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a42" data-field="b2a42">
@@ -351,7 +359,7 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a43_final_score}}</td>
+                        <td class="pb-4 text-center">b2a43}}</td>
                         <td class="pb-4 text-center">b2a43_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a43" data-field="b2a43">
@@ -372,9 +380,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-4 text-center">b2b1_final_score}}</td>
-                        <td class="pb-4 text-center">b2b1_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2b1}}</td>
+                        <td class="pb-4 text-center">b2b1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b1" data-field="b2b1">
                                 <option value="">Select score</option>
@@ -394,9 +402,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-4 text-center">b2b2_final_score}}</td>
-                        <td class="pb-4 text-center">b2b2_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2b2}}</td>
+                        <td class="pb-4 text-center">b2b2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b2" data-field="b2b2">
                                 <option value="">Select score</option>
@@ -416,9 +424,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-4 text-center">b2b3_final_score}}</td>
-                        <td class="pb-4 text-center">b2b3_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2b3}}</td>
+                        <td class="pb-4 text-center">b2b3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b3" data-field="b2b3">
                                 <option value="">Select score</option>
@@ -438,9 +446,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Reports on meetings conducted</p>
                         </td>
-                        <td class="pb-4 text-center">b2b4_final_score}}</td>
-                        <td class="pb-4 text-center">b2b4_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2b4}}</td>
+                        <td class="pb-4 text-center">b2b4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b4" data-field="b2b4">
                                 <option value="">Select score</option>
@@ -460,9 +468,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-4 text-center">b2b5_final_score}}</td>
-                        <td class="pb-4 text-center">b2b5_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2b5}}</td>
+                        <td class="pb-4 text-center">b2b5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b5" data-field="b2b5">
                                 <option value="">Select score</option>
@@ -484,9 +492,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: MIS 02-04</p>
                         </td>
-                        <td class="pb-4 text-center">b2c1_final_score}}</td>
-                        <td class="pb-4 text-center">b2c1_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c1}}</td>
+                        <td class="pb-4 text-center">b2c1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c1" data-field="b2c1">
                                 <option value="">Select score</option>
@@ -506,9 +514,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monthly Report on Program Registration</p>
                         </td>
-                        <td class="pb-4 text-center">b2c2_final_score}}</td>
-                        <td class="pb-4 text-center">b2c2_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c2}}</td>
+                        <td class="pb-4 text-center">b2c2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c2" data-field="b2c2">
                                 <option value="">Select score</option>
@@ -528,9 +536,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-4 text-center">b2c3_final_score}}</td>
-                        <td class="pb-4 text-center">b2c3_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c3}}</td>
+                        <td class="pb-4 text-center">b2c3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c3" data-field="b2c3">
                                 <option value="">Select score</option>
@@ -550,9 +558,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-4 text-center">b2c4_final_score}}</td>
-                        <td class="pb-4 text-center">b2c4_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c4}}</td>
+                        <td class="pb-4 text-center">b2c4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c4" data-field="b2c4">
                                 <option value="">Select score</option>
@@ -572,9 +580,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessors from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-4 text-center">b2c5_final_score}}</td>
-                        <td class="pb-4 text-center">b2c5_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c5}}</td>
+                        <td class="pb-4 text-center">b2c5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c5" data-field="b2c5">
                                 <option value="">Select score</option>
@@ -594,9 +602,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</p>
                         </td>
-                        <td class="pb-4 text-center">b2c6_final_score}}</td>
-                        <td class="pb-4 text-center">b2c6_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2c6}}</td>
+                        <td class="pb-4 text-center">b2c6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c6" data-field="b2c6">
                                 <option value="">Select score</option>
@@ -618,9 +626,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-4 text-center">b2d1_final_score}}</td>
-                        <td class="pb-4 text-center">b2d1_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d1}}</td>
+                        <td class="pb-4 text-center">b2d1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d1" data-field="b2d1">
                                 <option value="">Select score</option>
@@ -640,9 +648,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-4 text-center">b2d2_final_score}}</td>
-                        <td class="pb-4 text-center">b2d2_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d2}}</td>
+                        <td class="pb-4 text-center">b2d2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d2" data-field="b2d2">
                                 <option value="">Select score</option>
@@ -664,9 +672,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p>
                         </td>
-                        <td class="pb-4 text-center">b2d31_final_score}}</td>
-                        <td class="pb-4 text-center">b2d31_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d31}}</td>
+                        <td class="pb-4 text-center">b2d31_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d31" data-field="b2d31">
                                 <option value="">Select score</option>
@@ -686,9 +694,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report, Number of HOTS List of HOTS and their TVET qualifications</p>
                         </td>
-                        <td class="pb-4 text-center">b2d32_final_score}}</td>
-                        <td class="pb-4 text-center">b2d32_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d32}}</td>
+                        <td class="pb-4 text-center">b2d32_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d32" data-field="b2d32">
                                 <option value="">Select score</option>
@@ -710,9 +718,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-4 text-center">b2d411_final_score}}</td>
-                        <td class="pb-4 text-center">b2d411_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d411}}</td>
+                        <td class="pb-4 text-center">b2d411_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d411" data-field="b2d411">
                                 <option value="">Select score</option>
@@ -732,9 +740,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
-                        <td class="pb-4 text-center">b2d412_final_score}}</td>
-                        <td class="pb-4 text-center">b2d412_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d412}}</td>
+                        <td class="pb-4 text-center">b2d412_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d412" data-field="b2d412">
                                 <option value="">Select score</option>
@@ -756,9 +764,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-4 text-center">b2d421_final_score}}</td>
-                        <td class="pb-4 text-center">b2d421_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d421}}</td>
+                        <td class="pb-4 text-center">b2d421_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d421" data-field="b2d421">
                                 <option value="">Select score</option>
@@ -778,9 +786,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-4 text-center">b2d422_final_score}}</td>
-                        <td class="pb-4 text-center">b2d422_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d422}}</td>
+                        <td class="pb-4 text-center">b2d422_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d422" data-field="b2d422">
                                 <option value="">Select score</option>
@@ -801,9 +809,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-4 text-center">b2d431_final_score}}</td>
-                        <td class="pb-4 text-center">b2d431_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d431}}</td>
+                        <td class="pb-4 text-center">b2d431_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d431" data-field="b2d431" type="text">
                                 <option value="">Select score</option>
@@ -823,9 +831,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
-                        <td class="pb-4 text-center">b2d432_final_score}}</td>
-                        <td class="pb-4 text-center">b2d432_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d432}}</td>
+                        <td class="pb-4 text-center">b2d432_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d432" data-field="b2d432" type="text">
                                 <option value="">Select score</option>
@@ -846,9 +854,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p>
                         </td>
-                        <td class="pb-4 text-center">b2d441_final_score}}</td>
-                        <td class="pb-4 text-center">b2d441_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d441}}</td>
+                        <td class="pb-4 text-center">b2d441_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d441" data-field="b2d441" type="text">
                                 <option value="">Select score</option>
@@ -868,9 +876,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-4 text-center">b2d442_final_score}}</td>
-                        <td class="pb-4 text-center">b2d442_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d442}}</td>
+                        <td class="pb-4 text-center">b2d442_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d442" data-field="b2d442" type="text">
                                 <option value="">Select score</option>
@@ -892,9 +900,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p>
                         </td>
-                        <td class="pb-4 text-center">b2d5_final_score}}</td>
-                        <td class="pb-4 text-center">b2d5_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d5}}</td>
+                        <td class="pb-4 text-center">b2d5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d5" data-field="b2d5" type="text">
                                 <option value="">Select score</option>
@@ -915,9 +923,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Compendium of program registration, Registry of EBT programs; T2MIS</p>
                         </td>
-                        <td class="pb-4 text-center">b2d6_final_score}}</td>
-                        <td class="pb-4 text-center">b2d6_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2d6}}</td>
+                        <td class="pb-4 text-center">b2d6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d6" data-field="b2d6" type="text">
                                 <option value="">Select score</option>
@@ -942,9 +950,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p>
                         </td>
-                        <td class="pb-4 text-center">b2e11a_final_score}}</td>
-                        <td class="pb-4 text-center">b2e11a_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e11a}}</td>
+                        <td class="pb-4 text-center">b2e11a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11a" data-field="b2e11a">
                                 <option value="">Select score</option>
@@ -964,9 +972,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p>
                         </td>
-                        <td class="pb-4 text-center">b2e11b_final_score}}</td>
-                        <td class="pb-4 text-center">b2e11b_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e11b}}</td>
+                        <td class="pb-4 text-center">b2e11b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11b" data-field="b2e11b">
                                 <option value="">Select score</option>
@@ -987,9 +995,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
-                        <td class="pb-4 text-center">b2e12a_final_score}}</td>
-                        <td class="pb-4 text-center">b2e12a_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e12a}}</td>
+                        <td class="pb-4 text-center">b2e12a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12a" data-field="b2e12a">
                                 <option value="">Select score</option>
@@ -1009,9 +1017,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p>
                         </td>
-                        <td class="pb-4 text-center">b2e12b_final_score}}</td>
-                        <td class="pb-4 text-center">b2e12b_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e12b}}</td>
+                        <td class="pb-4 text-center">b2e12b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12b" data-field="b2e12b">
                                 <option value="">Select score</option>
@@ -1034,9 +1042,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
-                        <td class="pb-4 text-center">b2e13a_final_score}}</td>
-                        <td class="pb-4 text-center">b2e13a_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e13a}}</td>
+                        <td class="pb-4 text-center">b2e13a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13a" data-field="b2e13a">
                                 <option value="">Select score</option>
@@ -1056,9 +1064,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-4 text-center">b2e13b_final_score}}</td>
-                        <td class="pb-4 text-center">b2e13b_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e13b}}</td>
+                        <td class="pb-4 text-center">b2e13b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13b" data-field="b2e13b">
                                 <option value="">Select score</option>
@@ -1094,9 +1102,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Inventory of Lead Auditors/Auditors (TESDA QP 03-F09)</p>
                         </td>
-                        <td class="pb-4 text-center">b2e21_final_score}}</td>
-                        <td class="pb-4 text-center">b2e21_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e21}}</td>
+                        <td class="pb-4 text-center">b2e21_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e21" data-field="b2e21">
                                 <option value="">Select score</option>
@@ -1117,9 +1125,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: RRRO - Monitoring of submission IQA Reports reflected on the QP-03-F12 Action Catalog - QP-03-F11</p>
                         </td>
-                        <td class="pb-4 text-center">b2e22_final_score}}</td>
-                        <td class="pb-4 text-center">b2e22_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e22}}</td>
+                        <td class="pb-4 text-center">b2e22_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e22" data-field="b2e22">
                                 <option value="">Select score</option>
@@ -1140,9 +1148,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Manning of the Regional Provincial Office versus the actual number of personnel that have attended training</p>
                         </td>
-                        <td class="pb-4 text-center">b2e23_final_score}}</td>
-                        <td class="pb-4 text-center">b2e23_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e23}}</td>
+                        <td class="pb-4 text-center">b2e23_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e23" data-field="b2e23">
                                 <option value="">Select score</option>
@@ -1165,9 +1173,9 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</p>
                         </td>
-                        <td class="pb-4 text-center">b2e3_final_score}}</td>
-                        <td class="pb-4 text-center">b2e3_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">b2e3}}</td>
+                        <td class="pb-4 text-center">b2e3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e3" data-field="b2e3">
                                 <option value="">Select score</option>
@@ -1181,13 +1189,13 @@
                    
 
                     <tr>
-                        <td class="p-4"><b>Total Initial Score</b></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"><b>Total Re-Evaluated Score</b></td>
-                        <td class="p-4"><b>Final Score:</b></td>
-                        <td class="p-4"><b>ROMD Evaluated Score</b>: <span id="totalScore">0</span></td>
-                        <td class="p-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"><b>Total Score</b></td>
+                        <td class="pb-4 text-center">DUMMY SCORE</td>
+                        <td class="pb-4"><b>Final Score</b></td>
+                        <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
+                        <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
 
                     
@@ -1195,13 +1203,106 @@
                 </tbody>
             </table>
             
-
-
-    <script>
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('hidden');
-        });
-    </script>
+            <main>
+                <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- View Details modal -->
+                <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Submission details will be loaded here via JavaScript -->
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                {{-- BACK BUTTON MODAL --}}
+                <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+                    <div class="bg-white p-5 rounded shadow-md transition-transform duration-300 ease-in-out transform scale-95">
+                        <h2 class="text-xl font-bold mb-4">Warning</h2>
+                        <p class="mb-4">Have you graded anything yet? Your work might not be saved. Do you still want to continue?</p>
+                        <div class="flex justify-end space-x-2">
+                            <button id="cancelButton" class="bg-gray-500 text-white px-4 py-2 rounded">No</button>
+                            <button id="confirmButton" class="bg-blue-500 text-white px-4 py-2 rounded">Yes</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </main>
+        
+            
+        
+        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="js/scripts.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+            <script src="js/datatables/datatables-simple-demo.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            
+        
+            <script>
+                function highlightStep(step) {
+                // Remove previous active classes
+                const steps = document.querySelectorAll('.flex > div');
+                steps.forEach(s => s.classList.remove('bg-blue-200'));
+            
+                // Add active class to the clicked step
+                const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
+                clickedStep.classList.add('bg-blue-200');
+                }
+                function openPdf(pdfUrl, event) {
+                    event.preventDefault();
+                    const pdfViewer = document.getElementById('pdfViewer');
+                    pdfViewer.src = pdfUrl;
+                    const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+                    viewModal.show();
+                }
+        
+            </script>
+            
+            <script>
+                document.getElementById('backButton').addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById('confirmationModal');
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modal.classList.add('opacity-100');
+                });
+        
+                document.getElementById('cancelButton').addEventListener('click', function () {
+                    const modal = document.getElementById('confirmationModal');
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        modal.classList.add('pointer-events-none');
+                        modal.classList.remove('opacity-100');
+                    }, 50); // Duration of the transition
+                });
+        
+                document.getElementById('confirmButton').addEventListener('click', function () {
+                    window.location.href = "/external/gp"; // Adjust the URL as needed
+                });
+            </script>
 </body>
 </html>
 

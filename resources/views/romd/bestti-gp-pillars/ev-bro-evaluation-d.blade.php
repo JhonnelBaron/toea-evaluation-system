@@ -70,7 +70,15 @@
 
 <div class="ml-4 p-2">
     <div class="flex justify-between items-center w-full p-2">
-        <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1> 
+        <div class="flex items-center space-x-2">
+            <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="text-xl">Back</span>
+            </button>
+            <h1 class="text-gray-800 font-bold text-3xl">BEST REGIONAL OFFICE</h1>
+        </div>
         <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
     </div>
     
@@ -134,9 +142,9 @@
                         <td class="pb-8 pt-5">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Rating of each Executive Office based on the timely, consistent, and accurate reporting</p>
                         </td>
-                        <td class="pb-4 text-center">d1_final_score}}</td>
-                        <td class="pb-4 text-center">d1_remarks}}</td>
                         <td class="pb-8 pt-5"></td>
+                        <td class="pb-4 text-center">d1}}</td>
+                        <td class="pb-4 text-center">d1_remarks}}</td>
                         <td class="pb-8 pt-5">
                             <select class="form-control mb-1 score-dropdown" name="d1" data-field="d1">
                                 <option value="">Select score</option>
@@ -152,13 +160,13 @@
                     </tr>
                         
                     <tr>
-                        <td class="p-4"><b>Total Initial Score</b></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"><b>Total Re-Evaluated Score</b></td>
-                        <td class="p-4"><b>Final Score:</b></td>
-                        <td class="p-4"><b>ROMD Evaluated Score</b>: <span id="totalScore">0</span></td>
-                        <td class="p-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"><b>Total Score</b></td>
+                        <td class="pb-4 text-center">DUMMY SCORE</td>
+                        <td class="pb-4"><b>Final Score</b></td>
+                        <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
+                        <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
                     
                 
@@ -168,12 +176,104 @@
         </div>
     </div>
                 
-            
+    <main>
+        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- View Details modal -->
+        <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Submission details will be loaded here via JavaScript -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        {{-- BACK BUTTON MODAL --}}
+        <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+            <div class="bg-white p-5 rounded shadow-md transition-transform duration-300 ease-in-out transform scale-95">
+                <h2 class="text-xl font-bold mb-4">Warning</h2>
+                <p class="mb-4">Have you graded anything yet? Your work might not be saved. Do you still want to continue?</p>
+                <div class="flex justify-end space-x-2">
+                    <button id="cancelButton" class="bg-gray-500 text-white px-4 py-2 rounded">No</button>
+                    <button id="confirmButton" class="bg-blue-500 text-white px-4 py-2 rounded">Yes</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
     <script>
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('hidden');
+        function highlightStep(step) {
+        // Remove previous active classes
+        const steps = document.querySelectorAll('.flex > div');
+        steps.forEach(s => s.classList.remove('bg-blue-200'));
+    
+        // Add active class to the clicked step
+        const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
+        clickedStep.classList.add('bg-blue-200');
+        }
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
+        }
+
+    </script>
+    
+    <script>
+        document.getElementById('backButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function () {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('pointer-events-none');
+                modal.classList.remove('opacity-100');
+            }, 50); // Duration of the transition
+        });
+
+        document.getElementById('confirmButton').addEventListener('click', function () {
+            window.location.href = "/external/gp"; // Adjust the URL as needed
         });
     </script>
 </body>
