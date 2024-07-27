@@ -79,11 +79,11 @@
                 <div class="flex items-center space-x-2">
                     <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <a class="text-xl" href="/external/ti"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                         </svg>
-                        <a class="text-xl" href="/external/ti">Back</a>
+                        <span class="text-xl">Back</span>
                     </button>
-                    <h1 class="text-gray-800 font-bold text-3xl">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1> 
+                    <h1 class="text-gray-800 font-bold text-3xl">BEST TRAINING INSTITUTION-PTC - {{$nominee}}</h1>
                 </div>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
@@ -357,13 +357,14 @@
                         </tr>
                 
                         <tr>
+                            
+                            <td style="padding: 15px;"></td>
+                            <td style="padding: 15px;"></td>
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
-                            <td style="padding: 15px;"></td>
-                            <td style="padding: 15px;"></td>
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
                             <td style="padding: 15px;"> <span name="a1" data-field="a1">{{$previousData->overall_total_score ?? 0}}</span></td>
-                            <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
+                            <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -373,7 +374,7 @@
           </form>
           <main>
             <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
@@ -405,6 +406,18 @@
                     </div>
                 </div>
             </div>
+
+            {{-- BACK BUTTON MODAL --}}
+        <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+            <div class="bg-white p-5 rounded shadow-md transition-transform duration-300 ease-in-out transform scale-95">
+                <h2 class="text-xl font-bold mb-4">Warning</h2>
+                <p class="mb-4">Have you graded anything yet? Your work might not be saved. Do you still want to continue?</p>
+                <div class="flex justify-end space-x-2">
+                    <button id="cancelButton" class="bg-gray-500 text-white px-4 py-2 rounded">No</button>
+                    <button id="confirmButton" class="bg-blue-500 text-white px-4 py-2 rounded">Yes</button>
+                </div>
+            </div>
+        </div>
         </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -430,6 +443,27 @@
             const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
             viewModal.show();
         }
+    </script>
+    <script>
+        document.getElementById('backButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+    
+        document.getElementById('cancelButton').addEventListener('click', function () {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('pointer-events-none');
+                modal.classList.remove('opacity-100');
+            }, 50); // Duration of the transition
+        });
+    
+        document.getElementById('confirmButton').addEventListener('click', function () {
+            window.location.href = "/external/ti"; // Adjust the URL as needed
+        });
     </script>
     
 </body>
