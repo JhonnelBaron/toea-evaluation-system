@@ -320,7 +320,7 @@
                         <tr>
                             <td class="pb-8">C.4.3.1. Participation</td>
                             <td class="pb-8"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                                                       <td style="text-align: center;">
+                            <td style="text-align: center;">
                                 @if($data->c431_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c431_file_verification }}', event)">Preview</button>
                                 @else
@@ -362,7 +362,7 @@
                             <td style="padding: 15px;"></td>
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"> <span name="a1" data-field="a1">0</span></td>
+                            <td style="padding: 15px;"> <span name="a1" data-field="a1">{{$previousData->overall_total_score ?? 0}}</span></td>
                             <td class="pb-4"><button class="btn btn-primary" id="submitButton">Submit</button></td>
                         </tr>
                     </tbody>

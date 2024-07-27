@@ -217,6 +217,7 @@
                                 </td>
                                 <td class="pb-4"><input class="form-control mb-1" name="c31_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c31_remarks) ? $previousData->c31_remarks : '' }}"></td>
                             </tr>
+
                             <tr>
                                 <td class="pb-4">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of PO personnel in 2023<br> Certificates of training programs attended<br></p></td>
@@ -272,8 +273,8 @@
                                 <td class="pb-4">
                                     <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411" placeholder="Input your initial score">
                                         <option value="">Select score</option>
-                                        <option value="5" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>5 - The Province submitted nominees for Category I</option>
-                                        <option value="0" {{ (isset($previousData->c411) && $previousData->c411 == 15) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category I</option>
+                                        <option value="5" {{ (isset($previousData->c411) && $previousData->c411 == 5) ? 'selected' : '' }}>5 - The Province submitted nominees for Category I</option>
+                                        <option value="0" {{ (isset($previousData->c411) && $previousData->c411 == 0) ? 'selected' : '' }}>0 - The Province did not submit nominees for Category I</option>
                                     </select>
                                 </td>
                                 <td class="pb-4"><input class="form-control mb-1" name="c411_remarks" type="text" placeholder="Remarks"  value="{{ isset($previousData->c411_remarks) ? $previousData->c411_remarks : '' }}"></td>

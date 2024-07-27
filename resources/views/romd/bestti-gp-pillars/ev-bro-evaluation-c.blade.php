@@ -135,19 +135,19 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring logbook/registry</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c1_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1">
                                 <option value="">Select score</option>
-                                <option value="25">25 - 100% of budget utilized</option>
-                                <option value="10">10 - 90% - 99% of budget utilized</option>
-                                <option value="0">0 - 89% and below of budget utilized</option>
+                                <option value="25" {{ (isset($previousData->c1) && $previousData->c1 == 25) ? 'selected' : '' }}>25 - 100% of budget utilized</option>
+                                <option value="10" {{ (isset($previousData->c1) && $previousData->c1 == 10) ? 'selected' : '' }}>10 - 90% - 99% of budget utilized</option>
+                                <option value="0" {{ (isset($previousData->c1) && $previousData->c1 == 0) ? 'selected' : '' }}>0 - 89% and below of budget utilized</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c1_remarks) ? $previousData->c1_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -160,20 +160,20 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c2_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c2_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2">
                                 <option value="">Select score</option>
-                                <option value="25">25 - 100% acted upon (either partially or fully implemented)</option>
-                                <option value="15">15 - 90% - 99% acted upon (either partially or fully implemented)</option>
-                                <option value="5">5 - 80% - 89% acted upon (either partially or fully implemented)</option>
-                                <option value="0">0 - 79% and below acted upon (either partially or fully implemented)</option>
+                                <option value="25" {{ (isset($previousData->c2) && $previousData->c2 == 25) ? 'selected' : '' }}>25 - 100% acted upon (either partially or fully implemented)</option>
+                                <option value="15" {{ (isset($previousData->c2) && $previousData->c2 == 15) ? 'selected' : '' }}>15 - 90% - 99% acted upon (either partially or fully implemented)</option>
+                                <option value="5" {{ (isset($previousData->c2) && $previousData->c2 == 5) ? 'selected' : '' }}>5 - 80% - 89% acted upon (either partially or fully implemented)</option>
+                                <option value="0" {{ (isset($previousData->c2) && $previousData->c2 == 0) ? 'selected' : '' }}>0 - 79% and below acted upon (either partially or fully implemented)</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c2_remarks) ? $previousData->c2_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -187,19 +187,19 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Regional/Provincial Work Force Development Plan (WFDP), Certificates of trainings attended, Copies of REAPs</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c31_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c31_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31">
                                 <option value="">Select score</option>
-                                <option value="20">20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
-                                <option value="10">10 - 70%-99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
-                                <option value="0">0 - 69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                <option value="20" {{ (isset($previousData->c31) && $previousData->c31 == 20) ? 'selected' : '' }}>20 - 100% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                <option value="10" {{ (isset($previousData->c31) && $previousData->c31 == 10) ? 'selected' : '' }}>10 - 70%-99% of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
+                                <option value="0" {{ (isset($previousData->c31) && $previousData->c31 == 0) ? 'selected' : '' }}>0 - 69% and below of Employees who attended SDP have implemented their Re-Entry Plans as scheduled</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c31_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c31_remarks) ? $previousData->c31_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -207,23 +207,23 @@
                     <!-- Data Row for Training Opportunities -->
                     <tr>
                         <td class="pb-8">
-                            C.3.2. Training Opportunities to staff provided for CY 2022
+                            C.3.2. Training Opportunities to staff provided for CY 2023
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c32_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c32_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32">
                                 <option value="">Select score</option>
-                                <option value="15">15 - 100% of Employees were provided with training opportunities</option>
-                                <option value="0">0 - 74% and below of Employees were provided with training opportunities</option>
+                                <option value="15" {{ (isset($previousData->c32) && $previousData->c32 == 15) ? 'selected' : '' }}>15 - 100% of Employees were provided with training opportunities</option>
+                                <option value="0" {{ (isset($previousData->c32) && $previousData->c32 == 0) ? 'selected' : '' }}>0 - 74% and below of Employees were provided with training opportunities</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c32_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c32_remarks) ? $previousData->c32_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -236,20 +236,20 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c33_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c33_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c33" data-field="c33">
                                 <option value="">Select score</option>
-                                <option value="6">6 - 80% of regional finance and budget officers/personnel attended finance related training programs</option>
-                                <option value="3">3 - 40% to 79% of regional finance and budget officers/personnel attended finance related training programs</option>
-                                <option value="0">0 - Less than 40% of regional finance and budget officers/personnel attended finance related training programs</option>
-                                <option value="1">1 - Plus point for RO initiated Finance-related training programs</option>
+                                <option value="6" {{ (isset($previousData->c33) && $previousData->c33 == 6) ? 'selected' : '' }}>6 - 80% of regional finance and budget officers/personnel attended finance related training programs</option>
+                                <option value="3" {{ (isset($previousData->c33) && $previousData->c33 == 3) ? 'selected' : '' }}>3 - 40% to 79% of regional finance and budget officers/personnel attended finance related training programs</option>
+                                <option value="0" {{ (isset($previousData->c33) && $previousData->c33 == 0) ? 'selected' : '' }}>0 - Less than 40% of regional finance and budget officers/personnel attended finance related training programs</option>
+                                <option value="1" {{ (isset($previousData->c33) && $previousData->c33 == 1) ? 'selected' : '' }}>1 - Plus point for RO initiated Finance-related training programs</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c33_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c33_remarks) ? $previousData->c33_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -264,18 +264,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c411_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c411_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411">
                                 <option value="">Select score</option>
-                                <option value="4">4 - The Region submitted nominees for Category I</option>
-                                <option value="0">0 - The Region did not submit nominees for Category I</option>
+                                <option value="4" {{ (isset($previousData->c411) && $previousData->c411 == 4) ? 'selected' : '' }}>4 - The Region submitted nominees for Category I</option>
+                                <option value="0" {{ (isset($previousData->c411) && $previousData->c411 == 0) ? 'selected' : '' }}>0 - The Region did not submit nominees for Category I</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c411_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c411_remarks) ? $previousData->c411_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -288,18 +288,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c412_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c412_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412">
                                 <option value="">Select score</option>
-                                <option value="4">4 - The Region has received recognition/award at national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at national level</option>
+                                <option value="4" {{ (isset($previousData->c412) && $previousData->c412 == 4) ? 'selected' : '' }}>4 - The Region has received recognition/award at national level</option>
+                                <option value="0" {{ (isset($previousData->c412) && $previousData->c412 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c412_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c412_remarks) ? $previousData->c412_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -313,18 +313,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c421_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c421_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421">
                                 <option value="">Select score</option>
-                                <option value="4">4 - The Region submitted nominees for Category II</option>
-                                <option value="0">0 - The Region did not submit nominees for Category II</option>
+                                <option value="4" {{ (isset($previousData->c421) && $previousData->c421 == 4) ? 'selected' : '' }}>4 - The Region submitted nominees for Category II</option>
+                                <option value="0" {{ (isset($previousData->c421) && $previousData->c421 == 0) ? 'selected' : '' }}>0 - The Region did not submit nominees for Category II</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c421_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c421_remarks) ? $previousData->c421_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -337,18 +337,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c422_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c422_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region has received recognition/award at national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at national level</option>
+                                <option value="5" {{ (isset($previousData->c422) && $previousData->c422 == 5) ? 'selected' : '' }}>5 - The Region has received recognition/award at national level</option>
+                                <option value="0" {{ (isset($previousData->c422) && $previousData->c422 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c422_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c422_remarks) ? $previousData->c422_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -362,18 +362,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c431_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c431_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431">
                                 <option value="">Select score</option>
-                                <option value="4">4 - The Region submitted nominees for Category III</option>
-                                <option value="0">0 - The Region did not submit nominees for Category III</option>
+                                <option value="4" {{ (isset($previousData->c431) && $previousData->c431 == 4) ? 'selected' : '' }}>4 - The Region submitted nominees for Category III</option>
+                                <option value="0" {{ (isset($previousData->c431) && $previousData->c431 == 0) ? 'selected' : '' }}>0 - The Region did not submit nominees for Category III</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c431_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c431_remarks) ? $previousData->c431_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -386,18 +386,18 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c432_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c432_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432">
                                 <option value="">Select score</option>
-                                <option value="5">5 - The Region has received recognition/award at national level</option>
-                                <option value="0">0 - The Region did not receive award/recognition at national level</option>
+                                <option value="5" {{ (isset($previousData->c432) && $previousData->c432 == 5) ? 'selected' : '' }}>5 - The Region has received recognition/award at national level</option>
+                                <option value="0" {{ (isset($previousData->c432) && $previousData->c432 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c432_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c432_remarks) ? $previousData->c432_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -411,19 +411,19 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Conferment/Certificate Awarded <br></p>
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</p>
                         </td>
-                        <td class="pb-8"></td>
-                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$data->c5_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->c5_remarks}}</td>
                         <td class="pb-8"></td>
                         <td class="pb-8">
-                            <select class="form-control mb-1 score-dropdown" name="ra7b_final_score" required>
+                            <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5">
                                 <option value="">Select score</option>
-                                <option value="8">8 - The RO or PO/s in the region have applied and have been certified in higher PRIME HR Level</option>
-                                <option value="4">4 - The RO or PO/s have applied for higher PRIME-HR Level</option>
-                                <option value="0">0 - The RO or PO/s have not applied for higher PRIME-HR Level</option>
+                                <option value="8" {{ (isset($previousData->c5) && $previousData->c5 == 8) ? 'selected' : '' }}>8 - The RO or PO/s in the region have applied and have been certified in higher PRIME HR Level</option>
+                                <option value="4" {{ (isset($previousData->c5) && $previousData->c5 == 4) ? 'selected' : '' }}>4 - The RO or PO/s have applied for higher PRIME-HR Level</option>
+                                <option value="0" {{ (isset($previousData->c5) && $previousData->c5 == 0) ? 'selected' : '' }}>0 - The RO or PO/s have not applied for higher PRIME-HR Level</option>
                             </select>
                         </td>
                         <td class="pb-8">
-                            <input class="form-control mb-1" name="ra7b_remarks" type="text" placeholder="Remarks">
+                            <input class="form-control mb-1" name="c5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->c5_remarks) ? $previousData->c5_remarks : '' }}">
                         </td>
                         
                     </tr>
@@ -434,7 +434,7 @@
                         <td class="p-4"></td>
                         <td class="p-4"><b>Total Re-Evaluated Score</b></td>
                         <td class="p-4"><b>Final Score:</b></td>
-                        <td class="p-4"><b>ROMD Evaluated Score</b>: <span id="totalScore">0</span></td>
+                        <td class="p-4"><b>ROMD Evaluated Score</b>: <span name="c1" data-field="c1">0</span></td>
                         <td class="p-4"></td>
                     </tr>
 

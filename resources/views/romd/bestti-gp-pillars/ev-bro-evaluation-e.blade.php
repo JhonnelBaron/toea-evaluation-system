@@ -126,18 +126,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>E. Social Marketing and Advocacy</td>
-                        <td></td>
-                        <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan Write-ups (best practices/activity reports)<br>Radio programsSocial media posts and shares<br>Local Media engagements (blasted PRs, Interviews)<br> Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p></td>
-                        <td></td>
-                        <td></td>
-                        <td><select class="form-control mb-1 score-dropdown" name="rd1_final_score" type="text" placeholder="Input your initial score" required>
+                        <td class="pb-4 text-center">E. Social Marketing and Advocacy</td>
+                        <td class="pb-4 text-center"><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan Write-ups (best practices/activity reports)<br>Radio programsSocial media posts and shares<br>Local Media engagements (blasted PRs, Interviews)<br> Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p></td>
+                        <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
+                        <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
+                        <td class="pb-4 text-center"></td>
+                        <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e" data-field="e">
                                         <option value="">Select score</option>
-                                        <option value="60">50 - A Communication Plan was prepared and fully implemented.</option>
-                                        <option value="30">30 - No Communication Plan was prepared but activities were fully implemented.</option>
-                                        <option value="0">0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                        <option value="60"  {{ (isset($previousData->e) && $previousData->e == 60) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented.</option>
+                                        <option value="30"  {{ (isset($previousData->e) && $previousData->e == 30) ? 'selected' : '' }}>30 - No Communication Plan was prepared but activities were fully implemented.</option>
+                                        <option value="0"  {{ (isset($previousData->e) && $previousData->e == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                                     </select></td>
-                        <td><input class="form-control mb-1" name="rd1_remarks" type="text" placeholder="Remarks"></td>
+                        <td class="pb-4 text-center"><input class="form-control mb-1" name="re_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->e_remarks) ? $previousData->e_remarks : '' }}"></td>
                     </tr>
                         
                     <tr>
