@@ -84,31 +84,31 @@
     
     <div class="flex items-center justify-center">
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-a" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria A</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-b" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-gray-200 font-bold text-xs">Criteria B</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-c" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria C</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-d" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria D</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-e" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria E</span>
             </a>
         </div>
@@ -144,8 +144,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b1a}}</td>
-                        <td class="pb-4 text-center">b1a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b1a}}</td>
+                        <td class="pb-4 text-center">{{$po->b1a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1a" data-field="b1a">
                                 <option value="">Select Score</option>
@@ -164,8 +164,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report of the User’s Feedback Survey</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center" >b1b}}</td>
-                        <td class="pb-4 text-center">b1b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b1b}}</td>
+                        <td class="pb-4 text-center">{{$po->b1b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1b" data-field="b1b">
                                 <option value="">Select Score</option>
@@ -184,8 +184,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b1c}}</td>
-                        <td class="pb-4 text-center">b1c_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b1c}}</td>
+                        <td class="pb-4 text-center">{{$co->b1c_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1c" data-field="b1c">
                                 <option value="">Select Score</option>
@@ -204,8 +204,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Tracking sheets (F41) - RO/PO c/o CO</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b1d}}</td>
-                        <td class="pb-4 text-center">b1d_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b1d}}</td>
+                        <td class="pb-4 text-center">{{$co->b1d_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1d" data-field="b1d">
                                 <option value="">Select Score</option>
@@ -224,8 +224,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b1d}}</td>
-                        <td class="pb-4 text-center">b1d_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b1e}}</td>
+                        <td class="pb-4 text-center">{{$co->b1e_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1e" data-field="b1e">
                                 <option value="">Select Score</option>
@@ -248,8 +248,8 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a1}}</td>
-                        <td class="pb-4 text-center">b2a1_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2a1}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2a1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a1" data-field="b2a1">
                                 <option value="">Select Score</option>
@@ -269,8 +269,8 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a2}}</td>
-                        <td class="pb-4 text-center">b2a2_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2a2}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2a2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a2" data-field="b2a2">
                                 <option value="">Select Score</option>
@@ -292,8 +292,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report on the digitization initiative or digital transformation of external services</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a3}}</td>
-                        <td class="pb-4 text-center">b2a3_remarks}}</td>
+                        <td class="pb-4 text-center">{{$icto->b2a3}}</td>
+                        <td class="pb-4 text-center">{{$icto->b2a3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a3" data-field="b2a3">
                                 <option value="">Select Score</option>
@@ -316,8 +316,8 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a41}}</td>
-                        <td class="pb-4 text-center">b2a41_remarks}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a41}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a41_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a41" data-field="b2a41">
                                 <option value="">Select Score</option>
@@ -338,8 +338,8 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a42}}</td>
-                        <td class="pb-4 text-center">b2a42_remarks}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a42}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a42_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a42" data-field="b2a42">
                                 <option value="">Select Score</option>
@@ -359,8 +359,8 @@
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2a43}}</td>
-                        <td class="pb-4 text-center">b2a43_remarks}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a43}}</td>
+                        <td class="pb-4 text-center">{{$ws->b2a43_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a43" data-field="b2a43">
                                 <option value="">Select Score</option>
@@ -381,8 +381,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2b1}}</td>
-                        <td class="pb-4 text-center">b2b1_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2b1}}</td>
+                        <td class="pb-4 text-center">{{$po->b2b1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b1" data-field="b2b1">
                                 <option value="">Select score</option>
@@ -403,8 +403,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2b2}}</td>
-                        <td class="pb-4 text-center">b2b2_remarks}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b2}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b2" data-field="b2b2">
                                 <option value="">Select score</option>
@@ -425,8 +425,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2b3}}</td>
-                        <td class="pb-4 text-center">b2b3_remarks}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b3}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b3" data-field="b2b3">
                                 <option value="">Select score</option>
@@ -447,8 +447,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Reports on meetings conducted</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2b4}}</td>
-                        <td class="pb-4 text-center">b2b4_remarks}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b4}}</td>
+                        <td class="pb-4 text-center">{{$romo->b2b4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b4" data-field="b2b4">
                                 <option value="">Select score</option>
@@ -469,8 +469,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2b5}}</td>
-                        <td class="pb-4 text-center">b2b5_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2b5}}</td>
+                        <td class="pb-4 text-center">{{$po->b2b5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b5" data-field="b2b5">
                                 <option value="">Select score</option>
@@ -493,8 +493,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: MIS 02-04</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c1}}</td>
-                        <td class="pb-4 text-center">b2c1_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c1}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c1" data-field="b2c1">
                                 <option value="">Select score</option>
@@ -515,8 +515,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monthly Report on Program Registration</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c2}}</td>
-                        <td class="pb-4 text-center">b2c2_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c2}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c2" data-field="b2c2">
                                 <option value="">Select score</option>
@@ -537,8 +537,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c3}}</td>
-                        <td class="pb-4 text-center">b2c3_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c3}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c3" data-field="b2c3">
                                 <option value="">Select score</option>
@@ -559,8 +559,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c4}}</td>
-                        <td class="pb-4 text-center">b2c4_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c4}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c4" data-field="b2c4">
                                 <option value="">Select score</option>
@@ -581,8 +581,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessors from T2MIS; Signed Validated OPCR</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c5}}</td>
-                        <td class="pb-4 text-center">b2c5_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c5}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c5" data-field="b2c5">
                                 <option value="">Select score</option>
@@ -603,8 +603,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2c6}}</td>
-                        <td class="pb-4 text-center">b2c6_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c6}}</td>
+                        <td class="pb-4 text-center">{{$co->b2c6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c6" data-field="b2c6">
                                 <option value="">Select score</option>
@@ -627,8 +627,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d1}}</td>
-                        <td class="pb-4 text-center">b2d1_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2d1}}</td>
+                        <td class="pb-4 text-center">{{$po->b2d1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d1" data-field="b2d1">
                                 <option value="">Select score</option>
@@ -649,8 +649,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d2}}</td>
-                        <td class="pb-4 text-center">b2d2_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2d2}}</td>
+                        <td class="pb-4 text-center">{{$po->b2d2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d2" data-field="b2d2">
                                 <option value="">Select score</option>
@@ -673,8 +673,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d31}}</td>
-                        <td class="pb-4 text-center">b2d31_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d31}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d31_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d31" data-field="b2d31">
                                 <option value="">Select score</option>
@@ -695,8 +695,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report, Number of HOTS List of HOTS and their TVET qualifications</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d32}}</td>
-                        <td class="pb-4 text-center">b2d32_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d32}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d32_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d32" data-field="b2d32">
                                 <option value="">Select score</option>
@@ -719,8 +719,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d411}}</td>
-                        <td class="pb-4 text-center">b2d411_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d411}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d411_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d411" data-field="b2d411">
                                 <option value="">Select score</option>
@@ -741,8 +741,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d412}}</td>
-                        <td class="pb-4 text-center">b2d412_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d412}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d412_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d412" data-field="b2d412">
                                 <option value="">Select score</option>
@@ -765,8 +765,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d421}}</td>
-                        <td class="pb-4 text-center">b2d421_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d421}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d421_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d421" data-field="b2d421">
                                 <option value="">Select score</option>
@@ -787,8 +787,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d422}}</td>
-                        <td class="pb-4 text-center">b2d422_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d422}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d422_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d422" data-field="b2d422">
                                 <option value="">Select score</option>
@@ -810,8 +810,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d431}}</td>
-                        <td class="pb-4 text-center">b2d431_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d431}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d431_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d431" data-field="b2d431" type="text">
                                 <option value="">Select score</option>
@@ -832,8 +832,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d432}}</td>
-                        <td class="pb-4 text-center">b2d432_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d432}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d432_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d432" data-field="b2d432" type="text">
                                 <option value="">Select score</option>
@@ -855,8 +855,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d441}}</td>
-                        <td class="pb-4 text-center">b2d441_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d441}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d441_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d441" data-field="b2d441" type="text">
                                 <option value="">Select score</option>
@@ -877,8 +877,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d442}}</td>
-                        <td class="pb-4 text-center">b2d442_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d442}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2d442_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d442" data-field="b2d442" type="text">
                                 <option value="">Select score</option>
@@ -901,8 +901,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d5}}</td>
-                        <td class="pb-4 text-center">b2d5_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d5}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d5" data-field="b2d5" type="text">
                                 <option value="">Select score</option>
@@ -924,8 +924,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Compendium of program registration, Registry of EBT programs; T2MIS</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2d6}}</td>
-                        <td class="pb-4 text-center">b2d6_remarks}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d6}}</td>
+                        <td class="pb-4 text-center">{{$plo->b2d6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d6" data-field="b2d6" type="text">
                                 <option value="">Select score</option>
@@ -951,8 +951,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e11a}}</td>
-                        <td class="pb-4 text-center">b2e11a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e11a}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e11a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11a" data-field="b2e11a">
                                 <option value="">Select score</option>
@@ -973,8 +973,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e11b}}</td>
-                        <td class="pb-4 text-center">b2e11b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e11b}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e11b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11b" data-field="b2e11b">
                                 <option value="">Select score</option>
@@ -996,8 +996,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e12a}}</td>
-                        <td class="pb-4 text-center">b2e12a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e12a}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e12a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12a" data-field="b2e12a">
                                 <option value="">Select score</option>
@@ -1018,8 +1018,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e12b}}</td>
-                        <td class="pb-4 text-center">b2e12b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e12b}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e12b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12b" data-field="b2e12b">
                                 <option value="">Select score</option>
@@ -1043,8 +1043,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e13a}}</td>
-                        <td class="pb-4 text-center">b2e13a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e13a}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e13a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13a" data-field="b2e13a">
                                 <option value="">Select score</option>
@@ -1065,8 +1065,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e13b}}</td>
-                        <td class="pb-4 text-center">b2e13b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e13b}}</td>
+                        <td class="pb-4 text-center">{{$co->b2e13b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13b" data-field="b2e13b">
                                 <option value="">Select score</option>
@@ -1103,8 +1103,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Inventory of Lead Auditors/Auditors (TESDA QP 03-F09)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e21}}</td>
-                        <td class="pb-4 text-center">b2e21_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e21}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e21_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e21" data-field="b2e21">
                                 <option value="">Select score</option>
@@ -1126,8 +1126,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: RRRO - Monitoring of submission IQA Reports reflected on the QP-03-F12 Action Catalog - QP-03-F11</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e22}}</td>
-                        <td class="pb-4 text-center">b2e22_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e22}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e22_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e22" data-field="b2e22">
                                 <option value="">Select score</option>
@@ -1149,8 +1149,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Manning of the Regional Provincial Office versus the actual number of personnel that have attended training</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e23}}</td>
-                        <td class="pb-4 text-center">b2e23_remarks}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e23}}</td>
+                        <td class="pb-4 text-center">{{$po->b2e23_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e23" data-field="b2e23">
                                 <option value="">Select score</option>
@@ -1174,8 +1174,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">b2e3}}</td>
-                        <td class="pb-4 text-center">b2e3_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2e3}}</td>
+                        <td class="pb-4 text-center">{{$nitesd->b2e3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e3" data-field="b2e3">
                                 <option value="">Select score</option>
@@ -1192,7 +1192,7 @@
                         <td class="pb-4"></td>
                         <td class="pb-4"></td>
                         <td class="pb-4"><b>Total Score</b></td>
-                        <td class="pb-4 text-center">DUMMY SCORE</td>
+                        <td class="pb-4 text-center">{{$nominee->criteria_b}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
                         <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
@@ -1300,7 +1300,7 @@
                 });
         
                 document.getElementById('confirmButton').addEventListener('click', function () {
-                    window.location.href = "/external/gp"; // Adjust the URL as needed
+                    window.location.href = "/external/bro"; // Adjust the URL as needed
                 });
             </script>
 </body>

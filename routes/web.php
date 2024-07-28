@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/external/gp', [ExternalValidatorController::class, 'externalGp']);
     Route::get('/external/ti', [ExternalValidatorController::class, 'externalTi']);
+    Route::get('/external/bro', [ExternalValidatorController::class, 'externalBro']);
 });
 
 Route::get('/region/{uploaderId}', [EoController::class, 'showRegionFiles'])->name('region.files');
@@ -383,6 +384,12 @@ Route::get('/external/ti-c/ptc/{id}', [ExternalValidatorController::class, 'exte
 Route::get('/external/ti-d/ptc/{id}', [ExternalValidatorController::class, 'externalPtcD'])->name('external.ti-ptc-d');
 Route::get('/external/ti-e/ptc/{id}', [ExternalValidatorController::class, 'externalPtcE'])->name('external.ti-ptc-e');
 
+Route::get('/external/bro-a/{id}', [ExternalValidatorController::class, 'externalBroA'])->name('external.bro-a');
+Route::get('/external/bro-b/{id}', [ExternalValidatorController::class, 'externalBroB'])->name('external.bro-b');
+Route::get('/external/bro-c/{id}', [ExternalValidatorController::class, 'externalBroC'])->name('external.bro-c');
+Route::get('/external/bro-d/{id}', [ExternalValidatorController::class, 'externalBroD'])->name('external.bro-d');
+Route::get('/external/bro-e/{id}', [ExternalValidatorController::class, 'externalBroE'])->name('external.bro-e');
+
 Route::post('/store-gpa', [ExternalValidatorController::class, 'storeGpA'])->name('storeGpA');
 Route::post('/store-gpb', [ExternalValidatorController::class, 'storeGpB'])->name('storeGpB');
 Route::post('/store-gpc', [ExternalValidatorController::class, 'storeGpC'])->name('storeGpC');
@@ -400,3 +407,4 @@ Route::post('/store-rstb', [ExternalValidatorController::class, 'storeRstB'])->n
 Route::post('/store-rstc', [ExternalValidatorController::class, 'storeRstC'])->name('storeRstC');
 Route::post('/store-rstd', [ExternalValidatorController::class, 'storeRstD'])->name('storeRstD');
 Route::post('/store-rste', [ExternalValidatorController::class, 'storeRstE'])->name('storeRstE');
+

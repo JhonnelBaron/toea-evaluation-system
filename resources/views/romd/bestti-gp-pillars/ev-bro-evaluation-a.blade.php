@@ -84,31 +84,31 @@
     
     <div class="flex items-center justify-center">
         <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-a" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-a', ['id' => $user_id]) }}"  class="h-full w-full flex items-center justify-center">
                 <span class="text-gray-200 font-bold text-xs">Criteria A</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-b" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria B</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-c" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria C</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-d" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria D</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-e" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria E</span>
             </a>
         </div>
@@ -144,8 +144,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a1</td>
-                        <td class="pb-4 text-center">a1_remarks</td>
+                        <td class="pb-4 text-center">{{$ld->a1}}</td>
+                        <td class="pb-4 text-center">{{$ld->a1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1">
                                 <option value="">Select score</option>
@@ -162,8 +162,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center" >a2</td>
-                        <td class="pb-4 text-center">a2_remarks}}</td>
+                        <td class="pb-4 text-center">{{$ld->a2}}</td>
+                        <td class="pb-4 text-center">{{$ld->a2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2">
                                 <option value="">Select score</option>
@@ -183,8 +183,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04 Monitoring of Complaints Received</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a3</td>
-                        <td class="pb-4 text-center">a3_remarks}}</td>
+                        <td class="pb-4 text-center">{{$piad->a3}}</td>
+                        <td class="pb-4 text-center">{{$piad->a3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3">
                                 <option value="">Select score</option>
@@ -202,8 +202,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02) <br>- Monthly (January to December) Summary Report with Percentage signed by the PD</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a4</td>
-                        <td class="pb-4 text-center">a4_remarks}}</td>
+                        <td class="pb-4 text-center">{{$piad->a4}}</td>
+                        <td class="pb-4 text-center">{{$piad->a4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a4" data-field="a4">
                                 <option value="">Select score</option>
@@ -224,8 +224,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a5a</td>
-                        <td class="pb-4 text-center">a5a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$fms->a5a}}</td>
+                        <td class="pb-4 text-center">{{$fms->a5a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5a" data-field="a5a">
                                 <option value="">Select score</option>
@@ -243,8 +243,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a5b</td>
-                        <td class="pb-4 text-center">a5b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$fms->a5b}}</td>
+                        <td class="pb-4 text-center">{{$fms->a5b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5b" data-field="a5b">
                                 <option value="">Select score</option>
@@ -261,8 +261,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed <br>Government Procurement Policy Board (GPPB) report who are compliant</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a6</td>
-                        <td class="pb-4 text-center">a6_remarks}}</td>
+                        <td class="pb-4 text-center">{{$as->a6}}</td>
+                        <td class="pb-4 text-center">{{$as->a6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a6" data-field="a6">
                                 <option value="">Select score</option>
@@ -279,8 +279,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a7a</td>
-                        <td class="pb-4 text-center">a7a_remarks}}</td>
+                        <td class="pb-4 text-center">{{$fms->a7a}}</td>
+                        <td class="pb-4 text-center">{{$fms->a7a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7a" data-field="a7a">
                                 <option value="">Select score</option>
@@ -297,8 +297,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a7b</td>
-                        <td class="pb-4 text-center">a7b_remarks}}</td>
+                        <td class="pb-4 text-center">{{$fms->a7b}}</td>
+                        <td class="pb-4 text-center">{{$fms->a7b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7b" data-field="a7b">
                                 <option value="">Select score</option>
@@ -315,8 +315,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB) <br>- Acknowledgment email from GPBB</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">a8</td>
-                        <td class="pb-4 text-center">a8_remarks}}</td>
+                        <td class="pb-4 text-center">{{$as->a8}}</td>
+                        <td class="pb-4 text-center">{{$as->a8_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a8" data-field="a8">
                                 <option value="">Select score</option>
@@ -331,7 +331,7 @@
                         <td class="pb-4"></td>
                         <td class="pb-4"></td>
                         <td class="pb-4"><b>Total Score</b></td>
-                        <td class="pb-4 text-center">DUMMY SCORE</td>
+                        <td class="pb-4 text-center">{{$nominee->criteria_a}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
                         <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
@@ -439,7 +439,7 @@
                 });
         
                 document.getElementById('confirmButton').addEventListener('click', function () {
-                    window.location.href = "/external/gp"; // Adjust the URL as needed
+                    window.location.href = "/external/bro"; // Adjust the URL as needed
                 });
             </script>
 </body>

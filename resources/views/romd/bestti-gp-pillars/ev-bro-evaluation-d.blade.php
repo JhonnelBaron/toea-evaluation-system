@@ -84,31 +84,31 @@
     
     <div class="flex items-center justify-center ml-6">
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-a" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria A</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-b" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria B</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-c" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria C</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-d" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-gray-200 font-bold text-xs">Criteria D</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-e" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria E</span>
             </a>
         </div>
@@ -143,8 +143,8 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Rating of each Executive Office based on the timely, consistent, and accurate reporting</p>
                         </td>
                         <td class="pb-8 pt-5"></td>
-                        <td class="pb-4 text-center">d1}}</td>
-                        <td class="pb-4 text-center">d1_remarks}}</td>
+                        <td class="pb-4 text-center">{{$nominee->criteria_d}}</td>
+                        <td class="pb-4 text-center"></td>
                         <td class="pb-8 pt-5">
                             <select class="form-control mb-1 score-dropdown" name="d1" data-field="d1">
                                 <option value="">Select score</option>
@@ -163,7 +163,7 @@
                         <td class="pb-4"></td>
                         <td class="pb-4"></td>
                         <td class="pb-4"><b>Total Score</b></td>
-                        <td class="pb-4 text-center">DUMMY SCORE</td>
+                        <td class="pb-4 text-center">{{$nominee->criteria_d}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
                         <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
@@ -273,7 +273,7 @@
         });
 
         document.getElementById('confirmButton').addEventListener('click', function () {
-            window.location.href = "/external/gp"; // Adjust the URL as needed
+            window.location.href = "/external/bro"; // Adjust the URL as needed
         });
     </script>
 </body>

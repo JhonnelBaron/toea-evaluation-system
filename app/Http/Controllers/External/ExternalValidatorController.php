@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\External;
 
 use App\Http\Controllers\Controller;
+use App\Models\AsEvaluation;
+use App\Models\CoEvaluation;
 use App\Models\External\EndorsedExternal;
 use App\Models\External\GpAExternal;
 use App\Models\External\GpBExternal;
@@ -19,6 +21,15 @@ use App\Models\External\RstBExternal;
 use App\Models\External\RstCExternal;
 use App\Models\External\RstDExternal;
 use App\Models\External\RstEExternal;
+use App\Models\FmsEvaluation;
+use App\Models\IctoEvaluation;
+use App\Models\LdEvaluation;
+use App\Models\NitesdEvaluation;
+use App\Models\PiadEvaluation;
+use App\Models\PloEvaluation;
+use App\Models\PoEvaluation;
+use App\Models\RomoEvaluation;
+use App\Models\WsEvaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -1376,6 +1387,191 @@ class ExternalValidatorController extends Controller
         return redirect()->back()->with(['success' => 'Data saved successfully']);
     }
 
+    // BRO
+    public function externalBro()
+    {
+        $small = EndorsedExternal::where('grouping', 'Small')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium')->get();
+        $large = EndorsedExternal::where('grouping', 'Large')->get();
+
+        return view('external.bro', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+    }
+
+    public function externalBroA($id)
+    {
+        $nominee = EndorsedExternal::where('user_id', $id)->first();
+
+        $asEvaluations = AsEvaluation::where('region_id', $id)->first();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->first();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->first();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->first();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->first();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->first();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->first();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->first();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->first();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
+
+        // $previousData = PtcAExternal::where('user_id', $id)->first();
+
+        return view('romd.bestti-gp-pillars.ev-bro-evaluation-a', [
+            'user_id' => $id,
+            'nominee' => $nominee,
+            'as' => $asEvaluations,
+            'co' => $coEvaluations,
+            'fms' => $fmsEvaluations,
+            'icto' => $ictoEvaluations,
+            'ld' => $ldEvaluations,
+            'nitesd' => $nitesdEvaluations,
+            'piad' => $piadEvaluations,
+            'plo'=> $ploEvaluations,
+            'po' => $poEvaluations,
+            'romo' => $romoEvaluations,
+            'ws' => $wsEvaluations,
+            // 'previousData' => $previousData,
+        ]);
+    }
+    public function externalBroB($id)
+    {
+        $nominee = EndorsedExternal::where('user_id', $id)->first();
+
+        $asEvaluations = AsEvaluation::where('region_id', $id)->first();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->first();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->first();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->first();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->first();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->first();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->first();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->first();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->first();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
+
+        // $previousData = PtcAExternal::where('user_id', $id)->first();
+
+        return view('romd.bestti-gp-pillars.ev-bro-evaluation-b', [
+            'user_id' => $id,
+            'nominee' => $nominee,
+            'as' => $asEvaluations,
+            'co' => $coEvaluations,
+            'fms' => $fmsEvaluations,
+            'icto' => $ictoEvaluations,
+            'ld' => $ldEvaluations,
+            'nitesd' => $nitesdEvaluations,
+            'piad' => $piadEvaluations,
+            'plo'=> $ploEvaluations,
+            'po' => $poEvaluations,
+            'romo' => $romoEvaluations,
+            'ws' => $wsEvaluations,
+            // 'previousData' => $previousData,
+        ]);
+    }
+    public function externalBroC($id)
+    {
+        $nominee = EndorsedExternal::where('user_id', $id)->first();
+
+        $asEvaluations = AsEvaluation::where('region_id', $id)->first();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->first();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->first();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->first();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->first();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->first();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->first();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->first();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->first();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
+
+        // $previousData = PtcAExternal::where('user_id', $id)->first();
+
+        return view('romd.bestti-gp-pillars.ev-bro-evaluation-c', [
+            'user_id' => $id,
+            'nominee' => $nominee,
+            'as' => $asEvaluations,
+            'co' => $coEvaluations,
+            'fms' => $fmsEvaluations,
+            'icto' => $ictoEvaluations,
+            'ld' => $ldEvaluations,
+            'nitesd' => $nitesdEvaluations,
+            'piad' => $piadEvaluations,
+            'plo'=> $ploEvaluations,
+            'po' => $poEvaluations,
+            'romo' => $romoEvaluations,
+            'ws' => $wsEvaluations,
+            // 'previousData' => $previousData,
+        ]);
+    }
+    public function externalBroD($id)
+    {
+        $nominee = EndorsedExternal::where('user_id', $id)->first();
+
+        $asEvaluations = AsEvaluation::where('region_id', $id)->first();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->first();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->first();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->first();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->first();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->first();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->first();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->first();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->first();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
+
+        // $previousData = PtcAExternal::where('user_id', $id)->first();
+
+        return view('romd.bestti-gp-pillars.ev-bro-evaluation-d', [
+            'user_id' => $id,
+            'nominee' => $nominee,
+            'as' => $asEvaluations,
+            'co' => $coEvaluations,
+            'fms' => $fmsEvaluations,
+            'icto' => $ictoEvaluations,
+            'ld' => $ldEvaluations,
+            'nitesd' => $nitesdEvaluations,
+            'piad' => $piadEvaluations,
+            'plo'=> $ploEvaluations,
+            'po' => $poEvaluations,
+            'romo' => $romoEvaluations,
+            'ws' => $wsEvaluations,
+            // 'previousData' => $previousData,
+        ]);
+    }
+    public function externalBroE($id)
+    {
+        $nominee = EndorsedExternal::where('user_id', $id)->first();
+
+        $asEvaluations = AsEvaluation::where('region_id', $id)->first();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->first();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->first();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->first();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->first();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->first();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->first();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->first();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->first();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
+
+        // $previousData = PtcAExternal::where('user_id', $id)->first();
+
+        return view('romd.bestti-gp-pillars.ev-bro-evaluation-e', [
+            'user_id' => $id,
+            'nominee' => $nominee,
+            'as' => $asEvaluations,
+            'co' => $coEvaluations,
+            'fms' => $fmsEvaluations,
+            'icto' => $ictoEvaluations,
+            'ld' => $ldEvaluations,
+            'nitesd' => $nitesdEvaluations,
+            'piad' => $piadEvaluations,
+            'plo'=> $ploEvaluations,
+            'po' => $poEvaluations,
+            'romo' => $romoEvaluations,
+            'ws' => $wsEvaluations,
+            // 'previousData' => $previousData,
+        ]);
+    }
    
 
 

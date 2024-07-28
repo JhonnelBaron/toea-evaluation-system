@@ -176,7 +176,7 @@
                 <div class="flex-grow flex items-center justify-center" style="margin-right: 8.5rem;">
                     <ul class="flex">
                         <li class="tab">
-                            <a href="#" data-tab="submission" class="tab-link p-4 text-black">BRO</a>
+                            <a href="/external/bro" data-tab="submission" class="tab-link p-4 text-black">BRO</a>
                         </li>
                         <li class="tab">
                             <a href="/external/gp" data-tab="evaluated" class="tab-link p-4 text-black">Galing Probinsya</a>
