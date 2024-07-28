@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/best-ti', [TiController::class, 'getTiUsers']);
 
     Route::post('gp/endorse-nominee/{id}', [RomdController::class, 'endorseGp'])->name('gp.endorse-nominee');
+    Route::post('bro/endorse-nominee/{id}', [RomdController::class, 'endorseBro'])->name('bro.endorse-nominee');
     Route::post('ti/endorse-nominee/{id}', [RomdController::class, 'endorseTi']);
 
     Route::get('gp/endorsed', [RomdController::class, 'rankGp']);

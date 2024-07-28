@@ -195,7 +195,9 @@ class RomdController extends Controller
          $mediumRank = 1;
          $largeRank = 1;
         
-        
+         $checkEndorsed = EndorsedExternal::where('category', 'Best Regional Office')
+         ->pluck('user_id')
+         ->toArray();
 
         return view('romd.ranking', compact(
             'regions',
@@ -220,7 +222,8 @@ class RomdController extends Controller
             'sortedLargeRegions',
             'smallRank', 
             'mediumRank',
-            'largeRank'
+            'largeRank',
+            'checkEndorsed'
         ));
     }
 
@@ -545,6 +548,174 @@ class RomdController extends Controller
         $large = EndorsedExternal::where('grouping', 'PTC')->get();
 
         return view('romd.ti-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+    }
+
+
+    public function endorseBro($id)
+    {
+        $region = Region::findOrFail($id);
+        
+        // Retrieve evaluations for the given region ID
+        $asEvaluations = AsEvaluation::where('region_id', $id)->get();
+        $coEvaluations = CoEvaluation::where('region_id', $id)->get();
+        $fmsEvaluations = FmsEvaluation::where('region_id', $id)->get();
+        $ictoEvaluations = IctoEvaluation::where('region_id', $id)->get();
+        $ldEvaluations = LdEvaluation::where('region_id', $id)->get();
+        $nitesdEvaluations = NitesdEvaluation::where('region_id', $id)->get();
+        $piadEvaluations = PiadEvaluation::where('region_id', $id)->get();
+        $ploEvaluations = PloEvaluation::where('region_id', $id)->get();
+        $poEvaluations = PoEvaluation::where('region_id', $id)->get();
+        $romoEvaluations = RomoEvaluation::where('region_id', $id)->get();
+        $wsEvaluations = WsEvaluation::where('region_id', $id)->get();
+
+        // Initialize sums
+        $totalA = 0;
+        $totalB = 0;
+        $totalC = 0;
+        $totalD = 0;
+        $totalE = 0;
+
+        // Sum "a" fields from AsEvaluation
+        foreach ($asEvaluations as $evaluation) {
+            $totalA += $evaluation->a6 ?? 0;
+            $totalA += $evaluation->a8 ?? 0;
+            $totalC += $evaluation->c31 ?? 0;
+            $totalC += $evaluation->c32 ?? 0;
+            $totalC += $evaluation->c411 ?? 0;
+            $totalC += $evaluation->c412 ?? 0;
+            $totalC += $evaluation->c421 ?? 0;
+            $totalC += $evaluation->c422 ?? 0;
+            $totalC += $evaluation->c431 ?? 0;
+            $totalC += $evaluation->c432 ?? 0;
+            $totalC += $evaluation->c5 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        // Sum "b" fields from CoEvaluation
+        foreach ($coEvaluations as $evaluation) {
+            $totalB += $evaluation->b1c ?? 0;
+            $totalB += $evaluation->b1d ?? 0;
+            $totalB += $evaluation->b1e ?? 0;
+            $totalB += $evaluation->b1f ?? 0;
+            $totalB += $evaluation->b2c1 ?? 0;
+            $totalB += $evaluation->b2c2 ?? 0;
+            $totalB += $evaluation->b2c3 ?? 0;
+            $totalB += $evaluation->b2c4 ?? 0;
+            $totalB += $evaluation->b2c5 ?? 0;
+            $totalB += $evaluation->b2c6 ?? 0;
+            $totalB += $evaluation->b2e11a ?? 0;
+            $totalB += $evaluation->b2e11b ?? 0;
+            $totalB += $evaluation->b2e12a ?? 0;
+            $totalB += $evaluation->b2e12b ?? 0;
+            $totalB += $evaluation->b2e13a ?? 0;
+            $totalB += $evaluation->b2e13b ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        // Sum "a" and "c" fields from FmsEvaluation
+        foreach ($fmsEvaluations as $evaluation) {
+            $totalA += $evaluation->a5a ?? 0;
+            $totalA += $evaluation->a5b ?? 0;
+            $totalA += $evaluation->a7a ?? 0;
+            $totalA += $evaluation->a7b ?? 0;
+            $totalC += $evaluation->c1 ?? 0;
+            $totalC += $evaluation->c2 ?? 0;
+            $totalC += $evaluation->c33 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        // Sum "b" fields from IctoEvaluation
+        foreach ($ictoEvaluations as $evaluation) {
+            $totalB += $evaluation->b2a3 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        foreach ($ldEvaluations as $evaluation) {
+            $totalA += $evaluation->a1 ?? 0;
+            $totalA += $evaluation->a2 ?? 0;
+        }
+
+        foreach ($nitesdEvaluations as $evaluation) {
+            $totalB += $evaluation->b2a1 ?? 0;
+            $totalB += $evaluation->b2a2 ?? 0;
+            $totalB += $evaluation->b2d31 ?? 0;
+            $totalB += $evaluation->b2d32 ?? 0;
+            $totalB += $evaluation->b2d441 ?? 0;
+            $totalB += $evaluation->b2d442 ?? 0;
+            $totalB += $evaluation->b2e3 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        foreach ($piadEvaluations as $evaluation) {
+            $totalA += $evaluation->a3 ?? 0;
+            $totalA += $evaluation->a4 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+            $totalE += $evaluation->e1 ?? 0;
+        }
+
+        foreach ($ploEvaluations as $evaluation) {
+            $totalB += $evaluation->b1g ?? 0;
+            $totalB += $evaluation->b2d411 ?? 0;
+            $totalB += $evaluation->b2d412 ?? 0;
+            $totalB += $evaluation->b2d421 ?? 0;
+            $totalB += $evaluation->b2d422 ?? 0;
+            $totalB += $evaluation->b2d431 ?? 0;
+            $totalB += $evaluation->b2d432 ?? 0;
+            $totalB += $evaluation->b2d5 ?? 0;
+            $totalB += $evaluation->b2d6 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        foreach ($poEvaluations as $evaluation) {
+            $totalB += $evaluation->b1a ?? 0;
+            $totalB += $evaluation->b1b ?? 0;
+            $totalB += $evaluation->b1i ?? 0;
+            $totalB += $evaluation->b2b1 ?? 0;
+            $totalB += $evaluation->b2b5 ?? 0;
+            $totalB += $evaluation->b2d1 ?? 0;
+            $totalB += $evaluation->b2d2 ?? 0;
+            $totalB += $evaluation->b2e21 ?? 0;
+            $totalB += $evaluation->b2e22 ?? 0;
+            $totalB += $evaluation->b2e23 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        foreach ($romoEvaluations as $evaluation) {
+            $totalB += $evaluation->b1h ?? 0;
+            $totalB += $evaluation->b2b2 ?? 0;
+            $totalB += $evaluation->b2b3 ?? 0;
+            $totalB += $evaluation->b2b4 ?? 0;
+            $totalD += $evaluation->d1 ?? 0;
+        }
+
+        foreach ($wsEvaluations as $evaluation) {
+            $totalB += $evaluation->b2a41 ?? 0;
+            $totalB += $evaluation->b2a42 ?? 0;
+            $totalB += $evaluation->b2a43 ?? 0;
+        }
+
+        $averageD = $totalD / 9;
+
+        $store = EndorsedExternal::create([
+            'user_id' => $region->id,
+            'category' => "Best Regional Office",
+            'grouping' => $region->region_category,
+            'province' => $region->region_name,
+            'criteria_a' => $totalA,
+            'criteria_b' => $totalB,
+            'criteria_c' => $totalC,
+            'criteria_d' => $averageD,
+            'criteria_e' => $totalE,
+            'romo_final_score' => 
+            $totalA + 
+            $totalB + 
+            $totalC + 
+            $averageD + 
+            $totalE,
+        ]);
+
+        return redirect()->back()->with('success', 'Nominee endorsed successfully.');
+
     }
 
 }
