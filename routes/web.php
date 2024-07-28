@@ -408,3 +408,9 @@ Route::post('/store-rstc', [ExternalValidatorController::class, 'storeRstC'])->n
 Route::post('/store-rstd', [ExternalValidatorController::class, 'storeRstD'])->name('storeRstD');
 Route::post('/store-rste', [ExternalValidatorController::class, 'storeRstE'])->name('storeRstE');
 
+Route::post('/store-broa', [ExternalValidatorController::class, 'storeBroA'])->name('storeBroA');
+Route::post('/store-brob', [ExternalValidatorController::class, 'storeBroB'])->name('storeBroB');
+Route::post('/store-broc', [ExternalValidatorController::class, 'storeBroC'])->name('storeBroC');
+Route::post('/store-brod', [ExternalValidatorController::class, 'storeBroD'])->name('storeBroD');
+Route::post('/store-broe', [ExternalValidatorController::class, 'storeBroE'])->name('storeBroE');
+

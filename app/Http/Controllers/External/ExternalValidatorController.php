@@ -5,6 +5,11 @@ namespace App\Http\Controllers\External;
 use App\Http\Controllers\Controller;
 use App\Models\AsEvaluation;
 use App\Models\CoEvaluation;
+use App\Models\External\BroAExternal;
+use App\Models\External\BroBExternal;
+use App\Models\External\BroCExternal;
+use App\Models\External\BroDExternal;
+use App\Models\External\BroEExternal;
 use App\Models\External\EndorsedExternal;
 use App\Models\External\GpAExternal;
 use App\Models\External\GpBExternal;
@@ -1413,7 +1418,7 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        // $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = BroAExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-a', [
             'user_id' => $id,
@@ -1429,7 +1434,7 @@ class ExternalValidatorController extends Controller
             'po' => $poEvaluations,
             'romo' => $romoEvaluations,
             'ws' => $wsEvaluations,
-            // 'previousData' => $previousData,
+            'previousData' => $previousData,
         ]);
     }
     public function externalBroB($id)
@@ -1448,7 +1453,7 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        // $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = BroBExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-b', [
             'user_id' => $id,
@@ -1464,7 +1469,7 @@ class ExternalValidatorController extends Controller
             'po' => $poEvaluations,
             'romo' => $romoEvaluations,
             'ws' => $wsEvaluations,
-            // 'previousData' => $previousData,
+            'previousData' => $previousData,
         ]);
     }
     public function externalBroC($id)
@@ -1483,7 +1488,7 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        // $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = BroCExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-c', [
             'user_id' => $id,
@@ -1499,7 +1504,7 @@ class ExternalValidatorController extends Controller
             'po' => $poEvaluations,
             'romo' => $romoEvaluations,
             'ws' => $wsEvaluations,
-            // 'previousData' => $previousData,
+            'previousData' => $previousData,
         ]);
     }
     public function externalBroD($id)
@@ -1518,7 +1523,7 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        // $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = BroDExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-d', [
             'user_id' => $id,
@@ -1534,7 +1539,7 @@ class ExternalValidatorController extends Controller
             'po' => $poEvaluations,
             'romo' => $romoEvaluations,
             'ws' => $wsEvaluations,
-            // 'previousData' => $previousData,
+            'previousData' => $previousData,
         ]);
     }
     public function externalBroE($id)
@@ -1553,7 +1558,7 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        // $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = BroEExternal::where('user_id', $id)->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-e', [
             'user_id' => $id,
@@ -1569,8 +1574,388 @@ class ExternalValidatorController extends Controller
             'po' => $poEvaluations,
             'romo' => $romoEvaluations,
             'ws' => $wsEvaluations,
-            // 'previousData' => $previousData,
+            'previousData' => $previousData,
         ]);
+    }
+
+    //store bro
+
+    public function storeBroA(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'a1' => 'nullable|integer',
+            'a1_remarks' => 'nullable|string',
+            'a2' => 'nullable|integer',
+            'a2_remarks' => 'nullable|string',
+            'a3' => 'nullable|integer',
+            'a3_remarks' => 'nullable|string',
+            'a4' => 'nullable|integer',
+            'a4_remarks' => 'nullable|string',
+            'a5a' => 'nullable|integer',
+            'a5a_remarks' => 'nullable|string',
+            'a5b' => 'nullable|integer',
+            'a5b_remarks' => 'nullable|string',
+            'a6' => 'nullable|integer',
+            'a6_remarks' => 'nullable|string',
+            'a7a' => 'nullable|integer',
+            'a7a_remarks' => 'nullable|string',
+            'a7b' => 'nullable|integer',
+            'a7b_remarks' => 'nullable|string',
+            'a8' => 'nullable|integer',
+            'a8_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = BroAExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->a1, $data->a2, $data->a3, $data->a4,
+            $data->a5a, $data->a5b, $data->a6, $data->a7a, $data->a7b, $data->a8
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->a1, $data->a2, $data->a3, $data->a4,
+            $data->a5a, $data->a5b, $data->a6, $data->a7a, $data->a7b, $data->a8
+            ])->filter(function ($value) {
+                return !is_null($value); // Keep values that are not null
+            })->count();
+
+        // Define total_fields
+        $data->total_fields = 10; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success','Data saved sucessfully']);
+    }
+
+    public function storeBroB(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'b1a' => 'nullable|integer',
+            'b1a_remarks' => 'nullable|string',
+            'b1b' => 'nullable|integer',
+            'b1b_remarks' => 'nullable|string',
+            'b1c' => 'nullable|integer',
+            'b1c_remarks' => 'nullable|string',
+            'b1d' => 'nullable|integer',
+            'b1d_remarks' => 'nullable|string',
+            'b1e' => 'nullable|integer',
+            'b1e_remarks' => 'nullable|string',
+            'b1f' => 'nullable|integer',
+            'b1f_remarks' => 'nullable|string',
+            'b1g' => 'nullable|integer',
+            'b1g_remarks' => 'nullable|string',
+            'b1h' => 'nullable|integer',
+            'b1h_remarks' => 'nullable|string',
+            'b1i' => 'nullable|integer',
+            'b1i_remarks' => 'nullable|string',
+            'b2a1' => 'nullable|integer',
+            'b2a1_remarks' => 'nullable|string',
+            'b2a2' => 'nullable|integer',
+            'b2a2_remarks' => 'nullable|string',
+            'b2a3' => 'nullable|integer',
+            'b2a3_remarks' => 'nullable|string',
+            'b2a41' => 'nullable|integer',
+            'b2a41_remarks' => 'nullable|string',
+            'b2a42' => 'nullable|integer',
+            'b2a42_remarks' => 'nullable|string',
+            'b2a43' => 'nullable|integer',
+            'b2a43_remarks' => 'nullable|string',
+            'b2b1' => 'nullable|integer',
+            'b2b1_remarks' => 'nullable|string',
+            'b2b2' => 'nullable|integer',
+            'b2b2_remarks' => 'nullable|string',
+            'b2b3' => 'nullable|integer',
+            'b2b3_remarks' => 'nullable|string',
+            'b2b4' => 'nullable|integer',
+            'b2b4_remarks' => 'nullable|string',
+            'b2b5' => 'nullable|integer',
+            'b2b5_remarks' => 'nullable|string',
+            'b2c1' => 'nullable|integer',
+            'b2c1_remarks' => 'nullable|string',
+            'b2c2' => 'nullable|integer',
+            'b2c2_remarks' => 'nullable|string',
+            'b2c3' => 'nullable|integer',
+            'b2c3_remarks' => 'nullable|string',
+            'b2c4' => 'nullable|integer',
+            'b2c4_remarks' => 'nullable|string',
+            'b2c5' => 'nullable|integer',
+            'b2c5_remarks' => 'nullable|string',
+            'b2c6' => 'nullable|integer',
+            'b2c6_remarks' => 'nullable|string',
+            'b2d1' => 'nullable|integer',
+            'b2d1_remarks' => 'nullable|string',
+            'b2d2' => 'nullable|integer',
+            'b2d2_remarks' => 'nullable|string',
+            'b2d31' => 'nullable|integer',
+            'b2d31_remarks' => 'nullable|string',
+            'b2d32' => 'nullable|integer',
+            'b2d32_remarks' => 'nullable|string',
+            'b2d411' => 'nullable|integer',
+            'b2d411_remarks' => 'nullable|string',
+            'b2d412' => 'nullable|integer',
+            'b2d412_remarks' => 'nullable|string',
+            'b2d421' => 'nullable|integer',
+            'b2d421_remarks' => 'nullable|string',
+            'b2d422' => 'nullable|integer',
+            'b2d422_remarks' => 'nullable|string',
+            'b2d431' => 'nullable|integer',
+            'b2d431_remarks' => 'nullable|string',
+            'b2d432' => 'nullable|integer',
+            'b2d432_remarks' => 'nullable|string',
+            'b2d441' => 'nullable|integer',
+            'b2d441_remarks' => 'nullable|string',
+            'b2d442' => 'nullable|integer',
+            'b2d442_remarks' => 'nullable|string',
+            'b2d5' => 'nullable|integer',
+            'b2d5_remarks' => 'nullable|string',
+            'b2d6' => 'nullable|integer',
+            'b2d6_remarks' => 'nullable|string',
+            'b2e11a' => 'nullable|integer',
+            'b2e11a_remarks' => 'nullable|string',
+            'b2e11b' => 'nullable|integer',
+            'b2e11b_remarks' => 'nullable|string',
+            'b2e12a' => 'nullable|integer',
+            'b2e12a_remarks' => 'nullable|string',
+            'b2e12b' => 'nullable|integer',
+            'b2e12b_remarks' => 'nullable|string',
+            'b2e13a' => 'nullable|integer',
+            'b2e13a_remarks' => 'nullable|string',
+            'b2e13b' => 'nullable|integer',
+            'b2e13b_remarks' => 'nullable|string',
+            'b2e21' => 'nullable|integer',
+            'b2e21_remarks' => 'nullable|string',
+            'b2e22' => 'nullable|integer',
+            'b2e22_remarks' => 'nullable|string',
+            'b2e23' => 'nullable|integer',
+            'b2e23_remarks' => 'nullable|string',
+            'b2e3' => 'nullable|integer',
+            'b2e3_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = BroBExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->b1a, $data->b1b, $data->b1c, $data->b1d, $data->b1e,
+            $data->b1f, $data->b1g, $data->b1h, $data->b1i, $data->b2a1,
+            $data->b2a2, $data->b2a3, $data->b2a41, $data->b2a42, $data->b2a43,
+            $data->b2b1, $data->b2b2, $data->b2b3, $data->b2b4, $data->b2b5,
+            $data->b2c1, $data->b2c2, $data->b2c3, $data->b2c4, $data->b2c5,
+            $data->b2c6, $data->b2d1, $data->b2d2, $data->b2d31, $data->b2d32,
+            $data->b2d411, $data->b2d412, $data->b2d421, $data->b2d422, $data->b2d431,
+            $data->b2d432, $data->b2d441, $data->b2d442, $data->b2d5, $data->b2d6,
+            $data->b2e11a, $data->b2e11b, $data->b2e12a, $data->b2e12b, $data->b2e13a,
+            $data->b2e13b, $data->b2e21, $data->b2e22, $data->b2e23, $data->b2e3
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->b1a, $data->b1b, $data->b1c, $data->b1d,
+            $data->b1e, $data->b1f, $data->b1g, $data->b1h, $data->b1i,
+            $data->b2a1, $data->b2a2, $data->b2a3, $data->b2a41, $data->b2a42,
+            $data->b2a43, $data->b2b1, $data->b2b2, $data->b2b3, $data->b2b4,
+            $data->b2b5, $data->b2c1, $data->b2c2, $data->b2c3, $data->b2c4,
+            $data->b2c5, $data->b2c6, $data->b2d1, $data->b2d2, $data->b2d31,
+            $data->b2d32, $data->b2d411, $data->b2d412, $data->b2d421, $data->b2d422,
+            $data->b2d431, $data->b2d432, $data->b2d441, $data->b2d442, $data->b2d5,
+            $data->b2d6, $data->b2e11a, $data->b2e11b, $data->b2e12a, $data->b2e12b,
+            $data->b2e13a, $data->b2e13b, $data->b2e21, $data->b2e22, $data->b2e23,
+            $data->b2e3
+        ])->filter(function ($value) {
+            return !is_null($value); // Count values that are not null
+        })->count();
+
+         // Define total_fields
+         $data->total_fields = 46; // Adjust this value based on the number of fields
+
+         // Calculate progress_percentage
+         $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+ 
+         $data->save();
+ 
+         return redirect()->back()->with(['success' => 'Data saved successfully']);
+     }
+
+     public function storeBroC(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'c1' => 'nullable|integer',
+            'c1_remarks' => 'nullable|string',
+            'c2' => 'nullable|integer',
+            'c2_remarks' => 'nullable|string',
+            'c31' => 'nullable|integer',
+            'c31_remarks' => 'nullable|string',
+            'c32' => 'nullable|integer',
+            'c32_remarks' => 'nullable|string',
+            'c33' => 'nullable|integer',
+            'c33_remarks' => 'nullable|string',
+            'c411' => 'nullable|integer',
+            'c411_remarks' => 'nullable|string',
+            'c412' => 'nullable|integer',
+            'c412_remarks' => 'nullable|string',
+            'c421' => 'nullable|integer',
+            'c421_remarks' => 'nullable|string',
+            'c422' => 'nullable|integer',
+            'c422_remarks' => 'nullable|string',
+            'c431' => 'nullable|integer',
+            'c431_remarks' => 'nullable|string',
+            'c432' => 'nullable|integer',
+            'c432_remarks' => 'nullable|string',
+            'c5' => 'nullable|integer',
+            'c5_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = BroCExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->c1, $data->c2, $data->c31, $data->c32, $data->c33,
+            $data->c411, $data->c412, $data->c421, $data->c422,
+            $data->c431, $data->c432, $data->c5
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->c1, $data->c2, $data->c31, $data->c32, $data->c33,
+            $data->c411, $data->c412, $data->c421, $data->c422,
+            $data->c431, $data->c432, $data->c5
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 12; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success', 'Data saved successfully']);
+    }
+
+    public function storeBroD(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'd1' => 'nullable|integer',
+            'd1_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = BroDExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->d1
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->d1
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 1; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
+    }
+
+    public function storeBroE(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $validator_id = Auth::user()->id;
+
+        $validated = $request->validate([
+            'user_id' => 'nullable|integer',
+            'validator_id' => 'nullable|integer',
+            'e1' => 'nullable|integer',
+            'e1_remarks' => 'nullable|string',
+        ]);
+
+        $validated['validator_id'] = $validator_id;
+        $validated['user_id'] = $user_id;
+
+        $data = BroEExternal::updateOrCreate(
+            ['user_id' => $user_id, 'validator_id' => $validator_id],
+            $validated
+        );
+
+        // Calculate overall_total_score
+        $data->overall_total_score = collect([
+            $data->e1
+        ])->filter()->sum();
+
+        // Calculate overall_total_filled
+        $data->overall_total_filled = collect([
+            $data->e1
+        ])->filter(function ($value) {
+            return !is_null($value); // Keep values that are not null
+        })->count();
+
+        // Define total_fields
+        $data->total_fields = 1; // Adjust this value if necessary
+
+        // Calculate progress_percentage
+        $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
+
+        $data->save();
+
+        return redirect()->back()->with(['success' => 'Data saved successfully']);
     }
    
 

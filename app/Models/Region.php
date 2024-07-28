@@ -2,6 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\External\BroAExternal;
+use App\Models\External\BroBExternal;
+use App\Models\External\BroCExternal;
+use App\Models\External\BroDExternal;
+use App\Models\External\BroEExternal;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -97,5 +102,31 @@ class Region extends Model
     {
         return $this->hasMany(RoFile::class, 'region_id');
     }
+
+    public function broA()
+    {
+        return $this->hasMany(BroAExternal::class, 'user_id');
+    }
+
+    public function broB()
+    {
+        return $this->hasMany(BroBExternal::class, 'user_id');
+    }
+
+    public function broC()
+    {
+        return $this->hasMany(BroCExternal::class, 'user_id');
+    }
+
+    public function broD()
+    {
+        return $this->hasMany(BroDExternal::class, 'user_id');
+    }
+
+    public function broE()
+    {
+        return $this->hasMany(BroEExternal::class, 'user_id');
+    }
+
 
 }

@@ -117,7 +117,9 @@
 
     
       
-      
+      <form id="saveChangesForm" method="POST" action="{{ route('storeBroE') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ $user_id }}">
     <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
         <div id="evaluated" class="tab-content">
             <table id="regionTable" class="mx-auto">
@@ -139,13 +141,13 @@
                         <td class="pb-4 text-center"></td>
                         <td class="pb-4 text-center">{{$piad->e1}}</td>
                         <td class="pb-4 text-center">{{$piad->e1_remarks}}</td>
-                        <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e" data-field="e">
+                        <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e1" data-field="e1">
                                         <option value="">Select score</option>
-                                        <option value="60"  {{ (isset($previousData->e) && $previousData->e == 60) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented.</option>
-                                        <option value="30"  {{ (isset($previousData->e) && $previousData->e == 30) ? 'selected' : '' }}>30 - No Communication Plan was prepared but activities were fully implemented.</option>
-                                        <option value="0"  {{ (isset($previousData->e) && $previousData->e == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
+                                        <option value="60"  {{ (isset($previousData->e1) && $previousData->e1 == 60) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented.</option>
+                                        <option value="30"  {{ (isset($previousData->e1) && $previousData->e1 == 30) ? 'selected' : '' }}>30 - No Communication Plan was prepared but activities were fully implemented.</option>
+                                        <option value="0"  {{ (isset($previousData->e1) && $previousData->e1 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                                     </select></td>
-                        <td class="pb-4 text-center"><input class="form-control mb-1" name="re_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->e_remarks) ? $previousData->e_remarks : '' }}"></td>
+                        <td class="pb-4 text-center"><input class="form-control mb-1" name="e1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->e1_remarks) ? $previousData->e1_remarks : '' }}"></td>
                     </tr>
                         
                     <tr>
@@ -154,15 +156,15 @@
                         <td class="pb-4"><b>Total Score</b></td>
                         <td class="pb-4 text-center">{{$nominee->criteria_e}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
-                        <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
+                        <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
 
                 </tbody>
                 </table>
-
+            </div>
         </div>
-    </div>
+    </form>
                 
     <main>
         <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">

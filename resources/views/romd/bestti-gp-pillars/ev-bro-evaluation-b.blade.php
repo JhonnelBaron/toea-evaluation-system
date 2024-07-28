@@ -117,7 +117,9 @@
 
     
       
-      
+    <form id="saveChangesForm" method="POST" action="{{ route('storeBroB') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ $user_id }}">
     <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
         <div id="evaluated" class="tab-content">
             <table id="regionTable" class="mx-auto">
@@ -149,7 +151,7 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1a" data-field="b1a">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b1a) && $previousData->b1a == 14) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="15"  {{ (isset($previousData->b1a) && $previousData->b1a == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
                                 <option value="0"  {{ (isset($previousData->b1a) && $previousData->b1a == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
@@ -169,8 +171,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1b" data-field="b1b">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b1b) && $previousData->b1b == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b1b) && $previousData->b1b == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1b) && $previousData->b1b == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1b) && $previousData->b1b == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b1b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1b_remarks) ? $previousData->b1b_remarks : '' }}"></td>
@@ -189,8 +191,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1c" data-field="b1c">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b1c) && $previousData->b1c == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100%</option>
-                                <option value="20"  {{ (isset($previousData->b1c) && $previousData->b1c == 40) ? 'selected' : '' }}>20 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1c) && $previousData->b1c == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100%</option>
+                                <option value="0"  {{ (isset($previousData->b1c) && $previousData->b1c == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b1c_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1c_remarks) ? $previousData->b1c_remarks : '' }}"></td>
@@ -209,8 +211,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1d" data-field="b1d">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b1d) && $previousData->b1d == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b1d) && $previousData->b1d == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1d) && $previousData->b1d == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1d) && $previousData->b1d == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b1d_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1d_remarks) ? $previousData->b1d_remarks : '' }}"></td>
@@ -229,8 +231,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1e" data-field="b1e">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b1e) && $previousData->b1e == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b1e) && $previousData->b1e == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b1e) && $previousData->b1e == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1e) && $previousData->b1e == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b1e_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1e_remarks) ? $previousData->b1e_remarks : '' }}"></td>
@@ -253,8 +255,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a1" data-field="b2a1">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a1_remarks) ? $previousData->b2a1_remarks : '' }}"></td>
@@ -274,8 +276,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a2" data-field="b2a2">
                                 <option value="">Select Score</option>
-                                <option value="10"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 40) ? 'selected' : '' }}>10 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
-                                <option value="0"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 40) ? 'selected' : '' }}>0 - Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
+                                <option value="10"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 10) ? 'selected' : '' }}>10 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
+                                <option value="0"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 0) ? 'selected' : '' }}>0 - Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a2_remarks) ? $previousData->b2a2_remarks : '' }}"></td>
@@ -321,9 +323,9 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a41" data-field="b2a41">
                                 <option value="">Select Score</option>
-                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>6 - The Region participated in ASC and/or World Skills Competition</option>
-                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>6 - The Region participated in PNSC</option>
-                                <option value="0"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 40) ? 'selected' : '' }}>0 - The Region did not participate in any of the competition</option>
+                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 6) ? 'selected' : '' }}>6 - The Region participated in ASC and/or World Skills Competition</option>
+                                <option value="6"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 6) ? 'selected' : '' }}>6 - The Region participated in PNSC</option>
+                                <option value="0"  {{ (isset($previousData->b2a41) && $previousData->b2a41 == 0) ? 'selected' : '' }}>0 - The Region did not participate in any of the competition</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a41_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a41_remarks) ? $previousData->b2a41_remarks : '' }}"></td>
@@ -343,8 +345,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a42" data-field="b2a42">
                                 <option value="">Select Score</option>
-                                <option value="7"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 40) ? 'selected' : '' }}>7 - The Region received award/recognition at the national level</option>
-                                <option value="0"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
+                                <option value="7"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 7) ? 'selected' : '' }}>7 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2a42) && $previousData->b2a42 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a42_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a42_remarks) ? $previousData->b2a42_remarks : '' }}"></td>
@@ -364,8 +366,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a43" data-field="b2a43">
                                 <option value="">Select Score</option>
-                                <option value="12"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 40) ? 'selected' : '' }}>12 - The Region received award/recognition at the international level</option>
-                                <option value="0"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
+                                <option value="12"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 12) ? 'selected' : '' }}>12 - The Region received award/recognition at the international level</option>
+                                <option value="0"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a43_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a43_remarks) ? $previousData->b2a43_remarks : '' }}"></td>
@@ -386,8 +388,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b1" data-field="b2b1">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 10) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2b1) && $previousData->b2b1 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -408,8 +410,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b2" data-field="b2b2">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 40) ? 'selected' : '' }}>10 - At least 7 programs provided to special clients</option>
-                                <option value="0"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 40) ? 'selected' : '' }}>0 - Less than 7 programs provided to special clients</option>
+                                <option value="10"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 10) ? 'selected' : '' }}>10 - At least 7 programs provided to special clients</option>
+                                <option value="0"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 0) ? 'selected' : '' }}>0 - Less than 7 programs provided to special clients</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -430,8 +432,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b3" data-field="b2b3">
                                 <option value="">Select score</option>
-                                <option value="35"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 40) ? 'selected' : '' }}>35 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="35"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 35) ? 'selected' : '' }}>35 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2b3) && $previousData->b2b3 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -452,8 +454,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b4" data-field="b2b4">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 40) ? 'selected' : '' }}>10 - At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
-                                <option value="0"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 40) ? 'selected' : '' }}>0 - Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="10"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 10) ? 'selected' : '' }}>10 - At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="0"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 0) ? 'selected' : '' }}>0 - Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -474,8 +476,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b5" data-field="b2b5">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 40) ? 'selected' : '' }}>10 - All TTIs and the PO have conducted programs/activities related to GAD</option>
-                                <option value="0"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 40) ? 'selected' : '' }}>0 - Not all TTIs and the PO have conducted programs/activities related to GAD</option>
+                                <option value="10"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 10) ? 'selected' : '' }}>10 - All TTIs and the PO have conducted programs/activities related to GAD</option>
+                                <option value="0"  {{ (isset($previousData->b2b5) && $previousData->b2b5 == 0) ? 'selected' : '' }}>0 - Not all TTIs and the PO have conducted programs/activities related to GAD</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -498,8 +500,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c1" data-field="b2c1">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c1) && $previousData->b2c1 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -520,8 +522,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c2" data-field="b2c2">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c2) && $previousData->b2c2 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -542,8 +544,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c3" data-field="b2c3">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c3) && $previousData->b2c3 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -564,8 +566,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c4" data-field="b2c4">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c4) && $previousData->b2c4 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -586,8 +588,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c5" data-field="b2c5">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 40) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="15"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2c5) && $previousData->b2c5 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -608,8 +610,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c6" data-field="b2c6">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 40) ? 'selected' : '' }}>10 - At least 3 Assessment Centers for NC Level IV Qualifications (Large Regions)</option>
-                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 40) ? 'selected' : '' }}>0 - Less than 3 Assessment Centers for NC Level IV Qualifications</option>
+                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 10) ? 'selected' : '' }}>10 - At least 3 Assessment Centers for NC Level IV Qualifications (Large Regions)</option>
+                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 0) ? 'selected' : '' }}>0 - Less than 3 Assessment Centers for NC Level IV Qualifications</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -632,8 +634,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d1" data-field="b2d1">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 10) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d1) && $previousData->b2d1 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -654,8 +656,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d2" data-field="b2d2">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 40) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="10"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 10) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d2) && $previousData->b2d2 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -678,8 +680,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d31" data-field="b2d31">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 40) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="5"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 5) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d31) && $previousData->b2d31 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -700,8 +702,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d32" data-field="b2d32">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 40) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 40) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="5"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 5) ? 'selected' : '' }}>5 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b2d32) && $previousData->b2d32 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -724,8 +726,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d411" data-field="b2d411">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 40) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (Wage-employed)</option>
-                                <option value="0"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 40) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (Wage-employed)</option>
+                                <option value="5"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 5) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (Wage-employed)</option>
+                                <option value="0"  {{ (isset($previousData->b2d411) && $previousData->b2d411 == 0) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (Wage-employed)</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -746,8 +748,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d412" data-field="b2d412">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
-                                <option value="0"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 10) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d412) && $previousData->b2d412 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -770,8 +772,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d421" data-field="b2d421">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 40) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (self-employed)</option>
-                                <option value="0"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 40) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (self-employed)</option>
+                                <option value="5"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 5) ? 'selected' : '' }}>5 - The Region participated in TESDA Idol (self-employed)</option>
+                                <option value="0"  {{ (isset($previousData->b2d421) && $previousData->b2d421 == 0) ? 'selected' : '' }}>0 - The Region did not participate in TESDA Idol (self-employed)</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -792,8 +794,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d422" data-field="b2d422">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
-                                <option value="0"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 10) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d422) && $previousData->b2d422 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -815,8 +817,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d431" data-field="b2d431" type="text">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 40) ? 'selected' : '' }}>5 - The Region participated in Kabalikat Awards</option>
-                                <option value="0"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 40) ? 'selected' : '' }}>0 - The Region did not participate in Kabalikat Awards</option>
+                                <option value="5"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 5) ? 'selected' : '' }}>5 - The Region participated in Kabalikat Awards</option>
+                                <option value="0"  {{ (isset($previousData->b2d431) && $previousData->b2d431 == 0) ? 'selected' : '' }}>0 - The Region did not participate in Kabalikat Awards</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -837,8 +839,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d432" data-field="b2d432" type="text">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
-                                <option value="0"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 10) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d432) && $previousData->b2d432 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -860,8 +862,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d441" data-field="b2d441" type="text">
                                 <option value="">Select score</option>
-                                <option value="5"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 40) ? 'selected' : '' }}>5 - The Region participated in the National Level Tagsanay Awards</option>
-                                <option value="0"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 40) ? 'selected' : '' }}>0 - The Region did not participate in the National Level Tagsanay Awards</option>
+                                <option value="5"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 5) ? 'selected' : '' }}>5 - The Region participated in the National Level Tagsanay Awards</option>
+                                <option value="0"  {{ (isset($previousData->b2d441) && $previousData->b2d441 == 0) ? 'selected' : '' }}>0 - The Region did not participate in the National Level Tagsanay Awards</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -882,8 +884,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d442" data-field="b2d442" type="text">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 40) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
-                                <option value="0"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 40) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
+                                <option value="10"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 10) ? 'selected' : '' }}>10 - The Region received award/recognition at the national level</option>
+                                <option value="0"  {{ (isset($previousData->b2d442) && $previousData->b2d442 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition at the national level</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -906,8 +908,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d5" data-field="b2d5" type="text">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 40) ? 'selected' : '' }}>15 - For Large Region: Partnerships with three (3) or more industries/private companies and with continuing tie-ups for the last two (2) years with the same industries/companies</option>
-                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 40) ? 'selected' : '' }}>0 - For Small Region: Partnership with more than one (1) industry/private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
+                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 15) ? 'selected' : '' }}>15 - For Large Region: Partnerships with three (3) or more industries/private companies and with continuing tie-ups for the last two (2) years with the same industries/companies</option>
+                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 0) ? 'selected' : '' }}>0 - For Small Region: Partnership with more than one (1) industry/private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -929,8 +931,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d6" data-field="b2d6" type="text">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 40) ? 'selected' : '' }}>10 - At least 30 new programs for Large Category</option>
-                                <option value="0"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 40) ? 'selected' : '' }}>0 - Below the minimum number of programs per category</option>
+                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 10) ? 'selected' : '' }}>10 - At least 30 new programs for Large Category</option>
+                                <option value="0"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 0) ? 'selected' : '' }}>0 - Below the minimum number of programs per category</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -956,8 +958,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11a" data-field="b2e11a">
                                 <option value="">Select score</option>
-                                <option value="6"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 40) ? 'selected' : '' }}>6 - The Region nominated TVI/s for APACC accreditation</option>
-                                <option value="0"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 40) ? 'selected' : '' }}>0 - The Region did not nominate any TVI/s for APACC accreditation</option>
+                                <option value="6"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 6) ? 'selected' : '' }}>6 - The Region nominated TVI/s for APACC accreditation</option>
+                                <option value="0"  {{ (isset($previousData->b2e11a) && $previousData->b2e11a == 0) ? 'selected' : '' }}>0 - The Region did not nominate any TVI/s for APACC accreditation</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e11a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e11a_remarks) ? $previousData->b2e11a_remarks : '' }}"></td>
@@ -978,8 +980,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11b" data-field="b2e11b">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 40) ? 'selected' : '' }}>10 - The nominated TVI/s of the Region received APACC accreditation</option>
-                                <option value="0"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 40) ? 'selected' : '' }}>0 - The nominated TVI/s of the Region did not receive APACC accreditation</option>
+                                <option value="10"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 10) ? 'selected' : '' }}>10 - The nominated TVI/s of the Region received APACC accreditation</option>
+                                <option value="0"  {{ (isset($previousData->b2e11b) && $previousData->b2e11b == 0) ? 'selected' : '' }}>0 - The nominated TVI/s of the Region did not receive APACC accreditation</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e11b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e11b_remarks) ? $previousData->b2e11b_remarks : '' }}"></td>
@@ -1001,8 +1003,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12a" data-field="b2e12a">
                                 <option value="">Select score</option>
-                                <option value="6"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 40) ? 'selected' : '' }}>6 - The Region participated in STAR Program</option>
-                                <option value="0"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 40) ? 'selected' : '' }}>0 - The Region did not participate in STAR Program</option>
+                                <option value="6"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 6) ? 'selected' : '' }}>6 - The Region participated in STAR Program</option>
+                                <option value="0"  {{ (isset($previousData->b2e12a) && $previousData->b2e12a == 0) ? 'selected' : '' }}>0 - The Region did not participate in STAR Program</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e12a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e12a_remarks) ? $previousData->b2e12a_remarks : '' }}"></td>
@@ -1023,10 +1025,10 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12b" data-field="b2e12b">
                                 <option value="">Select score</option>
-                                <option value="20"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>20 - The Region received at least one THREE STAR Level Award</option>
-                                <option value="10"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>10 - The Region received at least one TWO STAR Level Award</option>
-                                <option value="5"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>5 - The Region received at least one ONE STAR Level Award</option>
-                                <option value="0"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 40) ? 'selected' : '' }}>0 - The Region did not receive a STAR Level Award</option>
+                                <option value="20"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 20) ? 'selected' : '' }}>20 - The Region received at least one THREE STAR Level Award</option>
+                                <option value="10"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 10) ? 'selected' : '' }}>10 - The Region received at least one TWO STAR Level Award</option>
+                                <option value="5"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 5) ? 'selected' : '' }}>5 - The Region received at least one ONE STAR Level Award</option>
+                                <option value="0"  {{ (isset($previousData->b2e12b) && $previousData->b2e12b == 0) ? 'selected' : '' }}>0 - The Region did not receive a STAR Level Award</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e12b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e12b_remarks) ? $previousData->b2e12b_remarks : '' }}"></td>
@@ -1048,8 +1050,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13a" data-field="b2e13a">
                                 <option value="">Select score</option>
-                                <option value="8"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 40) ? 'selected' : '' }}>8 - All qualified TTIs of the region applied for the TESDA Seal of Integrity</option>
-                                <option value="0"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 40) ? 'selected' : '' }}>0 - Not all qualified TTIs of the region applied for TESDA Seal of Integrity</option>
+                                <option value="8"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 8) ? 'selected' : '' }}>8 - All qualified TTIs of the region applied for the TESDA Seal of Integrity</option>
+                                <option value="0"  {{ (isset($previousData->b2e13a) && $previousData->b2e13a == 0) ? 'selected' : '' }}>0 - Not all qualified TTIs of the region applied for TESDA Seal of Integrity</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e13a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e13a_remarks) ? $previousData->b2e13a_remarks : '' }}"></td>
@@ -1070,8 +1072,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e13b" data-field="b2e13b">
                                 <option value="">Select score</option>
-                                <option value="8" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 40) ? 'selected' : '' }}>8 - At least 80% of the TTIs of the Region have been awarded with the TESDA Seal of Integrity</option>
-                                <option value="0" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 40) ? 'selected' : '' }}>0 - Below 80% TTIs of the Region have been awarded with TESDA Seal of Integrity</option>
+                                <option value="8" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 8) ? 'selected' : '' }}>8 - At least 80% of the TTIs of the Region have been awarded with the TESDA Seal of Integrity</option>
+                                <option value="0" {{ (isset($previousData->b2e13b) && $previousData->b2e13b == 0) ? 'selected' : '' }}>0 - Below 80% TTIs of the Region have been awarded with TESDA Seal of Integrity</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e13b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e13b_remarks) ? $previousData->b2e13b_remarks : '' }}"></td>
@@ -1108,9 +1110,9 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e21" data-field="b2e21">
                                 <option value="">Select score</option>
-                                <option value="8" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>8 - The Region has at least four (4) active IQA Lead Auditors/Auditors</option>
-                                <option value="4" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>4 - The Region has two (2) to three (3) active IQA Lead Auditors/ Auditors</option>
-                                <option value="0" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 40) ? 'selected' : '' }}>0 - The Region has less than two (2) active IQA Lead Auditors/ Auditors</option>
+                                <option value="8" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 8) ? 'selected' : '' }}>8 - The Region has at least four (4) active IQA Lead Auditors/Auditors</option>
+                                <option value="4" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 4) ? 'selected' : '' }}>4 - The Region has two (2) to three (3) active IQA Lead Auditors/ Auditors</option>
+                                <option value="0" {{ (isset($previousData->b2e21) && $previousData->b2e21 == 0) ? 'selected' : '' }}>0 - The Region has less than two (2) active IQA Lead Auditors/ Auditors</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e21_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e21_remarks) ? $previousData->b2e21_remarks : '' }}"></td>
@@ -1131,9 +1133,9 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e22" data-field="b2e22">
                                 <option value="">Select score</option>
-                                <option value="8" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>8 - The Region submitted report/doc ahead of deadline</option>
-                                <option value="4" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>4 - The Region submitted report/docs on set deadline</option>
-                                <option value="0" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 40) ? 'selected' : '' }}>0 - The Region submitted report/doc after set deadline</option>
+                                <option value="8" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 8) ? 'selected' : '' }}>8 - The Region submitted report/doc ahead of deadline</option>
+                                <option value="4" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 4) ? 'selected' : '' }}>4 - The Region submitted report/docs on set deadline</option>
+                                <option value="0" {{ (isset($previousData->b2e22) && $previousData->b2e22 == 0) ? 'selected' : '' }}>0 - The Region submitted report/doc after set deadline</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e22_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e22_remarks) ? $previousData->b2e22_remarks : '' }}"></td>
@@ -1179,8 +1181,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e3" data-field="b2e3">
                                 <option value="">Select score</option>
-                                <option value="15" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 40) ? 'selected' : '' }}>15 - All TTIs in the Region have implemented their plans and projects related to Green Practices</option>
-                                <option value="0" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 40) ? 'selected' : '' }}>0 - Not all TTIs in the Region have implemented their plans and projects related to Green Practices</option>
+                                <option value="15" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 15) ? 'selected' : '' }}>15 - All TTIs in the Region have implemented their plans and projects related to Green Practices</option>
+                                <option value="0" {{ (isset($previousData->b2e3) && $previousData->b2e3 == 0) ? 'selected' : '' }}>0 - Not all TTIs in the Region have implemented their plans and projects related to Green Practices</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e3_remarks) ? $previousData->b2e3_remarks : '' }}"></td>
@@ -1194,7 +1196,7 @@
                         <td class="pb-4"><b>Total Score</b></td>
                         <td class="pb-4 text-center">{{$nominee->criteria_b}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
-                        <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
+                        <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
 
@@ -1202,6 +1204,9 @@
 
                 </tbody>
             </table>
+        </div>
+    </div>
+</form>
             
             <main>
                 <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">

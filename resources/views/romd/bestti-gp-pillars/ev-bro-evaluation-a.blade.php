@@ -117,7 +117,9 @@
 
     
       
-      
+    <form id="saveChangesForm" method="POST" action="{{ route('storeBroA') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ $user_id }}">
     <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
         <div id="evaluated" class="tab-content">
             <table id="regionTable" class="mx-auto">
@@ -333,7 +335,7 @@
                         <td class="pb-4"><b>Total Score</b></td>
                         <td class="pb-4 text-center">{{$nominee->criteria_a}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
-                        <td class="pb-4"><span id="totalScore">DUMMY SCORE</span></td>
+                        <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
 
@@ -341,6 +343,9 @@
 
                 </tbody>
             </table>
+        </div>
+    </div>
+</form>
             
             <main>
                 <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
