@@ -77,7 +77,7 @@
                 </svg>
                 <span class="text-xl">Back</span>
             </button>
-            <h1 class="text-gray-800 font-bold text-3xl">BEST REGIONAL OFFICE</h1>
+            <h1 class="text-gray-800 font-bold text-3xl">BEST REGIONAL OFFICE - {{$nominee->province}}</h1>
         </div>
         <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
     </div>
