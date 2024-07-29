@@ -138,8 +138,10 @@
                         
 
                     <tr>
+                        <td class="font-bold">C. Administrative and Support Services</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C. Administrative and Support Services = <i>125</i><br>
                             C.1. Budget Utilization Rate (BUR)
                         </td>
                         <td class="pb-8">
@@ -166,7 +168,8 @@
                     <!-- Data Row for Implementation of Agency Action Plan -->
                     <tr>
                         <td class="pb-8">
-                            C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation = <i>125</i><br>
+                            C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation<br>
+                            <i>80% acted upon (either partially or fully implemented)</i>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p>
@@ -190,13 +193,16 @@
                     </tr>
     
                     <!-- Data Row for Staff Development Program -->
+
+                    <tr>
+                        <td>C.3. Staff Development Program</td>
+                    </tr>
                     <tr>
                         <td class="pb-8">
-                            C.3. Staff Development Program = <i>35</i><br>
                             C.3.1. Employees who have attended SDP have implemented their RE-Entry Plans as scheduled
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Regional/Provincial Work Force Development Plan (WFDP), Certificates of trainings attended, Copies of REAPs</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: "Regional Work Force Development Plan (WFDP) Certificates of trainings attended</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c31}}</td>
@@ -230,6 +236,7 @@
                             <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32">
                                 <option value="">Select score</option>
                                 <option value="15" {{ (isset($previousData->c32) && $previousData->c32 == 15) ? 'selected' : '' }}>15 - 100% of Employees were provided with training opportunities</option>
+                                <option value="5" {{ (isset($previousData->c32) && $previousData->c32 == 5) ? 'selected' : '' }}>5 - 75%-99% of Employees were provided with training opportunities</option>
                                 <option value="0" {{ (isset($previousData->c32) && $previousData->c32 == 0) ? 'selected' : '' }}>0 - 74% and below of Employees were provided with training opportunities</option>
                             </select>
                         </td>
@@ -245,7 +252,10 @@
                             C.3.3. Percentage of Personnel Attendance to Finance related training programs
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification:<br>
+                                - List of plantilla positions per region<br>
+                                - Certificates of training attended<br>
+                                list of training programs, certified correct by HRMO, RO plus PO (For BRO only)</p>
                         </td>
                         <td class="pb-8"></td> 
                         <td class="pb-4 text-center">{{$fms->c33}}</td>
@@ -256,7 +266,7 @@
                                 <option value="6" {{ (isset($previousData->c33) && $previousData->c33 == 6) ? 'selected' : '' }}>6 - 80% of regional finance and budget officers/personnel attended finance related training programs</option>
                                 <option value="3" {{ (isset($previousData->c33) && $previousData->c33 == 3) ? 'selected' : '' }}>3 - 40% to 79% of regional finance and budget officers/personnel attended finance related training programs</option>
                                 <option value="0" {{ (isset($previousData->c33) && $previousData->c33 == 0) ? 'selected' : '' }}>0 - Less than 40% of regional finance and budget officers/personnel attended finance related training programs</option>
-                                <option value="1" {{ (isset($previousData->c33) && $previousData->c33 == 1) ? 'selected' : '' }}>1 - Plus point for RO initiated Finance-related training programs</option>
+                                <option value="1" {{ (isset($previousData->c33) && $previousData->c33 == 1) ? 'selected' : '' }}>1 - Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel </option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -267,9 +277,13 @@
     
                     <!-- Data Row for Model Employee Awards -->
                     <tr>
+                        <td class="font-bold">C.4. Model Employee Awards<br></td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">C.4.1. Model Employee for Category I Position<br></td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4. Model Employee Awards<br>
-                            C.4.1. Model Employee for Category I Position<br>
                             C.4.1.1. Participation
                         </td>
                         <td class="pb-8">
@@ -297,7 +311,7 @@
                             C.4.1.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c412}}</td>
@@ -317,12 +331,14 @@
     
                     <!-- Data Row for Model Employee for Category II -->
                     <tr>
+                        <td class="font-bold">C.4.2. Model Employee for Category II Position</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4.2. Model Employee for Category II Position<br>
                             C.4.2.1. Participation
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c421}}</td>
@@ -346,7 +362,7 @@
                             C.4.2.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c422}}</td>
@@ -366,12 +382,14 @@
     
                     <!-- Data Row for Model Employee for Category III -->
                     <tr>
+                        <td class="font-bold">C.4.3. Model Employee for Category III Position</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4.3. Model Employee for Category III Position<br>
                             C.4.3.1. Participation
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c431}}</td>
@@ -395,7 +413,7 @@
                             C.4.3.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$as->c432}}</td>

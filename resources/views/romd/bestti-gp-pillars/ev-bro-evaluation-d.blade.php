@@ -137,8 +137,10 @@
 
 
                     <tr>
+                        <td class="font-bold">D. Reporting Efficiency</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8 pt-5">
-                            D. Reporting Efficiency<br>
                             D.1. Timeliness, Consistency and Accuracy
                         </td>
                         <td class="pb-8 pt-5">

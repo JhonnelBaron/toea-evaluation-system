@@ -60,6 +60,10 @@
             height: 15px;
             margin-right: 8px;
         }
+
+         .score-dropdown option {
+            white-space: pre-wrap; /* Ensure the text wraps within the options */
+        }
     </style>
 </head>
 <body>
@@ -130,17 +134,22 @@
                         <th class="border border-gray-300 p-2 w-24">View Attachment</th>
                         <th class="border border-gray-300 p-2 w-10">Secretariat Rating</th>
                         <th class="border border-gray-300 p-2 w-32">Remarks</th>
-                        <th class="border border-gray-300 p-2 w-4">External Validator Rating</th>
+                        <th class="border border-gray-300 p-2 w-32">External Validator Rating</th>
                         <th class="border border-gray-300 p-2 w-32">Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    <tr>
+                        <td class="font-bold">B. Implementation of TESD Programs</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold"> B.1. Performance based on the General Appropriations Act (GAA)</td>
+                    </tr>
 
                     <tr>
                         <td class="pb-8">
-                            <b>B. Implementation of TESD Programs</b><br>
-                            B.1. Performance based on the General Appropriations Act (GAA)<br>
-                            <span>B.1.A. Number of Provincial TESD plans formulated/updated</span>
+                            <span>B.1.A. Number of Regional and Provincial TESD plans formulated/updated</span>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
@@ -180,10 +189,10 @@
                     
                     <tr>
                         <td class="pb-8">
-                            <span>B.1.C. 100% of registered TVET programs audited<br>Customer Net Satisfaction Rating with minimum of 95%</span>
+                            <span>B.1.C. 100% of registered TVET programs audited</span>
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO <br> Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$co->b1c}}</td>
@@ -237,16 +246,100 @@
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b1e_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1e_remarks) ? $previousData->b1e_remarks : '' }}"></td>
                     </tr>
-                    
+
                     <tr>
                         <td class="pb-8">
-                            B.2. Implementation of the TESDA Corporate Plan 2018-2022<br>
-                            <hr>  
-                            B.2.A. Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness - SD 1<br><br>
-                            B.2.A.1. Advancement through Innovations and Researches
+                            <h5>B.1.F. 70% of TVET graduates that undergo assessment for certification<br></h5>
+                        </td>
+                        <td class="pb-8">
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of mandatory assessment from T2MIS</p>
+                        </td>
+                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$co->b1f}}</td>
+                        <td class="pb-4 text-center">{{$co->b1f_remarks}}</td>
+                        <td class="pb-8">
+                            <select class="form-control mb-1 score-dropdown"  name="b1f" data-field="b1f">
+                                <option value="">Select Score</option>
+                                <option value="15"  {{ (isset($previousData->b1f) && $previousData->b1f == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1f) && $previousData->b1f == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                            </select>
+                        </td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1f_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1f_remarks) ? $previousData->b1f_remarks : '' }}"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="pb-8">
+                            <h5>B.1.G. 60% of TVET programs with tie-ups to industry</h5>
+                        </td>
+                        <td class="pb-8">
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on duly accomplished TESDA TVET Partnership Monitoring System (TTPMS)</p>
+                        </td>
+                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$plo->b1g}}</td>
+                        <td class="pb-4 text-center">{{$plo->b1g_remarks}}</td>
+                        <td class="pb-8">
+                            <select class="form-control mb-1 score-dropdown"  name="b1g" data-field="b1g">
+                                <option value="">Select Score</option>
+                                <option value="10"  {{ (isset($previousData->b1g) && $previousData->b1g == 15) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1g) && $previousData->b1g == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                            </select>
+                        </td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1g_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1g_remarks) ? $previousData->b1g_remarks : '' }}"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="pb-8">
+                            <h5>B.1.H. Number of graduates from TESD Scholarship Programs</h5>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report generated from the SPMOR</p>
+                        </td>
+                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$romo->b1h}}</td>
+                        <td class="pb-4 text-center">{{$romo->b1h_remarks}}</td>
+                        <td class="pb-8">
+                            <select class="form-control mb-1 score-dropdown"  name="b1h" data-field="b1h">
+                                <option value="">Select Score</option>
+                                <option value="35"  {{ (isset($previousData->b1h) && $previousData->b1h == 35) ? 'selected' : '' }}>35 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1h) && $previousData->b1h == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                            </select>
+                        </td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1h_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1h_remarks) ? $previousData->b1h_remarks : '' }}"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="pb-8">
+                            <h5>B.1.I. 76.30% of graduates from technical education and skills development scholarship programs that were employed</h5>
+                        </td>
+                        <td class="pb-8">
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on Result on the Survey on Employability of TVET graduates under TWSP, PESFA and STEP (SETG)</p>
+                        </td>
+                        <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$po->b1i}}</td>
+                        <td class="pb-4 text-center">{{$po->b1i_remarks}}</td>
+                        <td class="pb-8">
+                            <select class="form-control mb-1 score-dropdown"  name="b1i" data-field="b1i">
+                                <option value="">Select Score</option>
+                                <option value="15"  {{ (isset($previousData->b1i) && $previousData->b1i == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="0"  {{ (isset($previousData->b1i) && $previousData->b1i == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                            </select>
+                        </td>
+                        <td class="pb-8"><input class="form-control mb-1" name="b1i_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1i_remarks) ? $previousData->b1i_remarks : '' }}"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2. Implementation of the TESDA Corporate Plan</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">B.2.A.  Provide Quality Technical Education and Skills Development and Certification for Global Competitiveness</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="pb-8">
+                            B.2.A.1. Advancement through Innovations and Researches
+                        </td>
+                        <td class="pb-8">
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Researches submitted to the NITESD</p>
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
@@ -255,8 +348,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a1" data-field="b2a1">
                                 <option value="">Select Score</option>
-                                <option value="15"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                <option value="0"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
+                                <option value="8"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 8) ? 'selected' : '' }}>8 - The Region has submitted policy or technology research/es </option>
+                                <option value="0"  {{ (isset($previousData->b2a1) && $previousData->b2a1 == 0) ? 'selected' : '' }}>0 - The Region has not suibmitted policy or technology research/es</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a1_remarks) ? $previousData->b2a1_remarks : '' }}"></td>
@@ -267,16 +360,15 @@
                             B.2.A.2. Implementation of Recognized/aligned PQF level 4 or Level 5 programs
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Recognition for PQF Level 4 or Level 5; List of enrollees</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: TAS' Certificates of Recognition for PQF Level 4 or Level 5;</p>
                         </td>
-                        <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$nitesd->b2a2}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2a2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a2" data-field="b2a2">
                                 <option value="">Select Score</option>
-                                <option value="10"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 10) ? 'selected' : '' }}>10 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
+                                <option value="8"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 8) ? 'selected' : '' }}>8 - All TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
                                 <option value="0"  {{ (isset($previousData->b2a2) && $previousData->b2a2 == 0) ? 'selected' : '' }}>0 - Not all TAS in the Region have at least 1 recognized/aligned PQF level 4 or level 5 programs</option>
                             </select>
                         </td>
@@ -286,12 +378,10 @@
 
                     <tr>
                         <td class="pb-8">
-                            <h5>
-                                B.2.A.3. Digitization
-                            </h5>
+                            B.2.A.3. Digitalization of TVET
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report on the digitization initiative or digital transformation of external services</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Documentation Report after implementation<br>Submitted plans to ICTO</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$icto->b2a3}}</td>
@@ -307,14 +397,16 @@
                         <td class="pb-8"><input class="form-control mb-1" name="b2a3_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a3_remarks) ? $previousData->b2a3_remarks : '' }}"></td>
                     </tr>
 
+                    <tr>
+                        <td class="font-bold">B.2.A.4 Participation and Recognition from Skills Competition</td>
+                    </tr>
 
                     <tr>
                         <td class="pb-8">
-                            B.2.A.4 Participation and Recognition from Skills Competition<br>
                             B.2.A.4.1 Participation
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports / Official list of winners</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports Official list of winners</p>
                         </td>
                         <!-- Added one more <td class="pb-8"> element -->
                         <td class="pb-8"></td>
@@ -366,17 +458,19 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2a43" data-field="b2a43">
                                 <option value="">Select Score</option>
-                                <option value="12"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 12) ? 'selected' : '' }}>12 - The Region received award/recognition at the international level</option>
+                                <option value="10"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 10) ? 'selected' : '' }}>10 - The Region received award/recognition at the international level</option>
                                 <option value="0"  {{ (isset($previousData->b2a43) && $previousData->b2a43 == 0) ? 'selected' : '' }}>0 - The Region did not receive award/recognition</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2a43_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2a43_remarks) ? $previousData->b2a43_remarks : '' }}"></td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.B. Intensify Implementation of Quality Technical Education and Skills Development and Certification For Social Equity and Poverty Reduction - SD 2</h5>
-                            <hr>
                             <h5>B.2.B.1. TVET enrolment and graduates by delivery mode- community-based</h5>
                         </td>
                         <td class="pb-8">
@@ -410,8 +504,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b2" data-field="b2b2">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 10) ? 'selected' : '' }}>10 - At least 7 programs provided to special clients</option>
-                                <option value="0"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 0) ? 'selected' : '' }}>0 - Less than 7 programs provided to special clients</option>
+                                <option value="10"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 10) ? 'selected' : '' }}>10 - At least 7 programs provided to special clients (IPs, Drug Dependents, PDLs and/or their families, KIA/WIA, PWDs, Women)</option>
+                                <option value="0"  {{ (isset($previousData->b2b2) && $previousData->b2b2 == 0) ? 'selected' : '' }}>0 - Less than 7 programs provided to special clients (IPs, Drug Dependents, PDLs and/or their families, KIA/WIA, PWDs, Women)  </option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -454,8 +548,8 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b4" data-field="b2b4">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 10) ? 'selected' : '' }}>10 - At least 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
-                                <option value="0"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 0) ? 'selected' : '' }}>0 - Less than 10% of the municipalities in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="10"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 10) ? 'selected' : '' }}>10 - At least 10% of the municipalities in each Province in the Region have been given orientation on Devolution of TVET</option>
+                                <option value="0"  {{ (isset($previousData->b2b4) && $previousData->b2b4 == 0) ? 'selected' : '' }}>0 - Less than 10% of the municipalities in each Province in the Region have been given orientation on Devolution of TVET</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -468,7 +562,7 @@
                             <h5>B.2.B.5. Communications/programs/advocacy on Gender and Development (GAD)</h5>
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: After activity report on GAD related programs conducted</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$po->b2b5}}</td>
@@ -484,11 +578,13 @@
                             <input class="form-control mb-1" name="b2b5_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2b5_remarks) ? $previousData->b2b5_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.C. Upscale Technical Education and Skills Development and Certification to Higher PQF Levels</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.C. Upscale Technical Education and Skills Development and Certification to Higher PQF Levels - SD3</h5>
-                            <hr>
                             <h5>B.2.C.1. Number of Programs Registered</h5>
                         </td>
                         <td class="pb-8">
@@ -610,19 +706,37 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2c6" data-field="b2c6">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 10) ? 'selected' : '' }}>10 - At least 3 Assessment Centers for NC Level IV Qualifications (Large Regions)</option>
-                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 0) ? 'selected' : '' }}>0 - Less than 3 Assessment Centers for NC Level IV Qualifications</option>
+                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 10) ? 'selected' : '' }}>
+                                    10 - For Large Regions: At least 3 Assessment Centers for NC Level IV Qualifications
+                                </option>
+                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 10) ? 'selected' : '' }}>
+                                    10 - For Medium Regions: At least 2 Assessment Centers for NC Level IV Qualifications
+                                </option>
+                                <option value="10"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 10) ? 'selected' : '' }}>
+                                    10 - For Small Regions: At least 1 Assessment Centers for NC Level IV Qualifications
+                                </option>
+                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 0) ? 'selected' : '' }}>
+                                    0 - For Large Regions: Less than 3 Assessment Centers for NC Level IV Qualifications
+                                </option>
+                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 0) ? 'selected' : '' }}>
+                                    0 - For Medium Regions: Less than 2 Assessment Centers for NC Level IV Qualifications
+                                </option>
+                                <option value="0"  {{ (isset($previousData->b2c6) && $previousData->b2c6 == 0) ? 'selected' : '' }}>
+                                    0 - For Small Regions: No Assessment Centers for NC Level IV Qualifications
+                                </option>
                             </select>
                         </td>
                         <td class="pb-8">
                             <input class="form-control mb-1" name="b2c6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2c6_remarks) ? $previousData->b2c6_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.D. Expand and Intensify Partnerships and Linkages with Industries and Other Stakeholders in the Area of TESD - SD4</h5>
-                            <hr>
                             <h5>B.2.D.1. TVET enrolment and graduates by delivery mode - institution-based</h5>
                         </td>
                         <td class="pb-8">
@@ -664,11 +778,16 @@
                             <input class="form-control mb-1" name="b2d2_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d2_remarks) ? $previousData->b2d2_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">
+                            <h5>B.2.D.3. World Cafe of Opportunities</h5>
+                        </td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.D.3. World Cafe of Opportunities</h5>
-                            <br>
+                         
                             <h5>B.2.D.3.1. Implementation of WCO</h5>
                         </td>
                         <td class="pb-8">
@@ -712,9 +831,15 @@
                     </tr>
                     
                     <tr>
+                        <td class="font-bold">B.2.D.4. Institutional Awards</td>
+                    </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.D.4.1. TESDA Idol (Wage-employed)</td>
+                    </tr>
+                    
+                    <tr>
                         <td class="pb-8">
-                            <h5>B.2.D.4. Institutional Awards</h5>
-                            <h5>B.2.D.4.1. TESDA Idol (Wage-employed)</h5>
                             <h5>B.2.D.4.1.1. Participation</h5>
                         </td>
                         <td class="pb-8">
@@ -740,7 +865,7 @@
                             <h5>B.2.D.4.1.2. Awards received</h5>
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$plo->b2d412}}</td>
@@ -756,11 +881,13 @@
                             <input class="form-control mb-1" name="b2d412_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d412_remarks) ? $previousData->b2d412_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.D.4.2. TESDA Idol (Self-employed)</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.D.4.2. TESDA Idol (Self-employed)</h5>
-                            <br>
                             <h5>B.2.D.4.2.1. Participation</h5>
                         </td>
                         <td class="pb-8">
@@ -802,10 +929,13 @@
                             <input class="form-control mb-1" name="b2d422_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d422_remarks) ? $previousData->b2d422_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.D.4.3. Kabalikat Awards</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.D.4.3. Kabalikat Awards</h5>
                             <h5>B.2.D.4.3.1. Participation</h5>
                         </td>
                         <td class="pb-8">
@@ -831,7 +961,7 @@
                             <h5>B.2.D.4.3.2. Awards received</h5>
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$plo->b2d432}}</td>
@@ -847,10 +977,13 @@
                             <input class="form-control mb-1" name="b2d432_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d432_remarks) ? $previousData->b2d432_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.D.4.4. Tagsanay</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>B.2.D.4.4. Tagsanay</h5>
                             <h5>B.2.D.4.4.1. Participation</h5>
                         </td>
                         <td class="pb-8">
@@ -896,8 +1029,8 @@
                     <tr>
                         <td class="pb-8">
                             <h5>B.2.D.5. Partnerships forged and implemented</h5>
-                            <p>To be measured in terms of resources and increase in program outputs</p>
-                            <p>CSR – partnership with private companies</p>
+                            <p><i>To be measured in terms of resources and increase in program outputs</i></p>
+                            <p><i>CSR – partnership with private companies</i></p>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p>
@@ -908,8 +1041,33 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d5" data-field="b2d5" type="text">
                                 <option value="">Select score</option>
-                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 15) ? 'selected' : '' }}>15 - For Large Region: Partnerships with three (3) or more industries/private companies and with continuing tie-ups for the last two (2) years with the same industries/companies</option>
-                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 0) ? 'selected' : '' }}>0 - For Small Region: Partnership with more than one (1) industry/private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
+                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 15) ? 'selected' : '' }}>
+                                    15 - For Large Region: Partnerships with three (3) or more industries / private companies and with continuing tie-ups for the last two (2) years with the same industries/companies;</option>
+                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 15) ? 'selected' : '' }}>
+                                    15- For Medium Region: Partnerships with two (2) or more industries / private companies and with continuing tie-ups for the last two (2) years with the same industries/companies;</option>
+                                <option value="15"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 15) ? 'selected' : '' }}>
+                                    15 - For Small Region: Partnership with more than one (1) industry / private company and with continuing tie-ups for the last two (2) years with the same industry/company</option>
+                                    
+                                <option value="10"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 10) ? 'selected' : '' }}>
+                                    10 - For Large Region: Partnerships with two (2) industries / private companies and with continuing tie-ups for the last two (2) years with the same industries/companies;</option>
+                                <option value="10"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 10) ? 'selected' : '' }}>
+                                    10 - For Medium Region: Partnerships with one (1) industry / private company and with continuing tie-ups for the last two (2) years with the same industries/companies;</option>
+                                <option value="10"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 10) ? 'selected' : '' }}>
+                                    10 - For Small Region: Partnership with one (1) industry / private company and with continuing tie-ups for the last one (1) year with the same industry/company</option>
+
+                                <option value="5"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 5) ? 'selected' : '' }}>
+                                    5 - For Large Region: Partnerships with two (2) industries / private companies and with continuing tie-ups for one (1) year with the same industries/companies;</option>
+                                <option value="5"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 5) ? 'selected' : '' }}>
+                                    5 - For Medium Region: Partnerships with one (1) industry / private company and with continuing tie-ups for one (1) year with the same industries/companies;</option>
+                                <option value="5"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 5) ? 'selected' : '' }}>
+                                    5 - For Small Region: Partnership with one new (1) industry / private company</option>
+
+                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 0) ? 'selected' : '' }}>
+                                    0 - For Large Region: Partnerships with less than two (2) industries / private companies;</option>
+                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 0) ? 'selected' : '' }}>
+                                    0 - For Medium Region: No Partnerships;</option>
+                                <option value="0"  {{ (isset($previousData->b2d5) && $previousData->b2d5 == 0) ? 'selected' : '' }}>
+                                    0 - For Small Region: No Partnership</option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -931,7 +1089,12 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2d6" data-field="b2d6" type="text">
                                 <option value="">Select score</option>
-                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 10) ? 'selected' : '' }}>10 - At least 30 new programs for Large Category</option>
+                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 10) ? 'selected' : '' }}>
+                                    10 - At least 30 new programs for Regions that belongs to the Large Category</option>
+                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 10) ? 'selected' : '' }}>
+                                    10 - At least 20 new programs for Regions that belong to the Medium Category</option>
+                                <option value="10"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 10) ? 'selected' : '' }}>
+                                    10 - At least 10 new programs for Regions that belong to the Small Category</option>
                                 <option value="0"  {{ (isset($previousData->b2d6) && $previousData->b2d6 == 0) ? 'selected' : '' }}>0 - Below the minimum number of programs per category</option>
                             </select>
                         </td>
@@ -939,13 +1102,20 @@
                             <input class="form-control mb-1" name="b2d6_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2d6_remarks) ? $previousData->b2d6_remarks : '' }}">
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.E. Streamline and Intensify QMS in All Organizational Subsystems </td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">B.2.E.1. Accreditation Awards (STAR Program, APACC)</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
                             <h5>
-                                B.2.E. Streamline and Intensify QMS in All Organizational Subsystems<br><hr>
-                                B.2.E.1. Accreditation Awards (STAR Program, APACC)<br>
-                                B.2.E.1.1. Asia Pacific Accreditation and Certification Commission (APACC)<br>
                                 B.2.E.1.1.a. Participation
                             </h5>
                         </td>
@@ -986,13 +1156,14 @@
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e11b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e11b_remarks) ? $previousData->b2e11b_remarks : '' }}"></td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.E.1.2. System for TVET Accreditation and Recognition (STAR) Program</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>
-                                B.2.E.1.2. System for TVET Accreditation and Recognition (STAR) Program<br>
                                 B.2.E.1.2.a. Participation
-                            </h5>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
@@ -1033,13 +1204,14 @@
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="b2e12b_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b2e12b_remarks) ? $previousData->b2e12b_remarks : '' }}"></td>
                     </tr>
+
+                    <tr>
+                        <td class="font-bold">B.2.E.1.3. TESDA Seal of Integrity</td>
+                    </tr>
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>
-                                B.2.E.1.3. TESDA Seal of Integrity<br>
                                 B.2.E.1.3.a. Participation
-                            </h5>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
@@ -1081,9 +1253,7 @@
                     
                     <tr>
                         <td class="pb-8">
-                            <h5>
                                 B.2.E.2. Quality Management System Implementation
-                            </h5>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: IQA reports (TESDA Action Catalogue)</p>
@@ -1169,7 +1339,7 @@
                         <td class="pb-8">
                             <h5>
                                 B.2.E.3. Green Practices<br>
-                                100% implementation of programs/activities/projects related to Green Practices indicated in the submitted Institutional Development Plan (IDP)
+                                <i>100% implementation of programs/activities/projects related to Green Practices indicated in the submitted Institutional Development Plan (IDP)</i>
                             </h5>
                         </td>
                         <td class="pb-8">

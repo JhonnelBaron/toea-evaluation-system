@@ -125,13 +125,13 @@
             <table id="regionTable" class="mx-auto">
                 <thead class="bg-blue-300 text-sm">
                     <tr>
-                        <th class="border border-gray-300 p-2 w-52">Category</th>
-                        <th class="border border-gray-300 p-2 w-32">Means of Verification</th>
-                        <th class="border border-gray-300 p-2 w-24">View Attachment</th>
+                        <th class="border border-gray-300 p-2 w-18">Category</th>
+                        <th class="border border-gray-300 p-2 w-14">Means of Verification</th>
+                        <th class="border border-gray-300 p-2 w-10">View Attachment</th>
                         <th class="border border-gray-300 p-2 w-10">Secretariat Rating</th>
-                        <th class="border border-gray-300 p-2 w-32">emarks</th>
-                        <th class="border border-gray-300 p-2 w-4">External Validator Rating</th>
-                        <th class="border border-gray-300 p-2 w-32">emarks</th>
+                        <th class="border border-gray-300 p-2 w-10">Remarks</th>
+                        <th class="border border-gray-300 p-2 w-20">External Validator Rating</th>
+                        <th class="border border-gray-300 p-2 w-18">Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -143,29 +143,41 @@
                     <tr>
                         <td class="pb-8">A.1. Compliance for Corrupt Policy</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from the TESDA Administrative Complaints Committee (ACC)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$ld->a1}}</td>
-                        <td class="pb-4 text-center">{{$ld->a1_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$ld->a1}}</td>
+                        <td class="pb-4 text-sm w-3">{{$ld->a1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1">
                                 <option value="">Select score</option>
-                                <option value="40" {{ (isset($previousData->a1) && $previousData->a1 == 40) ? 'selected' : '' }}>40 - The Province has no personnel with pending administrative case</option>
-                                <option value="0" {{ (isset($previousData->a1) && $previousData->a1 == 0) ? 'selected' : '' }}>0 - The Province has at least one pending administrative case</option>
+                                <option value="40" {{ (isset($previousData->a1) && $previousData->a1 == 40) ? 'selected' : '' }}>40 - The Region has no personnel with pending administrative case</option>
+                                <option value="0" {{ (isset($previousData->a1) && $previousData->a1 == 0) ? 'selected' : '' }}>0 - The Region has at least one pending administrative case </option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="a1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a1_remarks) ? $previousData->a1_remarks : '' }}"></td>
                     </tr>
                     <!-- A.2 -->
                     <tr>
-                        <td class="pb-8">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
+                        <td class="pb-8 text-sm">A.2. Compliance to the TESDA Code of Conduct and Ethical Standards<br>
+                            Valid Complaints against any Official or Employee on the following specific rules of conduct:<br>
+                                • Fidelity to Duty<br>
+                                • Conflict of Interest<br>
+                                • Solicitation and Acceptance of Gifts<br>
+                                • Outside Employment<br>
+                                • Cronyism<br>
+                                • Confidentiality<br>
+                                • Post-employment<br>
+                                • Procurement of Goods, Consulting Services, and Infrastructure Projects<br>
+                                • Encouraging Reporting of Malpractices, Corruption, and other Protected Disclosures Valid<br>
+                                • Complaints from Presidential Action Center (888), CSC-Contact Center ng Bayan, Adverse <br>National ISP Findings<br>
+                                     *Valid complaints are complaints that are officially filed, received, and verified by the<br> Administrative and Complaints Committee (ACC)/Investigation Committee"</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from the TESDA Administrative Complaints Committee</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$ld->a2}}</td>
-                        <td class="pb-4 text-center">{{$ld->a2_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$ld->a2}}</td>
+                        <td class="pb-4 text-sm w-3">{{$ld->a2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2">
                                 <option value="">Select score</option>
@@ -182,11 +194,13 @@
                     <tr>
                         <td class="pb-8">A.3. Resolutions of complaints emanating from the Contact Center</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Certification of No Complaints Received - signed by the RD <br>- Summary Report of Complaints Received, signed by the RD TESDA OP AS 03 F04 Monitoring of Complaints Received</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification:TESDA OP AS 03 F04<br>
+                                Monitoring of Complaints Received<br>
+                                Record of CCU-PIAD</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$piad->a3}}</td>
-                        <td class="pb-4 text-center">{{$piad->a3_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$piad->a3}}</td>
+                        <td class="pb-4 text-sm w-3">{{$piad->a3_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3">
                                 <option value="">Select score</option>
@@ -199,13 +213,13 @@
                     </tr>
                     <!-- A.4 -->
                     <tr>
-                        <td class="pb-8">A.4. Customer Satisfaction Results Customer Net Satisfaction Rating with minimum of 95%</td>
+                        <td class="pb-8">A.4. Customer Satisfaction Results<br> Customer Net Satisfaction Rating with minimum of 95%</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02) <br>- Monthly (January to December) Summary Report with Percentage signed by the PD</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$piad->a4}}</td>
-                        <td class="pb-4 text-center">{{$piad->a4_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$piad->a4}}</td>
+                        <td class="pb-4 text-sm w-3">{{$piad->a4_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a4" data-field="a4">
                                 <option value="">Select score</option>
@@ -214,20 +228,23 @@
                                 <option value="10" {{ (isset($previousData->a4) && $previousData->a4 == 10) ? 'selected' : '' }}>10 - Customer Net Satisfaction Rating is at 97%</option>
                                 <option value="5" {{ (isset($previousData->a4) && $previousData->a4 == 5) ? 'selected' : '' }}>5 - Customer Net Satisfaction Rating is at 96%</option>
                                 <option value="3" {{ (isset($previousData->a4) && $previousData->a4 == 3) ? 'selected' : '' }}>3 - Customer Net Satisfaction Rating is at 95%</option>
-                                <option value="0" {{ (isset($previousData->a4) && $previousData->a4 == 0) ? 'selected' : '' }}>0 - No Customer Feedback Forms or Summary Reports</option>
+                                <option value="0" {{ (isset($previousData->a4) && $previousData->a4 == 0) ? 'selected' : '' }}>0 - Customer Net Satisfaction Rating is below 95%</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="a4_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a4_remarks) ? $previousData->a4_remarks : '' }}"></td>
                     </tr>
                     <!-- A.5.A -->
                     <tr>
-                        <td class="pb-8">A.5.A. Compliance to Commission on Audit Rules and Regulations: Unimplemented Audit Observation Memorandum by the Provincial Office</td>
+                        <td class="font-bold">A.5. Compliance to Commission on Audit Rules and Regulations</td>
+                    </tr>
+                    <tr>
+                        <td class="pb-8">A.5.A. Unimplemented Audit Observation Memorandum by the Regional Office</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification/Memorandum with NO AOM received or number of unimplemented audit observation issued by COA <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$fms->a5a}}</td>
-                        <td class="pb-4 text-center">{{$fms->a5a_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a5a}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a5a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5a" data-field="a5a">
                                 <option value="">Select score</option>
@@ -240,13 +257,13 @@
                     </tr>
                     <!-- A.5.B -->
                     <tr>
-                        <td class="pb-8">A.5.B. Compliance to Commission on Audit Rules and Regulations: Notice of Suspension and Disallowance</td>
+                        <td class="pb-8">A.5.B. Notice of Suspension and Disallowance</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of no suspension nor disallowances signed by the FA <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Statement of Audit Suspensions, Disallowances and Charges (SASDC) issued by the COA (RO and PO and TTIs)</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$fms->a5b}}</td>
-                        <td class="pb-4 text-center">{{$fms->a5b_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a5b}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a5b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a5b" data-field="a5b">
                                 <option value="">Select score</option>
@@ -260,11 +277,11 @@
                     <tr>
                         <td class="pb-8">A.6. Compliance to PhilGEPS requirements</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Certification of Compliance signed/issued by PhilGEPS; Notice of Award/ Notice to Proceed <br>Government Procurement Policy Board (GPPB) report who are compliant</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification:Government Procurement Policy Board (GPPB) report who are compliant</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$as->a6}}</td>
-                        <td class="pb-4 text-center">{{$as->a6_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$as->a6}}</td>
+                        <td class="pb-4 text-sm w-3">{{$as->a6_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a6" data-field="a6">
                                 <option value="">Select score</option>
@@ -276,13 +293,18 @@
                     </tr>
                     <!-- A.7.A -->
                     <tr>
-                        <td class="pb-8">A.7.A. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Foreign Travel Expenses</td>
+                        <td class="font-bold">
+                            A.7. Liquidation of Cash Advances (Foreign and Local Travel Expenses)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pb-8">A.7.A. Liquidation of Foreign Travel Expenses</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Proof of postings submitted/received copy from COA Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$fms->a7a}}</td>
-                        <td class="pb-4 text-center">{{$fms->a7a_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a7a}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a7a_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7a" data-field="a7a">
                                 <option value="">Select score</option>
@@ -294,13 +316,13 @@
                     </tr>
                     <!-- A.7.B -->
                     <tr>
-                        <td class="pb-8">A.7.B. Liquidation of Cash Advances (Foreign and Local Travel Expenses): Liquidation of Local Travel Expenses</td>
+                        <td class="pb-8">A.7.B. Liquidation of Local Travel Expenses</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>Monitoring report signed by the Financial Accountant and PD <br>Proof of postings submitted/received copy from COA <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: "Proof of postings submitted/received copy from COA Schedule of cash advances, Certification from the Accuntant, outstanding cash advances</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$fms->a7b}}</td>
-                        <td class="pb-4 text-center">{{$fms->a7b_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a7b}}</td>
+                        <td class="pb-4 text-sm w-3">{{$fms->a7b_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a7b" data-field="a7b">
                                 <option value="">Select score</option>
@@ -314,16 +336,16 @@
                     <tr>
                         <td class="pb-8">A.8. Compliance to Agency Procurement Compliance Performance Indicator (APCPI)</td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: <br>- PO's FY 2023 Agency Procurement Compliance Performance Indicator (APCPI) reports submitted within set deadlines (copy of email to GPPB) <br>- Acknowledgment email from GPBB</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: "Agency Procurement Compliance Performance Indicator (APCPI) submitted within set deadlines by oversight agency/ies c/o of procurement unit</p>
                         </td>
                         <td class="pb-8"></td>
-                        <td class="pb-4 text-center">{{$as->a8}}</td>
-                        <td class="pb-4 text-center">{{$as->a8_remarks}}</td>
+                        <td class="pb-4 text-sm w-3">{{$as->a8}}</td>
+                        <td class="pb-4 text-sm w-3">{{$as->a8_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="a8" data-field="a8">
                                 <option value="">Select score</option>
-                                <option value="10" {{ (isset($previousData->a8) && $previousData->a8 == 10) ? 'selected' : '' }}>10 - The Provincial Office is compliant to APCPI</option>
-                                <option value="0" {{ (isset($previousData->a8) && $previousData->a8 == 0) ? 'selected' : '' }}>0 - No Compliance to APCPI</option>
+                                <option value="10" {{ (isset($previousData->a8) && $previousData->a8 == 10) ? 'selected' : '' }}>10 - The regional office is compliant to APCPI</option>
+                                <option value="0" {{ (isset($previousData->a8) && $previousData->a8 == 0) ? 'selected' : '' }}>0 - The regional office is not compliant to APCPI</option>
                             </select>
                         </td>
                         <td class="pb-8"><input class="form-control mb-1" name="a8_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->a8_remarks) ? $previousData->a8_remarks : '' }}"></td>
@@ -333,7 +355,7 @@
                         <td class="pb-4"></td>
                         <td class="pb-4"></td>
                         <td class="pb-4"><b>Total Score</b></td>
-                        <td class="pb-4 text-center">{{$nominee->criteria_a}}</td>
+                        <td class="pb-4 text-sm w-3">{{$nominee->criteria_a}}</td>
                         <td class="pb-4"><b>Final Score</b></td>
                         <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                         <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
