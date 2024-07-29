@@ -120,7 +120,9 @@
             </div>
             
               
-
+            <form id="saveChangesForm" method="POST" action="{{ route('storeGpE') }}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
@@ -191,6 +193,7 @@
                     
                         </div>
                     </div>
+            </form>
                 </div>
             </div>
                     

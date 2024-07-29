@@ -48,42 +48,76 @@ class ExternalValidatorController extends Controller
         $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
 
             // Fetching and summing up scores and percentages
-        $tables = [
-            GpAExternal::class,
-            GpBExternal::class,
-            GpCExternal::class,
-            GpDExternal::class,
-            GpEExternal::class,
-            ];
-
-        $totalScore = 0;
-        $totalPercentage = 0;
-        $count = 0;
-
-        foreach ($tables as $table) {
-            $results = $table::all();
-            foreach ($results as $result) {
-                $totalScore += $result->overall_total_score;
-                $totalPercentage += $result->progress_percentage;
-                $count++;
-            }
-        }
-
-        $averagePercentage = $count ? $totalPercentage / $count : 0;
-
-
+            $collectScore = function($user_id) {
+                $validator_id = Auth::user()->id;
+                $models = [
+                    GpAExternal::class,
+                    GpBExternal::class,
+                    GpCExternal::class,
+                    GpDExternal::class,
+                    GpEExternal::class,
+                ];
         
-        return view('external.gp', ['small' => $small, 'medium' => $medium, 'large' => $large,
-        'totalScore' => $totalScore,
-        'averagePercentage' => $averagePercentage,]);
+                $totalScore = 0;
+                $totalProgressPercentage = 0;
+                $breakdown = [];
+        
+                foreach ($models as $modelClass) {
+                      /** @var \Illuminate\Database\Eloquent\Model $model */
+                    $model = new $modelClass;
+                    $table = $model->getTable();
+        
+                    $scores = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('overall_total_score');
+    
+                        $progress = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('progress_percentage');
+        
+                    $totalScore += $scores;
+                    $totalProgressPercentage += $progress;
+                    $breakdown[$table] = $scores;
+                }
+                $averageProgressPercentage = $totalProgressPercentage / 5;
+    
+                return ['totalScore' => $totalScore, 'breakdown' => $breakdown , 'progress' => $averageProgressPercentage];
+            };
+        
+            // Collect scores for each user in each grouping
+            $smallScores = $small->mapWithKeys(function ($user) use ($collectScore) {
+                return [$user->user_id => $collectScore($user->user_id)];
+            });
+        
+            $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore) {
+                return [$user->user_id => $collectScore($user->user_id)];
+            });
+        
+            $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
+                return [$user->user_id => $collectScore($user->user_id)];
+            });
+        
+            return view('external.gp', [
+                'small' => $small,
+                'medium' => $medium,
+                'large' => $large,
+                'smallScores' => $smallScores,
+                'mediumScores' => $mediumScores,
+                'largeScores' => $largeScores,
+            ]);
     }
 
     public function externalGpA($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('galing_probinsya_a_parts')->where('user_id', $id)->first();
-        $previousData = GpAExternal::where('user_id', $id)->first();
+        $previousData = GpAExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.gpadmin-a', [
             'user_id' => $id,
@@ -96,9 +130,12 @@ class ExternalValidatorController extends Controller
     public function externalGpB($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('galing_probinsya_b_parts')->where('user_id', $id)->first();
-        $previousData = GpBExternal::where('user_id', $id)->first();
+        $previousData = GpBExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.gpadmin-b', [
             'user_id' => $id,
@@ -110,9 +147,12 @@ class ExternalValidatorController extends Controller
     public function externalGpC($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('galing_probinsya_c_parts')->where('user_id', $id)->first();
-        $previousData = GpCExternal::where('user_id', $id)->first();
+        $previousData = GpCExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.gpadmin-c', [
             'user_id' => $id,
@@ -124,9 +164,12 @@ class ExternalValidatorController extends Controller
     public function externalGpD($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('galing_probinsya_d_parts')->where('user_id', $id)->first();
-        $previousData = GpDExternal::where('user_id', $id)->first();
+        $previousData = GpDExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.gpadmin-d', [
             'user_id' => $id,
@@ -138,9 +181,12 @@ class ExternalValidatorController extends Controller
     public function externalGpE($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('galing_probinsya_e_parts')->where('user_id', $id)->first();
-        $previousData = GpEExternal::where('user_id', $id)->first();
+        $previousData = GpEExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.gpadmin-e', [
             'user_id' => $id,
@@ -158,15 +204,93 @@ class ExternalValidatorController extends Controller
         $medium = EndorsedExternal::where('grouping', 'TAS')->get();
         $large = EndorsedExternal::where('grouping', 'PTC')->get();
 
-        return view('external.ti', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+        $collectScore = function($user) {
+            $validator_id = Auth::user()->id;
+            if ($user->grouping == 'PTC') {
+                $models = [
+                    PtcAExternal::class,
+                    PtcBExternal::class,
+                    PtcCExternal::class,
+                    PtcDExternal::class,
+                    PtcEExternal::class,
+                ];
+            } else {
+                $models = [
+                    RstAExternal::class,
+                    RstBExternal::class,
+                    RstCExternal::class,
+                    RstDExternal::class,
+                    RstEExternal::class,
+                ];
+            }
+    
+            $totalScore = 0;
+            $totalProgressPercentage = 0;
+            $breakdown = [];
+    
+            foreach ($models as $modelClass) {
+                /** @var \Illuminate\Database\Eloquent\Model $model */
+                $model = new $modelClass;
+                $table = $model->getTable();
+    
+                $scores = DB::table($table)
+                    ->where('user_id', $user->user_id)
+                    ->where('validator_id', $validator_id)
+                    ->sum('overall_total_score');
+    
+                $progress = DB::table($table)
+                    ->where('user_id', $user->user_id)
+                    ->where('validator_id', $validator_id)
+                    ->sum('progress_percentage');
+    
+                $totalScore += $scores;
+                $totalProgressPercentage += $progress;
+                $breakdown[$table] = $scores;
+            }
+    
+            $averageProgressPercentage = $totalProgressPercentage / 5;
+    
+            return [
+                'totalScore' => $totalScore,
+                'breakdown' => array_map(function($score) {
+                    return number_format($score, 2);
+                }, $breakdown),
+                'progress' => number_format($averageProgressPercentage, 2)
+            ];
+        };
+    
+        // Collect scores for each user in each grouping
+        $smallScores = $small->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user)];
+        });
+    
+        $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user)];
+        });
+    
+        $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user)];
+        });
+    
+        return view('external.ti', [
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+            'smallScores' => $smallScores,
+            'mediumScores' => $mediumScores,
+            'largeScores' => $largeScores,
+        ]);
     }
 
     public function externalStcRtcTasA($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_tas_rtcstc_a_parts')->where('user_id', $id)->first();
-        $previousData = RstAExternal::where('user_id', $id)->first();
+        $previousData = RstAExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-a', [
             'user_id' => $id,
@@ -180,9 +304,12 @@ class ExternalValidatorController extends Controller
     public function externalStcRtcTasB($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_tas_rtcstc_b_parts')->where('user_id', $id)->first();
-        $previousData = RstBExternal::where('user_id', $id)->first();
+        $previousData = RstBExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-b', [
             'user_id' => $id,
@@ -195,9 +322,12 @@ class ExternalValidatorController extends Controller
     public function externalStcRtcTasC($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_tas_rtcstc_c_parts')->where('user_id', $id)->first();
-        $previousData = RstCExternal::where('user_id', $id)->first();
+        $previousData = RstCExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-c', [
             'user_id' => $id,
@@ -210,9 +340,12 @@ class ExternalValidatorController extends Controller
     public function externalStcRtcTasD($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_tas_rtcstc_d_parts')->where('user_id', $id)->first();
-        $previousData = RstDExternal::where('user_id', $id)->first();
+        $previousData = RstDExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-d', [
             'user_id' => $id,
@@ -225,9 +358,12 @@ class ExternalValidatorController extends Controller
     public function externalStcRtcTasE($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_tas_rtcstc_e_parts')->where('user_id', $id)->first();
-        $previousData = RstEExternal::where('user_id', $id)->first();
+        $previousData = RstEExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-rtcstctas-e', [
             'user_id' => $id,
@@ -241,9 +377,12 @@ class ExternalValidatorController extends Controller
     public function externalPtcA($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_ptc_a_parts')->where('user_id', $id)->first();
-        $previousData = PtcAExternal::where('user_id', $id)->first();
+        $previousData = PtcAExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-a', [
             'user_id' => $id,
@@ -256,9 +395,12 @@ class ExternalValidatorController extends Controller
     public function externalPtcB($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_ptc_b_parts')->where('user_id', $id)->first();
-        $previousData = PtcBExternal::where('user_id', $id)->first();
+        $previousData = PtcBExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-b', [
             'user_id' => $id,
@@ -270,9 +412,12 @@ class ExternalValidatorController extends Controller
     public function externalPtcC($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_ptc_c_parts')->where('user_id', $id)->first();
-        $previousData = PtcCExternal::where('user_id', $id)->first();
+        $previousData = PtcCExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-c', [
             'user_id' => $id,
@@ -284,9 +429,12 @@ class ExternalValidatorController extends Controller
     public function externalPtcD($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_ptc_d_parts')->where('user_id', $id)->first();
-        $previousData = PtcDExternal::where('user_id', $id)->first();
+        $previousData = PtcDExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-d', [
             'user_id' => $id,
@@ -298,9 +446,12 @@ class ExternalValidatorController extends Controller
     public function externalPtcE($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $data = DB::table('best_ti_ptc_e_parts')->where('user_id', $id)->first();
-        $previousData = PtcEExternal::where('user_id', $id)->first();
+        $previousData = PtcEExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.besttiadmin-ptc-e', [
             'user_id' => $id,
@@ -1399,12 +1550,71 @@ class ExternalValidatorController extends Controller
         $medium = EndorsedExternal::where('grouping', 'Medium')->get();
         $large = EndorsedExternal::where('grouping', 'Large')->get();
 
-        return view('external.bro', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+        $collectScore = function($user_id) {
+            $validator_id = Auth::user()->id;
+            $models = [
+                BroAExternal::class,
+                BroBExternal::class,
+                BroCExternal::class,
+                BroDExternal::class,
+                BroEExternal::class,
+            ];
+    
+            $totalScore = 0;
+            $totalProgressPercentage = 0;
+            $breakdown = [];
+    
+            foreach ($models as $modelClass) {
+                  /** @var \Illuminate\Database\Eloquent\Model $model */
+                $model = new $modelClass;
+                $table = $model->getTable();
+    
+                $scores = DB::table($table)
+                    ->where('user_id', $user_id)
+                    ->where('validator_id', $validator_id)
+                    ->sum('overall_total_score');
+
+                    $progress = DB::table($table)
+                    ->where('user_id', $user_id)
+                    ->where('validator_id', $validator_id)
+                    ->sum('progress_percentage');
+    
+                $totalScore += $scores;
+                $totalProgressPercentage += $progress;
+                $breakdown[$table] = $scores;
+            }
+            $averageProgressPercentage = $totalProgressPercentage / 5;
+
+            return ['totalScore' => $totalScore, 'breakdown' => $breakdown , 'progress' => $averageProgressPercentage];
+        };
+    
+        // Collect scores for each user in each grouping
+        $smallScores = $small->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user->user_id)];
+        });
+    
+        $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user->user_id)];
+        });
+    
+        $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
+            return [$user->user_id => $collectScore($user->user_id)];
+        });
+    
+        return view('external.bro', [
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+            'smallScores' => $smallScores,
+            'mediumScores' => $mediumScores,
+            'largeScores' => $largeScores,
+        ]);
     }
 
     public function externalBroA($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $asEvaluations = AsEvaluation::where('region_id', $id)->first();
         $coEvaluations = CoEvaluation::where('region_id', $id)->first();
@@ -1418,7 +1628,9 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        $previousData = BroAExternal::where('user_id', $id)->first();
+        $previousData = BroAExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-a', [
             'user_id' => $id,
@@ -1440,6 +1652,7 @@ class ExternalValidatorController extends Controller
     public function externalBroB($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $asEvaluations = AsEvaluation::where('region_id', $id)->first();
         $coEvaluations = CoEvaluation::where('region_id', $id)->first();
@@ -1453,7 +1666,9 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        $previousData = BroBExternal::where('user_id', $id)->first();
+        $previousData = BroBExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-b', [
             'user_id' => $id,
@@ -1475,6 +1690,7 @@ class ExternalValidatorController extends Controller
     public function externalBroC($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $asEvaluations = AsEvaluation::where('region_id', $id)->first();
         $coEvaluations = CoEvaluation::where('region_id', $id)->first();
@@ -1488,7 +1704,9 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        $previousData = BroCExternal::where('user_id', $id)->first();
+        $previousData = BroCExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-c', [
             'user_id' => $id,
@@ -1510,6 +1728,7 @@ class ExternalValidatorController extends Controller
     public function externalBroD($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $asEvaluations = AsEvaluation::where('region_id', $id)->first();
         $coEvaluations = CoEvaluation::where('region_id', $id)->first();
@@ -1523,7 +1742,9 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        $previousData = BroDExternal::where('user_id', $id)->first();
+        $previousData = BroDExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-d', [
             'user_id' => $id,
@@ -1545,6 +1766,7 @@ class ExternalValidatorController extends Controller
     public function externalBroE($id)
     {
         $nominee = EndorsedExternal::where('user_id', $id)->first();
+        $validator_id = Auth::user()->id;
 
         $asEvaluations = AsEvaluation::where('region_id', $id)->first();
         $coEvaluations = CoEvaluation::where('region_id', $id)->first();
@@ -1558,7 +1780,9 @@ class ExternalValidatorController extends Controller
         $romoEvaluations = RomoEvaluation::where('region_id', $id)->first();
         $wsEvaluations = WsEvaluation::where('region_id', $id)->first();
 
-        $previousData = BroEExternal::where('user_id', $id)->first();
+        $previousData = BroEExternal::where('user_id', $id)
+        ->where('validator_id', $validator_id)
+        ->first();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-e', [
             'user_id' => $id,
