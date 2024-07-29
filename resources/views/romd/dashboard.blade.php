@@ -247,7 +247,7 @@
                                             ])->sum(function($office) use ($smallRegion) {
                                                 return $office->firstWhere('region_id', $smallRegion->id)->progress_percentage ?? 0;
                                             });
-                                            $averageProgressSmall = $totalProgressSmall / 10; // Number of offices
+                                            $averageProgressSmall = $totalProgressSmall / 11; // Number of offices
                                         @endphp
                                         {{ round($averageProgressSmall, 2) }}%
                                     </td>
@@ -270,7 +270,7 @@
                                             ])->sum(function($office) use ($mediumRegion) {
                                                 return $office->firstWhere('region_id', $mediumRegion->id)->progress_percentage ?? 0;
                                             });
-                                            $averageProgressMedium = $totalProgressMedium / 10; // Number of offices
+                                            $averageProgressMedium = $totalProgressMedium / 11; // Number of offices
                                         @endphp
                                         {{ round($averageProgressMedium, 2) }}%
                                     </td>
@@ -293,7 +293,7 @@
                                             ])->sum(function($office) use ($largeRegion) {
                                                 return $office->firstWhere('region_id', $largeRegion->id)->progress_percentage ?? 0;
                                             });
-                                            $averageProgressLarge = $totalProgressLarge / 10; // Number of offices
+                                            $averageProgressLarge = $totalProgressLarge / 11; // Number of offices
                                         @endphp
                                         {{ round($averageProgressLarge, 2) }}%
                                     </td>
