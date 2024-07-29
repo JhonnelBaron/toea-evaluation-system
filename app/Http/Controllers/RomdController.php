@@ -273,7 +273,7 @@ class RomdController extends Controller
                 return $office->where('region_id', $region->id)->sum('progress_percentage');
             });
     
-            $averageProgressPerRegion = round($totalProgress / 10, 2); // 10 is the number of offices
+            $averageProgressPerRegion = round($totalProgress / 11, 2); // 10 is the number of offices
     
             $totalProgressPerRegion[$region->region_category][$region->region_name] = $averageProgressPerRegion;
         }
@@ -368,7 +368,7 @@ class RomdController extends Controller
         return response()->json($evaluations);
     }
     
-    public function endorseTi($id)
+    public function endorseTi(Request $request, $id)
     {
         $user = DB::table('users')
         ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
@@ -410,6 +410,29 @@ class RomdController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
 
+        $submissionStatus = $request->input('submission_status');
+        $deductionPoints = 0;
+
+
+        switch ($submissionStatus) {
+            case '1-2 days late':
+                $deductionPoints = 5;
+                break;
+            case '3 days late onwards':
+                $deductionPoints = 25;
+                break;
+            case 'Hard copies received without official request':
+                $deductionPoints = 40;
+                break;
+            case 'No hard copies submitted':
+                $deductionPoints = 1000;
+                break;
+            case 'Hard copies submitted on time':
+                $deductionPoints = 0;
+                break;
+        
+        }
+
         if ($user->awardings === 'Best_TI' && ($user->category === 'RTC-STC' || $user->category === 'TAS'))
         {
             $store = EndorsedExternal::create([
@@ -430,6 +453,13 @@ class RomdController extends Controller
                     ($user->tas_rtcstc_c_score ?? 0) + 
                     ($user->tas_rtcstc_d_score ?? 0) + 
                     ($user->tas_rtcstc_e_score ?? 0),
+                'submission_status' => $submissionStatus,
+                'deduction' => $deductionPoints,
+                'final_score' => (($user->tas_rtcstc_a_score ?? 0) + 
+                    ($user->tas_rtcstc_b_score ?? 0) + 
+                    ($user->tas_rtcstc_c_score ?? 0) + 
+                    ($user->tas_rtcstc_d_score ?? 0) + 
+                    ($user->tas_rtcstc_e_score ?? 0)) - $deductionPoints,
                 'remarks' => $user->evaluation_remarks,
                 'evaluator_first' => $user->evaluator_first,
                 'evaluator_last' => $user->evaluator_last
@@ -454,6 +484,13 @@ class RomdController extends Controller
                     ($user->ptc_c_score ?? 0) + 
                     ($user->ptc_d_score ?? 0) + 
                     ($user->ptc_e_score ?? 0),
+                'submission_status' => $submissionStatus,
+                'deduction' => $deductionPoints,
+                'final_score' => (($user->ptc_a_score ?? 0) + 
+                ($user->ptc_b_score ?? 0) + 
+                ($user->ptc_c_score ?? 0) + 
+                ($user->ptc_d_score ?? 0) + 
+                ($user->ptc_e_score ?? 0)) - $deductionPoints,
                 'remarks' => $user->evaluation_remarks,
                 'evaluator_first' => $user->evaluator_first,
                 'evaluator_last' => $user->evaluator_last
@@ -467,7 +504,7 @@ class RomdController extends Controller
         return redirect()->back()->with('success', 'Nominee endorsed successfully.');
     }
 
-    public function endorseGp($id)
+    public function endorseGp(Request $request, $id)
     {
         $user = DB::table('users')
         ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
@@ -499,6 +536,39 @@ class RomdController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
 
+        $submissionStatus = $request->input('submission_status');
+        $deductionPoints = 0;
+
+
+        switch ($submissionStatus) {
+            case '1-2 days late':
+                $deductionPoints = 5;
+                break;
+            case '3 days late onwards':
+                $deductionPoints = 25;
+                break;
+            case 'Hard copies received without official request':
+                $deductionPoints = 40;
+                break;
+            case 'No hard copies submitted':
+                $deductionPoints = 1000;
+                break;
+            case 'Hard copies submitted on time':
+                $deductionPoints = 0;
+                break;
+        
+        }
+
+            // Compute final score
+            $romoFinalScore = ($user->galing_probinsya_a_score ?? 0) +
+                            ($user->galing_probinsya_b_score ?? 0) +
+                            ($user->galing_probinsya_c_score ?? 0) +
+                            ($user->galing_probinsya_d_score ?? 0) +
+                            ($user->galing_probinsya_e_score ?? 0);
+
+            $finalScore = $romoFinalScore - $deductionPoints;
+
+
         if ($user->awardings === 'Galing_Probinsya')
         {
             $store = EndorsedExternal::create([
@@ -513,12 +583,10 @@ class RomdController extends Controller
                 'criteria_c' => $user->galing_probinsya_c_score ?? 0,
                 'criteria_d' => $user->galing_probinsya_d_score ?? 0,
                 'criteria_e' => $user->galing_probinsya_e_score ?? 0,
-                'romo_final_score' => 
-                ($user->galing_probinsya_a_score ?? 0) + 
-                ($user->galing_probinsya_b_score ?? 0) + 
-                ($user->galing_probinsya_c_score ?? 0) + 
-                ($user->galing_probinsya_d_score ?? 0) + 
-                ($user->galing_probinsya_e_score ?? 0),
+                'romo_final_score' => $romoFinalScore,
+                'submission_status' => $submissionStatus,
+                'deduction' => $deductionPoints,
+                'final_score' => $finalScore,
                 'remarks' => $user->evaluation_remarks,
                 'evaluator_first' => $user->evaluator_first,
                 'evaluator_last' => $user->evaluator_last
