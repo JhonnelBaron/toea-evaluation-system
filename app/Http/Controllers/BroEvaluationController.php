@@ -200,6 +200,7 @@ class BroEvaluationController extends Controller
                 $previousEvaluation = IctoEvaluation::where('uploader_id', $user->id)
                 ->where('region_id', $region->id)
                 ->first();
+                break;
             case 'WS':
                 $previousEvaluation = WsEvaluation::where('uploader_id', $user->id)
                 ->where('region_id', $region->id)
