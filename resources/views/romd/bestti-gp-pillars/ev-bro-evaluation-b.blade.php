@@ -408,8 +408,19 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports Official list of winners</p>
                         </td>
+                        @php
+                            // Define the specific ID you're looking for
+                            $specificId = 34;
+
+                            // Find the file with the specific ID
+                            $specificFile = $files->firstWhere('id', $specificId);
+                        @endphp
                         <!-- Added one more <td class="pb-8"> element -->
-                        <td class="pb-8"></td>
+                        <td class="pb-8">         @if ($specificFile)
+                            <button class="btn btn-sm btn-primary" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                        @else
+                            No file available
+                        @endif</td>
                         <td class="pb-4 text-center">{{$ws->b2a41}}</td>
                         <td class="pb-4 text-center">{{$ws->b2a41_remarks}}</td>
                         <td class="pb-8">

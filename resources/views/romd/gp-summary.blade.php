@@ -262,6 +262,37 @@
                                 </td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        @if(in_array($user->id, $checkEndorsed))
+                                        @if($user->final_score < 0)
+                                            <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                            <span style="color: red;">{{ $user->totalScoreROMO }}</span>
+                                        @else
+                                            {{ $user->final_score }}
+                                        @endif
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            @if($user->deduction != 1000)
+                                            <hr>
+                                            <p>Total: <span class="ml-2 float-right"> {{ $user->totalScoreROMO}} </span></p>
+                                            @else
+                                            @endif
+                                            <br>
+                                            <p>Deduction: 
+                                                <span class="ml-2 float-right">
+                                                    @if($user->deduction == 1000)
+                                                        Disqualified
+                                                    @else
+                                                        {{ $user->deduction }}
+                                                    @endif
+                                                </span></p>
+                                        </div>
+                                    </div>
+                                    @else
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -272,10 +303,11 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    @endif
                                     </div>
                                 </td>
                                 {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
+                                <td class="px-3 py-3">{{$user->submission_status}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
@@ -324,6 +356,37 @@
                                 </td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        @if(in_array($user->id, $checkEndorsed))
+                                        @if($user->final_score < 0)
+                                            <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                            <span style="color: gray;">{{ $user->totalScoreROMO }}</span>
+                                        @else
+                                            {{ $user->final_score }}
+                                        @endif
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            @if($user->deduction != 1000)
+                                            <hr>
+                                            <p>Total: <span class="ml-2 float-right"> {{ $user->totalScoreROMO}} </span></p>
+                                            @else
+                                            @endif
+                                            <br>
+                                            <p>Deduction: 
+                                                <span class="ml-2 float-right">
+                                                    @if($user->deduction == 1000)
+                                                        Disqualified
+                                                    @else
+                                                        {{ $user->deduction }}
+                                                    @endif
+                                                </span></p>
+                                        </div>
+                                    </div>
+                                    @else
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -334,10 +397,11 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    @endif
                                     </div>
                                 </td>
                                 {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
+                                <td class="px-3 py-3">{{$user->submission_status}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-12 py-3">    <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
 
@@ -387,6 +451,37 @@
                                 </td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                    @if(in_array($user->id, $checkEndorsed))
+                                        @if($user->final_score < 0)
+                                            <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                            <span style="color: gray;">{{ $user->totalScoreROMO }}</span>
+                                        @else
+                                            {{ $user->final_score }}
+                                        @endif
+                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                        <div class="popover-content p-4">
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
+                                            @if($user->deduction != 1000)
+                                            <hr>
+                                            <p>Total: <span class="ml-2 float-right"> {{ $user->totalScoreROMO}} </span></p>
+                                            @else
+                                            @endif
+                                            <br>
+                                            <p>Deduction: 
+                                                <span class="ml-2 float-right">
+                                                    @if($user->deduction == 1000)
+                                                        Disqualified
+                                                    @else
+                                                        {{ $user->deduction }}
+                                                    @endif
+                                                </span></p>
+                                        </div>
+                                    </div>
+                                    @else
                                     {{ $user->totalScoreROMO }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
@@ -397,10 +492,11 @@
                                             <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                    @endif
                                     </div>
                                 </td>
                                 {{-- <td class="px-3 py-3"></td> --}}
-                                <td class="px-3 py-3">{{$user->evaluation_remarks}}</td>
+                                <td class="px-3 py-3">{{$user->submission_status}}</td>
                                 <td class="px-3 py-3">{{ $user->firstname }} {{ $user->lastname }}</td>
                                 <td class="px-12 py-3"> <input type="checkbox" {{ $user->have_hardcopy == 1 ? 'checked' : '' }}></td>
                                 <td><button class="btn btn-primary btn-sm">View</button></td>
@@ -442,6 +538,22 @@
                         <!-- Modal body -->
                         <div class="p-4">
                             Are you sure you want to endorse <u class="text-blue-500"><span id="modalProvinceName" class="text-blue-500"></span></u> to external validator?
+                            <br><br>
+                            <div class="mt-4">
+                                <label for="submission_status" class="block text-sm font-medium text-gray-700">Submission Status</label>
+                                <select id="submission_status" name="submission_status" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" onchange="setDeduction()">
+                                    <option value="">Select status</option>
+                                    <option value="Hard copies submitted on time">Hard copies submitted on time</option>
+                                    <option value="1-2 days late">1-2 days late</option>
+                                    <option value="3 days late onwards">3 days late onwards</option>
+                                    <option value="Hard copies received without official request">Hard copies received without official request</option>
+                                    <option value="No hard copies submitted">No hard copies submitted</option>
+                                </select>
+                            </div>
+                            <div class="mt-4">
+                                <label for="deduction_display" class="block text-sm font-medium text-gray-700">Deduction Points</label>
+                                <input type="text" id="deduction_display" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" disabled>
+                            </div>
                         </div>
                         <!-- Modal footer -->
                         <div class="flex justify-end p-4 border-t">
@@ -449,6 +561,8 @@
                             <form id="saveChangesForm" method="POST" action="{{ route('gp.endorse-nominee', ['id' => 'user_id']) }}">
                                 @csrf
                                 <input type="hidden" name="user_id" value="">
+                                <input type="hidden" name="deduction_points" id="deduction_points" value="">
+                                <input type="hidden" name="submission_status" id="submission_status_hidden" value="">
                                 <button class="px-4 py-2 bg-blue-500 text-white rounded" type="submit">Yes</button>
                             </form>
                         </div>
@@ -573,7 +687,34 @@
             function submitSaveChangesForm() {
                 document.getElementById('saveChangesForm').submit();
             }
-        
+
+            function setDeduction() {
+            const submissionStatus = document.getElementById('submission_status').value;
+            let deductionPoints = 0;
+
+            switch (submissionStatus) {
+                case '1-2 days late':
+                    deductionPoints = 5;
+                    break;
+                case '3 days late onwards':
+                    deductionPoints = 25;
+                    break;
+                case 'Hard copies received without official request':
+                    deductionPoints = 40;
+                    break;
+                case 'No hard copies submitted':
+                    deductionPoints = 1000;
+                    break;
+                case 'Hard copies submitted on time':
+                    deductionPoints = 0;
+                    break;
+            }
+
+            document.getElementById('deduction_points').value = deductionPoints;
+            document.getElementById('deduction_display').value = deductionPoints === 1000 ? 'disqualified' : deductionPoints;
+            document.getElementById('submission_status_hidden').value = submissionStatus;
+        }
+            
     </script>
 </body>
 </html>

@@ -99,10 +99,13 @@ class TiController extends Controller
         // }
         $query = DB::table('users')
         ->leftJoin('toea_admin', 'users.evaluator_id', '=', 'toea_admin.id')
+        ->leftJoin('endorsed_externals', 'users.id', '=', 'endorsed_externals.user_id')
         ->where('users.awardings', 'Best_TI')
         ->whereNotNull('users.endorsement_status')
         ->where('users.endorsement_status', 'Endorsed by Regional Office')
-        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname');
+        ->select('users.*', 'toea_admin.firstname', 'toea_admin.lastname', 'endorsed_externals.final_score',
+        'endorsed_externals.deduction',
+        'endorsed_externals.submission_status');
 
         // Filter by Evaluator if specified in the request
         if ($request->has('evaluator')) {
