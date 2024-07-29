@@ -23,9 +23,12 @@ class EndorsedExternal extends Model
         'criteria_d',
         'criteria_e',
         'romo_final_score',
+        'deduction',
+        'final_score',
+        'submission_status',
         'remarks',
         'evaluator_first',
-        'evaluator_last'
+        'evaluator_last',
     ];
 
     public function users()
