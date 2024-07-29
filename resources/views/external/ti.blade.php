@@ -176,7 +176,7 @@
                 <div class="flex-grow flex items-center justify-center" style="margin-right: 8.5rem;">
                     <ul class="flex">
                         <li class="tab">
-                            <a href="#" data-tab="submission" class="tab-link p-4 text-black">BRO</a>
+                            <a href="/external/bro" data-tab="submission" class="tab-link p-4 text-black">BRO</a>
                         </li>
                         <li class="tab">
                             <a href="/external/gp" data-tab="evaluated" class="tab-link p-4 text-black">Galing Probinsya</a>
@@ -229,19 +229,19 @@
                                 </td> 
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    ongoing
+                                        {{ $smallScores[$user->user_id]['totalScore'] ?? 0 }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right">{{ $smallScores[$user->user_id]['breakdown']['rst_a_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right">{{ $smallScores[$user->user_id]['breakdown']['rst_b_externals'] ?? 0 }}  </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right">{{ $smallScores[$user->user_id]['breakdown']['rst_c_externals'] ?? 0 }}  </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right">{{ $smallScores[$user->user_id]['breakdown']['rst_d_externals'] ?? 0 }}  </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right">{{ $smallScores[$user->user_id]['breakdown']['rst_e_externals'] ?? 0 }}  </span></p>
                                         </div>
                                     </div>
                                     </div>
                                 </td>        
-                                <td class="px-3 py-3">not completed</td>  
+                                <td class="px-3 py-3">{{ number_format($smallScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.ti-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
                                 {{-- <input type="text" 
@@ -275,19 +275,19 @@
                                 </td>   
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    ongoing
+                                        {{ $mediumScores[$user->user_id]['totalScore'] ?? 0 }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $mediumScores[$user->user_id]['breakdown']['rst_a_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $mediumScores[$user->user_id]['breakdown']['rst_b_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $mediumScores[$user->user_id]['breakdown']['rst_c_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $mediumScores[$user->user_id]['breakdown']['rst_d_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $mediumScores[$user->user_id]['breakdown']['rst_e_externals'] ?? 0 }} </span></p>
                                         </div>
                                     </div>
                                     </div>
                                 </td>     
-                                <td class="px-3 py-3">not completed</td>  
+                                <td class="px-3 py-3">{{number_format($mediumScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.ti-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
                                 {{-- <input type="text" 
@@ -320,19 +320,19 @@
                                 </td> 
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    ongoing
+                                        {{ $largeScores[$user->user_id]['totalScore'] ?? 0 }}
                                     <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                         <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['ptc_a_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['ptc_b_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['ptc_c_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['ptc_d_externals'] ?? 0 }} </span></p>
+                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['ptc_e_externals'] ?? 0 }} </span></p>
                                         </div>
                                     </div>
                                     </div>
                                 </td>     
-                                <td class="px-3 py-3">not completed</td>  
+                                <td class="px-3 py-3"> {{ number_format($largeScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.ti-ptc-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
                                 {{-- <input type="text" 

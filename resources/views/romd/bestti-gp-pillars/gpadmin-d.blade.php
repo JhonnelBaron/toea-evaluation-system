@@ -121,7 +121,9 @@
             
               
               
-
+            <form id="saveChangesForm" method="POST" action="{{ route('storeGpD') }}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
             <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
                 <div id="evaluated" class="tab-content">
                     <table id="regionTable" class="mx-auto">
@@ -159,7 +161,7 @@
                                                                      <option value="30" {{ (isset($previousData->d1) && $previousData->d1 == 30) ? 'selected' : '' }}>30 - Reports are accurate and submitted consistently but not on time</option>
                                                                      <option value="0" {{ (isset($previousData->d1) && $previousData->d1 == 0) ? 'selected' : '' }}>0 - Reports are not accurate and are not submitted on time</option>
                                                                  </select></td>
-                                                     <td><input class="form-control mb-1" name="rd1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->d1_remarks) ? $previousData->d1_remarks : '' }}"></td>
+                                                     <td><input class="form-control mb-1" name="d1_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->d1_remarks) ? $previousData->d1_remarks : '' }}"></td>
                                                  </tr>
 
                                                     <tr><td><br></td></tr>
@@ -177,8 +179,10 @@
                                                  <td><button class="btn btn-primary" id="submitButton">Save</button></td>
                                                  </tr>
                                             </tbody>
+                    </table>
                         </div>
                     </div>
+            </form>
                 </div>
             </div>
                     

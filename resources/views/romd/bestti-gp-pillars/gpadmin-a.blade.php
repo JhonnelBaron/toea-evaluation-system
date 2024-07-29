@@ -455,6 +455,10 @@
                 </div>
             </div>
         </div>
+        @php
+dd($previousData);
+@endphp
+
         <!-- View Details modal -->
         <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">

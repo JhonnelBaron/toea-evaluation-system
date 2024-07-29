@@ -70,37 +70,45 @@
 
 <div class="ml-4 p-2">
     <div class="flex justify-between items-center w-full p-2">
-        <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1> 
+        <div class="flex items-center space-x-2">
+            <button id="backButton" class="text-gray-600 font-bold rounded flex items-center space-x-1">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="text-xl">Back</span>
+            </button>
+            <h1 class="text-gray-800 font-bold text-3xl">BEST REGIONAL OFFICE - {{$nominee->province}}</h1>
+        </div>
         <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
     </div>
     
     <div class="flex items-center justify-center">
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-a" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-a', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria A</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-b" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-b', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria B</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-blue-400 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-c" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-c', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-gray-200 font-bold text-xs">Criteria C</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-d" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-d', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria D</span>
             </a>
         </div>
         <div class="h-0.5 w-48 bg-gray-500"></div>
         <div class="relative h-8 px-4 flex items-center justify-center bg-gray-500 rounded-full cursor-pointer hover:bg-blue-300 transition duration-300 ease-in-out">
-            <a href="/ev-bro-evaluation-e" class="h-full w-full flex items-center justify-center">
+            <a href="{{ route('external.bro-e', ['id' => $user_id]) }}" class="h-full w-full flex items-center justify-center">
                 <span class="text-white font-bold text-xs">Criteria E</span>
             </a>
         </div>
@@ -109,7 +117,9 @@
 
     
       
-      
+    <form id="saveChangesForm" method="POST" action="{{ route('storeBroC') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ $user_id }}">
     <div class="content bg-white shadow-md min-h-96 p-4 mt-4 overflow-x-auto">
         <div id="evaluated" class="tab-content">
             <table id="regionTable" class="mx-auto">
@@ -128,16 +138,19 @@
                         
 
                     <tr>
+                        <td class="font-bold">C. Administrative and Support Services</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C. Administrative and Support Services = <i>125</i><br>
                             C.1. Budget Utilization Rate (BUR)
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring logbook/registry</p>
                         </td>
-                        <td class="pb-4 text-center">c1_final_score}}</td>
-                        <td class="pb-4 text-center">c1_remarks}}</td>
+                        
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$fms->c1}}</td>
+                        <td class="pb-4 text-center">{{$fms->c1_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c1" data-field="c1">
                                 <option value="">Select score</option>
@@ -155,14 +168,15 @@
                     <!-- Data Row for Implementation of Agency Action Plan -->
                     <tr>
                         <td class="pb-8">
-                            C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation = <i>125</i><br>
+                            C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation<br>
+                            <i>80% acted upon (either partially or fully implemented)</i>
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Agency Action Plan and Status of Implementation (AAPSI)</p>
                         </td>
-                        <td class="pb-4 text-center">c2_final_score}}</td>
-                        <td class="pb-4 text-center">c2_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$fms->c2}}</td>
+                        <td class="pb-4 text-center">{{$fms->c2_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c2" data-field="c2">
                                 <option value="">Select score</option>
@@ -179,17 +193,20 @@
                     </tr>
     
                     <!-- Data Row for Staff Development Program -->
+
+                    <tr>
+                        <td>C.3. Staff Development Program</td>
+                    </tr>
                     <tr>
                         <td class="pb-8">
-                            C.3. Staff Development Program = <i>35</i><br>
                             C.3.1. Employees who have attended SDP have implemented their RE-Entry Plans as scheduled
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: Regional/Provincial Work Force Development Plan (WFDP), Certificates of trainings attended, Copies of REAPs</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: "Regional Work Force Development Plan (WFDP) Certificates of trainings attended</p>
                         </td>
-                        <td class="pb-4 text-center">c31_final_score}}</td>
-                        <td class="pb-4 text-center">c31_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c31}}</td>
+                        <td class="pb-4 text-center">{{$as->c31_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c31" data-field="c31">
                                 <option value="">Select score</option>
@@ -212,13 +229,14 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
                         </td>
-                        <td class="pb-4 text-center">c32_final_score}}</td>
-                        <td class="pb-4 text-center">c32_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c32}}</td>
+                        <td class="pb-4 text-center">{{$as->c32_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c32" data-field="c32">
                                 <option value="">Select score</option>
                                 <option value="15" {{ (isset($previousData->c32) && $previousData->c32 == 15) ? 'selected' : '' }}>15 - 100% of Employees were provided with training opportunities</option>
+                                <option value="5" {{ (isset($previousData->c32) && $previousData->c32 == 5) ? 'selected' : '' }}>5 - 75%-99% of Employees were provided with training opportunities</option>
                                 <option value="0" {{ (isset($previousData->c32) && $previousData->c32 == 0) ? 'selected' : '' }}>0 - 74% and below of Employees were provided with training opportunities</option>
                             </select>
                         </td>
@@ -234,18 +252,21 @@
                             C.3.3. Percentage of Personnel Attendance to Finance related training programs
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of plantilla positions per region, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification:<br>
+                                - List of plantilla positions per region<br>
+                                - Certificates of training attended<br>
+                                list of training programs, certified correct by HRMO, RO plus PO (For BRO only)</p>
                         </td>
-                        <td class="pb-4 text-center">c33_final_score}}</td>
-                        <td class="pb-4 text-center">c33_remarks}}</td>
-                        <td class="pb-8"></td>
+                        <td class="pb-8"></td> 
+                        <td class="pb-4 text-center">{{$fms->c33}}</td>
+                        <td class="pb-4 text-center">{{$fms->c33_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c33" data-field="c33">
                                 <option value="">Select score</option>
                                 <option value="6" {{ (isset($previousData->c33) && $previousData->c33 == 6) ? 'selected' : '' }}>6 - 80% of regional finance and budget officers/personnel attended finance related training programs</option>
                                 <option value="3" {{ (isset($previousData->c33) && $previousData->c33 == 3) ? 'selected' : '' }}>3 - 40% to 79% of regional finance and budget officers/personnel attended finance related training programs</option>
                                 <option value="0" {{ (isset($previousData->c33) && $previousData->c33 == 0) ? 'selected' : '' }}>0 - Less than 40% of regional finance and budget officers/personnel attended finance related training programs</option>
-                                <option value="1" {{ (isset($previousData->c33) && $previousData->c33 == 1) ? 'selected' : '' }}>1 - Plus point for RO initiated Finance-related training programs</option>
+                                <option value="1" {{ (isset($previousData->c33) && $previousData->c33 == 1) ? 'selected' : '' }}>1 - Plus (1) Point for RO initiated Finance-related training programs for finance and budget officers/personnel </option>
                             </select>
                         </td>
                         <td class="pb-8">
@@ -256,17 +277,21 @@
     
                     <!-- Data Row for Model Employee Awards -->
                     <tr>
+                        <td class="font-bold">C.4. Model Employee Awards<br></td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">C.4.1. Model Employee for Category I Position<br></td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4. Model Employee Awards<br>
-                            C.4.1. Model Employee for Category I Position<br>
                             C.4.1.1. Participation
                         </td>
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c411_final_score}}</td>
-                        <td class="pb-4 text-center">c411_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c411}}</td>
+                        <td class="pb-4 text-center">{{$as->c411_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c411" data-field="c411">
                                 <option value="">Select score</option>
@@ -286,11 +311,11 @@
                             C.4.1.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c412_final_score}}</td>
-                        <td class="pb-4 text-center">c412_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c412}}</td>
+                        <td class="pb-4 text-center">{{$as->c412_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c412" data-field="c412">
                                 <option value="">Select score</option>
@@ -306,16 +331,18 @@
     
                     <!-- Data Row for Model Employee for Category II -->
                     <tr>
+                        <td class="font-bold">C.4.2. Model Employee for Category II Position</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4.2. Model Employee for Category II Position<br>
                             C.4.2.1. Participation
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c421_final_score}}</td>
-                        <td class="pb-4 text-center">c421_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c421}}</td>
+                        <td class="pb-4 text-center">{{$as->c421_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c421" data-field="c421">
                                 <option value="">Select score</option>
@@ -335,11 +362,11 @@
                             C.4.2.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c422_final_score}}</td>
-                        <td class="pb-4 text-center">c422_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c422}}</td>
+                        <td class="pb-4 text-center">{{$as->c422_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c422" data-field="c422">
                                 <option value="">Select score</option>
@@ -355,16 +382,18 @@
     
                     <!-- Data Row for Model Employee for Category III -->
                     <tr>
+                        <td class="font-bold">C.4.3. Model Employee for Category III Position</td>
+                    </tr>
+                    <tr>
                         <td class="pb-8">
-                            C.4.3. Model Employee for Category III Position<br>
                             C.4.3.1. Participation
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c431_final_score}}</td>
-                        <td class="pb-4 text-center">c431_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c431}}</td>
+                        <td class="pb-4 text-center">{{$as->c431_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c431" data-field="c431">
                                 <option value="">Select score</option>
@@ -384,11 +413,11 @@
                             C.4.3.2. Awards received
                         </td>
                         <td class="pb-8">
-                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS, Certificates of training attended</p>
+                            <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of nominees and awardees from HRMD/AS</p>
                         </td>
-                        <td class="pb-4 text-center">c432_final_score}}</td>
-                        <td class="pb-4 text-center">c432_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c432}}</td>
+                        <td class="pb-4 text-center">{{$as->c432_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c432" data-field="c432">
                                 <option value="">Select score</option>
@@ -411,9 +440,9 @@
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Conferment/Certificate Awarded <br></p>
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter to CSC and other communications with regard to the requirements submitted by the region to CSC (with CSC feedback/reply letter)</p>
                         </td>
-                        <td class="pb-4 text-center">c5_final_score}}</td>
-                        <td class="pb-4 text-center">c5_remarks}}</td>
                         <td class="pb-8"></td>
+                        <td class="pb-4 text-center">{{$as->c5}}</td>
+                        <td class="pb-4 text-center">{{$as->c5_remarks}}</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown" name="c5" data-field="c5">
                                 <option value="">Select score</option>
@@ -429,28 +458,120 @@
                     </tr>
                     
                     <tr>
-                        <td class="p-4"><b>Total Initial Score</b></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"></td>
-                        <td class="p-4"><b>Total Re-Evaluated Score</b></td>
-                        <td class="p-4"><b>Final Score:</b></td>
-                        <td class="p-4"><b>ROMD Evaluated Score</b>: <span name="c1" data-field="c1">0</span></td>
-                        <td class="p-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"></td>
+                        <td class="pb-4"><b>Total Score</b></td>
+                        <td class="pb-4 text-center">{{$nominee->criteria_c}}</td>
+                        <td class="pb-4"><b>Final Score</b></td>
+                        <td class="pb-4"><span id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
+                        <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                     </tr>
 
                 
                 </tbody>
                 </table>
 
+            </div>
         </div>
-    </div>
-                
-            
+    </form>
+    <main>
+        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewModalLabel">View PDF</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600px"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- View Details modal -->
+        <div class="modal fade" id="viewDetailsModal" tabindex="-1" role="dialog" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewDetailsModalLabel">View Submission</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Submission details will be loaded here via JavaScript -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        {{-- BACK BUTTON MODAL --}}
+        <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+            <div class="bg-white p-5 rounded shadow-md transition-transform duration-300 ease-in-out transform scale-95">
+                <h2 class="text-xl font-bold mb-4">Warning</h2>
+                <p class="mb-4">Have you graded anything yet? Your work might not be saved. Do you still want to continue?</p>
+                <div class="flex justify-end space-x-2">
+                    <button id="cancelButton" class="bg-gray-500 text-white px-4 py-2 rounded">No</button>
+                    <button id="confirmButton" class="bg-blue-500 text-white px-4 py-2 rounded">Yes</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
     <script>
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('hidden');
+        function highlightStep(step) {
+        // Remove previous active classes
+        const steps = document.querySelectorAll('.flex > div');
+        steps.forEach(s => s.classList.remove('bg-blue-200'));
+    
+        // Add active class to the clicked step
+        const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
+        clickedStep.classList.add('bg-blue-200');
+        }
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.src = pdfUrl;
+            const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+            viewModal.show();
+        }
+
+    </script>
+    
+    <script>
+        document.getElementById('backButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function () {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('pointer-events-none');
+                modal.classList.remove('opacity-100');
+            }, 50); // Duration of the transition
+        });
+
+        document.getElementById('confirmButton').addEventListener('click', function () {
+            window.location.href = "/external/bro"; // Adjust the URL as needed
         });
     </script>
 </body>

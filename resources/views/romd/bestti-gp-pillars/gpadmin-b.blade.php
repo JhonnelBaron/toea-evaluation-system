@@ -165,7 +165,7 @@
                                     <select class="form-control mb-1 score-dropdown" name="b1a" data-field="b1a" placeholder="Input your initial score">
                                         <option value="">Select score</option>
                                         <option value="15"  {{ (isset($previousData->b1a) && $previousData->b1a == 15) ? 'selected' : '' }}>15 - The accomplishment rate based on set target is at 100% and above</option>
-                                        <option value="0"  {{ (isset($previousData->b1a) && $previousData->b1a == 0) ? 'selected' : '' }}0 - The accomplishment rate based on set target is below 100%</option>
+                                        <option value="0"  {{ (isset($previousData->b1a) && $previousData->b1a == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                                     </select>
                                 </td>
                                 <td class="pb-4"><input class="form-control mb-1" name="b1a_remarks" type="text" placeholder="Remarks" value="{{ isset($previousData->b1a_remarks) ? $previousData->b1a_remarks : '' }}"></td>
