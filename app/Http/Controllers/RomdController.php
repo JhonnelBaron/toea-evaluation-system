@@ -602,18 +602,21 @@ class RomdController extends Controller
 
     public function rankGp()
     {
-        $small = EndorsedExternal::where('grouping', 'Small_Province')->get();
-        $medium = EndorsedExternal::where('grouping', 'Medium_Province')->get();
-        $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
+        // $small = EndorsedExternal::where('grouping', 'Small_Province')->get();
+        // $medium = EndorsedExternal::where('grouping', 'Medium_Province')->get();
+        // $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
+        $small = EndorsedExternal::where('grouping', 'Small_Province')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium_Province')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'Large_Province')->orderBy('final_score', 'desc')->get();
 
         return view('romd.gp-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
     }
 
     public function rankTi()
     {
-        $small = EndorsedExternal::where('grouping', 'RTC-STC')->get();
-        $medium = EndorsedExternal::where('grouping', 'TAS')->get();
-        $large = EndorsedExternal::where('grouping', 'PTC')->get();
+        $small = EndorsedExternal::where('grouping', 'RTC-STC')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'TAS')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'PTC')->orderBy('final_score', 'desc')->get();
 
         return view('romd.ti-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
     }
