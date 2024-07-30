@@ -212,7 +212,7 @@
                             @foreach ($small as $user)
                             <tr class="region-row small" data-category="small">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{  $user->nominee }}</td>
                                 <td class="px-3 py-3">{{   str_replace('_Province', '',$user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
@@ -253,7 +253,7 @@
                             @foreach ($medium as $user)
                             <tr class="region-row medium" data-category="medium">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{  $user->nominee }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
@@ -293,7 +293,7 @@
                             @foreach ($large as $user)
                             <tr class="region-row large" data-category="large">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->province }}</td>
+                                <td class="px-3 py-3">{{  $user->nominee }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
