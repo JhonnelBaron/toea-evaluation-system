@@ -151,7 +151,7 @@
                             <tr>
                                 <td class="pb-8" class="text-sm">B.1.A Implementation of recognized/aligned PQF level 4 or Level 5 programs</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificates of Recognition for PQF Level 4 or Level 5 with list of enrollees) </p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1a_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1a_file_verification }}', event)">Preview</button>
                                 @else
@@ -171,7 +171,7 @@
                             <tr>
                                 <td class="pb-8" class="text-sm">B.1.B. Development of CS and CBC on Diploma program, integrating STEM/21st Century Skills</td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1b_file_verification }}', event)">Preview</button>
                                 @else
@@ -199,7 +199,7 @@
                             <tr>
                                 <td class="pb-8" class="text-sm">B.1.C.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Terminal Reports/After Activity reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1c1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1c1_file_verification }}', event)">Preview</button>
                                 @else
@@ -219,7 +219,7 @@
                             <tr>
                                 <td class="pb-8">B.1.C.2. Awards received at the national level</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1c2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1c2_file_verification }}', event)">Preview</button>
                                 @else
@@ -238,7 +238,7 @@
                             <tr>
                                 <td class="pb-8">B.1.C.3 Awards received at the international level</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received (plaque or medal)</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1c3_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1c3_file_verification }}', event)">Preview</button>
                                 @else
@@ -266,7 +266,7 @@
                             <tr>
                                 <td class="pb-8">B.1.D.1. Development of policy or technology research proposals</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Copy of memo/email submitting its Technology Research/es</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b1d1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b1d1_file_verification }}', event)">Preview</button>
                                 @else
@@ -294,7 +294,7 @@
                             <tr>
                                 <td class="pb-8">B.2.A. UAQTEA Scholarship Program</td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2a_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2a_file_verification }}', event)">Preview</button>
                                 @else
@@ -313,7 +313,7 @@
                             <tr>
                                 <td class="pb-8">B.2.B. Skills Training for Drug Dependents</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2b_file_verification }}', event)">Preview</button>
                                 @else
@@ -332,7 +332,7 @@
                             <tr>
                                 <td class="pb-8">B.2.C. Skills Training for Inmates and their Families</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2c_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2c_file_verification }}', event)">Preview</button>
                                 @else
@@ -351,7 +351,7 @@
                             <tr>
                                 <td class="pb-8">B.2.D. Special Skills Programs for IPs</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2d_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2d_file_verification }}', event)">Preview</button>
                                 @else
@@ -370,7 +370,7 @@
                             <tr>
                                 <td class="pb-8">B.2.E. Expanded Training Program for Women and PWDs</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2e_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2e_file_verification }}', event)">Preview</button>
                                 @else
@@ -389,7 +389,7 @@
                             <tr>
                                 <td class="pb-8">B.2.F. Re-skilling/Upskilling of OFWs</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2f_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2f_file_verification }}', event)">Preview</button>
                                 @else
@@ -408,7 +408,7 @@
                             <tr>
                                 <td class="pb-8">B.2.G. Others</td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2g_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2g_file_verification }}', event)">Preview</button>
                                 @else
@@ -428,7 +428,7 @@
                             <tr>
                                 <td class="pb-8">B.2.H. Graduates of TTI - Enterprise-based</td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2h_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2h_file_verification }}', event)">Preview</button>
                                 @else
@@ -448,7 +448,7 @@
                             <tr>
                                 <td class="pb-8">B.2.I. Graduates of TTI - Community-based/MTP</td>
                                 <td class="pb-8"></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2i_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2i_file_verification }}', event)">Preview</button>
                                 @else
@@ -468,7 +468,7 @@
                             <tr>
                                 <td class="pb-8">B.2.J. Communications/programs/advocacy on Gender and Development</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: After activity report on GAD related programs</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b2j_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b2j_file_verification }}', event)">Preview</button>
                                 @else
@@ -496,7 +496,7 @@
                             <tr>
                                 <td class="pb-8">B.3.A. TVET Trainers Development Programs - TM Level II</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: TM II Certification</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3a_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3a_file_verification }}', event)">Preview</button>
                                 @else
@@ -515,7 +515,7 @@
                             <tr>
                                 <td class="pb-8">B.3.B. TVET Trainers Development Programs - Industry Immersion</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: IWER Certification</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3b_file_verification }}', event)">Preview</button>
                                 @else
@@ -534,7 +534,7 @@
                             <tr>
                                 <td class="pb-8">B.3.C. Percentage of TTI Trainers are Accredited National Competency Assessors</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: List of Trainers<br>NTTCs</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3c_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3c_file_verification }}', event)">Preview</button>
                                 @else
@@ -554,7 +554,7 @@
                             <tr>
                                 <td class="pb-8">B.3.D. Percentage of TTI's registered programs (WTR) with Accredited Assessment Center</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of CTPRs <br>List of Registered Programs <br>List of Accredited ACs <br></p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3d_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3d_file_verification }}', event)">Preview</button>
                                 @else
@@ -574,7 +574,7 @@
                             <tr>
                                 <td class="pb-8">B.3.E. Percentage of TTI Graduates in WTR Programs assessed</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: RWAC</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3e_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3e_file_verification }}', event)">Preview</button>
                                 @else
@@ -596,7 +596,7 @@
                             <tr>
                                 <td class="pb-8">B.3.F. Percentage of graduates in programs with training regulations assessed, certified</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: RWAC</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b3f_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b3f_file_verification }}', event)">Preview</button>
                                 @else
@@ -634,7 +634,7 @@
                             <tr>
                                 <td class="pb-8">B.4.A.1. Implementation Profiling</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring/Summary of profiled learners</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4a1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4a1_file_verification }}', event)">Preview</button>
                                 @else
@@ -655,7 +655,7 @@
                             <tr>
                                 <td class="pb-8">B.4.A.2. Referred Graduates for Possible Employment</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of recommendation for all TTI graduates</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4a2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4a2_file_verification }}', event)">Preview</button>
                                 @else
@@ -676,7 +676,7 @@
                             <tr>
                                 <td class="pb-8">B.4.B. Participation in WCOs</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4b_file_verification }}', event)">Preview</button>
                                 @else
@@ -695,7 +695,7 @@
                             <tr>
                                 <td class="pb-8">B.4.C. Preparation of Institutional Development Plan (IDP)</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Signed IDP</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4c_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4c_file_verification }}', event)">Preview</button>
                                 @else
@@ -714,7 +714,7 @@
                             <tr>
                                 <td class="pb-8">B.4.D. Implementation of Institutional Development Plan (IDP)</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: FY 2023 Analysis of IDP Programs implemented and IDP Report</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4d_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4d_file_verification }}', event)">Preview</button>
                                 @else
@@ -743,7 +743,7 @@
                             <tr>
                                 <td class="pb-8">B.4.E.1. Submission of TAC Annual Accomplishment Report</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Submitted TAC Annual Accomplishment Report</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4e1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4e1_file_verification }}', event)">Preview</button>
                                 @else
@@ -762,7 +762,7 @@
                             <tr>
                                 <td class="pb-8">B.4.E.2. TTI Advisory Council meetings conducted</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Minutes of the meeting</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4e2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4e2_file_verification }}', event)">Preview</button>
                                 @else
@@ -781,7 +781,7 @@
                             <tr>
                                 <td class="pb-8">B.4.E.3. TTI Advisory Council resolutions approved</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Approved resolutions submitted to NITESD (part of the TAC Annual Accomplishment Report)</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4e3_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4e3_file_verification }}', event)">Preview</button>
                                 @else
@@ -800,7 +800,7 @@
                             <tr>
                                 <td class="pb-8">B.4.F. Partnerships forged and implemented (The max. score conferred to the applicant must not exceed 30 points)</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b4f_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b4f_file_verification }}', event)">Preview</button>
                                 @else
@@ -839,7 +839,7 @@
                             <tr>
                                 <td class="pb-8">B.5.A.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5a1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5a1_file_verification }}', event)">Preview</button>
                                 @else
@@ -858,7 +858,7 @@
                             <tr>
                                 <td class="pb-8">B.5.A.2. Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5a2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5a2_file_verification }}', event)">Preview</button>
                                 @else
@@ -896,7 +896,7 @@
                             <tr>
                                 <td class="pb-8">B.5.B.1.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Self Study Report submitted to APACC with letter and evidence</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5b1_1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_1_file_verification }}', event)">Preview</button>
                                 @else
@@ -915,7 +915,7 @@
                             <tr>
                                 <td class="pb-8">B.5.B.1.2. Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certificate of Accreditation</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5b1_2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b1_2_file_verification }}', event)">Preview</button>
                                 @else
@@ -945,7 +945,7 @@
                             <tr>
                                 <td class="pb-8">B.5.B.2.1 Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5b2_1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_1_file_verification }}', event)">Preview</button>
                                 @else
@@ -964,7 +964,7 @@
                             <tr>
                                 <td class="pb-8">B.5.B.2.2 Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received/ Letter of result signed by the Secretary</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5b2_2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5b2_2_file_verification }}', event)">Preview</button>
                                 @else
@@ -994,7 +994,7 @@
                             <tr>
                                 <td class="pb-8">B.5.C.1. Participation</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office </p> </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5c1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5c1_file_verification }}', event)">Preview</button>
                                 @else
@@ -1013,7 +1013,7 @@
                             <tr>
                                 <td class="pb-8">B.5.C.2. Awards received</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5c2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5c2_file_verification }}', event)">Preview</button>
                                 @else
@@ -1032,7 +1032,7 @@
                             <tr>
                                 <td class="pb-8">B.5.D. Development of Procedures Manual</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Procedures manual developed</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5d_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5d_file_verification }}', event)">Preview</button>
                                 @else
@@ -1051,7 +1051,7 @@
                             <tr>
                                 <td class="pb-8">B.5.E. Green Practices (100% implementation of plans and projects related to Green Practices)</td>
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports, Articles, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
                                     @if($data->b5e_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->b5e_file_verification }}', event)">Preview</button>
                                 @else

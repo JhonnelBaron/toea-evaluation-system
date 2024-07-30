@@ -234,7 +234,7 @@
                                 <td class="pb-8"><p class="small mb-1" style="font-size: 14px;">Means of Verification: <br>- Customer Feedback Form Results (TESDA OP AS 03 F02)
                                     <br>- Monthly (January to December) Summary Report with Percentage signed by the PD
                                 </p></td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a4_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a4_file_verification }}', event)">Preview</button>
@@ -266,7 +266,7 @@
                                         <br>Annual Audit Report (AAR) and Agency Action Plan and Status of Implementation (AAPSI)
                                     </p>
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a5a_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a5a_file_verification }}', event)">Preview</button>
@@ -295,7 +295,7 @@
                                         <br>Statement of Audit Suspensions, Disallowances and Charges (SASDC) with summary as of December issued by the COA (RO and PO and TTIs)
                                     </p>
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a5b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a5b_file_verification }}', event)">Preview</button>
@@ -323,7 +323,7 @@
                                         <br>Government Procurement Policy Board (GPPB) report who are compliant
                                     </p>
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a6_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a6_file_verification }}', event)">Preview</button>
@@ -352,7 +352,7 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances
                                     </p> 
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a7a_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a7a_file_verification }}', event)">Preview</button>
@@ -381,7 +381,7 @@
                                         <br>Schedule of cash advances, Certification from the Accountant, outstanding cash advances 
                                     </p>   
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a7b_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a7b_file_verification }}', event)">Preview</button>
@@ -409,7 +409,7 @@
                                         <br>- Acknowledgment email from GPBB
                                     </p>   
                                 </td>
-                                <td class="pb-8">
+                                <td class="pb-8 text-center">
 
                                     @if($data->a8_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a8_file_verification }}', event)">Preview</button>

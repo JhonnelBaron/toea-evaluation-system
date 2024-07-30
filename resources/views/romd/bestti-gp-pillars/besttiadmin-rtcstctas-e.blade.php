@@ -153,7 +153,7 @@
                                                  Social media posts and shares<br>
                                                  Local Media engagements (blasted PRs, Interviews)<br>
                                                  Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p>    </td>
-                                <td>
+                                <td class="text-center">
                                     @if($data->e1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->e1_file_verification }}', event)">Preview</button>
                                 @else

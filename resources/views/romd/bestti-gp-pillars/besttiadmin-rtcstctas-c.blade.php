@@ -150,7 +150,7 @@
                         <tr>
                             <td class="pb-4">C.1. Budget Utilization Rate (BUR)</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: Monitoring logbook/ registry)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c1_file_verification }}', event)">Preview</button>
                                 @else
@@ -171,7 +171,7 @@
                         <tr>
                             <td class="pb-4">C.2. Implementation of Agency Action Plan and Status of Implementation (AAPSI) on the Prior Years Audit Recommendation 80% acted upon (either partially or fully implemented)</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: Agency Action Plan and Status of Implementation (AAPSI))</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c2_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c2_file_verification }}', event)">Preview</button>
                                 @else
@@ -201,7 +201,7 @@
                         <tr>
                             <td class="pb-4">C.3.1 Staff Development Program: Employees who have attended SDP have implemented their RE-Entry Plans as scheduled</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of Personnel in 2023, Certificates of trainings attended, REAPs)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c31_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c31_file_verification }}', event)">Preview</button>
                                 @else
@@ -221,7 +221,7 @@
                         <tr>
                             <td class="pb-4">C.3.2. Staff Development Program: Training Opportunities to staff provided for CY 2023</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of plantilla positions of the TTI, Certificates of training attended)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c32_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c32_file_verification }}', event)">Preview</button>
                                 @else
@@ -259,7 +259,7 @@
                         <tr>
                             <td class="pb-4">C.4.1.1. Participation</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c411_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c411_file_verification }}', event)">Preview</button>
                                 @else
@@ -278,7 +278,7 @@
                         <tr>
                             <td class="pb-4">C.4.1.2. Awards received</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c412_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c412_file_verification }}', event)">Preview</button>
                                 @else
@@ -306,7 +306,7 @@
                         <tr>
                             <td class="pb-4">C.4.2.1. Participation</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c421_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c421_file_verification }}', event)">Preview</button>
                                 @else
@@ -325,7 +325,7 @@
                         <tr>
                             <td class="pb-4">C.4.2.2. Awards Received</td>
                             <td class="pb-4"><span class="small" style="font-size: 12px;">(Means of Verification: List of nominees and awardees from HRMD/AS)</span></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c422_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c422_file_verification }}', event)">Preview</button>
                                 @else
@@ -353,7 +353,7 @@
                         <tr>
                             <td class="pb-4">C.4.3.1. Participation</td>
                             <td class="pb-4"></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c431_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c431_file_verification }}', event)">Preview</button>
                                 @else
@@ -372,7 +372,7 @@
                         <tr>
                             <td class="pb-4">C.4.3.2. Awards Received</td>
                             <td class="pb-4"></td>
-                            <td class="pb-4">
+                            <td class="pb-4 text-center">
                                 @if($data->c432_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->c432_file_verification }}', event)">Preview</button>
                                 @else
