@@ -44,10 +44,10 @@ class ExternalValidatorController extends Controller
 {
     public function externalGp()
     {
-        $small = EndorsedExternal::where('grouping', 'Small_Province')->get();
-        $medium = EndorsedExternal::where('grouping', 'Medium_Province')->get();
-        $large = EndorsedExternal::where('grouping', 'Large_Province')->get();
-
+        $small = EndorsedExternal::where('grouping', 'Small_Province')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium_Province')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'Large_Province')->orderBy('final_score', 'desc')->get();
+        
             // Fetching and summing up scores and percentages
             $collectScore = function($user_id) {
                 $validator_id = Auth::user()->id;
@@ -201,9 +201,9 @@ class ExternalValidatorController extends Controller
 
     public function externalTi()
     {
-        $small = EndorsedExternal::where('grouping', 'RTC-STC')->get();
-        $medium = EndorsedExternal::where('grouping', 'TAS')->get();
-        $large = EndorsedExternal::where('grouping', 'PTC')->get();
+        $small = EndorsedExternal::where('grouping', 'RTC-STC')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'TAS')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'PTC')->orderBy('final_score', 'desc')->get();
 
         $collectScore = function($user) {
             $validator_id = Auth::user()->id;
