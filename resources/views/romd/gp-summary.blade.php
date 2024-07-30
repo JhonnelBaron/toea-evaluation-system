@@ -544,8 +544,8 @@
                                 <select id="submission_status" name="submission_status" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" onchange="setDeduction()">
                                     <option value="">Select status</option>
                                     <option value="Hard copies submitted on time">Hard copies submitted on time</option>
-                                    <option value="1-2 days late">1-2 days late</option>
-                                    <option value="3 days late onwards">3 days late onwards</option>
+                                    <option value="Hard copies 1-2 days late submission">Hard copies 1-2 days late submission</option>
+                                    <option value="Hard copies submitted 3 days late onwards">Hard copies submitted 3 days late onwards</option>
                                     <option value="Hard copies received without official request">Hard copies received without official request</option>
                                     <option value="No hard copies submitted">No hard copies submitted</option>
                                 </select>
@@ -693,10 +693,10 @@
             let deductionPoints = 0;
 
             switch (submissionStatus) {
-                case '1-2 days late':
+                case 'Hard copies 1-2 days late submission':
                     deductionPoints = 5;
                     break;
-                case '3 days late onwards':
+                case 'Hard copies submitted 3 days late onwards':
                     deductionPoints = 25;
                     break;
                 case 'Hard copies received without official request':
