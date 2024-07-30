@@ -1547,9 +1547,9 @@ class ExternalValidatorController extends Controller
     // BRO
     public function externalBro()
     {
-        $small = EndorsedExternal::where('grouping', 'Small')->get();
-        $medium = EndorsedExternal::where('grouping', 'Medium')->get();
-        $large = EndorsedExternal::where('grouping', 'Large')->get();
+        $small = EndorsedExternal::where('grouping', 'Small')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'Large')->orderBy('final_score', 'desc')->get();
 
         $collectScore = function($user_id) {
             $validator_id = Auth::user()->id;
