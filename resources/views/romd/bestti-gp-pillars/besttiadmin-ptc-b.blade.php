@@ -1045,6 +1045,31 @@
             window.location.href = "/external/ti"; // Adjust the URL as needed
         });
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const scoreDropdowns = document.querySelectorAll('.score-dropdown');
+        const totalScoreElement = document.getElementById('totalScore');
+
+        const updateTotalScore = () => {
+            let totalScore = 0;
+            
+            scoreDropdowns.forEach(dropdown => {
+                const selectedScore = parseInt(dropdown.value) || 0;
+                totalScore += selectedScore;
+            });
+            
+            totalScoreElement.innerText = totalScore;
+        };
+
+        scoreDropdowns.forEach(dropdown => {
+            dropdown.addEventListener('change', updateTotalScore);
+        });
+
+        // Initial calculation to set the initial value correctly
+        updateTotalScore();
+    });
+</script>
 </body>
 </html>
 

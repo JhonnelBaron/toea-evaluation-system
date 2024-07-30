@@ -215,16 +215,35 @@
                                 <td class="px-3 py-3">{{   str_replace('_Province', '',$user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                        {{ $user->romo_final_score }}
-                                        <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                            <div class="popover-content p-4">
-                                                <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                                <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                                <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                                <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                                <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
-                                            </div>
-                                        </div>
+                                        @if($user->final_score < 0)
+                                        <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                        <span style="color: gray;">{{ $user->romo_final_score }}</span>
+                                    @else
+                                        {{ $user->final_score }}
+                                    @endif
+                                <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                    <div class="popover-content p-4">
+                                        <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                        <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                        <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                        <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                        <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                        @if($user->deduction != 1000)
+                                        <hr>
+                                        <p>Total: <span class="ml-2 float-right"> {{ $user->romo_final_score}} </span></p>
+                                        @else
+                                        @endif
+                                        <br>
+                                        <p>Deduction: 
+                                            <span class="ml-2 float-right">
+                                                @if($user->deduction == 1000)
+                                                    Disqualified
+                                                @else
+                                                    {{ $user->deduction }}
+                                                @endif
+                                            </span></p>
+                                    </div>
+                                </div>
                                     </div>
                                 </td> 
                                 <td class="px-5 py-1">
@@ -260,17 +279,36 @@
                                 <td class="px-3 py-3">{{  $user->nominee }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->romo_final_score }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
-                                        </div>
+                                      <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        @if($user->final_score < 0)
+                                        <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                        <span style="color: gray;">{{ $user->romo_final_score }}</span>
+                                    @else
+                                        {{ $user->final_score }}
+                                    @endif
+                                <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                    <div class="popover-content p-4">
+                                        <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                        <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                        <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                        <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                        <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                        @if($user->deduction != 1000)
+                                        <hr>
+                                        <p>Total: <span class="ml-2 float-right"> {{ $user->romo_final_score}} </span></p>
+                                        @else
+                                        @endif
+                                        <br>
+                                        <p>Deduction: 
+                                            <span class="ml-2 float-right">
+                                                @if($user->deduction == 1000)
+                                                    Disqualified
+                                                @else
+                                                    {{ $user->deduction }}
+                                                @endif
+                                            </span></p>
                                     </div>
+                                </div>
                                     </div>
                                 </td>   
                                 <td class="px-5 py-1">
@@ -305,17 +343,36 @@
                                 <td class="px-3 py-3">{{  $user->nominee }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->romo_final_score }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
-                                        </div>
+                                      <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        @if($user->final_score < 0)
+                                        <!-- Display totalScoreROMO in gray if final_score is negative -->
+                                        <span style="color: gray;">{{ $user->romo_final_score }}</span>
+                                    @else
+                                        {{ $user->final_score }}
+                                    @endif
+                                <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
+                                    <div class="popover-content p-4">
+                                        <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
+                                        <p>Criteria B: <span class="ml-2 float-right"> {{ $user->criteria_b ?? 0 }} </span></p>
+                                        <p>Criteria C: <span class="ml-2 float-right"> {{ $user->criteria_c ?? 0 }} </span></p>
+                                        <p>Criteria D: <span class="ml-2 float-right"> {{ $user->criteria_d ?? 0 }} </span></p>
+                                        <p>Criteria E: <span class="ml-2 float-right"> {{ $user->criteria_e ?? 0 }} </span></p>
+                                        @if($user->deduction != 1000)
+                                        <hr>
+                                        <p>Total: <span class="ml-2 float-right"> {{ $user->romo_final_score}} </span></p>
+                                        @else
+                                        @endif
+                                        <br>
+                                        <p>Deduction: 
+                                            <span class="ml-2 float-right">
+                                                @if($user->deduction == 1000)
+                                                    Disqualified
+                                                @else
+                                                    {{ $user->deduction }}
+                                                @endif
+                                            </span></p>
                                     </div>
+                                </div>
                                     </div>
                                 </td> 
                                 <td class="px-5 py-1">

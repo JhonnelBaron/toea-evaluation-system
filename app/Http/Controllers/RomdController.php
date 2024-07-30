@@ -415,10 +415,10 @@ class RomdController extends Controller
 
 
         switch ($submissionStatus) {
-            case '1-2 days late':
+            case 'Hard copies 1-2 days late submission':
                 $deductionPoints = 5;
                 break;
-            case '3 days late onwards':
+            case 'Hard copies submitted 3 days late onwards':
                 $deductionPoints = 25;
                 break;
             case 'Hard copies received without official request':
@@ -541,10 +541,10 @@ class RomdController extends Controller
 
 
         switch ($submissionStatus) {
-            case '1-2 days late':
+            case 'Hard copies 1-2 days late submission':
                 $deductionPoints = 5;
                 break;
-            case '3 days late onwards':
+            case 'Hard copies submitted 3 days late onwards':
                 $deductionPoints = 25;
                 break;
             case 'Hard copies received without official request':
