@@ -764,6 +764,16 @@ class RomdController extends Controller
 
         $averageD = $totalD / 9;
 
+        if ($averageD >= 50) {
+            $criteriaD = 60;
+        } elseif ($averageD >= 1 && $averageD <= 49) {
+            $criteriaD = 30;
+        } elseif ($averageD == 0) {
+            $criteriaD = 0;
+        } else {
+            $criteriaD = null; // or some default value
+        }
+
         $store = EndorsedExternal::create([
             'user_id' => $region->id,
             'category' => "Best Regional Office",
@@ -772,13 +782,13 @@ class RomdController extends Controller
             'criteria_a' => $totalA,
             'criteria_b' => $totalB,
             'criteria_c' => $totalC,
-            'criteria_d' => $averageD,
+            'criteria_d' => $criteriaD,
             'criteria_e' => $totalE,
             'romo_final_score' => 
             $totalA + 
             $totalB + 
             $totalC + 
-            $averageD + 
+            $criteriaD + 
             $totalE,
         ]);
 
