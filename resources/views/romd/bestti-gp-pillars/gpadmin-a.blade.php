@@ -156,14 +156,14 @@
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Means of Verification: Certification of no pending case signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
                                 {{-- <td class="pb-4">  <button class="btn btn-sm btn-info" onclick="openPdf('{{ asset($data->a1_file_verification) }}')"><i class="fas fa-eye"></i> Preview</button></td> --}}
                                 <td style="text-align: center;">
-                                    @if($data->a1_file_verification)
+                                    {{-- @if($data->a1_file_verification)
                                         <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a1_file_verification }}', event)">Preview</button>
                                     @else
                                         No file submitted
-                                    @endif
+                                    @endif --}}
                                 </td>                
                                 <td class="pb-4 text-center">{{$data->ra1_final_score}}</td>
-                                <td class="pb-4 text-center">{{$data->ra1_remarks}}</td>
+                                <td class="pb-4 text-center">Evidence {{$data->ra1_remarks}}</td>
                                 <td class="pb-4">
                                     <select class="form-control mb-1 score-dropdown" name="a1" data-field="a1" placeholder="Input your initial score" >
                                         <option value="">Select score</option>
@@ -177,14 +177,14 @@
                                 <td class="pb-4">A.2. Compliance for the TESDA Code of Conduct and Ethical Standards Valid Complaint</td>
                                 <td class="pb-4"><p class="small mb-1" style="font-size: 12px;">Certification of no complaints/findings signed by the Regional Administrative Complaints Committee signed by the Chair (Regional Director)</p></td>
                                 <td style="text-align: center;">
-                                    @if($data->a2_file_verification)
+                                    {{-- @if($data->a2_file_verification)
                                         <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->a2_file_verification }}', event)">Preview</button>
                                     @else
                                         No file submitted
-                                    @endif
+                                    @endif --}}
                                 </td>  
                                 <td class="pb-4 text-center">{{$data->ra2_final_score}}</td>
-                                <td class="pb-4 text-center">{{$data->ra2_remarks}}</td>
+                                <td class="pb-4 text-center">Evidence {{$data->ra2_remarks}}</td>
                                 <td class="pb-4">
                                     <select class="form-control mb-1 score-dropdown" name="a2" data-field="a2" placeholder="Input your initial score">
                                         <option value="">Select score</option>
@@ -204,14 +204,14 @@
                                     Monitoring of Complaints Received
                                 </p></td>
                                 <td style="text-align: center;">
-                                    @if($data->a3_file_verification)
+                                    {{-- @if($data->a3_file_verification)
                                         <button class="btn btn-sm btn-primary " onclick="openPdf('https://tesda-toea.com/{{ $data->a3_file_verification }}', event)">Preview</button>
                                     @else
                                         No file submitted
-                                    @endif
+                                    @endif --}}
                                 </td>  
                                 <td class="pb-4 text-center">{{$data->ra3_final_score}}</td>
-                                <td class="pb-4 text-center">{{$data->ra3_remarks}}</td>
+                                <td class="pb-4 text-center">Evidence {{$data->ra3_remarks}}</td>
                                 <td class="pb-4">
                                     <select class="form-control mb-1 score-dropdown" name="a3" data-field="a3" placeholder="Input your initial score">
                                         <option value="">Select score</option>
@@ -456,7 +456,6 @@
             </div>
         </div>
         @php
-dd($previousData);
 @endphp
 
         <!-- View Details modal -->
