@@ -363,7 +363,7 @@
                             <td style="padding: 15px;"><b>Total Initial Score</b></td>
                             <td style="padding: 15px;" class="text-center">{{$data->total_rfinal_score}}</td>
                             <td style="padding: 15px;"><b>Final Score: </b></td>
-                            <td style="padding: 15px;"> <span name="a1" data-field="a1">{{$previousData->overall_total_score ?? 0}}</span></td>
+                            <td style="padding: 15px;"> <span name="a1" data-field="a1" id="totalScore">{{$previousData->overall_total_score ?? 0}}</span></td>
                             <td class="pb-4"><button class="btn btn-primary" id="submitButton">Save</button></td>
                         </tr>
                     </tbody>
@@ -465,6 +465,31 @@
             window.location.href = "/external/ti"; // Adjust the URL as needed
         });
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const scoreDropdowns = document.querySelectorAll('.score-dropdown');
+        const totalScoreElement = document.getElementById('totalScore');
+
+        const updateTotalScore = () => {
+            let totalScore = 0;
+            
+            scoreDropdowns.forEach(dropdown => {
+                const selectedScore = parseInt(dropdown.value) || 0;
+                totalScore += selectedScore;
+            });
+            
+            totalScoreElement.innerText = totalScore;
+        };
+
+        scoreDropdowns.forEach(dropdown => {
+            dropdown.addEventListener('change', updateTotalScore);
+        });
+
+        // Initial calculation to set the initial value correctly
+        updateTotalScore();
+    });
+</script>
     
 </body>
 </html>
