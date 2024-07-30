@@ -305,7 +305,7 @@
                                     } elseif ($region->region_name === 'Region VI') {
                                         $totalScore = ($totalScore - 390) + 30;
                                     } elseif ($region->region_name === 'Region X') {
-                                        $totalScore = ($totalScore - 360) + 30;
+                                        $totalScore = ($totalScore - 330) + 30;
                                     } elseif ($region->region_name === 'Region XI') {
                                         $totalScore = ($totalScore - 420) + 30;
                                     } elseif ($region->region_name === 'Region XII') {
