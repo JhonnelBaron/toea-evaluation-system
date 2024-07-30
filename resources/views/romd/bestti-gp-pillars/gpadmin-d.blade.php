@@ -149,7 +149,7 @@
                                                      <td><p class="small mb-1" style="font-size: 10px;">Means of Verification: Rating of RO</p></td>
                                                      <td style="text-align: center;">
                                                         @if($data->d1_file_verification)
-                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->d1_file_verification }}')">Preview</button>
+                                                            <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->d1_file_verification }}', event)">Preview</button>
                                                         @else
                                                             No file submitted
                                                         @endif
@@ -255,7 +255,14 @@
         const clickedStep = document.querySelector(`[onclick="highlightStep('${step}')"]`);
         clickedStep.classList.add('bg-blue-200');
         }
-        function openPdf(pdfUrl) {
+        // function openPdf(pdfUrl) {
+        //     const pdfViewer = document.getElementById('pdfViewer');
+        //     pdfViewer.src = pdfUrl;
+        //     const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
+        //     viewModal.show();
+        // }
+        function openPdf(pdfUrl, event) {
+            event.preventDefault();
             const pdfViewer = document.getElementById('pdfViewer');
             pdfViewer.src = pdfUrl;
             const viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
