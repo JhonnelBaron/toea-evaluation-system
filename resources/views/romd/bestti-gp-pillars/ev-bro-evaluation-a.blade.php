@@ -265,7 +265,7 @@
                         if ($user_id == 4) {
                                 $specificIds = [158];
                             } elseif ($user_id == 2) {
-                                $specificIds = [];
+                                $specificIds = [242];
                             } elseif ($user_id == 11) {
                                 $specificIds = [145];
                             } elseif ($user_id == 13) {

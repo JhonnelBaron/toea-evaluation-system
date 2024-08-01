@@ -198,11 +198,11 @@
                                 <th class="px-6 py-2 bg-TiffanyBlue">Nominees</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Category</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Secretariat Score</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 1</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Ms. Mendina</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 2</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Ms. Yorong</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
-                                <th class="px-6 py-3 bg-TiffanyBlue">Validator 3</th>
+                                <th class="px-6 py-3 bg-TiffanyBlue">Dr. Caraan Jr.</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Progress</th>
                                 <th class="px-6 py-3 bg-TiffanyBlue">Average Score</th>
                             </tr>
@@ -246,7 +246,14 @@
                                     </div>
                                 </div>
                                     </div>
-                                </td>            
+                                </td> 
+                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>           
 
                             </tr>
                             @endforeach
@@ -287,7 +294,14 @@
                                     </div>
                                 </div>
                                     </div>
-                                </td>            
+                                </td>       
+                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>     
                             </tr>
                             @endforeach
                             @foreach ($large as $user)
@@ -327,7 +341,14 @@
                                     </div>
                                 </div>
                                     </div>
-                                </td>            
+                                </td>
+                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>          
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreRO }}
