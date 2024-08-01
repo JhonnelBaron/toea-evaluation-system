@@ -154,7 +154,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Submission of the Regional and Provincial TESD plans with cover memo</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [226];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b1a}}</td>
                         <td class="pb-4 text-center">{{$po->b1a_remarks}}</td>
                         <td class="pb-8">
@@ -174,7 +192,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report of the User’s Feedback Survey</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [227];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b1b}}</td>
                         <td class="pb-4 text-center">{{$po->b1b_remarks}}</td>
                         <td class="pb-8">
@@ -194,7 +230,47 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO <br> Form Duly signed compliance audit reports Summary of audited programs Closure reports Monthly monitoring of OPCRs</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        if ($user_id == 4) {
+                                $specificIds = [85];
+                            } elseif ($user_id == 2) {
+                                $specificIds = [74];
+                            } elseif ($user_id == 11) {
+                                $specificIds = [88];
+                            } elseif ($user_id == 15) {
+                                $specificIds = [90];
+                            } elseif ($user_id == 9) {
+                                $specificIds = [86];
+                            } elseif ($user_id == 3) {
+                                $specificIds = [75];
+                            } elseif ($user_id == 1) {
+                                $specificIds = [84];
+                            } elseif ($user_id == 6) {
+                                $specificIds = [81];
+                            } elseif ($user_id == 10) {
+                                $specificIds = [87];
+                            } elseif ($user_id == 5) {
+                                $specificIds = [78];
+                            } else {
+                                $specificIds = [];
+                            }
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b1c}}</td>
                         <td class="pb-4 text-center">{{$co->b1c_remarks}}</td>
                         <td class="pb-8">
@@ -234,7 +310,47 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on the duly accomplished TESDA-OP-CO-02-F06-RO Form</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        if ($user_id == 4) {
+                                $specificIds = [85];
+                            } elseif ($user_id == 2) {
+                                $specificIds = [74];
+                            } elseif ($user_id == 11) {
+                                $specificIds = [88];
+                            } elseif ($user_id == 15) {
+                                $specificIds = [90];
+                            } elseif ($user_id == 9) {
+                                $specificIds = [86];
+                            } elseif ($user_id == 3) {
+                                $specificIds = [75];
+                            } elseif ($user_id == 1) {
+                                $specificIds = [84];
+                            } elseif ($user_id == 6) {
+                                $specificIds = [81];
+                            } elseif ($user_id == 10) {
+                                $specificIds = [87];
+                            } elseif ($user_id == 5) {
+                                $specificIds = [78];
+                            } else {
+                                $specificIds = [];
+                            }
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b1e}}</td>
                         <td class="pb-4 text-center">{{$co->b1e_remarks}}</td>
                         <td class="pb-8">
@@ -274,7 +390,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on duly accomplished TESDA TVET Partnership Monitoring System (TTPMS)</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [2];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b1g}}</td>
                         <td class="pb-4 text-center">{{$plo->b1g_remarks}}</td>
                         <td class="pb-8">
@@ -294,7 +428,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report generated from the SPMOR</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [150];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$romo->b1h}}</td>
                         <td class="pb-4 text-center">{{$romo->b1h_remarks}}</td>
                         <td class="pb-8">
@@ -314,7 +466,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report on Result on the Survey on Employability of TVET graduates under TWSP, PESFA and STEP (SETG)</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [228];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b1i}}</td>
                         <td class="pb-4 text-center">{{$po->b1i_remarks}}</td>
                         <td class="pb-8">
@@ -362,7 +532,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: TAS' Certificates of Recognition for PQF Level 4 or Level 5;</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [151];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2a2}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2a2_remarks}}</td>
                         <td class="pb-8">
@@ -383,7 +571,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Documentation Report after implementation<br>Submitted plans to ICTO</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [240, 241];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$icto->b2a3}}</td>
                         <td class="pb-4 text-center">{{$icto->b2a3_remarks}}</td>
                         <td class="pb-8">
@@ -529,7 +735,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [229];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b2b1}}</td>
                         <td class="pb-4 text-center">{{$po->b2b1_remarks}}</td>
                         <td class="pb-8">
@@ -551,7 +775,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [92];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$romo->b2b2}}</td>
                         <td class="pb-4 text-center">{{$romo->b2b2_remarks}}</td>
                         <td class="pb-8">
@@ -573,7 +815,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Reports</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [150];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$romo->b2b3}}</td>
                         <td class="pb-4 text-center">{{$romo->b2b3_remarks}}</td>
                         <td class="pb-8">
@@ -595,7 +855,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Reports on meetings conducted</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [111];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$romo->b2b4}}</td>
                         <td class="pb-4 text-center">{{$romo->b2b4_remarks}}</td>
                         <td class="pb-8">
@@ -619,7 +897,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$po->b2b5}}</td>
-                        <td class="pb-4 text-center">{{$po->b2b5_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/13cQOpX8oVXBdsi5hAL5WlP2_D5RAVK71s7a2P5CnY6I/edit?fbclid=IwY2xjawEXzHRleHRuA2FlbQIxMAABHTiZ_E41aeJPwWWCL7XRVb0X8ltVgwkRi7Ae-wZTQfOY31EDMV3XRfw4NQ_aem_Zq2WqLlhJaCsxSbBxznfRA&gid=0#gid=0</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2b5" data-field="b2b5">
                                 <option value="">Select score</option>
@@ -643,7 +921,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: MIS 02-04</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [235];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c1}}</td>
                         <td class="pb-4 text-center">{{$co->b2c1_remarks}}</td>
                         <td class="pb-8">
@@ -665,7 +961,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monthly Report on Program Registration</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [234, 234];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c2}}</td>
                         <td class="pb-4 text-center">{{$co->b2c2_remarks}}</td>
                         <td class="pb-8">
@@ -709,7 +1023,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessment Centers from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [155];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c4}}</td>
                         <td class="pb-4 text-center">{{$co->b2c4_remarks}}</td>
                         <td class="pb-8">
@@ -795,7 +1127,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [230];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b2d1}}</td>
                         <td class="pb-4 text-center">{{$po->b2d1_remarks}}</td>
                         <td class="pb-8">
@@ -817,7 +1167,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Report from T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [231];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$po->b2d2}}</td>
                         <td class="pb-4 text-center">{{$po->b2d2_remarks}}</td>
                         <td class="pb-8">
@@ -846,7 +1214,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [238];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2d31}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2d31_remarks}}</td>
                         <td class="pb-8">
@@ -868,7 +1254,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: After Activity Report, Number of HOTS List of HOTS and their TVET qualifications</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [238];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2d32}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2d32_remarks}}</td>
                         <td class="pb-8">
@@ -898,7 +1302,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d411}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d411_remarks}}</td>
                         <td class="pb-8">
@@ -920,7 +1342,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d412}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d412_remarks}}</td>
                         <td class="pb-8">
@@ -946,7 +1386,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d421}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d421_remarks}}</td>
                         <td class="pb-8">
@@ -968,7 +1426,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d422}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d422_remarks}}</td>
                         <td class="pb-8">
@@ -994,7 +1470,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Memorandum on nominees endorsed</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d431}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d431_remarks}}</td>
                         <td class="pb-8">
@@ -1016,7 +1510,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [46];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$plo->b2d432}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d432_remarks}}</td>
                         <td class="pb-8">
@@ -1042,7 +1554,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Endorsement Memo, TESDA Order</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [224, 225];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2d441}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2d441_remarks}}</td>
                         <td class="pb-8">
@@ -1064,7 +1594,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Awards received</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [223];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2d442}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2d442_remarks}}</td>
                         <td class="pb-8">
@@ -1088,7 +1636,35 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Copies of signed MOAs</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID based on the $user_id
+                        if ($user_id == 13) {
+                            $specificIds = [20];
+                        } elseif ($user_id == 15) {
+                            $specificIds = [41, 42];
+                        } elseif ($user_id == 1) {
+                            $specificIds = [28, 72, 73];
+                        } elseif ($user_id == 10) {
+                            $specificIds = [76, 77, 79];
+                        } else {
+                            $specificIds = [];
+                        }
+                    // Find the file with the specific ID
+                    $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                @endphp
+                <!-- Added one more <td class="pb-8"> element -->
+                    <td class="pb-8" style="text-align: center;">
+                        @foreach ($specificIds as $id)
+                            @php
+                                $specificFile = $specificFiles->get($id);
+                            @endphp
+                            @if ($specificFile)
+                                <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                            @else
+                                No file available for ID {{ $id }}
+                            @endif
+                        @endforeach
+                    </td>
                         <td class="pb-4 text-center">{{$plo->b2d5}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d5_remarks}}</td>
                         <td class="pb-8">
@@ -1136,7 +1712,33 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Compendium of program registration, Registry of EBT programs; T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID based on the $user_id
+                        if ($user_id == 13) {
+                            $specificIds = [35, 36, 37, 38, 39, 40];
+                        } elseif ($user_id == 6) {
+                            $specificIds = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71];
+                        } elseif ($user_id == 10) {
+                            $specificIds = [80];
+                        } else {
+                            $specificIds = [];
+                        }
+                    // Find the file with the specific ID
+                    $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                @endphp
+                <!-- Added one more <td class="pb-8"> element -->
+                    <td class="pb-8" style="text-align: center;">
+                        @foreach ($specificIds as $id)
+                            @php
+                                $specificFile = $specificFiles->get($id);
+                            @endphp
+                            @if ($specificFile)
+                                <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                            @else
+                                No file available for ID {{ $id }}
+                            @endif
+                        @endforeach
+                    </td>
                         <td class="pb-4 text-center">{{$plo->b2d6}}</td>
                         <td class="pb-4 text-center">{{$plo->b2d6_remarks}}</td>
                         <td class="pb-8">
@@ -1269,7 +1871,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Letter of Intent, Certificate of Eligibility (attended the CBP), Accomplished form (Evaluation Instrument), Memo to Certification Office</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [216, 217, 218];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2e13a}}</td>
                         <td class="pb-4 text-center">{{$co->b2e13a_remarks}}</td>
                         <td class="pb-8">
@@ -1398,7 +2018,25 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring report, Research/ Project Proposals, Competency-based Curriculum (CBC), Program Offerings related to Agriculture, Institutional practices</p>
                         </td>
-                        <td class="pb-8"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [152, 153, 156];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nitesd->b2e3}}</td>
                         <td class="pb-4 text-center">{{$nitesd->b2e3_remarks}}</td>
                         <td class="pb-8">

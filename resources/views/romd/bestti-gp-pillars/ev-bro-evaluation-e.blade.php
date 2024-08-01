@@ -138,7 +138,25 @@
                     <tr>
                         <td class="pb-4 text-center">E. Social Marketing and Advocacy</td>
                         <td class="pb-4 text-center"><p class="small mb-1" style="font-size: 10px;">Means of Verification: Communication plan Write-ups (best practices/activity reports)<br>Radio programsSocial media posts and shares<br>Local Media engagements (blasted PRs, Interviews)<br> Summary of accomplishments (write-ups, radio/tv guestings, social media posts, shares; local media engagements)</p></td>
-                        <td class="pb-4 text-center"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [221, 222];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$piad->e1}}</td>
                         <td class="pb-4 text-center">{{$piad->e1_remarks}}</td>
                         <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e1" data-field="e1">
