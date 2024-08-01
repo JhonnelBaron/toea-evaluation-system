@@ -146,7 +146,26 @@
                         <td class="pb-8 pt-5">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Rating of each Executive Office based on the timely, consistent, and accurate reporting</p>
                         </td>
-                        <td class="pb-8 pt-5"></td>
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificFilesInfo= [    232 => 'Summary', 200 => 'FMS', 215 => 'ICTO'
+                                        ];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', array_keys($specificFilesInfo))->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificFilesInfo as $id => $name)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">{{ $name }} File</button>
+                                @else
+                                    No file available for ID {{ $name }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$nominee->criteria_d}}</td>
                         <td class="pb-4 text-center"></td>
                         <td class="pb-8 pt-5">

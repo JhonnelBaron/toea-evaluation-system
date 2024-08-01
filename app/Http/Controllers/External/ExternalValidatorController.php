@@ -1632,7 +1632,7 @@ class ExternalValidatorController extends Controller
         $previousData = BroAExternal::where('user_id', $id)
         ->where('validator_id', $validator_id)
         ->first();
-        $files = RoFile::whereNotNull('file_path')->get();
+        $files = RoFile::all();
 
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-a', [
@@ -1713,7 +1713,7 @@ class ExternalValidatorController extends Controller
         $previousData = BroCExternal::where('user_id', $id)
         ->where('validator_id', $validator_id)
         ->first();
-        $files = RoFile::where('uploader_id', Auth::id());
+        $files = RoFile::all();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-c', [
             'user_id' => $id,
@@ -1753,7 +1753,7 @@ class ExternalValidatorController extends Controller
         $previousData = BroDExternal::where('user_id', $id)
         ->where('validator_id', $validator_id)
         ->first();
-        $files = RoFile::where('uploader_id', Auth::id());
+           $files = RoFile::all();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-d', [
             'user_id' => $id,
@@ -1793,7 +1793,7 @@ class ExternalValidatorController extends Controller
         $previousData = BroEExternal::where('user_id', $id)
         ->where('validator_id', $validator_id)
         ->first();
-        $files = RoFile::where('uploader_id', Auth::id());
+           $files = RoFile::all();
 
         return view('romd.bestti-gp-pillars.ev-bro-evaluation-e', [
             'user_id' => $id,
