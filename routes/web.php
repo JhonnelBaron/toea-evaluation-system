@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('gp/endorsed', [RomdController::class, 'rankGp']);
     Route::get('ti/endorsed', [RomdController::class, 'rankTi']);
+    Route::get('bro/endorsed', [RomdController::class, 'rankBro']);
 
     Route::get('/external/gp', [ExternalValidatorController::class, 'externalGp']);
     Route::get('/external/ti', [ExternalValidatorController::class, 'externalTi']);

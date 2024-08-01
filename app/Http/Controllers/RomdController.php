@@ -5,7 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\AsEvaluation;
 use App\Models\CoEvaluation;
 use App\Models\ExecutiveOfficeAccount;
+use App\Models\External\BroAExternal;
+use App\Models\External\BroBExternal;
+use App\Models\External\BroCExternal;
+use App\Models\External\BroDExternal;
+use App\Models\External\BroEExternal;
 use App\Models\External\EndorsedExternal;
+use App\Models\External\GpAExternal;
+use App\Models\External\GpBExternal;
+use App\Models\External\GpCExternal;
+use App\Models\External\GpDExternal;
+use App\Models\External\GpEExternal;
+use App\Models\External\PtcAExternal;
+use App\Models\External\PtcBExternal;
+use App\Models\External\PtcCExternal;
+use App\Models\External\PtcDExternal;
+use App\Models\External\PtcEExternal;
+use App\Models\External\RstAExternal;
+use App\Models\External\RstBExternal;
+use App\Models\External\RstCExternal;
+use App\Models\External\RstDExternal;
+use App\Models\External\RstEExternal;
 use App\Models\FmsEvaluation;
 use App\Models\IctoEvaluation;
 use App\Models\LdEvaluation;
@@ -609,8 +629,156 @@ class RomdController extends Controller
         $medium = EndorsedExternal::where('grouping', 'Medium_Province')->orderBy('final_score', 'desc')->get();
         $large = EndorsedExternal::where('grouping', 'Large_Province')->orderBy('final_score', 'desc')->get();
 
-        return view('romd.gp-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+        // return view('romd.gp-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+        
+        $collectScore = function($user_id, $validator_ids) {
+            $models = [
+                GpAExternal::class,
+                GpBExternal::class,
+                GpCExternal::class,
+                GpDExternal::class,
+                GpEExternal::class,
+            ];
+    
+            $scoresByValidator = [];
+            $progressByValidator = [];
+    
+            foreach ($validator_ids as $validator_id) {
+                $totalScore = 0;
+                $totalProgressPercentage = 0;
+                $breakdown = [];
+    
+                foreach ($models as $modelClass) {
+                                          /** @var \Illuminate\Database\Eloquent\Model $model */
+                    $model = new $modelClass;
+                    $table = $model->getTable();
+    
+                    $scores = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('overall_total_score');
+    
+                    $progress = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('progress_percentage');
+    
+                    $totalScore += $scores;
+                    $totalProgressPercentage += $progress;
+                    $breakdown[$table] = $scores;
+                }
+                $averageProgressPercentage = $totalProgressPercentage / count($models);
+    
+                $scoresByValidator[$validator_id] = $totalScore;
+                $progressByValidator[$validator_id] = $averageProgressPercentage;
+            }
+    
+            return ['scores' => $scoresByValidator, 'progress' => $progressByValidator];
+        };
+    
+        // Validator IDs to track
+        $validator_ids = [13, 16, 17];
+    
+        // Collect scores for each user in each grouping
+        $smallScores = $small->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+    
+        $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+    
+        $largeScores = $large->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+    
+        return view('romd.gp-endorsed', [
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+            'smallScores' => $smallScores,
+            'mediumScores' => $mediumScores,
+            'largeScores' => $largeScores,
+        ]);
     }
+
+    public function rankBro()
+    {
+        $small = EndorsedExternal::where('grouping', 'Small')->orderBy('final_score', 'desc')->get();
+        $medium = EndorsedExternal::where('grouping', 'Medium')->orderBy('final_score', 'desc')->get();
+        $large = EndorsedExternal::where('grouping', 'Large')->orderBy('final_score', 'desc')->get();
+
+        $collectScore = function($user_id, $validator_ids) {
+            $models = [
+                BroAExternal::class,
+                BroBExternal::class,
+                BroCExternal::class,
+                BroDExternal::class,
+                BroEExternal::class,
+            ];
+
+            $scoresByValidator = [];
+            $progressByValidator = [];
+
+            foreach ($validator_ids as $validator_id) {
+                $totalScore = 0;
+                $totalProgressPercentage = 0;
+                $breakdown = [];
+
+                foreach ($models as $modelClass) {
+                    /** @var \Illuminate\Database\Eloquent\Model $model */
+                    $model = new $modelClass;
+                    $table = $model->getTable();
+
+                    $scores = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('overall_total_score');
+
+                    $progress = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('progress_percentage');
+
+                    $totalScore += $scores;
+                    $totalProgressPercentage += $progress;
+                    $breakdown[$table] = $scores;
+                }
+                $averageProgressPercentage = $totalProgressPercentage / count($models);
+
+                $scoresByValidator[$validator_id] = $totalScore;
+                $progressByValidator[$validator_id] = $averageProgressPercentage;
+            }
+
+            return ['scores' => $scoresByValidator, 'progress' => $progressByValidator];
+        };
+
+        // Validator IDs to track
+        $validator_ids = [13, 16, 17];
+
+        // Collect scores for each user in each grouping
+        $smallScores = $small->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+
+        $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+
+        $largeScores = $large->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids)];
+        });
+
+        return view('romd.bro-endorsed', [
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+            'smallScores' => $smallScores,
+            'mediumScores' => $mediumScores,
+            'largeScores' => $largeScores,
+        ]);
+    }
+
 
     public function rankTi()
     {
@@ -618,7 +786,87 @@ class RomdController extends Controller
         $medium = EndorsedExternal::where('grouping', 'TAS')->orderBy('final_score', 'desc')->get();
         $large = EndorsedExternal::where('grouping', 'PTC')->orderBy('final_score', 'desc')->get();
 
-        return view('romd.ti-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+        // return view('romd.ti-endorsed', ['small' => $small, 'medium' => $medium, 'large' => $large]);
+
+        $collectScore = function($user_id, $validator_ids, $grouping) {
+            if ($grouping == 'PTC') {
+                $models = [
+                    PtcAExternal::class,
+                    PtcBExternal::class,
+                    PtcCExternal::class,
+                    PtcDExternal::class,
+                    PtcEExternal::class,
+                ];
+            } else {
+                $models = [
+                    RstAExternal::class,
+                    RstBExternal::class,
+                    RstCExternal::class,
+                    RstDExternal::class,
+                    RstEExternal::class,
+                ];
+            }
+    
+            $scoresByValidator = [];
+            $progressByValidator = [];
+    
+            foreach ($validator_ids as $validator_id) {
+                $totalScore = 0;
+                $totalProgressPercentage = 0;
+                $breakdown = [];
+    
+                foreach ($models as $modelClass) {
+                    /** @var \Illuminate\Database\Eloquent\Model $model */
+                    $model = new $modelClass;
+                    $table = $model->getTable();
+    
+                    $scores = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('overall_total_score');
+    
+                    $progress = DB::table($table)
+                        ->where('user_id', $user_id)
+                        ->where('validator_id', $validator_id)
+                        ->sum('progress_percentage');
+    
+                    $totalScore += $scores;
+                    $totalProgressPercentage += $progress;
+                    $breakdown[$table] = $scores;
+                }
+                $averageProgressPercentage = $totalProgressPercentage / count($models);
+    
+                $scoresByValidator[$validator_id] = $totalScore;
+                $progressByValidator[$validator_id] = $averageProgressPercentage;
+            }
+    
+            return ['scores' => $scoresByValidator, 'progress' => $progressByValidator];
+        };
+    
+        // Validator IDs to track
+        $validator_ids = [13, 16, 17];
+    
+        // Collect scores for each user in each grouping
+        $smallScores = $small->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids, $user->grouping)];
+        });
+    
+        $mediumScores = $medium->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids, $user->grouping)];
+        });
+    
+        $largeScores = $large->mapWithKeys(function ($user) use ($collectScore, $validator_ids) {
+            return [$user->user_id => $collectScore($user->user_id, $validator_ids, $user->grouping)];
+        });
+    
+        return view('romd.ti-endorsed', [
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+            'smallScores' => $smallScores,
+            'mediumScores' => $mediumScores,
+            'largeScores' => $largeScores,
+        ]);
     }
 
 

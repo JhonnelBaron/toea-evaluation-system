@@ -165,7 +165,7 @@
                             <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-black border-b-2 border-black"><b>Ranking</b></a>
                         </li>
                         <li class="tab">
-                            <a href="#" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
+                            <a href="/bro/endorsed" data-tab="endorsed" class="tab-link p-4 text-black">Endorsed</a>
                         </li>
                     </ul>
                 </div>

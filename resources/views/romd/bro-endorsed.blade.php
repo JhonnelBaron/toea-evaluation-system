@@ -144,7 +144,7 @@
         ])
         <div class="ml-4 p-2">
             <div class="flex justify-between items-center w-full p-2">
-                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST TI</h1>
+                <h1 class="text-gray-800 font-bold text-3xl ml-4">BEST REGIONAL OFFICE</h1>
                 <img class="w-20 h-20" src="{{ asset('img/tsda.png') }}">
             </div>
 
@@ -161,9 +161,9 @@
                     <label for="categoryFilter" class="text-black mr-2">Category:</label>
                     <select id="categoryFilter" class="rounded-md px-2 py-1 bg-gray-300 text-gray-800">
                         <option value="all">All</option>
-                        <option value="small">RTC/STC</option>
-                        <option value="medium">TAS</option>
-                        <option value="large">PTC</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
                     </select>
                 </div>
                 {{--<div class="ml-8 flex items-center">
@@ -176,10 +176,10 @@
                 <div class="flex-grow flex items-center justify-center" style="margin-right: 8.5rem;">
                     <ul class="flex">
                         <li class="tab">
-                            <a href="#" data-tab="submission" class="tab-link p-4 text-black">Summary</a>
+                            <a href="{{ route('romd.progress') }}" data-tab="submission" class="tab-link p-4 text-black">Summary</a>
                         </li>
                         <li class="tab">
-                            <a href="/best-ti" data-tab="evaluated" class="tab-link p-4 text-black">List</a>
+                            <a href="{{ route('romd.ranking') }}" data-tab="evaluated" class="tab-link p-4 text-black">List</a>
                         </li>
                         <li class="tab">
                             <a href="#" data-tab="endorsed" class="tab-link p-4 text-black  border-b-2 border-black"><b>Endorsed</b></a>
@@ -212,7 +212,7 @@
                             @foreach ($small as $user)
                             <tr class="region-row small" data-category="small">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->nominee }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{   str_replace('_Province', '',$user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
@@ -246,20 +246,21 @@
                                     </div>
                                 </div>
                                     </div>
-                                </td>
+                                </td> 
                                 <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][13] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][16] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][17] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>                   
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>           
+
                             </tr>
                             @endforeach
                             @foreach ($medium as $user)
                             <tr class="region-row medium" data-category="medium">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->nominee }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
@@ -293,20 +294,20 @@
                                     </div>
                                 </div>
                                     </div>
-                                </td>
+                                </td>       
                                 <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][13] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][16] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][17] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>                   
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>     
                             </tr>
                             @endforeach
                             @foreach ($large as $user)
                             <tr class="region-row large" data-category="large">
                                 <td class="rank"></td>
-                                <td class="px-3 py-3">{{  $user->nominee }}</td>
+                                <td class="px-3 py-3">{{  $user->province }}</td>
                                 <td class="px-3 py-3">{{  str_replace('_Province', '', $user->grouping) }}</td>
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
@@ -347,7 +348,7 @@
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][17] ?? 0 }}</td>
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>                   
+                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>          
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
                                     {{ $user->totalScoreRO }}
@@ -552,7 +553,7 @@
                 const form = modal.querySelector('form');
                 if (form) {
                     // Construct the new URL with the userId
-                    const actionUrl = `/gp/endorse-nominee/${userId}`;
+                    const actionUrl = `/bro/endorse-nominee/${userId}`;
                     form.setAttribute('action', actionUrl);
                 }
             }
