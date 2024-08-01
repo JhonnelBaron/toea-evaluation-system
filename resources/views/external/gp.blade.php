@@ -132,6 +132,24 @@
             display: block;
         }
 
+        .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.tooltip-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -1px; /* Adjust this value to position the arrow correctly */
+    margin-top: -4px; /* Adjust this value to center the arrow vertically */
+    border-width: 4px 8px 4px 0;
+    border-color: transparent rgb(56, 56, 56) transparent transparent; /* Adjust the color to match your tooltip background */
+}
+
+
 
 
     </style>
@@ -221,6 +239,8 @@
                                     @else
                                         {{ $user->final_score }}
                                     @endif
+
+                                    
                                 <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
                                     <div class="popover-content p-4">
                                         <p>Criteria A: <span class="ml-2 float-right"> {{ $user->criteria_a ?? 0 }} </span></p>
@@ -242,29 +262,31 @@
                                                     {{ $user->deduction }}
                                                 @endif
                                             </span></p>
-                                    </div>
-                                </div>
-                                    </div>
-                                </td> 
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                        {{ $smallScores[$user->user_id]['totalScore'] ?? 0 }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $smallScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $smallScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $smallScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $smallScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $smallScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }} </span></p>
                                         </div>
                                     </div>
+                                </div>
+                                </td> 
+
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center">
+                                        {{ $smallScores[$user->user_id]['totalScore'] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $smallScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $smallScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $smallScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $smallScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $smallScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
                                     </div>
-                                </td>       
+                                </td>
                                 <td class="px-3 py-3">{{ number_format($smallScores[$user->user_id]['progress'], 2) }}%</td>     
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.gp-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
-                                <td class="px-3 py-3">                            <textarea class="form-control remarks-textarea" >
-                                
-                                </textarea> </td>  
+                                <td class="px-3 py-3">                            
+                                    <textarea class="form-control remarks-textarea" ></textarea>
+                                </td>  
 
                             </tr>
                             @endforeach
@@ -310,17 +332,19 @@
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
                                         {{ $mediumScores[$user->user_id]['totalScore'] ?? 0 }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right">  {{ $mediumScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right">  {{ $mediumScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right">  {{ $mediumScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right">  {{ $mediumScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right">  {{ $mediumScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }} </span></p>
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
                                         </div>
                                     </div>
-                                    </div>
-                                </td>        
+                                </td>
+                                        
                                 <td class="px-3 py-3">{{ number_format($mediumScores[$user->user_id]['progress'], 2) }}%</td>    
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.gp-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">                            <textarea class="form-control remarks-textarea" >
@@ -370,17 +394,19 @@
                                 <td class="px-5 py-1">
                                     <div class="hoverable relative flex items-center justify-center max-w-xs">
                                         {{ $largeScores[$user->user_id]['totalScore'] ?? 0 }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }}  </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }}  </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }}  </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }}  </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $largeScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }}  </span></p>
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $largeScores[$user->user_id]['breakdown']['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $largeScores[$user->user_id]['breakdown']['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $largeScores[$user->user_id]['breakdown']['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $largeScores[$user->user_id]['breakdown']['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $largeScores[$user->user_id]['breakdown']['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
                                         </div>
                                     </div>
-                                    </div>
-                                </td>        
+                                </td>
+                                        
                                 <td class="px-3 py-3">{{ number_format($largeScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.gp-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
@@ -543,19 +569,11 @@
                 window.location.href = baseUrl;
             });
 
-                    document.querySelectorAll('.hoverable').forEach(item => {
-                    item.addEventListener('mouseenter', event => {
-                        const popover = item.querySelector('.popover');
-                        popover.style.display = 'block';
-                        popover.style.top = `${event.clientY - popover.offsetHeight}px`; // Adjusting to show above the cursor
-                        popover.style.left = `${event.clientX}px`;
-                    });
+            
 
-                    item.addEventListener('mouseleave', () => {
-                        const popover = item.querySelector('.popover');
-                        popover.style.display = 'none';
-                    });
-                });
+                    
+
+
             });
             function toggleModal(modalId, userId, provinceName) {
                 const modal = document.getElementById(modalId);
@@ -583,6 +601,25 @@
             function submitSaveChangesForm() {
                 document.getElementById('saveChangesForm').submit();
             }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const hoverables = document.querySelectorAll('.hoverable');
+            hoverables.forEach(hoverable => {
+            hoverable.addEventListener('mouseenter', () => {
+                const tooltip = hoverable.querySelector('.popover');
+            tooltip.classList.remove('invisible', 'opacity-0');
+            tooltip.classList.add('opacity-100');
+        });
+            hoverable.addEventListener('mouseleave', () => {
+                const tooltip = hoverable.querySelector('.popover');
+                tooltip.classList.add('invisible', 'opacity-0');
+                tooltip.classList.remove('opacity-100');
+        });
+    });
+});
+
+
+
         
     </script>
 </body>

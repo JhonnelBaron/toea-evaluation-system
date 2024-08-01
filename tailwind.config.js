@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '1rem': '1rem',
+      },
       backgroundImage: {
         'login-bg': "url('/resources/css/img/login-bg.png')",
       },

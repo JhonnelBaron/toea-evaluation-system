@@ -146,7 +146,7 @@
                             <tr>
                                 <td>D.1. Reporting Efficiency</td>
 								<td></td>
-                                <td>
+                                <td class="text-center">
                                     @if($data->d1_file_verification)
                                     <button class="btn btn-sm btn-primary" onclick="openPdf('https://tesda-toea.com/{{ $data->d1_file_verification }}', event)">Preview</button>
                                 @else
