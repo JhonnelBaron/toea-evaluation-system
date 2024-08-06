@@ -2029,7 +2029,7 @@ class ExternalValidatorController extends Controller
         })->count();
 
          // Define total_fields
-         $data->total_fields = 46; // Adjust this value based on the number of fields
+         $data->total_fields = 50; // Adjust this value based on the number of fields
 
          // Calculate progress_percentage
          $data->progress_percentage = ($data->overall_total_filled / $data->total_fields) * 100;
