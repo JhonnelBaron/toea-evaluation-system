@@ -247,11 +247,52 @@
                                 </div>
                                     </div>
                                 </td> 
-                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $smallScores[$user->user_id]['scores'][13] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][13]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][13]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][13]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][13]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][13]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $smallScores[$user->user_id]['scores'][16] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][16]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][16]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][16]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][16]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][16]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $smallScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                    {{ $smallScores[$user->user_id]['scores'][17] ?? 0 }}                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                        <div class="p-2">
+                                            <p>Criteria A: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][17]['gp_a_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][17]['gp_b_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][17]['gp_c_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][17]['gp_d_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="float-right">{{ $smallScores[$user->user_id]['breakdowns'][17]['gp_e_externals'] ?? 0 }}</span></p>
+                                        </div>
+                                        <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                    </div>
+                                </div>
+                            </td>
                                 <td class="px-5 py-1">{{ number_format($smallScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>           
 
@@ -295,11 +336,52 @@
                                 </div>
                                     </div>
                                 </td>       
-                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $mediumScores[$user->user_id]['scores'][13] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][13]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][13]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][13]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][13]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][13]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $mediumScores[$user->user_id]['scores'][16] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][16]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][16]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][16]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][16]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][16]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $mediumScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                    {{ $mediumScores[$user->user_id]['scores'][17] ?? 0 }}                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                        <div class="p-2">
+                                            <p>Criteria A: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][17]['gp_a_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][17]['gp_b_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][17]['gp_c_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][17]['gp_d_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="float-right">{{ $mediumScores[$user->user_id]['breakdowns'][17]['gp_e_externals'] ?? 0 }}</span></p>
+                                        </div>
+                                        <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                    </div>
+                                </div>
+                            </td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>     
                             </tr>
@@ -342,41 +424,54 @@
                                 </div>
                                     </div>
                                 </td>
-                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][13] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $largeScores[$user->user_id]['scores'][13] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][13]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][13]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][13]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][13]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][13]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][13] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][16] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                        {{ $largeScores[$user->user_id]['scores'][16] ?? 0 }}
+                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                            <div class="p-2">
+                                                <p>Criteria A: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][16]['gp_a_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria B: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][16]['gp_b_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria C: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][16]['gp_c_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria D: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][16]['gp_d_externals'] ?? 0 }}</span></p>
+                                                <p>Criteria E: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][16]['gp_e_externals'] ?? 0 }}</span></p>
+                                            </div>
+                                            <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][16] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $largeScores[$user->user_id]['scores'][17] ?? 0 }}</td>
+                                <td class="px-5 py-1">
+                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
+                                    {{ $largeScores[$user->user_id]['scores'][17] ?? 0 }}                                        <div class="popover absolute left-24 ml-2 top-1/2 transform -translate-y-1/2 z-10 invisible inline-block px-4 py-2 text-sm font-small text-gray-600 transition-opacity duration-300 bg-white rounded-lg shadow-sm opacity-0 bg-white-700" style="width: 200px;">
+                                        <div class="p-2">
+                                            <p>Criteria A: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][17]['gp_a_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria B: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][17]['gp_b_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria C: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][17]['gp_c_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria D: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][17]['gp_d_externals'] ?? 0 }}</span></p>
+                                            <p>Criteria E: <span class="float-right">{{ $largeScores[$user->user_id]['breakdowns'][17]['gp_e_externals'] ?? 0 }}</span></p>
+                                        </div>
+                                        <div class="tooltip-arrow absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white dark:border-r-white"></div>
+                                    </div>
+                                </div>
+                            </td>
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
                                 <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>          
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreRO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_final_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_final_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-1">
-                                    <div class="hoverable relative flex items-center justify-center max-w-xs">
-                                    {{ $user->totalScoreROMO }}
-                                    <div class="popover bg-white border border-gray-300 shadow-lg rounded-lg hidden">
-                                        <div class="popover-content p-4">
-                                            <p>Criteria A: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_a_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria B: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_b_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria C: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_c_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria D: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_d_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                            <p>Criteria E: <span class="ml-2 float-right"> {{ $user->scores['breakdown']['galing_probinsya_e_parts']->total_rfinal_score ?? 0 }} </span></p>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -561,6 +656,22 @@
             function submitSaveChangesForm() {
                 document.getElementById('saveChangesForm').submit();
             }
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                const hoverables = document.querySelectorAll('.hoverable');
+            hoverables.forEach(hoverable => {
+            hoverable.addEventListener('mouseenter', () => {
+                const tooltip = hoverable.querySelector('.popover');
+            tooltip.classList.remove('invisible', 'opacity-0');
+            tooltip.classList.add('opacity-100');
+        });
+            hoverable.addEventListener('mouseleave', () => {
+                const tooltip = hoverable.querySelector('.popover');
+                tooltip.classList.add('invisible', 'opacity-0');
+                tooltip.classList.remove('opacity-100');
+        });
+    });
+});
         
     </script>
 </body>
