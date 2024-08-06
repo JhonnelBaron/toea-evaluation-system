@@ -290,7 +290,26 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Tracking sheets (F41) - RO/PO c/o CO</p>
                         </td>
-                        <td class="pb-8"></td>
+                                                
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [244];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b1d}}</td>
                         <td class="pb-4 text-center">{{$co->b1d_remarks}}</td>
                         <td class="pb-8">
@@ -370,7 +389,26 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: List of mandatory assessment from T2MIS</p>
                         </td>
-                        <td class="pb-8"></td>
+                                               
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [245];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b1f}}</td>
                         <td class="pb-4 text-center">{{$co->b1f_remarks}}</td>
                         <td class="pb-8">
@@ -414,7 +452,7 @@
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b1g" data-field="b1g">
                                 <option value="">Select Score</option>
-                                <option value="10"  {{ (isset($previousData->b1g) && $previousData->b1g == 15) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
+                                <option value="10"  {{ (isset($previousData->b1g) && $previousData->b1g == 10) ? 'selected' : '' }}>10 - The accomplishment rate based on set target is at 100% and above</option>
                                 <option value="0"  {{ (isset($previousData->b1g) && $previousData->b1g == 0) ? 'selected' : '' }}>0 - The accomplishment rate based on set target is below 100%</option>
                             </select>
                         </td>
@@ -1001,7 +1039,26 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Summary/Report RWAC Report from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
+                                                
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [246];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c3}}</td>
                         <td class="pb-4 text-center">{{$co->b2c3_remarks}}</td>
                         <td class="pb-8">
@@ -1063,7 +1120,26 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Registry of Accredited Assessors from T2MIS; Signed Validated OPCR</p>
                         </td>
-                        <td class="pb-8"></td>
+                                                
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [247];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c5}}</td>
                         <td class="pb-4 text-center">{{$co->b2c5_remarks}}</td>
                         <td class="pb-8">
@@ -1085,7 +1161,26 @@
                         <td class="pb-8">
                             <p class="small mb-1" style="font-size: 12px;">Means of Verification: Monitoring Report (CO), Certificate of Accreditation for Level IV Assessment Centers (ROs)</p>
                         </td>
-                        <td class="pb-8"></td>
+                                                
+                        @php
+                        // Define the specific ID you're looking for
+                        $specificIds = [248];
+                        // Find the file with the specific ID
+                        $specificFiles = $files->whereIn('id', $specificIds)->keyBy('id');
+                    @endphp
+                    <!-- Added one more <td class="pb-8"> element -->
+                        <td class="pb-8" style="text-align: center;">
+                            @foreach ($specificIds as $id)
+                                @php
+                                    $specificFile = $specificFiles->get($id);
+                                @endphp
+                                @if ($specificFile)
+                                    <button class="btn btn-sm btn-primary mb-2" onclick="openPdf('{{ asset($specificFile->file_path) }}', event)">Preview</button>
+                                @else
+                                    No file available for ID {{ $id }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="pb-4 text-center">{{$co->b2c6}}</td>
                         <td class="pb-4 text-center">{{$co->b2c6_remarks}}</td>
                         <td class="pb-8">
@@ -1779,7 +1874,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$co->b2e11a}}</td>
-                        <td class="pb-4 text-center">{{$co->b2e11a_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/1394PVv6bNAjhNSXH2e5amGH3uoLRhiXIUUwGw1BuDhA/edit?usp=sharing</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11a" data-field="b2e11a">
                                 <option value="">Select score</option>
@@ -1801,7 +1896,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$co->b2e11b}}</td>
-                        <td class="pb-4 text-center">{{$co->b2e11b_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/11GaxbQvKmRu7ZL4K-LsI-mSQmkQOlAJN/edit?usp=sharing&ouid=110705047921481987807&rtpof=true&sd=true</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e11b" data-field="b2e11b">
                                 <option value="">Select score</option>
@@ -1825,7 +1920,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$co->b2e12a}}</td>
-                        <td class="pb-4 text-center">{{$co->b2e12a_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/11GaxbQvKmRu7ZL4K-LsI-mSQmkQOlAJN/edit?usp=sharing&ouid=110705047921481987807&rtpof=true&sd=true</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12a" data-field="b2e12a">
                                 <option value="">Select score</option>
@@ -1847,7 +1942,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$co->b2e12b}}</td>
-                        <td class="pb-4 text-center">{{$co->b2e12b_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/11GaxbQvKmRu7ZL4K-LsI-mSQmkQOlAJN/edit?usp=sharing&ouid=110705047921481987807&rtpof=true&sd=true</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e12b" data-field="b2e12b">
                                 <option value="">Select score</option>
@@ -1995,7 +2090,7 @@
                         </td>
                         <td class="pb-8"></td>
                         <td class="pb-4 text-center">{{$po->b2e23}}</td>
-                        <td class="pb-4 text-center">{{$po->b2e23_remarks}}</td>
+                        <td class="pb-4 text-center" style="white-space: normal; word-break: break-all; max-width: 300px;">https://docs.google.com/spreadsheets/d/1zwH4JkV9cqQcSFLt_b74p5xXqY4w65goWuFQT--hrOg/edit?usp=sharing</td>
                         <td class="pb-8">
                             <select class="form-control mb-1 score-dropdown"  name="b2e23" data-field="b2e23">
                                 <option value="">Select score</option>
