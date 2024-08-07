@@ -311,9 +311,12 @@
 
                                     // Calculate the average, ensuring not to divide by zero
                                     $average = $count > 0 ? $sum / $count : 0;
+
+                                    $roundedAverage = round($average);
+
                                 @endphp
 
-                                <td class="px-5 py-1">{{ $average ?? 0 }}</td>             
+                                <td class="px-5 py-1">{{ $roundedAverage ?? 0 }}</td>             
 
                             </tr>
                             @endforeach
@@ -397,7 +400,34 @@
                                 </div>
                             </td>
                                 <td class="px-5 py-1">{{ number_format($mediumScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td> 
+                                @php
+                                // Collect the scores into an array
+                                $scores = [
+                                    $user->romo_final_score,
+                                    $mediumScores[$user->user_id]['scores'][13] ?? 0,
+                                    $mediumScores[$user->user_id]['scores'][16] ?? 0,
+                                    $mediumScores[$user->user_id]['scores'][17] ?? 0
+                                ];
+
+                                // Filter out zero values
+                                $filteredScores = array_filter($scores, function($score) {
+                                    return $score != 0;
+                                });
+
+                                // Calculate the sum of the remaining scores
+                                $sum = array_sum($filteredScores);
+
+                                // Count the number of non-zero scores
+                                $count = count($filteredScores);
+
+                                // Calculate the average, ensuring not to divide by zero
+                                $average = $count > 0 ? $sum / $count : 0;
+
+                                $roundedAverage = round($average);
+
+                            @endphp
+
+                            <td class="px-5 py-1">{{ $roundedAverage ?? 0 }}</td>  
                             </tr>
                             @endforeach
                             @foreach ($large as $user)
@@ -480,7 +510,34 @@
                                 </div>
                             </td>
                                 <td class="px-5 py-1">{{ number_format($largeScores[$user->user_id]['progress'][17] ?? 0, 2) }}%</td>
-                                <td class="px-5 py-1">{{ $user->average_score ?? 0 }}</td>             
+                                @php
+                                // Collect the scores into an array
+                                $scores = [
+                                    $user->romo_final_score,
+                                    $largeScores[$user->user_id]['scores'][13] ?? 0,
+                                    $largeScores[$user->user_id]['scores'][16] ?? 0,
+                                    $largeScores[$user->user_id]['scores'][17] ?? 0
+                                ];
+
+                                // Filter out zero values
+                                $filteredScores = array_filter($scores, function($score) {
+                                    return $score != 0;
+                                });
+
+                                // Calculate the sum of the remaining scores
+                                $sum = array_sum($filteredScores);
+
+                                // Count the number of non-zero scores
+                                $count = count($filteredScores);
+
+                                // Calculate the average, ensuring not to divide by zero
+                                $average = $count > 0 ? $sum / $count : 0;
+
+                                $roundedAverage = round($average);
+
+                            @endphp
+
+                            <td class="px-5 py-1">{{ $roundedAverage ?? 0 }}</td>               
                             </tr>
                             @endforeach
                         </tbody>
