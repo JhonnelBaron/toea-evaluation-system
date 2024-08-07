@@ -161,7 +161,7 @@
                         <td class="pb-4 text-center">{{$piad->e1_remarks}}</td>
                         <td class="pb-4 text-center"><select class="form-control mb-1 score-dropdown" name="e1" data-field="e1">
                                         <option value="">Select score</option>
-                                        <option value="60"  {{ (isset($previousData->e1) && $previousData->e1 == 60) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented.</option>
+                                        <option value="50"  {{ (isset($previousData->e1) && $previousData->e1 == 50) ? 'selected' : '' }}>50 - A Communication Plan was prepared and fully implemented.</option>
                                         <option value="30"  {{ (isset($previousData->e1) && $previousData->e1 == 30) ? 'selected' : '' }}>30 - No Communication Plan was prepared but activities were fully implemented.</option>
                                         <option value="0"  {{ (isset($previousData->e1) && $previousData->e1 == 0) ? 'selected' : '' }}>0 - No Communication Plan was prepared and not all communications activities were implemented</option>
                                     </select></td>
