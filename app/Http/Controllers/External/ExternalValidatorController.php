@@ -11,6 +11,7 @@ use App\Models\External\BroCExternal;
 use App\Models\External\BroDExternal;
 use App\Models\External\BroEExternal;
 use App\Models\External\EndorsedExternal;
+use App\Models\External\ExternalFinalRemark;
 use App\Models\External\GpAExternal;
 use App\Models\External\GpBExternal;
 use App\Models\External\GpCExternal;
@@ -99,6 +100,13 @@ class ExternalValidatorController extends Controller
             $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
                 return [$user->user_id => $collectScore($user->user_id)];
             });
+
+            $remarks = ExternalFinalRemark::whereIn('user_id', $small->pluck('user_id')
+            ->merge($medium->pluck('user_id'))
+            ->merge($large->pluck('user_id')))
+            ->where('validator_id', Auth::id())
+            ->pluck('remarks', 'user_id')
+            ->toArray();
         
             return view('external.gp', [
                 'small' => $small,
@@ -107,6 +115,7 @@ class ExternalValidatorController extends Controller
                 'smallScores' => $smallScores,
                 'mediumScores' => $mediumScores,
                 'largeScores' => $largeScores,
+                'remarks' => $remarks,
             ]);
     }
 
@@ -272,6 +281,13 @@ class ExternalValidatorController extends Controller
         $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
             return [$user->user_id => $collectScore($user)];
         });
+
+        $remarks = ExternalFinalRemark::whereIn('user_id', $small->pluck('user_id')
+        ->merge($medium->pluck('user_id'))
+        ->merge($large->pluck('user_id')))
+        ->where('validator_id', Auth::id())
+        ->pluck('remarks', 'user_id')
+        ->toArray();
     
         return view('external.ti', [
             'small' => $small,
@@ -280,6 +296,7 @@ class ExternalValidatorController extends Controller
             'smallScores' => $smallScores,
             'mediumScores' => $mediumScores,
             'largeScores' => $largeScores,
+            'remarks' => $remarks,
         ]);
     }
 
@@ -1601,6 +1618,14 @@ class ExternalValidatorController extends Controller
         $largeScores = $large->mapWithKeys(function ($user) use ($collectScore) {
             return [$user->user_id => $collectScore($user->user_id)];
         });
+
+        $remarks = ExternalFinalRemark::whereIn('user_id', $small->pluck('user_id')
+        ->merge($medium->pluck('user_id'))
+        ->merge($large->pluck('user_id')))
+        ->where('validator_id', Auth::id())
+        ->pluck('remarks', 'user_id')
+        ->toArray();
+
     
         return view('external.bro', [
             'small' => $small,
@@ -1609,6 +1634,7 @@ class ExternalValidatorController extends Controller
             'smallScores' => $smallScores,
             'mediumScores' => $mediumScores,
             'largeScores' => $largeScores,
+            'remarks' => $remarks,
         ]);
     }
 
@@ -2194,6 +2220,25 @@ class ExternalValidatorController extends Controller
         return redirect()->back()->with(['success' => 'Data saved successfully']);
     }
    
+    public function storeRemarks(Request $request)
+    {
+        // Validate incoming request
+        $request->validate([
+            'user_id' => 'required|integer',
+            'remarks' => 'required|string',
+        ]);
 
+        $userId = $request->input('user_id');
+        $remarks = $request->input('remarks');
+        $validatorId = Auth::id(); // Get the ID of the authenticated user
+
+        // Find or create a record
+        $record = ExternalFinalRemark::updateOrCreate(
+            ['user_id' => $userId, 'validator_id' => $validatorId], // Condition to find existing or create new
+            ['remarks' => $remarks] // Fields to update or insert
+        );
+
+        return response()->json(['success' => true]);
+    }
 
 }

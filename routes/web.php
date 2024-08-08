@@ -21,6 +21,7 @@ use App\Http\Controllers\Secretariat\RomoEvaluationController;
 use App\Http\Controllers\TiController;
 use App\Http\Controllers\WsEvaluationController;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Models\External\ExternalFinalRemark;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
@@ -347,6 +348,7 @@ Route::get('/ev-bro-evaluation-e', function () {
 // })->name('eo.evaluate');
 
 // Route::get('/evaluation-page', [BroEvaluationController::class, 'index'])->name('evaluation-list');
+Route::post('/store-remarks', [ExternalValidatorController::class, 'storeRemarks'])->name('store.remarks');
 Route::post('/saveRemarks', [BroEvaluationController::class, 'saveRemarks'])->name('save.remarks');
 Route::get('/secretariat-evaluation/{id}', [BroEvaluationController::class, 'evaluationIndex'])->name('evaluation');
 Route::post('/save-evaluation', [AsEvaluationController::class, 'store'])->name('save_evaluation');
@@ -416,4 +418,4 @@ Route::post('/store-brod', [ExternalValidatorController::class, 'storeBroD'])->n
 Route::post('/store-broe', [ExternalValidatorController::class, 'storeBroE'])->name('storeBroE');
 
 Route::post('/store-finalist-records', [RomdController::class, 'storeFinalistRecords'])->name('store.finalist.records');
-Route::post('/store-finalist-records/gp', [RomdController::class, 'storeFinalistRecordsGp'])->name('store.finalist.records.gp');
+
