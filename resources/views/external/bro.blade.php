@@ -263,11 +263,8 @@
                                 <td class="px-3 py-3">{{ number_format($smallScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.bro-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
-                                {{-- <input type="text" 
-                                class="form-control remarks-input" placeholder=""> --}}
-                            <textarea class="form-control remarks-textarea" >
-                                
-                            </textarea> 
+                                    <textarea class="form-control remarks-textarea" 
+                                    data-user-id="{{ $user->user_id }}">{{ $remarks[$user->user_id] ?? '' }}</textarea>
                                 </td>             
 
                             </tr>
@@ -312,12 +309,9 @@
                                 <td class="px-3 py-3">{{ number_format($mediumScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.bro-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
-                                {{-- <input type="text" 
-                                class="form-control remarks-input" placeholder=""> --}}
-                            <textarea class="form-control remarks-textarea" >
-                                
-                            </textarea> 
-                                </td>             
+                                    <textarea class="form-control remarks-textarea" 
+                                    data-user-id="{{ $user->user_id }}">{{ $remarks[$user->user_id] ?? '' }}</textarea>
+                                </td>          
            
                             </tr>
                             @endforeach
@@ -361,11 +355,8 @@
                                 <td class="px-3 py-3"> {{ number_format($largeScores[$user->user_id]['progress'], 2) }}%</td>  
                                 <td class="px-3 py-3"><button class="btn btn-primary btn-sm"  onclick="location.href='{{ route('external.bro-a', ['id' => $user->user_id]) }}'">Evaluate</button></td>  
                                 <td class="px-3 py-3">
-                                {{-- <input type="text" 
-                                class="form-control remarks-input" placeholder=""> --}}
-                            <textarea class="form-control remarks-textarea" >
-                                
-                            </textarea> 
+                                    <textarea class="form-control remarks-textarea" 
+                                    data-user-id="{{ $user->user_id }}">{{ $remarks[$user->user_id] ?? '' }}</textarea>
                                 </td>             
    
                             </tr>
@@ -570,5 +561,43 @@
 });
         
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all textarea elements with the class 'remarks-textarea'
+        document.querySelectorAll('.remarks-textarea').forEach(function(textarea) {
+            // Add an event listener for the 'change' event
+            textarea.addEventListener('change', function() {
+                let userId = this.getAttribute('data-user-id'); // Get the user_id from the data attribute
+                let remarks = this.value; // Get the value of the textarea
+    
+                // Make an AJAX request to store the remarks
+                fetch('{{ route('store.remarks') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        user_id: userId,
+                        remarks: remarks
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Remarks saved successfully');
+                    } else {
+                        console.log('Failed to save remarks');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    });
+    </script>
+    
 </body>
 </html>
