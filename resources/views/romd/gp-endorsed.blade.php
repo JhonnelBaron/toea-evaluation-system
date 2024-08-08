@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')
     <title>TOEA Admin</title>
     <link rel="icon" href="{{ asset('img/toea-logo.png') }}" type="image/png">
@@ -755,5 +758,96 @@
 });
         
     </script>
+
+
+<script>
+    $(document).ready(function() {
+        function storeFinalistRecord(data) {
+            $.ajax({
+                url: '{{ route('store.finalist.records') }}',
+                method: 'POST',
+                data: data,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    console.log('Record stored successfully:', response);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error storing record:', error);
+                }
+            });
+        }
+
+        // Collect all user data in JavaScript
+        let allData = {
+            smallScores: @json($smallScores),
+            mediumScores: @json($mediumScores),
+            largeScores: @json($largeScores),
+            smallUsers: @json($small),
+            mediumUsers: @json($medium),
+            largeUsers: @json($large)
+        };
+
+        // Process each grouping separately
+        ['smallScores', 'mediumScores', 'largeScores'].forEach(function(grouping) {
+            let userDataList = [];
+            let users = allData[grouping.replace('Scores', 'Users')];
+
+            // Collect user information for the current grouping
+            $.each(allData[grouping], function(user_id, data) {
+                let user = users.find(u => u.user_id === parseInt(user_id));
+                
+                let scores = [
+                    user.romo_final_score,
+                    data['scores'][13] ?? 0,
+                    data['scores'][16] ?? 0,
+                    data['scores'][17] ?? 0
+                ];
+                let filteredScores = scores.filter(score => score != 0);
+                let sum = filteredScores.reduce((acc, score) => acc + score, 0);
+                let count = filteredScores.length;
+                let average = count > 0 ? sum / count : 0;
+                let roundedAverage = Math.round(average);
+
+                // Count the number of zero scores
+                let zeroCount = scores.filter(score => score == 0).length;
+
+                // Collect user data in a JavaScript array
+                userDataList.push({
+                    user_id: user.user_id,
+                    category: user.category,
+                    grouping: user.grouping,
+                    region: user.region,
+                    province: user.province, // replace with actual province
+                    nominee: user.nominee, // replace with actual nominee
+                    secretariat_score: user.final_score,
+                    score_13: data['scores'][13] ?? 0,
+                    score_16: data['scores'][16] ?? 0,
+                    score_17: data['scores'][17] ?? 0,
+                    average: roundedAverage,
+                    zeroCount: zeroCount, // Use zeroCount only for sorting
+                    awarding_year: new Date().getFullYear()
+                });
+            });
+
+            // Sort the userDataList by zeroCount first, then by average in descending order
+            userDataList.sort(function(a, b) {
+                if (a.zeroCount === b.zeroCount) {
+                    return b.average - a.average; // sort by average in descending order
+                }
+                return a.zeroCount - b.zeroCount; // sort by zeroCount in ascending order
+            });
+
+            // Assign placements based on sorted order
+            userDataList.forEach(function(userData, index) {
+                userData.placement = index + 1; // placement is 1-based index
+                delete userData.zeroCount; // Remove zeroCount before sending data
+                storeFinalistRecord(userData);
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

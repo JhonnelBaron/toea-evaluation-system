@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AsEvaluation;
+use App\Models\AwardingsFinalistRecord;
 use App\Models\CoEvaluation;
 use App\Models\ExecutiveOfficeAccount;
 use App\Models\External\BroAExternal;
@@ -1298,5 +1299,32 @@ class RomdController extends Controller
         return redirect()->back()->with('success', 'Nominee endorsed successfully.');
 
     }
+
+    public function storeFinalistRecords(Request $request)
+    {
+        $validatedData = $request->validate([
+            'user_id' => 'required|integer',
+            'category' => 'required|string',
+            'grouping' => 'required|string',
+            'region' => 'nullable|string',
+            'province' => 'nullable|string',
+            'nominee' => 'nullable|string',
+            'secretariat_score' => 'nullable|numeric',
+            'score_13' => 'required|numeric',
+            'score_16' => 'required|numeric',
+            'score_17' => 'required|numeric',
+            'average' => 'nullable|numeric',
+            'placement' => 'nullable|string',
+            'awarding_year' => 'required|integer',
+        ]);
+
+        AwardingsFinalistRecord::updateOrCreate(
+            ['user_id' => $validatedData['user_id'], 'awarding_year' => $validatedData['awarding_year']],
+            $validatedData
+        );
+
+        return response()->json(['success' => true]);
+    }
+
 
 }

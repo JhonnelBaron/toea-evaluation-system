@@ -415,3 +415,5 @@ Route::post('/store-broc', [ExternalValidatorController::class, 'storeBroC'])->n
 Route::post('/store-brod', [ExternalValidatorController::class, 'storeBroD'])->name('storeBroD');
 Route::post('/store-broe', [ExternalValidatorController::class, 'storeBroE'])->name('storeBroE');
 
+Route::post('/store-finalist-records', [RomdController::class, 'storeFinalistRecords'])->name('store.finalist.records');
+Route::post('/store-finalist-records/gp', [RomdController::class, 'storeFinalistRecordsGp'])->name('store.finalist.records.gp');
